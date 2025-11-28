@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Common Investor — Investment Forecaster</title>
+  <meta name="description"
+    content="Responsive stock forecaster with theme selector and clear 2×/S&P flags. No data saved." />
+  <meta name="color-scheme" content="light dark" />
+
+  <link rel="stylesheet" href="index.css">
+  <script src="sp500-data.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Immediate Premium Check to prevent FOUC (Flash of Un-premium Content)
+    if (localStorage.getItem('isPremium') === 'true') {
+      document.documentElement.classList.add('premium-mode');
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="title">📈 Common Investor — <span class="sub" style="color:var(--muted)">Current metrics & 5-year
+          projections</span></div>
+      <div id="userProfile" class="user-profile" style="display:none; margin-left:16px">
+        <span class="premium-chip" aria-label="Premium status">👑 PREMIUM MEMBER</span>
+      </div>
+      <div class="spacer"></div>
+      <div class="field" style="min-width:240px; grid-template-columns: auto 1fr;">
+        <label for="themeSelect" style="margin:0; align-self:center">Theme</label>
+        <select id="themeSelect" aria-label="Theme preference">
+          <option value="system">System</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
+      <button id="shareBtn" class="btn ghost" aria-label="Copy shareable link">🔗 Share</button>
+      <button id="premiumBtn" class="btn primary special-btn">💎 Go Premium</button>
+      <button id="logoutBtn" class="btn sm" style="display:none; margin-left:8px">Sign out</button>
+    </div>
+  </header>
+
+  <main aria-live="polite">
+    <!-- Tab Navigation -->
+    <div class="tab-nav">
+      <button id="tabProjections" class="tab-btn active">Future Projections</button>
+      <button id="tabInsights" class="tab-btn" style="display: none">Insights (Premium)</button>
+      <button id="tabHub" class="tab-btn" style="display: none">My Hub</button>
+    </div>
+
+    <!-- Tab 1: Future Projections (Existing Calculator) -->
+    <div id="projectionsTab" class="tab-content active">
+      <div class="grid">
+        <section class="card" aria-labelledby="inputs-h">
+          <div class="card-h">
+            <h2 id="inputs-h">Current Metrics</h2>
+          </div>
+          <div class="card-b">
+            <div class="two-col aligned-row">
+              <div>
+                <label for="stock">Company <span class="chip">type name or ticker</span></label>
+                <div class="ac">
+                  <input id="stock" type="text" placeholder="e.g., Microsoft or MSFT" autocomplete="off"
+                    aria-autocomplete="list" aria-expanded="false" aria-controls="stockList" />
+                  <div id="stockList" class="ac-list" role="listbox"></div>
+                </div>
+                <p class="help">Logo auto-loads for common names; this is for your notes only.</p>
+              </div>
+              <div>
+                <label for="date">Date</label>
+                <input id="date" type="text" disabled />
+              </div>
+            </div>
+
+            <div class="two-col">
+              <div>
+                <label for="revenue">Revenue (TTM)</label>
+                <div class="field">
+                  <input id="revenue" type="text" inputmode="decimal" placeholder="e.g., 89.7M or select unit →" />
+                  <select id="revenueSuffix">
+                    <option value="">(None)</option>
+                    <option value="M">Millions</option>
+                    <option value="B">Billions</option>
+                    <option value="T">Trillions</option>
+                  </select>
+                </div>
+                <p class="help">Enter value with M/B/T suffix or select unit from dropdown</p>
+              </div>
+              <div>
+                <label for="shares">Outstanding Shares</label>
+                <div class="field">
+                  <input id="shares" type="text" inputmode="decimal" placeholder="e.g., 7.6M or select unit →" />
+                  <select id="sharesSuffix">
+                    <option value="">(None)</option>
+                    <option value="M">Millions</option>
+                    <option value="B">Billions</option>
+                    <option value="T">Trillions</option>
+                  </select>
+                </div>
+                <p class="help">Enter value with M/B/T suffix or select unit from dropdown</p>
+              </div>
+            </div>
+
+            <div class="two-col">
+              <div>
+                <label for="pe">P/E Ratio <span class="chip">optional</span></label>
+                <input id="pe" type="number" step="0.01" placeholder="e.g., 28.5" />
+              </div>
+              <div>
+                <label for="profitMargin">Profit Margin (%)</label>
+                <input id="profitMargin" type="number" step="0.01" placeholder="e.g., 22" />
+              </div>
+            </div>
+
+            <div class="two-col">
+              <div>
+                <label for="price">Price per Share</label>
+                <input id="price" type="number" step="0.01" placeholder="$" />
+              </div>
+              <div>
+                <label>Current Market Value</label>
+                <div class="pill" aria-live="polite">$<span id="marketValue">–</span></div>
+              </div>
+            </div>
+
+            <div class="kpi-row" style="margin-top:16px; padding-top:16px; border-top:1px solid var(--border)">
+              <div class="kpi-item">
+                <span class="label">Earnings</span>
+                <span class="value" id="earningsValue">–</span>
+              </div>
+              <div class="kpi-item">
+                <span class="label">EPS</span>
+                <span class="value" id="epsValue">–</span>
+              </div>
+            </div>
+
+            <div class="inline-actions" style="margin-top:20px">
+              <button id="clearBtn" class="btn ghost">Clear</button>
+            </div>
+
+            <!-- Community List (Compact) for Projections Tab -->
+            <div id="communityProjectionsContainer"
+              style="margin-top: 32px; border-top: 1px solid var(--border); padding-top: 20px;">
+              <h3
+                style="font-size: 1rem; color: var(--muted); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">
+                Community's Most Calculated</h3>
+              <div id="communityListProjections" class="community-list compact">
+                <!-- Populated by JS -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="proj-h">
+          <div class="card-h">
+            <h2 id="proj-h">Future Projections (5 Years)</h2>
+            <div style="display:flex; gap:8px">
+              <button id="autoCalcBtn" class="btn" style="min-width:140px; display:none">⚡️ Auto-Calc: ON</button>
+              <button id="caseModeBtn" class="btn special-btn" type="button" style="display:none">
+                🐂 / 🛡 Base + Bull
+              </button>
+            </div>
+          </div>
+          <div class="card-b">
+            <p class="help">Pick a revenue projection mode. We'll compute earnings, EPS, price, and market value.</p>
+
+            <div class="two-col aligned-row">
+              <div>
+                <label for="futureRevenueMode">Future Revenue</label>
+                <select id="futureRevenueMode">
+                  <option value="absolute">Absolute Value</option>
+                  <option value="percentage">Percentage Change</option>
+                  <option value="compounded">Compounded (CAGR)</option>
+                </select>
+              </div>
+              <div id="futureRevenueControls" class="single-case-block">
+                <div class="group-label" id="futureRevenueControlsLabel">Projection Input</div>
+                <div id="futureRevenueAbsoluteContainer">
+                  <div class="control-row">
+                    <input id="futureRevenueAbsolute" type="text" inputmode="decimal" placeholder="e.g., 120B"
+                      aria-label="Future revenue absolute value" />
+                    <select id="futureRevenueSuffix" aria-label="Future revenue unit">
+                      <option value="" disabled selected>Select Unit</option>
+                      <option value="M">Millions</option>
+                      <option value="B">Billions</option>
+                      <option value="T">Trillions</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="futureRevenuePercentageContainer" style="display:none">
+                  <div class="control-row">
+                    <input id="futureRevenuePercent" type="number" step="0.01" placeholder="Percentage change"
+                      aria-label="Future revenue percent change" />
+                    <select id="futureRevenueDirection" aria-label="Future revenue change direction">
+                      <option value="increase">Increase</option>
+                      <option value="decrease">Decrease</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="futureRevenueCompoundedContainer" style="display:none">
+                  <div class="control-row">
+                    <input id="futureRevenueCompounded" type="number" step="0.01" placeholder="Annual growth %"
+                      aria-label="Future revenue CAGR percent" />
+                    <select id="futureRevenueCompoundedDirection" aria-label="Future revenue CAGR direction">
+                      <option value="increase" selected>Increase</option>
+                      <option value="decrease">Decrease</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div id="futureRevenueControlsDual" class="dual-case-block" style="display:none">
+                <div class="group-label" id="futureRevenueControlsLabelDual">Projection Input (Base/Bull)</div>
+                <div id="futureRevenueAbsoluteContainerDual">
+                  <div class="case-grid">
+                    <div class="case-col">
+                      <div class="case-label">Base</div>
+                      <div class="control-row">
+                        <input id="futureRevenueAbsoluteBase" type="text" inputmode="decimal" placeholder="e.g., 120B"
+                          aria-label="Future revenue absolute base value" />
+                        <select id="futureRevenueSuffixBase" aria-label="Future revenue base unit">
+                          <option value="" disabled selected>Select Unit</option>
+                          <option value="M">Millions</option>
+                          <option value="B">Billions</option>
+                          <option value="T">Trillions</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="case-col">
+                      <div class="case-label">Bull</div>
+                      <div class="control-row">
+                        <input id="futureRevenueAbsoluteBull" type="text" inputmode="decimal" placeholder="e.g., 140B"
+                          aria-label="Future revenue absolute bull value" />
+                        <select id="futureRevenueSuffixBull" aria-label="Future revenue bull unit">
+                          <option value="" disabled selected>Select Unit</option>
+                          <option value="M">Millions</option>
+                          <option value="B">Billions</option>
+                          <option value="T">Trillions</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="futureRevenuePercentageContainerDual" style="display:none">
+                  <div class="case-grid">
+                    <div class="case-col">
+                      <div class="case-label">Base</div>
+                      <div class="control-row">
+                        <input id="futureRevenuePercentBase" type="number" step="0.01" placeholder="Percentage change"
+                          aria-label="Future revenue percent change base" />
+                        <select id="futureRevenueDirectionBase" aria-label="Future revenue change direction base">
+                          <option value="increase">Increase</option>
+                          <option value="decrease">Decrease</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="case-col">
+                      <div class="case-label">Bull</div>
+                      <div class="control-row">
+                        <input id="futureRevenuePercentBull" type="number" step="0.01" placeholder="Percentage change"
+                          aria-label="Future revenue percent change bull" />
+                        <select id="futureRevenueDirectionBull" aria-label="Future revenue change direction bull">
+                          <option value="increase">Increase</option>
+                          <option value="decrease">Decrease</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="futureRevenueCompoundedContainerDual" style="display:none">
+                  <div class="case-grid">
+                    <div class="case-col">
+                      <div class="case-label">Base</div>
+                      <div class="control-row">
+                        <input id="futureRevenueCompoundedBase" type="number" step="0.01" placeholder="Annual growth %"
+                          aria-label="Future revenue CAGR percent base" />
+                        <select id="futureRevenueCompoundedDirectionBase"
+                          aria-label="Future revenue CAGR direction base">
+                          <option value="increase" selected>Increase</option>
+                          <option value="decrease">Decrease</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="case-col">
+                      <div class="case-label">Bull</div>
+                      <div class="control-row">
+                        <input id="futureRevenueCompoundedBull" type="number" step="0.01" placeholder="Annual growth %"
+                          aria-label="Future revenue CAGR percent bull" />
+                        <select id="futureRevenueCompoundedDirectionBull"
+                          aria-label="Future revenue CAGR direction bull">
+                          <option value="increase" selected>Increase</option>
+                          <option value="decrease">Decrease</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="two-col aligned-row" style="margin-top:8px">
+              <div>
+                <label for="futureSharesMode">Future Outstanding Shares</label>
+                <select id="futureSharesMode">
+                  <option value="absolute">Absolute Value</option>
+                  <option value="percentage">Percentage Change</option>
+                  <option value="compounded">Compounded (CAGR)</option>
+                </select>
+              </div>
+              <div id="futureSharesControls" class="single-case-block">
+                <div class="group-label" id="futureSharesControlsLabel">Shares Input</div>
+                <div id="futureSharesInputContainer">
+                  <div class="control-row">
+                    <input id="futureShares" type="text" inputmode="decimal" placeholder="e.g., 7.6B"
+                      aria-label="Future shares absolute value" />
+                    <select id="futureSharesSuffix" aria-label="Future shares unit">
+                      <option value="">(None)</option>
+                      <option value="M">Millions</option>
+                      <option value="B">Billions</option>
+                      <option value="T">Trillions</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="futureSharesPercentageContainer" style="display:none">
+                  <div class="control-row">
+                    <input id="futureSharesPercent" type="number" step="0.01" placeholder="e.g., 5"
+                      aria-label="Future shares percent change" />
+                    <select id="futureSharesDirection" aria-label="Future shares change direction">
+                      <option value="increase">Increase</option>
+                      <option value="decrease">Decrease</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="futureSharesCompoundedContainer" style="display:none">
+                  <div class="control-row">
+                    <input id="futureSharesCompounded" type="number" step="0.01" placeholder="Annual change %"
+                      aria-label="Future shares CAGR percent" />
+                    <select id="futureSharesCompoundedDirection" aria-label="Future shares CAGR direction">
+                      <option value="increase" selected>Increase</option>
+                      <option value="decrease">Decrease</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div id="futureSharesControlsDual" class="dual-case-block" style="display:none">
+                <div class="group-label" id="futureSharesControlsLabelDual">Shares Input (Base/Bull)</div>
+                <div id="futureSharesInputContainerDual">
+                  <div class="case-grid">
+                    <div class="case-col">
+                      <div class="case-label">Base</div>
+                      <div class="control-row">
+                        <input id="futureSharesBase" type="text" inputmode="decimal" placeholder="e.g., 7.6B"
+                          aria-label="Future shares absolute value base" />
+                        <select id="futureSharesSuffixBase" aria-label="Future shares unit base">
+                          <option value="">(None)</option>
+                          <option value="M">Millions</option>
+                          <option value="B">Billions</option>
+                          <option value="T">Trillions</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="case-col">
+                      <div class="case-label">Bull</div>
+                      <div class="control-row">
+                        <input id="futureSharesBull" type="text" inputmode="decimal" placeholder="e.g., 8.2B"
+                          aria-label="Future shares absolute value bull" />
+                        <select id="futureSharesSuffixBull" aria-label="Future shares unit bull">
+                          <option value="">(None)</option>
+                          <option value="M">Millions</option>
+                          <option value="B">Billions</option>
+                          <option value="T">Trillions</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="futureSharesPercentageContainerDual" style="display:none">
+                  <div class="case-grid">
+                    <div class="case-col">
+                      <div class="case-label">Base</div>
+                      <div class="control-row">
+                        <input id="futureSharesPercentBase" type="number" step="0.01" placeholder="e.g., 5"
+                          aria-label="Future shares percent change base" />
+                        <select id="futureSharesDirectionBase" aria-label="Future shares change direction base">
+                          <option value="increase">Increase</option>
+                          <option value="decrease">Decrease</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="case-col">
+                      <div class="case-label">Bull</div>
+                      <div class="control-row">
+                        <input id="futureSharesPercentBull" type="number" step="0.01" placeholder="e.g., 3"
+                          aria-label="Future shares percent change bull" />
+                        <select id="futureSharesDirectionBull" aria-label="Future shares change direction bull">
+                          <option value="increase">Increase</option>
+                          <option value="decrease">Decrease</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="futureSharesCompoundedContainerDual" style="display:none">
+                  <div class="case-grid">
+                    <div class="case-col">
+                      <div class="case-label">Base</div>
+                      <div class="control-row">
+                        <input id="futureSharesCompoundedBase" type="number" step="0.01" placeholder="Annual change %"
+                          aria-label="Future shares CAGR percent base" />
+                        <select id="futureSharesCompoundedDirectionBase" aria-label="Future shares CAGR direction base">
+                          <option value="increase" selected>Increase</option>
+                          <option value="decrease">Decrease</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="case-col">
+                      <div class="case-label">Bull</div>
+                      <div class="control-row">
+                        <input id="futureSharesCompoundedBull" type="number" step="0.01" placeholder="Annual change %"
+                          aria-label="Future shares CAGR percent bull" />
+                        <select id="futureSharesCompoundedDirectionBull" aria-label="Future shares CAGR direction bull">
+                          <option value="increase" selected>Increase</option>
+                          <option value="decrease">Decrease</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="two-col" style="margin-top:8px">
+              <div>
+                <label for="futurePE">Projected Future P/E</label>
+                <input id="futurePE" class="single-case-block" type="number" step="0.01" placeholder="e.g., 25" />
+                <div class="dual-case-block" style="display:none">
+                  <div class="case-grid">
+                    <div class="case-col">
+                      <div class="case-label">Base</div>
+                      <input id="futurePEBase" type="number" step="0.01" placeholder="e.g., 25" />
+                    </div>
+                    <div class="case-col">
+                      <div class="case-label">Bull</div>
+                      <input id="futurePEBull" type="number" step="0.01" placeholder="e.g., 30" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <label for="futureProfitMargin">Projected Future Profit Margin (%)</label>
+                <input id="futureProfitMargin" class="single-case-block" type="number" step="0.01"
+                  placeholder="e.g., 20" />
+                <div class="dual-case-block" style="display:none">
+                  <div class="case-grid">
+                    <div class="case-col">
+                      <div class="case-label">Base</div>
+                      <input id="futureProfitMarginBase" type="number" step="0.01" placeholder="e.g., 20" />
+                    </div>
+                    <div class="case-col">
+                      <div class="case-label">Bull</div>
+                      <input id="futureProfitMarginBull" type="number" step="0.01" placeholder="e.g., 25" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="two-col" style="margin-top:10px">
+              <div>
+                <label>Future Market Value</label>
+                <div class="pill">$<span id="futureMarketValue">–</span></div>
+              </div>
+              <div>
+                <label>S&P Comparison</label>
+                <div class="pill"><span id="spComparison">–</span></div>
+              </div>
+            </div>
+
+            <!-- Results & Chart Wrapper -->
+            <div class="dual-outcome-grid" id="dualOutcomeGrid" style="display:none">
+              <div class="dual-outcome-col">
+                <h4>Base Case</h4>
+                <table class="dual-case-results">
+                  <tr>
+                    <td>Price</td>
+                    <td id="resPriceBase">–</td>
+                    <td id="resPriceBaseChange" style="font-size:0.85rem"></td>
+                  </tr>
+                  <tr>
+                    <td>Mkt Val</td>
+                    <td id="resMktBase">–</td>
+                    <td id="resMktBaseChange" style="font-size:0.85rem"></td>
+                  </tr>
+                </table>
+              </div>
+              <div class="dual-outcome-col">
+                <h4>Bull Case</h4>
+                <table class="dual-case-results">
+                  <tr>
+                    <td>Price</td>
+                    <td id="resPriceBull">–</td>
+                    <td id="resPriceBullChange" style="font-size:0.85rem"></td>
+                  </tr>
+                  <tr>
+                    <td>Mkt Val</td>
+                    <td id="resMktBull">–</td>
+                    <td id="resMktBullChange" style="font-size:0.85rem"></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+
+            <div class="results-chart-wrapper">
+              <div class="results-col">
+                <table id="singleCaseResults" class="table" style="margin-top:10px">
+                  <tbody>
+                    <tr>
+                      <th>Future Stock Price</th>
+                      <td class="kpi" id="futureStockPrice">–</td>
+                    </tr>
+                    <tr>
+                      <th>Future Revenue</th>
+                      <td id="futureRevenueValue">–</td>
+                    </tr>
+                    <tr>
+                      <th>Future Outstanding Shares</th>
+                      <td id="futureSharesValue">–</td>
+                    </tr>
+                    <tr>
+                      <th>Future Earnings</th>
+                      <td id="futureEarnings">–</td>
+                    </tr>
+                    <tr>
+                      <th>Future EPS</th>
+                      <td id="futureEPS">–</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table id="dualCaseResults" class="table dual-case-results" style="margin-top:10px; display:none">
+                  <thead>
+                    <tr>
+                      <th>Metric</th>
+                      <th>Base</th>
+                      <th>Bull</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Future Stock Price</th>
+                      <td class="kpi" id="futureStockPriceBase">–</td>
+                      <td class="kpi" id="futureStockPriceBull">–</td>
+                    </tr>
+                    <tr>
+                      <th>Future Revenue</th>
+                      <td id="futureRevenueValueBase">–</td>
+                      <td id="futureRevenueValueBull">–</td>
+                    </tr>
+                    <tr>
+                      <th>Future Outstanding Shares</th>
+                      <td id="futureSharesValueBase">–</td>
+                      <td id="futureSharesValueBull">–</td>
+                    </tr>
+                    <tr>
+                      <th>Future Earnings</th>
+                      <td id="futureEarningsBase">–</td>
+                      <td id="futureEarningsBull">–</td>
+                    </tr>
+                    <tr>
+                      <th>Future EPS</th>
+                      <td id="futureEPSBase">–</td>
+                      <td id="futureEPSBull">–</td>
+                    </tr>
+                    <tr>
+                      <th>Future Market Value</th>
+                      <td id="futureMarketValueBase">–</td>
+                      <td id="futureMarketValueBull">–</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <div id="spTargetInfo" class="help" style="margin-top:6px"></div>
+                <div id="outcomeFlags" class="flags" aria-live="polite"></div>
+              </div>
+
+              <!-- Premium Chart Container -->
+              <div id="chartContainer" class="chart-col" style="display:none;">
+                <canvas id="growthChart"></canvas>
+              </div>
+            </div>
+
+            <div class="inline-actions" style="margin-top:12px">
+              <button id="calcFutureBtn" class="btn primary" type="button">Calculate Future</button>
+              <button id="saveDeviceBtn" class="btn">Save to Device</button>
+              <button id="saveToHubBtn" class="btn primary" style="display:none">Save to Hub</button>
+              <button id="clearAllBtn2" class="btn">Clear</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Tab 2: Insights (Premium Charts) -->
+    <div id="insightsTab" class="tab-content">
+      <!-- Insights Company Selector -->
+      <section class="card" style="margin-bottom: 24px; max-width: 600px; margin-left: 0; margin-right: auto;">
+        <div class="card-b" style="padding: 16px;">
+          <label for="stockInsights">Company <span class="chip">type name or ticker</span></label>
+          <div class="ac">
+            <input id="stockInsights" type="text" placeholder="e.g., Microsoft or MSFT" autocomplete="off"
+              aria-autocomplete="list" aria-expanded="false" aria-controls="stockListInsights" />
+            <div id="stockListInsights" class="ac-list" role="listbox"></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="chart-grid">
+        <!-- 1. Revenue -->
+        <div class="chart-card">
+          <h3>Revenue</h3>
+          <div class="chart-wrapper">
+            <canvas id="chartRevenue"></canvas>
+          </div>
+        </div>
+        <!-- 2. Revenue Growth -->
+        <div class="chart-card">
+          <h3>Revenue Growth</h3>
+          <div class="chart-wrapper">
+            <canvas id="chartRevenueGrowth"></canvas>
+          </div>
+        </div>
+        <!-- 3. Earnings -->
+        <div class="chart-card">
+          <h3>Earnings (Net Income)</h3>
+          <div class="chart-wrapper">
+            <canvas id="chartEarnings"></canvas>
+          </div>
+        </div>
+        <!-- 4. Earnings Growth -->
+        <div class="chart-card">
+          <h3>Earnings Growth</h3>
+          <div class="chart-wrapper">
+            <canvas id="chartEarningsGrowth"></canvas>
+          </div>
+        </div>
+        <!-- 5. EPS -->
+        <div class="chart-card">
+          <h3>Earnings Per Share (EPS)</h3>
+          <div class="chart-wrapper">
+            <canvas id="chartEPS"></canvas>
+          </div>
+        </div>
+        <!-- 6. Free Cash Flow -->
+        <div class="chart-card">
+          <h3>Free Cash Flow (Billions)</h3>
+          <div class="chart-wrapper">
+            <canvas id="chartFCF"></canvas>
+          </div>
+        </div>
+        <!-- 7. Net Profit Margin -->
+        <div class="chart-card">
+          <h3>Net Profit Margin</h3>
+          <div class="chart-wrapper">
+            <canvas id="chartMargin"></canvas>
+          </div>
+        </div>
+        <!-- 8. Shares Outstanding -->
+        <div class="chart-card">
+          <h3>Shares Outstanding</h3>
+          <div class="chart-wrapper">
+            <canvas id="chartShares"></canvas>
+          </div>
+        </div>
+        <!-- 9. P/E Ratio -->
+        <div class="chart-card">
+          <h3>P/E Ratio</h3>
+          <div class="chart-wrapper">
+            <canvas id="chartPE"></canvas>
+          </div>
+        </div>
+        <!-- 10. Return on Equity -->
+        <div class="chart-card">
+          <h3>Return on Equity (ROE)</h3>
+          <div class="chart-wrapper">
+            <canvas id="chartROE"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!-- Save Options Dialog -->
+    <dialog id="saveOptionsDialog"
+      style="display:none; border:none; border-radius:14px; padding:20px; background:var(--panel); color:var(--text-main); box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+      <h3 style="margin-top:0">Choose Format</h3>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:16px">
+        <button class="btn" id="savePdfBtn">📄 PDF</button>
+        <button class="btn" id="saveTxtBtn">📝 Text File (.txt)</button>
+        <button class="btn" id="saveExcelBtn">📊 Excel (.csv)</button>
+      </div>
+      <button class="btn ghost sm" style="margin-top:16px; width:100%"
+        onclick="document.getElementById('saveOptionsDialog').close()">Cancel</button>
+    </dialog>
+
+    <!-- Tab 3: My Hub (Redesigned) -->
+    <div id="hubContent" class="tab-content" style="margin-top: 0;">
+      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 0;">
+
+        <!-- Community Section -->
+        <div class="card">
+          <div class="card-h">
+            <div>
+              <h3>Community's Most Calculated</h3>
+              <p class="help">Top 10 stocks calculated in the last 30 days.</p>
+            </div>
+          </div>
+          <div class="card-b">
+            <div class="saved-list" id="communityList">
+              <!-- Items will be populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Saved Calculations Section -->
+        <div class="card">
+          <div class="card-h">
+            <div>
+              <h3>Saved Calculations</h3>
+              <p class="help">Snapshots of your previous projections.</p>
+            </div>
+          </div>
+          <div class="card-b">
+            <div class="saved-list" id="hubSavedList">
+              <!-- Items will be populated by JS -->
+              <div class="saved-item"><span>Tesla Bull</span><span class="date">Oct 12</span></div>
+              <div class="saved-item"><span>Google 5Y</span><span class="date">Sep 28</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <dialog id="suffixDialog" style="border:none; border-radius:14px; padding:0; width:min(520px, 92vw)">
+    <div class="card">
+      <div class="card-h">
+        <h3>Select Units for Each Value</h3>
+      </div>
+      <div class="card-b">
+        <p class="help" style="margin-top:-2px">You must explicitly select if each value is in Millions (M), Billions
+          (B), Trillions (T), or None</p>
+        <div id="suffixDialogBody"></div>
+        <div class="inline-actions" style="margin-top:16px">
+          <button id="suffixConfirmBtn" class="btn primary">Confirm and Calculate</button>
+          <button id="suffixCancelBtn" class="btn">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Premium Login Modal -->
+  <dialog id="loginModal" class="modal-overlay">
+    <div class="modal-content premium-modal">
+      <button id="closeLoginBtn" class="close-btn">×</button>
+      <div class="modal-header">
+        <h2>Unlock Common Investor <span class="gold-text">Premium</span></h2>
+        <p>Automate your research and save your best ideas.</p>
+      </div>
+      <div class="modal-body">
+        <ul class="feature-list">
+          <li>⚡️ <strong>Auto-Fill Financials:</strong> Instant data for 10,000+ stocks</li>
+          <li>💾 <strong>Save Your Work:</strong> Build a portfolio of projections</li>
+          <li>📊 <strong>Advanced Charts:</strong> Visualize your path to wealth</li>
+        </ul>
+
+        <div class="pricing-card">
+          <div class="price">$9<span class="period">/mo</span></div>
+          <div class="sub-price">or $79/year (Save 25%)</div>
+        </div>
+
+        <button id="startTrialBtn" class="btn primary full-width big-btn"
+          onclick="enablePremiumMode(); try{document.getElementById('loginModal').close()}catch(e){this.closest('dialog').style.display='none'}">Start
+          7-Day Free Trial</button>
+        <p class="disclaimer">No credit card required for this prototype demo.</p>
+      </div>
+    </div>
+  </dialog>
+
+
+
+  <script src="sp500-data.js"></script>
+  <script src="index.js" defer></script>
+  <script defer>
+    (function () {
+      const enableMobileRedirect = true; // enabled for production
+      if (!enableMobileRedirect) return;
+      const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      if (isMobile && !window.location.pathname.endsWith('index-mobile.html')) {
+        window.location.replace('index-mobile.html');
+      }
+    })();
+  </script>
+</body>
+
+</html>

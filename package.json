@@ -1,0 +1,9 @@
+{
+    "name": "commoninvestor-proxy",
+    "version": "1.0.0",
+    "description": "Proxy server for Common Investor",
+    "main": "index.js",
+    "dependencies": {
+        "yahoo-finance2": "^2.11.3"
+    }
+}

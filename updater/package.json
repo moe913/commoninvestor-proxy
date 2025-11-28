@@ -1,0 +1,14 @@
+{
+    "name": "commoninvestor-updater",
+    "version": "1.0.0",
+    "description": "Script to update S&P 500 data for Common Investor app",
+    "main": "update_data.js",
+    "scripts": {
+        "update": "node update_data.js",
+        "sync": "node sync_sp500.js",
+        "full-update": "node sync_sp500.js && node update_data.js"
+    },
+    "dependencies": {
+        "yahoo-finance2": "^2.11.3"
+    }
+}
