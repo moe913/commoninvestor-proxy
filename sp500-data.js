@@ -99,23 +99,68 @@ window.__sp500Data = {
     "history": [
       {
         "year": "2021",
-        "revenue": 257.6
+        "revenue": 257.6,
+        "earnings": 76.0,
+        "eps": 5.61,
+        "shares": 13.5,
+        "fcf": 67.0,
+        "roe": 0.30,
+        "revGrowth": 0.41,
+        "earnGrowth": 0.88,
+        "margin": 29.5,
+        "pe": 25.4
       },
       {
         "year": "2022",
-        "revenue": 282.8
+        "revenue": 282.8,
+        "earnings": 59.9,
+        "eps": 4.56,
+        "shares": 13.1,
+        "fcf": 60.0,
+        "roe": 0.23,
+        "revGrowth": 0.10,
+        "earnGrowth": -0.21,
+        "margin": 21.2,
+        "pe": 18.9
       },
       {
         "year": "2023",
-        "revenue": 307.4
+        "revenue": 307.4,
+        "earnings": 73.8,
+        "eps": 5.80,
+        "shares": 12.7,
+        "fcf": 69.5,
+        "roe": 0.27,
+        "revGrowth": 0.09,
+        "earnGrowth": 0.23,
+        "margin": 24.0,
+        "pe": 23.5
       },
       {
         "year": "2024",
-        "revenue": 350
+        "revenue": 350.0,
+        "earnings": 82.4,
+        "eps": 6.50,
+        "shares": 12.4,
+        "fcf": 75.0,
+        "roe": 0.29,
+        "revGrowth": 0.14,
+        "earnGrowth": 0.12,
+        "margin": 23.5,
+        "pe": 27.2
       },
       {
         "year": "TTM",
-        "revenue": 385.5
+        "revenue": 385.5,
+        "earnings": 90.0,
+        "eps": 7.10,
+        "shares": 12.2,
+        "fcf": 80.0,
+        "roe": 0.32,
+        "revGrowth": 0.10,
+        "earnGrowth": 0.09,
+        "margin": 23.3,
+        "pe": 31.5
       }
     ]
   },

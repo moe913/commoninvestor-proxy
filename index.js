@@ -2911,6 +2911,8 @@ function renderInsightsCharts(stockData) {
       insightsCharts[id].destroy();
     }
 
+    const isAllZero = data.every(v => v === 0);
+
     insightsCharts[id] = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -2918,7 +2920,7 @@ function renderInsightsCharts(stockData) {
         datasets: [{
           label: label,
           data: data,
-          backgroundColor: color,
+          backgroundColor: isAllZero ? 'transparent' : color,
           borderRadius: 6,
           borderSkipped: false,
         }]
@@ -2929,6 +2931,7 @@ function renderInsightsCharts(stockData) {
         plugins: {
           legend: { display: false },
           tooltip: {
+            enabled: !isAllZero,
             callbacks: {
               label: (context) => {
                 let val = context.raw;
@@ -2936,6 +2939,22 @@ function renderInsightsCharts(stockData) {
                   val = val.toFixed(2);
                 }
                 return isPercent ? val + '%' : '$' + val;
+              }
+            }
+          },
+          // Custom plugin for empty state
+          emptyState: {
+            id: 'emptyState',
+            afterDraw(chart) {
+              if (isAllZero) {
+                const { ctx, chartArea: { left, top, width, height } } = chart;
+                ctx.save();
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
+                ctx.font = 'italic 13px "Inter", sans-serif';
+                ctx.fillText('Data Unavailable (Local Mode)', left + width / 2, top + height / 2);
+                ctx.restore();
               }
             }
           }
@@ -2955,7 +2974,22 @@ function renderInsightsCharts(stockData) {
           },
           x: { grid: { display: false } }
         }
-      }
+      },
+      plugins: [{
+        id: 'emptyState',
+        afterDraw(chart) {
+          if (isAllZero) {
+            const { ctx, chartArea: { left, top, width, height } } = chart;
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
+            ctx.font = 'italic 13px "Inter", sans-serif';
+            ctx.fillText('Data Unavailable (Local Mode)', left + width / 2, top + height / 2);
+            ctx.restore();
+          }
+        }
+      }]
     });
   };
 
