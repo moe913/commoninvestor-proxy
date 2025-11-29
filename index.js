@@ -939,11 +939,36 @@ function renderSavedItems() {
   }
 
   savedList.innerHTML = '';
-  savedItems.forEach(item => {
+  savedItems.forEach((item, index) => {
     const div = document.createElement('div');
     div.className = 'saved-item';
-    div.innerHTML = `<span>${item.ticker} Analysis</span><span class="date">${item.date}</span>`;
-    // Optional: Add delete button or click to load
+    div.innerHTML = `
+      <div style="flex:1">
+        <span>${item.ticker} Analysis</span>
+        <span class="date" style="margin-left:8px">${item.date}</span>
+      </div>
+      <button class="btn ghost sm delete-btn" style="padding:4px 8px; color:var(--muted); border:none" aria-label="Delete">×</button>
+    `;
+
+    // Load item on click (excluding delete button)
+    div.addEventListener('click', (e) => {
+      if (e.target.closest('.delete-btn')) return;
+      // Future: Load this calculation
+      toast('Loading saved items is coming soon!', 2000);
+    });
+
+    // Delete logic
+    const delBtn = div.querySelector('.delete-btn');
+    delBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent loading
+      if (confirm(`Delete ${item.ticker} analysis?`)) {
+        savedItems.splice(index, 1);
+        localStorage.setItem('savedHubItems', JSON.stringify(savedItems));
+        renderSavedItems(); // Re-render
+        toast('Item deleted.', 2000);
+      }
+    });
+
     savedList.appendChild(div);
   });
 }
