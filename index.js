@@ -619,13 +619,19 @@ if (loginForm) {
 }
 
 if (logoutBtn) {
+  console.log('Logout button found, attaching listener');
   logoutBtn.addEventListener('click', () => {
+    console.log('Logout clicked');
     isPremium = false;
     localStorage.removeItem('isPremium');
     localStorage.removeItem('username');
     disablePremiumMode();
     toast('Logged out.', 2000);
+    // Force reload to ensure clean state
+    setTimeout(() => window.location.reload(), 500);
   });
+} else {
+  console.error('Logout button NOT found in DOM');
 }
 
 
