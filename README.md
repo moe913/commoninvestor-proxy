@@ -30,3 +30,4 @@ If you move this project to a new computer, run this command inside the `updater
 cd updater
 npm install
 ```
+# commoninvestor-proxy
