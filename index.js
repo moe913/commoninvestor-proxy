@@ -912,83 +912,98 @@ if (saveExcelBtn) {
 
 if (saveToHubBtn) {
   saveToHubBtn.addEventListener('click', () => {
-    const ticker = stock.value || 'Unknown';
-    const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    try {
+      const ticker = stock.value || 'Unknown';
+      const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 
-    // Capture all inputs
-    let revGrowth = 0;
-    if (frMode.value === 'absolute') revGrowth = parseFloat(frAbs.value) || 0;
-    else if (frMode.value === 'percentage') revGrowth = parseFloat(frPct.value) || 0;
-    else if (frMode.value === 'compounded') revGrowth = parseFloat(frCagr.value) || 0;
+      // Capture all inputs
+      let revGrowth = 0;
+      if (frMode.value === 'absolute') revGrowth = parseFloat(frAbs.value) || 0;
+      else if (frMode.value === 'percentage') revGrowth = parseFloat(frPct.value) || 0;
+      else if (frMode.value === 'compounded') revGrowth = parseFloat(frCagr.value) || 0;
 
-    let sharesChange = 0;
-    if (fsMode.value === 'absolute') sharesChange = parseFloat(fsAbs.value) || 0;
-    else if (fsMode.value === 'percentage') sharesChange = parseFloat(fsPct.value) || 0;
-    else if (fsMode.value === 'compounded') sharesChange = parseFloat(fsCagr.value) || 0;
+      let sharesChange = 0;
+      if (fsMode.value === 'absolute') sharesChange = parseFloat(fsAbs.value) || 0;
+      else if (fsMode.value === 'percentage') sharesChange = parseFloat(fsPct.value) || 0;
+      else if (fsMode.value === 'compounded') sharesChange = parseFloat(fsCagr.value) || 0;
 
-    const inputs = {
-      revenue: parseFloat(revenue.value) || 0,
-      shares: parseFloat(shares.value) || 0,
+      const inputs = {
+        revenue: parseFloat(revenue.value) || 0,
+        shares: parseFloat(shares.value) || 0,
 
-      // Future Inputs
-      futureRevenueMode: frMode.value,
-      futureRevenueGrowth: revGrowth,
-      // Note: For Bull case, we need to handle similar logic if we want to support it fully. 
-      // For now, let's assume single case or just capture the base values if dual is not active.
-      // If dual is active, we should capture base/bull specific inputs.
-      // But to keep it simple and working for the main case:
+        // Future Inputs
+        futureRevenueMode: frMode.value,
+        futureRevenueGrowth: revGrowth,
+        // Note: For Bull case, we need to handle similar logic if we want to support it fully. 
+        // For now, let's assume single case or just capture the base values if dual is not active.
+        // If dual is active, we should capture base/bull specific inputs.
+        // But to keep it simple and working for the main case:
 
-      futureMargin: parseFloat(document.getElementById('futureProfitMargin').value) || 0,
+        futureMargin: parseFloat(document.getElementById('futureProfitMargin').value) || 0,
 
-      // FCF Margin (if it exists, check ID)
-      futureFCFMargin: parseFloat(document.getElementById('futureFCFMargin')?.value) || 0,
+        // FCF Margin (if it exists, check ID)
+        futureFCFMargin: parseFloat(document.getElementById('futureFCFMargin')?.value) || 0,
 
-      futureSharesMode: fsMode.value,
-      futureSharesChange: sharesChange,
+        futureSharesMode: fsMode.value,
+        futureSharesChange: sharesChange,
 
-      futurePE: parseFloat(document.getElementById('futurePE').value) || 0,
+        futurePE: parseFloat(document.getElementById('futurePE').value) || 0,
 
-      discountRate: parseFloat(document.getElementById('discountRate').value) || 0,
-      years: parseFloat(document.getElementById('years').value) || 5
-    };
+        futurePE: parseFloat(document.getElementById('futurePE').value) || 0
+      };
 
-    // Capture Snapshot Data
-    const curPriceVal = parseFloat(price.value) || 0;
-    const futPriceText = document.getElementById('futureStockPrice')?.textContent || '0';
-    const futPriceVal = parseFloat(futPriceText.replace(/[$,]/g, '')) || 0;
+      // Capture Snapshot Data
+      const curPriceVal = parseFloat(price.value) || 0;
+      const futPriceText = document.getElementById('futureStockPrice')?.textContent || '0';
+      const futPriceVal = parseFloat(futPriceText.replace(/[$,]/g, '')) || 0;
 
-    // Calculate Upside and CAGR
-    let upside = 0;
-    let cagr = 0;
-    if (curPriceVal > 0 && futPriceVal > 0) {
-      upside = ((futPriceVal / curPriceVal) - 1) * 100;
-      cagr = (Math.pow(futPriceVal / curPriceVal, 1 / 5) - 1) * 100;
+      // Calculate Upside and CAGR
+      let upside = 0;
+      let cagr = 0;
+      if (curPriceVal > 0 && futPriceVal > 0) {
+        upside = ((futPriceVal / curPriceVal) - 1) * 100;
+        cagr = (Math.pow(futPriceVal / curPriceVal, 1 / 5) - 1) * 100;
+      }
+
+      // Calculate Net Income manually if missing
+      let netIncomeVal = document.getElementById('earningsValue')?.textContent || '-';
+      if (netIncomeVal === '-' || netIncomeVal === '$0' || netIncomeVal === '$0.00') {
+        const revVal = parseFloat(revenue.value) || 0;
+        // Check variables: 'pm' is defined as document.getElementById('profitMargin')?
+        // I need to check if 'pm' variable exists or use document.getElementById('profitMargin')
+        const marginVal = parseFloat(document.getElementById('profitMargin')?.value) || 0;
+        if (revVal > 0 && marginVal > 0) {
+          const ni = revVal * (marginVal / 100);
+          netIncomeVal = '$' + ni.toFixed(2) + (document.getElementById('revenueSuffix').value || '');
+        }
+      }
+
+      const currentMetrics = {
+        price: curPriceVal > 0 ? '$' + curPriceVal.toFixed(2) : '-',
+        pe: pe.value || '-',
+        revenue: revenue.value ? '$' + revenue.value + (document.getElementById('revenueSuffix').value || '') : '-',
+        netIncome: netIncomeVal
+      };
+
+      const results = {
+        futurePrice: futPriceVal > 0 ? '$' + futPriceVal.toFixed(2) : '-',
+        upside: upside !== 0 ? upside.toFixed(1) + '%' : '-',
+        cagr: cagr !== 0 ? cagr.toFixed(1) + '%' : '-'
+      };
+
+      // Save to localStorage
+      const newItem = { ticker, date, timestamp: Date.now(), inputs, currentMetrics, results };
+      const savedItems = JSON.parse(localStorage.getItem('savedHubItems') || '[]');
+      savedItems.unshift(newItem);
+      localStorage.setItem('savedHubItems', JSON.stringify(savedItems));
+
+      toast('Analysis saved to My Hub!', 3000);
+
+      renderSavedItems(); // Ensure list is updated immediately
+    } catch (e) {
+      console.error('Save failed:', e);
+      toast('Error saving: ' + e.message, 4000);
     }
-
-    const currentMetrics = {
-      price: curPriceVal > 0 ? '$' + curPriceVal.toFixed(2) : '-',
-      pe: pe.value || '-',
-      revenue: revenue.value ? '$' + revenue.value + (document.getElementById('revenueSuffix').value || '') : '-',
-      netIncome: document.getElementById('earningsValue')?.textContent || '-'
-    };
-
-    const results = {
-      futurePrice: futPriceVal > 0 ? '$' + futPriceVal.toFixed(2) : '-',
-      upside: upside !== 0 ? upside.toFixed(1) + '%' : '-',
-      cagr: cagr !== 0 ? cagr.toFixed(1) + '%' : '-'
-    };
-
-    // Save to localStorage
-    const newItem = { ticker, date, timestamp: Date.now(), inputs, currentMetrics, results };
-    const savedItems = JSON.parse(localStorage.getItem('savedHubItems') || '[]');
-    savedItems.unshift(newItem);
-    localStorage.setItem('savedHubItems', JSON.stringify(savedItems));
-
-    toast('Analysis saved to My Hub!', 3000);
-
-    // Switch to Hub tab to show it
-    switchTab('hub');
-    renderSavedItems(); // Ensure list is updated immediately
   });
 }
 
@@ -1023,8 +1038,8 @@ function renderSavedItems() {
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap:8px; font-size:0.9em">
                 <div><div style="opacity:0.6">Price</div><div>${item.currentMetrics?.price || '-'}</div></div>
                 <div><div style="opacity:0.6">P/E</div><div>${item.currentMetrics?.pe || '-'}</div></div>
-                <div><div style="opacity:0.6">Revenue</div><div>$${fmtMB(item.currentMetrics?.revenue || 0)}</div></div>
-                <div><div style="opacity:0.6">Net Income</div><div>$${fmtMB(item.currentMetrics?.netIncome || 0)}</div></div>
+                <div><div style="opacity:0.6">Revenue</div><div>${item.currentMetrics?.revenue || '-'}</div></div>
+                <div><div style="opacity:0.6">Net Income</div><div>${item.currentMetrics?.netIncome || '-'}</div></div>
             </div>
         </div>
 
