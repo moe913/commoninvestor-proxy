@@ -615,6 +615,9 @@ async function tryAutoFill(symbol) {
     }
   } catch (err) {
     console.warn('Proxy error:', err);
+    if (window.location.protocol === 'file:') {
+      toast('Cannot fetch data locally. Please deploy to Netlify.', 4000);
+    }
   }
 
   // --- Fallback (Static) ---
@@ -1143,9 +1146,34 @@ function editDistance(a, b) {
 function renderAC() {
   const list = suggestions(stock.value);
   acIndex = -1;
-  stock.setAttribute('aria-expanded', String(list.length > 0));
+  stock.setAttribute('aria-expanded', String(list.length > 0 || stock.value.trim().length > 0));
   stockList.innerHTML = '';
-  stockList.classList.toggle('show', list.length > 0);
+  stockList.classList.toggle('show', list.length > 0 || stock.value.trim().length > 0);
+
+  // Always offer to search for the exact term if user typed something
+  if (stock.value.trim().length > 0) {
+    const term = stock.value.trim().toUpperCase();
+    // Check if exact match already exists at top
+    const exactMatch = list.length > 0 && list[0].symbol === term;
+
+    if (!exactMatch) {
+      const div = document.createElement('div');
+      div.className = 'ac-item';
+      div.innerHTML = `<strong>Search for "${term}"</strong>`;
+      div.setAttribute('role', 'option');
+      div.dataset.symbol = term;
+      div.addEventListener('mousedown', () => {
+        stock.value = term;
+        const si = document.getElementById('stockInsights'); if (si) si.value = stock.value;
+        stockList.classList.remove('show');
+        updateActiveCompany();
+        tryAutoFill(term);
+      });
+      // Prepend to list
+      stockList.prepend(div);
+    }
+  }
+
   list.forEach((item, i) => {
     const div = document.createElement('div');
     div.className = 'ac-item';
@@ -1156,8 +1184,12 @@ function renderAC() {
       const si = document.getElementById('stockInsights'); if (si) si.value = stock.value;
       stockList.classList.remove('show'); updateActiveCompany(); if (item.symbol) tryAutoFill(item.symbol);
     });
-    div.addEventListener('mouseover', () => { setACIndex(i); });
     stockList.appendChild(div);
+  });
+
+  // Re-index all children for keyboard nav
+  Array.from(stockList.children).forEach((child, idx) => {
+    child.addEventListener('mouseover', () => setACIndex(idx));
   });
 }
 stock.addEventListener('input', async (e) => {
@@ -1171,34 +1203,45 @@ stock.addEventListener('blur', () => setTimeout(() => stockList.classList.remove
 // keyboard navigation: ArrowUp / ArrowDown / Enter
 stock.addEventListener('keydown', (e) => {
   const items = Array.from(stockList.querySelectorAll('.ac-item'));
-  if (!items.length) return;
+
+  // Allow Enter to proceed even if no items (for custom stocks)
+  if (!items.length && e.key !== 'Enter') return;
+
   if (e.key === 'ArrowDown') {
     e.preventDefault();
-    setACIndex(Math.min(items.length - 1, acIndex + 1));
+    if (items.length) setACIndex(Math.min(items.length - 1, acIndex + 1));
   } else if (e.key === 'ArrowUp') {
     e.preventDefault();
-    setACIndex(Math.max(0, acIndex - 1));
+    if (items.length) setACIndex(Math.max(0, acIndex - 1));
   } else if (e.key === 'Enter') {
-    if (acIndex === -1) {
-      // if nothing selected, choose first
-      const first = items[0];
-      if (first) {
-        stock.value = first.dataset.symbol || first.textContent;
-        const si = document.getElementById('stockInsights'); if (si) si.value = stock.value;
-        updateActiveCompany();
-        if (first.dataset.symbol) tryAutoFill(first.dataset.symbol);
-      }
-    } else {
+    // 1. If an item is explicitly selected via keys
+    if (acIndex > -1 && items[acIndex]) {
       const sel = items[acIndex];
-      if (sel) {
-        stock.value = sel.dataset.symbol || sel.textContent;
-        const si = document.getElementById('stockInsights'); if (si) si.value = stock.value;
+      stock.value = sel.dataset.symbol || sel.textContent;
+      const si = document.getElementById('stockInsights'); if (si) si.value = stock.value;
+      updateActiveCompany();
+      if (sel.dataset.symbol) tryAutoFill(sel.dataset.symbol);
+    }
+    // 2. If no item selected but list has items, default to first (existing behavior)
+    else if (items.length > 0) {
+      const first = items[0];
+      stock.value = first.dataset.symbol || first.textContent;
+      const si = document.getElementById('stockInsights'); if (si) si.value = stock.value;
+      updateActiveCompany();
+      if (first.dataset.symbol) tryAutoFill(first.dataset.symbol);
+    }
+    // 3. If list is empty (custom stock like SOFI), use typed value
+    else {
+      const val = stock.value.trim();
+      if (val) {
         updateActiveCompany();
-        if (sel.dataset.symbol) tryAutoFill(sel.dataset.symbol);
+        tryAutoFill(val);
       }
     }
+
     stockList.classList.remove('show');
     // allow form submission if any, so don't preventDefault unless you need to
+    // e.preventDefault(); // Optional: prevent form submit if inside form
   }
 });
 
