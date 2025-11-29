@@ -675,6 +675,10 @@ async function tryAutoFill(symbol) {
 
   if (data.history && isPremium) {
     renderHistoryChart(data.name || sym, data.history);
+    // Also update Insights charts if they are visible or just in case user switches tab
+    if (typeof renderInsightsCharts === 'function') {
+      renderInsightsCharts(data);
+    }
   }
 }
 
