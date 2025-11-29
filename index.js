@@ -1,3 +1,4 @@
+console.log('Common Investor v3 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -103,6 +104,16 @@ const mobilePanels = $$('.step-panel');
 const mobileCalcBtn = $('#mobileCalculateBtn');
 const mobileSaveBtn = $('#mobileSaveBtn');
 const mobileResetBtn = $('#mobileResetBtn');
+
+// Tab Elements (Moved to top to prevent ReferenceError)
+const tabProjections = document.getElementById('tabProjections');
+const tabInsights = document.getElementById('tabInsights');
+const tabHub = document.getElementById('tabHub');
+const projectionsTab = document.getElementById('projectionsTab');
+const insightsTab = document.getElementById('insightsTab');
+const hubTab = document.getElementById('hubContent');
+
+const saveToHubBtn = document.getElementById('saveToHubBtn');
 
 function updateCompanyBanner() {
   if (!companyBanner) return;
@@ -923,7 +934,7 @@ function renderHistoryChart(name, historyData) {
 }
 
 // Save to Hub Logic
-const saveToHubBtn = document.getElementById('saveToHubBtn');
+// const saveToHubBtn ... defined at top
 const saveDeviceBtn = document.getElementById('saveDeviceBtn');
 const saveOptionsDialog = document.getElementById('saveOptionsDialog');
 const savePdfBtn = document.getElementById('savePdfBtn');
@@ -2817,13 +2828,13 @@ function init() {
 
 }
 
-// Tab Elements
-const tabProjections = document.getElementById('tabProjections');
-const tabInsights = document.getElementById('tabInsights');
-const tabHub = document.getElementById('tabHub');
-const projectionsTab = document.getElementById('projectionsTab');
-const insightsTab = document.getElementById('insightsTab');
-const hubTab = document.getElementById('hubContent');
+// Tab Elements (Moved to top)
+// const tabProjections ... defined at top
+// const tabInsights ... defined at top
+// const tabHub ... defined at top
+// const projectionsTab ... defined at top
+// const insightsTab ... defined at top
+// const hubTab ... defined at top
 
 // Sidebar elements removed (handled earlier)
 // const premiumSidebar = null;
