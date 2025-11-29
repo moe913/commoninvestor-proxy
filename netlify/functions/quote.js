@@ -32,6 +32,9 @@ exports.handler = async function (event, context) {
             history = incomeHistory.map(item => {
                 const rev = item.totalRevenue || 0;
                 const earn = item.netIncome || 0;
+                // Try to get historical shares
+                const histShares = item.dilutedAverageShares || item.basicAverageShares || 0;
+
                 return {
                     year: item.endDate ? new Date(item.endDate).getFullYear().toString() : 'N/A',
                     revenue: rev / 1e9,
@@ -43,6 +46,7 @@ exports.handler = async function (event, context) {
                     eps: 0, // Will approximate
                     fcf: 0, // Need cashflow module for this
                     roe: 0, // Need balance sheet for this
+                    shares: histShares / 1e9 // Billions
                 };
             }).reverse();
         } else if (earningsChart.length > 0) {
@@ -60,6 +64,7 @@ exports.handler = async function (event, context) {
                     eps: 0,
                     fcf: 0,
                     roe: 0,
+                    shares: 0 // Will fallback to current
                 };
             });
         } else if (cashflowHistory.length > 0) {
@@ -76,6 +81,7 @@ exports.handler = async function (event, context) {
                     eps: 0,
                     fcf: 0,
                     roe: 0,
+                    shares: 0 // Will fallback to current
                 };
             }).reverse();
         }
@@ -101,7 +107,8 @@ exports.handler = async function (event, context) {
                 earnGrowth: 0,
                 eps: 0,
                 fcf: 0,
-                roe: 0
+                roe: 0,
+                shares: sharesB // Use current shares for TTM
             });
         }
 
@@ -121,6 +128,11 @@ exports.handler = async function (event, context) {
             // EPS Approximation (using current shares as fallback for historical)
             if (sharesB > 0) {
                 cur.eps = cur.earnings / sharesB;
+            }
+
+            // Fallback for shares if missing in history
+            if (!cur.shares && sharesB > 0) {
+                cur.shares = sharesB;
             }
 
             // FCF & ROE - hard to get without full history of other modules aligned by year.
