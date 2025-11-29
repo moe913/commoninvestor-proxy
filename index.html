@@ -777,30 +777,41 @@
   </dialog>
 
   <!-- Premium Login Modal -->
-  <dialog id="loginModal" class="modal-overlay">
-    <div class="modal-content premium-modal">
-      <button id="closeLoginBtn" class="close-btn">×</button>
-      <div class="modal-header">
-        <h2>Unlock Common Investor <span class="gold-text">Premium</span></h2>
-        <p>Automate your research and save your best ideas.</p>
-      </div>
-      <div class="modal-body">
-        <ul class="feature-list">
-          <li>⚡️ <strong>Auto-Fill Financials:</strong> Instant data for 10,000+ stocks</li>
-          <li>💾 <strong>Save Your Work:</strong> Build a portfolio of projections</li>
-          <li>📊 <strong>Advanced Charts:</strong> Visualize your path to wealth</li>
-        </ul>
+  <dialog id="loginModal" class="modal">
+    <div class="modal-box">
+      <button id="closeModalBtn" class="close-btn" aria-label="Close modal">×</button>
 
-        <div class="pricing-card">
-          <div class="price">$9<span class="period">/mo</span></div>
-          <div class="sub-price">or $79/year (Save 25%)</div>
+      <!-- Initial View: Choose Action -->
+      <div id="authChoice">
+        <h3>Unlock Premium Features</h3>
+        <p>Get access to unlimited searches, Insights tab, and more.</p>
+        <div class="modal-actions vertical">
+          <a href="https://patreon.com/Common_Investor" target="_blank" class="btn primary full-width">🚀 Sign Up on
+            Patreon</a>
+          <button id="showLoginBtn" class="btn ghost full-width">Already a member? Log In</button>
         </div>
-
-        <button id="startTrialBtn" class="btn primary full-width big-btn"
-          onclick="enablePremiumMode(); try{document.getElementById('loginModal').close()}catch(e){this.closest('dialog').style.display='none'}">Start
-          7-Day Free Trial</button>
-        <p class="disclaimer">No credit card required for this prototype demo.</p>
       </div>
+
+      <!-- Login Form (Hidden) -->
+      <div id="loginFormView" style="display:none">
+        <h3>Member Login</h3>
+        <form id="loginForm">
+          <div class="field">
+            <label for="username">Username</label>
+            <input type="text" id="username" required autocomplete="username">
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" required autocomplete="current-password">
+          </div>
+          <p id="loginError" style="color:var(--error); font-size:0.9em; display:none"></p>
+          <div class="modal-actions">
+            <button type="submit" class="btn primary">Log In</button>
+            <button type="button" id="backToChoiceBtn" class="btn ghost">Back</button>
+          </div>
+        </form>
+      </div>
+
     </div>
   </dialog>
 

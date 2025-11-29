@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - User Management</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .admin-card {
+            background: var(--surface-2);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            background: var(--surface-1);
+            border: 1px solid var(--border);
+            color: var(--text-1);
+            border-radius: 6px;
+        }
+
+        .user-list {
+            margin-top: 40px;
+        }
+
+        .user-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .delete-btn {
+            color: var(--error);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>User Management</h1>
+
+    <div class="admin-card">
+        <h2>Add New Subscriber</h2>
+        <form id="addUserForm">
+            <div class="form-group">
+                <label>Admin Master Password</label>
+                <input type="password" id="adminPassword" required placeholder="Enter master password">
+            </div>
+            <div class="form-group">
+                <label>New Username</label>
+                <input type="text" id="newUsername" required placeholder="e.g. john_doe">
+            </div>
+            <div class="form-group">
+                <label>New Password</label>
+                <input type="text" id="newPassword" required placeholder="Generate a secure password">
+            </div>
+            <button type="submit" class="btn primary">Create User</button>
+        </form>
+    </div>
+
+    <div class="user-list admin-card">
+        <h2>Current Users</h2>
+        <div id="userListContainer">Loading...</div>
+    </div>
+
+    <script>
+        const form = document.getElementById('addUserForm');
+        const list = document.getElementById('userListContainer');
+
+        async function loadUsers() {
+            const adminPass = document.getElementById('adminPassword').value;
+            if (!adminPass) return;
+
+            try {
+                const res = await fetch('/.netlify/functions/admin-users?action=list', {
+                    headers: { 'Authorization': adminPass }
+                });
+                if (res.ok) {
+                    const users = await res.json();
+                    renderList(users);
+                }
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        function renderList(users) {
+            if (!users.length) {
+                list.innerHTML = '<p>No users found.</p>';
+                return;
+            }
+            list.innerHTML = users.map(u => `
+                <div class="user-item">
+                    <span>${u.username}</span>
+                    <span class="delete-btn" onclick="deleteUser('${u.username}')">Delete</span>
+                </div>
+            `).join('');
+        }
+
+        async function deleteUser(username) {
+            if (!confirm('Delete ' + username + '?')) return;
+            const adminPass = document.getElementById('adminPassword').value;
+
+            const res = await fetch('/.netlify/functions/admin-users', {
+                method: 'POST',
+                body: JSON.stringify({ action: 'delete', username, adminPassword: adminPass })
+            });
+
+            if (res.ok) {
+                alert('User deleted');
+                loadUsers();
+            } else {
+                alert('Failed to delete');
+            }
+        }
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const adminPassword = document.getElementById('adminPassword').value;
+            const username = document.getElementById('newUsername').value;
+            const password = document.getElementById('newPassword').value;
+
+            const res = await fetch('/.netlify/functions/admin-users', {
+                method: 'POST',
+                body: JSON.stringify({ action: 'add', username, password, adminPassword })
+            });
+
+            if (res.ok) {
+                alert('User created successfully!');
+                document.getElementById('newUsername').value = '';
+                document.getElementById('newPassword').value = '';
+                loadUsers();
+            } else {
+                const err = await res.text();
+                alert('Error: ' + err);
+            }
+        });
+
+        // Auto-load if password entered
+        document.getElementById('adminPassword').addEventListener('change', loadUsers);
+    </script>
+</body>
+
+</html>

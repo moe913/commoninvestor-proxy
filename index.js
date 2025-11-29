@@ -539,55 +539,90 @@ ensureStocksLoaded();
 const popular = ["Microsoft", "Apple", "Amazon", "Alphabet (Google)", "Tesla", "Meta (Facebook)", "NVIDIA", "Berkshire Hathaway", "Johnson & Johnson", "Visa", "Walmart", "JPMorgan Chase", "Exxon Mobil", "Mastercard", "Procter & Gamble", "Disney", "Bank of America", "Home Depot", "Intel", "Cisco", "Pfizer", "Coca-Cola", "PepsiCo", "Netflix", "Comcast", "Adobe", "AT&T", "Verizon", "IBM", "Salesforce"];
 
 // ===== Premium Logic =====
-let isPremium = false;
-const loginModal = $('#loginModal');
-const premiumBtn = $('#premiumBtn');
-const startTrialBtn = $('#startTrialBtn');
-const closeLoginBtn = $('#closeLoginBtn');
-const userProfile = $('#userProfile');
-const logoutBtn = $('#logoutBtn');
+let isPremium = localStorage.getItem('isPremium') === 'true';
+const loginModal = document.getElementById('loginModal');
+const premiumBtn = document.getElementById('premiumBtn');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const showLoginBtn = document.getElementById('showLoginBtn');
+const backToChoiceBtn = document.getElementById('backToChoiceBtn');
+const loginForm = document.getElementById('loginForm');
+const loginError = document.getElementById('loginError');
+const userProfile = document.getElementById('userProfile');
+const logoutBtn = document.getElementById('logoutBtn');
 
+// Initial State Check
+if (isPremium) {
+  enablePremiumMode();
+}
 
 if (premiumBtn) {
   premiumBtn.addEventListener('click', () => {
     if (typeof gtag === 'function') {
       gtag('event', 'premium_click', { 'event_category': 'conversion' });
     }
+    // Reset view
+    document.getElementById('authChoice').style.display = 'block';
+    document.getElementById('loginFormView').style.display = 'none';
     loginModal.showModal();
-    // loginModal.style.display = 'flex'; // Removed: CSS handles this via [open]
   });
 }
 
-if (closeLoginBtn) {
-  closeLoginBtn.addEventListener('click', () => {
-    loginModal.close();
-    // loginModal.style.display = 'none'; // Removed
+if (closeModalBtn) {
+  closeModalBtn.addEventListener('click', () => loginModal.close());
+}
+
+if (showLoginBtn) {
+  showLoginBtn.addEventListener('click', () => {
+    document.getElementById('authChoice').style.display = 'none';
+    document.getElementById('loginFormView').style.display = 'block';
   });
 }
 
-if (startTrialBtn) {
-  startTrialBtn.addEventListener('click', () => {
-    console.log('Starting trial...');
-    isPremium = true;
+if (backToChoiceBtn) {
+  backToChoiceBtn.addEventListener('click', () => {
+    document.getElementById('loginFormView').style.display = 'none';
+    document.getElementById('authChoice').style.display = 'block';
+  });
+}
 
-    // Enable premium mode first to ensure UI updates
-    enablePremiumMode();
+if (loginForm) {
+  loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    loginError.style.display = 'none';
 
-    // Then try to close modal
     try {
-      loginModal.close();
-    } catch (e) {
-      console.warn('Failed to close modal:', e);
-      loginModal.style.display = 'none'; // Fallback
-    }
+      const res = await fetch('/.netlify/functions/login', {
+        method: 'POST',
+        body: JSON.stringify({ username, password })
+      });
 
-    toast('Welcome to Premium! Auto-fill enabled.', 3000);
+      if (res.ok) {
+        const data = await res.json();
+        isPremium = true;
+        localStorage.setItem('isPremium', 'true');
+        localStorage.setItem('username', data.username);
+        enablePremiumMode();
+        loginModal.close();
+        toast(`Welcome back, ${data.username}!`, 3000);
+      } else {
+        loginError.textContent = 'Invalid username or password';
+        loginError.style.display = 'block';
+      }
+    } catch (err) {
+      console.error(err);
+      loginError.textContent = 'Login failed. Please try again.';
+      loginError.style.display = 'block';
+    }
   });
 }
 
 if (logoutBtn) {
   logoutBtn.addEventListener('click', () => {
     isPremium = false;
+    localStorage.removeItem('isPremium');
+    localStorage.removeItem('username');
     disablePremiumMode();
     toast('Logged out.', 2000);
   });
