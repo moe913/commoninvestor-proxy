@@ -170,8 +170,10 @@ exports.handler = async function (event, context) {
                 cur.fcf = fcf / 1e9;
             }
 
-            // PE (Only for TTM or if we had price history)
-            // For now, leave 0 for history to avoid misleading data
+            // PE (Use current PE as fallback for history to show *something*)
+            if (!cur.pe && quote.trailingPE) {
+                cur.pe = quote.trailingPE;
+            }
         }
 
         // TTM Specifics
