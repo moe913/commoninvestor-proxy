@@ -3,6 +3,9 @@
     "version": "1.0.0",
     "description": "Proxy server for Common Investor",
     "main": "index.js",
+    "scripts": {
+        "build": "echo 'No build command'"
+    },
     "dependencies": {
         "yahoo-finance2": "^2.11.3"
     }
