@@ -618,20 +618,25 @@ if (loginForm) {
   });
 }
 
+// Global Logout Function (attached via HTML onclick)
+window.handleLogout = function () {
+  console.log('Global logout triggered');
+  // 1. Clear State
+  isPremium = false;
+  localStorage.removeItem('isPremium');
+  localStorage.removeItem('username');
+
+  // 2. Update UI
+  disablePremiumMode();
+
+  // 3. Force Reload
+  window.location.reload();
+};
+
+// Remove old listener logic if present (cleanup)
 if (logoutBtn) {
-  console.log('Logout button found, attaching listener');
-  logoutBtn.addEventListener('click', () => {
-    console.log('Logout clicked');
-    isPremium = false;
-    localStorage.removeItem('isPremium');
-    localStorage.removeItem('username');
-    disablePremiumMode();
-    toast('Logged out.', 2000);
-    // Force reload to ensure clean state
-    setTimeout(() => window.location.reload(), 500);
-  });
-} else {
-  console.error('Logout button NOT found in DOM');
+  // We are using onclick in HTML now, so no need for addEventListener here
+  // But just in case, let's keep the element reference valid
 }
 
 
