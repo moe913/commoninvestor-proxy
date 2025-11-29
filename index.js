@@ -1,4 +1,4 @@
-console.log('Common Investor v7 Loaded');
+console.log('Common Investor v8 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -557,6 +557,7 @@ const popular = ["Microsoft", "Apple", "Amazon", "Alphabet (Google)", "Tesla", "
 
 // ===== Premium Logic =====
 let isPremium = localStorage.getItem('isPremium') === 'true';
+let isAutoCalcEnabled = false; // Default to false (Premium only)
 const loginModal = document.getElementById('loginModal');
 const premiumBtn = document.getElementById('premiumBtn');
 const closeModalBtn = document.getElementById('closeModalBtn');
@@ -2492,7 +2493,7 @@ const resetApp = () => {
 };
 
 // Auto-Calc State
-let isAutoCalcEnabled = false; // Default to false (Premium only)
+// Moved to top
 
 // ---------------------------------------------------------
 // 2. Event Listeners
