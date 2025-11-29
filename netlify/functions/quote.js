@@ -155,7 +155,8 @@ exports.handler = async function (event, context) {
             statusCode: 200,
             headers: {
                 "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Headers": "Content-Type"
+                "Access-Control-Allow-Headers": "Content-Type",
+                "Cache-Control": "public, s-maxage=3600, max-age=3600" // Cache for 1 hour to save Netlify credits
             },
             body: JSON.stringify(result)
         };
