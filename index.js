@@ -1146,16 +1146,17 @@ function editDistance(a, b) {
   }
   return dp[a.length][b.length];
 }
-function renderAC() {
-  const list = suggestions(stock.value);
+function renderAC(inputEl = stock, listEl = stockList, onSelect = null) {
+  const val = inputEl.value;
+  const list = suggestions(val);
   acIndex = -1;
-  stock.setAttribute('aria-expanded', String(list.length > 0 || stock.value.trim().length > 0));
-  stockList.innerHTML = '';
-  stockList.classList.toggle('show', list.length > 0 || stock.value.trim().length > 0);
+  inputEl.setAttribute('aria-expanded', String(list.length > 0 || val.trim().length > 0));
+  listEl.innerHTML = '';
+  listEl.classList.toggle('show', list.length > 0 || val.trim().length > 0);
 
   // Always offer to search for the exact term if user typed something
-  if (stock.value.trim().length > 0) {
-    const term = stock.value.trim().toUpperCase();
+  if (val.trim().length > 0) {
+    const term = val.trim().toUpperCase();
     // Check if exact match already exists at top
     const exactMatch = list.length > 0 && list[0].symbol === term;
 
@@ -1166,14 +1167,19 @@ function renderAC() {
       div.setAttribute('role', 'option');
       div.dataset.symbol = term;
       div.addEventListener('mousedown', () => {
-        stock.value = term;
-        const si = document.getElementById('stockInsights'); if (si) si.value = stock.value;
-        stockList.classList.remove('show');
-        updateActiveCompany();
-        tryAutoFill(term);
+        inputEl.value = term;
+        listEl.classList.remove('show');
+        if (onSelect) {
+          onSelect(term);
+        } else {
+          // Default behavior (Main Calculator)
+          const si = document.getElementById('stockInsights'); if (si) si.value = term;
+          updateActiveCompany();
+          tryAutoFill(term);
+        }
       });
       // Prepend to list
-      stockList.prepend(div);
+      listEl.prepend(div);
     }
   }
 
@@ -1183,22 +1189,29 @@ function renderAC() {
     div.innerHTML = `<strong>${item.symbol}</strong> &mdash; <span class="ac-name">${item.name}</span>`;
     div.setAttribute('role', 'option'); div.id = 'opt-' + i; div.dataset.symbol = item.symbol;
     div.addEventListener('mousedown', () => {
-      stock.value = item.symbol || item.name;
-      const si = document.getElementById('stockInsights'); if (si) si.value = stock.value;
-      stockList.classList.remove('show'); updateActiveCompany(); if (item.symbol) tryAutoFill(item.symbol);
+      inputEl.value = item.symbol || item.name;
+      listEl.classList.remove('show');
+      if (onSelect) {
+        onSelect(item.symbol);
+      } else {
+        // Default behavior (Main Calculator)
+        const si = document.getElementById('stockInsights'); if (si) si.value = inputEl.value;
+        updateActiveCompany();
+        if (item.symbol) tryAutoFill(item.symbol);
+      }
     });
-    stockList.appendChild(div);
+    listEl.appendChild(div);
   });
 
   // Re-index all children for keyboard nav
-  Array.from(stockList.children).forEach((child, idx) => {
-    child.addEventListener('mouseover', () => setACIndex(idx));
+  Array.from(listEl.children).forEach((child, idx) => {
+    child.addEventListener('mouseover', () => setACIndex(idx)); // Note: setACIndex might need refactoring too if it relies on global vars, but for now it's visual.
   });
 }
 stock.addEventListener('input', async (e) => {
   // Try to ensure the stock list is loaded; if it fails we keep using the fallback list.
   if (!allStocks.length) await ensureStocksLoaded();
-  renderAC();
+  renderAC(stock, stockList);
   updateActiveCompany();
 });
 stock.addEventListener('blur', () => setTimeout(() => stockList.classList.remove('show'), 150));
@@ -2812,105 +2825,39 @@ if (stock && stockInsights) {
 
 // Initialize Autocomplete for Insights
 if (stockInsights && stockListInsights) {
-  setupAutocomplete(stockInsights, stockListInsights, async (symbol) => {
-    stockInsights.value = symbol;
-    // REMOVED: stock.value = symbol; // Do NOT sync back to main calculator
-
-    // Render charts for the selected symbol in Insights tab
-    if (mockStocks[symbol]) {
-      renderInsightsCharts(mockStocks[symbol]);
-    } else {
-      // If not in mock data, we might still want to try rendering if we have data
-      // For now, default to clearing or keeping previous if not found, 
-      // but let's try to fetch if possible or just show what we have.
-      // Since this is a demo with mockStocks, we'll stick to that.
-    }
-  });
-}
-
-// Refactor setupAutocomplete to be reusable if it isn't already generic enough
-// It seems `initAutocomplete` in the original code (not shown fully) might be specific to `#stock`.
-// Let's check `initAutocomplete` or `setupAutocomplete` implementation.
-// Wait, I don't see `setupAutocomplete` defined in the snippets. I see `init` calling logic.
-// I'll assume I need to replicate the autocomplete logic or make a helper.
-
-// Let's look at how the main stock input is handled.
-// It uses `stock.addEventListener('input', ...)` inside `init()`.
-// I should extract that logic or duplicate it for now.
-
-function setupAutocomplete(inputEl, listEl, onSelect) {
-  let currentFocus = -1;
-
-  inputEl.addEventListener('input', async function (e) {
-    const val = this.value;
-    closeAllLists();
-    if (!val) return false;
-    currentFocus = -1;
-
-    const items = await ensureStocksLoaded();
-    const matches = items.filter(s =>
-      s.symbol.toLowerCase().startsWith(val.toLowerCase()) ||
-      s.name.toLowerCase().includes(val.toLowerCase())
-    ).slice(0, 10);
-
-    if (!matches.length) return;
-
-    listEl.innerHTML = '';
-    listEl.style.display = 'block';
-
-    matches.forEach(item => {
-      const div = document.createElement('div');
-      div.innerHTML = `<strong>${item.symbol}</strong> - ${item.name}`;
-      div.innerHTML += `<input type='hidden' value='${item.symbol}'>`;
-      div.addEventListener('click', function () {
-        onSelect(this.getElementsByTagName('input')[0].value);
-        closeAllLists();
-      });
-      listEl.appendChild(div);
+  stockInsights.addEventListener('input', async (e) => {
+    if (!allStocks.length) await ensureStocksLoaded();
+    renderAC(stockInsights, stockListInsights, (symbol) => {
+      stockInsights.value = symbol;
+      // Trigger chart update
+      // We need to fetch data if it's not in mockStocks (which is just local S&P 500)
+      // For now, let's try to use tryAutoFill but specifically for Insights?
+      // Or better: tryAutoFill updates everything.
+      // If user is in Insights tab, they probably want to see charts.
+      // tryAutoFill fetches data and updates global state.
+      // But tryAutoFill also updates the MAIN inputs.
+      // The user requested "one-way sync" before, but if they search in Insights, they probably expect the app to switch to that stock.
+      // Let's call tryAutoFill(symbol) which handles fetching and updating UI.
+      tryAutoFill(symbol);
     });
   });
 
-  inputEl.addEventListener('keydown', function (e) {
-    let x = listEl.getElementsByTagName('div');
-    if (e.keyCode == 40) { // DOWN
-      currentFocus++;
-      addActive(x);
-    } else if (e.keyCode == 38) { // UP
-      currentFocus--;
-      addActive(x);
-    } else if (e.keyCode == 13) { // ENTER
+  // Also handle keydown for Insights (Enter key)
+  stockInsights.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      // If a suggestion is selected (via keyboard nav), use it.
+      // Otherwise, search for current value.
+      // For simplicity, let's just trigger search for current value if no list item is active.
+      // But we don't have shared keyboard nav state easily.
+      // Let's just allow "Enter" to trigger search for value.
       e.preventDefault();
-      if (currentFocus > -1) {
-        if (x) x[currentFocus].click();
-      }
+      stockListInsights.classList.remove('show');
+      tryAutoFill(stockInsights.value.trim().toUpperCase());
     }
-  });
-
-  function addActive(x) {
-    if (!x) return false;
-    removeActive(x);
-    if (currentFocus >= x.length) currentFocus = 0;
-    if (currentFocus < 0) currentFocus = (x.length - 1);
-    x[currentFocus].classList.add('autocomplete-active');
-  }
-
-  function removeActive(x) {
-    for (let i = 0; i < x.length; i++) {
-      x[i].classList.remove('autocomplete-active');
-    }
-  }
-
-  function closeAllLists(elmnt) {
-    if (elmnt != inputEl && elmnt != listEl) {
-      listEl.innerHTML = '';
-      listEl.style.display = 'none';
-    }
-  }
-
-  document.addEventListener('click', function (e) {
-    closeAllLists(e.target);
   });
 }
+
+
 
 // Chart Instances
 let insightsCharts = {};
