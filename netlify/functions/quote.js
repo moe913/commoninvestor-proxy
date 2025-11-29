@@ -17,13 +17,14 @@ exports.handler = async function (event, context) {
         // Fetch History (Financials)
         // We need annual income statements for the graphs.
         // yahoo-finance2 'quoteSummary' with 'incomeStatementHistory' module gives this.
-        // Added 'earnings' module as fallback for stocks like SOFI that might miss standard income history.
-        const summary = await yahooFinance.quoteSummary(symbol, { modules: ['incomeStatementHistory', 'defaultKeyStatistics', 'financialData', 'earnings'] });
+        // Added 'earnings', 'cashflowStatementHistory', 'balanceSheetHistory' as fallbacks.
+        const summary = await yahooFinance.quoteSummary(symbol, { modules: ['incomeStatementHistory', 'defaultKeyStatistics', 'financialData', 'earnings', 'cashflowStatementHistory', 'balanceSheetHistory'] });
 
         let incomeHistory = summary.incomeStatementHistory?.incomeStatementHistory || [];
         const stats = summary.defaultKeyStatistics || {};
         const finData = summary.financialData || {};
         const earningsChart = summary.earnings?.financialsChart?.yearly || [];
+        const cashflowHistory = summary.cashflowStatementHistory?.cashflowStatements || [];
 
         // Fallback: If standard income history is empty, use earnings chart data
         let history = [];
@@ -44,18 +45,26 @@ exports.handler = async function (event, context) {
                 const rev = item.revenue || 0;
                 const earn = item.earnings || 0;
                 return {
-                    year: item.date ? item.date.toString() : 'N/A', // 'date' is usually the year (e.g. 2023)
+                    year: item.date ? item.date.toString() : 'N/A',
                     revenue: rev / 1e9,
                     earnings: earn / 1e9,
                     margin: rev ? (earn / rev) * 100 : 0,
                 };
             });
-            // Earnings chart is usually Oldest -> Newest, so no reverse needed? 
-            // Actually Yahoo usually sends Oldest -> Newest for charts. 
-            // Let's check: if first item year < last item year, it's Oldest -> Newest.
-            // Our frontend expects Oldest -> Newest.
-            // incomeHistory was Newest -> Oldest, so we reversed it.
-            // earningsChart is usually Oldest -> Newest. We'll keep it as is.
+        } else if (cashflowHistory.length > 0) {
+            // Last resort: Cashflow statement (Net Income is usually there)
+            // Revenue might be missing or called something else, but let's try.
+            // Actually cashflow usually starts with Net Income.
+            // We might not get Revenue here, so margin will be 0.
+            history = cashflowHistory.map(item => {
+                const earn = item.netIncome || 0;
+                return {
+                    year: item.endDate ? new Date(item.endDate).getFullYear().toString() : 'N/A',
+                    revenue: 0, // Missing in cashflow usually
+                    earnings: earn / 1e9,
+                    margin: 0,
+                };
+            }).reverse();
         }
 
         const result = {
