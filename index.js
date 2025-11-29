@@ -2907,6 +2907,9 @@ function renderInsightsCharts(stockData) {
             callbacks: {
               label: (context) => {
                 let val = context.raw;
+                if (typeof val === 'number') {
+                  val = val.toFixed(2);
+                }
                 return isPercent ? val + '%' : '$' + val;
               }
             }
@@ -2916,7 +2919,14 @@ function renderInsightsCharts(stockData) {
           y: {
             beginAtZero: true,
             grid: { color: 'rgba(128, 128, 128, 0.1)' },
-            ticks: { callback: (value) => isPercent ? value + '%' : value }
+            ticks: {
+              callback: (value) => {
+                if (typeof value === 'number') {
+                  value = value.toFixed(2);
+                }
+                return isPercent ? value + '%' : value;
+              }
+            }
           },
           x: { grid: { display: false } }
         }
