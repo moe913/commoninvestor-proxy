@@ -106,3 +106,8 @@ Since you have reached your Netlify credit limit, you should run the application
 5.  **Enable Premium** (Start Trial).
 6.  Search for any stock (e.g., "SOFI", "WDAY", "AAPL").
     - **Result**: It will work perfectly, fetching real data using your local internet connection, bypassing Netlify's cloud limits.
+
+### 9. Premium Restrictions & Upsell
+- **Visible but Locked Tabs**: The "Insights" and "My Hub" tabs are now visible to all users. However, clicking them while on the free plan displays a "Locked" overlay with a call-to-action to upgrade.
+- **Calculate Button Interception**: Clicking "Calculate Future" (or the mobile calculate button) on the free plan now triggers the "Go Premium" modal, showcasing the benefits of upgrading.
+- **Community List**: The "Community's Most Calculated" list remains locked for free users.

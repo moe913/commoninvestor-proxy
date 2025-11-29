@@ -1,4 +1,4 @@
-console.log('Common Investor v3 Loaded');
+console.log('Common Investor v4 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1220,8 +1220,6 @@ function enablePremiumMode() {
   }
 
   if (caseModeBtn) caseModeBtn.style.display = 'inline-flex';
-  if (tabInsights) tabInsights.style.display = 'inline-block';
-  if (tabHub) tabHub.style.display = 'inline-block';
 
   const autoCalcBtn = document.getElementById('autoCalcBtn');
   if (autoCalcBtn) autoCalcBtn.style.display = 'block';
@@ -1245,8 +1243,6 @@ function disablePremiumMode() {
   if (premiumBtn) premiumBtn.style.display = 'block';
   if (userProfile) userProfile.style.display = 'none';
 
-  if (tabInsights) tabInsights.style.display = 'none';
-  if (tabHub) tabHub.style.display = 'none';
   switchTab('projections');
 
   const autoCalcBtn = document.getElementById('autoCalcBtn');
@@ -2593,6 +2589,12 @@ if (calcFutureBtn) {
     });
   };
   calcFutureBtn.addEventListener('click', () => {
+    // Premium Check
+    if (!isPremium) {
+      showLoginModal();
+      return;
+    }
+
     if (typeof gtag === 'function') {
       gtag('event', 'calculate_projection', { 'event_category': 'engagement', 'event_label': stock.value || 'Unknown' });
     }
@@ -2715,6 +2717,11 @@ if (mobilePanels.length) {
 
   if (mobileCalcBtn) {
     mobileCalcBtn.addEventListener('click', () => {
+      // Premium Check
+      if (!isPremium) {
+        showLoginModal();
+        return;
+      }
       if (activeMobileStep === 'current') calcCurrentBtn?.click();
       else calcFutureBtn?.click();
     });
@@ -2851,6 +2858,23 @@ if (tabInsights) tabInsights.addEventListener('click', () => {
 });
 if (tabHub) tabHub.addEventListener('click', () => switchTab('hub'));
 
+// Helper for Locked View
+function renderLockedView(container) {
+  if (!container) return;
+  container.innerHTML = `
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 400px; text-align: center; padding: 20px;">
+      <div style="font-size: 3rem; margin-bottom: 16px;">🔒</div>
+      <h2 style="margin-bottom: 8px;">Premium Feature</h2>
+      <p style="color: var(--muted); margin-bottom: 24px; max-width: 400px;">
+        Unlock advanced insights, unlimited history, and your personal research hub.
+      </p>
+      <button class="btn primary special-btn" onclick="document.getElementById('loginModal').showModal()">
+        💎 Unlock Premium
+      </button>
+    </div>
+  `;
+}
+
 function switchTab(tabName) {
   // Reset all
   [tabProjections, tabInsights, tabHub].forEach(el => el && el.classList.remove('active'));
@@ -2862,16 +2886,14 @@ function switchTab(tabName) {
     if (tabProjections) tabProjections.classList.add('active');
     if (projectionsTab) projectionsTab.classList.add('active');
   } else if (tabName === 'insights') {
-    // Check Premium
-    if (!isPremium) {
-      showLoginModal();
-      // Revert to projections if denied? Or just stay. 
-      // Better to switch back to projections visually if we didn't switch.
-      // But for now, let's just return.
-      return;
-    }
     if (tabInsights) tabInsights.classList.add('active');
     if (insightsTab) insightsTab.classList.add('active');
+
+    // Check Premium
+    if (!isPremium) {
+      renderLockedView(insightsTab);
+      return;
+    }
 
     // Render charts if stock selected
     const symbol = stock.value.toUpperCase();
@@ -2881,17 +2903,14 @@ function switchTab(tabName) {
       renderInsightsCharts(mockStocks['META']);
     }
   } else if (tabName === 'hub') {
-    // Check Premium
-    if (!isPremium) {
-      showLoginModal();
-      return;
-    }
     if (tabHub) tabHub.classList.add('active');
     if (hubTab) hubTab.classList.add('active');
 
-    // Show Hub Content
-    // const hubContent = document.getElementById('hubContent');
-    // if (hubContent) hubContent.style.display = 'block'; // Removed to let CSS class handle it
+    // Check Premium
+    if (!isPremium) {
+      renderLockedView(hubTab);
+      return;
+    }
 
     // Render/Update Hub content
     renderSavedItems();
