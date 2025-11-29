@@ -1,4 +1,5 @@
-const yahooFinance = require('yahoo-finance2').default;
+const YahooFinance = require('yahoo-finance2').default;
+const yahooFinance = new YahooFinance();
 
 exports.handler = async function (event, context) {
     const symbol = event.queryStringParameters.symbol;
@@ -116,18 +117,42 @@ exports.handler = async function (event, context) {
         const balanceSheetMap = new Map();
         const balanceSheets = summary.balanceSheetHistory?.balanceSheetStatements || [];
         balanceSheets.forEach(item => {
+            console.log('BS Item:', JSON.stringify(item));
             const year = item.endDate ? new Date(item.endDate).getFullYear().toString() : '';
             if (year) balanceSheetMap.set(year, item.totalStockholderEquity || 0);
         });
 
         // Map Cashflow for FCF
         const cashflowMap = new Map();
+        // cashflowHistory is already declared above, so we reuse it.
+        if (cashflowHistory.length > 0) console.log('CF Item Keys:', Object.keys(cashflowHistory[0]));
+
         cashflowHistory.forEach(item => {
             const year = item.endDate ? new Date(item.endDate).getFullYear().toString() : '';
             if (year) {
-                const opCash = item.totalCashFromOperatingActivities || 0;
+                const opCash = item.totalCashFromOperatingActivities || item.operatingCashflow || 0;
                 const capex = item.capitalExpenditures || 0;
                 cashflowMap.set(year, opCash + capex); // Capex is usually negative
+            }
+        });
+
+        // Fetch Fundamentals Time Series (Fallback for missing history)
+        let fundamentals = [];
+        try {
+            const fundResult = await yahooFinance.fundamentalsTimeSeries(symbol, { period1: '2019-01-01', module: 'all' });
+            fundamentals = fundResult;
+        } catch (e) {
+            if (e.result) fundamentals = e.result;
+        }
+
+        const fundamentalsMap = new Map();
+        fundamentals.forEach(item => {
+            const year = item.date ? new Date(item.date).getFullYear().toString() : '';
+            if (year) {
+                fundamentalsMap.set(year, {
+                    equity: item.commonStockEquity || item.stockholdersEquity || item.totalStockholderEquity || 0,
+                    fcf: item.freeCashFlow || 0
+                });
             }
         });
 
@@ -159,13 +184,21 @@ exports.handler = async function (event, context) {
             }
 
             // ROE (Earnings / Equity)
-            const equity = balanceSheetMap.get(cur.year);
+            let equity = balanceSheetMap.get(cur.year);
+            if (!equity && fundamentalsMap.has(cur.year)) {
+                equity = fundamentalsMap.get(cur.year).equity;
+            }
+
             if (equity) {
                 cur.roe = (cur.earnings / (equity / 1e9)) * 100;
             }
 
             // FCF
-            const fcf = cashflowMap.get(cur.year);
+            let fcf = cashflowMap.get(cur.year);
+            if (!fcf && fundamentalsMap.has(cur.year)) {
+                fcf = fundamentalsMap.get(cur.year).fcf;
+            }
+
             if (fcf) {
                 cur.fcf = fcf / 1e9;
             }
@@ -178,6 +211,15 @@ exports.handler = async function (event, context) {
 
         // TTM Specifics
         const ttmEntry = history.find(h => h.year === 'TTM');
+        if (ttmEntry) {
+            // Fallback to financialData for TTM ROE/FCF if calculation failed
+            if (!ttmEntry.roe && summary.financialData && summary.financialData.returnOnEquity) {
+                ttmEntry.roe = summary.financialData.returnOnEquity * 100;
+            }
+            if (!ttmEntry.fcf && summary.financialData && summary.financialData.freeCashflow) {
+                ttmEntry.fcf = summary.financialData.freeCashflow / 1e9;
+            }
+        }
         if (ttmEntry) {
             ttmEntry.pe = quote.trailingPE || 0;
             // TTM ROE/FCF could be approximated if we had TTM balance sheet/cashflow

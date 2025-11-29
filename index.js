@@ -915,8 +915,71 @@ if (saveToHubBtn) {
     const ticker = stock.value || 'Unknown';
     const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 
+    // Capture all inputs
+    let revGrowth = 0;
+    if (frMode.value === 'absolute') revGrowth = parseFloat(frAbs.value) || 0;
+    else if (frMode.value === 'percentage') revGrowth = parseFloat(frPct.value) || 0;
+    else if (frMode.value === 'compounded') revGrowth = parseFloat(frCagr.value) || 0;
+
+    let sharesChange = 0;
+    if (fsMode.value === 'absolute') sharesChange = parseFloat(fsAbs.value) || 0;
+    else if (fsMode.value === 'percentage') sharesChange = parseFloat(fsPct.value) || 0;
+    else if (fsMode.value === 'compounded') sharesChange = parseFloat(fsCagr.value) || 0;
+
+    const inputs = {
+      revenue: parseFloat(revenue.value) || 0,
+      shares: parseFloat(shares.value) || 0,
+
+      // Future Inputs
+      futureRevenueMode: frMode.value,
+      futureRevenueGrowth: revGrowth,
+      // Note: For Bull case, we need to handle similar logic if we want to support it fully. 
+      // For now, let's assume single case or just capture the base values if dual is not active.
+      // If dual is active, we should capture base/bull specific inputs.
+      // But to keep it simple and working for the main case:
+
+      futureMargin: parseFloat(document.getElementById('futureProfitMargin').value) || 0,
+
+      // FCF Margin (if it exists, check ID)
+      futureFCFMargin: parseFloat(document.getElementById('futureFCFMargin')?.value) || 0,
+
+      futureSharesMode: fsMode.value,
+      futureSharesChange: sharesChange,
+
+      futurePE: parseFloat(document.getElementById('futurePE').value) || 0,
+
+      discountRate: parseFloat(document.getElementById('discountRate').value) || 0,
+      years: parseFloat(document.getElementById('years').value) || 5
+    };
+
+    // Capture Snapshot Data
+    const curPriceVal = parseFloat(price.value) || 0;
+    const futPriceText = document.getElementById('futureStockPrice')?.textContent || '0';
+    const futPriceVal = parseFloat(futPriceText.replace(/[$,]/g, '')) || 0;
+
+    // Calculate Upside and CAGR
+    let upside = 0;
+    let cagr = 0;
+    if (curPriceVal > 0 && futPriceVal > 0) {
+      upside = ((futPriceVal / curPriceVal) - 1) * 100;
+      cagr = (Math.pow(futPriceVal / curPriceVal, 1 / 5) - 1) * 100;
+    }
+
+    const currentMetrics = {
+      price: curPriceVal > 0 ? '$' + curPriceVal.toFixed(2) : '-',
+      pe: pe.value || '-',
+      revenue: revenue.value ? '$' + revenue.value + (document.getElementById('revenueSuffix').value || '') : '-',
+      netIncome: document.getElementById('earningsValue')?.textContent || '-'
+    };
+
+    const results = {
+      futurePrice: futPriceVal > 0 ? '$' + futPriceVal.toFixed(2) : '-',
+      upside: upside !== 0 ? upside.toFixed(1) + '%' : '-',
+      cagr: cagr !== 0 ? cagr.toFixed(1) + '%' : '-'
+    };
+
     // Save to localStorage
-    const newItem = { ticker, date, timestamp: Date.now() };
+    const newItem = { ticker, date, timestamp: Date.now(), inputs, currentMetrics, results };
     const savedItems = JSON.parse(localStorage.getItem('savedHubItems') || '[]');
     savedItems.unshift(newItem);
     localStorage.setItem('savedHubItems', JSON.stringify(savedItems));
@@ -925,6 +988,7 @@ if (saveToHubBtn) {
 
     // Switch to Hub tab to show it
     switchTab('hub');
+    renderSavedItems(); // Ensure list is updated immediately
   });
 }
 
@@ -944,18 +1008,58 @@ function renderSavedItems() {
     const div = document.createElement('div');
     div.className = 'saved-item';
     div.innerHTML = `
-      <div style="flex:1">
-        <span>${item.ticker} Analysis</span>
-        <span class="date" style="margin-left:8px">${item.date}</span>
+      <div class="saved-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px; cursor:pointer">
+        <div style="flex:1">
+          <span style="font-weight:600; font-size:1.1em">${item.ticker} Analysis</span>
+          <span class="date" style="margin-left:8px; opacity:0.7; font-size:0.9em">${item.date}</span>
+        </div>
+        <button class="btn ghost sm delete-btn" style="padding:4px 8px; color:var(--muted); border:none" aria-label="Delete">×</button>
       </div>
-      <button class="btn ghost sm delete-btn" style="padding:4px 8px; color:var(--muted); border:none" aria-label="Delete">×</button>
+      
+      <div class="saved-details" style="display:none; padding:0 16px 16px 16px; border-top:1px solid var(--border)">
+        <!-- Section 1: Snapshot at Time -->
+        <div style="margin-bottom:16px">
+            <h4 style="margin:12px 0 8px; font-size:0.9em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.8">Snapshot at Time</h4>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap:8px; font-size:0.9em">
+                <div><div style="opacity:0.6">Price</div><div>${item.currentMetrics?.price || '-'}</div></div>
+                <div><div style="opacity:0.6">P/E</div><div>${item.currentMetrics?.pe || '-'}</div></div>
+                <div><div style="opacity:0.6">Revenue</div><div>$${fmtMB(item.currentMetrics?.revenue || 0)}</div></div>
+                <div><div style="opacity:0.6">Net Income</div><div>$${fmtMB(item.currentMetrics?.netIncome || 0)}</div></div>
+            </div>
+        </div>
+
+        <!-- Section 2: Your Thesis -->
+        <div style="margin-bottom:16px">
+            <h4 style="margin:12px 0 8px; font-size:0.9em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.8">Your Thesis</h4>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap:8px; font-size:0.9em">
+                <div><div style="opacity:0.6">Rev Growth</div><div>${item.inputs?.futureRevenueGrowth || 0}%</div></div>
+                <div><div style="opacity:0.6">Profit Margin</div><div>${item.inputs?.futureMargin || 0}%</div></div>
+                <div><div style="opacity:0.6">Shares Chg</div><div>${item.inputs?.futureSharesChange || 0}%</div></div>
+                <div><div style="opacity:0.6">Terminal P/E</div><div>${item.inputs?.futurePE || 0}</div></div>
+            </div>
+        </div>
+
+        <!-- Section 3: The Outcome -->
+        <div>
+            <h4 style="margin:12px 0 8px; font-size:0.9em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.8; color:var(--accent)">The Outcome</h4>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap:8px; font-size:1.1em; font-weight:600">
+                <div><div style="font-size:0.7em; opacity:0.6; font-weight:400">Future Price</div><div>${item.results?.futurePrice || '-'}</div></div>
+                <div><div style="font-size:0.7em; opacity:0.6; font-weight:400">Upside</div><div style="color:var(--success)">${item.results?.upside || '-'}</div></div>
+                <div><div style="font-size:0.7em; opacity:0.6; font-weight:400">CAGR</div><div style="color:var(--success)">${item.results?.cagr || '-'}</div></div>
+            </div>
+        </div>
+      </div>
     `;
 
-    // Load item on click (excluding delete button)
-    div.addEventListener('click', (e) => {
+    // Toggle details on click
+    const header = div.querySelector('.saved-header');
+    const details = div.querySelector('.saved-details');
+
+    header.addEventListener('click', (e) => {
       if (e.target.closest('.delete-btn')) return;
-      // Future: Load this calculation
-      toast('Loading saved items is coming soon!', 2000);
+      const isHidden = details.style.display === 'none';
+      details.style.display = isHidden ? 'block' : 'none';
+      div.style.background = isHidden ? 'var(--surface-2)' : ''; // Highlight when expanded
     });
 
     // Delete logic
@@ -2934,7 +3038,7 @@ function renderInsightsCharts(stockData) {
   const labels = h.map(d => d.year);
 
   // Helper to create/update chart
-  const updateChart = (id, label, dataKey, color, isPercent = false) => {
+  const updateChart = (id, label, dataKey, color, formatType = 'currency') => {
     const ctx = document.getElementById(id);
     if (!ctx) return;
 
@@ -2971,7 +3075,9 @@ function renderInsightsCharts(stockData) {
                 if (typeof val === 'number') {
                   val = val.toFixed(2);
                 }
-                return isPercent ? val + '%' : '$' + val;
+                if (formatType === 'percent') return val + '%';
+                if (formatType === 'currency') return '$' + val;
+                return val;
               }
             }
           },
@@ -3001,7 +3107,9 @@ function renderInsightsCharts(stockData) {
                 if (typeof value === 'number') {
                   value = value.toFixed(2);
                 }
-                return isPercent ? value + '%' : value;
+                if (formatType === 'percent') return value + '%';
+                if (formatType === 'currency') return '$' + value;
+                return value;
               }
             }
           },
@@ -3027,25 +3135,25 @@ function renderInsightsCharts(stockData) {
   };
 
   // 1. Revenue
-  updateChart('chartRevenue', 'Revenue ($B)', 'revenue', '#2563eb');
+  updateChart('chartRevenue', 'Revenue ($B)', 'revenue', '#2563eb', 'currency');
   // 2. Revenue Growth
-  updateChart('chartRevenueGrowth', 'Growth (%)', 'revGrowth', '#3b82f6', true);
+  updateChart('chartRevenueGrowth', 'Growth (%)', 'revGrowth', '#3b82f6', 'percent');
   // 3. Earnings
-  updateChart('chartEarnings', 'Earnings ($B)', 'earnings', '#10b981');
+  updateChart('chartEarnings', 'Earnings ($B)', 'earnings', '#10b981', 'currency');
   // 4. Earnings Growth
-  updateChart('chartEarningsGrowth', 'Growth (%)', 'earnGrowth', '#34d399', true);
+  updateChart('chartEarningsGrowth', 'Growth (%)', 'earnGrowth', '#34d399', 'percent');
   // 5. EPS
-  updateChart('chartEPS', 'EPS ($)', 'eps', '#f59e0b');
+  updateChart('chartEPS', 'EPS ($)', 'eps', '#f59e0b', 'currency');
   // 6. FCF
-  updateChart('chartFCF', 'FCF ($B)', 'fcf', '#8b5cf6');
+  updateChart('chartFCF', 'FCF ($B)', 'fcf', '#8b5cf6', 'currency');
   // 7. Margin
-  updateChart('chartMargin', 'Margin (%)', 'margin', '#ec4899', true);
+  updateChart('chartMargin', 'Margin (%)', 'margin', '#ec4899', 'percent');
   // 8. Shares
-  updateChart('chartShares', 'Shares (B)', 'shares', '#6366f1');
+  updateChart('chartShares', 'Shares (B)', 'shares', '#6366f1', 'number');
   // 9. PE
-  updateChart('chartPE', 'P/E', 'pe', '#f43f5e');
+  updateChart('chartPE', 'P/E', 'pe', '#f43f5e', 'number');
   // 10. ROE
-  updateChart('chartROE', 'ROE (%)', 'roe', '#14b8a6', true);
+  updateChart('chartROE', 'ROE (%)', 'roe', '#14b8a6', 'percent');
 }
 
 init();
