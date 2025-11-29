@@ -1,4 +1,4 @@
-console.log('Common Investor v6 Loaded');
+console.log('Common Investor v7 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -733,9 +733,9 @@ async function tryAutoFill(symbol) {
   shares.value = (data.shares / 1e9).toFixed(2);
   shSuf.value = 'B';
 
-  pe.value = data.pe;
-  pm.value = data.profitMargin;
-  price.value = data.price;
+  pe.value = data.pe ? parseFloat(data.pe).toFixed(2) : '';
+  pm.value = data.profitMargin ? parseFloat(data.profitMargin).toFixed(2) : '';
+  price.value = data.price ? parseFloat(data.price).toFixed(2) : '';
 
   calculateCurrent();
   toast(`Auto-filled data for ${data.name || sym}`, 2000);
@@ -2172,9 +2172,9 @@ function applyState(s) {
   shares.value = s.shares || '';
   if (shSuf) shSuf.value = s.shSuf || '';
 
-  pe.value = s.pe || '';
-  pm.value = s.pm || '';
-  price.value = s.price || '';
+  pe.value = s.pe ? parseFloat(s.pe).toFixed(2) : '';
+  pm.value = s.pm ? parseFloat(s.pm).toFixed(2) : '';
+  price.value = s.price ? parseFloat(s.price).toFixed(2) : '';
 
   frMode.value = s.frMode || 'absolute';
   if (frAbs) frAbs.value = s.frAbs || '';
