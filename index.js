@@ -602,6 +602,9 @@ async function tryAutoFill(symbol) {
   if (!symbol) return;
   const sym = symbol.toUpperCase();
 
+  // Show loading state
+  toast(`Searching for ${sym}...`, 2000);
+
   // --- Dynamic Fetch (Proxy) ---
   // Try to fetch full data from our secure proxy (FMP)
   let proxyData = null;
