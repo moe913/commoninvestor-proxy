@@ -550,6 +550,9 @@ const logoutBtn = $('#logoutBtn');
 
 if (premiumBtn) {
   premiumBtn.addEventListener('click', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'premium_click', { 'event_category': 'conversion' });
+    }
     loginModal.showModal();
     // loginModal.style.display = 'flex'; // Removed: CSS handles this via [open]
   });
@@ -912,6 +915,9 @@ if (saveExcelBtn) {
 
 if (saveToHubBtn) {
   saveToHubBtn.addEventListener('click', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'save_to_hub', { 'event_category': 'engagement', 'event_label': stock.value || 'Unknown' });
+    }
     try {
       const ticker = stock.value || 'Unknown';
       const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
@@ -2511,6 +2517,9 @@ if (calcFutureBtn) {
     });
   };
   calcFutureBtn.addEventListener('click', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'calculate_projection', { 'event_category': 'engagement', 'event_label': stock.value || 'Unknown' });
+    }
     futureAutoEnabled = true;
     revealSummary();
     calculateCurrent();
@@ -2758,7 +2767,12 @@ const hubTab = document.getElementById('hubContent');
 
 // Tab Event Listeners
 if (tabProjections) tabProjections.addEventListener('click', () => switchTab('projections'));
-if (tabInsights) tabInsights.addEventListener('click', () => switchTab('insights'));
+if (tabInsights) tabInsights.addEventListener('click', () => {
+  if (typeof gtag === 'function') {
+    gtag('event', 'view_insights', { 'event_category': 'navigation', 'event_label': stock.value || 'Unknown' });
+  }
+  switchTab('insights');
+});
 if (tabHub) tabHub.addEventListener('click', () => switchTab('hub'));
 
 function switchTab(tabName) {
