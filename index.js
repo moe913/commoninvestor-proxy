@@ -928,7 +928,7 @@ if (saveToHubBtn) {
 }
 
 function renderSavedItems() {
-  const savedList = document.getElementById('savedItemsList');
+  const savedList = document.getElementById('hubSavedList');
   if (!savedList) return;
 
   const savedItems = JSON.parse(localStorage.getItem('savedHubItems') || '[]');
