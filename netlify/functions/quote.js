@@ -83,6 +83,28 @@ exports.handler = async function (event, context) {
         // Post-process history to calculate growth and approximations
         const sharesB = (stats.sharesOutstanding || 0) / 1e9;
 
+        // Add TTM entry if we have data
+        // finData usually contains TTM values
+        const ttmRevenue = finData.totalRevenue || 0;
+        const ttmMargin = finData.profitMargins || 0; // ratio
+        const ttmEarnings = ttmRevenue * ttmMargin; // Estimate earnings from margin if netIncome not explicit, or use netIncomeToCommon if available
+        // actually finData.netIncomeToCommon is usually TTM net income
+        const ttmNetIncome = finData.netIncomeToCommon || ttmEarnings;
+
+        if (ttmRevenue > 0 || ttmNetIncome > 0) {
+            history.push({
+                year: 'TTM',
+                revenue: ttmRevenue / 1e9,
+                earnings: ttmNetIncome / 1e9,
+                margin: ttmMargin * 100,
+                revGrowth: 0,
+                earnGrowth: 0,
+                eps: 0,
+                fcf: 0,
+                roe: 0
+            });
+        }
+
         for (let i = 0; i < history.length; i++) {
             const cur = history[i];
             const prev = i > 0 ? history[i - 1] : null;
