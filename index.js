@@ -221,7 +221,8 @@ updateDate();
 let allStocks = [];
 let _stocksLoadingPromise = null;
 // Try several reasonable paths so hosting environments (and case-sensitivity) are covered.
-const STOCK_SOURCES = ['./stocks.json', 'stocks.json', '/stocks.json', 'Stocks.json', 'stocks.JSON', 'Stocks.JSON'];
+// Try several reasonable paths so hosting environments (and case-sensitivity) are covered.
+const STOCK_SOURCES = []; // Empty to skip checking for missing stocks.json and rely on sp500.json immediately
 
 // visible notice element under the stock input to inform about loading issues
 const stocksNotice = (() => {
