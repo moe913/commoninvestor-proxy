@@ -112,6 +112,25 @@ exports.handler = async function (event, context) {
             });
         }
 
+        // Map Balance Sheet for ROE
+        const balanceSheetMap = new Map();
+        const balanceSheets = summary.balanceSheetHistory?.balanceSheetStatements || [];
+        balanceSheets.forEach(item => {
+            const year = item.endDate ? new Date(item.endDate).getFullYear().toString() : '';
+            if (year) balanceSheetMap.set(year, item.totalStockholderEquity || 0);
+        });
+
+        // Map Cashflow for FCF
+        const cashflowMap = new Map();
+        cashflowHistory.forEach(item => {
+            const year = item.endDate ? new Date(item.endDate).getFullYear().toString() : '';
+            if (year) {
+                const opCash = item.totalCashFromOperatingActivities || 0;
+                const capex = item.capitalExpenditures || 0;
+                cashflowMap.set(year, opCash + capex); // Capex is usually negative
+            }
+        });
+
         for (let i = 0; i < history.length; i++) {
             const cur = history[i];
             const prev = i > 0 ? history[i - 1] : null;
@@ -120,24 +139,48 @@ exports.handler = async function (event, context) {
             if (prev && prev.revenue > 0) {
                 cur.revGrowth = ((cur.revenue - prev.revenue) / prev.revenue) * 100;
             }
-            if (prev && prev.earnings > 0) { // Simple growth, handle negative base carefully? standard formula
-                // If prev was negative, growth formula is tricky. Let's keep simple:
+            if (prev && prev.earnings > 0) {
                 cur.earnGrowth = ((cur.earnings - prev.earnings) / Math.abs(prev.earnings)) * 100;
             }
 
-            // EPS Approximation (using current shares as fallback for historical)
-            if (sharesB > 0) {
-                cur.eps = cur.earnings / sharesB;
-            }
-
-            // Fallback for shares if missing in history
+            // Fallback for shares if missing
             if (!cur.shares && sharesB > 0) {
                 cur.shares = sharesB;
             }
 
-            // FCF & ROE - hard to get without full history of other modules aligned by year.
-            // For now, leave as 0 or try to map if we have the data.
-            // Let's just ensure the keys exist so the frontend doesn't crash.
+            // EPS Approximation
+            if (!cur.eps && cur.shares > 0) {
+                cur.eps = cur.earnings / cur.shares;
+            }
+
+            // Margin Fallback
+            if (!cur.margin && cur.revenue > 0) {
+                cur.margin = (cur.earnings / cur.revenue) * 100;
+            }
+
+            // ROE (Earnings / Equity)
+            const equity = balanceSheetMap.get(cur.year);
+            if (equity) {
+                cur.roe = (cur.earnings / (equity / 1e9)) * 100;
+            }
+
+            // FCF
+            const fcf = cashflowMap.get(cur.year);
+            if (fcf) {
+                cur.fcf = fcf / 1e9;
+            }
+
+            // PE (Only for TTM or if we had price history)
+            // For now, leave 0 for history to avoid misleading data
+        }
+
+        // TTM Specifics
+        const ttmEntry = history.find(h => h.year === 'TTM');
+        if (ttmEntry) {
+            ttmEntry.pe = quote.trailingPE || 0;
+            // TTM ROE/FCF could be approximated if we had TTM balance sheet/cashflow
+            // For now, let's leave them as 0 or carry forward last year's? 
+            // Better to leave 0 than guess.
         }
 
         const result = {
