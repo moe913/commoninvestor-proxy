@@ -37,6 +37,12 @@ exports.handler = async function (event, context) {
                     revenue: rev / 1e9,
                     earnings: earn / 1e9,
                     margin: rev ? (earn / rev) * 100 : 0,
+                    // Add placeholders for other metrics to match frontend expectations
+                    revGrowth: 0, // Will calculate below
+                    earnGrowth: 0, // Will calculate below
+                    eps: 0, // Will approximate
+                    fcf: 0, // Need cashflow module for this
+                    roe: 0, // Need balance sheet for this
                 };
             }).reverse();
         } else if (earningsChart.length > 0) {
@@ -49,22 +55,55 @@ exports.handler = async function (event, context) {
                     revenue: rev / 1e9,
                     earnings: earn / 1e9,
                     margin: rev ? (earn / rev) * 100 : 0,
+                    revGrowth: 0,
+                    earnGrowth: 0,
+                    eps: 0,
+                    fcf: 0,
+                    roe: 0,
                 };
             });
         } else if (cashflowHistory.length > 0) {
-            // Last resort: Cashflow statement (Net Income is usually there)
-            // Revenue might be missing or called something else, but let's try.
-            // Actually cashflow usually starts with Net Income.
-            // We might not get Revenue here, so margin will be 0.
+            // Last resort: Cashflow statement
             history = cashflowHistory.map(item => {
                 const earn = item.netIncome || 0;
                 return {
                     year: item.endDate ? new Date(item.endDate).getFullYear().toString() : 'N/A',
-                    revenue: 0, // Missing in cashflow usually
+                    revenue: 0,
                     earnings: earn / 1e9,
                     margin: 0,
+                    revGrowth: 0,
+                    earnGrowth: 0,
+                    eps: 0,
+                    fcf: 0,
+                    roe: 0,
                 };
             }).reverse();
+        }
+
+        // Post-process history to calculate growth and approximations
+        const sharesB = (stats.sharesOutstanding || 0) / 1e9;
+
+        for (let i = 0; i < history.length; i++) {
+            const cur = history[i];
+            const prev = i > 0 ? history[i - 1] : null;
+
+            // Growth
+            if (prev && prev.revenue > 0) {
+                cur.revGrowth = ((cur.revenue - prev.revenue) / prev.revenue) * 100;
+            }
+            if (prev && prev.earnings > 0) { // Simple growth, handle negative base carefully? standard formula
+                // If prev was negative, growth formula is tricky. Let's keep simple:
+                cur.earnGrowth = ((cur.earnings - prev.earnings) / Math.abs(prev.earnings)) * 100;
+            }
+
+            // EPS Approximation (using current shares as fallback for historical)
+            if (sharesB > 0) {
+                cur.eps = cur.earnings / sharesB;
+            }
+
+            // FCF & ROE - hard to get without full history of other modules aligned by year.
+            // For now, leave as 0 or try to map if we have the data.
+            // Let's just ensure the keys exist so the frontend doesn't crash.
         }
 
         const result = {
