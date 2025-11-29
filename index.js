@@ -72,6 +72,12 @@ function parseValue(valueStr, suffix = '') {
 }
 const parseMargin = (s) => { if (!s) return 0; const n = parseFloat(clean(s)); return isNaN(n) ? 0 : n / 100 };
 
+// ===== Constants =====
+const communityTop10 = [
+  'NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN',
+  'GOOGL', 'META', 'AMD', 'PLTR', 'COIN'
+];
+
 // ===== Elements =====
 const stock = $('#stock'), stockList = $('#stockList');
 const dateEl = $('#date'), revenue = $('#revenue'), revSuf = $('#revenueSuffix');
@@ -2883,10 +2889,6 @@ function switchTab(tabName) {
 }
 
 // --- Community Top 10 Logic ---
-const communityTop10 = [
-  'NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN',
-  'GOOGL', 'META', 'AMD', 'PLTR', 'COIN'
-];
 
 function renderCommunityTop10() {
   const listEl = document.getElementById('communityList');
