@@ -1,4 +1,4 @@
-console.log('Common Investor v5 Loaded');
+console.log('Common Investor v6 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1231,6 +1231,7 @@ function enablePremiumMode() {
 
   // Persist Premium State
   localStorage.setItem('isPremium', 'true');
+  isAutoCalcEnabled = true;
 
   // Re-render components that depend on premium state
   renderCommunityTop10();
@@ -1263,6 +1264,7 @@ function disablePremiumMode() {
 
   // Clear Premium State
   localStorage.removeItem('isPremium');
+  isAutoCalcEnabled = false;
 
   // Re-render components
   renderCommunityTop10();
@@ -1659,7 +1661,13 @@ function calculateCurrent() {
   }
 }
 
-function calculateFuture() {
+function calculateFuture(isManual = false) {
+  // Premium Guard: Only allow if Premium OR Manual (which has its own check)
+  // Actually, the manual button has its own check.
+  // But for auto-calls (isManual=false), we must ensure Premium AND Auto-Calc Enabled.
+  if (!isManual) {
+    if (!isPremium || !isAutoCalcEnabled) return;
+  }
   const pickEl = (singleEl, baseEl, bullEl, caseKey) => {
     if (!dualCaseEnabled || caseKey === 'single') return singleEl;
     return caseKey === 'base' ? baseEl : bullEl;
@@ -2484,7 +2492,7 @@ const resetApp = () => {
 };
 
 // Auto-Calc State
-let isAutoCalcEnabled = true;
+let isAutoCalcEnabled = false; // Default to false (Premium only)
 
 // ---------------------------------------------------------
 // 2. Event Listeners
@@ -2605,7 +2613,7 @@ if (calcFutureBtn) {
     futureAutoEnabled = true;
     revealSummary();
     calculateCurrent();
-    calculateFuture();
+    calculateFuture(true); // Manual trigger
     scrollToFutureResults();
     ensureFutureCardBottomVisible();
     toast('Calculated ✅');
@@ -2727,7 +2735,7 @@ if (mobilePanels.length) {
         return;
       }
       if (activeMobileStep === 'current') calcCurrentBtn?.click();
-      else calcFutureBtn?.click();
+      else calculateFuture(true);
     });
   }
   if (mobileSaveBtn) {
