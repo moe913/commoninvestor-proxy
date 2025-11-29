@@ -2857,34 +2857,66 @@ if (stock && stockInsights) {
 if (stockInsights && stockListInsights) {
   stockInsights.addEventListener('input', async (e) => {
     if (!allStocks.length) await ensureStocksLoaded();
+    // Pass a custom onSelect that calls tryAutoFill
     renderAC(stockInsights, stockListInsights, (symbol) => {
       stockInsights.value = symbol;
-      // Trigger chart update
-      // We need to fetch data if it's not in mockStocks (which is just local S&P 500)
-      // For now, let's try to use tryAutoFill but specifically for Insights?
-      // Or better: tryAutoFill updates everything.
-      // If user is in Insights tab, they probably want to see charts.
-      // tryAutoFill fetches data and updates global state.
-      // But tryAutoFill also updates the MAIN inputs.
-      // The user requested "one-way sync" before, but if they search in Insights, they probably expect the app to switch to that stock.
-      // Let's call tryAutoFill(symbol) which handles fetching and updating UI.
       tryAutoFill(symbol);
     });
   });
 
-  // Also handle keydown for Insights (Enter key)
+  stockInsights.addEventListener('blur', () => setTimeout(() => stockListInsights.classList.remove('show'), 150));
+
   stockInsights.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      // If a suggestion is selected (via keyboard nav), use it.
-      // Otherwise, search for current value.
-      // For simplicity, let's just trigger search for current value if no list item is active.
-      // But we don't have shared keyboard nav state easily.
-      // Let's just allow "Enter" to trigger search for value.
+    const items = Array.from(stockListInsights.querySelectorAll('.ac-item'));
+
+    // Allow Enter to proceed even if no items (for custom stocks)
+    if (!items.length && e.key !== 'Enter') return;
+
+    if (e.key === 'ArrowDown') {
       e.preventDefault();
+      if (items.length) {
+        // We need a separate index for insights or reuse a local one?
+        // renderAC uses global acIndex. Let's rely on the fact that only one list is open at a time.
+        // But renderAC resets acIndex = -1.
+        // We need to implement setACIndex equivalent for insights list.
+        // Actually, let's just reuse the logic but target stockListInsights.
+        let nextIndex = acIndex + 1;
+        if (nextIndex >= items.length) nextIndex = items.length - 1;
+        highlightItem(items, nextIndex);
+      }
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (items.length) {
+        let nextIndex = acIndex - 1;
+        if (nextIndex < 0) nextIndex = 0;
+        highlightItem(items, nextIndex);
+      }
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (acIndex >= 0 && items[acIndex]) {
+        // Simulate click on active item
+        const evt = new Event('mousedown');
+        items[acIndex].dispatchEvent(evt);
+      } else {
+        // No item selected, search for typed value
+        stockListInsights.classList.remove('show');
+        tryAutoFill(stockInsights.value.trim().toUpperCase());
+      }
+    } else if (e.key === 'Escape') {
       stockListInsights.classList.remove('show');
-      tryAutoFill(stockInsights.value.trim().toUpperCase());
     }
   });
+
+  // Helper to highlight item in insights list (reusing global acIndex is risky if we don't reset it)
+  // But renderAC resets it.
+  function highlightItem(items, index) {
+    items.forEach(i => i.classList.remove('active'));
+    acIndex = index;
+    if (items[acIndex]) {
+      items[acIndex].classList.add('active');
+      items[acIndex].scrollIntoView({ block: 'nearest' });
+    }
+  }
 }
 
 
