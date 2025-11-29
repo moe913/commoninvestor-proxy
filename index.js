@@ -1,4 +1,4 @@
-console.log('Common Investor v4 Loaded');
+console.log('Common Investor v5 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -2497,13 +2497,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   try { initTheme(); } catch (e) { console.error(e); }
-  try { initPremiumFeatures(); } catch (e) { console.error(e); }
-  try { initAutoFill(); } catch (e) { console.error(e); }
+  try { initTheme(); } catch (e) { console.error(e); }
   try { initSmartDropdowns(); } catch (e) { console.error(e); }
 
-  // Auto-Calc Toggle
+  // Enforce Auto-Calc Visibility & Toggle
   const autoCalcBtn = document.getElementById('autoCalcBtn');
   if (autoCalcBtn) {
+    // Visibility Check
+    if (isPremium) autoCalcBtn.style.display = 'block';
+    else autoCalcBtn.style.display = 'none';
+
+    // Toggle Listener
     autoCalcBtn.addEventListener('click', () => {
       isAutoCalcEnabled = !isAutoCalcEnabled;
       if (isAutoCalcEnabled) {

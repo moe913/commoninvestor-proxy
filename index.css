@@ -860,21 +860,33 @@ textarea:disabled {
   overflow: hidden;
   transition: all 0.2s;
 }
+
 .saved-item:hover {
   border-color: var(--accent);
 }
+
 .saved-header {
   transition: background 0.2s;
 }
+
 .saved-header:hover {
   background: var(--surface-2);
 }
+
 .saved-details {
   animation: slideDown 0.2s ease-out;
 }
+
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .saved-item .date {
@@ -1393,8 +1405,6 @@ textarea:disabled {
 /* --- Premium Mode State Management --- */
 /* Default State (Non-Premium) */
 #userProfile,
-#tabInsights,
-#tabHub,
 #autoCalcBtn,
 #logoutBtn,
 #saveToHubBtn,
@@ -1411,8 +1421,6 @@ textarea:disabled {
   display: flex !important;
 }
 
-.premium-mode #tabInsights,
-.premium-mode #tabHub,
 .premium-mode #logoutBtn,
 .premium-mode #saveToHubBtn,
 .premium-mode #caseModeBtn {
