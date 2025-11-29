@@ -1,4 +1,4 @@
-console.log('Common Investor v8 Loaded');
+console.log('Common Investor v9 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -74,10 +74,16 @@ function parseValue(valueStr, suffix = '') {
 const parseMargin = (s) => { if (!s) return 0; const n = parseFloat(clean(s)); return isNaN(n) ? 0 : n / 100 };
 
 // ===== Constants =====
-const communityTop10 = [
+const TRENDING_POOL = [
   'NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN',
-  'GOOGL', 'META', 'AMD', 'PLTR', 'COIN'
+  'GOOGL', 'META', 'AMD', 'PLTR', 'COIN',
+  'NFLX', 'DIS', 'JPM', 'V', 'WMT',
+  'PG', 'XOM', 'CVX', 'KO', 'PEP',
+  'COST', 'HD', 'MCD', 'NKE', 'SBUX',
+  'INTC', 'CSCO', 'CRM', 'ADBE', 'ORCL',
+  'IBM', 'QCOM', 'TXN', 'HON', 'UNH'
 ];
+let realCalculatedStocks = []; // Placeholder for real backend data
 
 // ===== Elements =====
 const stock = $('#stock'), stockList = $('#stockList');
@@ -2933,6 +2939,40 @@ function switchTab(tabName) {
 
 // --- Community Top 10 Logic ---
 
+function getCommunityTop10() {
+  // 1. Start with Real Data (if any)
+  let list = [...realCalculatedStocks];
+
+  // 2. Fill remaining slots with Trending Data
+  if (list.length < 10) {
+    // Seeded Shuffle based on Hour to simulate "constantly changing" but stable for a session
+    const hourBucket = Math.floor(Date.now() / (1000 * 60 * 60));
+    const seededRandom = (seed) => {
+      let x = Math.sin(seed++) * 10000;
+      return x - Math.floor(x);
+    };
+
+    // Create a copy of pool to shuffle
+    let pool = [...TRENDING_POOL];
+
+    // Shuffle using the hour bucket as seed
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(seededRandom(hourBucket + i) * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
+
+    // Add unique items until full
+    for (const ticker of pool) {
+      if (list.length >= 10) break;
+      if (!list.includes(ticker)) {
+        list.push(ticker);
+      }
+    }
+  }
+
+  return list.slice(0, 10);
+}
+
 function renderCommunityTop10() {
   const listEl = document.getElementById('communityList');
   const listElInsights = document.getElementById('communityListInsights');
@@ -2960,7 +3000,8 @@ function renderCommunityTop10() {
       return;
     }
 
-    communityTop10.forEach((symbol, index) => {
+    const dynamicList = getCommunityTop10();
+    dynamicList.forEach((symbol, index) => {
       const data = window.__sp500Data ? window.__sp500Data[symbol] : null;
       const div = document.createElement('div');
       div.className = 'saved-item'; // Reuse saved-item style for consistency
