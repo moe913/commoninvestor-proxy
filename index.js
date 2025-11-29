@@ -1182,7 +1182,14 @@ function enablePremiumMode() {
 
   // Explicitly set styles (Redundancy for robustness)
   if (premiumBtn) premiumBtn.style.display = 'none';
-  if (userProfile) userProfile.style.display = 'flex';
+  if (userProfile) {
+    userProfile.style.display = 'flex';
+    const storedUser = localStorage.getItem('username');
+    if (storedUser) {
+      const nameSpan = userProfile.querySelector('.user-name');
+      if (nameSpan) nameSpan.textContent = storedUser;
+    }
+  }
 
   if (caseModeBtn) caseModeBtn.style.display = 'inline-flex';
   if (tabInsights) tabInsights.style.display = 'inline-block';
@@ -1198,6 +1205,9 @@ function enablePremiumMode() {
 
   // Persist Premium State
   localStorage.setItem('isPremium', 'true');
+
+  // Re-render components that depend on premium state
+  renderCommunityTop10();
 }
 
 function disablePremiumMode() {
@@ -1229,6 +1239,9 @@ function disablePremiumMode() {
 
   // Clear Premium State
   localStorage.removeItem('isPremium');
+
+  // Re-render components
+  renderCommunityTop10();
 
   // Revert to Dark Mode (default)
   applyTheme('dark');
