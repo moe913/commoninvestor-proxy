@@ -550,3 +550,8 @@ body.mobile .tab-content.active {
   overflow-y: auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
+
+/* Fix Insights Tab Autocomplete Clipping */
+#insightsTab .card-b {
+  overflow: visible !important;
+}
