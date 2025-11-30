@@ -1,4 +1,4 @@
-console.log('Common Investor v40 Loaded');
+console.log('Common Investor v41 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));

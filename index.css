@@ -1492,4 +1492,23 @@ input:-webkit-autofill:active {
   /* Solid dark color (gray-900) */
   -webkit-text-fill-color: var(--text) !important;
   transition: background-color 5000s ease-in-out 0s;
+}/* Premium Lock Style */
+.btn.locked {
+    border-color: var(--warning) !important;
+    color: var(--warning) !important;
+    background: rgba(245, 158, 11, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.btn.locked:hover {
+    background: rgba(245, 158, 11, 0.2);
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn.locked .lock-icon {
+    margin-left: 8px;
+    font-size: 1.1em;
+    vertical-align: middle;
 }
