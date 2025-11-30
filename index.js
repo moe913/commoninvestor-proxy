@@ -1,4 +1,4 @@
-console.log('Common Investor v47 Loaded');
+console.log('Common Investor v48 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -3298,7 +3298,9 @@ if (communityListInsights) {
 // Initialize Hub on load
 document.addEventListener('DOMContentLoaded', () => {
   renderCommunityTop10();
+  renderSavedItems();
 });
+
 const stockInsights = document.getElementById('stockInsights');
 const stockListInsights = document.getElementById('stockListInsights');
 
