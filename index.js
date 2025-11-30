@@ -1,4 +1,4 @@
-console.log('Common Investor v36 Loaded');
+console.log('Common Investor v37 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1017,117 +1017,125 @@ if (saveExcelBtn) {
   });
 }
 
+function saveCalculationToHub() {
+  if (typeof gtag === 'function') {
+    gtag('event', 'save_to_hub', { 'event_category': 'engagement', 'event_label': stock.value || 'Unknown' });
+  }
+  try {
+    const ticker = stock.value || 'Unknown';
+    const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+
+    // Capture all inputs
+    let revGrowth = 0;
+    if (frMode.value === 'absolute') revGrowth = parseFloat(frAbs.value) || 0;
+    else if (frMode.value === 'percentage') revGrowth = parseFloat(frPct.value) || 0;
+    else if (frMode.value === 'compounded') revGrowth = parseFloat(frCagr.value) || 0;
+
+    let sharesChange = 0;
+    if (fsMode.value === 'absolute') sharesChange = parseFloat(fsAbs.value) || 0;
+    else if (fsMode.value === 'percentage') sharesChange = parseFloat(fsPct.value) || 0;
+    else if (fsMode.value === 'compounded') sharesChange = parseFloat(fsCagr.value) || 0;
+
+    // Capture Snapshot Data
+    const curPriceVal = parseFloat(price.value) || 0;
+    const futPriceText = document.getElementById('futureStockPrice')?.textContent || '0';
+    const futPriceVal = parseFloat(futPriceText.replace(/[$,]/g, '')) || 0;
+
+    // Calculate Upside and CAGR
+    let upside = 0;
+    let cagr = 0;
+    if (curPriceVal > 0 && futPriceVal > 0) {
+      upside = ((futPriceVal / curPriceVal) - 1) * 100;
+      cagr = (Math.pow(futPriceVal / curPriceVal, 1 / 5) - 1) * 100;
+    }
+
+    // Helper to get abbreviated text from formatted elements
+    const getAbbr = (id) => {
+      const el = document.getElementById(id);
+      if (!el) return '-';
+      return el.querySelector('.val-abbr')?.textContent || el.textContent || '-';
+    };
+
+    // Calculate Net Income manually if missing/invalid
+    let netIncomeVal = getAbbr('earningsValue');
+    if (netIncomeVal === '-' || netIncomeVal === '$0' || netIncomeVal === '$0.00') {
+      const revVal = parseFloat(revenue.value) || 0;
+      const marginVal = parseFloat(document.getElementById('profitMargin')?.value) || 0;
+      if (revVal > 0 && marginVal > 0) {
+        const ni = revVal * (marginVal / 100);
+        // Format manually if calculated
+        if (ni >= 1e12) netIncomeVal = '$' + (ni / 1e12).toFixed(2) + 'T';
+        else if (ni >= 1e9) netIncomeVal = '$' + (ni / 1e9).toFixed(2) + 'B';
+        else if (ni >= 1e6) netIncomeVal = '$' + (ni / 1e6).toFixed(2) + 'M';
+        else netIncomeVal = '$' + ni.toFixed(2);
+      }
+    }
+
+    const inputs = {
+      stock: ticker,
+      date: date,
+      current: {
+        marketValue: parseFloat(currentMarketValue.value.replace(/[^0-9.-]/g, '')) || 0,
+        revenue: parseFloat(revenue.value.replace(/[^0-9.-]/g, '')) || 0,
+        shares: parseFloat(shares.value.replace(/[^0-9.-]/g, '')) || 0,
+        earnings: parseFloat(earnings.value.replace(/[^0-9.-]/g, '')) || 0,
+        eps: parseFloat(eps.textContent) || 0,
+        pe: parseFloat(peRatio.value) || 0
+      },
+      future: {
+        revenueGrowth: revGrowth,
+        sharesChange: sharesChange,
+        pe: parseFloat(futurePe.value) || 0,
+        marketValue: parseFloat(futureMarketValue.textContent.replace(/[^0-9.-]/g, '')) || 0,
+        price: parseFloat(futurePrice.textContent.replace(/[^0-9.-]/g, '')) || 0
+      }
+    };
+
+    const currentMetrics = {
+      price: curPriceVal > 0 ? '$' + curPriceVal.toFixed(2) : '-',
+      pe: pe.value || '-',
+      revenue: revenue.value ? '$' + revenue.value + (document.getElementById('revenueSuffix').value || '') : '-',
+      netIncome: netIncomeVal,
+      profitMargin: (document.getElementById('profitMargin')?.value || '0') + '%',
+      shares: (shares.value || '0') + (document.getElementById('sharesSuffix')?.value || '')
+    };
+
+    const results = {
+      futurePrice: futPriceVal > 0 ? '$' + futPriceVal.toFixed(2) : '-',
+      upside: upside !== 0 ? upside.toFixed(1) + '%' : '-',
+      cagr: cagr !== 0 ? cagr.toFixed(1) + '%' : '-',
+      futureRevenue: getAbbr('futureRevenueValue'),
+      futureShares: getAbbr('futureSharesValue')
+    };
+
+    // Save to localStorage
+    const newItem = { ticker, date, timestamp: Date.now(), inputs, currentMetrics, results };
+    const savedItems = JSON.parse(localStorage.getItem('savedHubItems') || '[]');
+    savedItems.unshift(newItem);
+    if (savedItems.length > 50) savedItems.pop(); // Limit to 50
+    localStorage.setItem('savedHubItems', JSON.stringify(savedItems));
+
+    // Update UI
+    if (typeof renderSavedItems === 'function') renderSavedItems();
+
+    // Show success feedback
+    const originalText = saveToHubBtn ? saveToHubBtn.textContent : (saveBtn2 ? saveBtn2.textContent : 'Save to Hub');
+    if (saveToHubBtn) saveToHubBtn.textContent = 'Saved!';
+    if (saveBtn2) saveBtn2.textContent = 'Saved!';
+
+    setTimeout(() => {
+      if (saveToHubBtn) saveToHubBtn.textContent = 'Save to Hub';
+      if (saveBtn2) saveBtn2.textContent = 'Save to Hub';
+    }, 2000);
+
+  } catch (e) {
+    console.error('Error saving to hub:', e);
+    alert('Failed to save calculation. Please try again.');
+  }
+}
+
 if (saveToHubBtn) {
-  saveToHubBtn.addEventListener('click', () => {
-    if (typeof gtag === 'function') {
-      gtag('event', 'save_to_hub', { 'event_category': 'engagement', 'event_label': stock.value || 'Unknown' });
-    }
-    try {
-      const ticker = stock.value || 'Unknown';
-      const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-
-      // Capture all inputs
-      let revGrowth = 0;
-      if (frMode.value === 'absolute') revGrowth = parseFloat(frAbs.value) || 0;
-      else if (frMode.value === 'percentage') revGrowth = parseFloat(frPct.value) || 0;
-      else if (frMode.value === 'compounded') revGrowth = parseFloat(frCagr.value) || 0;
-
-      let sharesChange = 0;
-      if (fsMode.value === 'absolute') sharesChange = parseFloat(fsAbs.value) || 0;
-      else if (fsMode.value === 'percentage') sharesChange = parseFloat(fsPct.value) || 0;
-      else if (fsMode.value === 'compounded') sharesChange = parseFloat(fsCagr.value) || 0;
-
-      const inputs = {
-        revenue: parseFloat(revenue.value) || 0,
-        shares: parseFloat(shares.value) || 0,
-
-        // Future Inputs
-        futureRevenueMode: frMode.value,
-        futureRevenueGrowth: revGrowth,
-        // Note: For Bull case, we need to handle similar logic if we want to support it fully. 
-        // For now, let's assume single case or just capture the base values if dual is not active.
-        // If dual is active, we should capture base/bull specific inputs.
-        // But to keep it simple and working for the main case:
-
-        futureMargin: parseFloat(document.getElementById('futureProfitMargin').value) || 0,
-
-        // FCF Margin (if it exists, check ID)
-        futureFCFMargin: parseFloat(document.getElementById('futureFCFMargin')?.value) || 0,
-
-        futureSharesMode: fsMode.value,
-        futureSharesChange: sharesChange,
-
-        futurePE: parseFloat(document.getElementById('futurePE').value) || 0,
-
-        futurePE: parseFloat(document.getElementById('futurePE').value) || 0
-      };
-
-      // Capture Snapshot Data
-      const curPriceVal = parseFloat(price.value) || 0;
-      const futPriceText = document.getElementById('futureStockPrice')?.textContent || '0';
-      const futPriceVal = parseFloat(futPriceText.replace(/[$,]/g, '')) || 0;
-
-      // Calculate Upside and CAGR
-      let upside = 0;
-      let cagr = 0;
-      if (curPriceVal > 0 && futPriceVal > 0) {
-        upside = ((futPriceVal / curPriceVal) - 1) * 100;
-        cagr = (Math.pow(futPriceVal / curPriceVal, 1 / 5) - 1) * 100;
-      }
-
-      // Helper to get abbreviated text from formatted elements
-      const getAbbr = (id) => {
-        const el = document.getElementById(id);
-        if (!el) return '-';
-        return el.querySelector('.val-abbr')?.textContent || el.textContent || '-';
-      };
-
-      // Calculate Net Income manually if missing/invalid
-      let netIncomeVal = getAbbr('earningsValue');
-      if (netIncomeVal === '-' || netIncomeVal === '$0' || netIncomeVal === '$0.00') {
-        const revVal = parseFloat(revenue.value) || 0;
-        const marginVal = parseFloat(document.getElementById('profitMargin')?.value) || 0;
-        if (revVal > 0 && marginVal > 0) {
-          const ni = revVal * (marginVal / 100);
-          // Format manually if calculated
-          if (ni >= 1e12) netIncomeVal = '$' + (ni / 1e12).toFixed(2) + 'T';
-          else if (ni >= 1e9) netIncomeVal = '$' + (ni / 1e9).toFixed(2) + 'B';
-          else if (ni >= 1e6) netIncomeVal = '$' + (ni / 1e6).toFixed(2) + 'M';
-          else netIncomeVal = '$' + ni.toFixed(2);
-        }
-      }
-
-      const currentMetrics = {
-        price: curPriceVal > 0 ? '$' + curPriceVal.toFixed(2) : '-',
-        pe: pe.value || '-',
-        revenue: revenue.value ? '$' + revenue.value + (document.getElementById('revenueSuffix').value || '') : '-',
-        netIncome: netIncomeVal,
-        profitMargin: (document.getElementById('profitMargin')?.value || '0') + '%',
-        shares: (shares.value || '0') + (document.getElementById('sharesSuffix')?.value || '')
-      };
-
-      const results = {
-        futurePrice: futPriceVal > 0 ? '$' + futPriceVal.toFixed(2) : '-',
-        upside: upside !== 0 ? upside.toFixed(1) + '%' : '-',
-        cagr: cagr !== 0 ? cagr.toFixed(1) + '%' : '-',
-        futureRevenue: getAbbr('futureRevenueValue'),
-        futureShares: getAbbr('futureSharesValue')
-      };
-
-      // Save to localStorage
-      const newItem = { ticker, date, timestamp: Date.now(), inputs, currentMetrics, results };
-      const savedItems = JSON.parse(localStorage.getItem('savedHubItems') || '[]');
-      savedItems.unshift(newItem);
-      localStorage.setItem('savedHubItems', JSON.stringify(savedItems));
-
-      toast('Analysis saved to My Hub!', 3000);
-
-      renderSavedItems(); // Ensure list is updated immediately
-    } catch (e) {
-      console.error('Save failed:', e);
-      toast('Error saving: ' + e.message, 4000);
-    }
-  });
+  saveToHubBtn.addEventListener('click', saveCalculationToHub);
 }
 
 function renderSavedItems() {
@@ -2663,9 +2671,7 @@ if (clearBtn2) clearBtn2.addEventListener('click', resetApp);
 // calcCurrentBtn removed
 // if (saveBtn) saveBtn.addEventListener('click', saveTxt); // Handled by dialog logic
 if (saveBtn2) {
-  saveBtn2.addEventListener('click', () => {
-    saveOptionsDialog.showModal();
-  });
+  saveBtn2.addEventListener('click', saveCalculationToHub);
 }
 if (shareBtn) shareBtn.addEventListener('click', shareLink);
 if (themeSelect) themeSelect.addEventListener('change', (e) => applyTheme(e.target.value));
