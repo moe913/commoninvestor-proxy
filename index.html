@@ -867,10 +867,10 @@
 
 
   <script src="sp500-data.js"></script>
-  <script src="index.js?v=20" defer></script>
+  <script src="index.js?v=21" defer></script>
   <script defer>
     (function () {
-      const enableMobileRedirect = true; // enabled for production
+      const enableMobileRedirect = false; // enabled for production
       if (!enableMobileRedirect) return;
       const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
       if (isMobile && !window.location.pathname.endsWith('index-mobile.html')) {

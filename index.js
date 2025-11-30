@@ -1,4 +1,4 @@
-console.log('Common Investor v20 Loaded');
+console.log('Common Investor v21 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -2657,8 +2657,12 @@ document.addEventListener('DOMContentLoaded', () => {
 if (clearBtn) clearBtn.addEventListener('click', resetApp);
 if (clearBtn2) clearBtn2.addEventListener('click', resetApp);
 // calcCurrentBtn removed
-if (saveBtn) saveBtn.addEventListener('click', saveTxt);
-if (saveBtn2) saveBtn2.addEventListener('click', saveTxt);
+// if (saveBtn) saveBtn.addEventListener('click', saveTxt); // Handled by dialog logic
+if (saveBtn2) {
+  saveBtn2.addEventListener('click', () => {
+    saveOptionsDialog.showModal();
+  });
+}
 if (shareBtn) shareBtn.addEventListener('click', shareLink);
 if (themeSelect) themeSelect.addEventListener('change', (e) => applyTheme(e.target.value));
 
