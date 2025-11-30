@@ -1,4 +1,4 @@
-console.log('Common Investor v9 Loaded');
+console.log('Common Investor v10 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -2943,30 +2943,46 @@ function getCommunityTop10() {
   // 1. Start with Real Data (if any)
   let list = [...realCalculatedStocks];
 
-  // 2. Fill remaining slots with Trending Data
+  // 2. Fill remaining slots with Trending Data (Weighted)
   if (list.length < 10) {
-    // Seeded Shuffle based on Hour to simulate "constantly changing" but stable for a session
+    // Anchors: Stocks that are almost always in the top 10 (Simulating 30-day dominance)
+    const ANCHORS = ['NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN'];
+
+    // Rotators: The rest of the pool (Simulating hourly activity)
+    const ROTATORS = TRENDING_POOL.filter(t => !ANCHORS.includes(t));
+
+    // Seeded Shuffle based on Hour
     const hourBucket = Math.floor(Date.now() / (1000 * 60 * 60));
     const seededRandom = (seed) => {
       let x = Math.sin(seed++) * 10000;
       return x - Math.floor(x);
     };
 
-    // Create a copy of pool to shuffle
-    let pool = [...TRENDING_POOL];
-
-    // Shuffle using the hour bucket as seed
-    for (let i = pool.length - 1; i > 0; i--) {
+    // Always include most Anchors (e.g., 4 or 5) to maintain "30-day" feel
+    // We shuffle anchors too so their order changes
+    let shuffledAnchors = [...ANCHORS];
+    for (let i = shuffledAnchors.length - 1; i > 0; i--) {
       const j = Math.floor(seededRandom(hourBucket + i) * (i + 1));
-      [pool[i], pool[j]] = [pool[j], pool[i]];
+      [shuffledAnchors[i], shuffledAnchors[j]] = [shuffledAnchors[j], shuffledAnchors[i]];
     }
 
-    // Add unique items until full
-    for (const ticker of pool) {
+    // Add Anchors first
+    for (const ticker of shuffledAnchors) {
       if (list.length >= 10) break;
-      if (!list.includes(ticker)) {
-        list.push(ticker);
-      }
+      if (!list.includes(ticker)) list.push(ticker);
+    }
+
+    // Shuffle Rotators
+    let shuffledRotators = [...ROTATORS];
+    for (let i = shuffledRotators.length - 1; i > 0; i--) {
+      const j = Math.floor(seededRandom(hourBucket + i + 100) * (i + 1)); // Offset seed
+      [shuffledRotators[i], shuffledRotators[j]] = [shuffledRotators[j], shuffledRotators[i]];
+    }
+
+    // Fill the rest
+    for (const ticker of shuffledRotators) {
+      if (list.length >= 10) break;
+      if (!list.includes(ticker)) list.push(ticker);
     }
   }
 
