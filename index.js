@@ -1,4 +1,4 @@
-console.log('Common Investor v12 Loaded');
+console.log('Common Investor v13 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -573,6 +573,30 @@ const loginForm = document.getElementById('loginForm');
 const loginError = document.getElementById('loginError');
 const userProfile = document.getElementById('userProfile');
 const logoutBtn = document.getElementById('logoutBtn');
+
+// Missing Name Modal
+const missingNameModal = document.getElementById('missingNameModal');
+const modalStockInput = document.getElementById('modalStockInput');
+const modalSubmitNameBtn = document.getElementById('modalSubmitNameBtn');
+
+if (modalSubmitNameBtn) {
+  modalSubmitNameBtn.addEventListener('click', () => {
+    const val = modalStockInput.value.trim();
+    if (val) {
+      stock.value = val;
+      missingNameModal.close();
+      missingNameModal.style.display = 'none';
+      toast('Thanks! Please remember to enter the name first next time.', 3000);
+      calculateFuture(true); // Trigger manual calc
+    } else {
+      modalStockInput.focus();
+    }
+  });
+  // Allow Enter key
+  modalStockInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') modalSubmitNameBtn.click();
+  });
+}
 
 // Initial State Check
 if (isPremium) {
@@ -1679,8 +1703,17 @@ function calculateFuture(isManual = false) {
   // Mandatory Name Check
   if (!stock.value.trim()) {
     if (isManual) {
-      alert('Please enter a Company Name or Ticker to proceed.');
-      stock.focus();
+      if (missingNameModal) {
+        missingNameModal.showModal();
+        missingNameModal.style.display = 'flex';
+        if (modalStockInput) {
+          modalStockInput.value = '';
+          setTimeout(() => modalStockInput.focus(), 100);
+        }
+      } else {
+        alert('Please enter a Company Name or Ticker to proceed.');
+        stock.focus();
+      }
     }
     return;
   }
