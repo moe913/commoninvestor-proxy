@@ -1,4 +1,4 @@
-console.log('Common Investor v17 Loaded');
+console.log('Common Investor v18 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -988,6 +988,11 @@ if (saveBtn) {
 // Format Handlers
 if (savePdfBtn) {
   savePdfBtn.addEventListener('click', () => {
+    if (!isPremium) {
+      document.getElementById('saveOptionsDialog').close();
+      document.getElementById('premiumModal').showModal();
+      return;
+    }
     saveOptionsDialog.close();
     window.print(); // Simple PDF export via print
   });
@@ -1002,6 +1007,11 @@ if (saveTxtBtn) {
 
 if (saveExcelBtn) {
   saveExcelBtn.addEventListener('click', () => {
+    if (!isPremium) {
+      document.getElementById('saveOptionsDialog').close();
+      document.getElementById('premiumModal').showModal();
+      return;
+    }
     saveOptionsDialog.close();
     saveResultsAsCSV();
   });
@@ -1306,6 +1316,9 @@ function enablePremiumMode() {
   isPremium = true;
   isAutoCalcEnabled = true;
 
+  // Hide locks
+  $$('.lock-icon').forEach(el => el.style.display = 'none');
+
   // Re-render components that depend on premium state
   renderCommunityTop10();
 }
@@ -1313,11 +1326,9 @@ function enablePremiumMode() {
 function disablePremiumMode() {
   document.documentElement.classList.remove('premium-mode');
 
-  // Explicitly revert styles
-  if (premiumBtn) premiumBtn.style.display = 'block';
+  if (premiumBtn) premiumBtn.style.display = 'inline-block';
   if (userProfile) userProfile.style.display = 'none';
-
-  switchTab('projections');
+  if (caseModeBtn) caseModeBtn.style.display = 'none';
 
   const autoCalcBtn = document.getElementById('autoCalcBtn');
   if (autoCalcBtn) autoCalcBtn.style.display = 'none';
@@ -1326,8 +1337,17 @@ function disablePremiumMode() {
   if (logoutBtn) logoutBtn.style.display = 'none';
 
   if (saveToHubBtn) saveToHubBtn.style.display = 'none';
-  if (caseModeBtn) caseModeBtn.style.display = 'none';
-  setDualCase(false);
+
+  // Show locks
+  $$('.lock-icon').forEach(el => el.style.display = 'inline-block');
+
+  localStorage.setItem('isPremium', 'false');
+  isPremium = false;
+  isAutoCalcEnabled = false;
+
+  renderCommunityTop10();
+
+  switchTab('projections');
 
   // Hide charts
   const histContainer = document.getElementById('historyChartContainer');
@@ -1335,7 +1355,6 @@ function disablePremiumMode() {
   const growthContainer = document.getElementById('chartContainer');
   if (growthContainer) growthContainer.style.display = 'none';
 
-  // Clear Premium State
   localStorage.removeItem('isPremium');
   isPremium = false;
   isAutoCalcEnabled = false;
