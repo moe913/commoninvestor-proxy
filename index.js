@@ -1,4 +1,4 @@
-console.log('Common Investor v50 Loaded');
+console.log('Common Investor v51 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1141,6 +1141,18 @@ function renderSavedItems() {
   if (!savedList) return;
 
   const savedItems = JSON.parse(localStorage.getItem('savedHubItems') || '[]');
+
+  if (!isPremium) {
+    savedList.innerHTML = `
+      <div class="empty-state" style="padding: 30px; text-align: center;">
+        <div style="font-size: 2rem; margin-bottom: 10px;">🔒</div>
+        <h3 style="margin-bottom: 8px;">Premium Feature</h3>
+        <p style="color: var(--muted); margin-bottom: 16px;">Upgrade to save and view your calculation history.</p>
+        <button class="btn primary" onclick="document.getElementById('premiumBtn')?.click()">💎 Unlock History</button>
+      </div>
+    `;
+    return;
+  }
 
   if (savedItems.length === 0) {
     savedList.innerHTML = '<div class="empty-state">No saved items yet.</div>';

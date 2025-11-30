@@ -112,10 +112,24 @@ Since you have reached your Netlify credit limit, you should run the application
 - **Calculate Button Interception**: Clicking "Calculate Future" (or the mobile calculate button) on the free plan now triggers the "Go Premium" modal, showcasing the benefits of upgrading.
 - **Community List**: The "Community's Most Calculated" list remains locked for free users.
 
+#
+### Unit Enforcement & Premium Upsells
+- **Unit Selection**: Verified that entering a value without a unit (M/B/T) triggers a popup forcing selection.
+- **Mobile Cleanup**: Verified that the pinned "Go Premium" button is removed on mobile.
+- **Desktop Upsell**: Verified that a premium upsell popup appears on desktop after calculation for free users.
+- **Hub Lock**: Verified that "Saved Calculations" are locked for free users and unlocked for premium users.
+
+## Final Status
+All requested features and fixes have been implemented and verified.
+- Hub Sync: Fixed.
+- UI Standardization: Complete.
+- Unit Enforcement: Active.
+- Premium Upsells: Active.
+- Hub Lock: Active.
+
 ### 10. Hub Sync & UI Standardization (Final Polish)
 - **Hub Sync Fixed**: I fixed an issue where saved calculations were not appearing on the desktop version. This was due to the list not initializing correctly on load. It now syncs perfectly with mobile (sharing the same browser storage).
 - **UI Standardization**: I standardized the tab names ("Projections", "Insights", "Hub") and suffix dropdowns (adding "M", "B", "T" abbreviations) across both desktop and mobile for a consistent experience.
 - **Verification**:
     - Verified that saving a calculation on Mobile instantly appears on Desktop (and vice versa) when refreshing.
     - Verified that the "Insights" autocomplete dropdown is fully visible and functional on mobile.
-
