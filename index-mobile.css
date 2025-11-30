@@ -221,6 +221,9 @@ body.mobile .two-col>div:last-child {
   margin-bottom: 0;
 }
 
+
+
+
 body.mobile .two-col.aligned-row {
   align-items: stretch;
 }
@@ -456,4 +459,67 @@ body.mobile .toast {
   .mobile-bottom-bar {
     box-shadow: 0 -16px 28px rgba(15, 23, 42, .12);
   }
+}
+
+/* Hub Mobile Styles */
+.mobile-main .saved-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-main .saved-item {
+  background: color-mix(in srgb, var(--panel) 50%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.mobile-main .saved-item:hover {
+  background: color-mix(in srgb, var(--panel) 80%, transparent);
+  border-color: var(--primary);
+}
+
+.mobile-main .saved-item .date {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.mobile-main .saved-item>div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#communityList .saved-item {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  padding: 12px 0;
+}
+
+#communityList .saved-item:last-child {
+  border-bottom: none;
+}
+
+/* Hub Tab Alignment Fixes */
+#hubContent .card {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+#hubContent .card-h {
+  justify-content: center;
+  text-align: center;
+}
+
+#hubContent .card-h>div {
+  width: 100%;
 }
