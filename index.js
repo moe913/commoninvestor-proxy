@@ -1,4 +1,4 @@
-console.log('Common Investor v22 Loaded');
+console.log('Common Investor v23 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1292,6 +1292,8 @@ function enablePremiumMode() {
 
   // Explicitly set styles (Redundancy for robustness)
   if (premiumBtn) premiumBtn.style.display = 'none';
+  const mobileBottomBar = document.getElementById('mobileBottomBar');
+  if (mobileBottomBar) mobileBottomBar.style.display = 'none';
   if (userProfile) {
     userProfile.style.display = 'flex';
     const storedUser = localStorage.getItem('username');
@@ -1327,6 +1329,8 @@ function disablePremiumMode() {
   document.documentElement.classList.remove('premium-mode');
 
   if (premiumBtn) premiumBtn.style.display = 'inline-block';
+  const mobileBottomBar = document.getElementById('mobileBottomBar');
+  if (mobileBottomBar) mobileBottomBar.style.display = 'flex';
   if (userProfile) userProfile.style.display = 'none';
   if (caseModeBtn) caseModeBtn.style.display = 'none';
 
