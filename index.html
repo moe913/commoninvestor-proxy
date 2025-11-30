@@ -761,18 +761,17 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <dialog id="suffixDialog" style="border:none; border-radius:14px; padding:0; width:min(520px, 92vw)">
+  <dialog id="validationDialog" style="border:none; border-radius:14px; padding:0; width:min(520px, 92vw)">
     <div class="card">
       <div class="card-h">
-        <h3>Select Units for Each Value</h3>
+        <h3>Input Required</h3>
       </div>
       <div class="card-b">
-        <p class="help" style="margin-top:-2px">You must explicitly select if each value is in Millions (M), Billions
-          (B), Trillions (T), or None</p>
-        <div id="suffixDialogBody"></div>
+        <p class="help" style="margin-top:-2px">Please provide the missing information to proceed.</p>
+        <div id="validationDialogBody"></div>
         <div class="inline-actions" style="margin-top:16px">
-          <button id="suffixConfirmBtn" class="btn primary">Confirm and Calculate</button>
-          <button id="suffixCancelBtn" class="btn">Cancel</button>
+          <button id="validationConfirmBtn" class="btn primary">Confirm and Calculate</button>
+          <button id="validationCancelBtn" class="btn">Cancel</button>
         </div>
       </div>
     </div>
@@ -878,7 +877,7 @@
 
 
   <script src="sp500-data.js"></script>
-  <script src="index.js?v=51" defer></script>
+  <script src="index.js?v=52" defer></script>
   <script defer>
     (function () {
       const enableMobileRedirect = false; // enabled for production

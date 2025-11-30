@@ -1,4 +1,4 @@
-console.log('Common Investor v51 Loaded');
+console.log('Common Investor v52 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1802,19 +1802,7 @@ function calculateFuture(isManual = false) {
 
   // Mandatory Name Check
   if (!stock.value.trim()) {
-    if (isManual) {
-      if (missingNameModal) {
-        missingNameModal.showModal();
-        missingNameModal.style.display = 'flex';
-        if (modalStockInput) {
-          modalStockInput.value = '';
-          setTimeout(() => modalStockInput.focus(), 100);
-        }
-      } else {
-        alert('Please enter a Company Name or Ticker to proceed.');
-        stock.focus();
-      }
-    }
+    // Handled by validateInputs wrapper on button click
     return;
   }
 
@@ -2200,12 +2188,13 @@ function renderGrowthChart(currentPrice, futurePrice) {
   });
 }
 
-// ===== Validation (Suffix) =====
-function validateSuffixes(next) {
+// ===== Validation (Unified) =====
+function validateInputs(next) {
   const clean = (s) => (s || '').toString().trim().replace(/[$,%\s,]/g, '');
   const hasUnit = (value) => /[MBT]$/i.test(value);
   const hasDropdown = (sel) => !!sel && sel.value !== '';
 
+  const nameMissing = !stock.value.trim();
   const revTyped = clean(revenue.value);
   const shTyped = clean(shares.value);
 
@@ -2245,12 +2234,28 @@ function validateSuffixes(next) {
     }
   }
 
-  if (!revMissing && !shMissing && !frMissing && !fsMissing && !frBaseMissing && !frBullMissing && !fsBaseMissing && !fsBullMissing) return next();
+  if (!nameMissing && !revMissing && !shMissing && !frMissing && !fsMissing && !frBaseMissing && !frBullMissing && !fsBaseMissing && !fsBullMissing) return next();
 
-  suffixDialog.dataset.pendingCallback = next;
-  suffixBody.innerHTML = '';
-  toast('Please select units for each value', 3000);
+  const dialog = document.getElementById('validationDialog');
+  const body = document.getElementById('validationDialogBody');
+  if (!dialog || !body) return; // Should not happen
 
+  dialog.dataset.pendingCallback = next;
+  body.innerHTML = '';
+  toast('Please provide missing information', 3000);
+
+  // 1. Company Name Input
+  if (nameMissing) {
+    const wrapper = document.createElement('div');
+    wrapper.style.margin = '12px 0 24px 0';
+    wrapper.innerHTML = `
+      <label style="display:block; margin-bottom:8px; font-weight:600">Company Name / Ticker</label>
+      <input type="text" id="validationStockInput" class="input" placeholder="e.g. Apple or AAPL" style="width:100%" autocomplete="off">
+    `;
+    body.appendChild(wrapper);
+  }
+
+  // 2. Unit Selection Inputs
   const createRow = (label, field, value) => {
     const wrapper = document.createElement('div');
     wrapper.style.margin = '12px 0';
@@ -2265,7 +2270,7 @@ function validateSuffixes(next) {
       </select>
       <p class="help" style="margin-top:4px">Current value: ${value || '—'}</p>
     `;
-    suffixBody.appendChild(wrapper);
+    body.appendChild(wrapper);
   };
 
   if (revMissing) createRow('Revenue (TTM)', 'revenue', revTyped);
@@ -2279,18 +2284,42 @@ function validateSuffixes(next) {
   if (fsBaseMissing) createRow('Future Shares (Base)', 'futureSharesBase', clean(fsAbsBase?.value));
   if (fsBullMissing) createRow('Future Shares (Bull)', 'futureSharesBull', clean(fsAbsBull?.value));
 
-  suffixDialog.showModal();
-  const confirmBtn = $('#suffixConfirmBtn');
-  const cancelBtn = $('#suffixCancelBtn');
+  dialog.showModal();
+
+  // Focus name input if present
+  if (nameMissing) {
+    setTimeout(() => {
+      const input = document.getElementById('validationStockInput');
+      if (input) input.focus();
+    }, 100);
+  }
+
+  const confirmBtn = document.getElementById('validationConfirmBtn');
+  const cancelBtn = document.getElementById('validationCancelBtn');
 
   if (cancelBtn) {
     cancelBtn.onclick = () => {
-      suffixDialog.close();
+      dialog.close();
     };
   }
 
   confirmBtn.onclick = () => {
-    const selects = suffixBody.querySelectorAll('select');
+    // Validate Name
+    if (nameMissing) {
+      const input = document.getElementById('validationStockInput');
+      const val = input.value.trim();
+      if (!val) {
+        toast('Please enter a company name', 2000);
+        input.focus();
+        return;
+      }
+      stock.value = val;
+      // Trigger autofill if available
+      if (typeof tryAutoFill === 'function') tryAutoFill(val);
+    }
+
+    // Validate Units
+    const selects = body.querySelectorAll('select');
     const allSelected = Array.from(selects).every(sel => sel.value !== '');
     if (!allSelected) {
       toast('Please select units for all values', 2000);
@@ -2312,7 +2341,8 @@ function validateSuffixes(next) {
       else if (f === 'futureSharesBase' && fsSufBase) fsSufBase.value = normalized;
       else if (f === 'futureSharesBull' && fsSufBull) fsSufBull.value = normalized;
     });
-    suffixDialog.close();
+
+    dialog.close();
     next();
   };
 }
@@ -2789,7 +2819,7 @@ if (calcFutureBtn) {
     });
   };
   calcFutureBtn.addEventListener('click', () => {
-    validateSuffixes(() => {
+    validateInputs(() => {
       if (typeof gtag === 'function') {
         gtag('event', 'calculate_projection', { 'event_category': 'engagement', 'event_label': stock.value || 'Unknown' });
       }
