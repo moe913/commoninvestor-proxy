@@ -1,4 +1,4 @@
-console.log('Common Investor v10 Loaded');
+console.log('Common Investor v11 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1670,11 +1670,19 @@ function calculateCurrent() {
 
 function calculateFuture(isManual = false) {
   // Premium Guard: Only allow if Premium OR Manual (which has its own check)
-  // Actually, the manual button has its own check.
-  // But for auto-calls (isManual=false), we must ensure Premium AND Auto-Calc Enabled.
   if (!isManual) {
     if (!isPremium || !isAutoCalcEnabled) return;
   }
+
+  // Mandatory Name Check
+  if (!stock.value.trim()) {
+    if (isManual) {
+      alert('Please enter a Company Name or Ticker to proceed.');
+      stock.focus();
+    }
+    return;
+  }
+
   const pickEl = (singleEl, baseEl, bullEl, caseKey) => {
     if (!dualCaseEnabled || caseKey === 'single') return singleEl;
     return caseKey === 'base' ? baseEl : bullEl;
