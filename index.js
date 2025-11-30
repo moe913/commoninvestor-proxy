@@ -1,4 +1,4 @@
-console.log('Common Investor v43 Loaded');
+console.log('Common Investor v44 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -2999,7 +2999,21 @@ if (tabHub) tabHub.addEventListener('click', () => switchTab('hub'));
 // Helper for Locked View
 function renderLockedView(container) {
   if (!container) return;
-  container.innerHTML = `
+
+  // Check if lock already exists
+  if (container.querySelector('.locked-overlay')) return;
+
+  // Hide existing content
+  Array.from(container.children).forEach(child => {
+    if (!child.classList.contains('locked-overlay')) {
+      child.style.display = 'none';
+      child.classList.add('was-hidden-by-lock');
+    }
+  });
+
+  const lockDiv = document.createElement('div');
+  lockDiv.className = 'locked-overlay';
+  lockDiv.innerHTML = `
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 400px; text-align: center; padding: 20px;">
       <div style="font-size: 3rem; margin-bottom: 16px;">🔒</div>
       <h2 style="margin-bottom: 8px;">Premium Feature</h2>
@@ -3011,6 +3025,22 @@ function renderLockedView(container) {
       </button>
     </div>
   `;
+  container.appendChild(lockDiv);
+}
+
+function unlockView(container) {
+  if (!container) return;
+
+  const lock = container.querySelector('.locked-overlay');
+  if (lock) lock.remove();
+
+  // Restore content
+  Array.from(container.children).forEach(child => {
+    if (child.classList.contains('was-hidden-by-lock')) {
+      child.style.display = '';
+      child.classList.remove('was-hidden-by-lock');
+    }
+  });
 }
 
 function switchTab(tabName) {
@@ -3046,9 +3076,28 @@ function switchTab(tabName) {
 
     // Check Premium
     if (!isPremium) {
+      renderLockedView(insightsTab);
+      return;
+    }
+    unlockView(insightsTab);
+
+    // Render charts if stock selected
+    const symbol = stock.value.toUpperCase();
+    if (symbol && mockStocks[symbol]) {
+      renderInsightsCharts(mockStocks[symbol]);
+    } else if (symbol === 'META' || !symbol) {
+      renderInsightsCharts(mockStocks['META']);
+    }
+  } else if (tabName === 'hub') {
+    if (tabHub) tabHub.classList.add('active');
+    if (hubTab) hubTab.classList.add('active');
+
+    // Check Premium
+    if (!isPremium) {
       renderLockedView(hubTab);
       return;
     }
+    unlockView(hubTab);
 
     // Render/Update Hub content
     renderSavedItems();
