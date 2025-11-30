@@ -1,4 +1,4 @@
-console.log('Common Investor v42 Loaded');
+console.log('Common Investor v43 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -94,11 +94,6 @@ const pe = $('#pe'), pm = $('#profitMargin'), price = $('#price');
 const earnings = document.getElementById('earningsValue') || document.getElementById('earnings');
 const eps = document.getElementById('epsValue') || document.getElementById('eps');
 const mv = $('#marketValue');
-const summaryCard = document.querySelector('.mobile-summary');
-const summaryMarket = $('#summaryMarketValue');
-const summaryFuturePrice = $('#summaryFuturePrice');
-const summaryFutureMarket = $('#summaryFutureMarketValue');
-const summarySPFlag = $('#summarySPFlag');
 const companyBanner = $('#companyBanner');
 const futureCard = $('#futureCard');
 const futureResults = $('#futureResults');
@@ -134,17 +129,7 @@ function updateActiveCompany() {
   updateCompanyBanner();
 }
 
-let summaryRevealed = false;
-function revealSummary() {
-  if (summaryRevealed) return;
-  summaryRevealed = true;
-  if (summaryCard) {
-    summaryCard.classList.add('is-visible');
-    summaryCard.removeAttribute('hidden');
-    const help = summaryCard.querySelector('.help');
-    if (help) help.textContent = 'Latest snapshot based on your inputs.';
-  }
-}
+
 
 const frMode = $('#futureRevenueMode');
 const frLabel = $('#futureRevenueControlsLabel');
@@ -1785,7 +1770,7 @@ function calculateCurrent() {
     const market = (sh > 0 && p > 0) ? sh * p : 0;
     const formattedMarket = market > 0 ? fmtAbbrFullHtml(market) : '–';
     if (mv) mv.innerHTML = formattedMarket;
-    if (summaryMarket) summaryMarket.textContent = market > 0 ? '$' + fmtMB(market) : '–';
+
 
     // Only auto-run future calc after the user has explicitly calculated once
     if (typeof isAutoCalcEnabled !== 'undefined' && isAutoCalcEnabled) {
@@ -1957,8 +1942,6 @@ function calculateFuture(isManual = false) {
   if (caseOutputs.single?.eps) caseOutputs.single.eps.textContent = primary.futEPS > 0 ? primary.futEPS.toFixed(2) : '–';
   if (caseOutputs.single?.mv) caseOutputs.single.mv.innerHTML = primary.futMV > 0 ? fmtAbbrFullHtml(primary.futMV) : '–';
 
-  if (summaryFuturePrice) summaryFuturePrice.textContent = primary.futPrice > 0 ? '$' + primary.futPrice.toFixed(2) : '–';
-  if (summaryFutureMarket) summaryFutureMarket.textContent = primary.futMV > 0 ? '$' + fmtMB(primary.futMV) : '–';
 
   // Collect warnings for missing inputs so we can show helpful flags instead of throwing
   const warnings = [];
@@ -1991,19 +1974,7 @@ function calculateFuture(isManual = false) {
 
     spComp.textContent = beatsSP ? 'Beating S&P 500' : 'Not beating S&P 500';
 
-    if (summarySPFlag) {
-      summarySPFlag.classList.remove('is-good', 'is-bad', 'is-warn');
-      if (beatsSP && hits2x) {
-        summarySPFlag.textContent = '🚀 Crushing the S&P pace';
-        summarySPFlag.classList.add('is-good');
-      } else if (beatsSP && !hits2x) {
-        summarySPFlag.textContent = '✅ Ahead of the S&P pace';
-        summarySPFlag.classList.add('is-warn');
-      } else {
-        summarySPFlag.textContent = '🛑 Below the S&P pace';
-        summarySPFlag.classList.add('is-bad');
-      }
-    }
+
 
     // Outcome Flags
     const outcomeFlags = $('#outcomeFlags');
@@ -2484,7 +2455,7 @@ function applySharedState(s) {
   applyState(s);
   calculateCurrent();
   calculateFuture();
-  revealSummary();
+
   toast('Loaded from link');
   return true;
 }
@@ -2805,7 +2776,7 @@ futureInputs.forEach(el => {
 window.runFutureCalculation = function () {
   try {
     futureAutoEnabled = true;
-    revealSummary();
+
     calculateCurrent();
     calculateFuture();
     toast('Calculated Future Projections ✅');
