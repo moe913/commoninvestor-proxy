@@ -1,4 +1,4 @@
-console.log('Common Investor v48 Loaded');
+console.log('Common Investor v49 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -2192,19 +2192,48 @@ function renderGrowthChart(currentPrice, futurePrice) {
 function validateSuffixes(next) {
   const clean = (s) => (s || '').toString().trim().replace(/[$,%\s,]/g, '');
   const hasUnit = (value) => /[MBT]$/i.test(value);
-  const hasDropdown = (sel) => !!sel && sel.selectedIndex >= 0; // treat any selection (including “none”) as explicit
+  const hasDropdown = (sel) => !!sel && sel.value !== '';
 
   const revTyped = clean(revenue.value);
   const shTyped = clean(shares.value);
-  const frTyped = clean(frAbs.value);
-  const fsTyped = clean(fsAbs.value);
 
   const revMissing = Boolean(revTyped && !hasUnit(revTyped) && !hasDropdown(revSuf));
   const shMissing = Boolean(shTyped && !hasUnit(shTyped) && !hasDropdown(shSuf));
-  const frMissing = Boolean(frMode.value === 'absolute' && frTyped && !hasUnit(frTyped) && !hasDropdown(frSuf));
-  const fsMissing = Boolean(fsMode.value === 'absolute' && fsTyped && !hasUnit(fsTyped) && !hasDropdown(fsSuf));
 
-  if (!revMissing && !shMissing && !frMissing && !fsMissing) return next();
+  let frMissing = false;
+  let fsMissing = false;
+  let frBaseMissing = false;
+  let frBullMissing = false;
+  let fsBaseMissing = false;
+  let fsBullMissing = false;
+
+  // Future Revenue
+  if (frMode.value === 'absolute') {
+    if (dualCaseEnabled) {
+      const frBaseTyped = clean(frAbsBase?.value);
+      const frBullTyped = clean(frAbsBull?.value);
+      frBaseMissing = Boolean(frBaseTyped && !hasUnit(frBaseTyped) && !hasDropdown(frSufBase));
+      frBullMissing = Boolean(frBullTyped && !hasUnit(frBullTyped) && !hasDropdown(frSufBull));
+    } else {
+      const frTyped = clean(frAbs?.value);
+      frMissing = Boolean(frTyped && !hasUnit(frTyped) && !hasDropdown(frSuf));
+    }
+  }
+
+  // Future Shares
+  if (fsMode.value === 'absolute') {
+    if (dualCaseEnabled) {
+      const fsBaseTyped = clean(fsAbsBase?.value);
+      const fsBullTyped = clean(fsAbsBull?.value);
+      fsBaseMissing = Boolean(fsBaseTyped && !hasUnit(fsBaseTyped) && !hasDropdown(fsSufBase));
+      fsBullMissing = Boolean(fsBullTyped && !hasUnit(fsBullTyped) && !hasDropdown(fsSufBull));
+    } else {
+      const fsTyped = clean(fsAbs?.value);
+      fsMissing = Boolean(fsTyped && !hasUnit(fsTyped) && !hasDropdown(fsSuf));
+    }
+  }
+
+  if (!revMissing && !shMissing && !frMissing && !fsMissing && !frBaseMissing && !frBullMissing && !fsBaseMissing && !fsBullMissing) return next();
 
   suffixDialog.dataset.pendingCallback = next;
   suffixBody.innerHTML = '';
@@ -2229,8 +2258,14 @@ function validateSuffixes(next) {
 
   if (revMissing) createRow('Revenue (TTM)', 'revenue', revTyped);
   if (shMissing) createRow('Outstanding Shares', 'shares', shTyped);
-  if (frMissing) createRow('Future Revenue', 'futureRevenue', frTyped);
-  if (fsMissing) createRow('Future Shares', 'futureShares', fsTyped);
+
+  if (frMissing) createRow('Future Revenue', 'futureRevenue', clean(frAbs?.value));
+  if (frBaseMissing) createRow('Future Revenue (Base)', 'futureRevenueBase', clean(frAbsBase?.value));
+  if (frBullMissing) createRow('Future Revenue (Bull)', 'futureRevenueBull', clean(frAbsBull?.value));
+
+  if (fsMissing) createRow('Future Shares', 'futureShares', clean(fsAbs?.value));
+  if (fsBaseMissing) createRow('Future Shares (Base)', 'futureSharesBase', clean(fsAbsBase?.value));
+  if (fsBullMissing) createRow('Future Shares (Bull)', 'futureSharesBull', clean(fsAbsBull?.value));
 
   suffixDialog.showModal();
   const confirmBtn = $('#suffixConfirmBtn');
@@ -2253,10 +2288,17 @@ function validateSuffixes(next) {
     selects.forEach(sel => {
       const f = sel.dataset.field;
       const normalized = sel.value === 'none' ? '' : sel.value;
+
       if (f === 'revenue' && revSuf) revSuf.value = normalized;
       else if (f === 'shares' && shSuf) shSuf.value = normalized;
+
       else if (f === 'futureRevenue' && frSuf) frSuf.value = normalized;
+      else if (f === 'futureRevenueBase' && frSufBase) frSufBase.value = normalized;
+      else if (f === 'futureRevenueBull' && frSufBull) frSufBull.value = normalized;
+
       else if (f === 'futureShares' && fsSuf) fsSuf.value = normalized;
+      else if (f === 'futureSharesBase' && fsSufBase) fsSufBase.value = normalized;
+      else if (f === 'futureSharesBull' && fsSufBull) fsSufBull.value = normalized;
     });
     suffixDialog.close();
     next();
@@ -2735,18 +2777,18 @@ if (calcFutureBtn) {
     });
   };
   calcFutureBtn.addEventListener('click', () => {
-
-
-    if (typeof gtag === 'function') {
-      gtag('event', 'calculate_projection', { 'event_category': 'engagement', 'event_label': stock.value || 'Unknown' });
-    }
-    futureAutoEnabled = true;
-    revealSummary();
-    calculateCurrent();
-    calculateFuture(true); // Manual trigger
-    scrollToFutureResults();
-    ensureFutureCardBottomVisible();
-    toast('Calculated ✅');
+    validateSuffixes(() => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'calculate_projection', { 'event_category': 'engagement', 'event_label': stock.value || 'Unknown' });
+      }
+      futureAutoEnabled = true;
+      revealSummary();
+      calculateCurrent();
+      calculateFuture(true); // Manual trigger
+      scrollToFutureResults();
+      ensureFutureCardBottomVisible();
+      toast('Calculated ✅');
+    });
   });
 }
 
