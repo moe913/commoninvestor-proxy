@@ -780,6 +780,20 @@
     </div>
   </dialog>
 
+  <!-- Premium Lock Modal (Specific Feature Lock) -->
+  <dialog id="premiumLockModal"
+    style="padding:40px; border-radius:16px; border:1px solid var(--border); background:var(--panel); color:var(--text); box-shadow:0 20px 40px rgba(0,0,0,0.5); text-align:center; max-width:400px">
+    <div style="font-size: 3rem; margin-bottom: 16px;">🔒</div>
+    <h2 style="margin:0 0 8px">Premium Feature</h2>
+    <p style="color:var(--muted); margin:0 0 24px">Unlock Premium to use this feature.</p>
+    <button class="btn primary special-btn full-width"
+      onclick="document.getElementById('premiumLockModal').close(); document.getElementById('loginModal').showModal()">
+      Unlock Now
+    </button>
+    <button class="btn ghost sm" style="margin-top:12px"
+      onclick="document.getElementById('premiumLockModal').close()">Close</button>
+  </dialog>
+
   <!-- Premium Login Modal -->
   <dialog id="loginModal" class="modal">
     <div class="modal-box">
@@ -852,7 +866,7 @@
 
 
   <script src="sp500-data.js"></script>
-  <script src="index.js?v=18" defer></script>
+  <script src="index.js?v=19" defer></script>
   <script defer>
     (function () {
       const enableMobileRedirect = true; // enabled for production

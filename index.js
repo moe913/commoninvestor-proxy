@@ -1,4 +1,4 @@
-console.log('Common Investor v18 Loaded');
+console.log('Common Investor v19 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -990,7 +990,7 @@ if (savePdfBtn) {
   savePdfBtn.addEventListener('click', () => {
     if (!isPremium) {
       document.getElementById('saveOptionsDialog').close();
-      document.getElementById('premiumModal').showModal();
+      document.getElementById('premiumLockModal').showModal();
       return;
     }
     saveOptionsDialog.close();
@@ -1009,7 +1009,7 @@ if (saveExcelBtn) {
   saveExcelBtn.addEventListener('click', () => {
     if (!isPremium) {
       document.getElementById('saveOptionsDialog').close();
-      document.getElementById('premiumModal').showModal();
+      document.getElementById('premiumLockModal').showModal();
       return;
     }
     saveOptionsDialog.close();
