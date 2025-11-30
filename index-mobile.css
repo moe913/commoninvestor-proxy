@@ -339,8 +339,7 @@ body.mobile .inline-actions {
   gap: 14px;
 }
 
-body.mobile #saveBtn,
-body.mobile #saveBtn2 {
+body.mobile #saveBtn {
   display: none !important;
 }
 
