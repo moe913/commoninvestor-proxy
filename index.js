@@ -1,4 +1,4 @@
-console.log('Common Investor v53 Loaded');
+console.log('Common Investor v56 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -2314,9 +2314,17 @@ function validateInputs(next) {
         return;
       }
       stock.value = val;
+
       // Trigger autofill if available
       if (typeof tryAutoFill === 'function') {
-        await tryAutoFill(val);
+        try {
+          await tryAutoFill(val);
+        } catch (e) {
+          console.error('AutoFill failed in validation:', e);
+        }
+      }
+      if (typeof updateActiveCompany === 'function') {
+        updateActiveCompany();
       }
     }
 
@@ -2345,8 +2353,11 @@ function validateInputs(next) {
     });
 
     dialog.close();
-    // Small delay to ensure state is propagated
-    setTimeout(() => next(), 50);
+    // Longer delay to ensure DOM/State is propagated before calculation runs
+    setTimeout(() => {
+      console.log('Triggering pending calculation...');
+      next();
+    }, 300);
   };
 }
 
@@ -2822,13 +2833,16 @@ if (calcFutureBtn) {
     });
   };
   calcFutureBtn.addEventListener('click', () => {
+    console.log('Calculate button clicked');
     validateInputs(() => {
+      console.log('Validation passed, executing callback...');
       if (typeof gtag === 'function') {
         gtag('event', 'calculate_projection', { 'event_category': 'engagement', 'event_label': stock.value || 'Unknown' });
       }
       futureAutoEnabled = true;
       revealSummary();
       calculateCurrent();
+      console.log('Calling calculateFuture(true)...');
       calculateFuture(true); // Manual trigger
       scrollToFutureResults();
       ensureFutureCardBottomVisible();

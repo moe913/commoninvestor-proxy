@@ -119,7 +119,8 @@ Since you have reached your Netlify credit limit, you should run the application
 - **Desktop Upsell**: Verified that a premium upsell popup appears on desktop after calculation for free users.
 - **Hub Lock**: Verified that "Saved Calculations" are locked for free users and unlocked for premium users.
 - **Consolidated Validation**: Verified that missing "Company Name" and missing "Units" are handled in a single, unified popup instead of separate alerts.
-- **Calculation Trigger**: Verified that the calculation now triggers correctly after confirming the validation popup, by awaiting the async data fetch.
+- **Calculation Trigger**: Verified that the calculation now triggers correctly after confirming the validation popup, by awaiting the async data fetch and adding a delay.
+- **Mobile Fix**: Verified that the mobile version now includes the correct validation dialog and triggers calculation properly.
 
 ## Final Status
 All requested features and fixes have been implemented and verified.
@@ -128,7 +129,7 @@ All requested features and fixes have been implemented and verified.
 - Unit Enforcement: Active.
 - Premium Upsells: Active.
 - Hub Lock: Active.
-- Validation UX: Consolidated & Functional.
+- Validation UX: Consolidated & Functional (Desktop & Mobile).
 
 ### 10. Hub Sync & UI Standardization (Final Polish)
 - **Hub Sync Fixed**: I fixed an issue where saved calculations were not appearing on the desktop version. This was due to the list not initializing correctly on load. It now syncs perfectly with mobile (sharing the same browser storage).

@@ -690,18 +690,17 @@
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-  <dialog id="suffixDialog" class="suffix-dialog">
+  <dialog id="validationDialog" style="border:none; border-radius:14px; padding:0; width:min(520px, 92vw)">
     <div class="card">
       <div class="card-h">
-        <h3>Select Units for Each Value</h3>
+        <h3>Input Required</h3>
       </div>
       <div class="card-b">
-        <p class="help" style="margin-top:-2px">You must explicitly select if each value is in Millions (M), Billions
-          (B), Trillions (T), or None</p>
-        <div id="suffixDialogBody"></div>
+        <p class="help" style="margin-top:-2px">Please provide the missing information to proceed.</p>
+        <div id="validationDialogBody"></div>
         <div class="inline-actions" style="margin-top:16px">
-          <button id="suffixConfirmBtn" class="btn primary">Confirm and Calculate</button>
-          <button id="suffixCancelBtn" class="btn">Cancel</button>
+          <button id="validationConfirmBtn" class="btn primary">Confirm and Calculate</button>
+          <button id="validationCancelBtn" class="btn">Cancel</button>
         </div>
       </div>
     </div>
@@ -784,29 +783,9 @@
     </div>
   </dialog>
 
-  <!-- Missing Name Modal -->
-  <dialog id="missingNameModal" class="modal">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h2>Company Name Required</h2>
-        <p>Please enter the company name or ticker to proceed.</p>
-      </div>
-      <div class="field" style="margin: 20px 0;">
-        <label for="modalStockInput">Company / Ticker</label>
-        <input type="text" id="modalStockInput" placeholder="e.g. NVDA" autocomplete="off">
-      </div>
-      <div class="modal-actions">
-        <button id="modalSubmitNameBtn" class="btn primary full-width">Calculate</button>
-      </div>
-      <p style="margin-top: 12px; font-size: 0.85rem; color: var(--muted); text-align: center;">
-        💡 Tip: Enter this at the top next time!
-      </p>
-    </div>
-  </dialog>
 
 
-
-  <script src="index.js?v=53" defer></script>
+  <script src="index.js?v=56" defer></script>
   <script defer>
     (function () {
       const enforceDesktopRedirect = false; // enabled for production
