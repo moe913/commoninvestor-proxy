@@ -1,4 +1,4 @@
-console.log('Common Investor v38 Loaded');
+console.log('Common Investor v39 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1025,19 +1025,26 @@ function saveCalculationToHub() {
     const ticker = stock.value || 'Unknown';
     const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 
+    // Helper to extract value from Input or Text Element safely
+    const getVal = (el) => {
+      if (!el) return 0;
+      const raw = (el.tagName === 'INPUT' || el.tagName === 'SELECT') ? el.value : el.textContent;
+      return parseFloat((raw || '').replace(/[^0-9.-]/g, '')) || 0;
+    };
+
     // Capture all inputs
     let revGrowth = 0;
-    if (frMode.value === 'absolute') revGrowth = parseFloat(frAbs.value) || 0;
-    else if (frMode.value === 'percentage') revGrowth = parseFloat(frPct.value) || 0;
-    else if (frMode.value === 'compounded') revGrowth = parseFloat(frCagr.value) || 0;
+    if (frMode?.value === 'absolute') revGrowth = parseFloat(frAbs?.value) || 0;
+    else if (frMode?.value === 'percentage') revGrowth = parseFloat(frPct?.value) || 0;
+    else if (frMode?.value === 'compounded') revGrowth = parseFloat(frCagr?.value) || 0;
 
     let sharesChange = 0;
-    if (fsMode.value === 'absolute') sharesChange = parseFloat(fsAbs.value) || 0;
-    else if (fsMode.value === 'percentage') sharesChange = parseFloat(fsPct.value) || 0;
-    else if (fsMode.value === 'compounded') sharesChange = parseFloat(fsCagr.value) || 0;
+    if (fsMode?.value === 'absolute') sharesChange = parseFloat(fsAbs?.value) || 0;
+    else if (fsMode?.value === 'percentage') sharesChange = parseFloat(fsPct?.value) || 0;
+    else if (fsMode?.value === 'compounded') sharesChange = parseFloat(fsCagr?.value) || 0;
 
     // Capture Snapshot Data
-    const curPriceVal = parseFloat(price.value) || 0;
+    const curPriceVal = getVal(price);
     const futPriceText = document.getElementById('futureStockPrice')?.textContent || '0';
     const futPriceVal = parseFloat(futPriceText.replace(/[$,]/g, '')) || 0;
 
@@ -1059,7 +1066,7 @@ function saveCalculationToHub() {
     // Calculate Net Income manually if missing/invalid
     let netIncomeVal = getAbbr('earningsValue');
     if (netIncomeVal === '-' || netIncomeVal === '$0' || netIncomeVal === '$0.00') {
-      const revVal = parseFloat(revenue.value) || 0;
+      const revVal = getVal(revenue);
       const marginVal = parseFloat(document.getElementById('profitMargin')?.value) || 0;
       if (revVal > 0 && marginVal > 0) {
         const ni = revVal * (marginVal / 100);
@@ -1075,29 +1082,29 @@ function saveCalculationToHub() {
       stock: ticker,
       date: date,
       current: {
-        marketValue: parseFloat(mv.value.replace(/[^0-9.-]/g, '')) || 0,
-        revenue: parseFloat(revenue.value.replace(/[^0-9.-]/g, '')) || 0,
-        shares: parseFloat(shares.value.replace(/[^0-9.-]/g, '')) || 0,
-        earnings: parseFloat(earnings.value.replace(/[^0-9.-]/g, '')) || 0,
-        eps: parseFloat(eps.textContent) || 0,
-        pe: parseFloat(pe.value) || 0
+        marketValue: getVal(mv),
+        revenue: getVal(revenue),
+        shares: getVal(shares),
+        earnings: getVal(earnings),
+        eps: getVal(eps),
+        pe: getVal(pe)
       },
       future: {
         revenueGrowth: revGrowth,
         sharesChange: sharesChange,
-        pe: parseFloat(fPE.value) || 0,
-        marketValue: parseFloat(fMV.textContent.replace(/[^0-9.-]/g, '')) || 0,
-        price: parseFloat(fPrice.textContent.replace(/[^0-9.-]/g, '')) || 0
+        pe: getVal(fPE),
+        marketValue: getVal(fMV),
+        price: getVal(fPrice)
       }
     };
 
     const currentMetrics = {
       price: curPriceVal > 0 ? '$' + curPriceVal.toFixed(2) : '-',
-      pe: pe.value || '-',
-      revenue: revenue.value ? '$' + revenue.value + (document.getElementById('revenueSuffix').value || '') : '-',
+      pe: pe?.value || '-',
+      revenue: revenue?.value ? '$' + revenue.value + (document.getElementById('revenueSuffix')?.value || '') : '-',
       netIncome: netIncomeVal,
       profitMargin: (document.getElementById('profitMargin')?.value || '0') + '%',
-      shares: (shares.value || '0') + (document.getElementById('sharesSuffix')?.value || '')
+      shares: (shares?.value || '0') + (document.getElementById('sharesSuffix')?.value || '')
     };
 
     const results = {
@@ -1130,7 +1137,7 @@ function saveCalculationToHub() {
 
   } catch (e) {
     console.error('Error saving to hub:', e);
-    alert('Failed to save calculation. Please try again.');
+    alert('Error saving: ' + e.message);
   }
 }
 
