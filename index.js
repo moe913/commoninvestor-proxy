@@ -1,4 +1,4 @@
-console.log('Common Investor v13 Loaded');
+console.log('Common Investor v14 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1131,36 +1131,47 @@ function renderSavedItems() {
         <button class="btn ghost sm delete-btn" style="padding:4px 8px; color:var(--muted); border:none" aria-label="Delete">×</button>
       </div>
       
-      <div class="saved-details" style="display:none; padding:0 16px 16px 16px; border-top:1px solid var(--border)">
-        <!-- Section 1: Snapshot at Time -->
-        <div style="margin-bottom:16px">
-            <h4 style="margin:12px 0 8px; font-size:0.9em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.8">Snapshot at Time</h4>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap:8px; font-size:0.9em">
-                <div><div style="opacity:0.6">Price</div><div>${item.currentMetrics?.price || '-'}</div></div>
-                <div><div style="opacity:0.6">P/E</div><div>${item.currentMetrics?.pe || '-'}</div></div>
-                <div><div style="opacity:0.6">Revenue</div><div>${item.currentMetrics?.revenue || '-'}</div></div>
-                <div><div style="opacity:0.6">Net Income</div><div>${item.currentMetrics?.netIncome || '-'}</div></div>
+      <div class="saved-details" style="display:none; padding:16px; border-top:1px solid var(--border)">
+        <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+            <!-- Section 1: Snapshot at Time -->
+            <div style="flex: 1; min-width: 180px;">
+                <h4 style="margin:0 0 12px; font-size:0.85em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.7; border-bottom: 1px solid var(--border); padding-bottom: 4px;">Snapshot</h4>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:0.9em">
+                    <div><div style="opacity:0.6; font-size:0.85em">Price</div><div>${item.currentMetrics?.price || '-'}</div></div>
+                    <div><div style="opacity:0.6; font-size:0.85em">P/E</div><div>${item.currentMetrics?.pe || '-'}</div></div>
+                    <div><div style="opacity:0.6; font-size:0.85em">Revenue</div><div>${item.currentMetrics?.revenue || '-'}</div></div>
+                    <div><div style="opacity:0.6; font-size:0.85em">Net Inc</div><div>${item.currentMetrics?.netIncome || '-'}</div></div>
+                </div>
             </div>
-        </div>
 
-        <!-- Section 2: Your Thesis -->
-        <div style="margin-bottom:16px">
-            <h4 style="margin:12px 0 8px; font-size:0.9em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.8">Your Thesis</h4>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap:8px; font-size:0.9em">
-                <div><div style="opacity:0.6">Rev Growth</div><div>${item.inputs?.futureRevenueGrowth || 0}%</div></div>
-                <div><div style="opacity:0.6">Profit Margin</div><div>${item.inputs?.futureMargin || 0}%</div></div>
-                <div><div style="opacity:0.6">Shares Chg</div><div>${item.inputs?.futureSharesChange || 0}%</div></div>
-                <div><div style="opacity:0.6">Terminal P/E</div><div>${item.inputs?.futurePE || 0}</div></div>
+            <!-- Section 2: Your Thesis -->
+            <div style="flex: 1; min-width: 180px;">
+                <h4 style="margin:0 0 12px; font-size:0.85em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.7; border-bottom: 1px solid var(--border); padding-bottom: 4px;">Thesis</h4>
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:0.9em">
+                    <div><div style="opacity:0.6; font-size:0.85em">Rev Growth</div><div>${item.inputs?.futureRevenueGrowth || 0}%</div></div>
+                    <div><div style="opacity:0.6; font-size:0.85em">Margin</div><div>${item.inputs?.futureMargin || 0}%</div></div>
+                    <div><div style="opacity:0.6; font-size:0.85em">Shares</div><div>${item.inputs?.futureSharesChange || 0}%</div></div>
+                    <div><div style="opacity:0.6; font-size:0.85em">Term P/E</div><div>${item.inputs?.futurePE || 0}</div></div>
+                </div>
             </div>
-        </div>
 
-        <!-- Section 3: The Outcome -->
-        <div>
-            <h4 style="margin:12px 0 8px; font-size:0.9em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.8; color:var(--accent)">The Outcome</h4>
-            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap:8px; font-size:1.1em; font-weight:600">
-                <div><div style="font-size:0.7em; opacity:0.6; font-weight:400">Future Price</div><div>${item.results?.futurePrice || '-'}</div></div>
-                <div><div style="font-size:0.7em; opacity:0.6; font-weight:400">Upside</div><div style="color:var(--success)">${item.results?.upside || '-'}</div></div>
-                <div><div style="font-size:0.7em; opacity:0.6; font-weight:400">CAGR</div><div style="color:var(--success)">${item.results?.cagr || '-'}</div></div>
+            <!-- Section 3: The Outcome -->
+            <div style="flex: 1; min-width: 180px;">
+                <h4 style="margin:0 0 12px; font-size:0.85em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.7; color:var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px;">Outcome</h4>
+                <div style="display:grid; grid-template-columns: 1fr; gap:8px; font-size:1em; font-weight:600">
+                    <div style="display:flex; justify-content:space-between">
+                        <span style="font-size:0.85em; opacity:0.6; font-weight:400">Future Price</span>
+                        <span>${item.results?.futurePrice || '-'}</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between">
+                        <span style="font-size:0.85em; opacity:0.6; font-weight:400">Upside</span>
+                        <span style="color:var(--success)">${item.results?.upside || '-'}</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between">
+                        <span style="font-size:0.85em; opacity:0.6; font-weight:400">CAGR</span>
+                        <span style="color:var(--success)">${item.results?.cagr || '-'}</span>
+                    </div>
+                </div>
             </div>
         </div>
       </div>
