@@ -60,9 +60,9 @@
   <main aria-live="polite">
     <!-- Tab Navigation -->
     <div class="tab-nav">
-      <button id="tabProjections" class="tab-btn active">Future Projections</button>
-      <button id="tabInsights" class="tab-btn">Insights (Premium)</button>
-      <button id="tabHub" class="tab-btn">My Hub</button>
+      <button id="tabProjections" class="tab-btn active">Projections</button>
+      <button id="tabInsights" class="tab-btn">Insights</button>
+      <button id="tabHub" class="tab-btn">Hub</button>
     </div>
 
     <!-- Tab 1: Future Projections (Existing Calculator) -->
@@ -96,9 +96,9 @@
                   <input id="revenue" type="text" inputmode="decimal" placeholder="e.g., 89.7M or select unit →" />
                   <select id="revenueSuffix">
                     <option value="">(None)</option>
-                    <option value="M">Millions</option>
-                    <option value="B">Billions</option>
-                    <option value="T">Trillions</option>
+                    <option value="M">Millions (M)</option>
+                    <option value="B">Billions (B)</option>
+                    <option value="T">Trillions (T)</option>
                   </select>
                 </div>
                 <p class="help">Enter value with M/B/T suffix or select unit from dropdown</p>
@@ -109,9 +109,9 @@
                   <input id="shares" type="text" inputmode="decimal" placeholder="e.g., 7.6M or select unit →" />
                   <select id="sharesSuffix">
                     <option value="">(None)</option>
-                    <option value="M">Millions</option>
-                    <option value="B">Billions</option>
-                    <option value="T">Trillions</option>
+                    <option value="M">Millions (M)</option>
+                    <option value="B">Billions (B)</option>
+                    <option value="T">Trillions (T)</option>
                   </select>
                 </div>
                 <p class="help">Enter value with M/B/T suffix or select unit from dropdown</p>
@@ -198,9 +198,9 @@
                       aria-label="Future revenue absolute value" />
                     <select id="futureRevenueSuffix" aria-label="Future revenue unit">
                       <option value="" disabled selected>Select Unit</option>
-                      <option value="M">Millions</option>
-                      <option value="B">Billions</option>
-                      <option value="T">Trillions</option>
+                      <option value="M">Millions (M)</option>
+                      <option value="B">Billions (B)</option>
+                      <option value="T">Trillions (T)</option>
                     </select>
                   </div>
                 </div>
@@ -236,9 +236,9 @@
                           aria-label="Future revenue absolute base value" />
                         <select id="futureRevenueSuffixBase" aria-label="Future revenue base unit">
                           <option value="" disabled selected>Select Unit</option>
-                          <option value="M">Millions</option>
-                          <option value="B">Billions</option>
-                          <option value="T">Trillions</option>
+                          <option value="M">Millions (M)</option>
+                          <option value="B">Billions (B)</option>
+                          <option value="T">Trillions (T)</option>
                         </select>
                       </div>
                     </div>
@@ -249,9 +249,9 @@
                           aria-label="Future revenue absolute bull value" />
                         <select id="futureRevenueSuffixBull" aria-label="Future revenue bull unit">
                           <option value="" disabled selected>Select Unit</option>
-                          <option value="M">Millions</option>
-                          <option value="B">Billions</option>
-                          <option value="T">Trillions</option>
+                          <option value="M">Millions (M)</option>
+                          <option value="B">Billions (B)</option>
+                          <option value="T">Trillions (T)</option>
                         </select>
                       </div>
                     </div>
@@ -331,9 +331,9 @@
                       aria-label="Future shares absolute value" />
                     <select id="futureSharesSuffix" aria-label="Future shares unit">
                       <option value="">(None)</option>
-                      <option value="M">Millions</option>
-                      <option value="B">Billions</option>
-                      <option value="T">Trillions</option>
+                      <option value="M">Millions (M)</option>
+                      <option value="B">Billions (B)</option>
+                      <option value="T">Trillions (T)</option>
                     </select>
                   </div>
                 </div>
@@ -369,9 +369,9 @@
                           aria-label="Future shares absolute value base" />
                         <select id="futureSharesSuffixBase" aria-label="Future shares unit base">
                           <option value="">(None)</option>
-                          <option value="M">Millions</option>
-                          <option value="B">Billions</option>
-                          <option value="T">Trillions</option>
+                          <option value="M">Millions (M)</option>
+                          <option value="B">Billions (B)</option>
+                          <option value="T">Trillions (T)</option>
                         </select>
                       </div>
                     </div>
@@ -382,9 +382,9 @@
                           aria-label="Future shares absolute value bull" />
                         <select id="futureSharesSuffixBull" aria-label="Future shares unit bull">
                           <option value="">(None)</option>
-                          <option value="M">Millions</option>
-                          <option value="B">Billions</option>
-                          <option value="T">Trillions</option>
+                          <option value="M">Millions (M)</option>
+                          <option value="B">Billions (B)</option>
+                          <option value="T">Trillions (T)</option>
                         </select>
                       </div>
                     </div>
@@ -880,7 +880,7 @@
 
 
   <script src="sp500-data.js"></script>
-  <script src="index.js?v=46" defer></script>
+  <script src="index.js?v=47" defer></script>
   <script defer>
     (function () {
       const enableMobileRedirect = false; // enabled for production
