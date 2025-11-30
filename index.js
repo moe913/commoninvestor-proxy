@@ -1,4 +1,4 @@
-console.log('Common Investor v49 Loaded');
+console.log('Common Investor v50 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -2788,6 +2788,15 @@ if (calcFutureBtn) {
       scrollToFutureResults();
       ensureFutureCardBottomVisible();
       toast('Calculated ✅');
+
+      // Premium Upsell for Free Users
+      if (!isPremium && loginModal) {
+        setTimeout(() => {
+          document.getElementById('authChoice').style.display = 'block';
+          document.getElementById('loginFormView').style.display = 'none';
+          loginModal.showModal();
+        }, 1000); // Small delay so they see the result first
+      }
     });
   });
 }
