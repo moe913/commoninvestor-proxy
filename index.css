@@ -1438,3 +1438,21 @@ html.premium-mode,
   --primary: #d97706;
   --primary-600: #b45309;
 }
+
+/* Modal Actions Layout */
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.modal-actions.vertical {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.full-width {
+  width: 100%;
+  justify-content: center;
+}
