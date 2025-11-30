@@ -1443,8 +1443,15 @@ html.premium-mode,
 .modal-actions {
   display: flex;
   gap: 12px;
-  justify-content: flex-end;
+  justify-content: space-between;
+  /* Changed from flex-end */
   margin-top: 24px;
+}
+
+.modal-actions .btn {
+  flex: 1;
+  /* Make buttons equal width */
+  justify-content: center;
 }
 
 .modal-actions.vertical {
@@ -1452,7 +1459,29 @@ html.premium-mode,
   align-items: stretch;
 }
 
+.modal-actions.vertical .btn {
+  flex: none;
+  /* Reset for vertical layout */
+}
+
 .full-width {
   width: 100%;
   justify-content: center;
+}
+
+/* Force stacked fields in modal */
+.modal-content .field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Autofill fix */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--field-bg) inset !important;
+  -webkit-text-fill-color: var(--text) !important;
+  transition: background-color 5000s ease-in-out 0s;
 }
