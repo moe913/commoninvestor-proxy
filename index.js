@@ -1,4 +1,4 @@
-console.log('Common Investor v14 Loaded');
+console.log('Common Investor v15 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1065,16 +1065,25 @@ if (saveToHubBtn) {
         cagr = (Math.pow(futPriceVal / curPriceVal, 1 / 5) - 1) * 100;
       }
 
-      // Calculate Net Income manually if missing
-      let netIncomeVal = document.getElementById('earningsValue')?.textContent || '-';
+      // Helper to get abbreviated text from formatted elements
+      const getAbbr = (id) => {
+        const el = document.getElementById(id);
+        if (!el) return '-';
+        return el.querySelector('.val-abbr')?.textContent || el.textContent || '-';
+      };
+
+      // Calculate Net Income manually if missing/invalid
+      let netIncomeVal = getAbbr('earningsValue');
       if (netIncomeVal === '-' || netIncomeVal === '$0' || netIncomeVal === '$0.00') {
         const revVal = parseFloat(revenue.value) || 0;
-        // Check variables: 'pm' is defined as document.getElementById('profitMargin')?
-        // I need to check if 'pm' variable exists or use document.getElementById('profitMargin')
         const marginVal = parseFloat(document.getElementById('profitMargin')?.value) || 0;
         if (revVal > 0 && marginVal > 0) {
           const ni = revVal * (marginVal / 100);
-          netIncomeVal = '$' + ni.toFixed(2) + (document.getElementById('revenueSuffix').value || '');
+          // Format manually if calculated
+          if (ni >= 1e12) netIncomeVal = '$' + (ni / 1e12).toFixed(2) + 'T';
+          else if (ni >= 1e9) netIncomeVal = '$' + (ni / 1e9).toFixed(2) + 'B';
+          else if (ni >= 1e6) netIncomeVal = '$' + (ni / 1e6).toFixed(2) + 'M';
+          else netIncomeVal = '$' + ni.toFixed(2);
         }
       }
 
@@ -1082,13 +1091,17 @@ if (saveToHubBtn) {
         price: curPriceVal > 0 ? '$' + curPriceVal.toFixed(2) : '-',
         pe: pe.value || '-',
         revenue: revenue.value ? '$' + revenue.value + (document.getElementById('revenueSuffix').value || '') : '-',
-        netIncome: netIncomeVal
+        netIncome: netIncomeVal,
+        profitMargin: (document.getElementById('profitMargin')?.value || '0') + '%',
+        shares: (shares.value || '0') + (document.getElementById('sharesSuffix')?.value || '')
       };
 
       const results = {
         futurePrice: futPriceVal > 0 ? '$' + futPriceVal.toFixed(2) : '-',
         upside: upside !== 0 ? upside.toFixed(1) + '%' : '-',
-        cagr: cagr !== 0 ? cagr.toFixed(1) + '%' : '-'
+        cagr: cagr !== 0 ? cagr.toFixed(1) + '%' : '-',
+        futureRevenue: getAbbr('futureRevenueValue'),
+        futureShares: getAbbr('futureSharesValue')
       };
 
       // Save to localStorage
@@ -1141,6 +1154,8 @@ function renderSavedItems() {
                     <div><div style="opacity:0.6; font-size:0.85em">P/E</div><div>${item.currentMetrics?.pe || '-'}</div></div>
                     <div><div style="opacity:0.6; font-size:0.85em">Revenue</div><div>${item.currentMetrics?.revenue || '-'}</div></div>
                     <div><div style="opacity:0.6; font-size:0.85em">Net Inc</div><div>${item.currentMetrics?.netIncome || '-'}</div></div>
+                    <div><div style="opacity:0.6; font-size:0.85em">Margin</div><div>${item.currentMetrics?.profitMargin || '-'}</div></div>
+                    <div><div style="opacity:0.6; font-size:0.85em">Shares</div><div>${item.currentMetrics?.shares || '-'}</div></div>
                 </div>
             </div>
 
@@ -1150,8 +1165,10 @@ function renderSavedItems() {
                 <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:0.9em">
                     <div><div style="opacity:0.6; font-size:0.85em">Rev Growth</div><div>${item.inputs?.futureRevenueGrowth || 0}%</div></div>
                     <div><div style="opacity:0.6; font-size:0.85em">Margin</div><div>${item.inputs?.futureMargin || 0}%</div></div>
-                    <div><div style="opacity:0.6; font-size:0.85em">Shares</div><div>${item.inputs?.futureSharesChange || 0}%</div></div>
+                    <div><div style="opacity:0.6; font-size:0.85em">Shares Chg</div><div>${item.inputs?.futureSharesChange || 0}%</div></div>
                     <div><div style="opacity:0.6; font-size:0.85em">Term P/E</div><div>${item.inputs?.futurePE || 0}</div></div>
+                    <div><div style="opacity:0.6; font-size:0.85em">Fut Rev</div><div>${item.results?.futureRevenue || '-'}</div></div>
+                    <div><div style="opacity:0.6; font-size:0.85em">Fut Shares</div><div>${item.results?.futureShares || '-'}</div></div>
                 </div>
             </div>
 
