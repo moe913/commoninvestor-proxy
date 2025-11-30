@@ -1,4 +1,4 @@
-console.log('Common Investor v11 Loaded');
+console.log('Common Investor v12 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1238,6 +1238,7 @@ function enablePremiumMode() {
 
   // Persist Premium State
   localStorage.setItem('isPremium', 'true');
+  isPremium = true;
   isAutoCalcEnabled = true;
 
   // Re-render components that depend on premium state
@@ -1271,6 +1272,7 @@ function disablePremiumMode() {
 
   // Clear Premium State
   localStorage.removeItem('isPremium');
+  isPremium = false;
   isAutoCalcEnabled = false;
 
   // Re-render components
