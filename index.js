@@ -1,4 +1,4 @@
-console.log('Common Investor v15 Loaded');
+console.log('Common Investor v16 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1243,18 +1243,30 @@ Earnings: ${document.getElementById('futureEarnings').textContent}
 }
 
 function saveResultsAsCSV() {
+  const getVal = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return '–';
+    // If it has the abbr/full structure, prefer abbr. 
+    // Also clean up whitespace/newlines.
+    const text = el.querySelector('.val-abbr')?.textContent || el.textContent || '–';
+    return text.replace(/\s+/g, ' ').trim();
+  };
+
   const rows = [
     ['Metric', 'Value'],
     ['Stock', stock.value || 'N/A'],
     ['Date', new Date().toLocaleDateString()],
     ['Current Price', price.value],
-    ['Future Price', document.getElementById('futureStockPrice').textContent],
-    ['Future Revenue', document.getElementById('futureRevenueValue').textContent],
-    ['Future Shares', document.getElementById('futureSharesValue')?.textContent || '–']
+    ['Future Price', document.getElementById('futureStockPrice')?.textContent?.trim() || '–'],
+    ['Future Revenue', getVal('futureRevenueValue')],
+    ['Future Shares', getVal('futureSharesValue')],
+    ['Future Earnings', getVal('futureEarnings')],
+    ['Future EPS', document.getElementById('futureEPS')?.textContent?.trim() || '–'],
+    ['Future Market Cap', getVal('futureMarketValue')]
   ];
 
   let csvContent = "data:text/csv;charset=utf-8,"
-    + rows.map(e => e.join(",")).join("\n");
+    + rows.map(e => e.map(cell => `"${cell}"`).join(",")).join("\n"); // Quote cells
 
   const encodedUri = encodeURI(csvContent);
   const link = document.createElement('a');
@@ -1262,6 +1274,7 @@ function saveResultsAsCSV() {
   link.setAttribute("download", `Analysis_${stock.value || 'Stock'}.csv`);
   document.body.appendChild(link);
   link.click();
+  document.body.removeChild(link);
 }
 
 function enablePremiumMode() {
