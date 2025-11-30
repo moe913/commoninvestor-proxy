@@ -1,4 +1,4 @@
-console.log('Common Investor v52 Loaded');
+console.log('Common Investor v53 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -2303,7 +2303,7 @@ function validateInputs(next) {
     };
   }
 
-  confirmBtn.onclick = () => {
+  confirmBtn.onclick = async () => {
     // Validate Name
     if (nameMissing) {
       const input = document.getElementById('validationStockInput');
@@ -2315,7 +2315,9 @@ function validateInputs(next) {
       }
       stock.value = val;
       // Trigger autofill if available
-      if (typeof tryAutoFill === 'function') tryAutoFill(val);
+      if (typeof tryAutoFill === 'function') {
+        await tryAutoFill(val);
+      }
     }
 
     // Validate Units
@@ -2343,7 +2345,8 @@ function validateInputs(next) {
     });
 
     dialog.close();
-    next();
+    // Small delay to ensure state is propagated
+    setTimeout(() => next(), 50);
   };
 }
 
