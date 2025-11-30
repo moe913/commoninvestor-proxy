@@ -531,3 +531,10 @@ body.mobile .toast {
 #hubContent .card-h>div {
   width: 100%;
 }
+
+/* Ensure spacing between cards in tabs */
+body.mobile .tab-content.active {
+  display: flex;
+  flex-direction: column;
+  gap: var(--field-stack-gap);
+}
