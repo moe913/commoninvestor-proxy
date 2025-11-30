@@ -1474,6 +1474,13 @@ html.premium-mode,
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
+}
+
+.modal-content input {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  max-width: none !important;
 }
 
 /* Autofill fix */
@@ -1481,7 +1488,8 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px var(--field-bg) inset !important;
+  -webkit-box-shadow: 0 0 0 30px #111827 inset !important;
+  /* Solid dark color (gray-900) */
   -webkit-text-fill-color: var(--text) !important;
   transition: background-color 5000s ease-in-out 0s;
 }
