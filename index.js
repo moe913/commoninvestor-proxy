@@ -1,4 +1,4 @@
-console.log('Common Investor v37 Loaded');
+console.log('Common Investor v38 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1075,19 +1075,19 @@ function saveCalculationToHub() {
       stock: ticker,
       date: date,
       current: {
-        marketValue: parseFloat(currentMarketValue.value.replace(/[^0-9.-]/g, '')) || 0,
+        marketValue: parseFloat(mv.value.replace(/[^0-9.-]/g, '')) || 0,
         revenue: parseFloat(revenue.value.replace(/[^0-9.-]/g, '')) || 0,
         shares: parseFloat(shares.value.replace(/[^0-9.-]/g, '')) || 0,
         earnings: parseFloat(earnings.value.replace(/[^0-9.-]/g, '')) || 0,
         eps: parseFloat(eps.textContent) || 0,
-        pe: parseFloat(peRatio.value) || 0
+        pe: parseFloat(pe.value) || 0
       },
       future: {
         revenueGrowth: revGrowth,
         sharesChange: sharesChange,
-        pe: parseFloat(futurePe.value) || 0,
-        marketValue: parseFloat(futureMarketValue.textContent.replace(/[^0-9.-]/g, '')) || 0,
-        price: parseFloat(futurePrice.textContent.replace(/[^0-9.-]/g, '')) || 0
+        pe: parseFloat(fPE.value) || 0,
+        marketValue: parseFloat(fMV.textContent.replace(/[^0-9.-]/g, '')) || 0,
+        price: parseFloat(fPrice.textContent.replace(/[^0-9.-]/g, '')) || 0
       }
     };
 
