@@ -537,3 +537,16 @@ body.mobile .tab-content.active {
   flex-direction: column;
   gap: var(--field-stack-gap);
 }
+
+/* Autocomplete Fix */
+.ac {
+  position: relative;
+  z-index: 101;
+}
+
+.ac-list {
+  z-index: 1000 !important;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
