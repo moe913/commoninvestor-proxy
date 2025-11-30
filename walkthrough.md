@@ -111,3 +111,11 @@ Since you have reached your Netlify credit limit, you should run the application
 - **Visible but Locked Tabs**: The "Insights" and "My Hub" tabs are now visible to all users. However, clicking them while on the free plan displays a "Locked" overlay with a call-to-action to upgrade.
 - **Calculate Button Interception**: Clicking "Calculate Future" (or the mobile calculate button) on the free plan now triggers the "Go Premium" modal, showcasing the benefits of upgrading.
 - **Community List**: The "Community's Most Calculated" list remains locked for free users.
+
+### 10. Hub Sync & UI Standardization (Final Polish)
+- **Hub Sync Fixed**: I fixed an issue where saved calculations were not appearing on the desktop version. This was due to the list not initializing correctly on load. It now syncs perfectly with mobile (sharing the same browser storage).
+- **UI Standardization**: I standardized the tab names ("Projections", "Insights", "Hub") and suffix dropdowns (adding "M", "B", "T" abbreviations) across both desktop and mobile for a consistent experience.
+- **Verification**:
+    - Verified that saving a calculation on Mobile instantly appears on Desktop (and vice versa) when refreshing.
+    - Verified that the "Insights" autocomplete dropdown is fully visible and functional on mobile.
+
