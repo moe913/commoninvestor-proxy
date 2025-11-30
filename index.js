@@ -1,4 +1,4 @@
-console.log('Common Investor v39 Loaded');
+console.log('Common Investor v40 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1018,6 +1018,12 @@ if (saveExcelBtn) {
 }
 
 function saveCalculationToHub() {
+  if (!isPremium) {
+    const modal = document.getElementById('premiumLockModal');
+    if (modal) modal.showModal();
+    return;
+  }
+
   if (typeof gtag === 'function') {
     gtag('event', 'save_to_hub', { 'event_category': 'engagement', 'event_label': stock.value || 'Unknown' });
   }
@@ -1326,7 +1332,16 @@ function enablePremiumMode() {
   const logoutBtn = document.getElementById('logoutBtn');
   if (logoutBtn) logoutBtn.style.display = 'inline-block';
 
-  if (saveToHubBtn) saveToHubBtn.style.display = 'inline-block';
+  if (saveToHubBtn) {
+    saveToHubBtn.style.display = 'inline-block';
+    saveToHubBtn.textContent = 'Save to Hub';
+    saveToHubBtn.classList.remove('locked');
+  }
+  if (saveBtn2) {
+    saveBtn2.style.display = 'inline-block';
+    saveBtn2.textContent = 'Save to Hub';
+    saveBtn2.classList.remove('locked');
+  }
 
   // Persist Premium State
   localStorage.setItem('isPremium', 'true');
@@ -1355,7 +1370,16 @@ function disablePremiumMode() {
   const logoutBtn = document.getElementById('logoutBtn');
   if (logoutBtn) logoutBtn.style.display = 'none';
 
-  if (saveToHubBtn) saveToHubBtn.style.display = 'none';
+  if (saveToHubBtn) {
+    saveToHubBtn.style.display = 'inline-block';
+    saveToHubBtn.innerHTML = 'Save to Hub <span class="lock-icon">🔒</span>';
+    saveToHubBtn.classList.add('locked');
+  }
+  if (saveBtn2) {
+    saveBtn2.style.display = 'inline-block';
+    saveBtn2.innerHTML = 'Save to Hub <span class="lock-icon">🔒</span>';
+    saveBtn2.classList.add('locked');
+  }
 
   // Show locks
   $$('.lock-icon').forEach(el => el.style.display = 'inline-block');
