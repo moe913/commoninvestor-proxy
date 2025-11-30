@@ -1,4 +1,4 @@
-console.log('Common Investor v41 Loaded');
+console.log('Common Investor v42 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -2055,6 +2055,14 @@ function calculateFuture(isManual = false) {
     renderGrowthChart(curPrice, primary.futPrice);
   }
 
+  // Post-Calculation Premium Push (Free Users Only)
+  if (!isPremium && isManual) {
+    setTimeout(() => {
+      const upsellModal = document.getElementById('postCalcUpsellModal');
+      if (upsellModal) upsellModal.showModal();
+    }, 2000); // 2s delay
+  }
+
   lastFutureCalc = primary;
   return primary;
 }
@@ -2756,11 +2764,7 @@ if (calcFutureBtn) {
     });
   };
   calcFutureBtn.addEventListener('click', () => {
-    // Premium Check
-    if (!isPremium) {
-      showLoginModal();
-      return;
-    }
+
 
     if (typeof gtag === 'function') {
       gtag('event', 'calculate_projection', { 'event_category': 'engagement', 'event_label': stock.value || 'Unknown' });
@@ -2884,11 +2888,7 @@ if (mobilePanels.length) {
 
   if (mobileCalcBtn) {
     mobileCalcBtn.addEventListener('click', () => {
-      // Premium Check
-      if (!isPremium) {
-        showLoginModal();
-        return;
-      }
+
       if (activeMobileStep === 'current') calcCurrentBtn?.click();
       else calculateFuture(true);
     });

@@ -741,6 +741,20 @@
       onclick="document.getElementById('premiumLockModal').close()">Close</button>
   </dialog>
 
+  <!-- Post-Calculation Upsell Modal -->
+  <dialog id="postCalcUpsellModal"
+    style="padding:32px; border-radius:16px; border:1px solid var(--border); background:var(--panel); color:var(--text); box-shadow:0 20px 40px rgba(0,0,0,0.5); text-align:center; max-width:400px">
+    <div style="font-size: 3rem; margin-bottom: 12px;">🚀</div>
+    <h2 style="margin:0 0 8px">Great Projection!</h2>
+    <p style="color:var(--muted); margin:0 0 24px">Want to save this calculation to your Hub and track it over time?</p>
+    <button class="btn primary special-btn full-width"
+      onclick="document.getElementById('postCalcUpsellModal').close(); document.getElementById('loginModal').showModal()">
+      Unlock Saving & More
+    </button>
+    <button class="btn ghost sm" style="margin-top:12px"
+      onclick="document.getElementById('postCalcUpsellModal').close()">Maybe Later</button>
+  </dialog>
+
   <!-- Premium Login Modal -->
   <dialog id="loginModal" class="modal">
     <div class="modal-box">
@@ -814,7 +828,7 @@
     <button id="premiumBtnBottom" class="mobile-cta primary">💎 Go Premium</button>
   </div>
 
-  <script src="index.js?v=41" defer></script>
+  <script src="index.js?v=42" defer></script>
   <script defer>
     (function () {
       const enforceDesktopRedirect = false; // enabled for production
