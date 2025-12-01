@@ -35,6 +35,14 @@ module.exports = async (req, res) => {
         // Fallback: If standard income history is empty, use earnings chart data
         // Helper to get or create year entry
         const combinedHistory = new Map();
+        const currentYear = new Date().getFullYear();
+
+        const isValidYear = (year) => {
+            const y = parseInt(year);
+            // Filter out 1970 (null dates), pre-2000, and future years
+            return y && y > 2000 && y <= currentYear;
+        };
+
         const getYearEntry = (year) => {
             if (!combinedHistory.has(year)) {
                 combinedHistory.set(year, {
@@ -58,7 +66,7 @@ module.exports = async (req, res) => {
         if (incomeHistory.length > 0) {
             incomeHistory.forEach(item => {
                 const year = item.endDate ? new Date(item.endDate).getFullYear().toString() : '';
-                if (year) {
+                if (isValidYear(year)) {
                     const entry = getYearEntry(year);
                     entry.revenue = (item.totalRevenue || 0) / 1e9;
                     entry.earnings = (item.netIncome || 0) / 1e9;
@@ -72,7 +80,7 @@ module.exports = async (req, res) => {
         if (earningsChart.length > 0) {
             earningsChart.forEach(item => {
                 const year = item.date ? item.date.toString() : '';
-                if (year) {
+                if (isValidYear(year)) {
                     const entry = getYearEntry(year);
                     // Only overwrite if 0 (don't overwrite better data from income statement)
                     if (entry.revenue === 0) entry.revenue = (item.revenue || 0) / 1e9;
@@ -86,7 +94,7 @@ module.exports = async (req, res) => {
         if (cashflowHistory.length > 0) {
             cashflowHistory.forEach(item => {
                 const year = item.endDate ? new Date(item.endDate).getFullYear().toString() : '';
-                if (year) {
+                if (isValidYear(year)) {
                     const entry = getYearEntry(year);
                     // If earnings still 0, try netIncome from cashflow
                     if (entry.earnings === 0) entry.earnings = (item.netIncome || 0) / 1e9;
@@ -106,7 +114,7 @@ module.exports = async (req, res) => {
         const fundamentalsMap = new Map();
         fundamentals.forEach(item => {
             const year = item.date ? new Date(item.date).getFullYear().toString() : '';
-            if (year) {
+            if (isValidYear(year)) {
                 const equity = item.commonStockEquity || item.stockholdersEquity || item.totalStockholderEquity || 0;
                 const fcf = item.freeCashFlow || 0;
                 const shares = item.dilutedAverageShares || item.basicAverageShares || item.ordinarySharesNumber || item.shareIssued || 0;
