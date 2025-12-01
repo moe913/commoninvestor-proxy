@@ -1,3 +1,34 @@
+# Common Investor Proxy
+
+## Development Workflow (Staging vs Production)
+
+We use a **Staging Environment** to test changes before they go live.
+
+### How to make changes:
+1.  **Always work on the `dev` branch**:
+    ```bash
+    git checkout dev
+    ```
+2.  **Make your changes** and test them locally (`npm run dev`).
+3.  **Push to Staging**:
+    ```bash
+    git add .
+    git commit -m "Description of changes"
+    git push origin dev
+    ```
+    *This will update the Staging URL (check Vercel dashboard for the link).*
+
+4.  **Deploy to Production**:
+    Once you are satisfied with the staging site, merge `dev` into `main`:
+    ```bash
+    git checkout main
+    git merge dev
+    git push origin main
+    git checkout dev  # Switch back to dev for next time
+    ```
+
+---
+
 # Common Investor Data Updater
 
 ## 🚀 How to Update Data
