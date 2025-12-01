@@ -194,7 +194,8 @@ module.exports = async (req, res) => {
             if (year) {
                 fundamentalsMap.set(year, {
                     equity: item.commonStockEquity || item.stockholdersEquity || item.totalStockholderEquity || 0,
-                    fcf: item.freeCashFlow || 0
+                    fcf: item.freeCashFlow || 0,
+                    shares: item.dilutedAverageShares || item.basicAverageShares || item.ordinarySharesNumber || item.shareIssued || 0
                 });
             }
         });
@@ -210,8 +211,13 @@ module.exports = async (req, res) => {
                 cur.earnGrowth = ((cur.earnings - prev.earnings) / Math.abs(prev.earnings)) * 100;
             }
 
-
-
+            // Try to fill missing shares from fundamentals
+            if (!cur.shares && fundamentalsMap.has(cur.year)) {
+                const fundShares = fundamentalsMap.get(cur.year).shares;
+                if (fundShares > 0) {
+                    cur.shares = fundShares / 1e9;
+                }
+            }
             if (!cur.eps && cur.shares > 0) {
                 cur.eps = cur.earnings / cur.shares;
             }
