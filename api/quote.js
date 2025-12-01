@@ -18,6 +18,62 @@ module.exports = async (req, res) => {
     }
 
     try {
+        const fmpKey = process.env.FMP_API_KEY;
+
+        // 1. Try FMP if Key is available
+        if (fmpKey) {
+            console.log('Using FMP Data Source');
+            const [income, metrics] = await Promise.all([
+                fetch(`https://financialmodelingprep.com/api/v3/income-statement/${symbol}?limit=5&apikey=${fmpKey}`).then(r => r.json()),
+                fetch(`https://financialmodelingprep.com/api/v3/key-metrics/${symbol}?limit=5&apikey=${fmpKey}`).then(r => r.json())
+            ]);
+
+            if (Array.isArray(income) && income.length > 0) {
+                const history = income.map((item, index) => {
+                    const metric = metrics && metrics[index] ? metrics[index] : {};
+                    const shares = item.weightedAverageShsOutDil || item.weightedAverageShsOut || 0;
+                    const revenue = item.revenue || 0;
+                    const earnings = item.netIncome || 0;
+
+                    return {
+                        year: item.date ? item.date.split('-')[0] : '',
+                        revenue: revenue / 1e9,
+                        earnings: earnings / 1e9,
+                        shares: shares / 1e9,
+                        margin: revenue ? (earnings / revenue) * 100 : 0,
+                        eps: item.epsdiluted || item.eps || 0,
+                        revGrowth: 0, // Calculated later
+                        earnGrowth: 0, // Calculated later
+                        fcf: 0, // FMP has this in cash-flow-statement, skipping for brevity unless needed
+                        roe: metric.roe ? metric.roe * 100 : 0,
+                        pe: metric.peRatio || 0
+                    };
+                }).reverse(); // FMP returns newest first, we want oldest first for growth calc
+
+                // Calculate Growth
+                for (let i = 0; i < history.length; i++) {
+                    const cur = history[i];
+                    const prev = i > 0 ? history[i - 1] : null;
+                    if (prev) {
+                        if (prev.revenue > 0) cur.revGrowth = ((cur.revenue - prev.revenue) / prev.revenue) * 100;
+                        if (Math.abs(prev.earnings) > 0) cur.earnGrowth = ((cur.earnings - prev.earnings) / Math.abs(prev.earnings)) * 100;
+                    }
+                }
+
+                // Add TTM if needed (FMP usually provides annual, for TTM we might need quarterly or just use latest annual as proxy for now)
+                // For now, let's return the annual history.
+
+                return {
+                    statusCode: 200,
+                    body: JSON.stringify({
+                        name: symbol, // FMP profile endpoint needed for name, skipping for now
+                        history: history
+                    })
+                };
+            }
+        }
+
+        // 2. Fallback to Yahoo Finance
         // Fetch Quote (Price, PE, etc.)
         const quote = await yahooFinance.quote(symbol);
 
