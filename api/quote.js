@@ -157,6 +157,41 @@ module.exports = async (req, res) => {
             }
         }
 
+        // Smart Backfill for Shares:
+        // Find the first year with valid shares data (oldest known)
+        let firstValidShares = 0;
+        for (const h of history) {
+            if (h.shares > 0) {
+                firstValidShares = h.shares;
+                break;
+            }
+        }
+
+        // Backfill any preceding years with 0 shares using this oldest known value
+        if (firstValidShares > 0) {
+            for (const h of history) {
+                if (h.shares === 0) {
+                    h.shares = firstValidShares;
+                } else {
+                    // Once we hit data, we stop backfilling (we only fill the empty tail/start)
+                    // Actually, since history is sorted by year (ascending), we should backfill 
+                    // until we hit the first valid entry we found.
+                    // But simpler: just fill 0s. If there's a gap in the middle, filling with oldest known is safer than 0.
+                    // However, usually the gap is at the start (2022, 2023 missing, 2024 present).
+                    // So filling 0s with firstValidShares works for the start.
+                    // If there is a gap in the middle (2022 ok, 2023 missing, 2024 ok), 
+                    // we might want to interpolate, but using oldest (2022) or newest (2024) is fine.
+                    // Let's stick to the plan: use oldest available to fill gaps.
+                    // Wait, if we iterate forward, we find 2024 is the first valid.
+                    // 2022 (0) -> gets 2024 value.
+                    // 2023 (0) -> gets 2024 value.
+                    // 2024 (valid) -> keeps value.
+                    // This is correct for "backfilling" from the future to the past.
+                    break;
+                }
+            }
+        }
+
         const ttmEntry = history.find(h => h.year === 'TTM');
         if (ttmEntry) {
             if (!ttmEntry.roe && summary.financialData && summary.financialData.returnOnEquity) {
