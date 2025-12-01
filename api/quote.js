@@ -14,66 +14,13 @@ module.exports = async (req, res) => {
     const { symbol } = req.query;
 
     if (!symbol) {
-        return res.status(400).json({ error: "Symbol parameter is required" });
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ error: "Symbol parameter is required" })
+        };
     }
 
     try {
-        const fmpKey = process.env.FMP_API_KEY;
-
-        // 1. Try FMP if Key is available
-        if (fmpKey) {
-            console.log('Using FMP Data Source');
-            const [income, metrics] = await Promise.all([
-                fetch(`https://financialmodelingprep.com/api/v3/income-statement/${symbol}?limit=5&apikey=${fmpKey}`).then(r => r.json()),
-                fetch(`https://financialmodelingprep.com/api/v3/key-metrics/${symbol}?limit=5&apikey=${fmpKey}`).then(r => r.json())
-            ]);
-
-            if (Array.isArray(income) && income.length > 0) {
-                const history = income.map((item, index) => {
-                    const metric = metrics && metrics[index] ? metrics[index] : {};
-                    const shares = item.weightedAverageShsOutDil || item.weightedAverageShsOut || 0;
-                    const revenue = item.revenue || 0;
-                    const earnings = item.netIncome || 0;
-
-                    return {
-                        year: item.date ? item.date.split('-')[0] : '',
-                        revenue: revenue / 1e9,
-                        earnings: earnings / 1e9,
-                        shares: shares / 1e9,
-                        margin: revenue ? (earnings / revenue) * 100 : 0,
-                        eps: item.epsdiluted || item.eps || 0,
-                        revGrowth: 0, // Calculated later
-                        earnGrowth: 0, // Calculated later
-                        fcf: 0, // FMP has this in cash-flow-statement, skipping for brevity unless needed
-                        roe: metric.roe ? metric.roe * 100 : 0,
-                        pe: metric.peRatio || 0
-                    };
-                }).reverse(); // FMP returns newest first, we want oldest first for growth calc
-
-                // Calculate Growth
-                for (let i = 0; i < history.length; i++) {
-                    const cur = history[i];
-                    const prev = i > 0 ? history[i - 1] : null;
-                    if (prev) {
-                        if (prev.revenue > 0) cur.revGrowth = ((cur.revenue - prev.revenue) / prev.revenue) * 100;
-                        if (Math.abs(prev.earnings) > 0) cur.earnGrowth = ((cur.earnings - prev.earnings) / Math.abs(prev.earnings)) * 100;
-                    }
-                }
-
-                // Add TTM if needed (FMP usually provides annual, for TTM we might need quarterly or just use latest annual as proxy for now)
-                // For now, let's return the annual history.
-
-                return {
-                    statusCode: 200,
-                    body: JSON.stringify({
-                        name: symbol, // FMP profile endpoint needed for name, skipping for now
-                        history: history
-                    })
-                };
-            }
-        }
-
-        // 2. Fallback to Yahoo Finance
         // Fetch Quote (Price, PE, etc.)
         const quote = await yahooFinance.quote(symbol);
 
@@ -151,6 +98,14 @@ module.exports = async (req, res) => {
         }
 
         // 4. Process Fundamentals (Equity, FCF, Shares)
+        let fundamentals = [];
+        try {
+            const fundResult = await yahooFinance.fundamentalsTimeSeries(symbol, { period1: '2019-01-01', module: 'all' });
+            fundamentals = fundResult;
+        } catch (e) {
+            if (e.result) fundamentals = e.result;
+        }
+
         const fundamentalsMap = new Map();
         fundamentals.forEach(item => {
             const year = item.date ? new Date(item.date).getFullYear().toString() : '';
@@ -213,40 +168,97 @@ module.exports = async (req, res) => {
             }
         }
 
-        // Smart Backfill for Shares:
-        // Find the first year with valid shares data (oldest known)
-        let firstValidShares = 0;
-        for (const h of history) {
-            if (h.shares > 0) {
-                firstValidShares = h.shares;
-                break;
+        const sharesB = (stats.sharesOutstanding || 0) / 1e9;
+        const ttmRevenue = finData.totalRevenue || 0;
+        const ttmMargin = finData.profitMargins || 0;
+        const ttmEarnings = ttmRevenue * ttmMargin;
+        const ttmNetIncome = finData.netIncomeToCommon || ttmEarnings;
+
+        if (ttmRevenue > 0 || ttmNetIncome > 0) {
+            let ttmRevGrowth = 0;
+            let ttmEarnGrowth = 0;
+
+            const calcAvgGrowth = (data, revKey, earnKey) => {
+                if (!data || data.length < 5) return { r: 0, e: 0 };
+                const sorted = [...data].sort((a, b) => {
+                    const da = a.endDate || a.date;
+                    const db = b.endDate || b.date;
+                    return new Date(da) - new Date(db);
+                });
+
+                let rGrowthSum = 0;
+                let eGrowthSum = 0;
+                let count = 0;
+
+                for (let i = sorted.length - 1; i >= 4 && count < 4; i--) {
+                    const cur = sorted[i];
+                    const prev = sorted[i - 4];
+                    const curRev = cur[revKey] || cur.revenue || 0;
+                    const prevRev = prev[revKey] || prev.revenue || 0;
+                    const curEarn = cur[earnKey] || cur.earnings || cur.netIncome || 0;
+                    const prevEarn = prev[earnKey] || prev.earnings || prev.netIncome || 0;
+
+                    if (prevRev > 0) {
+                        rGrowthSum += ((curRev - prevRev) / prevRev);
+                    }
+                    if (Math.abs(prevEarn) > 0) {
+                        eGrowthSum += ((curEarn - prevEarn) / Math.abs(prevEarn));
+                    }
+                    count++;
+                }
+
+                return {
+                    r: count > 0 ? (rGrowthSum / count) * 100 : 0,
+                    e: count > 0 ? (eGrowthSum / count) * 100 : 0
+                };
+            };
+
+            let growth = calcAvgGrowth(quarterlyIncome, 'totalRevenue', 'netIncome');
+            if (growth.r === 0 && growth.e === 0 && quarterlyEarningsChart.length > 0) {
+                growth = calcAvgGrowth(quarterlyEarningsChart, 'revenue', 'earnings');
             }
+
+            ttmRevGrowth = growth.r;
+            ttmEarnGrowth = growth.e;
+
+            const lastYear = history[history.length - 1];
+            if (ttmRevGrowth === 0 && lastYear && lastYear.revenue > 0) {
+                ttmRevGrowth = ((ttmRevenue / 1e9 - lastYear.revenue) / lastYear.revenue) * 100;
+            }
+            if (ttmEarnGrowth === 0 && lastYear && Math.abs(lastYear.earnings) > 0) {
+                ttmEarnGrowth = ((ttmNetIncome / 1e9 - lastYear.earnings) / Math.abs(lastYear.earnings)) * 100;
+            }
+
+            history.push({
+                year: 'TTM',
+                revenue: ttmRevenue / 1e9,
+                earnings: ttmNetIncome / 1e9,
+                margin: ttmMargin * 100,
+                revGrowth: ttmRevGrowth,
+                earnGrowth: ttmEarnGrowth,
+                eps: 0,
+                fcf: 0,
+                roe: 0,
+                shares: sharesB
+            });
         }
 
-        // Backfill any preceding years with 0 shares using this oldest known value
-        if (firstValidShares > 0) {
-            for (const h of history) {
-                if (h.shares === 0) {
-                    h.shares = firstValidShares;
-                } else {
-                    // Once we hit data, we stop backfilling (we only fill the empty tail/start)
-                    // Actually, since history is sorted by year (ascending), we should backfill 
-                    // until we hit the first valid entry we found.
-                    // But simpler: just fill 0s. If there's a gap in the middle, filling with oldest known is safer than 0.
-                    // However, usually the gap is at the start (2022, 2023 missing, 2024 present).
-                    // So filling 0s with firstValidShares works for the start.
-                    // If there is a gap in the middle (2022 ok, 2023 missing, 2024 ok), 
-                    // we might want to interpolate, but using oldest (2022) or newest (2024) is fine.
-                    // Let's stick to the plan: use oldest available to fill gaps.
-                    // Wait, if we iterate forward, we find 2024 is the first valid.
-                    // 2022 (0) -> gets 2024 value.
-                    // 2023 (0) -> gets 2024 value.
-                    // 2024 (valid) -> keeps value.
-                    // This is correct for "backfilling" from the future to the past.
-                    break;
-                }
+        const balanceSheetMap = new Map();
+        const balanceSheets = summary.balanceSheetHistory?.balanceSheetStatements || [];
+        balanceSheets.forEach(item => {
+            const year = item.endDate ? new Date(item.endDate).getFullYear().toString() : '';
+            if (year) balanceSheetMap.set(year, item.totalStockholderEquity || 0);
+        });
+
+        const cashflowMap = new Map();
+        cashflowHistory.forEach(item => {
+            const year = item.endDate ? new Date(item.endDate).getFullYear().toString() : '';
+            if (year) {
+                const opCash = item.totalCashFromOperatingActivities || item.operatingCashflow || 0;
+                const capex = item.capitalExpenditures || 0;
+                cashflowMap.set(year, opCash + capex);
             }
-        }
+        });
 
         const ttmEntry = history.find(h => h.year === 'TTM');
         if (ttmEntry) {
@@ -270,9 +282,15 @@ module.exports = async (req, res) => {
             history: history
         };
 
-        res.status(200).json(result);
+        return {
+            statusCode: 200,
+            body: JSON.stringify(result)
+        };
 
     } catch (error) {
-        res.status(500).json({ error: "Failed to fetch Yahoo data", details: error.message });
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: "Failed to fetch Yahoo data", details: error.message })
+        };
     }
 };
