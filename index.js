@@ -637,9 +637,9 @@ if (loginForm) {
         isPremium = true;
         localStorage.setItem('isPremium', 'true');
         localStorage.setItem('username', data.username);
-        enablePremiumMode();
-        loginModal.close();
-        toast(`Welcome back, ${data.username}!`, 3000);
+
+        // Force reload to ensure all premium features unlock correctly (Mobile/Desktop)
+        window.location.reload();
       } else {
         loginError.textContent = 'Invalid username or password';
         loginError.style.display = 'block';
