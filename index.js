@@ -84,6 +84,7 @@ const TRENDING_POOL = [
   'IBM', 'QCOM', 'TXN', 'HON', 'UNH'
 ];
 let realCalculatedStocks = []; // Placeholder for real backend data
+let currentStockData = null; // Store latest fetched data for Insights tab
 
 // ===== Elements =====
 const stock = $('#stock'), stockList = $('#stockList');
@@ -719,6 +720,9 @@ async function tryAutoFill(symbol) {
     toast(`No data found for ${sym}`, 2000);
     return;
   }
+
+  // Update global state for Insights tab
+  currentStockData = data;
 
   // Populate UI
   // Note: Proxy returns raw numbers for top-level, Billions for history
@@ -3187,9 +3191,15 @@ function switchTab(tabName) {
 
     // Render charts if stock selected
     const symbol = stock.value.toUpperCase();
-    if (symbol && mockStocks[symbol]) {
+
+    // Use currentStockData if it matches the input, otherwise fall back to mock or re-fetch logic
+    if (currentStockData && (currentStockData.symbol === symbol || currentStockData.name === symbol)) {
+      renderInsightsCharts(currentStockData);
+    } else if (symbol && mockStocks[symbol]) {
+      // Fallback to mock data if available (legacy)
       renderInsightsCharts(mockStocks[symbol]);
     } else if (symbol === 'META' || !symbol) {
+      // Default fallback
       renderInsightsCharts(mockStocks['META']);
     }
   } else if (tabName === 'hub') {
