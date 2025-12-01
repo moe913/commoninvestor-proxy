@@ -210,9 +210,7 @@ module.exports = async (req, res) => {
                 cur.earnGrowth = ((cur.earnings - prev.earnings) / Math.abs(prev.earnings)) * 100;
             }
 
-            if (!cur.shares && sharesB > 0) {
-                cur.shares = sharesB;
-            }
+
 
             if (!cur.eps && cur.shares > 0) {
                 cur.eps = cur.earnings / cur.shares;
