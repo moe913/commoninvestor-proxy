@@ -26,6 +26,12 @@
   <script src="sp500-data.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
+    // Mobile Redirect
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768) {
+      // Only redirect if not already on mobile page (though this is index.html)
+      window.location.href = "index-mobile.html";
+    }
+
     // Immediate Premium Check to prevent FOUC (Flash of Un-premium Content)
     if (localStorage.getItem('isPremium') === 'true') {
       document.documentElement.classList.add('premium-mode');
