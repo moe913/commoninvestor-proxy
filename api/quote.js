@@ -39,8 +39,8 @@ module.exports = async (req, res) => {
 
         const isValidYear = (year) => {
             const y = parseInt(year);
-            // Filter out 1970 (null dates), pre-2000, and future years
-            return y && y > 2000 && y <= currentYear;
+            // Filter out 1970 (null dates), pre-2000, and future/current years (only completed years)
+            return y && y > 2000 && y < currentYear;
         };
 
         const getYearEntry = (year) => {
