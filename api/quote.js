@@ -14,10 +14,7 @@ module.exports = async (req, res) => {
     const { symbol } = req.query;
 
     if (!symbol) {
-        return {
-            statusCode: 400,
-            body: JSON.stringify({ error: "Symbol parameter is required" })
-        };
+        return res.status(400).json({ error: "Symbol parameter is required" });
     }
 
     try {
@@ -282,15 +279,9 @@ module.exports = async (req, res) => {
             history: history
         };
 
-        return {
-            statusCode: 200,
-            body: JSON.stringify(result)
-        };
+        res.status(200).json(result);
 
     } catch (error) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: "Failed to fetch Yahoo data", details: error.message })
-        };
+        res.status(500).json({ error: "Failed to fetch Yahoo data", details: error.message });
     }
 };
