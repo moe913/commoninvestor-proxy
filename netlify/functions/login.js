@@ -35,11 +35,14 @@ exports.handler = async (event) => {
                 const path = require('path');
                 const fs = require('fs');
                 const localPath = path.resolve(__dirname, '../../users.json');
+                console.log('Attempting to read local users file at:', localPath);
 
                 if (fs.existsSync(localPath)) {
                     const data = fs.readFileSync(localPath, 'utf8');
                     users = JSON.parse(data);
+                    console.log('Successfully read local users.json. Count:', users.length);
                 } else {
+                    console.warn('Local users.json not found at:', localPath);
                     // Ultimate fallback for immediate testing if file read fails
                     users = [{ username: 'moe', password: 'password123' }];
                 }
@@ -50,14 +53,19 @@ exports.handler = async (event) => {
             }
         }
 
+        console.log('Login attempt for:', username);
+        console.log('Available users:', users.map(u => u.username)); // Log usernames only for security
+
         const user = users.find(u => u.username === username && u.password === password);
 
         if (user) {
+            console.log('Login successful for:', username);
             return {
                 statusCode: 200,
                 body: JSON.stringify({ success: true, username: user.username })
             };
         } else {
+            console.log('Login failed. Invalid credentials.');
             return { statusCode: 401, body: 'Invalid credentials' };
         }
     } catch (error) {

@@ -16,7 +16,15 @@ module.exports = async (req, res) => {
     }
 
     try {
-        const { username, password } = req.body;
+        let body = req.body;
+        if (typeof body === 'string') {
+            try {
+                body = JSON.parse(body);
+            } catch (e) {
+                console.warn('Failed to parse body as JSON:', e);
+            }
+        }
+        const { username, password } = body || {};
 
         let users = [];
 
