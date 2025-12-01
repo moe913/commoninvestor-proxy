@@ -4,5 +4,6 @@
             "source": "/.netlify/functions/:match*",
             "destination": "/api/:match*"
         }
-    ]
+    ],
+    "outputDirectory": "."
 }
