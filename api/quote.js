@@ -105,7 +105,8 @@ module.exports = async (req, res) => {
         // 4. Process Fundamentals (Equity, FCF, Shares)
         let fundamentals = [];
         try {
-            const fundResult = await yahooFinance.fundamentalsTimeSeries(symbol, { period1: '2019-01-01', module: 'all' });
+            // Request annual data with extended history to get as many past years as possible (e.g. 2021, 2020)
+            const fundResult = await yahooFinance.fundamentalsTimeSeries(symbol, { period1: '2010-01-01', module: 'all', type: 'annual' });
             fundamentals = fundResult;
         } catch (e) {
             if (e.result) fundamentals = e.result;
