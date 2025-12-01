@@ -18,13 +18,15 @@ exports.handler = async function (event, context) {
         // Fetch History (Financials)
         // We need annual income statements for the graphs.
         // yahoo-finance2 'quoteSummary' with 'incomeStatementHistory' module gives this.
-        // Added 'earnings', 'cashflowStatementHistory', 'balanceSheetHistory' as fallbacks.
-        const summary = await yahooFinance.quoteSummary(symbol, { modules: ['incomeStatementHistory', 'defaultKeyStatistics', 'financialData', 'earnings', 'cashflowStatementHistory', 'balanceSheetHistory'] });
+        // Added 'incomeStatementHistoryQuarterly' for TTM growth calculation
+        const summary = await yahooFinance.quoteSummary(symbol, { modules: ['incomeStatementHistory', 'incomeStatementHistoryQuarterly', 'defaultKeyStatistics', 'financialData', 'earnings', 'cashflowStatementHistory', 'balanceSheetHistory'] });
 
         let incomeHistory = summary.incomeStatementHistory?.incomeStatementHistory || [];
+        const quarterlyIncome = summary.incomeStatementHistoryQuarterly?.incomeStatementHistory || [];
         const stats = summary.defaultKeyStatistics || {};
         const finData = summary.financialData || {};
         const earningsChart = summary.earnings?.financialsChart?.yearly || [];
+        const quarterlyEarningsChart = summary.earnings?.financialsChart?.quarterly || [];
         const cashflowHistory = summary.cashflowStatementHistory?.cashflowStatements || [];
 
         // Fallback: If standard income history is empty, use earnings chart data
@@ -99,13 +101,90 @@ exports.handler = async function (event, context) {
         const ttmNetIncome = finData.netIncomeToCommon || ttmEarnings;
 
         if (ttmRevenue > 0 || ttmNetIncome > 0) {
+            // Calculate TTM Growth (Average of last 4 quarters YoY growth)
+            let ttmRevGrowth = 0;
+            let ttmEarnGrowth = 0;
+
+            // Helper to calculate average growth from quarterly data
+            const calcAvgGrowth = (data, revKey, earnKey) => {
+                if (!data || data.length < 5) return { r: 0, e: 0 };
+                // Sort by date ascending
+                const sorted = [...data].sort((a, b) => {
+                    const da = a.endDate || a.date;
+                    const db = b.endDate || b.date;
+                    return new Date(da) - new Date(db);
+                });
+
+                let rGrowthSum = 0;
+                let eGrowthSum = 0;
+                let count = 0;
+
+                // We need at least 5 quarters to calculate YoY for the most recent one?
+                // Actually, to calculate average of last 4, we need 8 quarters.
+                // Yahoo usually returns 4-5.
+                // If we have 5, we can calculate YoY for the last 1.
+                // If we have 4, we can't calculate YoY for any.
+                // Fallback: If we can't do average of 4, do whatever we can (e.g. average of last 1 or 2).
+
+                // Let's try to calculate YoY for as many of the last 4 quarters as possible.
+                // i starts at sorted.length - 1 (most recent).
+                // We look back 4 quarters (i-4) to compare.
+
+                for (let i = sorted.length - 1; i >= 4 && count < 4; i--) {
+                    const cur = sorted[i];
+                    const prev = sorted[i - 4]; // 4 quarters ago = 1 year ago
+
+                    const curRev = cur[revKey] || cur.revenue || 0;
+                    const prevRev = prev[revKey] || prev.revenue || 0;
+
+                    const curEarn = cur[earnKey] || cur.earnings || cur.netIncome || 0;
+                    const prevEarn = prev[earnKey] || prev.earnings || prev.netIncome || 0;
+
+                    if (prevRev > 0) {
+                        rGrowthSum += ((curRev - prevRev) / prevRev);
+                        // We count this quarter for revenue
+                    }
+
+                    if (Math.abs(prevEarn) > 0) {
+                        eGrowthSum += ((curEarn - prevEarn) / Math.abs(prevEarn));
+                    }
+
+                    count++;
+                }
+
+                return {
+                    r: count > 0 ? (rGrowthSum / count) * 100 : 0,
+                    e: count > 0 ? (eGrowthSum / count) * 100 : 0
+                };
+            };
+
+            // Try using incomeStatementHistoryQuarterly
+            let growth = calcAvgGrowth(quarterlyIncome, 'totalRevenue', 'netIncome');
+
+            // If that failed (returns 0), try earningsChart.quarterly which might have more history
+            if (growth.r === 0 && growth.e === 0 && quarterlyEarningsChart.length > 0) {
+                growth = calcAvgGrowth(quarterlyEarningsChart, 'revenue', 'earnings');
+            }
+
+            ttmRevGrowth = growth.r;
+            ttmEarnGrowth = growth.e;
+
+            // Fallback: If still 0, compare TTM vs Last Full Year (better than nothing)
+            const lastYear = history[history.length - 1];
+            if (ttmRevGrowth === 0 && lastYear && lastYear.revenue > 0) {
+                ttmRevGrowth = ((ttmRevenue / 1e9 - lastYear.revenue) / lastYear.revenue) * 100;
+            }
+            if (ttmEarnGrowth === 0 && lastYear && Math.abs(lastYear.earnings) > 0) {
+                ttmEarnGrowth = ((ttmNetIncome / 1e9 - lastYear.earnings) / Math.abs(lastYear.earnings)) * 100;
+            }
+
             history.push({
                 year: 'TTM',
                 revenue: ttmRevenue / 1e9,
                 earnings: ttmNetIncome / 1e9,
                 margin: ttmMargin * 100,
-                revGrowth: 0,
-                earnGrowth: 0,
+                revGrowth: ttmRevGrowth,
+                earnGrowth: ttmEarnGrowth,
                 eps: 0,
                 fcf: 0,
                 roe: 0,

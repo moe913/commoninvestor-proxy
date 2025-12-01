@@ -1002,6 +1002,15 @@ if (saveExcelBtn) {
   });
 }
 
+// Helper to get user-specific storage key
+function getHubStorageKey() {
+  const username = localStorage.getItem('username');
+  if (username) {
+    return `user_${username}_savedHubItems`;
+  }
+  return 'savedHubItems'; // Fallback for legacy/guest
+}
+
 function saveCalculationToHub() {
   if (!isPremium) {
     const modal = document.getElementById('premiumLockModal');
@@ -1108,10 +1117,11 @@ function saveCalculationToHub() {
 
     // Save to localStorage
     const newItem = { ticker, date, timestamp: Date.now(), inputs, currentMetrics, results };
-    const savedItems = JSON.parse(localStorage.getItem('savedHubItems') || '[]');
+    const storageKey = getHubStorageKey();
+    const savedItems = JSON.parse(localStorage.getItem(storageKey) || '[]');
     savedItems.unshift(newItem);
     if (savedItems.length > 50) savedItems.pop(); // Limit to 50
-    localStorage.setItem('savedHubItems', JSON.stringify(savedItems));
+    localStorage.setItem(storageKey, JSON.stringify(savedItems));
 
     // Update UI
     if (typeof renderSavedItems === 'function') renderSavedItems();
@@ -1140,7 +1150,8 @@ function renderSavedItems() {
   const savedList = document.getElementById('hubSavedList');
   if (!savedList) return;
 
-  const savedItems = JSON.parse(localStorage.getItem('savedHubItems') || '[]');
+  const storageKey = getHubStorageKey();
+  const savedItems = JSON.parse(localStorage.getItem(storageKey) || '[]');
 
   if (!isPremium) {
     savedList.innerHTML = `
@@ -1239,7 +1250,7 @@ function renderSavedItems() {
       e.stopPropagation(); // Prevent loading
       if (confirm(`Delete ${item.ticker} analysis?`)) {
         savedItems.splice(index, 1);
-        localStorage.setItem('savedHubItems', JSON.stringify(savedItems));
+        localStorage.setItem(storageKey, JSON.stringify(savedItems));
         renderSavedItems(); // Re-render
         toast('Item deleted.', 2000);
       }
@@ -3502,17 +3513,74 @@ function renderInsightsCharts(stockData) {
   if (!stockData || !stockData.history) return;
 
   // Reverse history for display (TTM -> Oldest)
-  // Create a copy to avoid mutating the original mock data in place if called multiple times
   const h = [...stockData.history].reverse();
-
   const labels = h.map(d => d.year);
 
   // Helper to create/update chart
-  const updateChart = (id, label, dataKey, color, formatType = 'currency') => {
+  const updateChart = (id, label, dataKey, color, formatType = 'currency', forceUnit = null) => {
     const ctx = document.getElementById(id);
     if (!ctx) return;
 
-    const data = h.map(d => d[dataKey] || 0);
+    let data = h.map(d => d[dataKey] || 0);
+    let finalLabel = label;
+    let unitSuffix = '';
+    let fullUnitName = '';
+
+    // Dynamic Unit Logic (Billions vs Millions)
+    if (formatType === 'currency' && !forceUnit) {
+      const maxVal = Math.max(...data.map(Math.abs));
+
+      if (maxVal > 0 && maxVal < 1.0) {
+        data = data.map(v => v * 1000);
+        unitSuffix = 'M';
+        fullUnitName = 'Millions';
+        finalLabel = label.replace('($)', '($M)');
+      } else {
+        unitSuffix = 'B';
+        fullUnitName = 'Billions';
+        finalLabel = label.replace('($)', '($B)');
+      }
+    } else if (formatType === 'currency' && forceUnit) {
+      // For EPS, it's just $
+      unitSuffix = '';
+    } else if (formatType === 'number' && label.includes('(B)')) {
+      // For Shares
+      unitSuffix = 'B';
+      fullUnitName = 'Billions';
+    }
+
+    // Update HTML Header if possible
+    // The canvas is inside .chart-wrapper, which is sibling to <h3>Title</h3>
+    try {
+      const wrapper = ctx.parentElement;
+      if (wrapper && wrapper.previousElementSibling && wrapper.previousElementSibling.tagName === 'H3') {
+        const h3 = wrapper.previousElementSibling;
+        // Reset to base title first (remove existing parens if any to avoid duplication)
+        // Actually, simpler to just set it based on the ID map or just append if not present
+        // But we don't have the base title map here easily unless we parse it.
+        // Let's rely on the fact that we know the base titles from the calls below.
+        // We can pass the base title to updateChart?
+        // Or just replace text content if we know what it is.
+
+        // Better approach: We passed 'label' which is like "Revenue ($)".
+        // Let's use that to derive the header.
+        // Or just map IDs to Base Titles.
+        const baseTitles = {
+          'chartRevenue': 'Revenue',
+          'chartEarnings': 'Earnings (Net Income)',
+          'chartFCF': 'Free Cash Flow',
+          'chartShares': 'Shares Outstanding'
+        };
+
+        if (baseTitles[id]) {
+          if (fullUnitName) {
+            h3.textContent = `${baseTitles[id]} (${fullUnitName})`;
+          } else {
+            h3.textContent = baseTitles[id];
+          }
+        }
+      }
+    } catch (e) { console.warn('Could not update header', e); }
 
     if (insightsCharts[id]) {
       insightsCharts[id].destroy();
@@ -3525,7 +3593,7 @@ function renderInsightsCharts(stockData) {
       data: {
         labels: labels,
         datasets: [{
-          label: label,
+          label: finalLabel,
           data: data,
           backgroundColor: isAllZero ? 'transparent' : color,
           borderRadius: 6,
@@ -3546,12 +3614,11 @@ function renderInsightsCharts(stockData) {
                   val = val.toFixed(2);
                 }
                 if (formatType === 'percent') return val + '%';
-                if (formatType === 'currency') return '$' + val;
-                return val;
+                if (formatType === 'currency') return '$' + val + unitSuffix;
+                return val + (unitSuffix ? unitSuffix : '');
               }
             }
           },
-          // Custom plugin for empty state
           emptyState: {
             id: 'emptyState',
             afterDraw(chart) {
@@ -3562,7 +3629,7 @@ function renderInsightsCharts(stockData) {
                 ctx.textBaseline = 'middle';
                 ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
                 ctx.font = 'italic 13px "Inter", sans-serif';
-                ctx.fillText('Data Unavailable (Local Mode)', left + width / 2, top + height / 2);
+                ctx.fillText('Data Unavailable', left + width / 2, top + height / 2);
                 ctx.restore();
               }
             }
@@ -3575,11 +3642,13 @@ function renderInsightsCharts(stockData) {
             ticks: {
               callback: (value) => {
                 if (typeof value === 'number') {
-                  value = value.toFixed(2);
+                  value = value.toFixed(2); // Keep 2 decimals for axis? Maybe too crowded. Let's try default formatting or fixed 0 if large.
+                  // Actually standard charts usually abbreviate axis.
+                  // But let's stick to the requested format.
                 }
                 if (formatType === 'percent') return value + '%';
-                if (formatType === 'currency') return '$' + value;
-                return value;
+                if (formatType === 'currency') return '$' + value + unitSuffix;
+                return value + (unitSuffix ? unitSuffix : '');
               }
             }
           },
@@ -3596,7 +3665,7 @@ function renderInsightsCharts(stockData) {
             ctx.textBaseline = 'middle';
             ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
             ctx.font = 'italic 13px "Inter", sans-serif';
-            ctx.fillText('Data Unavailable (Local Mode)', left + width / 2, top + height / 2);
+            ctx.fillText('Data Unavailable', left + width / 2, top + height / 2);
             ctx.restore();
           }
         }
@@ -3605,17 +3674,17 @@ function renderInsightsCharts(stockData) {
   };
 
   // 1. Revenue
-  updateChart('chartRevenue', 'Revenue ($B)', 'revenue', '#2563eb', 'currency');
+  updateChart('chartRevenue', 'Revenue ($)', 'revenue', '#2563eb', 'currency');
   // 2. Revenue Growth
   updateChart('chartRevenueGrowth', 'Growth (%)', 'revGrowth', '#3b82f6', 'percent');
   // 3. Earnings
-  updateChart('chartEarnings', 'Earnings ($B)', 'earnings', '#10b981', 'currency');
+  updateChart('chartEarnings', 'Earnings ($)', 'earnings', '#10b981', 'currency');
   // 4. Earnings Growth
   updateChart('chartEarningsGrowth', 'Growth (%)', 'earnGrowth', '#34d399', 'percent');
   // 5. EPS
-  updateChart('chartEPS', 'EPS ($)', 'eps', '#f59e0b', 'currency');
+  updateChart('chartEPS', 'EPS ($)', 'eps', '#f59e0b', 'currency', true); // Force unit (don't auto-scale EPS to millions/billions logic same way)
   // 6. FCF
-  updateChart('chartFCF', 'FCF ($B)', 'fcf', '#8b5cf6', 'currency');
+  updateChart('chartFCF', 'FCF ($)', 'fcf', '#8b5cf6', 'currency');
   // 7. Margin
   updateChart('chartMargin', 'Margin (%)', 'margin', '#ec4899', 'percent');
   // 8. Shares
