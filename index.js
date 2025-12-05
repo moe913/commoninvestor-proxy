@@ -1132,14 +1132,24 @@ function saveCalculationToHub() {
     if (isPremium) {
       const username = localStorage.getItem('username');
       if (username) {
-        fetch('/.netlify/functions/user-data', {
+        toast('Syncing to cloud...', 1000);
+        fetch('/api/user-data', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, calculations: savedItems })
-        }).then(res => {
-          if (!res.ok) console.warn('Cloud sync failed');
-          else console.log('Cloud sync success');
-        }).catch(err => console.error('Cloud sync error:', err));
+        }).then(async res => {
+          if (!res.ok) {
+            const txt = await res.text();
+            console.warn('Cloud sync failed:', txt);
+            toast('Cloud sync failed: ' + txt, 3000);
+          } else {
+            console.log('Cloud sync success');
+            toast('Saved to cloud!', 2000);
+          }
+        }).catch(err => {
+          console.error('Cloud sync error:', err);
+          toast('Cloud sync error: ' + err.message, 3000);
+        });
       }
     }
 
@@ -1190,18 +1200,23 @@ function renderSavedItems() {
       savedList.innerHTML = '<div class="empty-state">Syncing...</div>';
     }
 
-    fetch(`/.netlify/functions/user-data?username=${username}`)
-      .then(res => res.json())
+    fetch(`/api/user-data?username=${username}`)
+      .then(res => {
+        if (!res.ok) throw new Error(res.statusText);
+        return res.json();
+      })
       .then(data => {
         if (Array.isArray(data)) {
           // Update local cache
           const storageKey = getHubStorageKey();
           localStorage.setItem(storageKey, JSON.stringify(data));
           renderList(data);
+          // toast('Synced from cloud', 1000); // Optional: too noisy?
         }
       })
       .catch(err => {
         console.error('Sync fetch error:', err);
+        toast('Sync failed: ' + err.message, 3000);
         // Fallback to local
         const storageKey = getHubStorageKey();
         const localData = JSON.parse(localStorage.getItem(storageKey) || '[]');
@@ -1306,7 +1321,7 @@ function renderSavedItems() {
           if (isPremium) {
             const username = localStorage.getItem('username');
             if (username) {
-              fetch('/.netlify/functions/user-data', {
+              fetch('/api/user-data', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, calculations: savedItems })
