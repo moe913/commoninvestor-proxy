@@ -2,42 +2,48 @@ const { GITHUB_TOKEN } = process.env;
 const REPO = 'moe913/commoninvestor-proxy';
 const FILE_PATH = 'calculations.json';
 
-exports.handler = async (event) => {
-    // 1. Auth Check (Basic)
-    // In a real app, we'd verify a JWT. Here we trust the client sends the username
-    // and we rely on the fact that this is a personal tool or low-risk app.
-    // Ideally, we should check a session token.
+module.exports = async (req, res) => {
+    // Enable CORS
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-    // For now, we will require a username in the query or body.
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
 
-    const { httpMethod } = event;
+    const { method } = req;
 
-    if (httpMethod === 'GET') {
-        const username = event.queryStringParameters.username;
-        if (!username) return { statusCode: 400, body: 'Missing username' };
+    if (method === 'GET') {
+        const username = req.query.username;
+        if (!username) return res.status(400).send('Missing username');
 
         try {
             const fileData = await fetchFileFromGitHub();
             const allData = JSON.parse(Buffer.from(fileData.content, 'base64').toString('utf-8'));
             const userData = allData[username] || [];
 
-            return {
-                statusCode: 200,
-                body: JSON.stringify(userData)
-            };
+            return res.status(200).json(userData);
         } catch (e) {
             console.error(e);
-            return { statusCode: 500, body: 'Error fetching data' };
+            return res.status(500).send('Error fetching data');
         }
     }
 
-    if (httpMethod === 'POST') {
+    if (method === 'POST') {
         try {
-            const body = JSON.parse(event.body);
-            const { username, calculations } = body;
+            let body = req.body;
+            if (typeof body === 'string') {
+                try {
+                    body = JSON.parse(body);
+                } catch (e) {
+                    console.warn('Failed to parse body as JSON:', e);
+                }
+            }
+
+            const { username, calculations } = body || {};
 
             if (!username || !Array.isArray(calculations)) {
-                return { statusCode: 400, body: 'Invalid input' };
+                return res.status(400).send('Invalid input');
             }
 
             // 1. Fetch current file to get SHA (for atomic update)
@@ -52,15 +58,15 @@ exports.handler = async (event) => {
             const newContent = Buffer.from(JSON.stringify(allData, null, 2)).toString('base64');
             await updateFileInGitHub(newContent, currentSha, `Update calculations for ${username}`);
 
-            return { statusCode: 200, body: JSON.stringify({ success: true }) };
+            return res.status(200).json({ success: true });
 
         } catch (e) {
             console.error(e);
-            return { statusCode: 500, body: 'Error saving data' };
+            return res.status(500).send('Error saving data');
         }
     }
 
-    return { statusCode: 405, body: 'Method Not Allowed' };
+    return res.status(405).send('Method Not Allowed');
 };
 
 async function fetchFileFromGitHub() {
