@@ -1,4 +1,4 @@
-```javascript
+
 const { GITHUB_TOKEN } = process.env;
 const REPO = 'moe913/commoninvestor-proxy';
 const BRANCH = 'dev';
@@ -30,7 +30,7 @@ module.exports = async (req, res) => {
 
             const allData = JSON.parse(Buffer.from(fileData.content, 'base64').toString('utf-8'));
             const userData = allData[username] || [];
-            
+
             return res.status(200).json(userData);
         } catch (e) {
             console.error(e);
@@ -50,7 +50,7 @@ module.exports = async (req, res) => {
             }
 
             const { username, calculations } = body || {};
-            
+
             if (!username || !Array.isArray(calculations)) {
                 return res.status(400).send('Invalid input');
             }
@@ -75,7 +75,7 @@ module.exports = async (req, res) => {
 
             // 3. Commit back
             const newContent = Buffer.from(JSON.stringify(allData, null, 2)).toString('base64');
-            await updateFileInGitHub(newContent, currentSha, `Update calculations for ${ username }`);
+            await updateFileInGitHub(newContent, currentSha, `Update calculations for ${username}`);
 
             return res.status(200).json({ success: true });
 
@@ -93,12 +93,12 @@ async function fetchFileFromGitHub() {
     const res = await fetch(url, {
         headers: { 'Authorization': `Bearer ${GITHUB_TOKEN}` }
     });
-if (res.status === 404) return null; // File not found is okay
-if (!res.ok) {
-    const txt = await res.text();
-    throw new Error(`Failed to fetch from GitHub (${res.status}): ${txt}`);
-}
-return await res.json();
+    if (res.status === 404) return null; // File not found is okay
+    if (!res.ok) {
+        const txt = await res.text();
+        throw new Error(`Failed to fetch from GitHub (${res.status}): ${txt}`);
+    }
+    return await res.json();
 }
 
 async function updateFileInGitHub(content, sha, message) {
@@ -124,4 +124,4 @@ async function updateFileInGitHub(content, sha, message) {
     }
     return await res.json();
 }
-```
+
