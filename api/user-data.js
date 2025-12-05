@@ -67,7 +67,7 @@ module.exports = async (req, res) => {
 
         } catch (e) {
             console.error(e);
-            return res.status(500).send('Error saving data');
+            return res.status(500).send('Error saving data: ' + e.message);
         }
     }
 
