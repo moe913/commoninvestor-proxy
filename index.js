@@ -1120,13 +1120,28 @@ function saveCalculationToHub() {
       futureShares: getAbbr('futureSharesValue')
     };
 
-    // Save to localStorage
+    // Save to localStorage (Cache)
     const newItem = { ticker, date, timestamp: Date.now(), inputs, currentMetrics, results };
     const storageKey = getHubStorageKey();
     const savedItems = JSON.parse(localStorage.getItem(storageKey) || '[]');
     savedItems.unshift(newItem);
     if (savedItems.length > 50) savedItems.pop(); // Limit to 50
     localStorage.setItem(storageKey, JSON.stringify(savedItems));
+
+    // Sync to Cloud (Premium)
+    if (isPremium) {
+      const username = localStorage.getItem('username');
+      if (username) {
+        fetch('/.netlify/functions/user-data', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, calculations: savedItems })
+        }).then(res => {
+          if (!res.ok) console.warn('Cloud sync failed');
+          else console.log('Cloud sync success');
+        }).catch(err => console.error('Cloud sync error:', err));
+      }
+    }
 
     // Update UI
     if (typeof renderSavedItems === 'function') renderSavedItems();
@@ -1155,9 +1170,6 @@ function renderSavedItems() {
   const savedList = document.getElementById('hubSavedList');
   if (!savedList) return;
 
-  const storageKey = getHubStorageKey();
-  const savedItems = JSON.parse(localStorage.getItem(storageKey) || '[]');
-
   if (!isPremium) {
     savedList.innerHTML = `
       <div class="empty-state" style="padding: 30px; text-align: center;">
@@ -1170,60 +1182,93 @@ function renderSavedItems() {
     return;
   }
 
-  if (savedItems.length === 0) {
-    savedList.innerHTML = '<div class="empty-state">No saved items yet.</div>';
-    return;
+  // Cloud Sync Fetch
+  const username = localStorage.getItem('username');
+  if (username) {
+    // Show loading state if empty
+    if (!savedList.hasChildNodes() || savedList.querySelector('.empty-state')) {
+      savedList.innerHTML = '<div class="empty-state">Syncing...</div>';
+    }
+
+    fetch(`/.netlify/functions/user-data?username=${username}`)
+      .then(res => res.json())
+      .then(data => {
+        if (Array.isArray(data)) {
+          // Update local cache
+          const storageKey = getHubStorageKey();
+          localStorage.setItem(storageKey, JSON.stringify(data));
+          renderList(data);
+        }
+      })
+      .catch(err => {
+        console.error('Sync fetch error:', err);
+        // Fallback to local
+        const storageKey = getHubStorageKey();
+        const localData = JSON.parse(localStorage.getItem(storageKey) || '[]');
+        renderList(localData);
+      });
+  } else {
+    // Fallback to local
+    const storageKey = getHubStorageKey();
+    const localData = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    renderList(localData);
   }
 
-  savedList.innerHTML = '';
-  savedItems.forEach((item, index) => {
-    const div = document.createElement('div');
-    div.className = 'saved-item';
-    div.innerHTML = `
-      <div class="saved-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px; cursor:pointer">
-        <div style="flex:1">
-          <span style="font-weight:600; font-size:1.1em">${item.ticker} Analysis</span>
-          <span class="date" style="margin-left:8px; opacity:0.7; font-size:0.9em">${item.date}</span>
+  function renderList(savedItems) {
+    if (savedItems.length === 0) {
+      savedList.innerHTML = '<div class="empty-state">No saved items yet.</div>';
+      return;
+    }
+
+    savedList.innerHTML = '';
+    savedItems.forEach((item, index) => {
+      const div = document.createElement('div');
+      div.className = 'saved-item';
+      div.innerHTML = `
+        <div class="saved-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px; cursor:pointer">
+          <div style="flex:1">
+            <span style="font-weight:600; font-size:1.1em">${item.ticker} Analysis</span>
+            <span class="date" style="margin-left:8px; opacity:0.7; font-size:0.9em">${item.date}</span>
+          </div>
+          <button class="btn ghost sm delete-btn" style="padding:4px 8px; color:var(--muted); border:none" aria-label="Delete">×</button>
         </div>
-        <button class="btn ghost sm delete-btn" style="padding:4px 8px; color:var(--muted); border:none" aria-label="Delete">×</button>
-      </div>
-      
-      <div class="saved-details" style="display:none; padding:16px; border-top:1px solid var(--border)">
-        <div style="display: flex; flex-wrap: wrap; gap: 24px;">
-            <!-- Section 1: Snapshot at Time -->
-            <div style="flex: 1; min-width: 180px;">
-                <h4 style="margin:0 0 12px; font-size:0.85em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.7; border-bottom: 1px solid var(--border); padding-bottom: 4px;">Snapshot</h4>
-                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:0.9em">
-                    <div><div style="opacity:0.6; font-size:0.85em">Price</div><div>${item.currentMetrics?.price || '-'}</div></div>
-                    <div><div style="opacity:0.6; font-size:0.85em">P/E</div><div>${item.currentMetrics?.pe || '-'}</div></div>
-                    <div><div style="opacity:0.6; font-size:0.85em">Revenue</div><div>${item.currentMetrics?.revenue || '-'}</div></div>
-                    <div><div style="opacity:0.6; font-size:0.85em">Net Inc</div><div>${item.currentMetrics?.netIncome || '-'}</div></div>
-                    <div><div style="opacity:0.6; font-size:0.85em">Margin</div><div>${item.currentMetrics?.profitMargin || '-'}</div></div>
-                    <div><div style="opacity:0.6; font-size:0.85em">Shares</div><div>${item.currentMetrics?.shares || '-'}</div></div>
-                </div>
-            </div>
+        
+        <div class="saved-details" style="display:none; padding:16px; border-top:1px solid var(--border)">
+          <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+              <!-- Section 1: Snapshot at Time -->
+              <div style="flex: 1; min-width: 180px;">
+                  <h4 style="margin:0 0 12px; font-size:0.85em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.7; border-bottom: 1px solid var(--border); padding-bottom: 4px;">Snapshot</h4>
+                  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:0.9em">
+                      <div><div style="opacity:0.6; font-size:0.85em">Price</div><div>${item.currentMetrics?.price || '-'}</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">P/E</div><div>${item.currentMetrics?.pe || '-'}</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Revenue</div><div>${item.currentMetrics?.revenue || '-'}</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Net Inc</div><div>${item.currentMetrics?.netIncome || '-'}</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Margin</div><div>${item.currentMetrics?.profitMargin || '-'}</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Shares</div><div>${item.currentMetrics?.shares || '-'}</div></div>
+                  </div>
+              </div>
 
-            <!-- Section 2: Your Thesis -->
-            <div style="flex: 1; min-width: 180px;">
-                <h4 style="margin:0 0 12px; font-size:0.85em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.7; border-bottom: 1px solid var(--border); padding-bottom: 4px;">Thesis</h4>
-                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:0.9em">
-                    <div><div style="opacity:0.6; font-size:0.85em">Rev Growth</div><div>${item.inputs?.futureRevenueGrowth || 0}%</div></div>
-                    <div><div style="opacity:0.6; font-size:0.85em">Margin</div><div>${item.inputs?.futureMargin || 0}%</div></div>
-                    <div><div style="opacity:0.6; font-size:0.85em">Shares Chg</div><div>${item.inputs?.futureSharesChange || 0}%</div></div>
-                    <div><div style="opacity:0.6; font-size:0.85em">Term P/E</div><div>${item.inputs?.futurePE || 0}</div></div>
-                    <div><div style="opacity:0.6; font-size:0.85em">Fut Rev</div><div>${item.results?.futureRevenue || '-'}</div></div>
-                    <div><div style="opacity:0.6; font-size:0.85em">Fut Shares</div><div>${item.results?.futureShares || '-'}</div></div>
-                </div>
-            </div>
+              <!-- Section 2: Your Thesis -->
+              <div style="flex: 1; min-width: 180px;">
+                  <h4 style="margin:0 0 12px; font-size:0.85em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.7; border-bottom: 1px solid var(--border); padding-bottom: 4px;">Thesis</h4>
+                  <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:0.9em">
+                      <div><div style="opacity:0.6; font-size:0.85em">Rev Growth</div><div>${item.inputs?.futureRevenueGrowth || 0}%</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Margin</div><div>${item.inputs?.futureMargin || 0}%</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Shares Chg</div><div>${item.inputs?.futureSharesChange || 0}%</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Term P/E</div><div>${item.inputs?.futurePE || 0}</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Fut Rev</div><div>${item.results?.futureRevenue || '-'}</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Fut Shares</div><div>${item.results?.futureShares || '-'}</div></div>
+                  </div>
+              </div>
 
-            <!-- Section 3: The Outcome -->
-            <div style="flex: 1; min-width: 180px;">
-                <h4 style="margin:0 0 12px; font-size:0.85em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.7; color:var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px;">Outcome</h4>
-                <div style="display:grid; grid-template-columns: 1fr; gap:8px; font-size:1em; font-weight:600">
-                    <div style="display:flex; justify-content:space-between">
-                        <span style="font-size:0.85em; opacity:0.6; font-weight:400">Future Price</span>
-                        <span>${item.results?.futurePrice || '-'}</span>
-                    </div>
+              <!-- Section 3: The Outcome -->
+              <div style="flex: 1; min-width: 180px;">
+                  <h4 style="margin:0 0 12px; font-size:0.85em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.7; color:var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 4px;">Outcome</h4>
+                  <div style="display:grid; grid-template-columns: 1fr; gap:8px; font-size:1em; font-weight:600">
+                      <div style="display:flex; justify-content:space-between">
+                          <span style="font-size:0.85em; opacity:0.6; font-weight:400">Future Price</span>
+                          <span>${item.results?.futurePrice || '-'}</span>
+                      </div>
                     <div style="display:flex; justify-content:space-between">
                         <span style="font-size:0.85em; opacity:0.6; font-weight:400">Upside</span>
                         <span style="color:var(--success)">${item.results?.upside || '-'}</span>
@@ -1238,31 +1283,44 @@ function renderSavedItems() {
       </div>
     `;
 
-    // Toggle details on click
-    const header = div.querySelector('.saved-header');
-    const details = div.querySelector('.saved-details');
+      // Toggle details on click
+      const header = div.querySelector('.saved-header');
+      const details = div.querySelector('.saved-details');
 
-    header.addEventListener('click', (e) => {
-      if (e.target.closest('.delete-btn')) return;
-      const isHidden = details.style.display === 'none';
-      details.style.display = isHidden ? 'block' : 'none';
-      div.style.background = isHidden ? 'var(--surface-2)' : ''; // Highlight when expanded
+      header.addEventListener('click', (e) => {
+        if (e.target.closest('.delete-btn')) return;
+        const isHidden = details.style.display === 'none';
+        details.style.display = isHidden ? 'block' : 'none';
+        div.style.background = isHidden ? 'var(--surface-2)' : ''; // Highlight when expanded
+      });
+
+      // Delete logic
+      const delBtn = div.querySelector('.delete-btn');
+      delBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent loading
+        if (confirm('Delete this saved calculation?')) {
+          savedItems.splice(index, 1);
+          localStorage.setItem(getHubStorageKey(), JSON.stringify(savedItems));
+
+          // Sync Delete to Cloud
+          if (isPremium) {
+            const username = localStorage.getItem('username');
+            if (username) {
+              fetch('/.netlify/functions/user-data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, calculations: savedItems })
+              }).catch(console.error);
+            }
+          }
+
+          renderSavedItems();
+        }
+      });
+
+      savedList.appendChild(div);
     });
-
-    // Delete logic
-    const delBtn = div.querySelector('.delete-btn');
-    delBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // Prevent loading
-      if (confirm(`Delete ${item.ticker} analysis?`)) {
-        savedItems.splice(index, 1);
-        localStorage.setItem(storageKey, JSON.stringify(savedItems));
-        renderSavedItems(); // Re-render
-        toast('Item deleted.', 2000);
-      }
-    });
-
-    savedList.appendChild(div);
-  });
+  }
 }
 
 function saveResultsAsText() {
