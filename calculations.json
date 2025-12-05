@@ -1,1 +1,43 @@
-{}
+{
+  "moe": [
+    {
+      "ticker": "MA",
+      "date": "Dec 5",
+      "timestamp": 1764976600418,
+      "inputs": {
+        "stock": "MA",
+        "date": "Dec 5",
+        "current": {
+          "marketValue": 485.514855128,
+          "revenue": 31.47,
+          "shares": 0.89,
+          "earnings": 14.2514249616,
+          "eps": 16.01,
+          "pe": 34.92
+        },
+        "future": {
+          "revenueGrowth": 11,
+          "sharesChange": 22,
+          "pe": 22,
+          "marketValue": 384.99384988943825,
+          "price": 1498.25
+        }
+      },
+      "currentMetrics": {
+        "price": "$545.52",
+        "pe": "34.92",
+        "revenue": "$31.47B",
+        "netIncome": "14.25B",
+        "profitMargin": "45.28%",
+        "shares": "0.89B"
+      },
+      "results": {
+        "futurePrice": "$1498.25",
+        "upside": "174.6%",
+        "cagr": "22.4%",
+        "futureRevenue": "53.03B",
+        "futureShares": "256.96M"
+      }
+    }
+  ]
+}
