@@ -1211,12 +1211,14 @@ function renderSavedItems() {
           const storageKey = getHubStorageKey();
           localStorage.setItem(storageKey, JSON.stringify(data));
           renderList(data);
-          // toast('Synced from cloud', 1000); // Optional: too noisy?
+          toast(`Synced ${data.length} items from cloud`, 2000);
+        } else {
+          toast('Cloud data empty or invalid', 2000);
         }
       })
       .catch(err => {
         console.error('Sync fetch error:', err);
-        toast('Sync failed: ' + err.message, 3000);
+        toast('Sync load failed: ' + err.message, 3000);
         // Fallback to local
         const storageKey = getHubStorageKey();
         const localData = JSON.parse(localStorage.getItem(storageKey) || '[]');
