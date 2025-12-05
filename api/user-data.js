@@ -11,6 +11,11 @@ module.exports = async (req, res) => {
         return res.status(200).end();
     }
 
+    if (!GITHUB_TOKEN) {
+        console.error('Missing GITHUB_TOKEN environment variable');
+        return res.status(500).send('Server Error: Missing GITHUB_TOKEN');
+    }
+
     const { method } = req;
 
     if (method === 'GET') {
