@@ -1,3 +1,43 @@
 {
-  "moe": []
+  "moe": [
+    {
+      "ticker": "WDAY",
+      "date": "Dec 5",
+      "timestamp": 1764980279433,
+      "inputs": {
+        "stock": "WDAY",
+        "date": "Dec 5",
+        "current": {
+          "marketValue": 46.19461916,
+          "revenue": 9.23,
+          "shares": 0.21,
+          "earnings": 642.41642408,
+          "eps": 3.06,
+          "pe": 93.2
+        },
+        "future": {
+          "revenueGrowth": 15,
+          "sharesChange": 2,
+          "pe": 30,
+          "marketValue": 112.501125,
+          "price": 525.21
+        }
+      },
+      "currentMetrics": {
+        "price": "$219.96",
+        "pe": "93.20",
+        "revenue": "$9.23B",
+        "netIncome": "642.41M",
+        "profitMargin": "6.96%",
+        "shares": "0.21B"
+      },
+      "results": {
+        "futurePrice": "$525.21",
+        "upside": "138.8%",
+        "cagr": "19.0%",
+        "futureRevenue": "15.00B",
+        "futureShares": "214.20M"
+      }
+    }
+  ]
 }
