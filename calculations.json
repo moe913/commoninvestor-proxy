@@ -1,6 +1,45 @@
 {
   "moe": [
     {
+      "ticker": "NOW",
+      "date": "Dec 15",
+      "timestamp": 1765833538808,
+      "inputs": {
+        "stock": "NOW",
+        "date": "Dec 15",
+        "current": {
+          "marketValue": 160.69160692,
+          "revenue": 12.67,
+          "shares": 0.21,
+          "earnings": 1.731730722,
+          "eps": 8.24,
+          "pe": 92.19
+        },
+        "future": {
+          "revenueGrowth": 20,
+          "sharesChange": 10,
+          "pe": 30,
+          "marketValue": 283.742837431296,
+          "price": 1228.33
+        }
+      },
+      "currentMetrics": {
+        "price": "$765.20",
+        "pe": "92.19",
+        "revenue": "$12.67B",
+        "netIncome": "$1.73",
+        "profitMargin": "13.66%",
+        "shares": "0.21B"
+      },
+      "results": {
+        "futurePrice": "$1228.33",
+        "upside": "60.5%",
+        "cagr": "9.9%",
+        "futureRevenue": "31.53B",
+        "futureShares": "231.00M"
+      }
+    },
+    {
       "ticker": "AVGO",
       "date": "Dec 14",
       "timestamp": 1765759546849,
