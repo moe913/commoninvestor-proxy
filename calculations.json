@@ -1,6 +1,45 @@
 {
   "moe": [
     {
+      "ticker": "AVGO",
+      "date": "Dec 14",
+      "timestamp": 1765759546849,
+      "inputs": {
+        "stock": "AVGO",
+        "date": "Dec 14",
+        "current": {
+          "marketValue": 1.7016988696,
+          "revenue": 63.89,
+          "shares": 4.72,
+          "earnings": 23.132312818,
+          "eps": 4.9,
+          "pe": 75.14
+        },
+        "future": {
+          "revenueGrowth": 200,
+          "sharesChange": 3,
+          "pe": 30,
+          "marketValue": 1.8018,
+          "price": 393.15
+        }
+      },
+      "currentMetrics": {
+        "price": "$359.93",
+        "pe": "75.14",
+        "revenue": "$63.89B",
+        "netIncome": "23.13B",
+        "profitMargin": "36.20%",
+        "shares": "4.72B"
+      },
+      "results": {
+        "futurePrice": "$393.15",
+        "upside": "9.2%",
+        "cagr": "1.8%",
+        "futureRevenue": "200.00B",
+        "futureShares": "4.58B"
+      }
+    },
+    {
       "ticker": "WDAY",
       "date": "Dec 5",
       "timestamp": 1764980279433,
