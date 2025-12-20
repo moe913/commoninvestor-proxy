@@ -1,49 +1,6 @@
 {
   "moe": [
     {
-      "ticker": "META",
-      "companyName": "Meta Platforms",
-      "date": "Dec 20",
-      "timestamp": 1766258579361,
-      "inputs": {
-        "stock": "META",
-        "date": "Dec 20",
-        "current": {
-          "marketValue": 1.4414361186,
-          "revenue": 189.46,
-          "shares": 2.18,
-          "earnings": 58.5258524194,
-          "eps": 26.85,
-          "pe": 29.15
-        },
-        "future": {
-          "revenueGrowth": 22,
-          "sharesChange": 22,
-          "pe": 22,
-          "margin": 22,
-          "marketValue": 2.482478346628823,
-          "price": 3937.61
-        }
-      },
-      "currentMetrics": {
-        "price": "$658.77",
-        "pe": "29.15",
-        "revenue": "$189.46B",
-        "netIncome": "58.52B",
-        "profitMargin": "30.89%",
-        "shares": "2.18B"
-      },
-      "results": {
-        "futurePrice": "$3937.61",
-        "upside": "497.7%",
-        "cagr": "43.0%",
-        "futureRevenue": "512.06B",
-        "futureShares": "629.40M",
-        "buyToBeatSP": "$2625.07",
-        "buyFor2x": "$1968.81"
-      }
-    },
-    {
       "ticker": "MA",
       "companyName": "Mastercard",
       "date": "Dec 20",
