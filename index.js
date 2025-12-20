@@ -1416,14 +1416,7 @@ function renderSavedItems() {
                         <span style="font-size:0.85em; opacity:0.6; font-weight:400">CAGR</span>
                         <span style="color:var(--success)">${item.results?.cagr || '-'}</span>
                     </div>
-                    <div style="display:flex; justify-content:space-between; margin-top:8px; padding-top:8px; border-top:1px dashed var(--border)">
-                        <span style="font-size:0.85em; opacity:0.6; font-weight:400">Beat S&P Price</span>
-                        <span>${item.results?.buyToBeatSP || '-'}</span>
-                    </div>
-                    <div style="display:flex; justify-content:space-between">
-                        <span style="font-size:0.85em; opacity:0.6; font-weight:400">2x Return Price</span>
-                        <span>${item.results?.buyFor2x || '-'}</span>
-                    </div>
+
                 </div>
                 <!-- Extra Metrics Rows -->
                 <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed var(--border); font-size: 0.9em; font-weight:600">
