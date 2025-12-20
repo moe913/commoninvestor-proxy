@@ -473,8 +473,9 @@ body.mobile .toast {
   border-radius: 12px;
   padding: 16px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
   margin-bottom: 0;
 }
 
@@ -489,9 +490,7 @@ body.mobile .toast {
 }
 
 .mobile-main .saved-item>div {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  /* Removed strict overflow/nowrap to allow multiline titles and proper details display */
 }
 
 #communityList .saved-item {
