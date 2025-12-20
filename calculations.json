@@ -45,7 +45,7 @@
     },
     {
       "ticker": "DASH",
-      "companyName": "DoorDash, Inc.",
+      "companyName": "DoorDash",
       "date": "Dec 20",
       "timestamp": 1766250047609,
       "inputs": {
@@ -88,7 +88,7 @@
     },
     {
       "ticker": "AAPL",
-      "companyName": "Apple Inc.",
+      "companyName": "Apple",
       "date": "Dec 20",
       "timestamp": 1766249641050,
       "inputs": {
@@ -124,12 +124,14 @@
         "upside": "30.7%",
         "cagr": "5.5%",
         "futureRevenue": "531.14B",
-        "futureShares": "13.36B"
+        "futureShares": "13.36B",
+        "buyToBeatSP": "$238.53",
+        "buyFor2x": "$178.90"
       }
     },
     {
       "ticker": "MA",
-      "companyName": "Mastercard Incorporated",
+      "companyName": "Mastercard",
       "date": "Dec 20",
       "timestamp": 1766248371895,
       "inputs": {
@@ -165,7 +167,9 @@
         "upside": "-71.4%",
         "cagr": "-22.2%",
         "futureRevenue": "42.11B",
-        "futureShares": "11.22B"
+        "futureShares": "11.22B",
+        "buyToBeatSP": "$109.01",
+        "buyFor2x": "$81.76"
       }
     },
     {
@@ -204,8 +208,11 @@
         "upside": "25.4%",
         "cagr": "4.6%",
         "futureRevenue": "68.14B",
-        "futureShares": "1.02B"
-      }
+        "futureShares": "1.02B",
+        "buyToBeatSP": "$222.37",
+        "buyFor2x": "$166.78"
+      },
+      "companyName": "Micron Technology"
     },
     {
       "ticker": "NOW",
@@ -243,8 +250,11 @@
         "upside": "60.5%",
         "cagr": "9.9%",
         "futureRevenue": "31.53B",
-        "futureShares": "231.00M"
-      }
+        "futureShares": "231.00M",
+        "buyToBeatSP": "$818.89",
+        "buyFor2x": "$614.16"
+      },
+      "companyName": "ServiceNow"
     },
     {
       "ticker": "AVGO",
@@ -282,8 +292,11 @@
         "upside": "9.2%",
         "cagr": "1.8%",
         "futureRevenue": "200.00B",
-        "futureShares": "4.58B"
-      }
+        "futureShares": "4.58B",
+        "buyToBeatSP": "$262.10",
+        "buyFor2x": "$196.57"
+      },
+      "companyName": "Broadcom"
     },
     {
       "ticker": "WDAY",
@@ -321,8 +334,11 @@
         "upside": "138.8%",
         "cagr": "19.0%",
         "futureRevenue": "15.00B",
-        "futureShares": "214.20M"
-      }
+        "futureShares": "214.20M",
+        "buyToBeatSP": "$350.14",
+        "buyFor2x": "$262.61"
+      },
+      "companyName": "Workday"
     }
   ]
 }
