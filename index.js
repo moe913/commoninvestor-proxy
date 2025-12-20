@@ -841,9 +841,10 @@ const barValueLabelsPlugin = {
 };
 
 // Register globally to ensure it applies if per-chart config fails
-if (typeof Chart !== 'undefined') {
-  Chart.register(barValueLabelsPlugin);
-}
+// REMOVED: Global registration caused double-printing with inline plugin.
+// if (typeof Chart !== 'undefined') {
+//   Chart.register(barValueLabelsPlugin);
+// }
 
 function renderHistoryChart(name, historyData) {
   if (typeof Chart === 'undefined') {
@@ -3846,7 +3847,7 @@ function renderInsightsCharts(stockData) {
             ctx.textAlign = 'center';
             ctx.textBaseline = 'bottom';
             ctx.fillStyle = '#ffffff';
-            ctx.font = 'bold 12px "Inter", sans-serif';
+            ctx.font = 'bold 10px "Inter", sans-serif';
 
             chart.data.datasets.forEach((dataset, i) => {
               if (chart.isDatasetVisible && !chart.isDatasetVisible(i)) return;
