@@ -3700,7 +3700,12 @@ function renderInsightsCharts(stockData) {
             backgroundColor: isAllZero ? 'transparent' : color,
             borderRadius: 6,
             borderSkipped: false,
-            clip: false // Allow drawing outside chart area
+            clip: false, // Allow drawing outside chart area
+            // User Request: "Make bar get bigger on hover"
+            // We simulate this by adding a border that matches the background color
+            hoverBackgroundColor: color,
+            hoverBorderColor: color,
+            hoverBorderWidth: 4
           }]
         },
         options: {
@@ -3712,22 +3717,15 @@ function renderInsightsCharts(stockData) {
               bottom: 10
             }
           },
+          // Hover configuration to ensure fast interaction
+          hover: {
+            mode: 'index',
+            intersect: true
+          },
           plugins: {
             legend: { display: false },
-            tooltip: {
-              enabled: !isAllZero,
-              callbacks: {
-                label: (context) => {
-                  let val = context.raw;
-                  if (typeof val === 'number') {
-                    val = val.toFixed(2);
-                  }
-                  if (formatType === 'percent') return val + '%';
-                  if (formatType === 'currency') return '$' + val + unitSuffix;
-                  return val + (unitSuffix ? unitSuffix : '');
-                }
-              }
-            },
+            tooltip: { enabled: false }, // User Request: "I don't want that pop-up"
+            // We kept the callbacks before, but now we disable the whole thing.
 
           },
           scales: {
@@ -3757,12 +3755,11 @@ function renderInsightsCharts(stockData) {
           afterDraw: (chart) => {
             if (isAllZero) return;
             const { ctx } = chart;
+            const activeEls = chart.getActiveElements(); // Get hovered elements
+
             ctx.save();
             ctx.textAlign = 'center';
             ctx.textBaseline = 'bottom';
-            // Sleeker look: slightly off-white, semi-bold instead of heavy bold
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-            ctx.font = '600 10px "Inter", sans-serif';
 
             chart.data.datasets.forEach((dataset, i) => {
               if (chart.isDatasetVisible && !chart.isDatasetVisible(i)) return;
@@ -3773,7 +3770,19 @@ function renderInsightsCharts(stockData) {
                 const val = dataset.data[idx];
                 if (val == null || !isFinite(val)) return;
 
-                // --- FORMATTING LOGIC (Directly using closure vars) ---
+                // Check if this specific bar is active/hovered
+                const isActive = activeEls.some(el => el.datasetIndex === i && el.index === idx);
+
+                // Dynamic Styling based on hover state
+                if (isActive) {
+                  ctx.fillStyle = '#ffffff'; // pure white
+                  ctx.font = 'bold 13px "Inter", sans-serif'; // Bigger font
+                } else {
+                  ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                  ctx.font = '600 10px "Inter", sans-serif'; // Default size
+                }
+
+                // --- FORMATTING LOGIC ---
                 let formatted = val;
                 if (typeof val === 'number') {
                   // Enforce 2 decimals max
