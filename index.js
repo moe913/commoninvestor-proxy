@@ -1128,7 +1128,9 @@ function saveCalculationToHub() {
       upside: upside !== 0 ? upside.toFixed(1) + '%' : '-',
       cagr: cagr !== 0 ? cagr.toFixed(1) + '%' : '-',
       futureRevenue: getAbbr('futureRevenueValue'),
-      futureShares: getAbbr('futureSharesValue')
+      futureShares: getAbbr('futureSharesValue'),
+      beatSnpPrice: futPriceVal > 0 ? '$' + (futPriceVal / 1.5).toFixed(2) : '-',
+      doubleReturnPrice: futPriceVal > 0 ? '$' + (futPriceVal / 2.0).toFixed(2) : '-'
     };
 
     // Save to localStorage (Cache)
@@ -1309,6 +1311,17 @@ function renderSavedItems() {
                     <div style="display:flex; justify-content:space-between">
                         <span style="font-size:0.85em; opacity:0.6; font-weight:400">CAGR</span>
                         <span style="color:var(--success)">${item.results?.cagr || '-'}</span>
+                    </div>
+                </div>
+                <!-- Extra Metrics Rows -->
+                <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed var(--border); font-size: 0.9em; font-weight:600">
+                     <div style="display:flex; justify-content:space-between; margin-bottom:4px">
+                        <span style="font-size:0.85em; opacity:0.6; font-weight:400">Beat S&P Price</span>
+                        <span>${item.results?.beatSnpPrice || '-'}</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between">
+                        <span style="font-size:0.85em; opacity:0.6; font-weight:400">2x Return Price</span>
+                        <span>${item.results?.doubleReturnPrice || '-'}</span>
                     </div>
                 </div>
             </div>
