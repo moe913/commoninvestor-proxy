@@ -779,20 +779,27 @@ const barValueLabelsPlugin = {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'bottom';
     ctx.fillStyle = '#e5e7eb';
-    ctx.strokeStyle = 'rgba(0,0,0,0.55)';
-    ctx.lineWidth = 3;
-    ctx.lineJoin = 'round';
-    ctx.font = '12px "Inter", system-ui, -apple-system, sans-serif';
+    // ctx.strokeStyle = 'rgba(0,0,0,0.55)'; // Removed outline for cleaner look on small charts
+    // ctx.lineWidth = 3;
+    // ctx.lineJoin = 'round';
+    ctx.font = 'bold 11px "Inter", system-ui, -apple-system, sans-serif';
+
+    const formatter = chart.options.plugins?.barValueLabels?.formatter;
 
     chart.data.datasets.forEach((dataset, i) => {
       const meta = chart.getDatasetMeta(i);
       meta.data.forEach((bar, idx) => {
         const val = dataset.data[idx];
         if (val == null || !isFinite(val)) return;
-        const text = `${Number(val).toFixed(1)}B`;
-        let y = bar.y - 8;
-        if (y < chart.chartArea.top + 16) y = chart.chartArea.top + 16; // keep labels visible above lines/titles
-        ctx.strokeText(text, bar.x, y);
+
+        // Use custom formatter or default to basic text
+        let text = formatter ? formatter(val) : val;
+
+        // Ensure label fits above bar, or adjust if bar is too tall
+        let y = bar.y - 4;
+        if (y < chart.chartArea.top + 14) y = chart.chartArea.top + 14;
+
+        // ctx.strokeText(text, bar.x, y); // Outline disabled
         ctx.fillText(text, bar.x, y);
       });
     });
@@ -818,7 +825,6 @@ function renderHistoryChart(name, historyData) {
   }
 
   // Reverse history for display (TTM -> Oldest)
-  // Create a copy to avoid mutating the original mock data in place if called multiple times
   const history = [...historyData].reverse();
 
   const labels = history.map(d => d.year);
@@ -846,7 +852,10 @@ function renderHistoryChart(name, historyData) {
           color: '#e5e7eb',
           font: { size: 14 }
         },
-        legend: { display: false }
+        legend: { display: false },
+        barValueLabels: {
+          formatter: (val) => Number(val).toFixed(1) + 'B'
+        }
       },
       scales: {
         y: {
@@ -861,9 +870,10 @@ function renderHistoryChart(name, historyData) {
     }
   });
 
-  // Helper to create chart config
-  const createConfig = (label, data, color) => ({
+  // Helper to create chart config with labels
+  const createConfig = (label, data, color, formatter) => ({
     type: 'bar',
+    plugins: [barValueLabelsPlugin],
     data: {
       labels: labels,
       datasets: [{
@@ -871,14 +881,33 @@ function renderHistoryChart(name, historyData) {
         data: data,
         backgroundColor: color,
         borderColor: color,
-        borderWidth: 1
+        borderWidth: 1,
+        borderRadius: 3
       }]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false }, // Disable tooltip since we show labels
+        barValueLabels: {
+          formatter: formatter
+        }
+      },
       scales: {
-        y: { beginAtZero: true }
+        y: {
+          beginAtZero: true,
+          ticks: { display: false }, // Hide Y axis labels to save space
+          grid: { display: false }
+        },
+        x: {
+          grid: { display: false },
+          ticks: { color: '#9ca3af', font: { size: 10 } }
+        }
+      },
+      layout: {
+        padding: { top: 16 } // Make room for labels
       }
     }
   });
@@ -887,70 +916,70 @@ function renderHistoryChart(name, historyData) {
   const ctxRev = document.getElementById('chartRevenue');
   if (ctxRev) {
     if (insightsCharts.revenue) insightsCharts.revenue.destroy();
-    insightsCharts.revenue = new Chart(ctxRev, createConfig('Revenue', history.map(h => h.revenue), 'rgba(54, 162, 235, 0.6)'));
+    insightsCharts.revenue = new Chart(ctxRev, createConfig('Revenue', history.map(h => h.revenue), 'rgba(54, 162, 235, 0.6)', (v) => v.toFixed(1) + 'B'));
   }
 
   // 2. Revenue Growth
   const ctxRevG = document.getElementById('chartRevenueGrowth');
   if (ctxRevG) {
     if (insightsCharts.revGrowth) insightsCharts.revGrowth.destroy();
-    insightsCharts.revGrowth = new Chart(ctxRevG, createConfig('Revenue Growth %', history.map(h => h.revGrowth), 'rgba(75, 192, 192, 0.6)'));
+    insightsCharts.revGrowth = new Chart(ctxRevG, createConfig('Revenue Growth %', history.map(h => h.revGrowth), 'rgba(75, 192, 192, 0.6)', (v) => v.toFixed(1) + '%'));
   }
 
   // 3. Earnings
   const ctxEarn = document.getElementById('chartEarnings');
   if (ctxEarn) {
     if (insightsCharts.earnings) insightsCharts.earnings.destroy();
-    insightsCharts.earnings = new Chart(ctxEarn, createConfig('Earnings', history.map(h => h.earnings), 'rgba(153, 102, 255, 0.6)'));
+    insightsCharts.earnings = new Chart(ctxEarn, createConfig('Earnings', history.map(h => h.earnings), 'rgba(153, 102, 255, 0.6)', (v) => v.toFixed(1) + 'B'));
   }
 
   // 4. Earnings Growth
   const ctxEarnG = document.getElementById('chartEarningsGrowth');
   if (ctxEarnG) {
     if (insightsCharts.earnGrowth) insightsCharts.earnGrowth.destroy();
-    insightsCharts.earnGrowth = new Chart(ctxEarnG, createConfig('Earnings Growth %', history.map(h => h.earnGrowth), 'rgba(255, 159, 64, 0.6)'));
+    insightsCharts.earnGrowth = new Chart(ctxEarnG, createConfig('Earnings Growth %', history.map(h => h.earnGrowth), 'rgba(255, 159, 64, 0.6)', (v) => v.toFixed(1) + '%'));
   }
 
   // 5. EPS
   const ctxEPS = document.getElementById('chartEPS');
   if (ctxEPS) {
     if (insightsCharts.eps) insightsCharts.eps.destroy();
-    insightsCharts.eps = new Chart(ctxEPS, createConfig('EPS', history.map(h => h.eps), 'rgba(255, 205, 86, 0.6)'));
+    insightsCharts.eps = new Chart(ctxEPS, createConfig('EPS', history.map(h => h.eps), 'rgba(255, 205, 86, 0.6)', (v) => v.toFixed(2)));
   }
 
   // 6. FCF
   const ctxFCF = document.getElementById('chartFCF');
   if (ctxFCF) {
     if (insightsCharts.fcf) insightsCharts.fcf.destroy();
-    insightsCharts.fcf = new Chart(ctxFCF, createConfig('Free Cash Flow', history.map(h => h.fcf), 'rgba(201, 203, 207, 0.6)'));
+    insightsCharts.fcf = new Chart(ctxFCF, createConfig('Free Cash Flow', history.map(h => h.fcf), 'rgba(201, 203, 207, 0.6)', (v) => v.toFixed(1) + 'B'));
   }
 
   // 7. Margin
   const ctxMargin = document.getElementById('chartMargin');
   if (ctxMargin) {
     if (insightsCharts.margin) insightsCharts.margin.destroy();
-    insightsCharts.margin = new Chart(ctxMargin, createConfig('Net Margin %', history.map(h => h.margin), 'rgba(255, 99, 132, 0.6)'));
+    insightsCharts.margin = new Chart(ctxMargin, createConfig('Net Margin %', history.map(h => h.margin), 'rgba(255, 99, 132, 0.6)', (v) => v.toFixed(1) + '%'));
   }
 
   // 8. Shares
   const ctxShares = document.getElementById('chartShares');
   if (ctxShares) {
     if (insightsCharts.shares) insightsCharts.shares.destroy();
-    insightsCharts.shares = new Chart(ctxShares, createConfig('Shares Outstanding', history.map(h => h.shares), 'rgba(54, 162, 235, 0.6)'));
+    insightsCharts.shares = new Chart(ctxShares, createConfig('Shares Outstanding', history.map(h => h.shares), 'rgba(54, 162, 235, 0.6)', (v) => v.toFixed(2) + 'B'));
   }
 
   // 9. PE
   const ctxPE = document.getElementById('chartPE');
   if (ctxPE) {
     if (insightsCharts.pe) insightsCharts.pe.destroy();
-    insightsCharts.pe = new Chart(ctxPE, createConfig('P/E Ratio', history.map(h => h.pe), 'rgba(153, 102, 255, 0.6)'));
+    insightsCharts.pe = new Chart(ctxPE, createConfig('P/E Ratio', history.map(h => h.pe), 'rgba(153, 102, 255, 0.6)', (v) => v.toFixed(2)));
   }
 
   // 10. ROE
   const ctxROE = document.getElementById('chartROE');
   if (ctxROE) {
     if (insightsCharts.roe) insightsCharts.roe.destroy();
-    insightsCharts.roe = new Chart(ctxROE, createConfig('ROE %', history.map(h => h.roe), 'rgba(255, 159, 64, 0.6)'));
+    insightsCharts.roe = new Chart(ctxROE, createConfig('ROE %', history.map(h => h.roe), 'rgba(255, 159, 64, 0.6)', (v) => v.toFixed(1) + '%'));
   }
 }
 
