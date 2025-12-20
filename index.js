@@ -3733,20 +3733,21 @@ function renderInsightsCharts(stockData) {
           scales: {
             y: {
               beginAtZero: true,
-              grid: { color: 'rgba(128, 128, 128, 0.1)' },
-              border: { display: false }, // Cleaner look
-              ticks: {
-                display: true,
-                callback: (val) => {
-                  if (typeof val === 'number') return '';
-                  return val;
-                }
-              }
+              grid: {
+                display: false, // Remove grid lines for a cleaner look
+                drawBorder: false
+              },
+              border: { display: false },
+              ticks: { display: false } // Hide Y-axis labels completely since we have bar labels
             },
             x: {
               grid: { display: false },
               ticks: {
-                color: '#9ca3af'
+                color: '#9ca3af',
+                font: {
+                  size: 11,
+                  family: '"Inter", sans-serif'
+                }
               }
             }
           }
@@ -3759,8 +3760,9 @@ function renderInsightsCharts(stockData) {
             ctx.save();
             ctx.textAlign = 'center';
             ctx.textBaseline = 'bottom';
-            ctx.fillStyle = '#ffffff';
-            ctx.font = 'bold 10px "Inter", sans-serif';
+            // Sleeker look: slightly off-white, semi-bold instead of heavy bold
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            ctx.font = '600 10px "Inter", sans-serif';
 
             chart.data.datasets.forEach((dataset, i) => {
               if (chart.isDatasetVisible && !chart.isDatasetVisible(i)) return;
