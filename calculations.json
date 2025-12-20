@@ -40,7 +40,9 @@
         "futureRevenue": "137.44B",
         "futureShares": "6.74B",
         "beatSnpPrice": "$30.58",
-        "doubleReturnPrice": "$22.93"
+        "doubleReturnPrice": "$22.93",
+        "buyToBeatSP": "$30.57",
+        "buyFor2x": "$22.93"
       }
     },
     {
