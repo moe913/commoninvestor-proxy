@@ -773,45 +773,47 @@ async function tryAutoFill(symbol) {
 let historyChartInstance = null;
 const barValueLabelsPlugin = {
   id: 'barValueLabels',
-  afterDatasetsDraw(chart) {
+  afterDraw(chart) {
     try {
       if (!chart.data.datasets.length) return;
       const { ctx } = chart;
       ctx.save();
       ctx.textAlign = 'center';
       ctx.textBaseline = 'bottom';
-      ctx.fillStyle = '#e5e7eb';
-      // Explicitly set font to ensure visibility
-      ctx.font = 'bold 11px Inter, system-ui, -apple-system, sans-serif';
+      ctx.fillStyle = '#ffffff'; // Force White for visibility
+      ctx.font = 'bold 11px system-ui, sans-serif';
 
       const formatter = chart.options.plugins?.barValueLabels?.formatter;
 
       chart.data.datasets.forEach((dataset, i) => {
-        // Skip if dataset is hidden
-        if (typeof chart.isDatasetVisible === 'function' && !chart.isDatasetVisible(i)) return;
-
         const meta = chart.getDatasetMeta(i);
         if (!meta || !meta.data) return;
 
+        // Check visibility
+        if (typeof chart.isDatasetVisible === 'function' && !chart.isDatasetVisible(i)) return;
+
         meta.data.forEach((bar, idx) => {
-          // Robust coordinate retrieval (Chart.js 3+ vs 2.x)
-          // In 3+, use x/y directly. In 2.x, use _view or _model.
-          let x = bar.x;
-          let yVal = bar.y;
-
-          if (typeof x !== 'number' && bar._view) { x = bar._view.x; yVal = bar._view.y; }
-          else if (typeof x !== 'number' && bar._model) { x = bar._model.x; yVal = bar._model.y; }
-
-          if (typeof x !== 'number' || typeof yVal !== 'number') return;
-
           const val = dataset.data[idx];
           if (val == null || !isFinite(val)) return;
 
           let text = formatter ? formatter(val) : val;
 
-          // Adjust Y position
-          let y = yVal - 4;
-          if (chart.chartArea && y < chart.chartArea.top + 14) y = chart.chartArea.top + 14;
+          // Get coordinates - try multiple properties for version safety
+          let x = bar.x;
+          let yVal = bar.y;
+
+          if (typeof x !== 'number' && bar.tooltipPosition) {
+            const pos = bar.tooltipPosition();
+            x = pos.x;
+            yVal = pos.y;
+          }
+
+          if (typeof x !== 'number' || typeof yVal !== 'number') return;
+
+          // Position: 5px above the bar
+          let y = yVal - 5;
+          // Ensure it doesn't go off top of canvas (though padding handles this)
+          if (y < 10) y = 10;
 
           ctx.fillText(text, x, y);
         });
@@ -819,7 +821,7 @@ const barValueLabelsPlugin = {
 
       ctx.restore();
     } catch (err) {
-      console.warn('barValueLabelsPlugin error:', err);
+      // safe fail
     }
   }
 };
@@ -3756,6 +3758,7 @@ function renderInsightsCharts(stockData) {
             backgroundColor: isAllZero ? 'transparent' : color,
             borderRadius: 6,
             borderSkipped: false,
+            clip: false // Allow drawing outside chart area
           }]
         },
         options: {
@@ -3763,7 +3766,8 @@ function renderInsightsCharts(stockData) {
           maintainAspectRatio: false,
           layout: {
             padding: {
-              top: 20 // Ensure space for labels
+              top: 30, // More space for labels
+              bottom: 10
             }
           },
           plugins: {
@@ -3782,18 +3786,21 @@ function renderInsightsCharts(stockData) {
                 }
               }
             },
-            barValueLabels: {
-              formatter: (val) => {
-                if (val == null || !isFinite(val)) return '';
-                let v = val;
-                if (typeof v === 'number') {
-                  v = v.toFixed(2);
-                }
-                if (formatType === 'percent') return v + '%';
-                if (formatType === 'currency') return '$' + v + unitSuffix;
-                return v + (unitSuffix ? unitSuffix : '');
-              }
-            },
+            // The barValueLabels plugin will now handle its own rendering via afterDraw
+            // and its options are passed directly to the plugin definition.
+            // This block is no longer needed here as it's handled by the plugin itself.
+            // barValueLabels: {
+            //   formatter: (val) => {
+            //     if (val == null || !isFinite(val)) return '';
+            //     let v = val;
+            //     if (typeof v === 'number') {
+            //       v = v.toFixed(2);
+            //     }
+            //     if (formatType === 'percent') return v + '%';
+            //     if (formatType === 'currency') return '$' + v + unitSuffix;
+            //     return v + (unitSuffix ? unitSuffix : '');
+            //   }
+            // },
             emptyState: {
               id: 'emptyState',
               afterDraw(chart) {
@@ -3814,20 +3821,25 @@ function renderInsightsCharts(stockData) {
             y: {
               beginAtZero: true,
               grid: { color: 'rgba(128, 128, 128, 0.1)' },
+              border: { display: false }, // Cleaner look
               ticks: {
                 callback: (value) => {
+                  // Shorten axes labels to reduce clutter
                   if (typeof value === 'number') {
-                    value = value.toFixed(2); // Keep 2 decimals for axis? Maybe too crowded. Let's try default formatting or fixed 0 if large.
-                    // Actually standard charts usually abbreviate axis.
-                    // But let's stick to the requested format.
+                    // return value.toString(); // Just return simple number
+                    return ''; // Hiding y-axis labels as per some designs? No, keep them but simple
                   }
-                  if (formatType === 'percent') return value + '%';
-                  if (formatType === 'currency') return '$' + value + unitSuffix;
-                  return value + (unitSuffix ? unitSuffix : '');
-                }
+                  return value;
+                },
+                display: true // Keep y-axis enabled for scale context, or hide if labels are enough? User wanted labels on bars.
               }
             },
-            x: { grid: { display: false } }
+            x: {
+              grid: { display: false },
+              ticks: {
+                color: '#9ca3af'
+              }
+            }
           }
         },
         plugins: [barValueLabelsPlugin, {
