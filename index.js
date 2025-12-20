@@ -775,29 +775,41 @@ const barValueLabelsPlugin = {
   id: 'barValueLabels',
   afterDatasetsDraw(chart) {
     try {
+      if (!chart.data.datasets.length) return;
       const { ctx } = chart;
       ctx.save();
       ctx.textAlign = 'center';
       ctx.textBaseline = 'bottom';
       ctx.fillStyle = '#e5e7eb';
-      ctx.font = 'bold 11px "Inter", system-ui, -apple-system, sans-serif';
+      // Explicitly set font to ensure visibility
+      ctx.font = 'bold 11px Inter, system-ui, -apple-system, sans-serif';
 
       const formatter = chart.options.plugins?.barValueLabels?.formatter;
 
       chart.data.datasets.forEach((dataset, i) => {
+        // Skip if dataset is hidden
+        if (typeof chart.isDatasetVisible === 'function' && !chart.isDatasetVisible(i)) return;
+
         const meta = chart.getDatasetMeta(i);
         if (!meta || !meta.data) return;
+
         meta.data.forEach((bar, idx) => {
+          // Robust coordinate retrieval (Chart.js 3+ vs 2.x)
+          // In 3+, use x/y directly. In 2.x, use _view or _model.
+          let x = bar.x;
+          let yVal = bar.y;
+
+          if (typeof x !== 'number' && bar._view) { x = bar._view.x; yVal = bar._view.y; }
+          else if (typeof x !== 'number' && bar._model) { x = bar._model.x; yVal = bar._model.y; }
+
+          if (typeof x !== 'number' || typeof yVal !== 'number') return;
+
           const val = dataset.data[idx];
           if (val == null || !isFinite(val)) return;
 
           let text = formatter ? formatter(val) : val;
 
-          // Safe access to coordinates
-          const x = bar.x;
-          const yVal = bar.y;
-          if (typeof x !== 'number' || typeof yVal !== 'number') return;
-
+          // Adjust Y position
           let y = yVal - 4;
           if (chart.chartArea && y < chart.chartArea.top + 14) y = chart.chartArea.top + 14;
 
@@ -808,7 +820,6 @@ const barValueLabelsPlugin = {
       ctx.restore();
     } catch (err) {
       console.warn('barValueLabelsPlugin error:', err);
-      // Fail silently to avoid breaking the chart
     }
   }
 };
