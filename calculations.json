@@ -1,6 +1,49 @@
 {
   "moe": [
     {
+      "ticker": "GDDY",
+      "companyName": "GoDaddy",
+      "date": "Dec 20, 2025",
+      "timestamp": 1766260177699,
+      "inputs": {
+        "stock": "GDDY",
+        "date": "Dec 20, 2025",
+        "current": {
+          "marketValue": 17.81178108,
+          "revenue": 4.87,
+          "shares": 0.14,
+          "earnings": 828.39828387,
+          "eps": 5.92,
+          "pe": 21.93
+        },
+        "future": {
+          "revenueGrowth": 22,
+          "sharesChange": 11,
+          "pe": 22,
+          "margin": 22,
+          "marketValue": 63.7063704993573,
+          "price": 270.04
+        }
+      },
+      "currentMetrics": {
+        "price": "$127.22",
+        "pe": "21.93",
+        "revenue": "$4.87B",
+        "netIncome": "828.39M",
+        "profitMargin": "17.01%",
+        "shares": "0.14B"
+      },
+      "results": {
+        "futurePrice": "$270.04",
+        "upside": "112.3%",
+        "cagr": "16.2%",
+        "futureRevenue": "13.16B",
+        "futureShares": "235.91M",
+        "beatSnpPrice": "$180.03",
+        "doubleReturnPrice": "$135.02"
+      }
+    },
+    {
       "ticker": "TDY",
       "companyName": "Teledyne Technologies",
       "date": "Dec 20, 2025",
