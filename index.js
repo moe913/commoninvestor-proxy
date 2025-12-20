@@ -783,7 +783,16 @@ const barValueLabelsPlugin = {
       ctx.fillStyle = '#ffffff'; // Force White for visibility
       ctx.font = 'bold 11px system-ui, sans-serif';
 
-      const formatter = chart.options.plugins?.barValueLabels?.formatter;
+      // Try to get formatter from options, checking deep path
+      let formatter = chart.options.plugins?.barValueLabels?.formatter;
+
+      // Fallback formatter if none provided (basic 2 decimals)
+      if (!formatter) {
+        formatter = (val) => {
+          if (typeof val === 'number') return parseFloat(val.toFixed(2));
+          return val;
+        };
+      }
 
       chart.data.datasets.forEach((dataset, i) => {
         const meta = chart.getDatasetMeta(i);
@@ -796,7 +805,12 @@ const barValueLabelsPlugin = {
           const val = dataset.data[idx];
           if (val == null || !isFinite(val)) return;
 
-          let text = formatter ? formatter(val) : val;
+          let text = '';
+          try {
+            text = formatter(val);
+          } catch (e) {
+            text = val;
+          }
 
           // Get coordinates - try multiple properties for version safety
           let x = bar.x;
@@ -810,10 +824,10 @@ const barValueLabelsPlugin = {
 
           if (typeof x !== 'number' || typeof yVal !== 'number') return;
 
-          // Position: 5px above the bar
-          let y = yVal - 5;
-          // Ensure it doesn't go off top of canvas (though padding handles this)
-          if (y < 10) y = 10;
+          // Position: 6px above the bar
+          let y = yVal - 6;
+          // Ensure it doesn't go off top of canvas or clip
+          if (y < 12) y = 12;
 
           ctx.fillText(text, x, y);
         });
@@ -821,7 +835,7 @@ const barValueLabelsPlugin = {
 
       ctx.restore();
     } catch (err) {
-      // safe fail
+      console.warn('barValueLabelsPlugin error:', err);
     }
   }
 };
