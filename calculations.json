@@ -1,8 +1,309 @@
 {
   "moe": [
     {
+      "ticker": "TDY",
+      "companyName": "Teledyne Technologies",
+      "date": "Dec 20, 2025",
+      "timestamp": 1766259504872,
+      "inputs": {
+        "stock": "TDY",
+        "date": "Dec 20, 2025",
+        "current": {
+          "marketValue": 25.50255005,
+          "revenue": 6.01,
+          "shares": 0.05,
+          "earnings": 818.56818562,
+          "eps": 16.37,
+          "pe": 29.58
+        },
+        "future": {
+          "revenueGrowth": 22,
+          "sharesChange": 11,
+          "pe": 22,
+          "margin": 22,
+          "marketValue": 78.6278617456134,
+          "price": 2815.78
+        }
+      },
+      "currentMetrics": {
+        "price": "$510.01",
+        "pe": "29.58",
+        "revenue": "$6.01B",
+        "netIncome": "818.56M",
+        "profitMargin": "13.62%",
+        "shares": "0.05B"
+      },
+      "results": {
+        "futurePrice": "$2815.78",
+        "upside": "452.1%",
+        "cagr": "40.7%",
+        "futureRevenue": "16.24B",
+        "futureShares": "27.92M",
+        "beatSnpPrice": "$1877.19",
+        "doubleReturnPrice": "$1407.89"
+      }
+    },
+    {
+      "ticker": "RJF",
+      "companyName": "Raymond James Financial",
+      "date": "Dec 20, 2025",
+      "timestamp": 1766259386677,
+      "inputs": {
+        "stock": "RJF",
+        "date": "Dec 20, 2025",
+        "current": {
+          "marketValue": 32.6032602,
+          "revenue": 14.01,
+          "shares": 0.2,
+          "earnings": 2.132133723,
+          "eps": 10.67,
+          "pe": 15.83
+        },
+        "future": {
+          "revenueGrowth": 11,
+          "sharesChange": 22,
+          "pe": 33,
+          "margin": 32.98,
+          "marketValue": 256.9325693165857,
+          "price": 475.32
+        }
+      },
+      "currentMetrics": {
+        "price": "$163.01",
+        "pe": "15.83",
+        "revenue": "$14.01B",
+        "netIncome": "2.13B",
+        "profitMargin": "15.23%",
+        "shares": "0.20B"
+      },
+      "results": {
+        "futurePrice": "$475.32",
+        "upside": "191.6%",
+        "cagr": "23.9%",
+        "futureRevenue": "23.61B",
+        "futureShares": "540.54M",
+        "beatSnpPrice": "$316.88",
+        "doubleReturnPrice": "$237.66"
+      }
+    },
+    {
       "ticker": "MA",
-      "companyName": "Mastercard Incorporated",
+      "companyName": "Mastercard",
+      "date": "Dec 20, 2025",
+      "timestamp": 1766259085940,
+      "inputs": {
+        "stock": "MA",
+        "date": "Dec 20, 2025",
+        "current": {
+          "marketValue": 509.285092847,
+          "revenue": 31.47,
+          "shares": 0.89,
+          "earnings": 14.2514249616,
+          "eps": 16.01,
+          "pe": 36.63
+        },
+        "future": {
+          "revenueGrowth": 22,
+          "sharesChange": 22,
+          "pe": 33,
+          "margin": 33,
+          "marketValue": 926.2492624052,
+          "price": 385.07
+        }
+      },
+      "currentMetrics": {
+        "price": "$572.23",
+        "pe": "36.63",
+        "revenue": "$31.47B",
+        "netIncome": "14.25B",
+        "profitMargin": "45.28%",
+        "shares": "0.89B"
+      },
+      "results": {
+        "futurePrice": "$385.07",
+        "upside": "-32.7%",
+        "cagr": "-7.6%",
+        "futureRevenue": "85.05B",
+        "futureShares": "2.41B",
+        "beatSnpPrice": "$256.71",
+        "doubleReturnPrice": "$192.53"
+      }
+    },
+    {
+      "ticker": "META",
+      "companyName": "Meta Platforms",
+      "date": "Dec 20",
+      "timestamp": 1766258579361,
+      "inputs": {
+        "stock": "META",
+        "date": "Dec 20",
+        "current": {
+          "marketValue": 1.4414361186,
+          "revenue": 189.46,
+          "shares": 2.18,
+          "earnings": 58.5258524194,
+          "eps": 26.85,
+          "pe": 29.15
+        },
+        "future": {
+          "revenueGrowth": 22,
+          "sharesChange": 22,
+          "pe": 22,
+          "margin": 22,
+          "marketValue": 2.482478346628823,
+          "price": 3937.61
+        }
+      },
+      "currentMetrics": {
+        "price": "$658.77",
+        "pe": "29.15",
+        "revenue": "$189.46B",
+        "netIncome": "58.52B",
+        "profitMargin": "30.89%",
+        "shares": "2.18B"
+      },
+      "results": {
+        "futurePrice": "$3937.61",
+        "upside": "497.7%",
+        "cagr": "43.0%",
+        "futureRevenue": "512.06B",
+        "futureShares": "629.40M",
+        "buyToBeatSP": "$2625.07",
+        "buyFor2x": "$1968.81"
+      }
+    },
+    {
+      "ticker": "MA",
+      "companyName": "Mastercard",
+      "date": "Dec 20",
+      "timestamp": 1766251446672,
+      "inputs": {
+        "stock": "MA",
+        "date": "Dec 20",
+        "current": {
+          "marketValue": 509.285092847,
+          "revenue": 31.47,
+          "shares": 0.89,
+          "earnings": 14.2514249616,
+          "eps": 16.01,
+          "pe": 36.63
+        },
+        "future": {
+          "revenueGrowth": 11,
+          "sharesChange": 22,
+          "pe": 33,
+          "margin": 33,
+          "marketValue": 577.4857748341574,
+          "price": 2247.38
+        }
+      },
+      "currentMetrics": {
+        "price": "$572.23",
+        "pe": "36.63",
+        "revenue": "$31.47B",
+        "netIncome": "14.25B",
+        "profitMargin": "45.28%",
+        "shares": "0.89B"
+      },
+      "results": {
+        "futurePrice": "$2247.38",
+        "upside": "292.7%",
+        "cagr": "31.5%",
+        "futureRevenue": "53.03B",
+        "futureShares": "256.96M",
+        "buyToBeatSP": "$1498.25",
+        "buyFor2x": "$1123.69"
+      }
+    },
+    {
+      "ticker": "DASH",
+      "companyName": "DoorDash",
+      "date": "Dec 20",
+      "timestamp": 1766250047609,
+      "inputs": {
+        "stock": "DASH",
+        "date": "Dec 20",
+        "current": {
+          "marketValue": 96.04960425,
+          "revenue": 12.63,
+          "shares": 0.41,
+          "earnings": 862.63862629,
+          "eps": 2.1,
+          "pe": 117.71
+        },
+        "future": {
+          "revenueGrowth": 15,
+          "sharesChange": 2,
+          "pe": 30,
+          "margin": 30,
+          "marketValue": 228.63228630971503,
+          "price": 505.07
+        }
+      },
+      "currentMetrics": {
+        "price": "$234.25",
+        "pe": "117.71",
+        "revenue": "$12.63B",
+        "netIncome": "862.63M",
+        "profitMargin": "6.83%",
+        "shares": "0.41B"
+      },
+      "results": {
+        "futurePrice": "$505.07",
+        "upside": "115.6%",
+        "cagr": "16.6%",
+        "futureRevenue": "25.40B",
+        "futureShares": "452.67M",
+        "buyToBeatSP": "$336.71",
+        "buyFor2x": "$252.53"
+      }
+    },
+    {
+      "ticker": "AAPL",
+      "companyName": "Apple",
+      "date": "Dec 20",
+      "timestamp": 1766249641050,
+      "inputs": {
+        "stock": "AAPL",
+        "date": "Dec 20",
+        "current": {
+          "marketValue": 4.0440448426,
+          "revenue": 416.16,
+          "shares": 14.78,
+          "earnings": 112.03112030272,
+          "eps": 7.58,
+          "pe": 36.64
+        },
+        "future": {
+          "revenueGrowth": 5,
+          "sharesChange": 2,
+          "pe": 30,
+          "margin": 30,
+          "marketValue": 4.78478023601545,
+          "price": 357.8
+        }
+      },
+      "currentMetrics": {
+        "price": "$273.67",
+        "pe": "36.64",
+        "revenue": "$416.16B",
+        "netIncome": "112.03B",
+        "profitMargin": "26.92%",
+        "shares": "14.78B"
+      },
+      "results": {
+        "futurePrice": "$357.80",
+        "upside": "30.7%",
+        "cagr": "5.5%",
+        "futureRevenue": "531.14B",
+        "futureShares": "13.36B",
+        "buyToBeatSP": "$238.53",
+        "buyFor2x": "$178.90"
+      }
+    },
+    {
+      "ticker": "MA",
+      "companyName": "Mastercard",
       "date": "Dec 20",
       "timestamp": 1766248371895,
       "inputs": {
@@ -38,7 +339,9 @@
         "upside": "-71.4%",
         "cagr": "-22.2%",
         "futureRevenue": "42.11B",
-        "futureShares": "11.22B"
+        "futureShares": "11.22B",
+        "buyToBeatSP": "$109.01",
+        "buyFor2x": "$81.76"
       }
     },
     {
@@ -77,8 +380,11 @@
         "upside": "25.4%",
         "cagr": "4.6%",
         "futureRevenue": "68.14B",
-        "futureShares": "1.02B"
-      }
+        "futureShares": "1.02B",
+        "buyToBeatSP": "$222.37",
+        "buyFor2x": "$166.78"
+      },
+      "companyName": "Micron Technology"
     },
     {
       "ticker": "NOW",
@@ -116,8 +422,11 @@
         "upside": "60.5%",
         "cagr": "9.9%",
         "futureRevenue": "31.53B",
-        "futureShares": "231.00M"
-      }
+        "futureShares": "231.00M",
+        "buyToBeatSP": "$818.89",
+        "buyFor2x": "$614.16"
+      },
+      "companyName": "ServiceNow"
     },
     {
       "ticker": "AVGO",
@@ -155,8 +464,11 @@
         "upside": "9.2%",
         "cagr": "1.8%",
         "futureRevenue": "200.00B",
-        "futureShares": "4.58B"
-      }
+        "futureShares": "4.58B",
+        "buyToBeatSP": "$262.10",
+        "buyFor2x": "$196.57"
+      },
+      "companyName": "Broadcom"
     },
     {
       "ticker": "WDAY",
@@ -194,8 +506,11 @@
         "upside": "138.8%",
         "cagr": "19.0%",
         "futureRevenue": "15.00B",
-        "futureShares": "214.20M"
-      }
+        "futureShares": "214.20M",
+        "buyToBeatSP": "$350.14",
+        "buyFor2x": "$262.61"
+      },
+      "companyName": "Workday"
     }
   ]
 }

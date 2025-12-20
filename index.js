@@ -523,7 +523,9 @@ async function loadSp500Data() {
       if (Array.isArray(allStocks)) {
         const existing = new Set(allStocks.map((s) => s.symbol));
         Object.entries(data).forEach(([symbol, v]) => {
-          const name = v?.name || symbol;
+          const name = v?.name ?
+            v.name.replace(/,?\s*(Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG).*$/i, '').trim()
+            : symbol;
           if (!existing.has(symbol)) {
             allStocks.push({ symbol, name });
           }
@@ -771,35 +773,7 @@ async function tryAutoFill(symbol) {
 }
 
 let historyChartInstance = null;
-const barValueLabelsPlugin = {
-  id: 'barValueLabels',
-  afterDatasetsDraw(chart) {
-    const { ctx } = chart;
-    ctx.save();
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'bottom';
-    ctx.fillStyle = '#e5e7eb';
-    ctx.strokeStyle = 'rgba(0,0,0,0.55)';
-    ctx.lineWidth = 3;
-    ctx.lineJoin = 'round';
-    ctx.font = '12px "Inter", system-ui, -apple-system, sans-serif';
 
-    chart.data.datasets.forEach((dataset, i) => {
-      const meta = chart.getDatasetMeta(i);
-      meta.data.forEach((bar, idx) => {
-        const val = dataset.data[idx];
-        if (val == null || !isFinite(val)) return;
-        const text = `${Number(val).toFixed(1)}B`;
-        let y = bar.y - 8;
-        if (y < chart.chartArea.top + 16) y = chart.chartArea.top + 16; // keep labels visible above lines/titles
-        ctx.strokeText(text, bar.x, y);
-        ctx.fillText(text, bar.x, y);
-      });
-    });
-
-    ctx.restore();
-  }
-};
 
 function renderHistoryChart(name, historyData) {
   if (typeof Chart === 'undefined') {
@@ -818,7 +792,6 @@ function renderHistoryChart(name, historyData) {
   }
 
   // Reverse history for display (TTM -> Oldest)
-  // Create a copy to avoid mutating the original mock data in place if called multiple times
   const history = [...historyData].reverse();
 
   const labels = history.map(d => d.year);
@@ -846,7 +819,10 @@ function renderHistoryChart(name, historyData) {
           color: '#e5e7eb',
           font: { size: 14 }
         },
-        legend: { display: false }
+        legend: { display: false },
+        barValueLabels: {
+          formatter: (val) => Number(val).toFixed(1) + 'B'
+        }
       },
       scales: {
         y: {
@@ -861,9 +837,10 @@ function renderHistoryChart(name, historyData) {
     }
   });
 
-  // Helper to create chart config
-  const createConfig = (label, data, color) => ({
+  // Helper to create chart config with labels
+  const createConfig = (label, data, color, formatter) => ({
     type: 'bar',
+    plugins: [barValueLabelsPlugin],
     data: {
       labels: labels,
       datasets: [{
@@ -871,14 +848,33 @@ function renderHistoryChart(name, historyData) {
         data: data,
         backgroundColor: color,
         borderColor: color,
-        borderWidth: 1
+        borderWidth: 1,
+        borderRadius: 3
       }]
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false }, // Disable tooltip since we show labels
+        barValueLabels: {
+          formatter: formatter
+        }
+      },
       scales: {
-        y: { beginAtZero: true }
+        y: {
+          beginAtZero: true,
+          ticks: { display: false }, // Hide Y axis labels to save space
+          grid: { display: false }
+        },
+        x: {
+          grid: { display: false },
+          ticks: { color: '#9ca3af', font: { size: 10 } }
+        }
+      },
+      layout: {
+        padding: { top: 16 } // Make room for labels
       }
     }
   });
@@ -887,70 +883,70 @@ function renderHistoryChart(name, historyData) {
   const ctxRev = document.getElementById('chartRevenue');
   if (ctxRev) {
     if (insightsCharts.revenue) insightsCharts.revenue.destroy();
-    insightsCharts.revenue = new Chart(ctxRev, createConfig('Revenue', history.map(h => h.revenue), 'rgba(54, 162, 235, 0.6)'));
+    insightsCharts.revenue = new Chart(ctxRev, createConfig('Revenue', history.map(h => h.revenue), 'rgba(54, 162, 235, 0.6)', (v) => v.toFixed(1) + 'B'));
   }
 
   // 2. Revenue Growth
   const ctxRevG = document.getElementById('chartRevenueGrowth');
   if (ctxRevG) {
     if (insightsCharts.revGrowth) insightsCharts.revGrowth.destroy();
-    insightsCharts.revGrowth = new Chart(ctxRevG, createConfig('Revenue Growth %', history.map(h => h.revGrowth), 'rgba(75, 192, 192, 0.6)'));
+    insightsCharts.revGrowth = new Chart(ctxRevG, createConfig('Revenue Growth %', history.map(h => h.revGrowth), 'rgba(75, 192, 192, 0.6)', (v) => v.toFixed(1) + '%'));
   }
 
   // 3. Earnings
   const ctxEarn = document.getElementById('chartEarnings');
   if (ctxEarn) {
     if (insightsCharts.earnings) insightsCharts.earnings.destroy();
-    insightsCharts.earnings = new Chart(ctxEarn, createConfig('Earnings', history.map(h => h.earnings), 'rgba(153, 102, 255, 0.6)'));
+    insightsCharts.earnings = new Chart(ctxEarn, createConfig('Earnings', history.map(h => h.earnings), 'rgba(153, 102, 255, 0.6)', (v) => v.toFixed(1) + 'B'));
   }
 
   // 4. Earnings Growth
   const ctxEarnG = document.getElementById('chartEarningsGrowth');
   if (ctxEarnG) {
     if (insightsCharts.earnGrowth) insightsCharts.earnGrowth.destroy();
-    insightsCharts.earnGrowth = new Chart(ctxEarnG, createConfig('Earnings Growth %', history.map(h => h.earnGrowth), 'rgba(255, 159, 64, 0.6)'));
+    insightsCharts.earnGrowth = new Chart(ctxEarnG, createConfig('Earnings Growth %', history.map(h => h.earnGrowth), 'rgba(255, 159, 64, 0.6)', (v) => v.toFixed(1) + '%'));
   }
 
   // 5. EPS
   const ctxEPS = document.getElementById('chartEPS');
   if (ctxEPS) {
     if (insightsCharts.eps) insightsCharts.eps.destroy();
-    insightsCharts.eps = new Chart(ctxEPS, createConfig('EPS', history.map(h => h.eps), 'rgba(255, 205, 86, 0.6)'));
+    insightsCharts.eps = new Chart(ctxEPS, createConfig('EPS', history.map(h => h.eps), 'rgba(255, 205, 86, 0.6)', (v) => v.toFixed(2)));
   }
 
   // 6. FCF
   const ctxFCF = document.getElementById('chartFCF');
   if (ctxFCF) {
     if (insightsCharts.fcf) insightsCharts.fcf.destroy();
-    insightsCharts.fcf = new Chart(ctxFCF, createConfig('Free Cash Flow', history.map(h => h.fcf), 'rgba(201, 203, 207, 0.6)'));
+    insightsCharts.fcf = new Chart(ctxFCF, createConfig('Free Cash Flow', history.map(h => h.fcf), 'rgba(201, 203, 207, 0.6)', (v) => v.toFixed(1) + 'B'));
   }
 
   // 7. Margin
   const ctxMargin = document.getElementById('chartMargin');
   if (ctxMargin) {
     if (insightsCharts.margin) insightsCharts.margin.destroy();
-    insightsCharts.margin = new Chart(ctxMargin, createConfig('Net Margin %', history.map(h => h.margin), 'rgba(255, 99, 132, 0.6)'));
+    insightsCharts.margin = new Chart(ctxMargin, createConfig('Net Margin %', history.map(h => h.margin), 'rgba(255, 99, 132, 0.6)', (v) => v.toFixed(1) + '%'));
   }
 
   // 8. Shares
   const ctxShares = document.getElementById('chartShares');
   if (ctxShares) {
     if (insightsCharts.shares) insightsCharts.shares.destroy();
-    insightsCharts.shares = new Chart(ctxShares, createConfig('Shares Outstanding', history.map(h => h.shares), 'rgba(54, 162, 235, 0.6)'));
+    insightsCharts.shares = new Chart(ctxShares, createConfig('Shares Outstanding', history.map(h => h.shares), 'rgba(54, 162, 235, 0.6)', (v) => v.toFixed(2) + 'B'));
   }
 
   // 9. PE
   const ctxPE = document.getElementById('chartPE');
   if (ctxPE) {
     if (insightsCharts.pe) insightsCharts.pe.destroy();
-    insightsCharts.pe = new Chart(ctxPE, createConfig('P/E Ratio', history.map(h => h.pe), 'rgba(153, 102, 255, 0.6)'));
+    insightsCharts.pe = new Chart(ctxPE, createConfig('P/E Ratio', history.map(h => h.pe), 'rgba(153, 102, 255, 0.6)', (v) => v.toFixed(2)));
   }
 
   // 10. ROE
   const ctxROE = document.getElementById('chartROE');
   if (ctxROE) {
     if (insightsCharts.roe) insightsCharts.roe.destroy();
-    insightsCharts.roe = new Chart(ctxROE, createConfig('ROE %', history.map(h => h.roe), 'rgba(255, 159, 64, 0.6)'));
+    insightsCharts.roe = new Chart(ctxROE, createConfig('ROE %', history.map(h => h.roe), 'rgba(255, 159, 64, 0.6)', (v) => v.toFixed(1) + '%'));
   }
 }
 
@@ -1037,7 +1033,13 @@ function saveCalculationToHub() {
         .trim();
     }
 
-    const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+    // Helper to clean company names
+    const cleanName = (name) => {
+      if (!name) return '';
+      return name.replace(/,?\s*(Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG).*$/i, '').trim();
+    };
 
     // Helper to extract value from Input or Text Element safely
     const getVal = (el) => {
@@ -1061,8 +1063,17 @@ function saveCalculationToHub() {
 
     // Capture Snapshot Data
     const curPriceVal = getVal(price);
-    const futPriceText = document.getElementById('futureStockPrice')?.textContent || '0';
-    const futPriceVal = parseFloat(futPriceText.replace(/[$,]/g, '')) || 0;
+
+    // Improved Future Price Capture: Use calculated data if available to avoid DOM parsing issues
+    let futPriceVal = 0;
+    if (typeof lastFutureCalc !== 'undefined' && lastFutureCalc && lastFutureCalc.futPrice > 0) {
+      futPriceVal = lastFutureCalc.futPrice;
+    } else {
+      const futPriceText = document.getElementById('futureStockPrice')?.textContent || '0';
+      futPriceVal = parseFloat(futPriceText.replace(/[$,]/g, '')) || 0;
+    }
+
+
 
     // Calculate Upside and CAGR
     let upside = 0;
@@ -1138,13 +1149,13 @@ function saveCalculationToHub() {
       cagr: cagr !== 0 ? cagr.toFixed(1) + '%' : '-',
       futureRevenue: getAbbr('futureRevenueValue'),
       futureShares: getAbbr('futureSharesValue'),
-      buyToBeatSP: buyToBeatSP > 0 ? '$' + buyToBeatSP.toFixed(2) : '-',
-      buyFor2x: buyFor2x > 0 ? '$' + buyFor2x.toFixed(2) : '-'
+      beatSnpPrice: futPriceVal > 0 ? '$' + (futPriceVal / 1.5).toFixed(2) : '-',
+      doubleReturnPrice: futPriceVal > 0 ? '$' + (futPriceVal / 2.0).toFixed(2) : '-'
     };
 
     // Save to localStorage (Cache)
-    // Add companyName to the item
-    const newItem = { ticker, companyName, date, timestamp: Date.now(), inputs, currentMetrics, results };
+    // Add companyName to the item (cleaned)
+    const newItem = { ticker, companyName: cleanName(companyName), date, timestamp: Date.now(), inputs, currentMetrics, results };
     const storageKey = getHubStorageKey();
     const savedItems = JSON.parse(localStorage.getItem(storageKey) || '[]');
     savedItems.unshift(newItem);
@@ -1331,18 +1342,34 @@ function renderSavedItems() {
 
     savedList.innerHTML = '';
     savedItems.forEach((item, index) => {
-      // Determine display name
-      const displayName = item.companyName || item.ticker || 'Unknown';
+      // Determine display name and clean it
+      let displayName = item.companyName || item.ticker || 'Unknown';
+      displayName = displayName.replace(/,?\s*(Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG).*$/i, '').trim();
+
+
+      // Legacy Data Fix: specific fields might be missing.
+      // Back-calculate 2x and S&P if possible
+      let beatSnp = item.results?.beatSnpPrice;
+      let doubleRet = item.results?.doubleReturnPrice;
+
+      const futPStr = item.results?.futurePrice;
+      if ((!beatSnp || beatSnp === '-') && futPStr && futPStr !== '-') {
+        const val = parseFloat(futPStr.replace(/[$,]/g, ''));
+        if (val > 0) {
+          beatSnp = '$' + (val / 1.5).toFixed(2);
+          doubleRet = '$' + (val / 2.0).toFixed(2);
+        }
+      }
 
       const div = document.createElement('div');
       div.className = 'saved-item';
       div.innerHTML = `
-        <div class="saved-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px; cursor:pointer">
-          <div style="flex:1">
-            <span class="saved-title-text" style="font-weight:600; font-size:1.1em">${displayName} Analysis</span>
-            <span class="date" style="margin-left:8px; opacity:0.7; font-size:0.9em">${item.date}</span>
+        <div class="saved-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px 14px; cursor:pointer">
+          <div style="display: flex; flex-direction:column;">
+            <div class="saved-title-text" style="font-weight:700; font-size:1.05em; margin-bottom: 2px;">${displayName}</div>
+            <div class="date" style="opacity:0.5; font-size:0.75em; letter-spacing:0.5px; text-transform:uppercase;">${item.date}</div>
           </div>
-          <button class="btn ghost sm delete-btn" style="padding:4px 8px; color:var(--muted); border:none" aria-label="Delete">×</button>
+          <button class="btn ghost sm delete-btn" style="padding:4px 8px; color:var(--muted); border:none; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center;" aria-label="Delete">×</button>
         </div>
         
         <div class="saved-details" style="display:none; padding:16px; border-top:1px solid var(--border)">
@@ -1396,6 +1423,17 @@ function renderSavedItems() {
                     <div style="display:flex; justify-content:space-between">
                         <span style="font-size:0.85em; opacity:0.6; font-weight:400">2x Return Price</span>
                         <span>${item.results?.buyFor2x || '-'}</span>
+                    </div>
+                </div>
+                <!-- Extra Metrics Rows -->
+                <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed var(--border); font-size: 0.9em; font-weight:600">
+                     <div style="display:flex; justify-content:space-between; margin-bottom:4px">
+                        <span style="font-size:0.85em; opacity:0.6; font-weight:400">Beat S&P Price</span>
+                        <span>${beatSnp || '-'}</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between">
+                        <span style="font-size:0.85em; opacity:0.6; font-weight:400">2x Return Price</span>
+                        <span>${doubleRet || '-'}</span>
                     </div>
                 </div>
             </div>
@@ -3035,7 +3073,7 @@ if (calcFutureBtn) {
     });
   };
   calcFutureBtn.addEventListener('click', () => {
-    console.log('Calculate button clicked');
+
     validateInputs(() => {
       console.log('Validation passed, executing callback...');
       if (typeof gtag === 'function') {
@@ -3044,7 +3082,6 @@ if (calcFutureBtn) {
       futureAutoEnabled = true;
       revealSummary();
       calculateCurrent();
-      console.log('Calling calculateFuture(true)...');
       calculateFuture(true); // Manual trigger
       scrollToFutureResults();
       ensureFutureCardBottomVisible();
@@ -3785,89 +3822,154 @@ function renderInsightsCharts(stockData) {
 
     const isAllZero = data.every(v => v === 0);
 
-    insightsCharts[id] = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: finalLabel,
-          data: data,
-          backgroundColor: isAllZero ? 'transparent' : color,
-          borderRadius: 6,
-          borderSkipped: false,
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            enabled: !isAllZero,
-            callbacks: {
-              label: (context) => {
-                let val = context.raw;
-                if (typeof val === 'number') {
-                  val = val.toFixed(2);
-                }
-                if (formatType === 'percent') return val + '%';
-                if (formatType === 'currency') return '$' + val + unitSuffix;
-                return val + (unitSuffix ? unitSuffix : '');
-              }
+    try {
+      insightsCharts[id] = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: finalLabel,
+            data: data,
+            backgroundColor: isAllZero ? 'transparent' : color,
+            borderRadius: 6,
+            borderSkipped: false,
+            clip: false, // Allow drawing outside chart area
+            // User Request: "Make bar get bigger on hover"
+            // We simulate this by adding a border that matches the background color
+            hoverBackgroundColor: color,
+            hoverBorderColor: color,
+            hoverBorderWidth: 4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: {
+            padding: {
+              top: 30, // More space for labels
+              bottom: 10
             }
           },
-          emptyState: {
-            id: 'emptyState',
-            afterDraw(chart) {
-              if (isAllZero) {
-                const { ctx, chartArea: { left, top, width, height } } = chart;
-                ctx.save();
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-                ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
-                ctx.font = 'italic 13px "Inter", sans-serif';
-                ctx.fillText('Data Unavailable', left + width / 2, top + height / 2);
-                ctx.restore();
+          // Hover configuration to ensure fast interaction
+          hover: {
+            mode: 'index',
+            intersect: true
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: { enabled: false }, // User Request: "I don't want that pop-up"
+            // We kept the callbacks before, but now we disable the whole thing.
+
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: {
+                display: false, // Remove grid lines for a cleaner look
+                drawBorder: false
+              },
+              border: { display: false },
+              ticks: { display: false } // Hide Y-axis labels completely since we have bar labels
+            },
+            x: {
+              grid: { display: false },
+              ticks: {
+                color: '#9ca3af',
+                font: {
+                  size: 11,
+                  family: '"Inter", sans-serif'
+                }
               }
             }
           }
         },
-        scales: {
-          y: {
-            beginAtZero: true,
-            grid: { color: 'rgba(128, 128, 128, 0.1)' },
-            ticks: {
-              callback: (value) => {
-                if (typeof value === 'number') {
-                  value = value.toFixed(2); // Keep 2 decimals for axis? Maybe too crowded. Let's try default formatting or fixed 0 if large.
-                  // Actually standard charts usually abbreviate axis.
-                  // But let's stick to the requested format.
-                }
-                if (formatType === 'percent') return value + '%';
-                if (formatType === 'currency') return '$' + value + unitSuffix;
-                return value + (unitSuffix ? unitSuffix : '');
-              }
-            }
-          },
-          x: { grid: { display: false } }
-        }
-      },
-      plugins: [{
-        id: 'emptyState',
-        afterDraw(chart) {
-          if (isAllZero) {
-            const { ctx, chartArea: { left, top, width, height } } = chart;
+        plugins: [{
+          id: 'inlineBarLabels',
+          afterDraw: (chart) => {
+            if (isAllZero) return;
+            const { ctx } = chart;
+            const activeEls = chart.getActiveElements(); // Get hovered elements
+
             ctx.save();
             ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
-            ctx.font = 'italic 13px "Inter", sans-serif';
-            ctx.fillText('Data Unavailable', left + width / 2, top + height / 2);
+            ctx.textBaseline = 'bottom';
+
+            chart.data.datasets.forEach((dataset, i) => {
+              if (chart.isDatasetVisible && !chart.isDatasetVisible(i)) return;
+              const meta = chart.getDatasetMeta(i);
+              if (!meta || !meta.data) return;
+
+              meta.data.forEach((bar, idx) => {
+                const val = dataset.data[idx];
+                if (val == null || !isFinite(val)) return;
+
+                // Check if this specific bar is active/hovered
+                const isActive = activeEls.some(el => el.datasetIndex === i && el.index === idx);
+
+                // Dynamic Styling based on hover state
+                if (isActive) {
+                  ctx.fillStyle = '#ffffff'; // pure white
+                  ctx.font = 'bold 13px "Inter", sans-serif'; // Bigger font
+                } else {
+                  ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                  ctx.font = '600 10px "Inter", sans-serif'; // Default size
+                }
+
+                // --- FORMATTING LOGIC ---
+                let formatted = val;
+                if (typeof val === 'number') {
+                  // Enforce 2 decimals max
+                  formatted = parseFloat(val.toFixed(2));
+                }
+
+                let text = formatted;
+                if (formatType === 'percent') text = formatted + '%';
+                else if (formatType === 'currency') text = '$' + formatted + unitSuffix;
+                else text = formatted + (unitSuffix ? unitSuffix : '');
+                // ------------------------------------------------------
+
+                let x = bar.x;
+                let yVal = bar.y;
+
+                // Fallbacks for coordinates
+                if ((x === undefined || isNaN(x)) && bar.tooltipPosition) {
+                  const pos = bar.tooltipPosition();
+                  x = pos.x;
+                  yVal = pos.y;
+                }
+
+                if (x === undefined || isNaN(x) || yVal === undefined || isNaN(yVal)) return;
+
+                // Draw slightly above bar
+                let y = yVal - 5;
+                if (y < 12) y = 12; // Prevent clipping top
+
+                ctx.fillText(text, x, y);
+              });
+            });
             ctx.restore();
           }
-        }
-      }]
-    });
+        }, {
+          id: 'emptyState',
+          afterDraw(chart) {
+            if (isAllZero) {
+              const { ctx, chartArea: { left, top, width, height } } = chart;
+              ctx.save();
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
+              ctx.font = 'italic 13px "Inter", sans-serif';
+              ctx.fillText('Data Unavailable', left + width / 2, top + height / 2);
+              ctx.restore();
+            }
+          }
+        }]
+      });
+    } catch (err) {
+      console.error(`Error rendering chart ${id}:`, err);
+      // Display fallback error in the container if possible, or just toast
+      toast(`Error rendering chart ${label}`);
+    }
   };
 
   // 1. Revenue

@@ -841,11 +841,8 @@ textarea:disabled {
 }
 
 .saved-item:hover {
-  background: rgba(0, 0, 0, 0.02);
-  padding-left: 4px;
-  padding-right: 4px;
-  border-radius: 6px;
-  border-bottom-color: transparent;
+  background: rgba(255, 255, 255, 0.03);
+  /* no layout shift */
 }
 
 .saved-item .date {
