@@ -1,6 +1,49 @@
 {
   "moe": [
     {
+      "ticker": "MA",
+      "companyName": "Mastercard",
+      "date": "Dec 20",
+      "timestamp": 1766251438096,
+      "inputs": {
+        "stock": "MA",
+        "date": "Dec 20",
+        "current": {
+          "marketValue": 509.285092847,
+          "revenue": 31.47,
+          "shares": 0.89,
+          "earnings": 14.2514249616,
+          "eps": 16.01,
+          "pe": 36.63
+        },
+        "future": {
+          "revenueGrowth": 11,
+          "sharesChange": 22,
+          "pe": 33,
+          "margin": 33,
+          "marketValue": 577.4857748341574,
+          "price": 2247.38
+        }
+      },
+      "currentMetrics": {
+        "price": "$572.23",
+        "pe": "36.63",
+        "revenue": "$31.47B",
+        "netIncome": "14.25B",
+        "profitMargin": "45.28%",
+        "shares": "0.89B"
+      },
+      "results": {
+        "futurePrice": "$2247.38",
+        "upside": "292.7%",
+        "cagr": "31.5%",
+        "futureRevenue": "53.03B",
+        "futureShares": "256.96M",
+        "buyToBeatSP": "$1498.25",
+        "buyFor2x": "$1123.69"
+      }
+    },
+    {
       "ticker": "DASH",
       "companyName": "DoorDash, Inc.",
       "date": "Dec 20",
