@@ -1195,6 +1195,50 @@ function saveCalculationToHub() {
   }
 }
 
+// Migration Helper: Modernize old saved items
+function migrateLegacyData(savedItems) {
+  let hasChanges = false;
+
+  savedItems.forEach(item => {
+    // 1. Fix Company Name (if missing or same as ticker)
+    if (!item.companyName || item.companyName === item.ticker) {
+      // Lookup in global data
+      if (window.__sp500Data && window.__sp500Data[item.ticker]) {
+        let rawName = window.__sp500Data[item.ticker].name;
+        // Clean suffixes
+        const cleanName = rawName.replace(/,?\s+(?:Inc\.?|Incorporated|LLC|Ltd\.?|Limited|Corp\.?|Corporation|Co\.?|PLC|S\.A\.|N\.V\.|Holdings?|Group)\.?$/i, '').trim();
+        item.companyName = cleanName;
+        hasChanges = true;
+      }
+    } else {
+      // Existing name might need cleaning too
+      const original = item.companyName;
+      const clean = original.replace(/,?\s+(?:Inc\.?|Incorporated|LLC|Ltd\.?|Limited|Corp\.?|Corporation|Co\.?|PLC|S\.A\.|N\.V\.|Holdings?|Group)\.?$/i, '').trim();
+      if (clean !== original) {
+        item.companyName = clean;
+        hasChanges = true;
+      }
+    }
+
+    // 2. Backfill Targets (if missing but we have future price)
+    if (item.results && item.results.futurePrice && item.results.futurePrice !== '-') {
+      if (!item.results.buyToBeatSP || item.results.buyToBeatSP === '-') {
+        // Parse price (remove $ and commas)
+        const priceVal = parseFloat(item.results.futurePrice.replace(/[$,]/g, '')) || 0;
+        if (priceVal > 0) {
+          const buyToBeatSP = priceVal / 1.5;
+          const buyFor2x = priceVal / 2.0;
+          item.results.buyToBeatSP = '$' + buyToBeatSP.toFixed(2);
+          item.results.buyFor2x = '$' + buyFor2x.toFixed(2);
+          hasChanges = true;
+        }
+      }
+    }
+  });
+
+  return hasChanges;
+}
+
 if (saveToHubBtn) {
   saveToHubBtn.addEventListener('click', saveCalculationToHub);
 }
@@ -1232,9 +1276,24 @@ function renderSavedItems() {
         if (Array.isArray(data)) {
           // Update local cache
           const storageKey = getHubStorageKey();
-          localStorage.setItem(storageKey, JSON.stringify(data));
+
+          // Run Migration
+          if (migrateLegacyData(data)) {
+            // If data changed, save properly (Cloud + Local)
+            localStorage.setItem(storageKey, JSON.stringify(data));
+            // Trigger cloud save silently to persist fixes
+            fetch('/api/user-data', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ username, calculations: data })
+            }).catch(err => console.warn('Migration sync failed', err));
+
+            toast(`Migrated ${data.length} legacy items`, 2000);
+          } else {
+            localStorage.setItem(storageKey, JSON.stringify(data));
+            toast(`Synced ${data.length} items from cloud`, 2000);
+          }
           renderList(data);
-          toast(`Synced ${data.length} items from cloud`, 2000);
         } else {
           toast('Cloud data empty or invalid', 2000);
         }
@@ -1245,12 +1304,22 @@ function renderSavedItems() {
         // Fallback to local
         const storageKey = getHubStorageKey();
         const localData = JSON.parse(localStorage.getItem(storageKey) || '[]');
+
+        if (migrateLegacyData(localData)) {
+          localStorage.setItem(storageKey, JSON.stringify(localData));
+        }
+
         renderList(localData);
       });
-  } else {
     // Fallback to local
     const storageKey = getHubStorageKey();
     const localData = JSON.parse(localStorage.getItem(storageKey) || '[]');
+
+    if (migrateLegacyData(localData)) {
+      localStorage.setItem(storageKey, JSON.stringify(localData));
+      console.log('Migrated legacy local items');
+    }
+
     renderList(localData);
   }
 
