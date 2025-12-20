@@ -1031,7 +1031,10 @@ function saveCalculationToHub() {
     // Attempt to get company name
     let companyName = ticker;
     if (currentStockData && currentStockData.name) {
-      companyName = currentStockData.name;
+      // Clean up common legal suffixes for a cleaner display name
+      companyName = currentStockData.name
+        .replace(/,?\s+(?:Inc\.?|Incorporated|LLC|Ltd\.?|Limited|Corp\.?|Corporation|Co\.?|PLC|S\.A\.|N\.V\.|Holdings?|Group)\.?$/i, '')
+        .trim();
     }
 
     const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
