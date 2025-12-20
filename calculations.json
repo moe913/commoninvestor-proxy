@@ -1,6 +1,47 @@
 {
   "moe": [
     {
+      "ticker": "MA",
+      "companyName": "Mastercard Incorporated",
+      "date": "Dec 20",
+      "timestamp": 1766248371895,
+      "inputs": {
+        "stock": "MA",
+        "date": "Dec 20",
+        "current": {
+          "marketValue": 509.285092847,
+          "revenue": 31.47,
+          "shares": 0.89,
+          "earnings": 14.2514249616,
+          "eps": 16.01,
+          "pe": 36.63
+        },
+        "future": {
+          "revenueGrowth": 6,
+          "sharesChange": 66,
+          "pe": 66,
+          "margin": 66,
+          "marketValue": 1.831834484050863,
+          "price": 163.52
+        }
+      },
+      "currentMetrics": {
+        "price": "$572.23",
+        "pe": "36.63",
+        "revenue": "$31.47B",
+        "netIncome": "14.25B",
+        "profitMargin": "45.28%",
+        "shares": "0.89B"
+      },
+      "results": {
+        "futurePrice": "$163.52",
+        "upside": "-71.4%",
+        "cagr": "-22.2%",
+        "futureRevenue": "42.11B",
+        "futureShares": "11.22B"
+      }
+    },
+    {
       "ticker": "MU",
       "date": "Dec 19",
       "timestamp": 1766192672884,
