@@ -808,6 +808,11 @@ const barValueLabelsPlugin = {
   }
 };
 
+// Register globally to ensure it applies if per-chart config fails
+if (typeof Chart !== 'undefined') {
+  Chart.register(barValueLabelsPlugin);
+}
+
 function renderHistoryChart(name, historyData) {
   if (typeof Chart === 'undefined') {
     console.warn('Chart.js not loaded; skipping history chart render.');
@@ -3739,6 +3744,11 @@ function renderInsightsCharts(stockData) {
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        layout: {
+          padding: {
+            top: 20 // Ensure space for labels
+          }
+        },
         plugins: {
           legend: { display: false },
           tooltip: {
@@ -3753,6 +3763,18 @@ function renderInsightsCharts(stockData) {
                 if (formatType === 'currency') return '$' + val + unitSuffix;
                 return val + (unitSuffix ? unitSuffix : '');
               }
+            }
+          },
+          barValueLabels: {
+            formatter: (val) => {
+              if (val == null || !isFinite(val)) return '';
+              let v = val;
+              if (typeof v === 'number') {
+                v = v.toFixed(2);
+              }
+              if (formatType === 'percent') return v + '%';
+              if (formatType === 'currency') return '$' + v + unitSuffix;
+              return v + (unitSuffix ? unitSuffix : '');
             }
           },
           emptyState: {
@@ -3791,7 +3813,7 @@ function renderInsightsCharts(stockData) {
           x: { grid: { display: false } }
         }
       },
-      plugins: [{
+      plugins: [barValueLabelsPlugin, {
         id: 'emptyState',
         afterDraw(chart) {
           if (isAllZero) {
