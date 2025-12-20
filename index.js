@@ -1060,8 +1060,17 @@ function saveCalculationToHub() {
 
     // Capture Snapshot Data
     const curPriceVal = getVal(price);
-    const futPriceText = document.getElementById('futureStockPrice')?.textContent || '0';
-    const futPriceVal = parseFloat(futPriceText.replace(/[$,]/g, '')) || 0;
+
+    // Improved Future Price Capture: Use calculated data if available to avoid DOM parsing issues
+    let futPriceVal = 0;
+    if (typeof lastFutureCalc !== 'undefined' && lastFutureCalc && lastFutureCalc.futPrice > 0) {
+      futPriceVal = lastFutureCalc.futPrice;
+    } else {
+      const futPriceText = document.getElementById('futureStockPrice')?.textContent || '0';
+      futPriceVal = parseFloat(futPriceText.replace(/[$,]/g, '')) || 0;
+    }
+
+    console.log('Saving Hub Item. FutPrice:', futPriceVal);
 
     // Calculate Upside and CAGR
     let upside = 0;
