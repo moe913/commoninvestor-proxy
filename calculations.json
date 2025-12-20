@@ -2,7 +2,7 @@
   "moe": [
     {
       "ticker": "META",
-      "companyName": "Meta Platforms, Inc.",
+      "companyName": "Meta Platforms",
       "date": "Dec 20",
       "timestamp": 1766258579361,
       "inputs": {
@@ -38,7 +38,9 @@
         "upside": "497.7%",
         "cagr": "43.0%",
         "futureRevenue": "512.06B",
-        "futureShares": "629.40M"
+        "futureShares": "629.40M",
+        "buyToBeatSP": "$2625.07",
+        "buyFor2x": "$1968.81"
       }
     },
     {
