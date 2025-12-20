@@ -774,37 +774,42 @@ let historyChartInstance = null;
 const barValueLabelsPlugin = {
   id: 'barValueLabels',
   afterDatasetsDraw(chart) {
-    const { ctx } = chart;
-    ctx.save();
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'bottom';
-    ctx.fillStyle = '#e5e7eb';
-    // ctx.strokeStyle = 'rgba(0,0,0,0.55)'; // Removed outline for cleaner look on small charts
-    // ctx.lineWidth = 3;
-    // ctx.lineJoin = 'round';
-    ctx.font = 'bold 11px "Inter", system-ui, -apple-system, sans-serif';
+    try {
+      const { ctx } = chart;
+      ctx.save();
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'bottom';
+      ctx.fillStyle = '#e5e7eb';
+      ctx.font = 'bold 11px "Inter", system-ui, -apple-system, sans-serif';
 
-    const formatter = chart.options.plugins?.barValueLabels?.formatter;
+      const formatter = chart.options.plugins?.barValueLabels?.formatter;
 
-    chart.data.datasets.forEach((dataset, i) => {
-      const meta = chart.getDatasetMeta(i);
-      meta.data.forEach((bar, idx) => {
-        const val = dataset.data[idx];
-        if (val == null || !isFinite(val)) return;
+      chart.data.datasets.forEach((dataset, i) => {
+        const meta = chart.getDatasetMeta(i);
+        if (!meta || !meta.data) return;
+        meta.data.forEach((bar, idx) => {
+          const val = dataset.data[idx];
+          if (val == null || !isFinite(val)) return;
 
-        // Use custom formatter or default to basic text
-        let text = formatter ? formatter(val) : val;
+          let text = formatter ? formatter(val) : val;
 
-        // Ensure label fits above bar, or adjust if bar is too tall
-        let y = bar.y - 4;
-        if (y < chart.chartArea.top + 14) y = chart.chartArea.top + 14;
+          // Safe access to coordinates
+          const x = bar.x;
+          const yVal = bar.y;
+          if (typeof x !== 'number' || typeof yVal !== 'number') return;
 
-        // ctx.strokeText(text, bar.x, y); // Outline disabled
-        ctx.fillText(text, bar.x, y);
+          let y = yVal - 4;
+          if (chart.chartArea && y < chart.chartArea.top + 14) y = chart.chartArea.top + 14;
+
+          ctx.fillText(text, x, y);
+        });
       });
-    });
 
-    ctx.restore();
+      ctx.restore();
+    } catch (err) {
+      console.warn('barValueLabelsPlugin error:', err);
+      // Fail silently to avoid breaking the chart
+    }
   }
 };
 
@@ -3729,106 +3734,112 @@ function renderInsightsCharts(stockData) {
 
     const isAllZero = data.every(v => v === 0);
 
-    insightsCharts[id] = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: finalLabel,
-          data: data,
-          backgroundColor: isAllZero ? 'transparent' : color,
-          borderRadius: 6,
-          borderSkipped: false,
+    try {
+      insightsCharts[id] = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: finalLabel,
+            data: data,
+            backgroundColor: isAllZero ? 'transparent' : color,
+            borderRadius: 6,
+            borderSkipped: false,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: {
+            padding: {
+              top: 20 // Ensure space for labels
+            }
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              enabled: !isAllZero,
+              callbacks: {
+                label: (context) => {
+                  let val = context.raw;
+                  if (typeof val === 'number') {
+                    val = val.toFixed(2);
+                  }
+                  if (formatType === 'percent') return val + '%';
+                  if (formatType === 'currency') return '$' + val + unitSuffix;
+                  return val + (unitSuffix ? unitSuffix : '');
+                }
+              }
+            },
+            barValueLabels: {
+              formatter: (val) => {
+                if (val == null || !isFinite(val)) return '';
+                let v = val;
+                if (typeof v === 'number') {
+                  v = v.toFixed(2);
+                }
+                if (formatType === 'percent') return v + '%';
+                if (formatType === 'currency') return '$' + v + unitSuffix;
+                return v + (unitSuffix ? unitSuffix : '');
+              }
+            },
+            emptyState: {
+              id: 'emptyState',
+              afterDraw(chart) {
+                if (isAllZero) {
+                  const { ctx, chartArea: { left, top, width, height } } = chart;
+                  ctx.save();
+                  ctx.textAlign = 'center';
+                  ctx.textBaseline = 'middle';
+                  ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
+                  ctx.font = 'italic 13px "Inter", sans-serif';
+                  ctx.fillText('Data Unavailable', left + width / 2, top + height / 2);
+                  ctx.restore();
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: { color: 'rgba(128, 128, 128, 0.1)' },
+              ticks: {
+                callback: (value) => {
+                  if (typeof value === 'number') {
+                    value = value.toFixed(2); // Keep 2 decimals for axis? Maybe too crowded. Let's try default formatting or fixed 0 if large.
+                    // Actually standard charts usually abbreviate axis.
+                    // But let's stick to the requested format.
+                  }
+                  if (formatType === 'percent') return value + '%';
+                  if (formatType === 'currency') return '$' + value + unitSuffix;
+                  return value + (unitSuffix ? unitSuffix : '');
+                }
+              }
+            },
+            x: { grid: { display: false } }
+          }
+        },
+        plugins: [barValueLabelsPlugin, {
+          id: 'emptyState',
+          afterDraw(chart) {
+            if (isAllZero) {
+              const { ctx, chartArea: { left, top, width, height } } = chart;
+              ctx.save();
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
+              ctx.font = 'italic 13px "Inter", sans-serif';
+              ctx.fillText('Data Unavailable', left + width / 2, top + height / 2);
+              ctx.restore();
+            }
+          }
         }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        layout: {
-          padding: {
-            top: 20 // Ensure space for labels
-          }
-        },
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            enabled: !isAllZero,
-            callbacks: {
-              label: (context) => {
-                let val = context.raw;
-                if (typeof val === 'number') {
-                  val = val.toFixed(2);
-                }
-                if (formatType === 'percent') return val + '%';
-                if (formatType === 'currency') return '$' + val + unitSuffix;
-                return val + (unitSuffix ? unitSuffix : '');
-              }
-            }
-          },
-          barValueLabels: {
-            formatter: (val) => {
-              if (val == null || !isFinite(val)) return '';
-              let v = val;
-              if (typeof v === 'number') {
-                v = v.toFixed(2);
-              }
-              if (formatType === 'percent') return v + '%';
-              if (formatType === 'currency') return '$' + v + unitSuffix;
-              return v + (unitSuffix ? unitSuffix : '');
-            }
-          },
-          emptyState: {
-            id: 'emptyState',
-            afterDraw(chart) {
-              if (isAllZero) {
-                const { ctx, chartArea: { left, top, width, height } } = chart;
-                ctx.save();
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'middle';
-                ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
-                ctx.font = 'italic 13px "Inter", sans-serif';
-                ctx.fillText('Data Unavailable', left + width / 2, top + height / 2);
-                ctx.restore();
-              }
-            }
-          }
-        },
-        scales: {
-          y: {
-            beginAtZero: true,
-            grid: { color: 'rgba(128, 128, 128, 0.1)' },
-            ticks: {
-              callback: (value) => {
-                if (typeof value === 'number') {
-                  value = value.toFixed(2); // Keep 2 decimals for axis? Maybe too crowded. Let's try default formatting or fixed 0 if large.
-                  // Actually standard charts usually abbreviate axis.
-                  // But let's stick to the requested format.
-                }
-                if (formatType === 'percent') return value + '%';
-                if (formatType === 'currency') return '$' + value + unitSuffix;
-                return value + (unitSuffix ? unitSuffix : '');
-              }
-            }
-          },
-          x: { grid: { display: false } }
-        }
-      },
-      plugins: [barValueLabelsPlugin, {
-        id: 'emptyState',
-        afterDraw(chart) {
-          if (isAllZero) {
-            const { ctx, chartArea: { left, top, width, height } } = chart;
-            ctx.save();
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
-            ctx.font = 'italic 13px "Inter", sans-serif';
-            ctx.fillText('Data Unavailable', left + width / 2, top + height / 2);
-            ctx.restore();
-          }
-        }
-      }]
-    });
+      });
+    } catch (err) {
+      console.error(`Error rendering chart ${id}:`, err);
+      // Display fallback error in the container if possible, or just toast
+      toast(`Error rendering chart ${label}`);
+    }
   };
 
   // 1. Revenue
