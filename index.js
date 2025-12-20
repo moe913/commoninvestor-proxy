@@ -1028,6 +1028,12 @@ function saveCalculationToHub() {
   }
   try {
     const ticker = stock.value || 'Unknown';
+    // Attempt to get company name
+    let companyName = ticker;
+    if (currentStockData && currentStockData.name) {
+      companyName = currentStockData.name;
+    }
+
     const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 
     // Helper to extract value from Input or Text Element safely
@@ -1037,7 +1043,9 @@ function saveCalculationToHub() {
       return parseFloat((raw || '').replace(/[^0-9.-]/g, '')) || 0;
     };
 
-    // Capture all inputs
+    // Capture inputs
+    // Note: This logic captures the raw number in the input box.
+    // The render logic treats it as a percentage for thesis display.
     let revGrowth = 0;
     if (frMode?.value === 'absolute') revGrowth = parseFloat(frAbs?.value) || 0;
     else if (frMode?.value === 'percentage') revGrowth = parseFloat(frPct?.value) || 0;
@@ -1098,6 +1106,7 @@ function saveCalculationToHub() {
         revenueGrowth: revGrowth,
         sharesChange: sharesChange,
         pe: getVal(fPE),
+        margin: parseFloat(fPM?.value) || 0,
         marketValue: getVal(fMV),
         price: getVal(fPrice)
       }
@@ -1121,7 +1130,8 @@ function saveCalculationToHub() {
     };
 
     // Save to localStorage (Cache)
-    const newItem = { ticker, date, timestamp: Date.now(), inputs, currentMetrics, results };
+    // Add companyName to the item
+    const newItem = { ticker, companyName, date, timestamp: Date.now(), inputs, currentMetrics, results };
     const storageKey = getHubStorageKey();
     const savedItems = JSON.parse(localStorage.getItem(storageKey) || '[]');
     savedItems.unshift(newItem);
@@ -1239,12 +1249,15 @@ function renderSavedItems() {
 
     savedList.innerHTML = '';
     savedItems.forEach((item, index) => {
+      // Determine display name
+      const displayName = item.companyName || item.ticker || 'Unknown';
+
       const div = document.createElement('div');
       div.className = 'saved-item';
       div.innerHTML = `
         <div class="saved-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px; cursor:pointer">
           <div style="flex:1">
-            <span style="font-weight:600; font-size:1.1em">${item.ticker} Analysis</span>
+            <span class="saved-title-text" style="font-weight:600; font-size:1.1em">${displayName} Analysis</span>
             <span class="date" style="margin-left:8px; opacity:0.7; font-size:0.9em">${item.date}</span>
           </div>
           <button class="btn ghost sm delete-btn" style="padding:4px 8px; color:var(--muted); border:none" aria-label="Delete">×</button>
@@ -1269,10 +1282,10 @@ function renderSavedItems() {
               <div style="flex: 1; min-width: 180px;">
                   <h4 style="margin:0 0 12px; font-size:0.85em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.7; border-bottom: 1px solid var(--border); padding-bottom: 4px;">Thesis</h4>
                   <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:0.9em">
-                      <div><div style="opacity:0.6; font-size:0.85em">Rev Growth</div><div>${item.inputs?.futureRevenueGrowth || 0}%</div></div>
-                      <div><div style="opacity:0.6; font-size:0.85em">Margin</div><div>${item.inputs?.futureMargin || 0}%</div></div>
-                      <div><div style="opacity:0.6; font-size:0.85em">Shares Chg</div><div>${item.inputs?.futureSharesChange || 0}%</div></div>
-                      <div><div style="opacity:0.6; font-size:0.85em">Term P/E</div><div>${item.inputs?.futurePE || 0}</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Rev Growth</div><div>${item.inputs?.future?.revenueGrowth || 0}%</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Margin</div><div>${item.inputs?.future?.margin || 0}%</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Shares Chg</div><div>${item.inputs?.future?.sharesChange || 0}%</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Term P/E</div><div>${item.inputs?.future?.pe || 0}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">Fut Rev</div><div>${item.results?.futureRevenue || '-'}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">Fut Shares</div><div>${item.results?.futureShares || '-'}</div></div>
                   </div>
@@ -1303,12 +1316,20 @@ function renderSavedItems() {
       // Toggle details on click
       const header = div.querySelector('.saved-header');
       const details = div.querySelector('.saved-details');
+      const titleSpan = div.querySelector('.saved-title-text');
 
       header.addEventListener('click', (e) => {
         if (e.target.closest('.delete-btn')) return;
         const isHidden = details.style.display === 'none';
         details.style.display = isHidden ? 'block' : 'none';
         div.style.background = isHidden ? 'var(--surface-2)' : ''; // Highlight when expanded
+
+        // Toggle title text: Name + " Analysis" when collapsed, Name only when expanded
+        if (isHidden) {
+          titleSpan.textContent = displayName;
+        } else {
+          titleSpan.textContent = `${displayName} Analysis`;
+        }
       });
 
       // Delete logic
