@@ -3800,18 +3800,6 @@ function renderInsightsCharts(stockData) {
                 }
               }
             },
-            barValueLabels: {
-              formatter: (val) => {
-                if (val == null || !isFinite(val)) return '';
-                // Enforce max 2 decimals, remove trailing zeros if convenient (e.g. 10.00 -> 10)
-                // User asked for "never go beyond two decimal points".
-                let formatted = parseFloat(val.toFixed(2));
-
-                if (formatType === 'percent') return formatted + '%';
-                if (formatType === 'currency') return '$' + formatted + unitSuffix;
-                return formatted + (unitSuffix ? unitSuffix : '');
-              }
-            },
             emptyState: {
               id: 'emptyState',
               afterDraw(chart) {
@@ -3834,15 +3822,11 @@ function renderInsightsCharts(stockData) {
               grid: { color: 'rgba(128, 128, 128, 0.1)' },
               border: { display: false }, // Cleaner look
               ticks: {
-                callback: (value) => {
-                  // Shorten axes labels to reduce clutter
-                  if (typeof value === 'number') {
-                    // return value.toString(); // Just return simple number
-                    return ''; // Hiding y-axis labels as per some designs? No, keep them but simple
-                  }
-                  return value;
-                },
-                display: true // Keep y-axis enabled for scale context, or hide if labels are enough? User wanted labels on bars.
+                display: true,
+                callback: (val) => {
+                  if (typeof val === 'number') return '';
+                  return val;
+                }
               }
             },
             x: {
@@ -3853,7 +3837,61 @@ function renderInsightsCharts(stockData) {
             }
           }
         },
-        plugins: [barValueLabelsPlugin, {
+        plugins: [{
+          id: 'inlineBarLabels',
+          afterDraw: (chart) => {
+            if (isAllZero) return;
+            const { ctx } = chart;
+            ctx.save();
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'bottom';
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 12px "Inter", sans-serif';
+
+            chart.data.datasets.forEach((dataset, i) => {
+              if (chart.isDatasetVisible && !chart.isDatasetVisible(i)) return;
+              const meta = chart.getDatasetMeta(i);
+              if (!meta || !meta.data) return;
+
+              meta.data.forEach((bar, idx) => {
+                const val = dataset.data[idx];
+                if (val == null || !isFinite(val)) return;
+
+                // --- FORMATTING LOGIC (Directly using closure vars) ---
+                let formatted = val;
+                if (typeof val === 'number') {
+                  // Enforce 2 decimals max
+                  formatted = parseFloat(val.toFixed(2));
+                }
+
+                let text = formatted;
+                if (formatType === 'percent') text = formatted + '%';
+                else if (formatType === 'currency') text = '$' + formatted + unitSuffix;
+                else text = formatted + (unitSuffix ? unitSuffix : '');
+                // ------------------------------------------------------
+
+                let x = bar.x;
+                let yVal = bar.y;
+
+                // Fallbacks for coordinates
+                if ((x === undefined || isNaN(x)) && bar.tooltipPosition) {
+                  const pos = bar.tooltipPosition();
+                  x = pos.x;
+                  yVal = pos.y;
+                }
+
+                if (x === undefined || isNaN(x) || yVal === undefined || isNaN(yVal)) return;
+
+                // Draw slightly above bar
+                let y = yVal - 5;
+                if (y < 12) y = 12; // Prevent clipping top
+
+                ctx.fillText(text, x, y);
+              });
+            });
+            ctx.restore();
+          }
+        }, {
           id: 'emptyState',
           afterDraw(chart) {
             if (isAllZero) {
