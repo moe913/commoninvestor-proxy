@@ -3786,21 +3786,18 @@ function renderInsightsCharts(stockData) {
                 }
               }
             },
-            // The barValueLabels plugin will now handle its own rendering via afterDraw
-            // and its options are passed directly to the plugin definition.
-            // This block is no longer needed here as it's handled by the plugin itself.
-            // barValueLabels: {
-            //   formatter: (val) => {
-            //     if (val == null || !isFinite(val)) return '';
-            //     let v = val;
-            //     if (typeof v === 'number') {
-            //       v = v.toFixed(2);
-            //     }
-            //     if (formatType === 'percent') return v + '%';
-            //     if (formatType === 'currency') return '$' + v + unitSuffix;
-            //     return v + (unitSuffix ? unitSuffix : '');
-            //   }
-            // },
+            barValueLabels: {
+              formatter: (val) => {
+                if (val == null || !isFinite(val)) return '';
+                // Enforce max 2 decimals, remove trailing zeros if convenient (e.g. 10.00 -> 10)
+                // User asked for "never go beyond two decimal points".
+                let formatted = parseFloat(val.toFixed(2));
+
+                if (formatType === 'percent') return formatted + '%';
+                if (formatType === 'currency') return '$' + formatted + unitSuffix;
+                return formatted + (unitSuffix ? unitSuffix : '');
+              }
+            },
             emptyState: {
               id: 'emptyState',
               afterDraw(chart) {
