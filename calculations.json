@@ -1,51 +1,6 @@
 {
   "moe": [
     {
-      "ticker": "TDY",
-      "companyName": "Teledyne Technologies",
-      "date": "Dec 20, 2025",
-      "timestamp": 1766259504872,
-      "inputs": {
-        "stock": "TDY",
-        "date": "Dec 20, 2025",
-        "current": {
-          "marketValue": 25.50255005,
-          "revenue": 6.01,
-          "shares": 0.05,
-          "earnings": 818.56818562,
-          "eps": 16.37,
-          "pe": 29.58
-        },
-        "future": {
-          "revenueGrowth": 22,
-          "sharesChange": 11,
-          "pe": 22,
-          "margin": 22,
-          "marketValue": 78.6278617456134,
-          "price": 2815.78
-        }
-      },
-      "currentMetrics": {
-        "price": "$510.01",
-        "pe": "29.58",
-        "revenue": "$6.01B",
-        "netIncome": "818.56M",
-        "profitMargin": "13.62%",
-        "shares": "0.05B"
-      },
-      "results": {
-        "futurePrice": "$2815.78",
-        "upside": "452.1%",
-        "cagr": "40.7%",
-        "futureRevenue": "16.24B",
-        "futureShares": "27.92M",
-        "beatSnpPrice": "$1877.19",
-        "doubleReturnPrice": "$1407.89",
-        "buyToBeatSP": "$1877.19",
-        "buyFor2x": "$1407.89"
-      }
-    },
-    {
       "ticker": "RJF",
       "companyName": "Raymond James Financial",
       "date": "Dec 20, 2025",
