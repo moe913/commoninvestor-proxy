@@ -771,80 +771,7 @@ async function tryAutoFill(symbol) {
 }
 
 let historyChartInstance = null;
-const barValueLabelsPlugin = {
-  id: 'barValueLabels',
-  afterDraw(chart) {
-    try {
-      if (!chart.data.datasets.length) return;
-      const { ctx } = chart;
-      ctx.save();
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'bottom';
-      ctx.fillStyle = '#ffffff'; // Force White for visibility
-      ctx.font = 'bold 11px system-ui, sans-serif';
 
-      // Try to get formatter from options, checking deep path
-      let formatter = chart.options.plugins?.barValueLabels?.formatter;
-
-      // Fallback formatter if none provided (basic 2 decimals)
-      if (!formatter) {
-        formatter = (val) => {
-          if (typeof val === 'number') return parseFloat(val.toFixed(2));
-          return val;
-        };
-      }
-
-      chart.data.datasets.forEach((dataset, i) => {
-        const meta = chart.getDatasetMeta(i);
-        if (!meta || !meta.data) return;
-
-        // Check visibility
-        if (typeof chart.isDatasetVisible === 'function' && !chart.isDatasetVisible(i)) return;
-
-        meta.data.forEach((bar, idx) => {
-          const val = dataset.data[idx];
-          if (val == null || !isFinite(val)) return;
-
-          let text = '';
-          try {
-            text = formatter(val);
-          } catch (e) {
-            text = val;
-          }
-
-          // Get coordinates - try multiple properties for version safety
-          let x = bar.x;
-          let yVal = bar.y;
-
-          if (typeof x !== 'number' && bar.tooltipPosition) {
-            const pos = bar.tooltipPosition();
-            x = pos.x;
-            yVal = pos.y;
-          }
-
-          if (typeof x !== 'number' || typeof yVal !== 'number') return;
-
-          // Position: 6px above the bar
-          let y = yVal - 6;
-          // Ensure it doesn't go off top of canvas or clip
-          if (y < 12) y = 12;
-
-          ctx.fillText(text, x, y);
-        });
-      });
-
-      ctx.restore();
-    } catch (err) {
-      console.warn('barValueLabelsPlugin error:', err);
-    }
-  }
-};
-
-// Register globally to ensure it applies if per-chart config fails
-// REMOVED: Global registration caused double-printing with inline plugin.
-// if (typeof Chart !== 'undefined') {
-//   Chart.register(barValueLabelsPlugin);
-// }
 
 function renderHistoryChart(name, historyData) {
   if (typeof Chart === 'undefined') {
@@ -3801,21 +3728,7 @@ function renderInsightsCharts(stockData) {
                 }
               }
             },
-            emptyState: {
-              id: 'emptyState',
-              afterDraw(chart) {
-                if (isAllZero) {
-                  const { ctx, chartArea: { left, top, width, height } } = chart;
-                  ctx.save();
-                  ctx.textAlign = 'center';
-                  ctx.textBaseline = 'middle';
-                  ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
-                  ctx.font = 'italic 13px "Inter", sans-serif';
-                  ctx.fillText('Data Unavailable', left + width / 2, top + height / 2);
-                  ctx.restore();
-                }
-              }
-            }
+
           },
           scales: {
             y: {
