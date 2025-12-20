@@ -1,6 +1,84 @@
 {
   "moe": [
     {
+      "ticker": "MU",
+      "date": "Dec 19",
+      "timestamp": 1766192672884,
+      "inputs": {
+        "stock": "MU",
+        "date": "Dec 19",
+        "current": {
+          "marketValue": 300.493004896,
+          "revenue": 42.31,
+          "shares": 1.13,
+          "earnings": 11.9111910265,
+          "eps": 10.54,
+          "pe": 25.3
+        },
+        "future": {
+          "revenueGrowth": 0,
+          "sharesChange": 0,
+          "pe": 0,
+          "marketValue": 340.703407033905,
+          "price": 333.56
+        }
+      },
+      "currentMetrics": {
+        "price": "$265.92",
+        "pe": "25.30",
+        "revenue": "$42.31B",
+        "netIncome": "$11.91",
+        "profitMargin": "28.15%",
+        "shares": "1.13B"
+      },
+      "results": {
+        "futurePrice": "$333.56",
+        "upside": "25.4%",
+        "cagr": "4.6%",
+        "futureRevenue": "68.14B",
+        "futureShares": "1.02B"
+      }
+    },
+    {
+      "ticker": "NOW",
+      "date": "Dec 15",
+      "timestamp": 1765833538808,
+      "inputs": {
+        "stock": "NOW",
+        "date": "Dec 15",
+        "current": {
+          "marketValue": 160.69160692,
+          "revenue": 12.67,
+          "shares": 0.21,
+          "earnings": 1.731730722,
+          "eps": 8.24,
+          "pe": 92.19
+        },
+        "future": {
+          "revenueGrowth": 20,
+          "sharesChange": 10,
+          "pe": 30,
+          "marketValue": 283.742837431296,
+          "price": 1228.33
+        }
+      },
+      "currentMetrics": {
+        "price": "$765.20",
+        "pe": "92.19",
+        "revenue": "$12.67B",
+        "netIncome": "$1.73",
+        "profitMargin": "13.66%",
+        "shares": "0.21B"
+      },
+      "results": {
+        "futurePrice": "$1228.33",
+        "upside": "60.5%",
+        "cagr": "9.9%",
+        "futureRevenue": "31.53B",
+        "futureShares": "231.00M"
+      }
+    },
+    {
       "ticker": "AVGO",
       "date": "Dec 14",
       "timestamp": 1765759546849,
