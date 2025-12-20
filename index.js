@@ -1069,6 +1069,14 @@ function saveCalculationToHub() {
       cagr = (Math.pow(futPriceVal / curPriceVal, 1 / 5) - 1) * 100;
     }
 
+    // Calculate Buy Targets (Match logic in calculateFuture)
+    let buyToBeatSP = 0;
+    let buyFor2x = 0;
+    if (futPriceVal > 0) {
+      buyToBeatSP = futPriceVal / 1.5;
+      buyFor2x = futPriceVal / 2.0;
+    }
+
     // Helper to get abbreviated text from formatted elements
     const getAbbr = (id) => {
       const el = document.getElementById(id);
@@ -1126,7 +1134,9 @@ function saveCalculationToHub() {
       upside: upside !== 0 ? upside.toFixed(1) + '%' : '-',
       cagr: cagr !== 0 ? cagr.toFixed(1) + '%' : '-',
       futureRevenue: getAbbr('futureRevenueValue'),
-      futureShares: getAbbr('futureSharesValue')
+      futureShares: getAbbr('futureSharesValue'),
+      buyToBeatSP: buyToBeatSP > 0 ? '$' + buyToBeatSP.toFixed(2) : '-',
+      buyFor2x: buyFor2x > 0 ? '$' + buyFor2x.toFixed(2) : '-'
     };
 
     // Save to localStorage (Cache)
@@ -1306,6 +1316,14 @@ function renderSavedItems() {
                     <div style="display:flex; justify-content:space-between">
                         <span style="font-size:0.85em; opacity:0.6; font-weight:400">CAGR</span>
                         <span style="color:var(--success)">${item.results?.cagr || '-'}</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; margin-top:8px; padding-top:8px; border-top:1px dashed var(--border)">
+                        <span style="font-size:0.85em; opacity:0.6; font-weight:400">Beat S&P Price</span>
+                        <span>${item.results?.buyToBeatSP || '-'}</span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between">
+                        <span style="font-size:0.85em; opacity:0.6; font-weight:400">2x Return Price</span>
+                        <span>${item.results?.buyFor2x || '-'}</span>
                     </div>
                 </div>
             </div>
