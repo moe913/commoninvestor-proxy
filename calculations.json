@@ -1,6 +1,49 @@
 {
   "moe": [
     {
+      "ticker": "T",
+      "companyName": "AT&T",
+      "date": "Dec 20, 2025",
+      "timestamp": 1766260386746,
+      "inputs": {
+        "stock": "T",
+        "date": "Dec 20, 2025",
+        "current": {
+          "marketValue": 171.221712235,
+          "revenue": 124.48,
+          "shares": 7.09,
+          "earnings": 22.2422244576,
+          "eps": 3.14,
+          "pe": 7.87
+        },
+        "future": {
+          "revenueGrowth": 2,
+          "sharesChange": 1,
+          "pe": 15,
+          "margin": 15,
+          "marketValue": 309.2330923095136,
+          "price": 45.86
+        }
+      },
+      "currentMetrics": {
+        "price": "$24.15",
+        "pe": "7.87",
+        "revenue": "$124.48B",
+        "netIncome": "22.24B",
+        "profitMargin": "17.87%",
+        "shares": "7.09B"
+      },
+      "results": {
+        "futurePrice": "$45.86",
+        "upside": "89.9%",
+        "cagr": "13.7%",
+        "futureRevenue": "137.44B",
+        "futureShares": "6.74B",
+        "beatSnpPrice": "$30.58",
+        "doubleReturnPrice": "$22.93"
+      }
+    },
+    {
       "ticker": "GDDY",
       "companyName": "GoDaddy",
       "date": "Dec 20, 2025",
