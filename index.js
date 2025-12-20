@@ -1266,15 +1266,30 @@ function renderSavedItems() {
       let displayName = item.companyName || item.ticker || 'Unknown';
       displayName = displayName.replace(/,?\s*(Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG).*$/i, '').trim();
 
+
+      // Legacy Data Fix: specific fields might be missing.
+      // Back-calculate 2x and S&P if possible
+      let beatSnp = item.results?.beatSnpPrice;
+      let doubleRet = item.results?.doubleReturnPrice;
+
+      const futPStr = item.results?.futurePrice;
+      if ((!beatSnp || beatSnp === '-') && futPStr && futPStr !== '-') {
+        const val = parseFloat(futPStr.replace(/[$,]/g, ''));
+        if (val > 0) {
+          beatSnp = '$' + (val / 1.5).toFixed(2);
+          doubleRet = '$' + (val / 2.0).toFixed(2);
+        }
+      }
+
       const div = document.createElement('div');
       div.className = 'saved-item';
       div.innerHTML = `
-        <div class="saved-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px; cursor:pointer">
-          <div style="flex:1">
-            <span class="saved-title-text" style="font-weight:600; font-size:1.1em">${displayName} Analysis</span>
-            <span class="date" style="margin-left:8px; opacity:0.7; font-size:0.9em">${item.date}</span>
+        <div class="saved-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px 14px; cursor:pointer">
+          <div style="display: flex; flex-direction:column;">
+            <div class="saved-title-text" style="font-weight:700; font-size:1.05em; margin-bottom: 2px;">${displayName}</div>
+            <div class="date" style="opacity:0.5; font-size:0.75em; letter-spacing:0.5px; text-transform:uppercase;">${item.date}</div>
           </div>
-          <button class="btn ghost sm delete-btn" style="padding:4px 8px; color:var(--muted); border:none" aria-label="Delete">×</button>
+          <button class="btn ghost sm delete-btn" style="padding:4px 8px; color:var(--muted); border:none; border-radius:50%; width:28px; height:28px; display:flex; align-items:center; justify-content:center;" aria-label="Delete">×</button>
         </div>
         
         <div class="saved-details" style="display:none; padding:16px; border-top:1px solid var(--border)">
@@ -1326,11 +1341,11 @@ function renderSavedItems() {
                 <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed var(--border); font-size: 0.9em; font-weight:600">
                      <div style="display:flex; justify-content:space-between; margin-bottom:4px">
                         <span style="font-size:0.85em; opacity:0.6; font-weight:400">Beat S&P Price</span>
-                        <span>${item.results?.beatSnpPrice || '-'}</span>
+                        <span>${beatSnp || '-'}</span>
                     </div>
                     <div style="display:flex; justify-content:space-between">
                         <span style="font-size:0.85em; opacity:0.6; font-weight:400">2x Return Price</span>
-                        <span>${item.results?.doubleReturnPrice || '-'}</span>
+                        <span>${doubleRet || '-'}</span>
                     </div>
                 </div>
             </div>
