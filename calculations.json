@@ -1,6 +1,49 @@
 {
   "moe": [
     {
+      "ticker": "RJF",
+      "companyName": "Raymond James Financial",
+      "date": "Dec 20, 2025",
+      "timestamp": 1766259380663,
+      "inputs": {
+        "stock": "RJF",
+        "date": "Dec 20, 2025",
+        "current": {
+          "marketValue": 32.6032602,
+          "revenue": 14.01,
+          "shares": 0.2,
+          "earnings": 2.132133723,
+          "eps": 10.67,
+          "pe": 15.83
+        },
+        "future": {
+          "revenueGrowth": 11,
+          "sharesChange": 22,
+          "pe": 33,
+          "margin": 32.98,
+          "marketValue": 256.9325693165857,
+          "price": 475.32
+        }
+      },
+      "currentMetrics": {
+        "price": "$163.01",
+        "pe": "15.83",
+        "revenue": "$14.01B",
+        "netIncome": "2.13B",
+        "profitMargin": "15.23%",
+        "shares": "0.20B"
+      },
+      "results": {
+        "futurePrice": "$475.32",
+        "upside": "191.6%",
+        "cagr": "23.9%",
+        "futureRevenue": "23.61B",
+        "futureShares": "540.54M",
+        "beatSnpPrice": "$316.88",
+        "doubleReturnPrice": "$237.66"
+      }
+    },
+    {
       "ticker": "MA",
       "companyName": "Mastercard",
       "date": "Dec 20, 2025",
