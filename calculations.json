@@ -1,49 +1,6 @@
 {
   "moe": [
     {
-      "ticker": "AAPL",
-      "companyName": "Apple",
-      "date": "Dec 20",
-      "timestamp": 1766249641050,
-      "inputs": {
-        "stock": "AAPL",
-        "date": "Dec 20",
-        "current": {
-          "marketValue": 4.0440448426,
-          "revenue": 416.16,
-          "shares": 14.78,
-          "earnings": 112.03112030272,
-          "eps": 7.58,
-          "pe": 36.64
-        },
-        "future": {
-          "revenueGrowth": 5,
-          "sharesChange": 2,
-          "pe": 30,
-          "margin": 30,
-          "marketValue": 4.78478023601545,
-          "price": 357.8
-        }
-      },
-      "currentMetrics": {
-        "price": "$273.67",
-        "pe": "36.64",
-        "revenue": "$416.16B",
-        "netIncome": "112.03B",
-        "profitMargin": "26.92%",
-        "shares": "14.78B"
-      },
-      "results": {
-        "futurePrice": "$357.80",
-        "upside": "30.7%",
-        "cagr": "5.5%",
-        "futureRevenue": "531.14B",
-        "futureShares": "13.36B",
-        "buyToBeatSP": "$238.53",
-        "buyFor2x": "$178.90"
-      }
-    },
-    {
       "ticker": "MA",
       "companyName": "Mastercard",
       "date": "Dec 20",
