@@ -523,7 +523,9 @@ async function loadSp500Data() {
       if (Array.isArray(allStocks)) {
         const existing = new Set(allStocks.map((s) => s.symbol));
         Object.entries(data).forEach(([symbol, v]) => {
-          const name = v?.name || symbol;
+          const name = v?.name ?
+            v.name.replace(/,?\s*(Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG).*$/i, '').trim()
+            : symbol;
           if (!existing.has(symbol)) {
             allStocks.push({ symbol, name });
           }
@@ -1028,7 +1030,13 @@ function saveCalculationToHub() {
       companyName = currentStockData.name;
     }
 
-    const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+    // Helper to clean company names
+    const cleanName = (name) => {
+      if (!name) return '';
+      return name.replace(/,?\s*(Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG).*$/i, '').trim();
+    };
 
     // Helper to extract value from Input or Text Element safely
     const getVal = (el) => {
@@ -1124,8 +1132,8 @@ function saveCalculationToHub() {
     };
 
     // Save to localStorage (Cache)
-    // Add companyName to the item
-    const newItem = { ticker, companyName, date, timestamp: Date.now(), inputs, currentMetrics, results };
+    // Add companyName to the item (cleaned)
+    const newItem = { ticker, companyName: cleanName(companyName), date, timestamp: Date.now(), inputs, currentMetrics, results };
     const storageKey = getHubStorageKey();
     const savedItems = JSON.parse(localStorage.getItem(storageKey) || '[]');
     savedItems.unshift(newItem);
@@ -1243,8 +1251,9 @@ function renderSavedItems() {
 
     savedList.innerHTML = '';
     savedItems.forEach((item, index) => {
-      // Determine display name
-      const displayName = item.companyName || item.ticker || 'Unknown';
+      // Determine display name and clean it
+      let displayName = item.companyName || item.ticker || 'Unknown';
+      displayName = displayName.replace(/,?\s*(Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG).*$/i, '').trim();
 
       const div = document.createElement('div');
       div.className = 'saved-item';
