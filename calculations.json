@@ -1,6 +1,49 @@
 {
   "moe": [
     {
+      "ticker": "MA",
+      "companyName": "Mastercard",
+      "date": "Dec 20, 2025",
+      "timestamp": 1766259085940,
+      "inputs": {
+        "stock": "MA",
+        "date": "Dec 20, 2025",
+        "current": {
+          "marketValue": 509.285092847,
+          "revenue": 31.47,
+          "shares": 0.89,
+          "earnings": 14.2514249616,
+          "eps": 16.01,
+          "pe": 36.63
+        },
+        "future": {
+          "revenueGrowth": 22,
+          "sharesChange": 22,
+          "pe": 33,
+          "margin": 33,
+          "marketValue": 926.2492624052,
+          "price": 385.07
+        }
+      },
+      "currentMetrics": {
+        "price": "$572.23",
+        "pe": "36.63",
+        "revenue": "$31.47B",
+        "netIncome": "14.25B",
+        "profitMargin": "45.28%",
+        "shares": "0.89B"
+      },
+      "results": {
+        "futurePrice": "$385.07",
+        "upside": "-32.7%",
+        "cagr": "-7.6%",
+        "futureRevenue": "85.05B",
+        "futureShares": "2.41B",
+        "beatSnpPrice": "$256.71",
+        "doubleReturnPrice": "$192.53"
+      }
+    },
+    {
       "ticker": "META",
       "companyName": "Meta Platforms",
       "date": "Dec 20",
