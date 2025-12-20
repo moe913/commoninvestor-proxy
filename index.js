@@ -1070,7 +1070,7 @@ function saveCalculationToHub() {
       futPriceVal = parseFloat(futPriceText.replace(/[$,]/g, '')) || 0;
     }
 
-    console.log('Saving Hub Item. FutPrice:', futPriceVal);
+
 
     // Calculate Upside and CAGR
     let upside = 0;
@@ -2985,7 +2985,7 @@ if (calcFutureBtn) {
     });
   };
   calcFutureBtn.addEventListener('click', () => {
-    console.log('Calculate button clicked');
+
     validateInputs(() => {
       console.log('Validation passed, executing callback...');
       if (typeof gtag === 'function') {
@@ -2994,7 +2994,6 @@ if (calcFutureBtn) {
       futureAutoEnabled = true;
       revealSummary();
       calculateCurrent();
-      console.log('Calling calculateFuture(true)...');
       calculateFuture(true); // Manual trigger
       scrollToFutureResults();
       ensureFutureCardBottomVisible();
