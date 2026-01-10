@@ -3409,14 +3409,15 @@ function switchTab(tabName) {
     const symbol = stock.value.toUpperCase();
 
     // Use currentStockData if it matches the input, otherwise fall back to mock or re-fetch logic
+    // Use currentStockData if it matches the input, otherwise pass symbol to trigger fetch
     if (currentStockData && (currentStockData.symbol === symbol || currentStockData.name === symbol)) {
       renderInsightsCharts(currentStockData);
     } else if (symbol && mockStocks[symbol]) {
       // Fallback to mock data if available (legacy)
       renderInsightsCharts(mockStocks[symbol]);
-    } else if (symbol === 'META' || !symbol) {
-      // Default fallback
-      renderInsightsCharts(mockStocks['META']);
+    } else {
+      // Pass symbol to trigger dynamic fetch
+      renderInsightsCharts(symbol || 'META');
     }
   } else if (tabName === 'hub') {
     if (tabHub) tabHub.classList.add('active');
@@ -3431,11 +3432,7 @@ function switchTab(tabName) {
 
     // Render charts if stock selected
     const symbol = stock.value.toUpperCase();
-    if (symbol && mockStocks[symbol]) {
-      renderInsightsCharts(mockStocks[symbol]);
-    } else if (symbol === 'META' || !symbol) {
-      renderInsightsCharts(mockStocks['META']);
-    }
+    renderInsightsCharts(symbol || 'META');
   } else if (tabName === 'hub') {
     if (tabHub) tabHub.classList.add('active');
     if (hubTab) hubTab.classList.add('active');
@@ -3638,7 +3635,7 @@ if (communityListInsights) {
 
     // Load charts for Insights
     stock.value = symbol;
-    renderInsightsCharts(mockStocks[symbol] || mockStocks['META']);
+    renderInsightsCharts(symbol);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
@@ -3736,7 +3733,53 @@ if (stockInsights && stockListInsights) {
 // Chart Instances
 let insightsCharts = {};
 
-function renderInsightsCharts(stockData) {
+async function renderInsightsCharts(stockDataOrSymbol) {
+  let stockData = stockDataOrSymbol;
+
+  // Handle String Input (Symbol) - Dynamic Fetch
+  if (typeof stockData === 'string') {
+    const symbol = stockData.toUpperCase();
+
+    // Check local data first
+    if (mockStocks[symbol]) {
+      stockData = mockStocks[symbol];
+    } else if (window.__sp500Data && window.__sp500Data[symbol]) {
+      stockData = window.__sp500Data[symbol];
+    } else {
+      // Fetch from API
+      try {
+        // Show loading state on all charts
+        Object.values(insightsCharts).forEach(chart => {
+          const ctx = chart.ctx;
+          chart.data.datasets.forEach(bs => bs.data = []);
+          chart.update();
+          // We could overlay a spinner here if desired
+        });
+        toast(`Fetching fresh data for ${symbol}...`, 2000);
+
+        const res = await fetch(`/.netlify/functions/quote?symbol=${symbol}`);
+        if (!res.ok) throw new Error('Fetch failed');
+
+        const freshData = await res.json();
+
+        // Merge into local cache so we don't re-fetch
+        if (window.__sp500Data) {
+          window.__sp500Data[symbol] = freshData;
+        } else {
+          mockStocks[symbol] = freshData; // Fallback cache
+        }
+        stockData = freshData;
+
+      } catch (err) {
+        console.error('Dynamic fetch failed:', err);
+        toast(`Could not load data for ${symbol}.`, 3000);
+        return;
+      }
+    }
+  }
+
+  // Final check
+  currentStockData = stockData;
   if (!stockData || !stockData.history) return;
 
   // Reverse history for display (TTM -> Oldest)
