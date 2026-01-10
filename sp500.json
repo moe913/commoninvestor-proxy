@@ -466,7 +466,9 @@
         "margin": 46.0,
         "shares": 0.99,
         "roe": 122.0,
-        "pe": 0
+        "pe": 0,
+        "revGrowth": 23.4,
+        "earnGrowth": 35.1
       },
       {
         "year": "2022",
@@ -477,7 +479,9 @@
         "margin": 44.6,
         "shares": 0.96,
         "roe": 145.0,
-        "pe": 0
+        "pe": 0,
+        "revGrowth": 17.5,
+        "earnGrowth": 13.8
       },
       {
         "year": "2023",
@@ -488,7 +492,9 @@
         "margin": 44.6,
         "shares": 0.94,
         "roe": 160.0,
-        "pe": 0
+        "pe": 0,
+        "revGrowth": 13.1,
+        "earnGrowth": 13.1
       },
       {
         "year": "2024",
@@ -499,7 +505,9 @@
         "margin": 45.4,
         "shares": 0.92,
         "roe": 175.0,
-        "pe": 0
+        "pe": 0,
+        "revGrowth": 12.4,
+        "earnGrowth": 14.3
       },
       {
         "year": "TTM",
@@ -510,7 +518,9 @@
         "margin": 45.3,
         "shares": 0.89,
         "roe": 180.0,
-        "pe": 34.84
+        "pe": 34.84,
+        "revGrowth": 11.7,
+        "earnGrowth": 11.7
       }
     ]
   },
