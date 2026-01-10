@@ -134,14 +134,10 @@ function run() {
     console.log(`Total unique tickers: ${unique.length}`);
 
     const content = `// Auto-generated detailed ticker list
-const globalTickers = ${JSON.stringify(unique, null, 2)};
+window.globalTickers = ${JSON.stringify(unique, null, 2)};
 
-// Optimizing for search? No, just raw list is fine for client side filter ~4k items.
-// Export for CommonJS and Browser
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = globalTickers;
-} else {
-    window.globalTickers = globalTickers;
+    module.exports = window.globalTickers;
 }
 `;
 
