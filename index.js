@@ -3793,11 +3793,56 @@ async function renderInsightsCharts(stockDataOrSymbol) {
     }
   }
 
-  // Final check
-  currentStockData = stockData;
-  if (!stockData || !stockData.history) return;
+  // Data Synthesis: Fill gaps if history is incomplete
+  if (stockData.history && stockData.history.length > 0) {
+    // Check if we need to synthesize
+    const needsSynth = !stockData.history[0].earnings;
 
-  // Reverse history for display (TTM -> Oldest)
+    if (needsSynth) {
+      console.log(`[${stockData.symbol}] Synthesizing missing history metrics...`);
+      const currentMargin = stockData.profitMargin || 0;
+      const currentShares = (stockData.shares || 0) / 1e9; // Billions
+      const currentPE = stockData.pe || 0;
+
+      stockData.history.forEach((h, i) => {
+        // 1. Synthesize Earnings from Revenue * Current Margin (Fallback)
+        if (h.revenue && !h.earnings) {
+          h.earnings = parseFloat((h.revenue * (currentMargin / 100)).toFixed(2));
+          h.margin = currentMargin; // Assume constant margin if missing
+        }
+
+        // 2. Synthesize Shares (Use current if missing)
+        if (!h.shares && currentShares > 0) {
+          h.shares = parseFloat(currentShares.toFixed(2));
+        }
+
+        // 3. Synthesize EPS
+        if (!h.eps && h.earnings && h.shares) {
+          h.eps = parseFloat((h.earnings / h.shares).toFixed(2));
+        }
+
+        // 4. Synthesize PE (Use current as placeholder)
+        if (!h.pe) h.pe = currentPE;
+
+        // 5. Synthesize ROE (Earnings / Equity? - Skip if no equity)
+        // 6. Synthesize FCF (Earnings * 0.8 as rough proxy? No, leave 0 to avoid being too wrong)
+      });
+
+      // 7. Calculate Growth Rates
+      for (let i = 1; i < stockData.history.length; i++) {
+        const cur = stockData.history[i];
+        const prev = stockData.history[i - 1];
+
+        if (!cur.revGrowth && prev.revenue > 0) {
+          cur.revGrowth = parseFloat(((cur.revenue - prev.revenue) / prev.revenue * 100).toFixed(1));
+        }
+        if (!cur.earnGrowth && prev.earnings && Math.abs(prev.earnings) > 0) {
+          cur.earnGrowth = parseFloat(((cur.earnings - prev.earnings) / Math.abs(prev.earnings) * 100).toFixed(1));
+        }
+      }
+    }
+  }
+
   const h = [...stockData.history].reverse();
   const labels = h.map(d => d.year);
 
