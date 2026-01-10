@@ -1265,7 +1265,7 @@ function renderSavedItems() {
       savedList.innerHTML = '<div class="empty-state">Syncing...</div>';
     }
 
-    fetch(`/api/user-data?username=${username}`)
+    fetch(`/api/user-data?username=${username}&t=${Date.now()}`)
       .then(res => {
         if (!res.ok) throw new Error(res.statusText);
         return res.json();
