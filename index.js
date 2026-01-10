@@ -3741,11 +3741,26 @@ async function renderInsightsCharts(stockDataOrSymbol) {
     const symbol = stockData.toUpperCase();
 
     // Check local data first
+    // Check local data first
     if (mockStocks[symbol]) {
       stockData = mockStocks[symbol];
     } else if (window.__sp500Data && window.__sp500Data[symbol]) {
-      stockData = window.__sp500Data[symbol];
-    } else {
+      // Validate local data completeness
+      const local = window.__sp500Data[symbol];
+      const hasHistory = local.history && local.history.length > 0;
+      // Check for revenue and earnings in the last history entry to ensure it's not partial
+      const last = hasHistory ? local.history[local.history.length - 1] : null;
+      const isComplete = last && (last.earnings !== undefined || last.fcf !== undefined) && last.revenue !== undefined;
+
+      if (isComplete) {
+        stockData = local;
+      } else {
+        console.warn(`[${symbol}] Local data found but incomplete. Fetching fresh...`);
+        // Fall through to fetch
+      }
+    }
+
+    if (!stockData) {
       // Fetch from API
       try {
         // Show loading state on all charts
