@@ -250,6 +250,11 @@ const stocksNotice = (() => {
 
 async function ensureStocksLoaded() {
   if (allStocks.length) return allStocks;
+  // Prioritize globalTickers if loaded via script tag
+  if (window.globalTickers && window.globalTickers.length) {
+    allStocks = window.globalTickers;
+    return allStocks;
+  }
   if (_stocksLoadingPromise) return _stocksLoadingPromise;
 
   _stocksLoadingPromise = (async () => {
