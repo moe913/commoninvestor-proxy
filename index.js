@@ -248,16 +248,54 @@ const stocksNotice = (() => {
   } catch (e) { return null; }
 })();
 
+// Ticker Loader with Timeout
 async function ensureStocksLoaded() {
+  // If allStocks is already populated, return it immediately.
   if (allStocks.length) return allStocks;
-  // Prioritize globalTickers if loaded via script tag
-  if (window.globalTickers && window.globalTickers.length) {
+
+  // Prioritize globalTickers if loaded via script tag and has sufficient data
+  if (window.globalTickers && window.globalTickers.length > 500) {
     allStocks = window.globalTickers;
     return allStocks;
   }
+
+  // If a loading promise is already active, return it to avoid duplicate efforts.
   if (_stocksLoadingPromise) return _stocksLoadingPromise;
 
-  _stocksLoadingPromise = (async () => {
+  // Create a new promise for loading stocks, incorporating a timeout for globalTickers.
+  _stocksLoadingPromise = new Promise(async (resolve) => {
+    let attempts = 0;
+    const maxAttempts = 50; // 5 seconds max (100ms * 50)
+    const checkInterval = 100; // ms
+
+    const intervalId = setInterval(() => {
+      attempts++;
+      if (window.globalTickers && window.globalTickers.length > 500) {
+        clearInterval(intervalId);
+        allStocks = window.globalTickers;
+        resolve(allStocks);
+        return;
+      } else if (attempts >= maxAttempts) {
+        clearInterval(intervalId);
+        console.warn("Global Tickers did not load within 5 seconds. Falling back to other sources.");
+        // Proceed to load from STOCK_SOURCES or inline data
+        loadFromOtherSources().then(resolve);
+      }
+    }, checkInterval);
+
+    // If globalTickers is not expected or doesn't load, proceed with other sources immediately
+    // This handles cases where globalTickers might not be used or is empty.
+    // We'll give it a short head start, then proceed.
+    setTimeout(() => {
+      if (!allStocks.length) { // Only proceed if not already resolved by globalTickers
+        clearInterval(intervalId); // Stop the interval if we're taking over
+        loadFromOtherSources().then(resolve);
+      }
+    }, 1000); // Give globalTickers 1 second to load before forcing other sources
+  });
+
+  // Helper function to load from STOCK_SOURCES and inline data
+  async function loadFromOtherSources() {
     for (const url of STOCK_SOURCES) {
       try {
         const res = await fetch(url, { cache: 'no-store' });
@@ -305,7 +343,7 @@ async function ensureStocksLoaded() {
       });
     }
     return allStocks;
-  })();
+  }
 
   try {
     return await _stocksLoadingPromise;
