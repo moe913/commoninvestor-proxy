@@ -1456,7 +1456,10 @@ function renderSavedItems() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, calculations: savedItems })
-              }).catch(console.error);
+              }).catch(err => {
+                console.error(err);
+                alert('Failed to save deletion. Check your token permissions.');
+              });
             }
           }
 
