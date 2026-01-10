@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Vercel Support</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #111;
+            color: #eee;
+            padding: 20px;
+        }
+
+        .status {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .success {
+            background: #153;
+            color: #bfb;
+        }
+
+        .error {
+            background: #511;
+            color: #fbb;
+        }
+
+        .pending {
+            background: #333;
+            color: #aaa;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #444;
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>System Diagnostic</h1>
+    <button onclick="runDiagnostics()">Run Diagnostics</button>
+    <div id="results" style="margin-top: 20px;"></div>
+
+    <script src="global-tickers.js"></script>
+    <script>
+        const log = (msg, type = 'pending') => {
+            const el = document.createElement('div');
+            el.className = 'status ' + type;
+            el.textContent = msg;
+            document.getElementById('results').appendChild(el);
+        };
+
+        async function runDiagnostics() {
+            document.getElementById('results').innerHTML = '';
+
+            // 1. Check Global Tickers
+            if (window.globalTickers && Array.isArray(window.globalTickers)) {
+                log(`PASS: Global Tickers Loaded (${window.globalTickers.length} items)`, 'success');
+            } else {
+                log('FAIL: window.globalTickers is undefined or invalid', 'error');
+            }
+
+            // 2. Check API Health
+            try {
+                const start = Date.now();
+                const res = await fetch('/api/test');
+                if (res.ok) {
+                    const txt = await res.text();
+                    log(`PASS: API Health Check (${Date.now() - start}ms) - ${txt}`, 'success');
+                } else {
+                    log(`FAIL: API Health Check (Status: ${res.status})`, 'error');
+                }
+            } catch (e) {
+                log(`FAIL: API Network Error - ${e.message}`, 'error');
+            }
+
+            // 3. Check Quote API (AAPL)
+            try {
+                const start = Date.now();
+                const res = await fetch('/api/quote?symbol=AAPL');
+                if (res.ok) {
+                    const json = await res.json();
+                    if (json.symbol === 'AAPL' && json.price) {
+                        log(`PASS: Quote API (AAPL) - Price: ${json.price} (${Date.now() - start}ms)`, 'success');
+                    } else {
+                        log('FAIL: Quote API returned invalid data', 'error');
+                    }
+                } else {
+                    const txt = await res.text();
+                    log(`FAIL: Quote API (Status: ${res.status}) - ${txt}`, 'error');
+                }
+            } catch (e) {
+                log(`FAIL: Quote API Network Error - ${e.message}`, 'error');
+            }
+        }
+    </script>
+</body>
+
+</html>
