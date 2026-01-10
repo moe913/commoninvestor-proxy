@@ -1,7 +1,7 @@
 
 const { GITHUB_TOKEN } = process.env;
 const REPO = 'moe913/commoninvestor-proxy';
-const BRANCH = 'dev';
+const BRANCH = 'main';
 const FILE_PATH = 'calculations.json';
 
 module.exports = async (req, res) => {
