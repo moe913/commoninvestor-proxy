@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Debugger</title>
+    <style>
+        body {
+            background: #111;
+            color: #fff;
+            font-family: monospace;
+            padding: 20px;
+        }
+
+        #log {
+            border: 1px solid #333;
+            padding: 10px;
+            height: 300px;
+            overflow: auto;
+            background: #000;
+            white-space: pre-wrap;
+        }
+
+        .success {
+            color: #4f4;
+        }
+
+        .error {
+            color: #f44;
+        }
+
+        .warn {
+            color: #fa4;
+        }
+
+        input {
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+            margin: 10px 0;
+            background: #222;
+            border: 1px solid #444;
+            color: #fff;
+        }
+
+        #results {
+            border: 1px solid #444;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Search Debugger</h1>
+    <div id="log"></div>
+    <input type="text" id="searchInput" placeholder="Type to search (e.g. SOFI)...">
+    <div id="results">Results will appear here...</div>
+
+    <!-- Override Console -->
+    <script>
+        const logBox = document.getElementById('log');
+        function print(msg, type = 'info') {
+            const div = document.createElement('div');
+            div.className = type;
+            div.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+            logBox.appendChild(div);
+            logBox.scrollTop = logBox.scrollHeight;
+        }
+        console.log = (m) => print(m, 'info');
+        console.warn = (m) => print(m, 'warn');
+        console.error = (m) => print(m, 'error');
+        window.onerror = (msg, url, line) => print(`Global Error: ${msg} at ${line}`, 'error');
+        print('Debugger started. Loading resources...', 'warn');
+    </script>
+
+    <!-- Attempt to load global tickers -->
+    <script src="global-tickers.js?v=20"></script>
+
+    <script>
+        let allStocks = [];
+
+        async function init() {
+            print('Checking window.globalTickers...');
+            if (window.globalTickers && window.globalTickers.length > 0) {
+                print(`SUCCESS: Found ${window.globalTickers.length} global tickers.`, 'success');
+                allStocks = window.globalTickers;
+            } else {
+                print('MISSING: window.globalTickers not found immediately.', 'error');
+                print('Attempting fallback fetch to sp500.json...');
+                try {
+                    const res = await fetch('sp500.json');
+                    if (res.ok) {
+                        const data = await res.json();
+                        print(`SUCCESS: Fetched sp500.json (${Object.keys(data).length} items).`, 'success');
+                        // Convert to array
+                        allStocks = Object.entries(data).map(([k, v]) => ({ symbol: k, name: v.name || k }));
+                    } else {
+                        print(`FAILED: Fetch sp500.json returned ${res.status}`, 'error');
+                    }
+                } catch (e) {
+                    print(`ERROR: Fetch failed: ${e.message}`, 'error');
+                }
+            }
+
+            print(`Total searchable stocks: ${allStocks.length}`, allStocks.length > 0 ? 'success' : 'error');
+
+            if (allStocks.length > 0) {
+                print('Sample data: ' + JSON.stringify(allStocks[0]), 'info');
+            }
+        }
+
+        async function search(query) {
+            if (!query) return [];
+            const q = query.toUpperCase();
+            print(`Searching for: ${q}`);
+
+            const matches = [];
+            let count = 0;
+            for (const item of allStocks) {
+                if (count > 10) break;
+                // Normalize keys
+                const s = (item.s || item.symbol || '').toUpperCase();
+                const n = (item.n || item.name || '').toUpperCase();
+
+                if (s.includes(q) || n.includes(q)) {
+                    matches.push({ s, n });
+                    count++;
+                }
+            }
+            return matches;
+        }
+
+        document.getElementById('searchInput').addEventListener('input', async (e) => {
+            const val = e.target.value;
+            const res = await search(val);
+            const html = res.map(m => `<div><strong>${m.s}</strong> - ${m.n}</div>`).join('');
+            document.getElementById('results').innerHTML = html || 'No matches.';
+            print(`Found ${res.length} matches.`);
+        });
+
+        init();
+    </script>
+</body>
+
+</html>
