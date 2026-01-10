@@ -70,7 +70,9 @@ module.exports = async (req, res) => {
                     const data = fs.readFileSync(localPath, 'utf8');
                     const localUsers = JSON.parse(data);
                     if (Array.isArray(localUsers) && localUsers.length > 0) {
-                        users = localUsers;
+                        // Merge strategies: Add local users to our list
+                        // users = localUsers; // OLD: Overwrote fallbacks
+                        users = [...users, ...localUsers]; // NEW: Keep fallbacks
                     }
                 }
             } catch (e) {
