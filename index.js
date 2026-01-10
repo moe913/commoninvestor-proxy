@@ -1675,8 +1675,8 @@ async function searchStocks(query) {
   // 50: Contains
 
   for (const item of source) {
-    const sym = item.s.toUpperCase();
-    const name = item.n.toUpperCase();
+    const sym = (item.s || item.symbol || '').toUpperCase();
+    const name = (item.n || item.name || '').toUpperCase();
     let score = 0;
 
     if (sym === q) score = 100;
@@ -1695,7 +1695,7 @@ async function searchStocks(query) {
     }
 
     if (score > 0) {
-      matches.push({ symbol: item.s, name: item.n, exchange: item.e, score });
+      matches.push({ symbol: sym, name: name, exchange: item.e || item.exchange || '', score });
     }
   }
 
