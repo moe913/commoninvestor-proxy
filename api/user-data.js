@@ -30,7 +30,9 @@ module.exports = async (req, res) => {
 
             if (fileData) {
                 rawContent = Buffer.from(fileData.content, 'base64').toString('utf-8');
+                res.setHeader('X-Data-Source', 'cloud');
             } else {
+                console.warn('Falling back to local file. Cloud fetch failed or empty.');
                 // Fallback to local file if GitHub API fails/token missing
                 const fs = require('fs');
                 const path = require('path');
@@ -38,6 +40,7 @@ module.exports = async (req, res) => {
                 if (fs.existsSync(localPath)) {
                     console.log('Using local fallback for calculations.json');
                     rawContent = fs.readFileSync(localPath, 'utf8');
+                    res.setHeader('X-Data-Source', 'local');
                 }
             }
 
@@ -96,7 +99,7 @@ module.exports = async (req, res) => {
 
         } catch (e) {
             console.error(e);
-            return res.status(500).send('Error saving data: ' + e.message);
+            return res.status(500).json({ error: e.message, stack: e.stack });
         }
     }
 
