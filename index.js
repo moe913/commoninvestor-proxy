@@ -634,7 +634,7 @@ if (loginForm) {
     loginError.style.display = 'none';
 
     try {
-      const res = await fetch('/.netlify/functions/login', {
+      const response = await fetch('/api/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -3809,7 +3809,9 @@ async function renderInsightsCharts(stockDataOrSymbol) {
         });
         toast(`Fetching fresh data for ${symbol}...`, 2000);
 
-        const res = await fetch(`/.netlify/functions/quote?symbol=${symbol}`);
+        const modules = 'summaryProfile,financialData,earnings,defaultKeyStatistics,incomeStatementHistory,balanceSheetHistory,cashflowStatementHistory';
+        const url = `/api/quote?symbol=${encodeURIComponent(symbol)}&modules=${modules}`;
+        const res = await fetch(url);
         if (!res.ok) throw new Error('Fetch failed');
 
         const freshData = await res.json();

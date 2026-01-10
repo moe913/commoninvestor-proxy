@@ -93,7 +93,7 @@
             if (!adminPass) return;
 
             try {
-                const res = await fetch('/.netlify/functions/admin-users?action=list', {
+                const res = await fetch('/api/admin-users?action=list', {
                     headers: { 'Authorization': adminPass }
                 });
                 if (res.ok) {
@@ -122,7 +122,7 @@
             if (!confirm('Delete ' + username + '?')) return;
             const adminPass = document.getElementById('adminPassword').value;
 
-            const res = await fetch('/.netlify/functions/admin-users', {
+            const res = await fetch('/api/admin-users', {
                 method: 'POST',
                 body: JSON.stringify({ action: 'delete', username, adminPassword: adminPass })
             });
@@ -141,7 +141,7 @@
             const username = document.getElementById('newUsername').value;
             const password = document.getElementById('newPassword').value;
 
-            const res = await fetch('/.netlify/functions/admin-users', {
+            const res = await fetch('/api/admin-users', {
                 method: 'POST',
                 body: JSON.stringify({ action: 'add', username, password, adminPassword })
             });
