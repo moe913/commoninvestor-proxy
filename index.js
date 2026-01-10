@@ -1456,14 +1456,23 @@ function renderSavedItems() {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, calculations: savedItems })
               })
-                .then(res => {
-                  if (!res.ok) throw new Error('Save failed');
-                  // Only update UI if save succeeded
+                .then(async res => {
+                  if (!res.ok) {
+                    const data = await res.json().catch(() => ({}));
+                    if (data.error === 'MISSING_TOKEN') {
+                      throw new Error('MISSING_TOKEN');
+                    }
+                    throw new Error(data.message || 'Save failed');
+                  }
                   renderList(savedItems);
                 })
                 .catch(err => {
                   console.error(err);
-                  alert('Cloud Save Failed: Check your GitHub Token in Vercel Settings.\n\nItem was NOT deleted.');
+                  if (err.message === 'MISSING_TOKEN') {
+                    alert('⚠️ Cannot Save Changes ⚠️\n\nThe "GITHUB_TOKEN" is missing from your Vercel Settings.\n\nTo fix this:\n1. Go to Vercel Dashboard > Settings > Environment Variables\n2. Add Key: GITHUB_TOKEN\n3. Value: (Your Token)\n4. Redploy');
+                  } else {
+                    alert('Cloud Save Failed: ' + err.message);
+                  }
                   // Revert local array change
                   // (Ideally we'd re-fetch, but for now just don't re-render the list so it stays visible? 
                   //  Actually we already spliced it. We need to reload or undo splice.)

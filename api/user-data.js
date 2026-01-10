@@ -19,8 +19,13 @@ module.exports = async (req, res) => {
 
     if (!GITHUB_TOKEN) {
         console.error('Missing GITHUB_TOKEN environment variable');
-        // Don't error immediately, let fallback logic handle it for GET
-        // But for POST it will fail.
+        // If it's a WRITE operation, fail immediately
+        if (req.method === 'POST' || req.method === 'PUT') {
+            return res.status(401).json({
+                error: 'MISSING_TOKEN',
+                message: 'Server Config Error: GITHUB_TOKEN is missing in Vercel Environment Variables.'
+            });
+        }
     }
 
     const { method } = req;
