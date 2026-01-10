@@ -2566,3878 +2566,503 @@ const globalTickers = [
     "e": "US"
   },
   {
-    "s": "AAC",
-    "n": "Aac Holdings Inc",
+    "s": "BRK-B",
+    "n": "Berkshire Hathaway Inc",
     "e": "US"
   },
   {
-    "s": "AAMC",
-    "n": "Altisource Asset",
+    "s": "SPY",
+    "n": "Spdr S&P 500 Etf Trust",
     "e": "US"
   },
   {
-    "s": "AAOI",
-    "n": "Applied Optoelectronics Inc",
+    "s": "ASML",
+    "n": "Asml Holding Nv",
     "e": "US"
   },
   {
-    "s": "AAON",
-    "n": "Aaon Inc",
+    "s": "AZN",
+    "n": "Astrazeneca Plc",
     "e": "US"
   },
   {
-    "s": "AAT",
-    "n": "American Assets Trust",
+    "s": "CYATY",
+    "n": "Contemporary Amperex Technology Co., Limited/Adr",
     "e": "US"
   },
   {
-    "s": "AAVL",
-    "n": "Avalanche Biotechnologies Inc",
+    "s": "SAP",
+    "n": "Sap Se",
     "e": "US"
   },
   {
-    "s": "AAWW",
-    "n": "Atlas Air Worldwide Holdings",
+    "s": "TM",
+    "n": "Toyota Motor Corp/",
     "e": "US"
   },
   {
-    "s": "ABAX",
-    "n": "Abaxis Inc",
+    "s": "HSBC",
+    "n": "Hsbc Holdings Plc",
     "e": "US"
   },
   {
-    "s": "ABCB",
-    "n": "Ameris Bancorp",
+    "s": "NVS",
+    "n": "Novartis Ag",
     "e": "US"
   },
   {
-    "s": "ABCD",
-    "n": "Cambium Learning Group",
+    "s": "NVO",
+    "n": "Novo Nordisk A S",
     "e": "US"
   },
   {
-    "s": "ABCO",
-    "n": "The Advisory Board Company",
+    "s": "QQQ",
+    "n": "Invesco Qqq Trust, Series 1",
     "e": "US"
   },
   {
-    "s": "ABCW",
-    "n": "Anchor Bancorp Wisconsin Inc",
+    "s": "RY",
+    "n": "Royal Bank Of Canada",
     "e": "US"
   },
   {
-    "s": "ABEO",
-    "n": "Abeona Therapeutics Inc",
+    "s": "SHOP",
+    "n": "Shopify Inc.",
     "e": "US"
   },
   {
-    "s": "ABG",
-    "n": "Asbury Automotive Group Inc",
+    "s": "SHEL",
+    "n": "Shell Plc",
     "e": "US"
   },
   {
-    "s": "ABM",
-    "n": "ABM Industries Incorporated",
+    "s": "MUFG",
+    "n": "Mitsubishi Ufj Financial Group Inc",
     "e": "US"
   },
   {
-    "s": "ABMD",
-    "n": "Abiomed",
+    "s": "SAN",
+    "n": "Banco Santander, S.A.",
     "e": "US"
   },
   {
-    "s": "ABY",
-    "n": "Abengoa Yield Plc",
+    "s": "HDB",
+    "n": "Hdfc Bank Ltd",
     "e": "US"
   },
   {
-    "s": "ACAD",
-    "n": "Acadia Pharmaceuticals Inc",
+    "s": "RTNTF",
+    "n": "Rio Tinto Ltd",
     "e": "US"
   },
   {
-    "s": "ACAT",
-    "n": "Arctic Cat Inc",
+    "s": "BHP",
+    "n": "Bhp Group Ltd",
     "e": "US"
   },
   {
-    "s": "ACCO",
-    "n": "Acco Brands Corp",
+    "s": "TD",
+    "n": "Toronto Dominion Bank",
     "e": "US"
   },
   {
-    "s": "ACET",
-    "n": "Aceto Corp",
+    "s": "DTEGY",
+    "n": "Deutsche Telekom Ag",
     "e": "US"
   },
   {
-    "s": "ACHN",
-    "n": "Achillion Pharmaceuticals",
+    "s": "HTHIY",
+    "n": "Hitachi Ltd",
     "e": "US"
   },
   {
-    "s": "ACIW",
-    "n": "Aci Worldwide",
+    "s": "SONY",
+    "n": "Sony Group Corp",
     "e": "US"
   },
   {
-    "s": "ACLS",
-    "n": "Axcelis Technologies",
+    "s": "UBS",
+    "n": "Ubs Group Ag",
     "e": "US"
   },
   {
-    "s": "ACOR",
-    "n": "Acorda Therapeutics",
+    "s": "RIO",
+    "n": "Rio Tinto Plc",
     "e": "US"
   },
   {
-    "s": "ACRE",
-    "n": "Ares Commercial Real Estate Cor",
+    "s": "UL",
+    "n": "Unilever Plc",
     "e": "US"
   },
   {
-    "s": "ACTA",
-    "n": "Actua Corporation",
+    "s": "TTE",
+    "n": "Totalenergies Se",
     "e": "US"
   },
   {
-    "s": "ACTG",
-    "n": "Acacia Research Corp",
+    "s": "BBVA",
+    "n": "Banco Bilbao Vizcaya Argentaria, S.A.",
     "e": "US"
   },
   {
-    "s": "ACW",
-    "n": "Accuride Corporation",
+    "s": "UTX",
+    "n": "Ultratrex Inc.",
     "e": "US"
   },
   {
-    "s": "ACXM",
-    "n": "Acxiom Corp",
+    "s": "SCCO",
+    "n": "Southern Copper Corp/",
     "e": "US"
   },
   {
-    "s": "ADC",
-    "n": "Agree Realty Corp",
+    "s": "SMFG",
+    "n": "Sumitomo Mitsui Financial Group, Inc.",
     "e": "US"
   },
   {
-    "s": "ADMS",
-    "n": "Adamas Pharmaceuticals Inc",
+    "s": "BUD",
+    "n": "Anheuser-Busch Inbev Sa/Nv",
     "e": "US"
   },
   {
-    "s": "ADPT",
-    "n": "Adeptus Health Inc",
+    "s": "ARM",
+    "n": "Arm Holdings Plc /Uk",
     "e": "US"
   },
   {
-    "s": "ADRO",
-    "n": "Aduro Biotech Inc",
+    "s": "SPOT",
+    "n": "Spotify Technology S.A.",
     "e": "US"
   },
   {
-    "s": "ADTN",
-    "n": "Adtran Inc",
+    "s": "SNY",
+    "n": "Sanofi",
     "e": "US"
   },
   {
-    "s": "ADUS",
-    "n": "Addus Homecare Corp",
+    "s": "BTI",
+    "n": "British American Tobacco P.L.C.",
     "e": "US"
   },
   {
-    "s": "ADXS",
-    "n": "Advaxis Inc",
+    "s": "IBN",
+    "n": "Icici Bank Ltd",
     "e": "US"
   },
   {
-    "s": "AE",
-    "n": "Adams Resources & Energy",
+    "s": "MELI",
+    "n": "Mercadolibre Inc",
     "e": "US"
   },
   {
-    "s": "AEGN",
-    "n": "Aegoin Corp",
+    "s": "GLD",
+    "n": "Spdr Gold Trust",
     "e": "US"
   },
   {
-    "s": "AEGR",
-    "n": "Aegerion Pharmaceuticals",
+    "s": "BN",
+    "n": "Brookfield Corp /On/",
     "e": "US"
   },
   {
-    "s": "AEIS",
-    "n": "Advanced Energy Industries",
+    "s": "GSK",
+    "n": "Gsk Plc",
     "e": "US"
   },
   {
-    "s": "AEL",
-    "n": "American Equity Investment Life",
+    "s": "ENB",
+    "n": "Enbridge Inc",
     "e": "US"
   },
   {
-    "s": "AEO",
-    "n": "American Eagle Outfitters",
+    "s": "MFG",
+    "n": "Mizuho Financial Group Inc",
     "e": "US"
   },
   {
-    "s": "AEPI",
-    "n": "AEP Industries Inc",
+    "s": "ATEYY",
+    "n": "Advantest Corp",
     "e": "US"
   },
   {
-    "s": "AERI",
-    "n": "Aerie Pharmaceuticals Inc",
+    "s": "BMO",
+    "n": "Bank Of Montreal /Can/",
     "e": "US"
   },
   {
-    "s": "AF",
-    "n": "Astoria Financial Corp",
+    "s": "AEM",
+    "n": "Agnico Eagle Mines Ltd",
     "e": "US"
   },
   {
-    "s": "AFAM",
-    "n": "Almost Family Inc",
+    "s": "NTES",
+    "n": "Netease, Inc.",
     "e": "US"
   },
   {
-    "s": "AFFX",
-    "n": "Affymetrix",
+    "s": "BNS",
+    "n": "Bank Of Nova Scotia",
     "e": "US"
   },
   {
-    "s": "AFH",
-    "n": "Atlas Financial Holdings Inc",
+    "s": "BCS",
+    "n": "Barclays Plc",
     "e": "US"
   },
   {
-    "s": "AFMD",
-    "n": "Affimed Therapeutics B.V",
+    "s": "MGCLY",
+    "n": "Midea Group Co., Ltd./Adr",
     "e": "US"
   },
   {
-    "s": "AFOP",
-    "n": "Alliance Fiber Optic Products",
+    "s": "BAM",
+    "n": "Brookfield Asset Management Ltd.",
     "e": "US"
   },
   {
-    "s": "AGEN",
-    "n": "Agenus Inc",
+    "s": "BP",
+    "n": "Bp Plc",
     "e": "US"
   },
   {
-    "s": "AGII",
-    "n": "Argo Group International Holdings Ltd",
+    "s": "CM",
+    "n": "Canadian Imperial Bank Of Commerce /Can/",
     "e": "US"
   },
   {
-    "s": "AGM",
-    "n": "Federal Agricultural Mortgage Corp",
+    "s": "NU",
+    "n": "Nu Holdings Ltd.",
     "e": "US"
   },
   {
-    "s": "AGRX",
-    "n": "Agile Therapeutics Inc",
+    "s": "SE",
+    "n": "Sea Ltd",
     "e": "US"
   },
   {
-    "s": "AGTC",
-    "n": "Applied Genetic Technologies Co",
+    "s": "IAU",
+    "n": "Ishares Gold Trust",
     "e": "US"
   },
   {
-    "s": "AGX",
-    "n": "Argan Inc",
-    "e": "US"
-  },
-  {
-    "s": "AGYS",
-    "n": "Agilysys Inc",
-    "e": "US"
-  },
-  {
-    "s": "AHH",
-    "n": "Armada Hoffler Properties Inc",
-    "e": "US"
-  },
-  {
-    "s": "AHP",
-    "n": "Ashford Hospitality Prime Inc",
-    "e": "US"
-  },
-  {
-    "s": "AHS",
-    "n": "Amn Healthcare Services Inc",
-    "e": "US"
-  },
-  {
-    "s": "AHT",
-    "n": "Ashford Hospitality Trust Inc",
-    "e": "US"
-  },
-  {
-    "s": "AI",
-    "n": "Arlington Asset Investment Corp",
-    "e": "US"
-  },
-  {
-    "s": "AIMC",
-    "n": "Altra Holdings",
-    "e": "US"
-  },
-  {
-    "s": "AIN",
-    "n": "Albany International Corp",
-    "e": "US"
-  },
-  {
-    "s": "AINC",
-    "n": "Ashford Inc. Common Stock",
-    "e": "US"
-  },
-  {
-    "s": "AIQ",
-    "n": "Alliance Healthcare Services",
-    "e": "US"
-  },
-  {
-    "s": "AIR",
-    "n": "AAR Corp",
-    "e": "US"
-  },
-  {
-    "s": "AIRM",
-    "n": "Air Methods Corp",
-    "e": "US"
-  },
-  {
-    "s": "AIT",
-    "n": "Applied Industrial Technologies",
-    "e": "US"
-  },
-  {
-    "s": "AJRD",
-    "n": "Gencorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "AJX",
-    "n": "Great Ajax Corp",
-    "e": "US"
-  },
-  {
-    "s": "AKBA",
-    "n": "Akebia Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "AKR",
-    "n": "Acadia Realty Trust",
-    "e": "US"
-  },
-  {
-    "s": "AKS",
-    "n": "AK Steel Holding Corp",
-    "e": "US"
-  },
-  {
-    "s": "ALCO",
-    "n": "Alico Inc",
-    "e": "US"
-  },
-  {
-    "s": "ALDR",
-    "n": "Alder Biopharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "ALE",
-    "n": "Allete Inc",
-    "e": "US"
-  },
-  {
-    "s": "ALEX",
-    "n": "Alexander and Baldwin Inc",
-    "e": "US"
-  },
-  {
-    "s": "ALG",
-    "n": "Alamo Group",
-    "e": "US"
-  },
-  {
-    "s": "ALGT",
-    "n": "Allegiant Travel Company",
-    "e": "US"
-  },
-  {
-    "s": "ALIM",
-    "n": "Alimera Sciences",
-    "e": "US"
-  },
-  {
-    "s": "ALJ",
-    "n": "Alon USA Energy",
-    "e": "US"
-  },
-  {
-    "s": "ALOG",
-    "n": "Analogic Corp",
-    "e": "US"
-  },
-  {
-    "s": "ALX",
-    "n": "Alexander's Inc",
-    "e": "US"
-  },
-  {
-    "s": "AMAG",
-    "n": "Amag Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "AMBA",
-    "n": "Ambarella Inc",
-    "e": "US"
-  },
-  {
-    "s": "AMBC",
-    "n": "Ambac Financial Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "AMBR",
-    "n": "Amber Road Inc",
-    "e": "US"
-  },
-  {
-    "s": "AMC",
-    "n": "Amc Entertainment Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "AMCC",
-    "n": "Applied Micro Circuits Corp",
-    "e": "US"
-  },
-  {
-    "s": "AMED",
-    "n": "Amedisys Inc",
-    "e": "US"
-  },
-  {
-    "s": "AMKR",
-    "n": "Amkor Technology",
-    "e": "US"
-  },
-  {
-    "s": "AMNB",
-    "n": "American National Bankshares",
-    "e": "US"
-  },
-  {
-    "s": "AMOT",
-    "n": "Allied Motion Technologies",
-    "e": "US"
-  },
-  {
-    "s": "AMPH",
-    "n": "Amphastar Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "AMRC",
-    "n": "Ameresco Inc",
-    "e": "US"
-  },
-  {
-    "s": "AMRI",
-    "n": "Albany Molecular Research",
-    "e": "US"
-  },
-  {
-    "s": "AMSF",
-    "n": "Amerisafe Inc",
-    "e": "US"
-  },
-  {
-    "s": "AMSG",
-    "n": "Amsurg Corp",
-    "e": "US"
-  },
-  {
-    "s": "AMSWA",
-    "n": "American Software",
-    "e": "US"
-  },
-  {
-    "s": "AMTG",
-    "n": "Apollo Residential Mortgage In",
-    "e": "US"
-  },
-  {
-    "s": "AMWD",
-    "n": "American Woodmark Corp",
-    "e": "US"
-  },
-  {
-    "s": "ANAC",
-    "n": "Anacor Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "ANCX",
-    "n": "Access National Corp",
-    "e": "US"
-  },
-  {
-    "s": "ANDE",
-    "n": "The Andersons",
-    "e": "US"
-  },
-  {
-    "s": "ANF",
-    "n": "Abercrombie & Fitch Company",
-    "e": "US"
-  },
-  {
-    "s": "ANGI",
-    "n": "Angie's List Inc",
-    "e": "US"
-  },
-  {
-    "s": "ANGO",
-    "n": "Angiodynamics",
-    "e": "US"
-  },
-  {
-    "s": "ANH",
-    "n": "Anworth Mortgage Asset Corp",
-    "e": "US"
-  },
-  {
-    "s": "ANIK",
-    "n": "Anika Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "ANIP",
-    "n": "ANI Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "ANTH",
-    "n": "Anthera Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "AOSL",
-    "n": "Alpha and Omega Semiconductor",
-    "e": "US"
-  },
-  {
-    "s": "APEI",
-    "n": "American Public Education",
-    "e": "US"
-  },
-  {
-    "s": "APIC",
-    "n": "Apigee Corp",
-    "e": "US"
-  },
-  {
-    "s": "APOG",
-    "n": "Apogee Enterprises",
-    "e": "US"
-  },
-  {
-    "s": "APOL",
-    "n": "Apollo Group",
-    "e": "US"
-  },
-  {
-    "s": "APPS",
-    "n": "Digital Turbine Inc",
-    "e": "US"
-  },
-  {
-    "s": "APTS",
-    "n": "Preferred Apartment Communities",
-    "e": "US"
-  },
-  {
-    "s": "ARAY",
-    "n": "Accuray Incorporated",
-    "e": "US"
-  },
-  {
-    "s": "ARC",
-    "n": "American Reprographics Company",
-    "e": "US"
-  },
-  {
-    "s": "ARCB",
-    "n": "Arcbest Corp",
-    "e": "US"
-  },
-  {
-    "s": "ARDX",
-    "n": "Ardelyx Inc",
-    "e": "US"
-  },
-  {
-    "s": "AREX",
-    "n": "Approach Resources Inc",
-    "e": "US"
-  },
-  {
-    "s": "ARI",
-    "n": "Apollo Commercial Real Estate",
-    "e": "US"
-  },
-  {
-    "s": "ARIA",
-    "n": "Ariad Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "ARII",
-    "n": "American Railcar Industries",
-    "e": "US"
-  },
-  {
-    "s": "ARNA",
-    "n": "Arena Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "AROW",
-    "n": "Arrow Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "ARPI",
-    "n": "American Residential Properties",
-    "e": "US"
-  },
-  {
-    "s": "ARR",
-    "n": "Armour Residential R",
-    "e": "US"
-  },
-  {
-    "s": "ARRY",
-    "n": "Array Biopharma Inc",
-    "e": "US"
-  },
-  {
-    "s": "ARTNA",
-    "n": "Artesian Resources Corp",
-    "e": "US"
-  },
-  {
-    "s": "ARWR",
-    "n": "Arrowhead Research Corp",
-    "e": "US"
-  },
-  {
-    "s": "ASC",
-    "n": "Ardmore Shipping Corp",
-    "e": "US"
-  },
-  {
-    "s": "ASCMA",
-    "n": "Ascent Media Corp",
-    "e": "US"
-  },
-  {
-    "s": "ASEI",
-    "n": "American Science and Engineering",
-    "e": "US"
-  },
-  {
-    "s": "ASGN",
-    "n": "On Assignment",
-    "e": "US"
-  },
-  {
-    "s": "ASMB",
-    "n": "Assembly Biosciences Inc",
-    "e": "US"
-  },
-  {
-    "s": "ASNA",
-    "n": "Ascena Retail Group",
-    "e": "US"
-  },
-  {
-    "s": "ASPS",
-    "n": "Altisource Portfolio Solutions S.A.",
-    "e": "US"
-  },
-  {
-    "s": "AST",
-    "n": "Asterias Biotherapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "ASTE",
-    "n": "Astec Industries",
-    "e": "US"
-  },
-  {
-    "s": "AT",
-    "n": "Atlantic Power Corp",
-    "e": "US"
-  },
-  {
-    "s": "ATEN",
-    "n": "A10 Networks Inc",
-    "e": "US"
-  },
-  {
-    "s": "ATLO",
-    "n": "Ames National Corp",
-    "e": "US"
-  },
-  {
-    "s": "ATNI",
-    "n": "Atlantic Tele-Network",
-    "e": "US"
-  },
-  {
-    "s": "ATRA",
-    "n": "Atara Biotherapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "ATRC",
-    "n": "Atricure",
-    "e": "US"
-  },
-  {
-    "s": "ATRI",
-    "n": "Atrion Corp",
-    "e": "US"
-  },
-  {
-    "s": "ATRO",
-    "n": "Astronics Corp",
-    "e": "US"
-  },
-  {
-    "s": "ATRS",
-    "n": "Antares Pharma",
-    "e": "US"
-  },
-  {
-    "s": "ATSG",
-    "n": "Air Transport Services Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "ATU",
-    "n": "Actuant Corp",
-    "e": "US"
-  },
-  {
-    "s": "ATW",
-    "n": "Atwood Oceanics",
-    "e": "US"
-  },
-  {
-    "s": "AVA",
-    "n": "Avista Corp",
-    "e": "US"
-  },
-  {
-    "s": "AVAV",
-    "n": "Aerovironment",
-    "e": "US"
-  },
-  {
-    "s": "AVD",
-    "n": "American Vanguard Corp",
-    "e": "US"
-  },
-  {
-    "s": "AVG",
-    "n": "Avg Technologies N.V.",
-    "e": "US"
-  },
-  {
-    "s": "AVHI",
-    "n": "Av Homes Inc",
-    "e": "US"
-  },
-  {
-    "s": "AVID",
-    "n": "Avid Technology",
-    "e": "US"
-  },
-  {
-    "s": "AVX",
-    "n": "Avx Corp",
-    "e": "US"
-  },
-  {
-    "s": "AWR",
-    "n": "American States Water Company",
-    "e": "US"
-  },
-  {
-    "s": "AXAS",
-    "n": "Abraxas Petroleum Corp",
-    "e": "US"
-  },
-  {
-    "s": "AXDX",
-    "n": "Accelerate Diagnostics Inc",
-    "e": "US"
-  },
-  {
-    "s": "AXE",
-    "n": "Anixter International Inc",
-    "e": "US"
-  },
-  {
-    "s": "AXL",
-    "n": "American Axle & Manufacturing",
-    "e": "US"
-  },
-  {
-    "s": "AXLL",
-    "n": "Georgia Gulf Corp",
-    "e": "US"
-  },
-  {
-    "s": "AYR",
-    "n": "Aircastle Ltd",
-    "e": "US"
-  },
-  {
-    "s": "AZPN",
-    "n": "Aspen Technology",
-    "e": "US"
-  },
-  {
-    "s": "AZZ",
-    "n": "Azz Inc",
+    "s": "ING",
+    "n": "Ing Groep Nv",
     "e": "US"
   },
   {
     "s": "B",
-    "n": "Barnes Group",
+    "n": "Barrick Mining Corp",
     "e": "US"
   },
   {
-    "s": "BABY",
-    "n": "Natus Medical Inc",
+    "s": "ITUB",
+    "n": "Itau Unibanco Holding S.A.",
     "e": "US"
   },
   {
-    "s": "BANC",
-    "n": "First Pactrust Bancorp",
+    "s": "SNOW",
+    "n": "Snowflake Inc.",
     "e": "US"
   },
   {
-    "s": "BANF",
-    "n": "Bancfirst Corp",
+    "s": "NGG",
+    "n": "National Grid Plc",
     "e": "US"
   },
   {
-    "s": "BANR",
-    "n": "Banner Corp",
+    "s": "LYG",
+    "n": "Lloyds Banking Group Plc",
     "e": "US"
   },
   {
-    "s": "BAS",
-    "n": "Basic Energy Services",
+    "s": "RELX",
+    "n": "Relx Plc",
     "e": "US"
   },
   {
-    "s": "BBCN",
-    "n": "Bbcn Bancorp Inc",
+    "s": "BAESY",
+    "n": "Bae Systems Plc /Fi/",
     "e": "US"
   },
   {
-    "s": "BBG",
-    "n": "Bill Barrett Corp",
+    "s": "PBR",
+    "n": "Petrobras - Petroleo Brasileiro Sa",
     "e": "US"
   },
   {
-    "s": "BBOX",
-    "n": "Black Box Corp",
+    "s": "INFY",
+    "n": "Infosys Ltd",
     "e": "US"
   },
   {
-    "s": "BBRG",
-    "n": "Bravo Brio Restaurant Group",
+    "s": "DB",
+    "n": "Deutsche Bank Aktiengesellschaft",
     "e": "US"
   },
   {
-    "s": "BBSI",
-    "n": "Barrett Business Services",
+    "s": "MRVL",
+    "n": "Marvell Technology, Inc.",
     "e": "US"
   },
   {
-    "s": "BBW",
-    "n": "Build-A-Bear Workshop",
+    "s": "NET",
+    "n": "Cloudflare, Inc.",
     "e": "US"
   },
   {
-    "s": "BBX",
-    "n": "Bankatlantic Bancorp",
+    "s": "EPD",
+    "n": "Enterprise Products Partners L.P.",
     "e": "US"
   },
   {
-    "s": "BCC",
-    "n": "Boise Cascade L.L.C. Common ST",
+    "s": "NWG",
+    "n": "Natwest Group Plc",
     "e": "US"
   },
   {
-    "s": "BCEI",
-    "n": "Bonanza Creek Energy Inc",
+    "s": "BMWKY",
+    "n": "Bayerische Motoren Werke Ag/Adr",
     "e": "US"
   },
   {
-    "s": "BCO",
-    "n": "Brink's Company",
+    "s": "VRT",
+    "n": "Vertiv Holdings Co",
     "e": "US"
   },
   {
-    "s": "BCOR",
-    "n": "Blucora Inc",
+    "s": "RACE",
+    "n": "Ferrari N.V.",
     "e": "US"
   },
   {
-    "s": "BCOV",
-    "n": "Brightcove Inc",
+    "s": "CP",
+    "n": "Canadian Pacific Kansas City Ltd/Cn",
     "e": "US"
   },
   {
-    "s": "BCPC",
-    "n": "Balchem Corp",
+    "s": "CNQ",
+    "n": "Canadian Natural Resources Ltd",
     "e": "US"
   },
   {
-    "s": "BCRX",
-    "n": "Biocryst Pharmaceuticals",
+    "s": "IFNNY",
+    "n": "Infineon Technologies Ag",
     "e": "US"
   },
   {
-    "s": "BDC",
-    "n": "Belden Inc",
+    "s": "LSEGY",
+    "n": "London Stock Exchange Group Plc",
     "e": "US"
   },
   {
-    "s": "BDE",
-    "n": "Black Diamond",
+    "s": "MFC",
+    "n": "Manulife Financial Corp",
     "e": "US"
   },
   {
-    "s": "BDGE",
-    "n": "Bridge Bancorp",
+    "s": "AMX",
+    "n": "America Movil Sab De Cv/",
     "e": "US"
   },
   {
-    "s": "BDSI",
-    "n": "Biodelivery Sciences International",
+    "s": "VALE",
+    "n": "Vale S.A.",
     "e": "US"
   },
   {
-    "s": "BEAT",
-    "n": "Cardionet",
+    "s": "CNI",
+    "n": "Canadian National Railway Co",
     "e": "US"
   },
   {
-    "s": "BEBE",
-    "n": "Bebe Stores",
+    "s": "RKT",
+    "n": "Rocket Companies, Inc.",
     "e": "US"
   },
   {
-    "s": "BECN",
-    "n": "Beacon Roofing Supply",
+    "s": "TRI",
+    "n": "Thomson Reuters Corp /Can/",
     "e": "US"
   },
   {
-    "s": "BEL",
-    "n": "Belmond Ltd",
+    "s": "EQNR",
+    "n": "Equinor Asa",
     "e": "US"
   },
   {
-    "s": "BELFB",
-    "n": "Bel Fuse Inc",
+    "s": "ET",
+    "n": "Energy Transfer Lp",
     "e": "US"
   },
   {
-    "s": "BERY",
-    "n": "Berry Plastics Group Inc",
+    "s": "WPM",
+    "n": "Wheaton Precious Metals Corp.",
     "e": "US"
   },
   {
-    "s": "BFAM",
-    "n": "Bright Horizons Family Solutions Inc",
+    "s": "ALNY",
+    "n": "Alnylam Pharmaceuticals, Inc.",
     "e": "US"
   },
   {
-    "s": "BFIN",
-    "n": "Bankfinancial Corp",
+    "s": "TRP",
+    "n": "Tc Energy Corp",
     "e": "US"
   },
   {
-    "s": "BFS",
-    "n": "Saul Centers",
+    "s": "SU",
+    "n": "Suncor Energy Inc",
     "e": "US"
   },
   {
-    "s": "BGC",
-    "n": "General Cable Corp",
+    "s": "E",
+    "n": "Eni Spa",
     "e": "US"
   },
   {
-    "s": "BGCP",
-    "n": "Bgc Partners",
+    "s": "RBLX",
+    "n": "Roblox Corp",
     "e": "US"
   },
   {
-    "s": "BGFV",
-    "n": "Big 5 Sporting Goods Corp",
+    "s": "MPLX",
+    "n": "Mplx Lp",
     "e": "US"
   },
   {
-    "s": "BGG",
-    "n": "Briggs & Stratton Corp",
+    "s": "SHAZ",
+    "n": "Sharonai Holdings, Inc.",
     "e": "US"
   },
   {
-    "s": "BGS",
-    "n": "B&G Foods Holdings",
+    "s": "TAK",
+    "n": "Takeda Pharmaceutical Co Ltd",
     "e": "US"
   },
   {
-    "s": "BH",
-    "n": "Biglari Holdings Inc",
+    "s": "AED",
+    "n": "Brand Meditech Ltd",
     "e": "US"
   },
   {
-    "s": "BHB",
-    "n": "Bar Harbor Bankshares",
+    "s": "ARGX",
+    "n": "Argenx Se",
     "e": "US"
   },
   {
-    "s": "BHBK",
-    "n": "Blue Hills Bancorp Inc",
+    "s": "EONGY",
+    "n": "E.On Se",
     "e": "US"
   },
   {
-    "s": "BHE",
-    "n": "Benchmark Electronics",
+    "s": "TCOM",
+    "n": "Trip.Com Group Ltd",
     "e": "US"
   },
   {
-    "s": "BHLB",
-    "n": "Berkshire Hills Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "BID",
-    "n": "Sotheby's Holdings",
-    "e": "US"
-  },
-  {
-    "s": "BIG",
-    "n": "Big Lots",
-    "e": "US"
-  },
-  {
-    "s": "BIOS",
-    "n": "Bioscrip Inc",
-    "e": "US"
-  },
-  {
-    "s": "BJRI",
-    "n": "Bj's Restaurants",
-    "e": "US"
-  },
-  {
-    "s": "BKE",
-    "n": "Buckle Inc",
-    "e": "US"
-  },
-  {
-    "s": "BKH",
-    "n": "Black Hills Corp",
-    "e": "US"
-  },
-  {
-    "s": "BKMU",
-    "n": "Bank Mutual Corp",
-    "e": "US"
-  },
-  {
-    "s": "BKS",
-    "n": "Barnes & Noble",
-    "e": "US"
-  },
-  {
-    "s": "BLBD",
-    "n": "Blue Bird Corp",
-    "e": "US"
-  },
-  {
-    "s": "BLCM",
-    "n": "Bellicum Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "BLKB",
-    "n": "Blackbaud Inc",
-    "e": "US"
-  },
-  {
-    "s": "BLMN",
-    "n": "Bloomin' Brands Inc",
-    "e": "US"
-  },
-  {
-    "s": "BLMT",
-    "n": "Bsb Bancorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "BLOX",
-    "n": "Infoblox Inc",
-    "e": "US"
-  },
-  {
-    "s": "BLT",
-    "n": "Blount International",
-    "e": "US"
-  },
-  {
-    "s": "BLX",
-    "n": "Banco Latinoamericano De Comercio",
-    "e": "US"
-  },
-  {
-    "s": "BMI",
-    "n": "Badger Meter",
-    "e": "US"
-  },
-  {
-    "s": "BMRC",
-    "n": "Bank of Marin Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "BMTC",
-    "n": "Bryn Mawr Bank Corp",
-    "e": "US"
-  },
-  {
-    "s": "BNCL",
-    "n": "Beneficial Mutual Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "BNCN",
-    "n": "BNC Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "BNFT",
-    "n": "Benefitfocus Inc",
-    "e": "US"
-  },
-  {
-    "s": "BNK",
-    "n": "C1 Financial Inc",
-    "e": "US"
-  },
-  {
-    "s": "BOBE",
-    "n": "Bob Evans Farms",
-    "e": "US"
-  },
-  {
-    "s": "BOFI",
-    "n": "Bofi Holding",
-    "e": "US"
-  },
-  {
-    "s": "BOJA",
-    "n": "Bojangles' Inc",
-    "e": "US"
-  },
-  {
-    "s": "BOOT",
-    "n": "Boot Barn Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "BOX",
-    "n": "Box Inc",
-    "e": "US"
-  },
-  {
-    "s": "BPFH",
-    "n": "Boston Private Financial Holdings",
-    "e": "US"
-  },
-  {
-    "s": "BPI",
-    "n": "Bridgepoint Education",
-    "e": "US"
-  },
-  {
-    "s": "BPMC",
-    "n": "Blueprint Medicines Corp",
-    "e": "US"
-  },
-  {
-    "s": "BRC",
-    "n": "Brady Corp",
-    "e": "US"
-  },
-  {
-    "s": "BREW",
-    "n": "Craft Brewers Alliance Inc",
-    "e": "US"
-  },
-  {
-    "s": "BRG",
-    "n": "Bluerock Residential Growth Rei",
-    "e": "US"
-  },
-  {
-    "s": "BRKL",
-    "n": "Brookline Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "BRKS",
-    "n": "Brooks Automation",
-    "e": "US"
-  },
-  {
-    "s": "BRS",
-    "n": "Bristow Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "BRSS",
-    "n": "Global Brass and Copper Holdin",
-    "e": "US"
-  },
-  {
-    "s": "BSET",
-    "n": "Bassett Furniture Industries Inc",
-    "e": "US"
-  },
-  {
-    "s": "BSF",
-    "n": "Bear State Financial Inc",
-    "e": "US"
-  },
-  {
-    "s": "BSFT",
-    "n": "Broadsoft Inc",
-    "e": "US"
-  },
-  {
-    "s": "BSRR",
-    "n": "Sierra Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "BSTC",
-    "n": "Biospecifics Technologies Corp",
-    "e": "US"
-  },
-  {
-    "s": "BTU",
-    "n": "Peabody Energy Corp",
-    "e": "US"
-  },
-  {
-    "s": "BTX",
-    "n": "Biotime Inc",
-    "e": "US"
-  },
-  {
-    "s": "BURL",
-    "n": "Burlington Stores Inc",
-    "e": "US"
-  },
-  {
-    "s": "BUSE",
-    "n": "First Busey Corp",
-    "e": "US"
-  },
-  {
-    "s": "BV",
-    "n": "Bazaarvoice Inc",
-    "e": "US"
-  },
-  {
-    "s": "BWINB",
-    "n": "Baldwin & Lyons",
-    "e": "US"
-  },
-  {
-    "s": "BWLD",
-    "n": "Buffalo Wild Wings",
-    "e": "US"
-  },
-  {
-    "s": "BXS",
-    "n": "Bancorpsouth Inc",
-    "e": "US"
-  },
-  {
-    "s": "BYD",
-    "n": "Boyd Gaming Corp",
-    "e": "US"
-  },
-  {
-    "s": "BZH",
-    "n": "Beazer Homes USA",
-    "e": "US"
-  },
-  {
-    "s": "CAC",
-    "n": "Camden National Corp",
-    "e": "US"
-  },
-  {
-    "s": "CACB",
-    "n": "Cascade Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "CACI",
-    "n": "Caci International",
-    "e": "US"
-  },
-  {
-    "s": "CACQ",
-    "n": "Caesars Acquisition Company",
-    "e": "US"
-  },
-  {
-    "s": "CAKE",
-    "n": "The Cheesecake Factory Inc",
-    "e": "US"
-  },
-  {
-    "s": "CAL",
-    "n": "Caleres Inc",
-    "e": "US"
-  },
-  {
-    "s": "CALA",
-    "n": "Calithera Biosciences Inc",
-    "e": "US"
-  },
-  {
-    "s": "CALD",
-    "n": "Callidus Software",
-    "e": "US"
-  },
-  {
-    "s": "CALM",
-    "n": "Cal-Maine Foods",
-    "e": "US"
-  },
-  {
-    "s": "CALX",
-    "n": "Calix Inc",
-    "e": "US"
-  },
-  {
-    "s": "CAMP",
-    "n": "Calamp Corp",
-    "e": "US"
-  },
-  {
-    "s": "CARA",
-    "n": "Cara Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "CARB",
-    "n": "Carbonite Inc",
-    "e": "US"
-  },
-  {
-    "s": "CASH",
-    "n": "Meta Financial Group",
-    "e": "US"
-  },
-  {
-    "s": "CASS",
-    "n": "Cass Information Systems Inc",
-    "e": "US"
-  },
-  {
-    "s": "CASY",
-    "n": "Caseys General Stores",
-    "e": "US"
-  },
-  {
-    "s": "CATM",
-    "n": "Cardtronics Inc",
-    "e": "US"
-  },
-  {
-    "s": "CATO",
-    "n": "Cato Corp",
-    "e": "US"
-  },
-  {
-    "s": "CATY",
-    "n": "Cathay General Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "CAVM",
-    "n": "Cavium Inc",
-    "e": "US"
-  },
-  {
-    "s": "CBB",
-    "n": "Cincinnati Bell Inc",
-    "e": "US"
-  },
-  {
-    "s": "CBF",
-    "n": "Capital Bank Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "CBK",
-    "n": "Christopher & Banks Corp",
-    "e": "US"
-  },
-  {
-    "s": "CBM",
-    "n": "Cambrex Corp",
-    "e": "US"
-  },
-  {
-    "s": "CBMG",
-    "n": "Cellular Biomedicine Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "CBPX",
-    "n": "Continental Building Products",
-    "e": "US"
-  },
-  {
-    "s": "CBR",
-    "n": "Ciber Inc",
-    "e": "US"
-  },
-  {
-    "s": "CBRL",
-    "n": "Cracker Barrel Old Country Store",
-    "e": "US"
-  },
-  {
-    "s": "CBU",
-    "n": "Community Bank System",
-    "e": "US"
-  },
-  {
-    "s": "CBYL",
-    "n": "Carbylan Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "CBZ",
-    "n": "Cbiz Inc",
-    "e": "US"
-  },
-  {
-    "s": "CCBG",
-    "n": "Capital City Bank Group",
-    "e": "US"
-  },
-  {
-    "s": "CCC",
-    "n": "Calgon Carbon Corp",
-    "e": "US"
-  },
-  {
-    "s": "CCF",
-    "n": "Chase Corp",
-    "e": "US"
-  },
-  {
-    "s": "CCG",
-    "n": "Campus Crest Communities",
-    "e": "US"
-  },
-  {
-    "s": "CCMP",
-    "n": "Cabot Microelectronics Corp",
-    "e": "US"
-  },
-  {
-    "s": "CCNE",
-    "n": "Cnb Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "CCOI",
-    "n": "Cogent Communications Group",
-    "e": "US"
-  },
-  {
-    "s": "CCRN",
-    "n": "Cross Country Healthcare",
-    "e": "US"
-  },
-  {
-    "s": "CCS",
-    "n": "Century Communities Inc",
-    "e": "US"
-  },
-  {
-    "s": "CCXI",
-    "n": "Chemocentryx Inc",
-    "e": "US"
-  },
-  {
-    "s": "CDE",
-    "n": "Coeur Mining Inc",
-    "e": "US"
-  },
-  {
-    "s": "CDI",
-    "n": "Cdi Corp",
-    "e": "US"
-  },
-  {
-    "s": "CDR",
-    "n": "Cedar Shopping Centers Inc",
-    "e": "US"
-  },
-  {
-    "s": "CDRB",
-    "n": "Code Rebel Corp",
-    "e": "US"
-  },
-  {
-    "s": "CDTX",
-    "n": "Cidara Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "CEB",
-    "n": "The Corporate Executive Board Company",
-    "e": "US"
-  },
-  {
-    "s": "CECE",
-    "n": "Ceco Environmental",
-    "e": "US"
-  },
-  {
-    "s": "CECO",
-    "n": "Career Education Corp",
-    "e": "US"
-  },
-  {
-    "s": "CEMP",
-    "n": "Cempra Inc",
-    "e": "US"
-  },
-  {
-    "s": "CENTA",
-    "n": "Central Garden & Pet Company",
-    "e": "US"
-  },
-  {
-    "s": "CENX",
-    "n": "Century Aluminum Company",
-    "e": "US"
-  },
-  {
-    "s": "CERS",
-    "n": "Cerus Corp",
-    "e": "US"
-  },
-  {
-    "s": "CETV",
-    "n": "Central European Media Enterprises",
-    "e": "US"
-  },
-  {
-    "s": "CEVA",
-    "n": "Ceva Inc",
-    "e": "US"
-  },
-  {
-    "s": "CFFN",
-    "n": "Capitol Federal Financial",
-    "e": "US"
-  },
-  {
-    "s": "CFI",
-    "n": "Culp Inc",
-    "e": "US"
-  },
-  {
-    "s": "CFNL",
-    "n": "Cardinal Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "CGI",
-    "n": "Celadon Group",
-    "e": "US"
-  },
-  {
-    "s": "CHCO",
-    "n": "City Holding Company",
-    "e": "US"
-  },
-  {
-    "s": "CHDN",
-    "n": "Churchill Downs Inc",
-    "e": "US"
-  },
-  {
-    "s": "CHE",
-    "n": "Chemed Inc",
-    "e": "US"
-  },
-  {
-    "s": "CHEF",
-    "n": "The Chefs' Warehouse Inc",
-    "e": "US"
-  },
-  {
-    "s": "CHFC",
-    "n": "Chemical Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "CHFN",
-    "n": "Charter Financial",
-    "e": "US"
-  },
-  {
-    "s": "CHGG",
-    "n": "Chegg Inc",
-    "e": "US"
-  },
-  {
-    "s": "CHKE",
-    "n": "Cherokee Inc",
-    "e": "US"
-  },
-  {
-    "s": "CHMT",
-    "n": "Chemtura Corp",
-    "e": "US"
-  },
-  {
-    "s": "CHRS",
-    "n": "Coherus Biosciences Inc",
-    "e": "US"
-  },
-  {
-    "s": "CHS",
-    "n": "Chico's Fas",
-    "e": "US"
-  },
-  {
-    "s": "CHSP",
-    "n": "Chesapeake Lodging Trust",
-    "e": "US"
-  },
-  {
-    "s": "CHUY",
-    "n": "Chuy's Holding Inc",
-    "e": "US"
-  },
-  {
-    "s": "CIA",
-    "n": "Citizens Inc",
-    "e": "US"
-  },
-  {
-    "s": "CIEN",
-    "n": "Ciena Corp",
-    "e": "US"
-  },
-  {
-    "s": "CIFC",
-    "n": "Cifc Corp",
-    "e": "US"
-  },
-  {
-    "s": "CIR",
-    "n": "Circor International",
-    "e": "US"
-  },
-  {
-    "s": "CIVI",
-    "n": "Civitas Solutions Inc",
-    "e": "US"
-  },
-  {
-    "s": "CJES",
-    "n": "C&J Energy Services Inc",
-    "e": "US"
-  },
-  {
-    "s": "CKEC",
-    "n": "Carmike Cinemas",
-    "e": "US"
-  },
-  {
-    "s": "CKH",
-    "n": "Seacor Smit Inc",
-    "e": "US"
-  },
-  {
-    "s": "CKP",
-    "n": "Checkpoint Systms",
-    "e": "US"
-  },
-  {
-    "s": "CLC",
-    "n": "Clarcor Inc",
-    "e": "US"
-  },
-  {
-    "s": "CLCT",
-    "n": "Collectors Universe",
-    "e": "US"
-  },
-  {
-    "s": "CLD",
-    "n": "Cloud Peak Energy Inc",
-    "e": "US"
-  },
-  {
-    "s": "CLDT",
-    "n": "Chatham Lodging Trust [Reit]",
-    "e": "US"
-  },
-  {
-    "s": "CLDX",
-    "n": "Celldex Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "CLF",
-    "n": "Cliffs Natural Resources Inc",
-    "e": "US"
-  },
-  {
-    "s": "CLFD",
-    "n": "Clearfield",
-    "e": "US"
-  },
-  {
-    "s": "CLI",
-    "n": "Mack-Cali Realty Corp",
-    "e": "US"
-  },
-  {
-    "s": "CLMS",
-    "n": "Calamos Asset Management",
-    "e": "US"
-  },
-  {
-    "s": "CLNE",
-    "n": "Clean Energy Fuels",
-    "e": "US"
-  },
-  {
-    "s": "CLNY",
-    "n": "Colony Financial Inc",
-    "e": "US"
-  },
-  {
-    "s": "CLVS",
-    "n": "Clovis Oncology Inc",
-    "e": "US"
-  },
-  {
-    "s": "CLW",
-    "n": "Clearwater Paper Corp",
-    "e": "US"
-  },
-  {
-    "s": "CMC",
-    "n": "Commercial Metals Company",
-    "e": "US"
-  },
-  {
-    "s": "CMCO",
-    "n": "Columbus Mckinnon Corp",
-    "e": "US"
-  },
-  {
-    "s": "CMLS",
-    "n": "Cumulus Media Inc",
-    "e": "US"
-  },
-  {
-    "s": "CMN",
-    "n": "Cantel Medical",
-    "e": "US"
-  },
-  {
-    "s": "CMO",
-    "n": "Capstead Mortgage Corp",
-    "e": "US"
-  },
-  {
-    "s": "CMPR",
-    "n": "Cimpress N.V.",
-    "e": "US"
-  },
-  {
-    "s": "CMRX",
-    "n": "Chimerix Inc",
-    "e": "US"
-  },
-  {
-    "s": "CMT",
-    "n": "Core Molding Technologies Inc",
-    "e": "US"
-  },
-  {
-    "s": "CMTL",
-    "n": "Comtech Telecommunications",
-    "e": "US"
-  },
-  {
-    "s": "CNBKA",
-    "n": "Century Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "CNCE",
-    "n": "Concert Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "CNL",
-    "n": "Cleco Power Llc",
-    "e": "US"
-  },
-  {
-    "s": "CNMD",
-    "n": "Conmed Corp",
-    "e": "US"
-  },
-  {
-    "s": "CNO",
-    "n": "Cno Financial Group",
-    "e": "US"
-  },
-  {
-    "s": "CNOB",
-    "n": "Connectone Bancorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "CNS",
-    "n": "Cohn & Steers Inc",
-    "e": "US"
-  },
-  {
-    "s": "CNSL",
-    "n": "Consolidated Communications Holdings",
-    "e": "US"
-  },
-  {
-    "s": "CNXR",
-    "n": "Connecture Inc",
-    "e": "US"
-  },
-  {
-    "s": "COB",
-    "n": "Community One Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "COBZ",
-    "n": "Cobiz Financial Inc",
-    "e": "US"
-  },
-  {
-    "s": "COHR",
-    "n": "Coherent Inc",
-    "e": "US"
-  },
-  {
-    "s": "COHU",
-    "n": "Cohu Inc",
-    "e": "US"
-  },
-  {
-    "s": "COKE",
-    "n": "Coca-Cola Bottling Co. Consolidated",
-    "e": "US"
-  },
-  {
-    "s": "COLB",
-    "n": "Columbia Banking System",
-    "e": "US"
-  },
-  {
-    "s": "COLL",
-    "n": "Collegium Pharmaceutical Inc",
-    "e": "US"
-  },
-  {
-    "s": "COLM",
-    "n": "Columbia Sportswear Company",
-    "e": "US"
-  },
-  {
-    "s": "CONE",
-    "n": "Cyrusone Inc",
-    "e": "US"
-  },
-  {
-    "s": "CONN",
-    "n": "Conn's Inc",
-    "e": "US"
-  },
-  {
-    "s": "CORE",
-    "n": "Core-Mark Holding Company",
-    "e": "US"
-  },
-  {
-    "s": "CORI",
-    "n": "Corium International Inc",
-    "e": "US"
-  },
-  {
-    "s": "CORR",
-    "n": "Corenergy Infrastructure Trust Inc",
-    "e": "US"
-  },
-  {
-    "s": "CORT",
-    "n": "Corcept Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "COWN",
-    "n": "Cowen Group",
-    "e": "US"
-  },
-  {
-    "s": "CPE",
-    "n": "Callon Petroleum Company",
-    "e": "US"
-  },
-  {
-    "s": "CPF",
-    "n": "Central Pacific Financial Co",
-    "e": "US"
-  },
-  {
-    "s": "CPHD",
-    "n": "Cepheid",
-    "e": "US"
-  },
-  {
-    "s": "CPK",
-    "n": "Chesapeake Utilities Corp",
-    "e": "US"
-  },
-  {
-    "s": "CPLA",
-    "n": "Capella Education Company",
-    "e": "US"
-  },
-  {
-    "s": "CPRX",
-    "n": "Catalyst Pharmaceutical Partners",
-    "e": "US"
-  },
-  {
-    "s": "CPS",
-    "n": "Cooper Std Hldg Inc",
-    "e": "US"
-  },
-  {
-    "s": "CPSI",
-    "n": "Computer Programs and Systems",
-    "e": "US"
-  },
-  {
-    "s": "CRAI",
-    "n": "Cra Internationalinc",
-    "e": "US"
-  },
-  {
-    "s": "CRAY",
-    "n": "Cray Inc",
-    "e": "US"
-  },
-  {
-    "s": "CRCM",
-    "n": "Care.Com Inc",
-    "e": "US"
-  },
-  {
-    "s": "CRD.B",
-    "n": "Crawford Co Cl B",
-    "e": "US"
-  },
-  {
-    "s": "CRIS",
-    "n": "Curis Inc",
-    "e": "US"
-  },
-  {
-    "s": "CRMD",
-    "n": "Cormedix Inc",
-    "e": "US"
-  },
-  {
-    "s": "CRMT",
-    "n": "America's Car-Mart",
-    "e": "US"
-  },
-  {
-    "s": "CROX",
-    "n": "Crocs Inc",
-    "e": "US"
-  },
-  {
-    "s": "CRR",
-    "n": "Carbo Ceramics",
-    "e": "US"
-  },
-  {
-    "s": "CRS",
-    "n": "Carpenter Technology Corp",
-    "e": "US"
-  },
-  {
-    "s": "CRUS",
-    "n": "Cirrus Logic",
-    "e": "US"
-  },
-  {
-    "s": "CRVL",
-    "n": "Corvel Corp",
-    "e": "US"
-  },
-  {
-    "s": "CRWN",
-    "n": "Crown Media Holdings",
-    "e": "US"
-  },
-  {
-    "s": "CRY",
-    "n": "Cryolife",
-    "e": "US"
-  },
-  {
-    "s": "CRZO",
-    "n": "Carrizo Oil & Gas",
-    "e": "US"
-  },
-  {
-    "s": "CSBK",
-    "n": "Clifton Savings Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "CSCD",
-    "n": "Cascade Microtech",
-    "e": "US"
-  },
-  {
-    "s": "CSFL",
-    "n": "Centerstate Banks",
-    "e": "US"
-  },
-  {
-    "s": "CSGS",
-    "n": "Csg Systems International",
-    "e": "US"
-  },
-  {
-    "s": "CSH",
-    "n": "Cash America International",
-    "e": "US"
-  },
-  {
-    "s": "CSII",
-    "n": "Cardiovascular Systems",
-    "e": "US"
-  },
-  {
-    "s": "CSLT",
-    "n": "Castlight Health Inc",
-    "e": "US"
-  },
-  {
-    "s": "CSOD",
-    "n": "Cornerstone Ondemand Inc",
-    "e": "US"
-  },
-  {
-    "s": "CSS",
-    "n": "Css Industries",
-    "e": "US"
-  },
-  {
-    "s": "CSU",
-    "n": "Capital Senior Living Corp",
-    "e": "US"
-  },
-  {
-    "s": "CSV",
-    "n": "Carriage Services",
-    "e": "US"
-  },
-  {
-    "s": "CTB",
-    "n": "Cooper Tire & Rubber Company",
-    "e": "US"
-  },
-  {
-    "s": "CTBI",
-    "n": "Community Trust Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "CTCT",
-    "n": "Constant Contact",
-    "e": "US"
-  },
-  {
-    "s": "CTIC",
-    "n": "Cell Therapeutics",
-    "e": "US"
-  },
-  {
-    "s": "CTLT",
-    "n": "Catalent Inc",
-    "e": "US"
-  },
-  {
-    "s": "CTO",
-    "n": "Consolidated-Tomoka Land Co",
-    "e": "US"
-  },
-  {
-    "s": "CTRE",
-    "n": "Caretrust REIT Inc",
-    "e": "US"
-  },
-  {
-    "s": "CTRL",
-    "n": "Control4 Corp",
-    "e": "US"
-  },
-  {
-    "s": "CTRN",
-    "n": "Citi Trends",
-    "e": "US"
-  },
-  {
-    "s": "CTS",
-    "n": "Cts Corp",
-    "e": "US"
-  },
-  {
-    "s": "CTT",
-    "n": "Catchmark Timber Trust Inc",
-    "e": "US"
-  },
-  {
-    "s": "CTWS",
-    "n": "Connecticut Water Service",
-    "e": "US"
-  },
-  {
-    "s": "CUB",
-    "n": "Cubic Corp",
-    "e": "US"
-  },
-  {
-    "s": "CUBE",
-    "n": "Cubesmart",
-    "e": "US"
-  },
-  {
-    "s": "CUBI",
-    "n": "Customers Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "CUDA",
-    "n": "Barracuda Networks Inc",
-    "e": "US"
-  },
-  {
-    "s": "CUNB",
-    "n": "California United Bk",
-    "e": "US"
-  },
-  {
-    "s": "CUTR",
-    "n": "Cutera Inc",
-    "e": "US"
-  },
-  {
-    "s": "CUZ",
-    "n": "Cousins Properties Inc",
-    "e": "US"
-  },
-  {
-    "s": "CVBF",
-    "n": "Cvb Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "CVCO",
-    "n": "Cavco Industries",
-    "e": "US"
-  },
-  {
-    "s": "CVEO",
-    "n": "Civeo Corporation Common Stock",
-    "e": "US"
-  },
-  {
-    "s": "CVG",
-    "n": "Convergys Corp",
-    "e": "US"
-  },
-  {
-    "s": "CVGI",
-    "n": "Commercial Vehicle Group",
-    "e": "US"
-  },
-  {
-    "s": "CVGW",
-    "n": "Calavo Growers",
-    "e": "US"
-  },
-  {
-    "s": "CVLT",
-    "n": "Commvault Systems",
-    "e": "US"
-  },
-  {
-    "s": "CVRS",
-    "n": "Corindus Vascular Robotics Inc",
-    "e": "US"
-  },
-  {
-    "s": "CVT",
-    "n": "Cvent Inc",
-    "e": "US"
-  },
-  {
-    "s": "CVTI",
-    "n": "Covenant Transportation Group",
-    "e": "US"
-  },
-  {
-    "s": "CW",
-    "n": "Curtiss-Wright Corp",
-    "e": "US"
-  },
-  {
-    "s": "CWCO",
-    "n": "Consolidated Water Co. Ltd",
-    "e": "US"
-  },
-  {
-    "s": "CWEI",
-    "n": "Clayton Williams Energy",
-    "e": "US"
-  },
-  {
-    "s": "CWST",
-    "n": "Casella Waste Systems",
-    "e": "US"
-  },
-  {
-    "s": "CWT",
-    "n": "California Water Service Group Holding",
-    "e": "US"
-  },
-  {
-    "s": "CYNO",
-    "n": "Cynosure Inc",
-    "e": "US"
-  },
-  {
-    "s": "CYS",
-    "n": "Cys Investments Inc",
-    "e": "US"
-  },
-  {
-    "s": "CYTK",
-    "n": "Cytokinetics Inc",
-    "e": "US"
-  },
-  {
-    "s": "CYTR",
-    "n": "Cytrx Corp",
-    "e": "US"
-  },
-  {
-    "s": "CZNC",
-    "n": "Citizens & Northern Corp",
-    "e": "US"
-  },
-  {
-    "s": "CZR",
-    "n": "Caesars Entertainment Corporati",
-    "e": "US"
-  },
-  {
-    "s": "DAKT",
-    "n": "Daktronics",
-    "e": "US"
-  },
-  {
-    "s": "DAN",
-    "n": "Dana Holding Corp",
-    "e": "US"
-  },
-  {
-    "s": "DAR",
-    "n": "Darling International Inc",
-    "e": "US"
-  },
-  {
-    "s": "DBD",
-    "n": "Diebold Inc",
-    "e": "US"
-  },
-  {
-    "s": "DCO",
-    "n": "Ducommun Inc",
-    "e": "US"
-  },
-  {
-    "s": "DCOM",
-    "n": "Dime Community Bancshares",
-    "e": "US"
-  },
-  {
-    "s": "DCT",
-    "n": "Dct Industrial Trust Inc",
-    "e": "US"
-  },
-  {
-    "s": "DEA",
-    "n": "Easterly Government Properties",
-    "e": "US"
-  },
-  {
-    "s": "DEL",
-    "n": "Deltic Timber Corp",
-    "e": "US"
-  },
-  {
-    "s": "DENN",
-    "n": "Denny's Corp",
-    "e": "US"
-  },
-  {
-    "s": "DEPO",
-    "n": "Depomed Inc",
-    "e": "US"
-  },
-  {
-    "s": "DERM",
-    "n": "Dermira Inc",
-    "e": "US"
-  },
-  {
-    "s": "DF",
-    "n": "Dean Foods Company",
-    "e": "US"
-  },
-  {
-    "s": "DFRG",
-    "n": "Del Frisco's Restaurant Group Llc",
-    "e": "US"
-  },
-  {
-    "s": "DFT",
-    "n": "Dupont Fabros Technology",
-    "e": "US"
-  },
-  {
-    "s": "DGI",
-    "n": "Digitalglobe Inc",
-    "e": "US"
-  },
-  {
-    "s": "DGICA",
-    "n": "Donegal Group",
-    "e": "US"
-  },
-  {
-    "s": "DGII",
-    "n": "Digi International Inc",
-    "e": "US"
-  },
-  {
-    "s": "DHIL",
-    "n": "Diamond Hill Investment Group",
-    "e": "US"
-  },
-  {
-    "s": "DHT",
-    "n": "Dht Holdings",
-    "e": "US"
-  },
-  {
-    "s": "DHX",
-    "n": "Dice Holdings",
-    "e": "US"
-  },
-  {
-    "s": "DIN",
-    "n": "Dineequity Inc",
-    "e": "US"
-  },
-  {
-    "s": "DIOD",
-    "n": "Diodes Inc",
-    "e": "US"
-  },
-  {
-    "s": "DJCO",
-    "n": "Daily Journal Corp. [S.C.]",
-    "e": "US"
-  },
-  {
-    "s": "DK",
-    "n": "Delek US Holdings",
-    "e": "US"
-  },
-  {
-    "s": "DLX",
-    "n": "Deluxe Corp",
-    "e": "US"
-  },
-  {
-    "s": "DMND",
-    "n": "Diamond Foods",
-    "e": "US"
-  },
-  {
-    "s": "DMRC",
-    "n": "Digimarc Corp",
-    "e": "US"
-  },
-  {
-    "s": "DOOR",
-    "n": "Masonite Wrldwde Hld",
-    "e": "US"
-  },
-  {
-    "s": "DORM",
-    "n": "Dorman Products",
-    "e": "US"
-  },
-  {
-    "s": "DPLO",
-    "n": "Dplo",
-    "e": "US"
-  },
-  {
-    "s": "DRH",
-    "n": "Diamondrock Hospitality Company",
-    "e": "US"
-  },
-  {
-    "s": "DRII",
-    "n": "Diamond Resorts International",
-    "e": "US"
-  },
-  {
-    "s": "DRNA",
-    "n": "Dicerna Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "DRRX",
-    "n": "Durect Corp",
-    "e": "US"
-  },
-  {
-    "s": "DSPG",
-    "n": "DSP Group",
-    "e": "US"
-  },
-  {
-    "s": "DTLK",
-    "n": "Datalink Corp",
-    "e": "US"
-  },
-  {
-    "s": "DTSI",
-    "n": "DTS Inc",
-    "e": "US"
-  },
-  {
-    "s": "DV",
-    "n": "Devry Inc",
-    "e": "US"
-  },
-  {
-    "s": "DVAX",
-    "n": "Dynavax Technologies Corp",
-    "e": "US"
-  },
-  {
-    "s": "DW",
-    "n": "Drew Industries Inc",
-    "e": "US"
-  },
-  {
-    "s": "DWA",
-    "n": "Dreamworks Animation Skg",
-    "e": "US"
-  },
-  {
-    "s": "DWRE",
-    "n": "Demandware Inc",
-    "e": "US"
-  },
-  {
-    "s": "DX",
-    "n": "Dynex Capital",
-    "e": "US"
-  },
-  {
-    "s": "DXLG",
-    "n": "Destination XL Inc.",
-    "e": "US"
-  },
-  {
-    "s": "DXPE",
-    "n": "Dxp Enterprises",
-    "e": "US"
-  },
-  {
-    "s": "DY",
-    "n": "Dycom Industries",
-    "e": "US"
-  },
-  {
-    "s": "DYAX",
-    "n": "Dyax Corp",
-    "e": "US"
-  },
-  {
-    "s": "DYN",
-    "n": "Dynegy Inc",
-    "e": "US"
-  },
-  {
-    "s": "EBF",
-    "n": "Ennis Inc",
-    "e": "US"
-  },
-  {
-    "s": "EBIX",
-    "n": "Ebix Inc",
-    "e": "US"
-  },
-  {
-    "s": "EBS",
-    "n": "Emergent Biosolutions",
-    "e": "US"
-  },
-  {
-    "s": "EBSB",
-    "n": "Meridian Interstate Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "EBTC",
-    "n": "Enterprise Bancorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "ECHO",
-    "n": "Echo Global Logistics",
-    "e": "US"
-  },
-  {
-    "s": "ECOL",
-    "n": "US Ecology",
-    "e": "US"
-  },
-  {
-    "s": "ECOM",
-    "n": "Channeladvisor Corp",
-    "e": "US"
-  },
-  {
-    "s": "ECPG",
-    "n": "Encore Capital Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "ECR",
-    "n": "Eclipse Resources Corp",
-    "e": "US"
-  },
-  {
-    "s": "ECYT",
-    "n": "Endocyte Inc",
-    "e": "US"
-  },
-  {
-    "s": "EDE",
-    "n": "Empire District Electric Company",
-    "e": "US"
-  },
-  {
-    "s": "EDR",
-    "n": "Education Realty Trust Inc",
-    "e": "US"
-  },
-  {
-    "s": "EE",
-    "n": "El Paso Electric Company",
-    "e": "US"
-  },
-  {
-    "s": "EEFT",
-    "n": "Euronet Worldwide",
-    "e": "US"
-  },
-  {
-    "s": "EFII",
-    "n": "Electronics For Imaging",
-    "e": "US"
-  },
-  {
-    "s": "EFSC",
-    "n": "Enterprise Financial Services Corp",
-    "e": "US"
-  },
-  {
-    "s": "EGBN",
-    "n": "Eagle Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "EGHT",
-    "n": "8X8 Inc",
-    "e": "US"
-  },
-  {
-    "s": "EGL",
-    "n": "Engility Holdings Inc. Common",
-    "e": "US"
-  },
-  {
-    "s": "EGLE",
-    "n": "Eagle Bulk Shipping Inc",
-    "e": "US"
-  },
-  {
-    "s": "EGOV",
-    "n": "Nic Inc",
-    "e": "US"
-  },
-  {
-    "s": "EGP",
-    "n": "Eastgroup Properties",
-    "e": "US"
-  },
-  {
-    "s": "EGRX",
-    "n": "Eagle Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "EHTH",
-    "n": "Ehealth Inc",
-    "e": "US"
-  },
-  {
-    "s": "EIG",
-    "n": "Employers Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "EIGI",
-    "n": "Endurance International Group H",
-    "e": "US"
-  },
-  {
-    "s": "ELGX",
-    "n": "Endologix Inc",
-    "e": "US"
-  },
-  {
-    "s": "ELLI",
-    "n": "Ellie Mae Inc",
-    "e": "US"
-  },
-  {
-    "s": "ELNK",
-    "n": "Earthlink Inc",
-    "e": "US"
-  },
-  {
-    "s": "ELRC",
-    "n": "Electro Rent Corp",
-    "e": "US"
-  },
-  {
-    "s": "ELY",
-    "n": "Callaway Golf Company",
-    "e": "US"
-  },
-  {
-    "s": "EMCI",
-    "n": "EMC Insurance Group",
-    "e": "US"
-  },
-  {
-    "s": "EMKR",
-    "n": "Emcore Corp",
-    "e": "US"
-  },
-  {
-    "s": "ENOC",
-    "n": "Enernoc Inc",
-    "e": "US"
-  },
-  {
-    "s": "ENPH",
-    "n": "Enphase Energy Inc",
-    "e": "US"
-  },
-  {
-    "s": "ENS",
-    "n": "Enersys Inc",
-    "e": "US"
-  },
-  {
-    "s": "ENSG",
-    "n": "The Ensign Group",
-    "e": "US"
-  },
-  {
-    "s": "ENT",
-    "n": "Global Eagle Entertainment Inc",
-    "e": "US"
-  },
-  {
-    "s": "ENTA",
-    "n": "Enanta Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "ENTG",
-    "n": "Entegris Inc",
-    "e": "US"
-  },
-  {
-    "s": "ENTL",
-    "n": "Entellus Medical Inc",
-    "e": "US"
-  },
-  {
-    "s": "ENV",
-    "n": "Envestnet Inc",
-    "e": "US"
-  },
-  {
-    "s": "ENVA",
-    "n": "Enova International Inc. Commo",
-    "e": "US"
-  },
-  {
-    "s": "EPAY",
-    "n": "Bottomline Technologies",
-    "e": "US"
-  },
-  {
-    "s": "EPIQ",
-    "n": "Epiq Systems",
-    "e": "US"
-  },
-  {
-    "s": "EPM",
-    "n": "Evolution Petroleum Corp",
-    "e": "US"
-  },
-  {
-    "s": "EPR",
-    "n": "Entertainment Properties Trust",
-    "e": "US"
-  },
-  {
-    "s": "EPZM",
-    "n": "Epizyme Inc",
-    "e": "US"
-  },
-  {
-    "s": "EQY",
-    "n": "Equity One",
-    "e": "US"
-  },
-  {
-    "s": "ERA",
-    "n": "Era Group Inc. Common Stock W",
-    "e": "US"
-  },
-  {
-    "s": "ERI",
-    "n": "Eldorado Resorts Inc",
-    "e": "US"
-  },
-  {
-    "s": "ERN",
-    "n": "Erin Energy Corp",
-    "e": "US"
-  },
-  {
-    "s": "EROS",
-    "n": "Eros International Plc",
-    "e": "US"
-  },
-  {
-    "s": "ESCA",
-    "n": "Escalade Inc",
-    "e": "US"
-  },
-  {
-    "s": "ESE",
-    "n": "Esco Technologies Inc",
-    "e": "US"
-  },
-  {
-    "s": "ESGR",
-    "n": "Enstar Group Ltd",
-    "e": "US"
-  },
-  {
-    "s": "ESL",
-    "n": "Esterline Technologies Corp",
-    "e": "US"
-  },
-  {
-    "s": "ESND",
-    "n": "Essendant Inc",
-    "e": "US"
-  },
-  {
-    "s": "ESNT",
-    "n": "Essent Group Ltd",
-    "e": "US"
-  },
-  {
-    "s": "ESPR",
-    "n": "Esperion Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "ESTE",
-    "n": "Earthstone Energy",
-    "e": "US"
-  },
-  {
-    "s": "ETH",
-    "n": "Ethan Allen Interiors Inc",
-    "e": "US"
-  },
-  {
-    "s": "ETM",
-    "n": "Entercom Communications Corp",
-    "e": "US"
-  },
-  {
-    "s": "ETSY",
-    "n": "Etsy Inc",
-    "e": "US"
-  },
-  {
-    "s": "EVC",
-    "n": "Entravision Communications Corp",
-    "e": "US"
-  },
-  {
-    "s": "EVDY",
-    "n": "Everyday Health Inc",
-    "e": "US"
-  },
-  {
-    "s": "EVER",
-    "n": "Everbank Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "EVLV",
-    "n": "Evine Live Inc",
-    "e": "US"
-  },
-  {
-    "s": "EVR",
-    "n": "Evercore Partners Inc",
-    "e": "US"
-  },
-  {
-    "s": "EVTC",
-    "n": "Evertec Inc. Common Stock",
-    "e": "US"
-  },
-  {
-    "s": "EXAC",
-    "n": "Exactech Inc",
-    "e": "US"
-  },
-  {
-    "s": "EXAM",
-    "n": "Examworks Group",
-    "e": "US"
-  },
-  {
-    "s": "EXAR",
-    "n": "Exar Corp",
-    "e": "US"
-  },
-  {
-    "s": "EXAS",
-    "n": "Exact Sciences Corp",
-    "e": "US"
-  },
-  {
-    "s": "EXEL",
-    "n": "Exelixis Inc",
-    "e": "US"
-  },
-  {
-    "s": "EXLS",
-    "n": "Exlservice Holdings",
-    "e": "US"
-  },
-  {
-    "s": "EXPO",
-    "n": "Exponent Inc",
-    "e": "US"
-  },
-  {
-    "s": "EXPR",
-    "n": "Express Inc",
-    "e": "US"
-  },
-  {
-    "s": "EXTR",
-    "n": "Extreme Networks",
-    "e": "US"
-  },
-  {
-    "s": "EXXI",
-    "n": "Energy Xxi [Bermuda] Ltd",
-    "e": "US"
-  },
-  {
-    "s": "EYES",
-    "n": "Second Sight Medical Products",
-    "e": "US"
-  },
-  {
-    "s": "EZPW",
-    "n": "Ezcorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "FAF",
-    "n": "First American Corp",
-    "e": "US"
-  },
-  {
-    "s": "FARM",
-    "n": "Farmer Brothers Company",
-    "e": "US"
-  },
-  {
-    "s": "FARO",
-    "n": "Faro Technologies",
-    "e": "US"
-  },
-  {
-    "s": "FBC",
-    "n": "Flagstar Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "FBIZ",
-    "n": "First Business Financial Services",
-    "e": "US"
-  },
-  {
-    "s": "FBNC",
-    "n": "First Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "FBNK",
-    "n": "First Connecticut Bancorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "FBP",
-    "n": "First Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "FC",
-    "n": "Franklin Covey Company",
-    "e": "US"
-  },
-  {
-    "s": "FCB",
-    "n": "Fcb Financial Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "FCBC",
-    "n": "First Community Bancshares",
-    "e": "US"
-  },
-  {
-    "s": "FCEL",
-    "n": "Fuelcell Energy",
-    "e": "US"
-  },
-  {
-    "s": "FCF",
-    "n": "First Commonwealth Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "FCFS",
-    "n": "First Cash Financial Services",
-    "e": "US"
-  },
-  {
-    "s": "FCH",
-    "n": "Felcor Lodging Trust Inc",
-    "e": "US"
-  },
-  {
-    "s": "FCN",
-    "n": "Fti Consulting",
-    "e": "US"
-  },
-  {
-    "s": "FCNCA",
-    "n": "First Citizens Bancshares",
-    "e": "US"
-  },
-  {
-    "s": "FCS",
-    "n": "Fairchild Semiconductor International",
-    "e": "US"
-  },
-  {
-    "s": "FCSC",
-    "n": "Fibrocell Science",
-    "e": "US"
-  },
-  {
-    "s": "FDEF",
-    "n": "First Defiance Financial",
-    "e": "US"
-  },
-  {
-    "s": "FDML",
-    "n": "Federal-Mogul Corp",
-    "e": "US"
-  },
-  {
-    "s": "FDP",
-    "n": "Fresh Del Monte Produce",
-    "e": "US"
-  },
-  {
-    "s": "FEIC",
-    "n": "Fei Company",
-    "e": "US"
-  },
-  {
-    "s": "FELE",
-    "n": "Franklin Electric Co",
-    "e": "US"
-  },
-  {
-    "s": "FENX",
-    "n": "Fenix Parts Inc",
-    "e": "US"
-  },
-  {
-    "s": "FET",
-    "n": "Forum Energy Technologies Inc",
-    "e": "US"
-  },
-  {
-    "s": "FF",
-    "n": "Futurefuel Corp",
-    "e": "US"
-  },
-  {
-    "s": "FFBC",
-    "n": "First Financial Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "FFG",
-    "n": "Fbl Financial Group",
-    "e": "US"
-  },
-  {
-    "s": "FFIC",
-    "n": "Flushing Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "FFIN",
-    "n": "First Financial Bankshares",
-    "e": "US"
-  },
-  {
-    "s": "FFKT",
-    "n": "Farmers Capital Bank Corp",
-    "e": "US"
-  },
-  {
-    "s": "FGEN",
-    "n": "Fibrogen Inc",
-    "e": "US"
-  },
-  {
-    "s": "FGL",
-    "n": "Fidelity & Guaranty",
-    "e": "US"
-  },
-  {
-    "s": "FIBK",
-    "n": "First Interstate Bancsystem",
-    "e": "US"
-  },
-  {
-    "s": "FINL",
-    "n": "The Finish Line",
-    "e": "US"
-  },
-  {
-    "s": "FISI",
-    "n": "Financial Institutions",
-    "e": "US"
-  },
-  {
-    "s": "FIVE",
-    "n": "Five Below Inc",
-    "e": "US"
-  },
-  {
-    "s": "FIVN",
-    "n": "Five9 Inc",
-    "e": "US"
-  },
-  {
-    "s": "FIZZ",
-    "n": "National Beverage",
-    "e": "US"
-  },
-  {
-    "s": "FLDM",
-    "n": "Fluidigm Corp",
-    "e": "US"
-  },
-  {
-    "s": "FLIC",
-    "n": "The First of Long Island Corp",
-    "e": "US"
-  },
-  {
-    "s": "FLKS",
-    "n": "Flex Pharma Inc",
-    "e": "US"
-  },
-  {
-    "s": "FLTX",
-    "n": "Fleetmatics Group Plc",
-    "e": "US"
-  },
-  {
-    "s": "FLWS",
-    "n": "1-800 Flowers.Com",
-    "e": "US"
-  },
-  {
-    "s": "FLXN",
-    "n": "Flexion Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "FLXS",
-    "n": "Flexsteel Industries",
-    "e": "US"
-  },
-  {
-    "s": "FMBI",
-    "n": "First Midwest Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "FMER",
-    "n": "Firstmerit Corp",
-    "e": "US"
-  },
-  {
-    "s": "FMI",
-    "n": "Foundation Medicine Inc",
-    "e": "US"
-  },
-  {
-    "s": "FMSA",
-    "n": "Fmsa Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "FN",
-    "n": "Fabrinet",
-    "e": "US"
-  },
-  {
-    "s": "FNB",
-    "n": "F.N.B. Corp",
-    "e": "US"
-  },
-  {
-    "s": "FNBC",
-    "n": "First Nbc Bank Holding Company",
-    "e": "US"
-  },
-  {
-    "s": "FNFV",
-    "n": "Fnfv Group of Fidelity National",
-    "e": "US"
-  },
-  {
-    "s": "FNGN",
-    "n": "Financial Engines",
-    "e": "US"
-  },
-  {
-    "s": "FNHC",
-    "n": "Federated National Holding Company",
-    "e": "US"
-  },
-  {
-    "s": "FNLC",
-    "n": "First Bancorp Inc [Me]",
-    "e": "US"
-  },
-  {
-    "s": "FNSR",
-    "n": "Finisar Corp",
-    "e": "US"
-  },
-  {
-    "s": "FOE",
-    "n": "Ferro Corp",
-    "e": "US"
-  },
-  {
-    "s": "FOLD",
-    "n": "Amicus Therapeutics",
-    "e": "US"
-  },
-  {
-    "s": "FOMX",
-    "n": "Foamix Pharmaceuticals Ltd",
-    "e": "US"
-  },
-  {
-    "s": "FOR",
-    "n": "Forestar Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "FORM",
-    "n": "Formfactor",
-    "e": "US"
-  },
-  {
-    "s": "FORR",
-    "n": "Forrester Research",
-    "e": "US"
-  },
-  {
-    "s": "FOXF",
-    "n": "Fox Factory Holding Corp",
-    "e": "US"
-  },
-  {
-    "s": "FPO",
-    "n": "First Potomac Realty Trust",
-    "e": "US"
-  },
-  {
-    "s": "FPRX",
-    "n": "Five Prime Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "FR",
-    "n": "First Industrial Realty Trust",
-    "e": "US"
-  },
-  {
-    "s": "FRAN",
-    "n": "Francesca's Holdings Corporatio",
-    "e": "US"
-  },
-  {
-    "s": "FRED",
-    "n": "Fred's Inc",
-    "e": "US"
-  },
-  {
-    "s": "FRGI",
-    "n": "Fiesta Restaurant Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "FRM",
-    "n": "Furmanite Corp",
-    "e": "US"
-  },
-  {
-    "s": "FRME",
-    "n": "First Merchants Corp",
-    "e": "US"
-  },
-  {
-    "s": "FRO",
-    "n": "Frontline Ltd",
-    "e": "US"
-  },
-  {
-    "s": "FRP",
-    "n": "Fairpoint Communications",
-    "e": "US"
-  },
-  {
-    "s": "FRPH",
-    "n": "Frp Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "FRPT",
-    "n": "Freshpet Inc",
-    "e": "US"
-  },
-  {
-    "s": "FRSH",
-    "n": "Papa Murphys Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "FSAM",
-    "n": "Fifth Street Asset Management I",
-    "e": "US"
-  },
-  {
-    "s": "FSB",
-    "n": "Franklin Financial Network Inc",
-    "e": "US"
-  },
-  {
-    "s": "FSP",
-    "n": "Franklin Street Properties",
-    "e": "US"
-  },
-  {
-    "s": "FSS",
-    "n": "Federal Signal Corp",
-    "e": "US"
-  },
-  {
-    "s": "FSTR",
-    "n": "L.B. Foster Company",
-    "e": "US"
-  },
-  {
-    "s": "FTD",
-    "n": "Ftd Companies Inc",
-    "e": "US"
-  },
-  {
-    "s": "FTK",
-    "n": "Flotek Industries",
-    "e": "US"
-  },
-  {
-    "s": "FUEL",
-    "n": "Rocket Fuel Inc",
-    "e": "US"
-  },
-  {
-    "s": "FUL",
-    "n": "H. B. Fuller Company",
-    "e": "US"
-  },
-  {
-    "s": "FULT",
-    "n": "Fulton Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "FVE",
-    "n": "Five Star Quality Care",
-    "e": "US"
-  },
-  {
-    "s": "FWM",
-    "n": "Fairway Group Holdings Corp",
-    "e": "US"
-  },
-  {
-    "s": "FWRD",
-    "n": "Forward Air Corp",
-    "e": "US"
-  },
-  {
-    "s": "FXCB",
-    "n": "Fox Chase Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "GABC",
-    "n": "German American Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "GALE",
-    "n": "Galena Biopharma",
-    "e": "US"
-  },
-  {
-    "s": "GB",
-    "n": "Greatbatch",
-    "e": "US"
-  },
-  {
-    "s": "GBCI",
-    "n": "Glacier Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "GBL",
-    "n": "Gamco Investors",
-    "e": "US"
-  },
-  {
-    "s": "GBLI",
-    "n": "Global Indemnity Plc",
-    "e": "US"
-  },
-  {
-    "s": "GBNK",
-    "n": "Guaranty Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "GBX",
-    "n": "Greenbrier Companies",
-    "e": "US"
-  },
-  {
-    "s": "GCAP",
-    "n": "Gain Capital Holdings",
-    "e": "US"
-  },
-  {
-    "s": "GCO",
-    "n": "Genesco Inc",
-    "e": "US"
-  },
-  {
-    "s": "GDOT",
-    "n": "Green Dot Corp",
-    "e": "US"
-  },
-  {
-    "s": "GEF",
-    "n": "Greif Bros. Corp",
-    "e": "US"
-  },
-  {
-    "s": "GEO",
-    "n": "Geo Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "GEOS",
-    "n": "Oyo Geospace Corp",
-    "e": "US"
-  },
-  {
-    "s": "GERN",
-    "n": "Geron Corp",
-    "e": "US"
-  },
-  {
-    "s": "GES",
-    "n": "Guess Inc",
-    "e": "US"
-  },
-  {
-    "s": "GFF",
-    "n": "Griffon Corp",
-    "e": "US"
-  },
-  {
-    "s": "GHDX",
-    "n": "Genomic Health",
-    "e": "US"
-  },
-  {
-    "s": "GHL",
-    "n": "Greenhill & Co. Inc",
-    "e": "US"
-  },
-  {
-    "s": "GHM",
-    "n": "Graham Corp",
-    "e": "US"
-  },
-  {
-    "s": "GIII",
-    "n": "G-III Apparel Group",
-    "e": "US"
-  },
-  {
-    "s": "GIMO",
-    "n": "Gigamon Inc",
-    "e": "US"
-  },
-  {
-    "s": "GK",
-    "n": "G&K Services",
-    "e": "US"
-  },
-  {
-    "s": "GLDD",
-    "n": "Great Lakes Dredge & Dock Corp",
-    "e": "US"
-  },
-  {
-    "s": "GLF",
-    "n": "Gulfmark Offshore",
-    "e": "US"
-  },
-  {
-    "s": "GLOB",
-    "n": "Globant S.A.",
-    "e": "US"
-  },
-  {
-    "s": "GLOG",
-    "n": "Gaslog Ltd",
-    "e": "US"
-  },
-  {
-    "s": "GLRE",
-    "n": "Greenlight Capital Re",
-    "e": "US"
-  },
-  {
-    "s": "GLT",
-    "n": "Glatfelter",
-    "e": "US"
-  },
-  {
-    "s": "GLUU",
-    "n": "Glu Mobile Inc",
-    "e": "US"
-  },
-  {
-    "s": "GMED",
-    "n": "Globus Medical Inc",
-    "e": "US"
-  },
-  {
-    "s": "GNBC",
-    "n": "Green Bancorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "GNCA",
-    "n": "Genocea Biosciences Inc",
-    "e": "US"
-  },
-  {
-    "s": "GNCMA",
-    "n": "General Communication",
-    "e": "US"
-  },
-  {
-    "s": "GNE",
-    "n": "Genie Energy Ltd. Class B Commo",
-    "e": "US"
-  },
-  {
-    "s": "GNMK",
-    "n": "Genmark Diagnostics",
-    "e": "US"
-  },
-  {
-    "s": "GOGL",
-    "n": "Golden Ocean Group Ltd",
-    "e": "US"
-  },
-  {
-    "s": "GOGO",
-    "n": "Gogo Inc",
-    "e": "US"
-  },
-  {
-    "s": "GOOD",
-    "n": "Gladstone Commercial Corp",
-    "e": "US"
-  },
-  {
-    "s": "GOV",
-    "n": "Government Properties Income Trust",
-    "e": "US"
-  },
-  {
-    "s": "GPI",
-    "n": "Group 1 Automotive",
-    "e": "US"
-  },
-  {
-    "s": "GPRE",
-    "n": "Green Plains Renewable Energy",
-    "e": "US"
-  },
-  {
-    "s": "GPT",
-    "n": "Gramercy Property Trust",
-    "e": "US"
-  },
-  {
-    "s": "GPX",
-    "n": "Gp Strategies Corp",
-    "e": "US"
-  },
-  {
-    "s": "GRBK",
-    "n": "Green Brick Partners Inc",
-    "e": "US"
-  },
-  {
-    "s": "GRC",
-    "n": "Gorman-Rupp Company",
-    "e": "US"
-  },
-  {
-    "s": "GRUB",
-    "n": "Grubhub Inc",
-    "e": "US"
-  },
-  {
-    "s": "GSAT",
-    "n": "Globalstar",
-    "e": "US"
-  },
-  {
-    "s": "GSBC",
-    "n": "Great Southern Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "GSIG",
-    "n": "Gsi Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "GSM",
-    "n": "Globe Specialty Metals Inc",
-    "e": "US"
-  },
-  {
-    "s": "GST",
-    "n": "Gastar Exploration",
-    "e": "US"
-  },
-  {
-    "s": "GTLS",
-    "n": "Chart Industries",
-    "e": "US"
-  },
-  {
-    "s": "GTN",
-    "n": "Gray Television",
-    "e": "US"
-  },
-  {
-    "s": "GTS",
-    "n": "Triple-S Management Corp",
-    "e": "US"
-  },
-  {
-    "s": "GTT",
-    "n": "Global Telcom & Technology Inc",
-    "e": "US"
-  },
-  {
-    "s": "GTY",
-    "n": "Getty Realty Corp",
-    "e": "US"
-  },
-  {
-    "s": "GUID",
-    "n": "Guidance Software",
-    "e": "US"
-  },
-  {
-    "s": "GVA",
-    "n": "Granite Construction Inc",
-    "e": "US"
-  },
-  {
-    "s": "GWB",
-    "n": "Great Western Bancorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "GWRE",
-    "n": "Guidewire Software Inc. Common",
-    "e": "US"
-  },
-  {
-    "s": "HA",
-    "n": "Hawaiian Holdings",
-    "e": "US"
-  },
-  {
-    "s": "HABT",
-    "n": "The Habit Restaurants Inc",
-    "e": "US"
-  },
-  {
-    "s": "HAE",
-    "n": "Haemonetics Corp",
-    "e": "US"
-  },
-  {
-    "s": "HAFC",
-    "n": "Hanmi Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "HALL",
-    "n": "Hallmark Financial Services",
-    "e": "US"
-  },
-  {
-    "s": "HALO",
-    "n": "Halozyme Therapeutics",
-    "e": "US"
-  },
-  {
-    "s": "HASI",
-    "n": "Hannon Armstrong Sustainable In",
-    "e": "US"
-  },
-  {
-    "s": "HAWK",
-    "n": "Blackhawk Network Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "HAYN",
-    "n": "Haynes International",
-    "e": "US"
-  },
-  {
-    "s": "HBHC",
-    "n": "Hancock Holding Company",
-    "e": "US"
-  },
-  {
-    "s": "HBIO",
-    "n": "Harvard Bioscience",
-    "e": "US"
-  },
-  {
-    "s": "HBNC",
-    "n": "Horizon Bancorp [In]",
-    "e": "US"
-  },
-  {
-    "s": "HCCI",
-    "n": "Heritage-Crystal Clean",
-    "e": "US"
-  },
-  {
-    "s": "HCHC",
-    "n": "Hc2 Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "HCI",
-    "n": "Homeowners Choice",
-    "e": "US"
-  },
-  {
-    "s": "HCKT",
-    "n": "The Hackett Group",
-    "e": "US"
-  },
-  {
-    "s": "HCOM",
-    "n": "Hawaiian Telcom Hold",
-    "e": "US"
-  },
-  {
-    "s": "HCSG",
-    "n": "Healthcare Services Group",
-    "e": "US"
-  },
-  {
-    "s": "HDP",
-    "n": "Hortonworks Inc",
-    "e": "US"
-  },
-  {
-    "s": "HEES",
-    "n": "H&E Equipment Services",
+    "s": "GBTC",
+    "n": "Grayscale Bitcoin Trust Etf",
     "e": "US"
   },
   {
@@ -6446,523 +3071,188 @@ const globalTickers = [
     "e": "US"
   },
   {
-    "s": "HEI.A",
-    "n": "Heico Cp Cl A",
+    "s": "GALDY",
+    "n": "Galderma Group Ag/Adr",
     "e": "US"
   },
   {
-    "s": "HELE",
-    "n": "Helen of Troy Ltd",
+    "s": "RDDT",
+    "n": "Reddit, Inc.",
     "e": "US"
   },
   {
-    "s": "HEOP",
-    "n": "Heritage Oaks Bancorp",
+    "s": "FER",
+    "n": "Ferrovial Se",
     "e": "US"
   },
   {
-    "s": "HF",
-    "n": "HFF Inc",
+    "s": "DEO",
+    "n": "Diageo Plc",
     "e": "US"
   },
   {
-    "s": "HFWA",
-    "n": "Heritage Financial Corp",
+    "s": "BSBR",
+    "n": "Banco Santander (Brasil) S.A.",
     "e": "US"
   },
   {
-    "s": "HGR",
-    "n": "Hanger Orthopedic Group",
+    "s": "MSTR",
+    "n": "Strategy Inc",
     "e": "US"
   },
   {
-    "s": "HHS",
-    "n": "Harte-Hanks",
+    "s": "AU",
+    "n": "Anglogold Ashanti Plc",
     "e": "US"
   },
   {
-    "s": "HI",
-    "n": "Hillenbrand Inc",
+    "s": "CCJ",
+    "n": "Cameco Corp",
     "e": "US"
   },
   {
-    "s": "HIBB",
-    "n": "Hibbett Sports",
+    "s": "PSNY",
+    "n": "Polestar Automotive Holding Uk Plc",
     "e": "US"
   },
   {
-    "s": "HIFR",
-    "n": "Infrareit Inc",
+    "s": "RKLB",
+    "n": "Rocket Lab Corp",
     "e": "US"
   },
   {
-    "s": "HIFS",
-    "n": "Hingham Institution For Savings",
+    "s": "HLN",
+    "n": "Haleon Plc",
     "e": "US"
   },
   {
-    "s": "HIL",
-    "n": "Hill International",
+    "s": "GWLIF",
+    "n": "Great-West Lifeco Inc.",
     "e": "US"
   },
   {
-    "s": "HIVE",
-    "n": "Aerohive Networks Inc",
+    "s": "FERG",
+    "n": "Ferguson Enterprises Inc. /De/",
     "e": "US"
   },
   {
-    "s": "HIW",
-    "n": "Highwoods Properties",
+    "s": "IMO",
+    "n": "Imperial Oil Ltd",
     "e": "US"
   },
   {
-    "s": "HK",
-    "n": "Halcon Resources",
+    "s": "WCN",
+    "n": "Waste Connections, Inc.",
     "e": "US"
   },
   {
-    "s": "HL",
-    "n": "Hecla Mining Company",
+    "s": "NUGN",
+    "n": "Livento Group, Inc.",
     "e": "US"
   },
   {
-    "s": "HLIT",
-    "n": "Harmonic Inc",
+    "s": "LNG",
+    "n": "Cheniere Energy, Inc.",
     "e": "US"
   },
   {
-    "s": "HLS",
-    "n": "Healthsouth Corp",
+    "s": "CPNG",
+    "n": "Coupang, Inc.",
     "e": "US"
   },
   {
-    "s": "HLTH",
-    "n": "Nobilis Health Corp",
+    "s": "TEAM",
+    "n": "Atlassian Corp",
     "e": "US"
   },
   {
-    "s": "HLX",
-    "n": "Helix Energy Solutions Group",
+    "s": "FNV",
+    "n": "Franco Nevada Corp",
     "e": "US"
   },
   {
-    "s": "HMHC",
-    "n": "Houghton Mifflin Harcourt C",
+    "s": "CUK",
+    "n": "Carnival Plc",
     "e": "US"
   },
   {
-    "s": "HMN",
-    "n": "Horace Mann Educators Corp",
+    "s": "SYM",
+    "n": "Symbotic Inc.",
     "e": "US"
   },
   {
-    "s": "HMPR",
-    "n": "Hampton Roads Bankshares Inc",
+    "s": "GFI",
+    "n": "Gold Fields Ltd",
     "e": "US"
   },
   {
-    "s": "HMST",
-    "n": "Homestreet Inc",
+    "s": "FRFHF",
+    "n": "Fairfax Financial Holdings Ltd/ Can",
     "e": "US"
   },
   {
-    "s": "HMSY",
-    "n": "Hms Holdings Corp",
+    "s": "PUK",
+    "n": "Prudential Plc",
     "e": "US"
   },
   {
-    "s": "HMTV",
-    "n": "Hemisphere Media",
+    "s": "ALC",
+    "n": "Alcon Inc",
     "e": "US"
   },
   {
-    "s": "HNH",
-    "n": "Handy & Harman Ltd",
+    "s": "DIA",
+    "n": "Spdr Dow Jones Industrial Average Etf Trust",
     "e": "US"
   },
   {
-    "s": "HNI",
-    "n": "Hon Industries Inc",
+    "s": "VEEV",
+    "n": "Veeva Systems Inc",
     "e": "US"
   },
   {
-    "s": "HNRG",
-    "n": "Hallador Energy Company",
+    "s": "DLMAY",
+    "n": "Dollarama Inc./Adr",
     "e": "US"
   },
   {
-    "s": "HOFT",
-    "n": "Hooker Furniture Corp",
+    "s": "CCEP",
+    "n": "Coca-Cola Europacific Partners Plc",
     "e": "US"
   },
   {
-    "s": "HOMB",
-    "n": "Home Bancshares",
+    "s": "ABEV",
+    "n": "Ambev S.A.",
     "e": "US"
   },
   {
-    "s": "HOS",
-    "n": "Hornbeck Offshore Services",
+    "s": "PTCAY",
+    "n": "Pt Chandra Asri Petrochemical Tbk/Adr",
     "e": "US"
   },
   {
-    "s": "HOV",
-    "n": "Hovnanian Enterprises Inc",
+    "s": "NOK",
+    "n": "Nokia Corp",
     "e": "US"
   },
   {
-    "s": "HPP",
-    "n": "Hudson Pacific Properties",
+    "s": "CRWV",
+    "n": "Coreweave, Inc.",
     "e": "US"
   },
   {
-    "s": "HPY",
-    "n": "Heartland Payment Systems",
+    "s": "ASX",
+    "n": "Ase Technology Holding Co., Ltd.",
     "e": "US"
   },
   {
-    "s": "HQY",
-    "n": "Healthequity Inc",
+    "s": "HMC",
+    "n": "Honda Motor Co Ltd",
     "e": "US"
   },
   {
-    "s": "HR",
-    "n": "Healthcare Realty Trust Inc",
-    "e": "US"
-  },
-  {
-    "s": "HRG",
-    "n": "Harbinger Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "HRTG",
-    "n": "Heritage Insurance Holdings",
-    "e": "US"
-  },
-  {
-    "s": "HRTX",
-    "n": "Heron Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "HSC",
-    "n": "Harsco Corp",
-    "e": "US"
-  },
-  {
-    "s": "HSII",
-    "n": "Heidrick & Struggles International",
-    "e": "US"
-  },
-  {
-    "s": "HSKA",
-    "n": "Heska Corp",
-    "e": "US"
-  },
-  {
-    "s": "HSNI",
-    "n": "HSN Inc",
-    "e": "US"
-  },
-  {
-    "s": "HSTM",
-    "n": "Healthstream Inc",
-    "e": "US"
-  },
-  {
-    "s": "HT",
-    "n": "Hersha Hospitality Trust",
-    "e": "US"
-  },
-  {
-    "s": "HTBI",
-    "n": "Hometrust Bancshares Inc",
-    "e": "US"
-  },
-  {
-    "s": "HTBK",
-    "n": "Heritage Commerce Corp",
-    "e": "US"
-  },
-  {
-    "s": "HTH",
-    "n": "Hilltop Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "HTLD",
-    "n": "Heartland Express",
-    "e": "US"
-  },
-  {
-    "s": "HTLF",
-    "n": "Heartland Financial USA",
-    "e": "US"
-  },
-  {
-    "s": "HTS",
-    "n": "Hatteras Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "HTWR",
-    "n": "Heartware International",
-    "e": "US"
-  },
-  {
-    "s": "HUBG",
-    "n": "Hub Group",
-    "e": "US"
-  },
-  {
-    "s": "HUBS",
-    "n": "Hubspot Inc",
-    "e": "US"
-  },
-  {
-    "s": "HURC",
-    "n": "Hurco Companies",
-    "e": "US"
-  },
-  {
-    "s": "HURN",
-    "n": "Huron Consulting Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "HVT",
-    "n": "Haverty Furniture Companies",
-    "e": "US"
-  },
-  {
-    "s": "HW",
-    "n": "Headwaters Inc",
-    "e": "US"
-  },
-  {
-    "s": "HWAY",
-    "n": "Healthways Inc",
-    "e": "US"
-  },
-  {
-    "s": "HWKN",
-    "n": "Hawkins Inc",
-    "e": "US"
-  },
-  {
-    "s": "HY",
-    "n": "Hyster-Yale Materials Handling",
-    "e": "US"
-  },
-  {
-    "s": "HYH",
-    "n": "Halyard Health Inc. Common Sto",
-    "e": "US"
-  },
-  {
-    "s": "HZO",
-    "n": "Marinemax Inc",
-    "e": "US"
-  },
-  {
-    "s": "I",
-    "n": "Intelsat S.A. Common Shares",
-    "e": "US"
-  },
-  {
-    "s": "IART",
-    "n": "Integra Lifesciences Holdings Corp",
-    "e": "US"
-  },
-  {
-    "s": "IBCP",
-    "n": "Independent Bank Corp",
-    "e": "US"
-  },
-  {
-    "s": "IBKC",
-    "n": "Iberiabank Corp",
-    "e": "US"
-  },
-  {
-    "s": "IBOC",
-    "n": "International Bancshares Corp",
-    "e": "US"
-  },
-  {
-    "s": "IBP",
-    "n": "Installed Building Products I",
-    "e": "US"
-  },
-  {
-    "s": "IBTX",
-    "n": "Independent Bank Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "ICD",
-    "n": "Independence Contract Drilling Inc",
-    "e": "US"
-  },
-  {
-    "s": "ICFI",
-    "n": "Icf International",
-    "e": "US"
-  },
-  {
-    "s": "ICON",
-    "n": "Iconix Brand Group",
-    "e": "US"
-  },
-  {
-    "s": "ICUI",
-    "n": "Icu Medical",
-    "e": "US"
-  },
-  {
-    "s": "IDA",
-    "n": "Idacorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "IDCC",
-    "n": "Interdigital",
-    "e": "US"
-  },
-  {
-    "s": "IDRA",
-    "n": "Idera Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "IDT",
-    "n": "IDT Corp",
-    "e": "US"
-  },
-  {
-    "s": "IDTI",
-    "n": "Integrated Device Technology",
-    "e": "US"
-  },
-  {
-    "s": "IHC",
-    "n": "Independence Holding Company",
-    "e": "US"
-  },
-  {
-    "s": "IIIN",
-    "n": "Insteel Industries",
-    "e": "US"
-  },
-  {
-    "s": "IILG",
-    "n": "Interval Leisure Group",
-    "e": "US"
-  },
-  {
-    "s": "IIVI",
-    "n": "Ii-Vi Inc",
-    "e": "US"
-  },
-  {
-    "s": "IL",
-    "n": "Intralinks Holdings",
-    "e": "US"
-  },
-  {
-    "s": "IMAX",
-    "n": "Imax Corp",
-    "e": "US"
-  },
-  {
-    "s": "IMDZ",
-    "n": "Immune Design Corp",
-    "e": "US"
-  },
-  {
-    "s": "IMGN",
-    "n": "Immunogen",
-    "e": "US"
-  },
-  {
-    "s": "IMH",
-    "n": "Impac Mortgage Holdings",
-    "e": "US"
-  },
-  {
-    "s": "IMKTA",
-    "n": "Ingles Markets Inc",
-    "e": "US"
-  },
-  {
-    "s": "IMMR",
-    "n": "Immersion Corp",
-    "e": "US"
-  },
-  {
-    "s": "IMMU",
-    "n": "Immunomedics",
-    "e": "US"
-  },
-  {
-    "s": "IMN",
-    "n": "Imation Corp",
-    "e": "US"
-  },
-  {
-    "s": "IMPR",
-    "n": "Imprivata Inc",
-    "e": "US"
-  },
-  {
-    "s": "IMPV",
-    "n": "Imperva Inc",
-    "e": "US"
-  },
-  {
-    "s": "INAP",
-    "n": "Internap Network Services Corp",
-    "e": "US"
-  },
-  {
-    "s": "INCR",
-    "n": "Inc Research Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "INDB",
-    "n": "Independent Bank",
-    "e": "US"
-  },
-  {
-    "s": "INFI",
-    "n": "Infinity Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "INFN",
-    "n": "Infinera Corp",
-    "e": "US"
-  },
-  {
-    "s": "INGN",
-    "n": "Inogen Inc",
-    "e": "US"
-  },
-  {
-    "s": "ININ",
-    "n": "Interactive Intelligence",
-    "e": "US"
-  },
-  {
-    "s": "INN",
-    "n": "Summit Hotel Properties",
-    "e": "US"
-  },
-  {
-    "s": "INO",
-    "n": "Inovio Pharmaceuticals",
+    "s": "TYHOY",
+    "n": "Toyota Tsusho Corporation/Adr",
     "e": "US"
   },
   {
@@ -6971,1193 +3261,658 @@ const globalTickers = [
     "e": "US"
   },
   {
-    "s": "INSY",
-    "n": "Insys Therapeutics Inc",
+    "s": "RYAAY",
+    "n": "Ryanair Holdings Plc",
     "e": "US"
   },
   {
-    "s": "INTL",
-    "n": "Intl Fcstone Inc",
+    "s": "KGC",
+    "n": "Kinross Gold Corp",
     "e": "US"
   },
   {
-    "s": "INVN",
-    "n": "Invensense Inc",
+    "s": "TEVA",
+    "n": "Teva Pharmaceutical Industries Ltd",
     "e": "US"
   },
   {
-    "s": "INWK",
-    "n": "Innerworkings",
+    "s": "FLUT",
+    "n": "Flutter Entertainment Plc",
     "e": "US"
   },
   {
-    "s": "IO",
-    "n": "ION Geophysical Corp",
+    "s": "ONC",
+    "n": "Beone Medicines Ltd.",
     "e": "US"
   },
   {
-    "s": "IOSP",
-    "n": "Innospec Inc",
+    "s": "ZS",
+    "n": "Zscaler, Inc.",
     "e": "US"
   },
   {
-    "s": "IPAR",
-    "n": "Inter Parfums",
+    "s": "BBD",
+    "n": "Bank Bradesco",
     "e": "US"
   },
   {
-    "s": "IPCC",
-    "n": "Infinity Property and Casualty Corp",
+    "s": "APC",
+    "n": "Arko Petroleum Corp.",
     "e": "US"
   },
   {
-    "s": "IPHI",
-    "n": "Inphi Corp",
+    "s": "CIEN",
+    "n": "Ciena Corp",
     "e": "US"
   },
   {
-    "s": "IPHS",
-    "n": "Innophos Holdings",
+    "s": "MT",
+    "n": "Arcelormittal",
     "e": "US"
   },
   {
-    "s": "IPI",
-    "n": "Intrepid Potash Inc",
+    "s": "MDB",
+    "n": "Mongodb, Inc.",
     "e": "US"
   },
   {
-    "s": "IPXL",
-    "n": "Impax Laboratories",
+    "s": "NTRA",
+    "n": "Natera, Inc.",
     "e": "US"
   },
   {
-    "s": "IQNT",
-    "n": "Inteliquent Inc",
+    "s": "CLS",
+    "n": "Celestica Inc",
     "e": "US"
   },
   {
-    "s": "IRBT",
-    "n": "Irobot Corp",
+    "s": "SLF",
+    "n": "Sun Life Financial Inc",
     "e": "US"
   },
   {
-    "s": "IRC",
-    "n": "Inland Real Estate Corp",
+    "s": "FMX",
+    "n": "Mexican Economic Development Inc",
     "e": "US"
   },
   {
-    "s": "IRDM",
-    "n": "Iridium Communications Inc",
+    "s": "CHLSY",
+    "n": "Chocoladefabriken Lindt & Spruengli Ag/Adr",
     "e": "US"
   },
   {
-    "s": "IRET",
-    "n": "Investors Real Estate Trust",
+    "s": "MDY",
+    "n": "Spdr S&P Midcap 400 Etf Trust",
     "e": "US"
   },
   {
-    "s": "IRMD",
-    "n": "Iradimed Corporation",
+    "s": "UI",
+    "n": "Ubiquiti Inc.",
     "e": "US"
   },
   {
-    "s": "IRT",
-    "n": "Independence Realty Trust Inc",
+    "s": "SOFI",
+    "n": "Sofi Technologies, Inc.",
     "e": "US"
   },
   {
-    "s": "IRWD",
-    "n": "Ironwood Pharmaceuticals",
+    "s": "IX",
+    "n": "Orix Corp",
     "e": "US"
   },
   {
-    "s": "ISBC",
-    "n": "Investors Bancorp",
+    "s": "VOD",
+    "n": "Vodafone Group Public Ltd Co",
     "e": "US"
   },
   {
-    "s": "ISCA",
-    "n": "International Speedway Corp",
+    "s": "ERIC",
+    "n": "Ericsson Lm Telephone Co",
     "e": "US"
   },
   {
-    "s": "ISIL",
-    "n": "Intersil Corp",
+    "s": "VIK",
+    "n": "Viking Holdings Ltd",
     "e": "US"
   },
   {
-    "s": "ISLE",
-    "n": "Isle of Capri Casinos",
+    "s": "CHT",
+    "n": "Chunghwa Telecom Co Ltd",
     "e": "US"
   },
   {
-    "s": "ISRL",
-    "n": "Isramco Inc",
+    "s": "SATS",
+    "n": "Echostar Corp",
     "e": "US"
   },
   {
-    "s": "ITCI",
-    "n": "Intra-Cellular Ther",
+    "s": "FSNUY",
+    "n": "Fresenius Se & Co. Kgaa",
     "e": "US"
   },
   {
-    "s": "ITG",
-    "n": "Investment Technology Group",
+    "s": "MDLN",
+    "n": "Medline Inc.",
     "e": "US"
   },
   {
-    "s": "ITRI",
-    "n": "Itron Inc",
+    "s": "ASTS",
+    "n": "Ast Spacemobile, Inc.",
     "e": "US"
   },
   {
-    "s": "IVC",
-    "n": "Invacare Corp",
+    "s": "ASHGY",
+    "n": "Ashtead Group Plc/Adr",
     "e": "US"
   },
   {
-    "s": "IVR",
-    "n": "Invesco Mortgage Capital Inc",
+    "s": "KB",
+    "n": "Kb Financial Group Inc.",
     "e": "US"
   },
   {
-    "s": "IXYS",
-    "n": "Ixys Corp",
+    "s": "STLA",
+    "n": "Stellantis N.V.",
     "e": "US"
   },
   {
-    "s": "JACK",
-    "n": "Jack In The Box Inc",
+    "s": "WIT",
+    "n": "Wipro Ltd",
     "e": "US"
   },
   {
-    "s": "JAKK",
-    "n": "Jakks Pacific",
+    "s": "QSR",
+    "n": "Restaurant Brands International Inc.",
     "e": "US"
   },
   {
-    "s": "JBSS",
-    "n": "John B. Sanfilippo & Son",
+    "s": "ESLT",
+    "n": "Elbit Systems Ltd",
     "e": "US"
   },
   {
-    "s": "JBT",
-    "n": "John Bean Technologies Corp",
+    "s": "AMRZ",
+    "n": "Amrize Ltd",
     "e": "US"
   },
   {
-    "s": "JCOM",
-    "n": "J2 Global Communications Inc",
+    "s": "WDS",
+    "n": "Woodside Energy Group Ltd",
     "e": "US"
   },
   {
-    "s": "JGW",
-    "n": "Jgwpt Holdings Inc",
+    "s": "COHR",
+    "n": "Coherent Corp.",
     "e": "US"
   },
   {
-    "s": "JIVE",
-    "n": "Jive Software Inc",
+    "s": "CVE",
+    "n": "Cenovus Energy Inc.",
     "e": "US"
   },
   {
-    "s": "JJSF",
-    "n": "J & J Snack Foods",
+    "s": "LPLA",
+    "n": "Lpl Financial Holdings Inc.",
     "e": "US"
   },
   {
-    "s": "JMBA",
-    "n": "Jamba Inc",
+    "s": "NTR",
+    "n": "Nutrien Ltd.",
     "e": "US"
   },
   {
-    "s": "JMG",
-    "n": "Journal Media Group Inc. Commo",
+    "s": "ALAB",
+    "n": "Astera Labs, Inc.",
     "e": "US"
   },
   {
-    "s": "JNS",
-    "n": "Janus Capital Group Inc",
+    "s": "TME",
+    "n": "Tencent Music Entertainment Group",
     "e": "US"
   },
   {
-    "s": "JOE",
-    "n": "St. Joe Company",
+    "s": "LITE",
+    "n": "Lumentum Holdings Inc.",
     "e": "US"
   },
   {
-    "s": "JONE",
-    "n": "Jones Energy Inc",
+    "s": "FCNCA",
+    "n": "First Citizens Bancshares Inc /De/",
     "e": "US"
   },
   {
-    "s": "JOUT",
-    "n": "Johnson Outdoors Inc",
+    "s": "PHG",
+    "n": "Koninklijke Philips Nv",
     "e": "US"
   },
   {
-    "s": "JRVR",
-    "n": "James River Group Holdings Ltd",
+    "s": "AFRM",
+    "n": "Affirm Holdings, Inc.",
     "e": "US"
   },
   {
-    "s": "KAI",
-    "n": "Kadant Inc",
+    "s": "AXIA",
+    "n": "Brazilian Electric Power Co",
     "e": "US"
   },
   {
-    "s": "KALU",
-    "n": "Kaiser Aluminum Corp",
+    "s": "MKL",
+    "n": "Markel Group Inc.",
     "e": "US"
   },
   {
-    "s": "KAMN",
-    "n": "Kaman Corp",
+    "s": "SHG",
+    "n": "Shinhan Financial Group Co Ltd",
     "e": "US"
   },
   {
-    "s": "KBAL",
-    "n": "Kimball International Inc",
+    "s": "RGC",
+    "n": "Regencell Bioscience Holdings Ltd",
     "e": "US"
   },
   {
-    "s": "KBH",
-    "n": "KB Home",
+    "s": "AER",
+    "n": "Aercap Holdings N.V.",
     "e": "US"
   },
   {
-    "s": "KCG",
-    "n": "Kcg Holdings Inc",
+    "s": "DIDIY",
+    "n": "Didi Global Inc.",
     "e": "US"
   },
   {
-    "s": "KCLI",
-    "n": "Kansas City Life Insurance Company",
+    "s": "NMR",
+    "n": "Nomura Holdings Inc",
     "e": "US"
   },
   {
-    "s": "KE",
-    "n": "Kimball Electronics Inc",
+    "s": "ZM",
+    "n": "Zoom Communications, Inc.",
     "e": "US"
   },
   {
-    "s": "KEG",
-    "n": "Key Energy Services",
+    "s": "FTS",
+    "n": "Fortis Inc.",
     "e": "US"
   },
   {
-    "s": "KELYA",
-    "n": "Kelly Services",
+    "s": "CQP",
+    "n": "Cheniere Energy Partners, L.P.",
     "e": "US"
   },
   {
-    "s": "KERX",
-    "n": "Keryx Biopharmaceuticals",
+    "s": "STM",
+    "n": "Stmicroelectronics N.V.",
     "e": "US"
   },
   {
-    "s": "KEYW",
-    "n": "The Keyw Holding Corp",
+    "s": "FUJIY",
+    "n": "Fuji Photo Film Co Ltd /Fi",
     "e": "US"
   },
   {
-    "s": "KFRC",
-    "n": "Kforce Inc",
+    "s": "BE",
+    "n": "Bloom Energy Corp",
     "e": "US"
   },
   {
-    "s": "KFY",
-    "n": "Korn/Ferry International",
+    "s": "CRDO",
+    "n": "Credo Technology Group Holding Ltd",
     "e": "US"
   },
   {
-    "s": "KIRK",
-    "n": "Kirkland's Inc",
+    "s": "TPG",
+    "n": "Tpg Inc.",
     "e": "US"
   },
   {
-    "s": "KITE",
-    "n": "Kite Pharma Inc",
+    "s": "BNTX",
+    "n": "Biontech Se",
     "e": "US"
   },
   {
-    "s": "KKD",
-    "n": "Krispy Kreme Doughnuts",
+    "s": "KBGGY",
+    "n": "Kongsberg Gruppen Asa/Adr",
     "e": "US"
   },
   {
-    "s": "KLXI",
-    "n": "Klx Inc",
+    "s": "FTAI",
+    "n": "Ftai Aviation Ltd.",
     "e": "US"
   },
   {
-    "s": "KMG",
-    "n": "KMG Chemicals",
+    "s": "FUTU",
+    "n": "Futu Holdings Ltd",
     "e": "US"
   },
   {
-    "s": "KMPR",
-    "n": "Unitrin",
+    "s": "RIVN",
+    "n": "Rivian Automotive, Inc. / De",
     "e": "US"
   },
   {
-    "s": "KN",
-    "n": "Knowles Corporation Common Stoc",
+    "s": "GELHY",
+    "n": "Geely Automobile Holdings Limited/Adr",
     "e": "US"
   },
   {
-    "s": "KND",
-    "n": "Kindred Healthcare",
+    "s": "OWL",
+    "n": "Blue Owl Capital Inc.",
     "e": "US"
   },
   {
-    "s": "KNL",
-    "n": "Knoll Inc",
+    "s": "TECK",
+    "n": "Teck Resources Ltd",
     "e": "US"
   },
   {
-    "s": "KNX",
-    "n": "Knight Transportation",
+    "s": "SLV",
+    "n": "Ishares Silver Trust",
     "e": "US"
   },
   {
-    "s": "KODK",
-    "n": "Eastman Kodak",
+    "s": "NBIS",
+    "n": "Nebius Group N.V.",
     "e": "US"
   },
   {
-    "s": "KONA",
-    "n": "Kona Grill",
+    "s": "RPRX",
+    "n": "Royalty Pharma Plc",
     "e": "US"
   },
   {
-    "s": "KOP",
-    "n": "Koppers Holdings Inc",
+    "s": "WTKWY",
+    "n": "Wolters Kluwer N V /Fi",
     "e": "US"
   },
   {
-    "s": "KOPN",
-    "n": "Kopin Corp",
+    "s": "CYBR",
+    "n": "Cyberark Software Ltd.",
     "e": "US"
   },
   {
-    "s": "KPTI",
-    "n": "Karyopharm Therapeutics Inc",
+    "s": "RSHGY",
+    "n": "Resona Holdings Inc",
     "e": "US"
   },
   {
-    "s": "KRA",
-    "n": "Kraton Performance Polymers Inc",
+    "s": "BAP",
+    "n": "Credicorp Ltd",
     "e": "US"
   },
   {
-    "s": "KRG",
-    "n": "Kite Realty Group Trust",
+    "s": "TW",
+    "n": "Tradeweb Markets Inc.",
     "e": "US"
   },
   {
-    "s": "KRNY",
-    "n": "Kearny Financial",
+    "s": "ILMN",
+    "n": "Illumina, Inc.",
     "e": "US"
   },
   {
-    "s": "KRO",
-    "n": "Kronos Worldwide Inc",
+    "s": "FWONA",
+    "n": "Liberty Media Corp",
     "e": "US"
   },
   {
-    "s": "KS",
-    "n": "Kapstone Paper and Packaging Corp",
+    "s": "CG",
+    "n": "Carlyle Group Inc.",
     "e": "US"
   },
   {
-    "s": "KTOS",
-    "n": "Kratos Defense & Security Solutions",
+    "s": "FLEX",
+    "n": "Flex Ltd.",
     "e": "US"
   },
   {
-    "s": "KTWO",
-    "n": "K2M Group Holdings Inc",
+    "s": "UTHR",
+    "n": "United Therapeutics Corp",
     "e": "US"
   },
   {
-    "s": "KVHI",
-    "n": "Kvh Industries",
+    "s": "TEF",
+    "n": "Telefonica S A",
     "e": "US"
   },
   {
-    "s": "KW",
-    "n": "Kennedy-Wilson Holdings Inc",
+    "s": "PSTG",
+    "n": "Pure Storage, Inc.",
     "e": "US"
   },
   {
-    "s": "KWR",
-    "n": "Quaker Chemical Corp",
+    "s": "GFS",
+    "n": "Globalfoundries Inc.",
     "e": "US"
   },
   {
-    "s": "LABL",
-    "n": "Multi-Color Corp",
+    "s": "PAAS",
+    "n": "Pan American Silver Corp",
     "e": "US"
   },
   {
-    "s": "LAD",
-    "n": "Lithia Motors",
+    "s": "UMC",
+    "n": "United Microelectronics Corp",
     "e": "US"
   },
   {
-    "s": "LADR",
-    "n": "Ladder Capital Corp",
+    "s": "EC",
+    "n": "Ecopetrol S.A.",
     "e": "US"
   },
   {
-    "s": "LANC",
-    "n": "Lancaster Colony Corp",
+    "s": "KEP",
+    "n": "Korea Electric Power Corp",
     "e": "US"
   },
   {
-    "s": "LAWS",
-    "n": "Lawson Products",
+    "s": "CW",
+    "n": "Curtiss Wright Corp",
     "e": "US"
   },
   {
-    "s": "LBAI",
-    "n": "Lakeland Bancorp",
+    "s": "TWLO",
+    "n": "Twilio Inc",
     "e": "US"
   },
   {
-    "s": "LBIO",
-    "n": "Lion Biotechnologies Inc",
+    "s": "BCE",
+    "n": "Bce Inc",
     "e": "US"
   },
   {
-    "s": "LBY",
-    "n": "Libbey Inc",
+    "s": "SSNC",
+    "n": "Ss&C Technologies Holdings Inc",
     "e": "US"
   },
   {
-    "s": "LCI",
-    "n": "Lannett Co Inc",
+    "s": "TOST",
+    "n": "Toast, Inc.",
     "e": "US"
   },
   {
-    "s": "LCUT",
-    "n": "Lifetime Brands",
+    "s": "SQM",
+    "n": "Chemical & Mining Co Of Chile Inc",
     "e": "US"
   },
   {
-    "s": "LDL",
-    "n": "Lydall Inc",
+    "s": "SOAGY",
+    "n": "Sartorius Ag/Adr",
     "e": "US"
   },
   {
-    "s": "LDR",
-    "n": "Landauer Inc",
+    "s": "AS",
+    "n": "Amer Sports, Inc.",
     "e": "US"
   },
   {
-    "s": "LDRH",
-    "n": "Ldr Holding Corp",
+    "s": "CASY",
+    "n": "Caseys General Stores Inc",
     "e": "US"
   },
   {
-    "s": "LE",
-    "n": "Lands' End Inc",
+    "s": "PBA",
+    "n": "Pembina Pipeline Corp",
     "e": "US"
   },
   {
-    "s": "LFUS",
-    "n": "Littelfuse",
+    "s": "TLK",
+    "n": "Perusahaan Perseroan Persero Pt Telekomunikasi Indonesia Tbk",
     "e": "US"
   },
   {
-    "s": "LG",
-    "n": "Laclede Group",
+    "s": "GMAB",
+    "n": "Genmab A/S",
     "e": "US"
   },
   {
-    "s": "LGIH",
-    "n": "LGI Homes Inc",
+    "s": "HUBS",
+    "n": "Hubspot Inc",
     "e": "US"
   },
   {
-    "s": "LGND",
-    "n": "Ligand Pharmaceuticals Inc",
+    "s": "IOT",
+    "n": "Samsara Inc.",
     "e": "US"
   },
   {
-    "s": "LHCG",
-    "n": "LHC Group",
+    "s": "GRAB",
+    "n": "Grab Holdings Ltd",
     "e": "US"
   },
   {
-    "s": "LHO",
-    "n": "Lasalle Hotel Properties",
+    "s": "IHG",
+    "n": "Intercontinental Hotels Group Plc /New/",
     "e": "US"
   },
   {
-    "s": "LIFE",
-    "n": "Atyr Pharma Inc",
+    "s": "CRCL",
+    "n": "Circle Internet Group, Inc.",
     "e": "US"
   },
   {
-    "s": "LION",
-    "n": "Fidelity Southern Corp",
+    "s": "RGLD",
+    "n": "Royal Gold Inc",
     "e": "US"
   },
   {
-    "s": "LIOX",
-    "n": "Lionbridge Technologies",
+    "s": "TU",
+    "n": "Telus Corp",
     "e": "US"
   },
   {
-    "s": "LJPC",
-    "n": "La Jolla Pharma",
+    "s": "CHKP",
+    "n": "Check Point Software Technologies Ltd",
     "e": "US"
   },
   {
-    "s": "LKFN",
-    "n": "Lakeland Financial Corp",
+    "s": "FTI",
+    "n": "Technipfmc Plc",
     "e": "US"
   },
   {
-    "s": "LL",
-    "n": "Lumber Liquidators Holdings Inc",
+    "s": "BCH",
+    "n": "Bank Of Chile",
     "e": "US"
   },
   {
-    "s": "LLNW",
-    "n": "Limelight Networks",
+    "s": "GIB",
+    "n": "Cgi Inc",
     "e": "US"
   },
   {
-    "s": "LMAT",
-    "n": "Lemaitre Vascular",
+    "s": "HKHHY",
+    "n": "Heineken Holding N V",
     "e": "US"
   },
   {
-    "s": "LMNR",
-    "n": "Limoneira Co",
+    "s": "TS",
+    "n": "Tenaris Sa",
     "e": "US"
   },
   {
-    "s": "LMNX",
-    "n": "Luminex Cor",
+    "s": "KOF",
+    "n": "Coca Cola Femsa Sab De Cv",
     "e": "US"
   },
   {
-    "s": "LMOS",
-    "n": "Lumos Networks Corp",
+    "s": "RCI",
+    "n": "Rogers Communications Inc",
     "e": "US"
   },
   {
-    "s": "LNCE",
-    "n": "Snyder's Lance Inc",
+    "s": "RVMD",
+    "n": "Revolution Medicines, Inc.",
     "e": "US"
   },
   {
-    "s": "LNDC",
-    "n": "Landec Corp",
+    "s": "EDPFY",
+    "n": "Edp Energias De Portugal Sa",
     "e": "US"
   },
   {
-    "s": "LNN",
-    "n": "Lindsay Corp",
+    "s": "RBA",
+    "n": "Rb Global Inc.",
     "e": "US"
   },
   {
-    "s": "LOCK",
-    "n": "Lifelock Inc",
+    "s": "BEKE",
+    "n": "Ke Holdings Inc.",
     "e": "US"
   },
   {
-    "s": "LOCO",
-    "n": "El Pollo Loco Holdings Inc",
+    "s": "TELNY",
+    "n": "Telenor Asa",
     "e": "US"
   },
   {
-    "s": "LOGM",
-    "n": "Logmein Inc",
+    "s": "BURL",
+    "n": "Burlington Stores, Inc.",
     "e": "US"
   },
   {
-    "s": "LOPE",
-    "n": "Grand Canyon Education",
+    "s": "U",
+    "n": "Unity Software Inc.",
     "e": "US"
   },
   {
-    "s": "LORL",
-    "n": "Loral Space and Communications",
+    "s": "VIV",
+    "n": "Telefonica Brasil S.A.",
     "e": "US"
   },
   {
-    "s": "LOXO",
-    "n": "Loxo Oncology Inc",
+    "s": "WWD",
+    "n": "Woodward, Inc.",
     "e": "US"
   },
   {
-    "s": "LPG",
-    "n": "Dorian Lpg Ltd",
+    "s": "EXAS",
+    "n": "Exact Sciences Corp",
     "e": "US"
   },
   {
-    "s": "LPSN",
-    "n": "Liveperson Inc",
+    "s": "XPEV",
+    "n": "Xpeng Inc.",
     "e": "US"
   },
   {
-    "s": "LPX",
-    "n": "Louisiana-Pacific Corp",
+    "s": "DKS",
+    "n": "Dick'S Sporting Goods, Inc.",
     "e": "US"
   },
   {
-    "s": "LQ",
-    "n": "La Quinta Holdings Inc",
+    "s": "BEP",
+    "n": "Brookfield Renewable Partners L.P.",
     "e": "US"
   },
   {
-    "s": "LQDT",
-    "n": "Liquidity Services",
+    "s": "PINS",
+    "n": "Pinterest, Inc.",
     "e": "US"
   },
   {
-    "s": "LRN",
-    "n": "K12 Inc",
-    "e": "US"
-  },
-  {
-    "s": "LSCC",
-    "n": "Lattice Semiconductor Corp",
-    "e": "US"
-  },
-  {
-    "s": "LTC",
-    "n": "Ltc Properties",
-    "e": "US"
-  },
-  {
-    "s": "LTRPA",
-    "n": "Liberty Tripadvisor Holdings I",
-    "e": "US"
-  },
-  {
-    "s": "LTS",
-    "n": "Ladenburg Thalmann Financial Inc",
-    "e": "US"
-  },
-  {
-    "s": "LTXB",
-    "n": "Legacytexas Financial Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "LWAY",
-    "n": "Lifeway Foods",
-    "e": "US"
-  },
-  {
-    "s": "LXFT",
-    "n": "Luxoft Holding Inc",
-    "e": "US"
-  },
-  {
-    "s": "LXP",
-    "n": "Lexington Realty Trust",
-    "e": "US"
-  },
-  {
-    "s": "LXRX",
-    "n": "Lexicon Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "LXU",
-    "n": "Lsb Industries Inc",
-    "e": "US"
-  },
-  {
-    "s": "LYTS",
-    "n": "Lsi Industries Inc",
-    "e": "US"
-  },
-  {
-    "s": "LZB",
-    "n": "La-Z-Boy Inc",
-    "e": "US"
-  },
-  {
-    "s": "MACK",
-    "n": "Merrimack Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "MANH",
-    "n": "Manhattan Associates",
-    "e": "US"
-  },
-  {
-    "s": "MANT",
-    "n": "Mantech International Corp",
-    "e": "US"
-  },
-  {
-    "s": "MASI",
-    "n": "Masimo Corp",
-    "e": "US"
-  },
-  {
-    "s": "MATW",
-    "n": "Matthews International Corp",
-    "e": "US"
-  },
-  {
-    "s": "MATX",
-    "n": "Matson Inc",
-    "e": "US"
-  },
-  {
-    "s": "MBFI",
-    "n": "MB Financial Inc",
-    "e": "US"
-  },
-  {
-    "s": "MBI",
-    "n": "MBIA Inc",
-    "e": "US"
-  },
-  {
-    "s": "MBUU",
-    "n": "Malibu Boats Inc",
-    "e": "US"
-  },
-  {
-    "s": "MBVT",
-    "n": "Merchants Bancshares",
-    "e": "US"
-  },
-  {
-    "s": "MBWM",
-    "n": "Mercantile Bank Corp",
-    "e": "US"
-  },
-  {
-    "s": "MC",
-    "n": "Moelis",
-    "e": "US"
-  },
-  {
-    "s": "MCF",
-    "n": "Contango Oil & Gas Company",
-    "e": "US"
-  },
-  {
-    "s": "MCHX",
-    "n": "Marchex Inc",
-    "e": "US"
-  },
-  {
-    "s": "MCRI",
-    "n": "Monarch Casino & Resort",
-    "e": "US"
-  },
-  {
-    "s": "MCS",
-    "n": "Marcus Corp",
-    "e": "US"
-  },
-  {
-    "s": "MDAS",
-    "n": "Medassets Inc",
-    "e": "US"
-  },
-  {
-    "s": "MDC",
-    "n": "M.D.C. Holdings",
-    "e": "US"
-  },
-  {
-    "s": "MDCA",
-    "n": "M.D.C. Partners Inc",
-    "e": "US"
-  },
-  {
-    "s": "MDCO",
-    "n": "The Medicines Company",
-    "e": "US"
-  },
-  {
-    "s": "MDGN",
-    "n": "Medgenics Inc. Common Stock",
-    "e": "US"
-  },
-  {
-    "s": "MDLY",
-    "n": "Medley Management Inc",
-    "e": "US"
-  },
-  {
-    "s": "MDP",
-    "n": "Meredith Corp",
-    "e": "US"
-  },
-  {
-    "s": "MDR",
-    "n": "McDermott International",
-    "e": "US"
-  },
-  {
-    "s": "MDSO",
-    "n": "Medidata Solutions",
-    "e": "US"
-  },
-  {
-    "s": "MDXG",
-    "n": "Mimedx Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "MED",
-    "n": "Medifast Inc",
-    "e": "US"
-  },
-  {
-    "s": "MEG",
-    "n": "Media General",
-    "e": "US"
-  },
-  {
-    "s": "MEI",
-    "n": "Methode Electronics",
-    "e": "US"
-  },
-  {
-    "s": "MENT",
-    "n": "Mentor Graphics Corp",
-    "e": "US"
-  },
-  {
-    "s": "METR",
-    "n": "Metro Bancorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "MFLX",
-    "n": "Multi-Fineline Electronix",
-    "e": "US"
-  },
-  {
-    "s": "MFRM",
-    "n": "Mattress Firm Holding Corp",
-    "e": "US"
-  },
-  {
-    "s": "MG",
-    "n": "Mistras Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "MGEE",
-    "n": "Mge Energy Inc",
-    "e": "US"
-  },
-  {
-    "s": "MGI",
-    "n": "Moneygram International",
-    "e": "US"
-  },
-  {
-    "s": "MGLN",
-    "n": "Magellan Health Services",
-    "e": "US"
-  },
-  {
-    "s": "MGNX",
-    "n": "Macrogenics Inc",
-    "e": "US"
-  },
-  {
-    "s": "MGPI",
-    "n": "MGP Ingredients",
-    "e": "US"
-  },
-  {
-    "s": "MGRC",
-    "n": "Mcgrath Rentcorp",
-    "e": "US"
-  },
-  {
-    "s": "MHGC",
-    "n": "Morgans Hotel Group Co",
-    "e": "US"
-  },
-  {
-    "s": "MHLD",
-    "n": "Maiden Hldgs Ltd",
-    "e": "US"
-  },
-  {
-    "s": "MHO",
-    "n": "M/I Homes",
-    "e": "US"
-  },
-  {
-    "s": "MIFI",
-    "n": "Novatel Wireless",
-    "e": "US"
-  },
-  {
-    "s": "MINI",
-    "n": "Mobile Mini",
-    "e": "US"
-  },
-  {
-    "s": "MITT",
-    "n": "Ag Mortgage Investment Trust",
-    "e": "US"
-  },
-  {
-    "s": "MKSI",
-    "n": "Mks Instruments",
-    "e": "US"
-  },
-  {
-    "s": "MKTO",
-    "n": "Marketo Inc",
-    "e": "US"
-  },
-  {
-    "s": "MKTX",
-    "n": "Marketaxess Holdings",
-    "e": "US"
-  },
-  {
-    "s": "MLAB",
-    "n": "Mesa Laboratories",
-    "e": "US"
-  },
-  {
-    "s": "MLHR",
-    "n": "Herman Miller",
-    "e": "US"
-  },
-  {
-    "s": "MLI",
-    "n": "Mueller Industries",
-    "e": "US"
-  },
-  {
-    "s": "MLNK",
-    "n": "Moduslink Global Solutions Inc",
-    "e": "US"
-  },
-  {
-    "s": "MLR",
-    "n": "Miller Industries",
-    "e": "US"
-  },
-  {
-    "s": "MMI",
-    "n": "Marcus & Millichap",
-    "e": "US"
-  },
-  {
-    "s": "MMS",
-    "n": "Maximus Inc",
-    "e": "US"
-  },
-  {
-    "s": "MMSI",
-    "n": "Merit Medical Systems",
-    "e": "US"
-  },
-  {
-    "s": "MNKD",
-    "n": "Mannkind Corp",
-    "e": "US"
-  },
-  {
-    "s": "MNR",
-    "n": "Monmouth Real Estate Investment Corp",
-    "e": "US"
-  },
-  {
-    "s": "MNRO",
-    "n": "Monro Muffler Brake",
-    "e": "US"
-  },
-  {
-    "s": "MNTA",
-    "n": "Momenta Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "MOBL",
-    "n": "Mobileiron Inc",
-    "e": "US"
-  },
-  {
-    "s": "MOD",
-    "n": "Modine Manufacturing Company",
-    "e": "US"
-  },
-  {
-    "s": "MODN",
-    "n": "Model N Inc. Common Stock",
-    "e": "US"
-  },
-  {
-    "s": "MOFG",
-    "n": "Midwestone Financial Group",
-    "e": "US"
-  },
-  {
-    "s": "MOG.A",
-    "n": "Moog Inc",
-    "e": "US"
-  },
-  {
-    "s": "MORE",
-    "n": "Monogram Residential Trust In",
-    "e": "US"
-  },
-  {
-    "s": "MOV",
-    "n": "Movado Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "MPAA",
-    "n": "Motorcar Parts of America",
-    "e": "US"
-  },
-  {
-    "s": "MPG",
-    "n": "Metaldyne Performance Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "MPW",
-    "n": "Medical Properties Trust",
-    "e": "US"
-  },
-  {
-    "s": "MPX",
-    "n": "Marine Products Corp",
-    "e": "US"
-  },
-  {
-    "s": "MRC",
-    "n": "Mrc Global Inc",
-    "e": "US"
-  },
-  {
-    "s": "MRCY",
-    "n": "Mercury Computer Systems",
-    "e": "US"
-  },
-  {
-    "s": "MRIN",
-    "n": "Marin Sotfware Incorporated",
-    "e": "US"
-  },
-  {
-    "s": "MRLN",
-    "n": "Marlin Business Services",
-    "e": "US"
-  },
-  {
-    "s": "MRTN",
-    "n": "Marten Transport",
-    "e": "US"
-  },
-  {
-    "s": "MRTX",
-    "n": "Mirati Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "MSA",
-    "n": "Msa Safety Inc",
-    "e": "US"
-  },
-  {
-    "s": "MSCC",
-    "n": "Microsemi Corp",
-    "e": "US"
-  },
-  {
-    "s": "MSEX",
-    "n": "Middlesex Water Company",
-    "e": "US"
-  },
-  {
-    "s": "MSFG",
-    "n": "Mainsource Financial Group",
-    "e": "US"
-  },
-  {
-    "s": "MSTR",
-    "n": "Microstrategy Inc",
-    "e": "US"
-  },
-  {
-    "s": "MTDR",
-    "n": "Matador Resources Company",
-    "e": "US"
-  },
-  {
-    "s": "MTG",
-    "n": "Mgic Investment Corp",
-    "e": "US"
-  },
-  {
-    "s": "MTGE",
-    "n": "American Capital Mortgage Inves",
-    "e": "US"
-  },
-  {
-    "s": "MTH",
-    "n": "Meritage Corp",
-    "e": "US"
-  },
-  {
-    "s": "MTN",
-    "n": "Vail Resorts",
-    "e": "US"
-  },
-  {
-    "s": "MTOR",
-    "n": "Arvinmeritor",
-    "e": "US"
-  },
-  {
-    "s": "MTRN",
-    "n": "Brush Wellman Inc",
-    "e": "US"
-  },
-  {
-    "s": "MTRX",
-    "n": "Matrix Service Company",
-    "e": "US"
-  },
-  {
-    "s": "MTSC",
-    "n": "MTS Systems Corp",
-    "e": "US"
-  },
-  {
-    "s": "MTSI",
-    "n": "M/A-Com Technology Solutions Ho",
-    "e": "US"
-  },
-  {
-    "s": "MTSN",
-    "n": "Mattson Technology",
-    "e": "US"
-  },
-  {
-    "s": "MTX",
-    "n": "Minerals Technologies Inc",
+    "s": "SGI",
+    "n": "Somnigroup International Inc.",
     "e": "US"
   },
   {
@@ -8166,1928 +3921,533 @@ const globalTickers = [
     "e": "US"
   },
   {
-    "s": "MW",
-    "n": "Men's Wearhouse",
+    "s": "FIG",
+    "n": "Figma, Inc.",
     "e": "US"
   },
   {
-    "s": "MWA",
-    "n": "Mueller Water Products",
+    "s": "FITBI",
+    "n": "Fifth Third Bancorp",
     "e": "US"
   },
   {
-    "s": "MWW",
-    "n": "Monster Worldwide",
+    "s": "THC",
+    "n": "Tenet Healthcare Corp",
     "e": "US"
   },
   {
-    "s": "MXL",
-    "n": "Maxlinear Inc",
+    "s": "CIB",
+    "n": "Grupo Cibest S.A.",
     "e": "US"
   },
   {
-    "s": "MXPT",
-    "n": "Maxpoint Interactive Inc",
+    "s": "IONQ",
+    "n": "Ionq, Inc.",
     "e": "US"
   },
   {
-    "s": "MYCC",
-    "n": "Clubcorp Holdings Inc",
+    "s": "APG",
+    "n": "Api Group Corp",
     "e": "US"
   },
   {
-    "s": "MYE",
-    "n": "Myers Industries",
+    "s": "BWXT",
+    "n": "Bwx Technologies, Inc.",
     "e": "US"
   },
   {
-    "s": "MYGN",
-    "n": "Myriad Genetics",
+    "s": "LTM",
+    "n": "Latam Airlines Group S.A.",
     "e": "US"
   },
   {
-    "s": "MYRG",
-    "n": "Myr Group",
+    "s": "AGI",
+    "n": "Alamos Gold Inc",
     "e": "US"
   },
   {
-    "s": "NADL",
-    "n": "North Atlantic Drilling Ltd. Co",
+    "s": "MEDP",
+    "n": "Medpace Holdings, Inc.",
     "e": "US"
   },
   {
-    "s": "NANO",
-    "n": "Nanometrics Inc",
+    "s": "DKNG",
+    "n": "Draftkings Inc.",
     "e": "US"
   },
   {
-    "s": "NAO",
-    "n": "Nordic American Offshore Ltd",
+    "s": "NVT",
+    "n": "Nvent Electric Plc",
     "e": "US"
   },
   {
-    "s": "NAT",
-    "n": "Nordic American Tanker Shipping Ltd",
+    "s": "LI",
+    "n": "Li Auto Inc.",
     "e": "US"
   },
   {
-    "s": "NATL",
-    "n": "National Interstate Corp",
+    "s": "TLN",
+    "n": "Talen Energy Corp",
     "e": "US"
   },
   {
-    "s": "NATR",
-    "n": "Nature's Sunshine Products",
+    "s": "ULS",
+    "n": "Ul Solutions Inc.",
     "e": "US"
   },
   {
-    "s": "NAV",
-    "n": "Navistar International Corp",
+    "s": "USFD",
+    "n": "Us Foods Holding Corp.",
     "e": "US"
   },
   {
-    "s": "NAVB",
-    "n": "Navidea Biopharmaceuticals Inc",
+    "s": "CRS",
+    "n": "Carpenter Technology Corp",
     "e": "US"
   },
   {
-    "s": "NAVG",
-    "n": "The Navigators Group",
+    "s": "XPO",
+    "n": "Xpo, Inc.",
     "e": "US"
   },
   {
-    "s": "NBBC",
-    "n": "Newbridge Bancorp",
+    "s": "KSPI",
+    "n": "Joint Stock Co Kaspi.Kz",
     "e": "US"
   },
   {
-    "s": "NBHC",
-    "n": "National Bank Holdings Corp",
+    "s": "ZG",
+    "n": "Zillow Group, Inc.",
     "e": "US"
   },
   {
-    "s": "NBIX",
-    "n": "Neurocrine Biosciences",
+    "s": "FN",
+    "n": "Fabrinet",
     "e": "US"
   },
   {
-    "s": "NBTB",
-    "n": "NBT Bancorp Inc",
+    "s": "YUMC",
+    "n": "Yum China Holdings, Inc.",
     "e": "US"
   },
   {
-    "s": "NC",
-    "n": "Nacco Industries",
+    "s": "SBS",
+    "n": "Companhia De Saneamento Basico Do Estado De Sao Paulo-Sabesp",
     "e": "US"
   },
   {
-    "s": "NCI",
-    "n": "Navigant Consulting",
+    "s": "ZTO",
+    "n": "Zto Express (Cayman) Inc.",
     "e": "US"
   },
   {
-    "s": "NCMI",
-    "n": "National Cinemedia",
+    "s": "CX",
+    "n": "Cemex Sab De Cv",
     "e": "US"
   },
   {
-    "s": "NCOM",
-    "n": "National Commerce Corp",
+    "s": "JLL",
+    "n": "Jones Lang Lasalle Inc",
     "e": "US"
   },
   {
-    "s": "NCS",
-    "n": "NCI Building Systems",
+    "s": "VG",
+    "n": "Venture Global, Inc.",
     "e": "US"
   },
   {
-    "s": "NDLS",
-    "n": "Noodles & Company",
+    "s": "ATI",
+    "n": "Ati Inc",
     "e": "US"
   },
   {
-    "s": "NEFF",
-    "n": "Neff Corp",
+    "s": "SN",
+    "n": "Sharkninja, Inc.",
     "e": "US"
   },
   {
-    "s": "NEO",
-    "n": "Neogenomics Inc",
+    "s": "OKTA",
+    "n": "Okta, Inc.",
     "e": "US"
   },
   {
-    "s": "NEOG",
-    "n": "Neogen Corp",
+    "s": "PMDIY",
+    "n": "Pro Medicus Ltd./Adr",
     "e": "US"
   },
   {
-    "s": "NEWM",
-    "n": "New Media Investment Group Inc",
+    "s": "PHYS",
+    "n": "Sprott Physical Gold Trust",
     "e": "US"
   },
   {
-    "s": "NEWP",
-    "n": "Newport Corp",
+    "s": "ROKU",
+    "n": "Roku, Inc",
     "e": "US"
   },
   {
-    "s": "NEWR",
-    "n": "New Relic Inc",
+    "s": "TRU",
+    "n": "Transunion",
     "e": "US"
   },
   {
-    "s": "NEWS",
-    "n": "Newstar Financial",
+    "s": "NJDCY",
+    "n": "Nidec Corp",
     "e": "US"
   },
   {
-    "s": "NFBK",
-    "n": "Northfield Bancorp",
+    "s": "AA",
+    "n": "Alcoa Corp",
     "e": "US"
   },
   {
-    "s": "NGHC",
-    "n": "National General Holdings Corp",
+    "s": "WES",
+    "n": "Western Midstream Partners, Lp",
     "e": "US"
   },
   {
-    "s": "NGS",
-    "n": "Natural Gas Services Group",
+    "s": "ONON",
+    "n": "On Holding Ag",
     "e": "US"
   },
   {
-    "s": "NGVC",
-    "n": "Natural Grocers By Vitamin Cottage Inc",
+    "s": "EWBC",
+    "n": "East West Bancorp Inc",
     "e": "US"
   },
   {
-    "s": "NHC",
-    "n": "National Healthcare Corp",
+    "s": "PKX",
+    "n": "Posco Holdings Inc.",
     "e": "US"
   },
   {
-    "s": "NHI",
-    "n": "National Health Investors",
+    "s": "GWRE",
+    "n": "Guidewire Software, Inc.",
     "e": "US"
   },
   {
-    "s": "NHTC",
-    "n": "Natural Health Trends Corp",
+    "s": "MGA",
+    "n": "Magna International Inc",
     "e": "US"
   },
   {
-    "s": "NILE",
-    "n": "Blue Nile Inc",
+    "s": "AVAV",
+    "n": "Aerovironment Inc",
     "e": "US"
   },
   {
-    "s": "NJR",
-    "n": "Newjersey Resources Corp",
+    "s": "SUI",
+    "n": "Sun Communities Inc",
     "e": "US"
   },
   {
-    "s": "NKSH",
-    "n": "National Bankshares",
+    "s": "H",
+    "n": "Hyatt Hotels Corp",
     "e": "US"
   },
   {
-    "s": "NKTR",
-    "n": "Nektar Therapeutics",
+    "s": "RS",
+    "n": "Reliance, Inc.",
     "e": "US"
   },
   {
-    "s": "NL",
-    "n": "NL Industries",
+    "s": "ICLR",
+    "n": "Icon Plc",
     "e": "US"
   },
   {
-    "s": "NLNK",
-    "n": "Newlink Genetics Corp",
+    "s": "QXO",
+    "n": "Qxo, Inc.",
     "e": "US"
   },
   {
-    "s": "NLS",
-    "n": "Nautilus Group",
+    "s": "PSLV",
+    "n": "Sprott Physical Silver Trust",
     "e": "US"
   },
   {
-    "s": "NM",
-    "n": "Navios Maritime Holdings Inc",
+    "s": "NLY",
+    "n": "Annaly Capital Management Inc",
     "e": "US"
   },
   {
-    "s": "NMBL",
-    "n": "Nimble Storage Inc",
+    "s": "RTO",
+    "n": "Rentokil Initial Plc /Fi",
     "e": "US"
   },
   {
-    "s": "NMIH",
-    "n": "Nmi Holdings Inc",
+    "s": "WMG",
+    "n": "Warner Music Group Corp.",
     "e": "US"
   },
   {
-    "s": "NNA",
-    "n": "Navios Maritime Acquisition Corp",
+    "s": "BIP",
+    "n": "Brookfield Infrastructure Partners L.P.",
     "e": "US"
   },
   {
-    "s": "NNBR",
-    "n": "NN Inc",
+    "s": "KTOS",
+    "n": "Kratos Defense & Security Solutions, Inc.",
     "e": "US"
   },
   {
-    "s": "NNI",
-    "n": "Nelnet Inc",
+    "s": "RBRK",
+    "n": "Rubrik, Inc.",
     "e": "US"
   },
   {
-    "s": "NOG",
-    "n": "Northern Oil and Gas",
+    "s": "HTHT",
+    "n": "H World Group Ltd",
     "e": "US"
   },
   {
-    "s": "NP",
-    "n": "Neenah Paper",
+    "s": "ITT",
+    "n": "Itt Inc.",
     "e": "US"
   },
   {
-    "s": "NPBC",
-    "n": "National Penn Bancshares",
+    "s": "ROIV",
+    "n": "Roivant Sciences Ltd.",
     "e": "US"
   },
   {
-    "s": "NPK",
-    "n": "National Presto Industries",
+    "s": "OKLO",
+    "n": "Oklo Inc.",
     "e": "US"
   },
   {
-    "s": "NPO",
-    "n": "Enpro Industries",
+    "s": "BSAC",
+    "n": "Banco Santander Chile",
     "e": "US"
   },
   {
-    "s": "NPTN",
-    "n": "Neophotonics Corp",
+    "s": "CRBG",
+    "n": "Corebridge Financial, Inc.",
     "e": "US"
   },
   {
-    "s": "NR",
-    "n": "Newpark Resources",
+    "s": "EMAT",
+    "n": "Evolution Metals & Technologies Corp.",
     "e": "US"
   },
   {
-    "s": "NRCIA",
-    "n": "National Research Corp",
+    "s": "FNF",
+    "n": "Fidelity National Financial, Inc.",
     "e": "US"
   },
   {
-    "s": "NRZ",
-    "n": "New Residential Investment Corp",
+    "s": "JBS",
+    "n": "Jbs N.V.",
     "e": "US"
   },
   {
-    "s": "NSA",
-    "n": "National Storage Affiliates Tru",
+    "s": "GFL",
+    "n": "Gfl Environmental Inc.",
     "e": "US"
   },
   {
-    "s": "NSIT",
-    "n": "Insight Enterprises",
+    "s": "ENTG",
+    "n": "Entegris Inc",
     "e": "US"
   },
   {
-    "s": "NSM",
-    "n": "Nationstar Mortgage Holdngs I",
+    "s": "SNAP",
+    "n": "Snap Inc",
     "e": "US"
   },
   {
-    "s": "NSP",
-    "n": "Insperity Inc",
+    "s": "RBC",
+    "n": "Rbc Bearings Inc",
     "e": "US"
   },
   {
-    "s": "NSR",
-    "n": "Neustar Inc",
+    "s": "EMA",
+    "n": "Emera Inc",
     "e": "US"
   },
   {
-    "s": "NSTG",
-    "n": "Nanostring Technologies Inc",
+    "s": "LOGI",
+    "n": "Logitech International S.A.",
     "e": "US"
   },
   {
-    "s": "NTCT",
-    "n": "Netscout Systems",
+    "s": "SNN",
+    "n": "Smith & Nephew Plc",
     "e": "US"
   },
   {
-    "s": "NTGR",
-    "n": "Netgear Inc",
+    "s": "WPC",
+    "n": "W. P. Carey Inc.",
     "e": "US"
   },
   {
-    "s": "NTK",
-    "n": "Nortek Inc",
+    "s": "EVR",
+    "n": "Evercore Inc.",
     "e": "US"
   },
   {
-    "s": "NTLS",
-    "n": "Ntelos Holdings",
+    "s": "ARCC",
+    "n": "Ares Capital Corp",
     "e": "US"
   },
   {
-    "s": "NTRI",
-    "n": "Nutrisystem Inc",
-    "e": "US"
-  },
-  {
-    "s": "NUTR",
-    "n": "Nutraceutical International Corp",
-    "e": "US"
-  },
-  {
-    "s": "NUVA",
-    "n": "Nuvasive Inc",
-    "e": "US"
-  },
-  {
-    "s": "NVAX",
-    "n": "Novavax Inc",
-    "e": "US"
-  },
-  {
-    "s": "NVEC",
-    "n": "Nve Corp",
-    "e": "US"
-  },
-  {
-    "s": "NVEE",
-    "n": "Nv5 Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "NVIV",
-    "n": "Invivo Therapeutics Holdings",
-    "e": "US"
-  },
-  {
-    "s": "NVRO",
-    "n": "Nevro Corp",
-    "e": "US"
-  },
-  {
-    "s": "NVTA",
-    "n": "Invitae Corp",
-    "e": "US"
-  },
-  {
-    "s": "NWBI",
-    "n": "Northwest Bancshares",
-    "e": "US"
-  },
-  {
-    "s": "NWBO",
-    "n": "Northwest Biotherapeutics",
-    "e": "US"
-  },
-  {
-    "s": "NWE",
-    "n": "Northwestern Corp",
-    "e": "US"
-  },
-  {
-    "s": "NWHM",
-    "n": "New Home Co Llc",
-    "e": "US"
-  },
-  {
-    "s": "NWLI",
-    "n": "National Western Life Insurance",
-    "e": "US"
-  },
-  {
-    "s": "NWN",
-    "n": "Northwest Natural Gas Company",
-    "e": "US"
-  },
-  {
-    "s": "NWPX",
-    "n": "Northwest Pipe Company",
-    "e": "US"
-  },
-  {
-    "s": "NX",
-    "n": "Quanex Building Products Corp",
-    "e": "US"
-  },
-  {
-    "s": "NXRT",
-    "n": "Nexpoint Residential Trust Inc",
-    "e": "US"
-  },
-  {
-    "s": "NXST",
-    "n": "Nexstar Broadcasting Group",
-    "e": "US"
-  },
-  {
-    "s": "NXTM",
-    "n": "Nxstage Medical",
-    "e": "US"
-  },
-  {
-    "s": "NYLD",
-    "n": "NRG Yield Inc",
-    "e": "US"
-  },
-  {
-    "s": "NYMT",
-    "n": "New York Mortgage Trust",
-    "e": "US"
-  },
-  {
-    "s": "NYNY",
-    "n": "Empire Resorts",
-    "e": "US"
-  },
-  {
-    "s": "NYRT",
-    "n": "New York REIT Inc",
-    "e": "US"
-  },
-  {
-    "s": "NYT",
-    "n": "New York Times Company",
-    "e": "US"
-  },
-  {
-    "s": "OAS",
-    "n": "Oasis Petroleum Inc",
-    "e": "US"
-  },
-  {
-    "s": "OB",
-    "n": "Onebeacon Insurance Group",
-    "e": "US"
-  },
-  {
-    "s": "OCAT",
-    "n": "Ocata Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "OCFC",
-    "n": "Oceanfirst Financial",
-    "e": "US"
-  },
-  {
-    "s": "OCLR",
-    "n": "Oclaro Inc",
-    "e": "US"
-  },
-  {
-    "s": "OCN",
-    "n": "Ocwen Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "OCUL",
-    "n": "Ocular Therapeutix Inc",
-    "e": "US"
-  },
-  {
-    "s": "ODC",
-    "n": "Oil-Dri Corporation of America",
-    "e": "US"
-  },
-  {
-    "s": "OFG",
-    "n": "Oriental Financial Group",
-    "e": "US"
-  },
-  {
-    "s": "OFIX",
-    "n": "Orthofix International N.V.",
-    "e": "US"
-  },
-  {
-    "s": "OFLX",
-    "n": "Omega Flex",
-    "e": "US"
-  },
-  {
-    "s": "OGS",
-    "n": "One Gas Inc",
-    "e": "US"
-  },
-  {
-    "s": "OIS",
-    "n": "Oil States International",
-    "e": "US"
-  },
-  {
-    "s": "OKSB",
-    "n": "Southwest Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "OLED",
-    "n": "Universal Display Corp",
-    "e": "US"
-  },
-  {
-    "s": "OLN",
-    "n": "Olin Corp",
-    "e": "US"
-  },
-  {
-    "s": "OLP",
-    "n": "One Liberty Properties",
-    "e": "US"
-  },
-  {
-    "s": "OMAM",
-    "n": "Om Asset Management Ltd",
-    "e": "US"
-  },
-  {
-    "s": "OMCL",
-    "n": "Omnicell Inc",
-    "e": "US"
-  },
-  {
-    "s": "OME",
-    "n": "Omega Protein Corp",
-    "e": "US"
-  },
-  {
-    "s": "OMED",
-    "n": "Oncomed Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "OMER",
-    "n": "Omeros Corp",
-    "e": "US"
-  },
-  {
-    "s": "OMI",
-    "n": "Owens & Minor",
-    "e": "US"
-  },
-  {
-    "s": "OMN",
-    "n": "Omnova Solutions Inc",
-    "e": "US"
-  },
-  {
-    "s": "ONB",
-    "n": "Old National Bancorp Capital",
-    "e": "US"
-  },
-  {
-    "s": "ONCE",
-    "n": "Spark Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "ONDK",
-    "n": "On Deck Capital Inc",
-    "e": "US"
-  },
-  {
-    "s": "ONTY",
-    "n": "Oncothyreon Inc",
-    "e": "US"
-  },
-  {
-    "s": "ONVO",
-    "n": "Organovo Holdings",
-    "e": "US"
-  },
-  {
-    "s": "OPB",
-    "n": "Opus Bank",
-    "e": "US"
-  },
-  {
-    "s": "OPHT",
-    "n": "Ophthotech Corp",
-    "e": "US"
-  },
-  {
-    "s": "OPWR",
-    "n": "Opower Inc",
-    "e": "US"
-  },
-  {
-    "s": "OPY",
-    "n": "Oppenheimer Holdings",
-    "e": "US"
-  },
-  {
-    "s": "ORA",
-    "n": "Ormat Technologies",
-    "e": "US"
-  },
-  {
-    "s": "ORBC",
-    "n": "Orbcomm Inc",
-    "e": "US"
-  },
-  {
-    "s": "ORC",
-    "n": "Orchid Island Capital Inc. Com",
-    "e": "US"
-  },
-  {
-    "s": "OREX",
-    "n": "Orexigen Therapeutics",
-    "e": "US"
-  },
-  {
-    "s": "ORIT",
-    "n": "Oritani Financial",
-    "e": "US"
-  },
-  {
-    "s": "ORN",
-    "n": "Orion Marine Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "OSBC",
-    "n": "Old Second Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "OSIR",
-    "n": "Osiris Therapeutics",
-    "e": "US"
-  },
-  {
-    "s": "OSIS",
-    "n": "Osi Systems",
-    "e": "US"
-  },
-  {
-    "s": "OSTK",
-    "n": "Overstock.Com",
-    "e": "US"
-  },
-  {
-    "s": "OSUR",
-    "n": "Orasure Technologies",
-    "e": "US"
-  },
-  {
-    "s": "OTIC",
-    "n": "Otonomy Inc",
-    "e": "US"
-  },
-  {
-    "s": "OTTR",
-    "n": "Otter Tail Corp",
-    "e": "US"
-  },
-  {
-    "s": "OUTR",
-    "n": "Outerwall Inc",
-    "e": "US"
-  },
-  {
-    "s": "OVAS",
-    "n": "Ovascience Inc",
-    "e": "US"
-  },
-  {
-    "s": "OVTI",
-    "n": "Omnivision Technologies",
-    "e": "US"
-  },
-  {
-    "s": "OXFD",
-    "n": "Oxford Immunotec Global Plc",
-    "e": "US"
-  },
-  {
-    "s": "OXM",
-    "n": "Oxford Industries",
-    "e": "US"
-  },
-  {
-    "s": "OZRK",
-    "n": "Bank of The Ozarks",
-    "e": "US"
-  },
-  {
-    "s": "PACB",
-    "n": "Pacific Biosciences of California",
-    "e": "US"
-  },
-  {
-    "s": "PAHC",
-    "n": "Phibro Animal Health Corp",
-    "e": "US"
-  },
-  {
-    "s": "PARR",
-    "n": "Par Petroleum Corp",
-    "e": "US"
-  },
-  {
-    "s": "PATK",
-    "n": "Patrick Industries",
-    "e": "US"
-  },
-  {
-    "s": "PB",
-    "n": "Prosperity Bancshares",
-    "e": "US"
-  },
-  {
-    "s": "PBH",
-    "n": "Prestige Brand Holdings",
-    "e": "US"
-  },
-  {
-    "s": "PBPB",
-    "n": "Potbelly Corp",
-    "e": "US"
-  },
-  {
-    "s": "PBY",
-    "n": "Pep Boys-Manny Moe & Jack",
-    "e": "US"
-  },
-  {
-    "s": "PCBK",
-    "n": "Pacific Continental Corporation [Ore]",
-    "e": "US"
-  },
-  {
-    "s": "PCCC",
-    "n": "PC Connection",
-    "e": "US"
-  },
-  {
-    "s": "PCH",
-    "n": "Potlatch Corp",
-    "e": "US"
-  },
-  {
-    "s": "PCO",
-    "n": "Pendrell Corp",
-    "e": "US"
-  },
-  {
-    "s": "PCRX",
-    "n": "Pacira Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "PCTY",
-    "n": "Paylocity Holding Corp",
-    "e": "US"
-  },
-  {
-    "s": "PCYG",
-    "n": "Park City Group",
-    "e": "US"
-  },
-  {
-    "s": "PDCE",
-    "n": "Pdc Energy Inc",
-    "e": "US"
-  },
-  {
-    "s": "PDFS",
-    "n": "Pdf Solutions Inc",
-    "e": "US"
-  },
-  {
-    "s": "PDLI",
-    "n": "Pdl Biopharma",
-    "e": "US"
-  },
-  {
-    "s": "PDVW",
-    "n": "Pacific Datavision Inc",
-    "e": "US"
-  },
-  {
-    "s": "PE",
-    "n": "Parsley Energy",
-    "e": "US"
-  },
-  {
-    "s": "PEB",
-    "n": "Pebblebrook Hotel Trust",
-    "e": "US"
-  },
-  {
-    "s": "PEBO",
-    "n": "Peoples Bancorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "PEGA",
-    "n": "Pegasystems Inc",
-    "e": "US"
-  },
-  {
-    "s": "PEGI",
-    "n": "Pattern Energy Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "PEI",
-    "n": "Pennsylvania Real Estate Investment",
-    "e": "US"
-  },
-  {
-    "s": "PEIX",
-    "n": "Pacific Ethanol",
-    "e": "US"
-  },
-  {
-    "s": "PENN",
-    "n": "Penn National Gaming",
-    "e": "US"
-  },
-  {
-    "s": "PERY",
-    "n": "Perry Ellis International Inc",
-    "e": "US"
-  },
-  {
-    "s": "PES",
-    "n": "Pioneer Energy Services Corp",
-    "e": "US"
-  },
-  {
-    "s": "PETS",
-    "n": "Petmed Express",
-    "e": "US"
-  },
-  {
-    "s": "PETX",
-    "n": "Aratana Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "PFBC",
-    "n": "Preferred Bank",
-    "e": "US"
-  },
-  {
-    "s": "PFIS",
-    "n": "Peoples Finl Svcs Co",
-    "e": "US"
-  },
-  {
-    "s": "PFNX",
-    "n": "Pfenex Inc",
-    "e": "US"
-  },
-  {
-    "s": "PFPT",
-    "n": "Proofpoint Inc",
-    "e": "US"
-  },
-  {
-    "s": "PFS",
-    "n": "Provident Financial Services",
-    "e": "US"
-  },
-  {
-    "s": "PFSI",
-    "n": "Pennymac Financial Services In",
-    "e": "US"
-  },
-  {
-    "s": "PFSW",
-    "n": "Pfsweb Inc",
-    "e": "US"
-  },
-  {
-    "s": "PGC",
-    "n": "Peapack-Gladstone Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "PGEM",
-    "n": "Ply Gem Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "PGND",
-    "n": "Pga Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "PGNX",
-    "n": "Progenics Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "PGTI",
-    "n": "Pgt Industries",
-    "e": "US"
-  },
-  {
-    "s": "PHH",
-    "n": "Phh Corp",
-    "e": "US"
-  },
-  {
-    "s": "PHIIK",
-    "n": "PHI Inc",
-    "e": "US"
-  },
-  {
-    "s": "PHX",
-    "n": "Panhandle Royalty Company",
-    "e": "US"
-  },
-  {
-    "s": "PICO",
-    "n": "Pico Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "PIR",
-    "n": "Pier 1 Imports",
-    "e": "US"
-  },
-  {
-    "s": "PJC",
-    "n": "Piper Jaffray Companies",
-    "e": "US"
-  },
-  {
-    "s": "PKD",
-    "n": "Parker Drilling Company",
-    "e": "US"
-  },
-  {
-    "s": "PKE",
-    "n": "Park Electrochemical Corp",
-    "e": "US"
-  },
-  {
-    "s": "PKOH",
-    "n": "Park-Ohio Holdings",
-    "e": "US"
-  },
-  {
-    "s": "PKY",
-    "n": "Parkway Properties",
-    "e": "US"
-  },
-  {
-    "s": "PLAB",
-    "n": "Photronics",
-    "e": "US"
-  },
-  {
-    "s": "PLAY",
-    "n": "Dave and Buster's Entertainment",
-    "e": "US"
-  },
-  {
-    "s": "PLCE",
-    "n": "The Children's Place Retail Stores",
-    "e": "US"
-  },
-  {
-    "s": "PLCM",
-    "n": "Polycom Inc",
-    "e": "US"
-  },
-  {
-    "s": "PLKI",
-    "n": "Popeyes Louisiana Kitchen Inc",
-    "e": "US"
-  },
-  {
-    "s": "PLOW",
-    "n": "Douglas Dynamics",
-    "e": "US"
-  },
-  {
-    "s": "PLPC",
-    "n": "Preformed Line Products Company",
-    "e": "US"
-  },
-  {
-    "s": "PLT",
-    "n": "Plantronics",
-    "e": "US"
-  },
-  {
-    "s": "PLUG",
-    "n": "Plug Power Inc",
-    "e": "US"
-  },
-  {
-    "s": "PLUS",
-    "n": "Eplus Inc",
-    "e": "US"
-  },
-  {
-    "s": "PLXS",
-    "n": "Plexus Corp",
-    "e": "US"
-  },
-  {
-    "s": "PMC",
-    "n": "Pharmerica Corp",
-    "e": "US"
-  },
-  {
-    "s": "PMT",
-    "n": "Pennymac Mortgage Investment Trust",
-    "e": "US"
-  },
-  {
-    "s": "PN",
-    "n": "Patriot National Inc",
+    "s": "NTNX",
+    "n": "Nutanix, Inc.",
     "e": "US"
   },
   {
     "s": "PNFP",
-    "n": "Pinnacle Financial Partners",
+    "n": "Pinnacle Financial Partners, Inc.",
     "e": "US"
   },
   {
-    "s": "PNK",
-    "n": "Pinnacle Entertainment",
+    "s": "ARNNY",
+    "n": "Asr Nederland N.V./Adr",
     "e": "US"
   },
   {
-    "s": "PNM",
-    "n": "PNM Resources Inc",
+    "s": "ALLY",
+    "n": "Ally Financial Inc.",
     "e": "US"
   },
   {
-    "s": "PNY",
-    "n": "Piedmont Natural Gas Company",
+    "s": "W",
+    "n": "Wayfair Inc.",
     "e": "US"
   },
   {
-    "s": "POL",
-    "n": "Polyone Corp",
+    "s": "IREN",
+    "n": "Iren Ltd",
     "e": "US"
   },
   {
-    "s": "POR",
-    "n": "Portland General Electric Company",
+    "s": "HL",
+    "n": "Hecla Mining Co/De/",
     "e": "US"
   },
   {
-    "s": "POST",
-    "n": "Post Holdings Inc",
+    "s": "BBIO",
+    "n": "Bridgebio Pharma, Inc.",
     "e": "US"
   },
   {
-    "s": "POWI",
-    "n": "Power Integrations",
+    "s": "EQH",
+    "n": "Equitable Holdings, Inc.",
     "e": "US"
   },
   {
-    "s": "POWL",
-    "n": "Powell Industries",
+    "s": "GH",
+    "n": "Guardant Health, Inc.",
     "e": "US"
   },
   {
-    "s": "POWR",
-    "n": "Powersecure International Inc",
+    "s": "WF",
+    "n": "Woori Financial Group Inc.",
     "e": "US"
   },
   {
-    "s": "POZN",
-    "n": "Pozen Inc",
+    "s": "WSO",
+    "n": "Watsco Inc",
     "e": "US"
   },
   {
-    "s": "PPBI",
-    "n": "Pacific Premier Bancorp Inc",
+    "s": "JOBY",
+    "n": "Joby Aviation, Inc.",
     "e": "US"
   },
   {
-    "s": "PPHM",
-    "n": "Peregrine Pharmaceuticals Inc",
+    "s": "SMMT",
+    "n": "Summit Therapeutics Inc.",
     "e": "US"
   },
   {
-    "s": "PRAA",
-    "n": "Portfolio Recovery Associates",
+    "s": "NBIX",
+    "n": "Neurocrine Biosciences Inc",
     "e": "US"
   },
   {
-    "s": "PRAH",
-    "n": "Pra Health Sciences Inc",
+    "s": "CSL",
+    "n": "Carlisle Companies Inc",
     "e": "US"
   },
   {
-    "s": "PRFT",
-    "n": "Perficient Inc",
+    "s": "YPF",
+    "n": "Ypf Sociedad Anonima",
     "e": "US"
   },
   {
-    "s": "PRGS",
-    "n": "Progress Software Corp",
+    "s": "DOCU",
+    "n": "Docusign, Inc.",
     "e": "US"
   },
   {
-    "s": "PRI",
-    "n": "Primerica Inc",
+    "s": "GGG",
+    "n": "Graco Inc",
     "e": "US"
   },
   {
-    "s": "PRIM",
-    "n": "Primoris Services Corp",
+    "s": "DLAKY",
+    "n": "Deutsche Lufthansa A G /Fi",
     "e": "US"
   },
   {
-    "s": "PRK",
-    "n": "Park National Corp",
+    "s": "TSEM",
+    "n": "Tower Semiconductor Ltd",
     "e": "US"
   },
   {
-    "s": "PRLB",
-    "n": "Proto Labs Inc",
+    "s": "OHI",
+    "n": "Omega Healthcare Investors Inc",
     "e": "US"
   },
   {
-    "s": "PRO",
-    "n": "Pros Holdings",
+    "s": "OBICY",
+    "n": "Obic Co., Ltd./Adr",
     "e": "US"
   },
   {
-    "s": "PRSC",
-    "n": "The Providence Service Corp",
+    "s": "LPGCY",
+    "n": "Laopu Gold Co. Ltd./Adr",
     "e": "US"
   },
   {
-    "s": "PRTA",
-    "n": "Prothena Corporation Plc",
+    "s": "PAC",
+    "n": "Pacific Airport Group",
     "e": "US"
   },
   {
-    "s": "PRTK",
-    "n": "Paratek Pharmaceuticals Inc",
+    "s": "LECO",
+    "n": "Lincoln Electric Holdings Inc",
     "e": "US"
   },
   {
-    "s": "PRTO",
-    "n": "Proteon Therapeutics Inc",
+    "s": "NXT",
+    "n": "Nextpower Inc.",
     "e": "US"
   },
   {
-    "s": "PRTY",
-    "n": "Party City Holdco Inc",
+    "s": "IONS",
+    "n": "Ionis Pharmaceuticals Inc",
     "e": "US"
   },
   {
-    "s": "PRXL",
-    "n": "Parexel International Corp",
+    "s": "PFGC",
+    "n": "Performance Food Group Co",
     "e": "US"
   },
   {
-    "s": "PSB",
-    "n": "Business Parks",
+    "s": "RPM",
+    "n": "Rpm International Inc/De/",
     "e": "US"
   },
   {
-    "s": "PSG",
-    "n": "Performance Sports Group Ltd",
+    "s": "PUGBY",
+    "n": "Puig Brands S.A./Adr",
     "e": "US"
   },
   {
-    "s": "PSIX",
-    "n": "Power Solutions Inte",
-    "e": "US"
-  },
-  {
-    "s": "PSMT",
-    "n": "Pricesmart Inc",
-    "e": "US"
-  },
-  {
-    "s": "PSTB",
-    "n": "Park Sterling Bank",
-    "e": "US"
-  },
-  {
-    "s": "PTCT",
-    "n": "Ptc Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "PTLA",
-    "n": "Portola Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "PTSI",
-    "n": "P.A.M. Transportation Services",
-    "e": "US"
-  },
-  {
-    "s": "PTX",
-    "n": "Pernix Therapeutics Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "PVA",
-    "n": "Penn Virginia Corp",
-    "e": "US"
-  },
-  {
-    "s": "PVTB",
-    "n": "Privatebancorp",
-    "e": "US"
-  },
-  {
-    "s": "PWOD",
-    "n": "Penns Woods Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "PZN",
-    "n": "Pzena Investment Management Inc",
-    "e": "US"
-  },
-  {
-    "s": "PZZA",
-    "n": "Papa John's International",
-    "e": "US"
-  },
-  {
-    "s": "QADA",
-    "n": "Qad Inc",
-    "e": "US"
-  },
-  {
-    "s": "QCRH",
-    "n": "Qcr Holdings",
-    "e": "US"
-  },
-  {
-    "s": "QDEL",
-    "n": "Quidel Corp",
-    "e": "US"
-  },
-  {
-    "s": "QLGC",
-    "n": "Qlogic Corp",
-    "e": "US"
-  },
-  {
-    "s": "QLIK",
-    "n": "Qlik Technologies Inc",
-    "e": "US"
-  },
-  {
-    "s": "QLYS",
-    "n": "Qualys Inc",
-    "e": "US"
-  },
-  {
-    "s": "QNST",
-    "n": "Quinstreet Inc",
-    "e": "US"
-  },
-  {
-    "s": "QSII",
-    "n": "Quality Systems",
-    "e": "US"
-  },
-  {
-    "s": "QTM",
-    "n": "Quantum Corp",
-    "e": "US"
-  },
-  {
-    "s": "QTS",
-    "n": "Qts Realty Trust Inc",
-    "e": "US"
-  },
-  {
-    "s": "QTWO",
-    "n": "Q2 Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "QUAD",
-    "n": "Quad Graphics Inc",
-    "e": "US"
-  },
-  {
-    "s": "RAIL",
-    "n": "Freightcar America",
-    "e": "US"
-  },
-  {
-    "s": "RARE",
-    "n": "Ultragenyx Pharmaceutical Inc",
-    "e": "US"
-  },
-  {
-    "s": "RAS",
-    "n": "Rait Financial Trust",
-    "e": "US"
-  },
-  {
-    "s": "RATE",
-    "n": "Bankrate Inc",
-    "e": "US"
-  },
-  {
-    "s": "RAVN",
-    "n": "Raven Industries",
-    "e": "US"
-  },
-  {
-    "s": "RBCAA",
-    "n": "Republic Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "RCAP",
-    "n": "RCS Capital Corp",
-    "e": "US"
-  },
-  {
-    "s": "RCII",
-    "n": "Rent-A-Center Inc",
-    "e": "US"
-  },
-  {
-    "s": "RDEN",
-    "n": "Elizabeth Arden",
-    "e": "US"
-  },
-  {
-    "s": "RDI",
-    "n": "Reading International Inc",
-    "e": "US"
-  },
-  {
-    "s": "RDN",
-    "n": "Radian Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "RDNT",
-    "n": "Radnet Inc",
-    "e": "US"
-  },
-  {
-    "s": "RDUS",
-    "n": "Radius Health Inc",
-    "e": "US"
-  },
-  {
-    "s": "RECN",
-    "n": "Resources Connection",
-    "e": "US"
-  },
-  {
-    "s": "REGI",
-    "n": "Renewable Energy Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "REI",
-    "n": "Ring Energy Inc",
-    "e": "US"
-  },
-  {
-    "s": "REIS",
-    "n": "Reis Inc",
-    "e": "US"
-  },
-  {
-    "s": "RELY",
-    "n": "Signature Group",
-    "e": "US"
-  },
-  {
-    "s": "RENT",
-    "n": "Rentrak Corp",
-    "e": "US"
-  },
-  {
-    "s": "RESI",
-    "n": "Altisource Residential Corporat",
-    "e": "US"
-  },
-  {
-    "s": "REV",
-    "n": "Revlon Inc",
-    "e": "US"
-  },
-  {
-    "s": "REX",
-    "n": "Rex American Resources Corporation",
-    "e": "US"
-  },
-  {
-    "s": "REXI",
-    "n": "Resource America",
-    "e": "US"
-  },
-  {
-    "s": "REXR",
-    "n": "Rexford Industrial Realty Inc",
-    "e": "US"
-  },
-  {
-    "s": "REXX",
-    "n": "Rex Energy Corp",
-    "e": "US"
-  },
-  {
-    "s": "RGEN",
-    "n": "Repligen Corp",
-    "e": "US"
-  },
-  {
-    "s": "RGLS",
-    "n": "Regulus Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "RGR",
-    "n": "Sturm Ruger & Company",
-    "e": "US"
-  },
-  {
-    "s": "RGS",
-    "n": "Regis Corp",
-    "e": "US"
-  },
-  {
-    "s": "RH",
-    "n": "Restoration Hardware Holdings",
-    "e": "US"
-  },
-  {
-    "s": "RHP",
-    "n": "Gaylord Entertainment Company",
-    "e": "US"
-  },
-  {
-    "s": "RIGL",
-    "n": "Rigel Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "RJET",
-    "n": "Republic Airways Holdings",
-    "e": "US"
-  },
-  {
-    "s": "RKDA",
-    "n": "Arcadia Biosciences Inc",
-    "e": "US"
-  },
-  {
-    "s": "RKUS",
-    "n": "Ruckus Wireless Inc",
-    "e": "US"
-  },
-  {
-    "s": "RLD",
-    "n": "Reald Inc",
-    "e": "US"
-  },
-  {
-    "s": "RLGT",
-    "n": "Radiant Logistics",
-    "e": "US"
-  },
-  {
-    "s": "RLI",
-    "n": "Rli Corp",
-    "e": "US"
-  },
-  {
-    "s": "RLJ",
-    "n": "Rlj Lodging Trust",
-    "e": "US"
-  },
-  {
-    "s": "RLYP",
-    "n": "Relypsa Inc",
-    "e": "US"
-  },
-  {
-    "s": "RM",
-    "n": "Regional Managment Corp",
-    "e": "US"
-  },
-  {
-    "s": "RMAX",
-    "n": "Re/Max Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "RMBS",
-    "n": "Rambus Inc",
-    "e": "US"
-  },
-  {
-    "s": "RMTI",
-    "n": "Rockwell Medical Technologies",
-    "e": "US"
-  },
-  {
-    "s": "RNET",
-    "n": "Rignet Inc",
-    "e": "US"
-  },
-  {
-    "s": "RNG",
-    "n": "Ringcentral Inc",
-    "e": "US"
-  },
-  {
-    "s": "RNST",
-    "n": "Renasant Corp",
-    "e": "US"
-  },
-  {
-    "s": "RNWK",
-    "n": "Realnetworks",
-    "e": "US"
-  },
-  {
-    "s": "ROCK",
-    "n": "Gibraltar Industries",
-    "e": "US"
-  },
-  {
-    "s": "ROG",
-    "n": "Rogers Corp",
-    "e": "US"
-  },
-  {
-    "s": "ROIC",
-    "n": "Retail Opportunity Investments",
-    "e": "US"
-  },
-  {
-    "s": "ROLL",
-    "n": "RBC Bearings Inc",
-    "e": "US"
-  },
-  {
-    "s": "ROVI",
-    "n": "Rovi Corp",
-    "e": "US"
-  },
-  {
-    "s": "ROX",
-    "n": "Castle Brands",
-    "e": "US"
-  },
-  {
-    "s": "RP",
-    "n": "Realpage Inc",
-    "e": "US"
-  },
-  {
-    "s": "RPT",
-    "n": "Ramco-Gershenson Properties Trust",
-    "e": "US"
-  },
-  {
-    "s": "RPTP",
-    "n": "Raptor Pharmaceutical",
-    "e": "US"
-  },
-  {
-    "s": "RPXC",
-    "n": "Rpx Corp",
-    "e": "US"
-  },
-  {
-    "s": "RRGB",
-    "n": "Red Robin Gourmet Burgers",
-    "e": "US"
-  },
-  {
-    "s": "RRTS",
-    "n": "Roadrunner Transportation Systems Inc",
-    "e": "US"
-  },
-  {
-    "s": "RSE",
-    "n": "Rouse Properties Inc. Common S",
-    "e": "US"
-  },
-  {
-    "s": "RSO",
-    "n": "Resource Capital",
-    "e": "US"
-  },
-  {
-    "s": "RSPP",
-    "n": "Rsp Permian Inc",
-    "e": "US"
-  },
-  {
-    "s": "RSTI",
-    "n": "Rofin-Sinar Technologies",
-    "e": "US"
-  },
-  {
-    "s": "RT",
-    "n": "Ruby Tuesday",
-    "e": "US"
-  },
-  {
-    "s": "RTEC",
-    "n": "Rudolph Technologies",
-    "e": "US"
-  },
-  {
-    "s": "RTIX",
-    "n": "Rti Biologics",
-    "e": "US"
-  },
-  {
-    "s": "RTK",
-    "n": "Rentech Inc",
-    "e": "US"
-  },
-  {
-    "s": "RTRX",
-    "n": "Retrophin Inc",
-    "e": "US"
-  },
-  {
-    "s": "RUBI",
-    "n": "The Rubicon Project Inc",
-    "e": "US"
-  },
-  {
-    "s": "RUSHA",
-    "n": "Rush Enterprises",
-    "e": "US"
-  },
-  {
-    "s": "RUTH",
-    "n": "Ruth's Hospitality Group",
-    "e": "US"
-  },
-  {
-    "s": "RVNC",
-    "n": "Revance Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "RWT",
-    "n": "Redwood Trust",
-    "e": "US"
-  },
-  {
-    "s": "RXDX",
-    "n": "Ignyta Inc",
-    "e": "US"
-  },
-  {
-    "s": "RXN",
-    "n": "Rexnord Corp",
-    "e": "US"
-  },
-  {
-    "s": "RYAM",
-    "n": "Rayonier Advanced Materials Inc",
-    "e": "US"
-  },
-  {
-    "s": "RYI",
-    "n": "Ryerson Holding Corp",
-    "e": "US"
-  },
-  {
-    "s": "SAAS",
-    "n": "Incontact",
-    "e": "US"
-  },
-  {
-    "s": "SAFM",
-    "n": "Sanderson Farms",
-    "e": "US"
-  },
-  {
-    "s": "SAFT",
-    "n": "Safety Insurance Group",
-    "e": "US"
-  },
-  {
-    "s": "SAGE",
-    "n": "Sage Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "SAH",
-    "n": "Sonic Automotive",
-    "e": "US"
-  },
-  {
-    "s": "SAIA",
-    "n": "Saia Inc",
-    "e": "US"
-  },
-  {
-    "s": "SAIC",
-    "n": "Science Applications Internatio",
-    "e": "US"
-  },
-  {
-    "s": "SALE",
-    "n": "Retailmenot Inc",
-    "e": "US"
-  },
-  {
-    "s": "SALT",
-    "n": "Scorpio Bulkers Inc. Common Sto",
-    "e": "US"
-  },
-  {
-    "s": "SAM",
-    "n": "Boston Beer Company",
-    "e": "US"
-  },
-  {
-    "s": "SANM",
-    "n": "Sanmina-Sci Corp",
-    "e": "US"
-  },
-  {
-    "s": "SASR",
-    "n": "Sandy Spring Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "SB",
-    "n": "Safe Bulkers Inc",
-    "e": "US"
-  },
-  {
-    "s": "SBCF",
-    "n": "Seacoast Banking Corporation of Florida",
-    "e": "US"
-  },
-  {
-    "s": "SBGI",
-    "n": "Sinclair Broadcast Group",
-    "e": "US"
-  },
-  {
-    "s": "SBRA",
-    "n": "Sabra Healthcare REIT Inc",
-    "e": "US"
-  },
-  {
-    "s": "SBSI",
-    "n": "Southside Bancshares",
-    "e": "US"
-  },
-  {
-    "s": "SBY",
-    "n": "Silver Bay Realty Trust Corp",
-    "e": "US"
-  },
-  {
-    "s": "SCAI",
-    "n": "Surgical Care Affiliates Inc",
-    "e": "US"
-  },
-  {
-    "s": "SCHL",
-    "n": "Scholastic Corp",
-    "e": "US"
-  },
-  {
-    "s": "SCHN",
-    "n": "Schnitzer Steel Industries",
-    "e": "US"
-  },
-  {
-    "s": "SCL",
-    "n": "Stepan Company",
-    "e": "US"
-  },
-  {
-    "s": "SCLN",
-    "n": "Sciclone Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "SCMP",
-    "n": "Sucampo Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "SCOR",
-    "n": "Comscore Inc",
-    "e": "US"
-  },
-  {
-    "s": "SCS",
-    "n": "Steelcase Inc",
-    "e": "US"
-  },
-  {
-    "s": "SCSC",
-    "n": "Scansource Inc",
-    "e": "US"
-  },
-  {
-    "s": "SCSS",
-    "n": "Select Comfort Corp",
-    "e": "US"
-  },
-  {
-    "s": "SCVL",
-    "n": "Shoe Carnival",
-    "e": "US"
-  },
-  {
-    "s": "SEAC",
-    "n": "Seachange International",
-    "e": "US"
-  },
-  {
-    "s": "SEAS",
-    "n": "Seaworld Entertainment Inc. Co",
-    "e": "US"
-  },
-  {
-    "s": "SEB",
-    "n": "Seaboard Corp",
-    "e": "US"
-  },
-  {
-    "s": "SEM",
-    "n": "Select Medical Holdings Corp",
-    "e": "US"
-  },
-  {
-    "s": "SEMG",
-    "n": "Semgroup Corp",
-    "e": "US"
-  },
-  {
-    "s": "SENEA",
-    "n": "Seneca Foods",
+    "s": "UNM",
+    "n": "Unum Group",
     "e": "US"
   },
   {
@@ -10096,1543 +4456,443 @@ const globalTickers = [
     "e": "US"
   },
   {
-    "s": "SFBS",
-    "n": "Servisfirst Bancshares Inc",
+    "s": "JEF",
+    "n": "Jefferies Financial Group Inc.",
     "e": "US"
   },
   {
-    "s": "SFE",
-    "n": "Safeguard Scientifics",
+    "s": "CHWY",
+    "n": "Chewy, Inc.",
     "e": "US"
   },
   {
-    "s": "SFL",
-    "n": "Ship Finance International",
+    "s": "RYAN",
+    "n": "Ryan Specialty Holdings, Inc.",
     "e": "US"
   },
   {
-    "s": "SFLY",
-    "n": "Shutterfly",
+    "s": "RGA",
+    "n": "Reinsurance Group Of America Inc",
     "e": "US"
   },
   {
-    "s": "SFNC",
-    "n": "Simmons First National Corp",
+    "s": "FMS",
+    "n": "Fresenius Medical Care Ag",
     "e": "US"
   },
   {
-    "s": "SFS",
-    "n": "Smart",
+    "s": "CELH",
+    "n": "Celsius Holdings, Inc.",
     "e": "US"
   },
   {
-    "s": "SFXE",
-    "n": "Sfx Entertainment Inc",
+    "s": "MLI",
+    "n": "Mueller Industries Inc",
     "e": "US"
   },
   {
-    "s": "SGA",
-    "n": "Saga Communications",
+    "s": "NPXYY",
+    "n": "Nippon Sanso Holdings Corporation/Adr",
     "e": "US"
   },
   {
-    "s": "SGBK",
-    "n": "Stonegate Bank [Fl]",
+    "s": "DT",
+    "n": "Dynatrace, Inc.",
     "e": "US"
   },
   {
-    "s": "SGC",
-    "n": "Superior Uniform Group",
+    "s": "AMH",
+    "n": "American Homes 4 Rent",
     "e": "US"
   },
   {
-    "s": "SGI",
-    "n": "Silicon Graphics International Corp",
+    "s": "BNT",
+    "n": "Brookfield Wealth Solutions Ltd.",
     "e": "US"
   },
   {
-    "s": "SGM",
-    "n": "Stonegate Mortgage Corp",
+    "s": "ACM",
+    "n": "Aecom",
     "e": "US"
   },
   {
-    "s": "SGMO",
-    "n": "Sangamo Biosciences",
+    "s": "AMKR",
+    "n": "Amkor Technology, Inc.",
     "e": "US"
   },
   {
-    "s": "SGMS",
-    "n": "Scientific Games Corp",
+    "s": "CLH",
+    "n": "Clean Harbors Inc",
     "e": "US"
   },
   {
-    "s": "SGNT",
-    "n": "Sagent Pharmaceuticals Inc",
+    "s": "TOL",
+    "n": "Toll Brothers, Inc.",
     "e": "US"
   },
   {
-    "s": "SGY",
-    "n": "Stone Energy Corp",
+    "s": "HMY",
+    "n": "Harmony Gold Mining Co Ltd",
     "e": "US"
   },
   {
-    "s": "SGYP",
-    "n": "Synergy Pharmaceuticals Inc",
+    "s": "ASND",
+    "n": "Ascendis Pharma A/S",
     "e": "US"
   },
   {
-    "s": "SHAK",
-    "n": "Shake Shack Inc",
+    "s": "BMNR",
+    "n": "Bitmine Immersion Technologies, Inc.",
     "e": "US"
   },
   {
-    "s": "SHEN",
-    "n": "Shenandoah Telecommunications Co",
+    "s": "RNR",
+    "n": "Renaissancere Holdings Ltd",
     "e": "US"
   },
   {
-    "s": "SHLM",
-    "n": "A. Schulman",
+    "s": "LAMR",
+    "n": "Lamar Advertising Co/New",
     "e": "US"
   },
   {
-    "s": "SHO",
-    "n": "Sunstone Hotel Investors",
+    "s": "HLI",
+    "n": "Houlihan Lokey, Inc.",
     "e": "US"
   },
   {
-    "s": "SHOO",
-    "n": "Steven Madden",
+    "s": "LYTHF",
+    "n": "Lytus Technologies Holdings Ptv. Ltd.",
     "e": "US"
   },
   {
-    "s": "SHOR",
-    "n": "Shoretel Inc",
+    "s": "WCC",
+    "n": "Wesco International Inc",
     "e": "US"
   },
   {
-    "s": "SIEN",
-    "n": "Sientra Inc",
+    "s": "MTSI",
+    "n": "Macom Technology Solutions Holdings, Inc.",
     "e": "US"
   },
   {
-    "s": "SIGI",
-    "n": "Selective Insurance Group",
+    "s": "MDGL",
+    "n": "Madrigal Pharmaceuticals, Inc.",
     "e": "US"
   },
   {
-    "s": "SIGM",
-    "n": "Sigma Designs",
+    "s": "PAA",
+    "n": "Plains All American Pipeline Lp",
     "e": "US"
   },
   {
-    "s": "SIR",
-    "n": "Select Income REIT Common Share",
+    "s": "GLPI",
+    "n": "Gaming & Leisure Properties, Inc.",
     "e": "US"
   },
   {
-    "s": "SIXD",
-    "n": "6D Global Technologies Inc",
+    "s": "CNA",
+    "n": "Cna Financial Corp",
     "e": "US"
   },
   {
-    "s": "SJI",
-    "n": "South Jersey Industries",
+    "s": "EMBJ",
+    "n": "Embraer S.A.",
     "e": "US"
   },
   {
-    "s": "SJW",
-    "n": "SJW Corp",
-    "e": "US"
-  },
-  {
-    "s": "SKUL",
-    "n": "Skullcandy Inc",
-    "e": "US"
-  },
-  {
-    "s": "SKYW",
-    "n": "Skywest Inc",
-    "e": "US"
-  },
-  {
-    "s": "SLAB",
-    "n": "Silicon Laboratories",
-    "e": "US"
-  },
-  {
-    "s": "SLCA",
-    "n": "U.S. Silica Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "SMP",
-    "n": "Standard Motor Products",
-    "e": "US"
-  },
-  {
-    "s": "SMRT",
-    "n": "Stein Mart Inc",
-    "e": "US"
-  },
-  {
-    "s": "SMTC",
-    "n": "Semtech Corp",
-    "e": "US"
-  },
-  {
-    "s": "SN",
-    "n": "Sanchez Energy Corp",
-    "e": "US"
-  },
-  {
-    "s": "SNAK",
-    "n": "Inventure Foods",
-    "e": "US"
-  },
-  {
-    "s": "SNBC",
-    "n": "Sun Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "SNC",
-    "n": "State National Companies Inc",
-    "e": "US"
-  },
-  {
-    "s": "SNCR",
-    "n": "Synchronoss Technologies",
-    "e": "US"
-  },
-  {
-    "s": "SNHY",
-    "n": "Sun Hydraulics Corp",
-    "e": "US"
-  },
-  {
-    "s": "SNMX",
-    "n": "Senomyx Inc",
-    "e": "US"
-  },
-  {
-    "s": "SNOW",
-    "n": "Intrawest Resorts Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "SNR",
-    "n": "New Senior Investment Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "SNTA",
-    "n": "Synta Pharmaceuticals",
+    "s": "FHN",
+    "n": "First Horizon Corp",
     "e": "US"
   },
   {
     "s": "SNX",
-    "n": "Synnex Corp",
+    "n": "Td Synnex Corp",
     "e": "US"
   },
   {
-    "s": "SONC",
-    "n": "Sonic Corp",
+    "s": "EXEL",
+    "n": "Exelixis, Inc.",
     "e": "US"
   },
   {
-    "s": "SONS",
-    "n": "Sonus Networks",
+    "s": "TEM",
+    "n": "Tempus Ai, Inc.",
     "e": "US"
   },
   {
-    "s": "SP",
-    "n": "SP Plus Corporation",
+    "s": "CACI",
+    "n": "Caci International Inc /De/",
     "e": "US"
   },
   {
-    "s": "SPA",
-    "n": "Sparton Corp",
+    "s": "PEN",
+    "n": "Penumbra Inc",
     "e": "US"
   },
   {
-    "s": "SPKE",
-    "n": "Spark Energy Inc",
+    "s": "CDE",
+    "n": "Coeur Mining, Inc.",
     "e": "US"
   },
   {
-    "s": "SPNC",
-    "n": "The Spectranetics Corp",
+    "s": "CNH",
+    "n": "Cnh Industrial N.V.",
     "e": "US"
   },
   {
-    "s": "SPNS",
-    "n": "Sapiens International Corporation N.V.",
+    "s": "FNMA",
+    "n": "Federal National Mortgage Association Fannie Mae",
     "e": "US"
   },
   {
-    "s": "SPOK",
-    "n": "Spok Holdings Inc",
+    "s": "MKSI",
+    "n": "Mks Inc",
     "e": "US"
   },
   {
-    "s": "SPPI",
-    "n": "Spectrum Pharmaceuticals",
+    "s": "DSEEY",
+    "n": "Daiwa Securities Group Inc.",
     "e": "US"
   },
   {
-    "s": "SPSC",
-    "n": "Sps Commerce",
+    "s": "GMED",
+    "n": "Globus Medical Inc",
     "e": "US"
   },
   {
-    "s": "SPTN",
-    "n": "Spartan Stores",
+    "s": "KRMN",
+    "n": "Karman Holdings Inc.",
     "e": "US"
   },
   {
-    "s": "SPWH",
-    "n": "Sportsman'S Warehouse Holdi",
+    "s": "ELS",
+    "n": "Equity Lifestyle Properties Inc",
     "e": "US"
   },
   {
-    "s": "SQBG",
-    "n": "Sequential Brands Group Inc",
+    "s": "DTM",
+    "n": "Dt Midstream, Inc.",
     "e": "US"
   },
   {
-    "s": "SQI",
-    "n": "Sciquest Inc",
-    "e": "US"
-  },
-  {
-    "s": "SQNM",
-    "n": "Sequenom Inc",
-    "e": "US"
-  },
-  {
-    "s": "SRCE",
-    "n": "1St Source Corp",
-    "e": "US"
-  },
-  {
-    "s": "SRDX",
-    "n": "Surmodics Inc",
-    "e": "US"
-  },
-  {
-    "s": "SREV",
-    "n": "Servicesource International In",
-    "e": "US"
-  },
-  {
-    "s": "SRI",
-    "n": "Stoneridge Inc",
-    "e": "US"
-  },
-  {
-    "s": "SRNE",
-    "n": "Sorrento Therapeutics",
-    "e": "US"
-  },
-  {
-    "s": "SRPT",
-    "n": "Sarepta Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "SSB",
-    "n": "South State Corporation",
-    "e": "US"
-  },
-  {
-    "s": "SSD",
-    "n": "Simpson Manufacturing Company",
-    "e": "US"
-  },
-  {
-    "s": "SSE",
-    "n": "Seventy Seven Energy Inc",
-    "e": "US"
-  },
-  {
-    "s": "SSI",
-    "n": "Stage Stores",
-    "e": "US"
-  },
-  {
-    "s": "SSNI",
-    "n": "Silver Spring Networks Inc. Co",
-    "e": "US"
-  },
-  {
-    "s": "SSP",
-    "n": "E.W. Scripps Company",
-    "e": "US"
-  },
-  {
-    "s": "SSS",
-    "n": "Sovran Self Storage",
-    "e": "US"
-  },
-  {
-    "s": "SSTK",
-    "n": "Shutterstock Inc",
-    "e": "US"
-  },
-  {
-    "s": "SSYS",
-    "n": "Stratasys Ltd",
-    "e": "US"
-  },
-  {
-    "s": "STAA",
-    "n": "Staar Surgical Company",
-    "e": "US"
-  },
-  {
-    "s": "STAG",
-    "n": "STI Inc",
-    "e": "US"
-  },
-  {
-    "s": "STAR",
-    "n": "Istar Financial Inc",
-    "e": "US"
-  },
-  {
-    "s": "STBA",
-    "n": "S&T Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "STBZ",
-    "n": "State Bank Finl Corp",
-    "e": "US"
-  },
-  {
-    "s": "STC",
-    "n": "Stewart Information Services Corp",
-    "e": "US"
-  },
-  {
-    "s": "STCK",
-    "n": "Stock Building Supply Holdings",
-    "e": "US"
-  },
-  {
-    "s": "STFC",
-    "n": "State Auto Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "STL",
-    "n": "Sterling Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "STML",
-    "n": "Stemline Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "STMP",
-    "n": "Stamps.Com Inc",
-    "e": "US"
-  },
-  {
-    "s": "STNG",
-    "n": "Scorpio Tankers Inc",
-    "e": "US"
-  },
-  {
-    "s": "STOR",
-    "n": "Store Capital Corpstore Capital",
-    "e": "US"
-  },
-  {
-    "s": "STRA",
-    "n": "Strayer Education",
-    "e": "US"
-  },
-  {
-    "s": "STRP",
-    "n": "Straight Path Communications In",
-    "e": "US"
-  },
-  {
-    "s": "STRT",
-    "n": "Strattec Security Corp",
-    "e": "US"
-  },
-  {
-    "s": "SUI",
-    "n": "Sun Communities",
-    "e": "US"
-  },
-  {
-    "s": "SUM",
-    "n": "Summit Materials Inc",
-    "e": "US"
-  },
-  {
-    "s": "SUP",
-    "n": "Superior Industries International",
-    "e": "US"
-  },
-  {
-    "s": "SUPN",
-    "n": "Supernus Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "SVU",
-    "n": "Supervalu Inc",
-    "e": "US"
-  },
-  {
-    "s": "SWC",
-    "n": "Stillwater Mining Company",
-    "e": "US"
-  },
-  {
-    "s": "SWFT",
-    "n": "Swift Transportation Company",
-    "e": "US"
-  },
-  {
-    "s": "SWHC",
-    "n": "Smith & Wesson Holding Corp",
-    "e": "US"
-  },
-  {
-    "s": "SWM",
-    "n": "Schweitzer-Mauduit International",
-    "e": "US"
-  },
-  {
-    "s": "SWX",
-    "n": "Southwest Gas Corp",
-    "e": "US"
-  },
-  {
-    "s": "SXC",
-    "n": "Suncoke Energy Inc",
-    "e": "US"
-  },
-  {
-    "s": "SXI",
-    "n": "Standex International Corp",
-    "e": "US"
-  },
-  {
-    "s": "SXT",
-    "n": "Sensient Technologies Corp",
-    "e": "US"
-  },
-  {
-    "s": "SYA",
-    "n": "Symetra Financial Corp",
-    "e": "US"
-  },
-  {
-    "s": "SYBT",
-    "n": "S.Y. Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "SYKE",
-    "n": "Sykes Enterprises Inc",
-    "e": "US"
-  },
-  {
-    "s": "SYNA",
-    "n": "Synaptics Inc",
-    "e": "US"
-  },
-  {
-    "s": "SYNT",
-    "n": "Syntel Inc",
-    "e": "US"
-  },
-  {
-    "s": "SYRG",
-    "n": "Synergy Resources Cp",
-    "e": "US"
-  },
-  {
-    "s": "SYUT",
-    "n": "Synutra International",
-    "e": "US"
-  },
-  {
-    "s": "SYX",
-    "n": "Systemax Inc",
-    "e": "US"
-  },
-  {
-    "s": "SZMK",
-    "n": "Sizmek Inc",
-    "e": "US"
-  },
-  {
-    "s": "SZYM",
-    "n": "Solazyme Inc",
-    "e": "US"
-  },
-  {
-    "s": "TAL",
-    "n": "Tal International Group",
-    "e": "US"
-  },
-  {
-    "s": "TASR",
-    "n": "Taser International",
-    "e": "US"
-  },
-  {
-    "s": "TAST",
-    "n": "Carrols Restaurant Group",
-    "e": "US"
-  },
-  {
-    "s": "TAT",
-    "n": "Transatlantic Petroleum Ltd",
-    "e": "US"
-  },
-  {
-    "s": "TAX",
-    "n": "Jth Holding Inc",
-    "e": "US"
-  },
-  {
-    "s": "TBBK",
-    "n": "The Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "TBI",
-    "n": "Trueblue Inc",
-    "e": "US"
-  },
-  {
-    "s": "TBK",
-    "n": "Triumph Bancorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "TBNK",
-    "n": "Territorial Bancorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "TBPH",
-    "n": "Theravance Biopharma Inc",
-    "e": "US"
-  },
-  {
-    "s": "TBRA",
-    "n": "Tobira Therapeutics Inc",
-    "e": "US"
-  },
-  {
-    "s": "TCBI",
-    "n": "Texas Capital Bancshares",
-    "e": "US"
-  },
-  {
-    "s": "TCBK",
-    "n": "Trico Bancshares",
-    "e": "US"
-  },
-  {
-    "s": "TCS",
-    "n": "The Container Store Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "TDW",
-    "n": "Tidewater Inc",
-    "e": "US"
-  },
-  {
-    "s": "TECD",
-    "n": "Tech Data Corp",
-    "e": "US"
-  },
-  {
-    "s": "TEN",
-    "n": "Tenneco Automotive",
-    "e": "US"
-  },
-  {
-    "s": "TESO",
-    "n": "Tesco Corp",
-    "e": "US"
-  },
-  {
-    "s": "TFM",
-    "n": "The Fresh Market",
-    "e": "US"
-  },
-  {
-    "s": "TG",
-    "n": "Tredegar Corp",
-    "e": "US"
-  },
-  {
-    "s": "TGH",
-    "n": "Textainer Group Holdings",
-    "e": "US"
-  },
-  {
-    "s": "TGTX",
-    "n": "Tg Therapeutics",
-    "e": "US"
-  },
-  {
-    "s": "THFF",
-    "n": "First Financial Corporation Indiana",
-    "e": "US"
-  },
-  {
-    "s": "THLD",
-    "n": "Threshold Pharmaceuticals",
-    "e": "US"
-  },
-  {
-    "s": "THR",
-    "n": "Thermon Group Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "THRM",
-    "n": "Gentherm Inc",
-    "e": "US"
-  },
-  {
-    "s": "THS",
-    "n": "Treehouse Foods",
-    "e": "US"
-  },
-  {
-    "s": "TILE",
-    "n": "Interface",
-    "e": "US"
-  },
-  {
-    "s": "TIME",
-    "n": "Time Inc. Common Stock When Iss",
-    "e": "US"
-  },
-  {
-    "s": "TIPT",
-    "n": "Tiptree Financial Inc",
-    "e": "US"
-  },
-  {
-    "s": "TIS",
-    "n": "Orchids Paper Products Company",
-    "e": "US"
-  },
-  {
-    "s": "TISI",
-    "n": "Team Inc",
-    "e": "US"
-  },
-  {
-    "s": "TITN",
-    "n": "Titan Machinery Inc",
-    "e": "US"
-  },
-  {
-    "s": "TIVO",
-    "n": "Tivo Inc",
-    "e": "US"
-  },
-  {
-    "s": "TKAI",
-    "n": "Tokai Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "TLMR",
-    "n": "Talmer Bancorp Inc",
-    "e": "US"
-  },
-  {
-    "s": "TLN",
-    "n": "Talen Energy Corporation",
-    "e": "US"
-  },
-  {
-    "s": "TLYS",
-    "n": "Tilly's Inc",
-    "e": "US"
-  },
-  {
-    "s": "TMH",
-    "n": "Team Health Holdings",
-    "e": "US"
-  },
-  {
-    "s": "TMHC",
-    "n": "Taylor Morrison Home Corporatio",
-    "e": "US"
-  },
-  {
-    "s": "TMP",
-    "n": "Tompkinstrustco",
-    "e": "US"
-  },
-  {
-    "s": "TMST",
-    "n": "Timken Steel Corporation Common",
-    "e": "US"
-  },
-  {
-    "s": "TNAV",
-    "n": "Telenav Inc",
-    "e": "US"
-  },
-  {
-    "s": "TNC",
-    "n": "Tennant Company",
-    "e": "US"
-  },
-  {
-    "s": "TNDM",
-    "n": "Tandem Diabetes Care Inc",
-    "e": "US"
-  },
-  {
-    "s": "TNET",
-    "n": "Trinet Group Inc",
-    "e": "US"
-  },
-  {
-    "s": "TNGO",
-    "n": "Tangoe Inc",
-    "e": "US"
-  },
-  {
-    "s": "TNK",
-    "n": "Teekay Tankers Ltd",
-    "e": "US"
-  },
-  {
-    "s": "TOWN",
-    "n": "Towne Bank",
-    "e": "US"
-  },
-  {
-    "s": "TOWR",
-    "n": "Tower International",
-    "e": "US"
-  },
-  {
-    "s": "TPC",
-    "n": "Tutor Perini Corp",
-    "e": "US"
-  },
-  {
-    "s": "TPH",
-    "n": "Tri Pointe Homes Inc. Common S",
-    "e": "US"
-  },
-  {
-    "s": "TPLM",
-    "n": "Triangle Petroleum Corp",
-    "e": "US"
-  },
-  {
-    "s": "TPRE",
-    "n": "Third Point Reinsurance Ltd. Co",
-    "e": "US"
-  },
-  {
-    "s": "TPUB",
-    "n": "Tribune Publishing Company Comm",
-    "e": "US"
-  },
-  {
-    "s": "TR",
-    "n": "Tootsie Roll Industries",
-    "e": "US"
-  },
-  {
-    "s": "TRC",
-    "n": "Tejon Ranch Company",
-    "e": "US"
-  },
-  {
-    "s": "TREC",
-    "n": "Trecora Resources",
-    "e": "US"
-  },
-  {
-    "s": "TREE",
-    "n": "Tree.Com",
-    "e": "US"
-  },
-  {
-    "s": "TREX",
-    "n": "Trex Company",
-    "e": "US"
-  },
-  {
-    "s": "TRK",
-    "n": "Speedway Motorsports",
-    "e": "US"
-  },
-  {
-    "s": "TRMK",
-    "n": "Trustmark Corp",
-    "e": "US"
-  },
-  {
-    "s": "TRNO",
-    "n": "Terreno Realty Corp",
-    "e": "US"
-  },
-  {
-    "s": "TROV",
-    "n": "Trovagene Inc",
-    "e": "US"
-  },
-  {
-    "s": "TROX",
-    "n": "Tronox Inc",
-    "e": "US"
-  },
-  {
-    "s": "TRR",
-    "n": "Trc Companies",
-    "e": "US"
-  },
-  {
-    "s": "TRS",
-    "n": "Trimas Corp",
-    "e": "US"
-  },
-  {
-    "s": "TRST",
-    "n": "Trustco Bank Corp NY",
-    "e": "US"
-  },
-  {
-    "s": "TRUE",
-    "n": "Truecar Inc",
-    "e": "US"
-  },
-  {
-    "s": "TRUP",
-    "n": "Trupanion Inc",
-    "e": "US"
-  },
-  {
-    "s": "TRVN",
-    "n": "Trevena Inc",
-    "e": "US"
-  },
-  {
-    "s": "TRXC",
-    "n": "Transenterix Inc",
-    "e": "US"
-  },
-  {
-    "s": "TSC",
-    "n": "Tristate Capital Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "TSE",
-    "n": "Trinseo S.A.",
-    "e": "US"
-  },
-  {
-    "s": "TSQ",
-    "n": "Townsquare Media Llc",
-    "e": "US"
-  },
-  {
-    "s": "TSRA",
-    "n": "Tessera Technologies",
-    "e": "US"
-  },
-  {
-    "s": "TSRO",
-    "n": "Tesaro Inc",
-    "e": "US"
-  },
-  {
-    "s": "TSYS",
-    "n": "Telecommunication Systems",
-    "e": "US"
-  },
-  {
-    "s": "TTEC",
-    "n": "Teletech Holdings",
-    "e": "US"
-  },
-  {
-    "s": "TTEK",
-    "n": "Tetra Tech",
-    "e": "US"
-  },
-  {
-    "s": "TTGT",
-    "n": "Techtarget",
-    "e": "US"
-  },
-  {
-    "s": "TTI",
-    "n": "Tetra Technologies",
-    "e": "US"
-  },
-  {
-    "s": "TTMI",
-    "n": "TTM Technologies",
-    "e": "US"
-  },
-  {
-    "s": "TTOO",
-    "n": "T2 Biosystems Inc",
-    "e": "US"
-  },
-  {
-    "s": "TTPH",
-    "n": "Tetraphase Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "TTS",
-    "n": "Tile Shop Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "TUBE",
-    "n": "Tubemogul Inc",
-    "e": "US"
-  },
-  {
-    "s": "TUES",
-    "n": "Tuesday Morning",
-    "e": "US"
-  },
-  {
-    "s": "TUMI",
-    "n": "Tumi Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "TVPT",
-    "n": "Travelport Worldwide Ltd",
-    "e": "US"
-  },
-  {
-    "s": "TWI",
-    "n": "Titan International",
-    "e": "US"
-  },
-  {
-    "s": "TWIN",
-    "n": "Twin Disc Inc",
-    "e": "US"
-  },
-  {
-    "s": "TWOU",
-    "n": "2U Inc",
-    "e": "US"
-  },
-  {
-    "s": "TXMD",
-    "n": "Therapeuticsmd Inc",
+    "s": "BSY",
+    "n": "Bentley Systems Inc",
     "e": "US"
   },
   {
     "s": "TXRH",
-    "n": "Texas Roadhouse",
+    "n": "Texas Roadhouse, Inc.",
     "e": "US"
   },
   {
-    "s": "TXTR",
-    "n": "Textura Corp",
+    "s": "JHX",
+    "n": "James Hardie Industries Plc",
     "e": "US"
   },
   {
-    "s": "TYPE",
-    "n": "Monotype Imaging Holdings Inc",
+    "s": "CRRFY",
+    "n": "Carrefour Sa",
     "e": "US"
   },
   {
-    "s": "TZOO",
-    "n": "Travelzoo Inc",
+    "s": "BF-A",
+    "n": "Brown Forman Corp",
     "e": "US"
   },
   {
-    "s": "UACL",
-    "n": "Universal Truckload Services",
+    "s": "AGNC",
+    "n": "Agnc Investment Corp.",
     "e": "US"
   },
   {
-    "s": "UAM",
-    "n": "Universal American Financial",
+    "s": "BLD",
+    "n": "Topbuild Corp",
     "e": "US"
   },
   {
-    "s": "UBA",
-    "n": "Urstadt Biddle Properties Inc",
+    "s": "KLAR",
+    "n": "Klarna Group Plc",
     "e": "US"
   },
   {
-    "s": "UBNK",
-    "n": "United Financial Bancorp Inc",
+    "s": "BMRN",
+    "n": "Biomarin Pharmaceutical Inc",
     "e": "US"
   },
   {
-    "s": "UBNT",
-    "n": "Ubiquiti Networks Inc",
+    "s": "CART",
+    "n": "Maplebear Inc.",
     "e": "US"
   },
   {
-    "s": "UBSH",
-    "n": "Union First Market Bankshares Corp",
+    "s": "CCK",
+    "n": "Crown Holdings, Inc.",
     "e": "US"
   },
   {
-    "s": "UBSI",
-    "n": "United Bankshares",
+    "s": "FIGR",
+    "n": "Figure Technology Solutions, Inc.",
     "e": "US"
   },
   {
-    "s": "UCBI",
-    "n": "United Community Banks",
+    "s": "VNOM",
+    "n": "Viper Energy, Inc.",
     "e": "US"
   },
   {
-    "s": "UCFC",
-    "n": "United Community Financial",
+    "s": "CMA",
+    "n": "Comerica Inc",
     "e": "US"
   },
   {
-    "s": "UCTT",
-    "n": "Ultra Clean Holdings",
+    "s": "BJ",
+    "n": "Bj'S Wholesale Club Holdings, Inc.",
     "e": "US"
   },
   {
-    "s": "UDF",
-    "n": "United Development Funding IV",
+    "s": "PCOR",
+    "n": "Procore Technologies, Inc.",
     "e": "US"
   },
   {
-    "s": "UE",
-    "n": "Urban Edge Properties Common Sh",
+    "s": "NYT",
+    "n": "New York Times Co",
     "e": "US"
   },
   {
-    "s": "UEC",
-    "n": "Uranium Energy",
+    "s": "SUZ",
+    "n": "Suzano S.A.",
     "e": "US"
   },
   {
-    "s": "UEIC",
-    "n": "Universal Electronics Inc",
+    "s": "CKHGF",
+    "n": "Capitec Bank Holdings Ltd / Adr",
     "e": "US"
   },
   {
-    "s": "UFCS",
-    "n": "United Fire Group Inc",
+    "s": "AEG",
+    "n": "Aegon Ltd.",
     "e": "US"
   },
   {
-    "s": "UFI",
-    "n": "Unifi Inc",
+    "s": "GIL",
+    "n": "Gildan Activewear Inc.",
     "e": "US"
   },
   {
-    "s": "UFPI",
-    "n": "Universal Forest Products",
+    "s": "WMS",
+    "n": "Advanced Drainage Systems, Inc.",
     "e": "US"
   },
   {
-    "s": "UHT",
-    "n": "Universal Health Realty Income Trust",
+    "s": "SBSW",
+    "n": "Sibanye Stillwater Ltd",
     "e": "US"
   },
   {
-    "s": "UIHC",
-    "n": "United Insurance Hld",
+    "s": "RDY",
+    "n": "Dr Reddys Laboratories Ltd",
     "e": "US"
   },
   {
-    "s": "UIS",
-    "n": "Unisys Corp",
+    "s": "LSCC",
+    "n": "Lattice Semiconductor Corp",
     "e": "US"
   },
   {
-    "s": "ULTR",
-    "n": "Ultrapetrol [Bahamas] Ltd",
+    "s": "EQX",
+    "n": "Equinox Gold Corp.",
     "e": "US"
   },
   {
-    "s": "UMBF",
-    "n": "UMB Financial Corp",
+    "s": "ELAN",
+    "n": "Elanco Animal Health Inc",
     "e": "US"
   },
   {
-    "s": "UMH",
-    "n": "Umh Properties",
+    "s": "AYI",
+    "n": "Acuity Inc. (De)",
     "e": "US"
   },
   {
-    "s": "UMPQ",
-    "n": "Umpqua Holdings Corp",
+    "s": "UUGRY",
+    "n": "United Utilities Group Plc",
     "e": "US"
   },
   {
-    "s": "UNF",
-    "n": "Unifirst Corp",
+    "s": "SAIL",
+    "n": "Sailpoint, Inc.",
     "e": "US"
   },
   {
-    "s": "UNFI",
-    "n": "United Natural Foods",
+    "s": "NVMI",
+    "n": "Nova Ltd.",
     "e": "US"
   },
   {
-    "s": "UNIS",
-    "n": "Unilife Corp",
+    "s": "STN",
+    "n": "Stantec Inc",
     "e": "US"
   },
   {
-    "s": "UNT",
-    "n": "Unit Corp",
+    "s": "YMM",
+    "n": "Full Truck Alliance Co. Ltd.",
     "e": "US"
   },
   {
-    "s": "UNTD",
-    "n": "United Online",
+    "s": "CR",
+    "n": "Crane Co",
     "e": "US"
   },
   {
-    "s": "UPL",
-    "n": "Ultra Petroleum",
+    "s": "BAH",
+    "n": "Booz Allen Hamilton Holding Corp",
     "e": "US"
   },
   {
-    "s": "USAK",
-    "n": "USA Truck",
+    "s": "SCI",
+    "n": "Service Corp International",
     "e": "US"
   },
   {
-    "s": "USCR",
-    "n": "US Concrete",
+    "s": "AFG",
+    "n": "American Financial Group Inc",
     "e": "US"
   },
   {
-    "s": "USLM",
-    "n": "United States Lime & Minerals",
+    "s": "MP",
+    "n": "Mp Materials Corp. / De",
     "e": "US"
   },
   {
-    "s": "USNA",
-    "n": "Usana Health Sciences Inc",
+    "s": "FIVE",
+    "n": "Five Below, Inc",
     "e": "US"
   },
   {
-    "s": "USPH",
-    "n": "U.S. Physical Therapy",
+    "s": "BILI",
+    "n": "Bilibili Inc.",
     "e": "US"
   },
   {
-    "s": "UTEK",
-    "n": "Ultratech Inc",
+    "s": "RNA",
+    "n": "Avidity Biosciences, Inc.",
     "e": "US"
   },
   {
-    "s": "UTI",
-    "n": "Universal Technical Institute Inc",
+    "s": "SEIC",
+    "n": "Sei Investments Co",
     "e": "US"
   },
   {
-    "s": "UTIW",
-    "n": "Uti Worldwide Inc",
+    "s": "QBTS",
+    "n": "D-Wave Quantum Inc.",
     "e": "US"
   },
   {
-    "s": "UTL",
-    "n": "Unitil Corp",
-    "e": "US"
-  },
-  {
-    "s": "UTMD",
-    "n": "Utah Medical Products",
-    "e": "US"
-  },
-  {
-    "s": "UUUU",
-    "n": "Energy Fuels Inc",
-    "e": "US"
-  },
-  {
-    "s": "UVE",
-    "n": "Universal Insurance Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "UVSP",
-    "n": "Univest Corporation of Pennsylvania",
-    "e": "US"
-  },
-  {
-    "s": "UVV",
-    "n": "Universal Corp",
-    "e": "US"
-  },
-  {
-    "s": "VA",
-    "n": "Virgin America Inc",
-    "e": "US"
-  },
-  {
-    "s": "VAC",
-    "n": "Marriot Vacations Worldwide Cor",
-    "e": "US"
-  },
-  {
-    "s": "VASC",
-    "n": "Vascular Solutions",
-    "e": "US"
-  },
-  {
-    "s": "VCRA",
-    "n": "Vocera Communications Inc",
-    "e": "US"
-  },
-  {
-    "s": "VCYT",
-    "n": "Veracyte Inc",
-    "e": "US"
-  },
-  {
-    "s": "VDSI",
-    "n": "Vasco Data Security International",
-    "e": "US"
-  },
-  {
-    "s": "VEC",
-    "n": "Vectrus Inc. Common Stock",
-    "e": "US"
-  },
-  {
-    "s": "VECO",
-    "n": "Veeco Instruments Inc",
-    "e": "US"
-  },
-  {
-    "s": "VG",
-    "n": "Vonage Holdings",
-    "e": "US"
-  },
-  {
-    "s": "VGR",
-    "n": "Vector Group Ltd",
-    "e": "US"
-  },
-  {
-    "s": "VHC",
-    "n": "Virnetx Holding Corp",
-    "e": "US"
-  },
-  {
-    "s": "VHI",
-    "n": "Valhi Inc",
-    "e": "US"
-  },
-  {
-    "s": "VICR",
-    "n": "Vicor Corp",
-    "e": "US"
-  },
-  {
-    "s": "VIRT",
-    "n": "Virtu Financial Inc",
-    "e": "US"
-  },
-  {
-    "s": "VISI",
-    "n": "Vision Company As",
-    "e": "US"
-  },
-  {
-    "s": "VIVO",
-    "n": "Meridian Bioscience Inc",
-    "e": "US"
-  },
-  {
-    "s": "VLGEA",
-    "n": "Village Super Market",
-    "e": "US"
-  },
-  {
-    "s": "VLY",
-    "n": "Valley National Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "VMEM",
-    "n": "Violin Memory Inc",
-    "e": "US"
-  },
-  {
-    "s": "VNCE",
-    "n": "Vince Holding Corp. Common Stoc",
-    "e": "US"
-  },
-  {
-    "s": "VNDA",
-    "n": "Vanda Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "VOXX",
-    "n": "Audiovox Corp",
-    "e": "US"
-  },
-  {
-    "s": "VPG",
-    "n": "Vishay Precision Group",
-    "e": "US"
-  },
-  {
-    "s": "VRA",
-    "n": "Vera Bradley",
-    "e": "US"
-  },
-  {
-    "s": "VRNS",
-    "n": "Varonis Systems Inc",
-    "e": "US"
-  },
-  {
-    "s": "VRNT",
-    "n": "Verint Systems Inc",
-    "e": "US"
-  },
-  {
-    "s": "VRTS",
-    "n": "Virtus Investment Partners",
-    "e": "US"
-  },
-  {
-    "s": "VRTU",
-    "n": "Virtusa Corp",
-    "e": "US"
-  },
-  {
-    "s": "VRTV",
-    "n": "Veritiv Corporation Common Stoc",
-    "e": "US"
-  },
-  {
-    "s": "VSAR",
-    "n": "Versartis Inc",
-    "e": "US"
-  },
-  {
-    "s": "VSAT",
-    "n": "Viasat Inc",
-    "e": "US"
-  },
-  {
-    "s": "VSEC",
-    "n": "VSE Corp",
-    "e": "US"
-  },
-  {
-    "s": "VSH",
-    "n": "Vishay Intertechnology",
-    "e": "US"
-  },
-  {
-    "s": "VSI",
-    "n": "Vitamin Shoppe Inc",
-    "e": "US"
-  },
-  {
-    "s": "VSLR",
-    "n": "Vivint Solar Inc",
-    "e": "US"
-  },
-  {
-    "s": "VSTM",
-    "n": "Verastem Inc",
-    "e": "US"
-  },
-  {
-    "s": "VTAE",
-    "n": "Vitae Pharmaceuticals Inc",
-    "e": "US"
-  },
-  {
-    "s": "VTL",
-    "n": "Vital Therapies Inc",
-    "e": "US"
-  },
-  {
-    "s": "VVI",
-    "n": "Viad Corp",
-    "e": "US"
-  },
-  {
-    "s": "VVUS",
-    "n": "Vivus Inc",
-    "e": "US"
-  },
-  {
-    "s": "W",
-    "n": "Wayfair Inc",
-    "e": "US"
-  },
-  {
-    "s": "WABC",
-    "n": "Westamerica Bancorporation",
-    "e": "US"
-  },
-  {
-    "s": "WAC",
-    "n": "Walter Investment Management Corp",
-    "e": "US"
-  },
-  {
-    "s": "WAFD",
-    "n": "Washington Federal",
-    "e": "US"
-  },
-  {
-    "s": "WAGE",
-    "n": "Wageworks Inc",
-    "e": "US"
-  },
-  {
-    "s": "WAIR",
-    "n": "Wesco Aircraft Holdings Inc",
-    "e": "US"
-  },
-  {
-    "s": "WAL",
-    "n": "Western Alliance Bancorporation",
-    "e": "US"
-  },
-  {
-    "s": "WASH",
-    "n": "Washington Trust Bancorp",
-    "e": "US"
-  },
-  {
-    "s": "WBMD",
-    "n": "Webmd Health Corp",
+    "s": "WTRG",
+    "n": "Essential Utilities, Inc.",
     "e": "US"
   },
   {
@@ -11641,183 +4901,208 @@ const globalTickers = [
     "e": "US"
   },
   {
-    "s": "WCG",
-    "n": "Wellcare Group",
+    "s": "EHC",
+    "n": "Encompass Health Corp",
     "e": "US"
   },
   {
-    "s": "WCIC",
-    "n": "Wci Communities Inc",
+    "s": "PAG",
+    "n": "Penske Automotive Group, Inc.",
     "e": "US"
   },
   {
-    "s": "WD",
-    "n": "Walker & Dunlop",
+    "s": "CFLT",
+    "n": "Confluent, Inc.",
     "e": "US"
   },
   {
-    "s": "WDFC",
-    "n": "Wd-40 Company",
+    "s": "DY",
+    "n": "Dycom Industries Inc",
     "e": "US"
   },
   {
-    "s": "WERN",
-    "n": "Werner Enterprises",
+    "s": "ORI",
+    "n": "Old Republic International Corp",
     "e": "US"
   },
   {
-    "s": "WETF",
-    "n": "Wisdomtree Invstmnts",
+    "s": "DCI",
+    "n": "Donaldson Co Inc",
     "e": "US"
   },
   {
-    "s": "WEYS",
-    "n": "Weyco Group",
+    "s": "AAL",
+    "n": "American Airlines Group Inc.",
     "e": "US"
   },
   {
-    "s": "WGL",
-    "n": "WGL Holdings Inc",
+    "s": "CNM",
+    "n": "Core & Main, Inc.",
     "e": "US"
   },
   {
-    "s": "WGO",
-    "n": "Winnebago Industries",
+    "s": "MANH",
+    "n": "Manhattan Associates Inc",
     "e": "US"
   },
   {
-    "s": "WHG",
-    "n": "Westwood Holdings Group Inc",
+    "s": "BROS",
+    "n": "Dutch Bros Inc.",
     "e": "US"
   },
   {
-    "s": "WIBC",
-    "n": "Wilshire Bancorp",
+    "s": "PEGA",
+    "n": "Pegasystems Inc",
     "e": "US"
   },
   {
-    "s": "WIFI",
-    "n": "Boingo Wireless Inc",
+    "s": "SPXC",
+    "n": "Spx Technologies, Inc.",
     "e": "US"
   },
   {
-    "s": "WIN",
-    "n": "Windstream Holdings Inc",
+    "s": "ENSG",
+    "n": "Ensign Group, Inc",
     "e": "US"
   },
   {
-    "s": "WINA",
-    "n": "Winmark Corp",
+    "s": "GLXY",
+    "n": "Galaxy Digital Inc.",
     "e": "US"
   },
   {
-    "s": "WIRE",
-    "n": "Encore Wire Corp",
+    "s": "JAZZ",
+    "n": "Jazz Pharmaceuticals Plc",
     "e": "US"
   },
   {
-    "s": "WIX",
-    "n": "Wix.Com Ltd",
+    "s": "BWA",
+    "n": "Borgwarner Inc",
     "e": "US"
   },
   {
-    "s": "WK",
-    "n": "Workiva Llc",
+    "s": "QGEN",
+    "n": "Qiagen N.V.",
     "e": "US"
   },
   {
-    "s": "WLB",
-    "n": "Westmoreland Coal Company",
+    "s": "CAE",
+    "n": "Cae Inc",
     "e": "US"
   },
   {
-    "s": "WLH",
-    "n": "William Lyon Homes",
+    "s": "CHYM",
+    "n": "Chime Financial, Inc.",
     "e": "US"
   },
   {
-    "s": "WMAR",
-    "n": "West Marine",
+    "s": "DDS",
+    "n": "Dillard'S, Inc.",
     "e": "US"
   },
   {
-    "s": "WMC",
-    "n": "Western Asset Mortgage Capital",
+    "s": "SARO",
+    "n": "Standardaero, Inc.",
     "e": "US"
   },
   {
-    "s": "WMGI",
-    "n": "Wright Medical Group N.V.",
+    "s": "AR",
+    "n": "Antero Resources Corp",
     "e": "US"
   },
   {
-    "s": "WMK",
-    "n": "Weis Markets",
+    "s": "SUN",
+    "n": "Sunoco Lp",
     "e": "US"
   },
   {
-    "s": "WMS",
-    "n": "Advanced Drainage Systems Inc",
+    "s": "YARIY",
+    "n": "Yara International Asa",
     "e": "US"
   },
   {
-    "s": "WNC",
-    "n": "Wabash National Corp",
+    "s": "UHAL",
+    "n": "U-Haul Holding Co /Nv/",
     "e": "US"
   },
   {
-    "s": "WNR",
-    "n": "Western Refining",
+    "s": "IAG",
+    "n": "Iamgold Corp",
     "e": "US"
   },
   {
-    "s": "WOR",
-    "n": "Worthington Industries",
+    "s": "ARMK",
+    "n": "Aramark",
     "e": "US"
   },
   {
-    "s": "WPP",
-    "n": "Wausau-Mosinee Paper Corp",
+    "s": "PR",
+    "n": "Permian Resources Corp",
     "e": "US"
   },
   {
-    "s": "WRE",
-    "n": "Washington Real Estate Investment",
+    "s": "RRX",
+    "n": "Regal Rexnord Corp",
     "e": "US"
   },
   {
-    "s": "WRLD",
-    "n": "World Acceptance Corp",
+    "s": "MBLY",
+    "n": "Mobileye Global Inc.",
     "e": "US"
   },
   {
-    "s": "WSBC",
-    "n": "Wesbanco Inc",
+    "s": "ASR",
+    "n": "Southeast Airport Group",
     "e": "US"
   },
   {
-    "s": "WSBF",
-    "n": "Waterstone Financial",
+    "s": "ABVX",
+    "n": "Abivax S.A.",
     "e": "US"
   },
   {
-    "s": "WSFS",
-    "n": "WSFS Financial Corp",
+    "s": "TTAN",
+    "n": "Servicetitan, Inc.",
     "e": "US"
   },
   {
-    "s": "WSR",
-    "n": "Whitestone REIT",
+    "s": "DRS",
+    "n": "Leonardo Drs, Inc.",
     "e": "US"
   },
   {
-    "s": "WSTC",
-    "n": "West Corp",
+    "s": "GAP",
+    "n": "Gap Inc",
     "e": "US"
   },
   {
-    "s": "WTBA",
-    "n": "West Bancorporation",
+    "s": "SPIIY",
+    "n": "Spie Sa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "RMBS",
+    "n": "Rambus Inc",
+    "e": "US"
+  },
+  {
+    "s": "AIT",
+    "n": "Applied Industrial Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "NCLTY",
+    "n": "Nitori Holdings Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "COKE",
+    "n": "Coca-Cola Consolidated, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EGP",
+    "n": "Eastgroup Properties Inc",
     "e": "US"
   },
   {
@@ -11826,58 +5111,8263 @@ const globalTickers = [
     "e": "US"
   },
   {
-    "s": "WTI",
-    "n": "W&T Offshore",
+    "s": "SSB",
+    "n": "Southstate Bank Corp",
+    "e": "US"
+  },
+  {
+    "s": "JCYGY",
+    "n": "Jardine Cycle & Carriage Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BPYPP",
+    "n": "Brookfield Property Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "WAL",
+    "n": "Western Alliance Bancorporation",
+    "e": "US"
+  },
+  {
+    "s": "TIMB",
+    "n": "Tim S.A.",
+    "e": "US"
+  },
+  {
+    "s": "SHMXY",
+    "n": "Shimadzu Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "REXR",
+    "n": "Rexford Industrial Realty, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SOTGY",
+    "n": "Sunny Optical Technology (Group) Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SNROY",
+    "n": "Sanrio Company, Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "STRL",
+    "n": "Sterling Infrastructure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FYBR",
+    "n": "Frontier Communications Parent, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LKNCY",
+    "n": "Luckin Coffee Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WLK",
+    "n": "Westlake Corp",
+    "e": "US"
+  },
+  {
+    "s": "PATH",
+    "n": "Uipath, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GME",
+    "n": "Gamestop Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SAIA",
+    "n": "Saia Inc",
+    "e": "US"
+  },
+  {
+    "s": "RGEN",
+    "n": "Repligen Corp",
+    "e": "US"
+  },
+  {
+    "s": "EDU",
+    "n": "New Oriental Education & Technology Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALV",
+    "n": "Autoliv Inc",
+    "e": "US"
+  },
+  {
+    "s": "MICC",
+    "n": "Magnum Ice Cream Co N.V.",
+    "e": "US"
+  },
+  {
+    "s": "FLS",
+    "n": "Flowserve Corp",
+    "e": "US"
+  },
+  {
+    "s": "CEF",
+    "n": "Sprott Physical Gold & Silver Trust",
     "e": "US"
   },
   {
     "s": "WTS",
-    "n": "Watts Water Technologies",
+    "n": "Watts Water Technologies Inc",
     "e": "US"
   },
   {
-    "s": "WWD",
-    "n": "Woodward Inc",
+    "s": "OVV",
+    "n": "Ovintiv Inc.",
     "e": "US"
   },
   {
-    "s": "WWE",
-    "n": "World Wrestling Entertainment",
+    "s": "OC",
+    "n": "Owens Corning",
     "e": "US"
   },
   {
-    "s": "WWW",
-    "n": "Wolverine World Wide",
+    "s": "BZ",
+    "n": "Kanzhun Ltd",
     "e": "US"
   },
   {
-    "s": "XBIT",
-    "n": "Xbiotech Inc",
+    "s": "GTLS",
+    "n": "Chart Industries Inc",
     "e": "US"
   },
   {
-    "s": "XCO",
-    "n": "Exco Resources NL",
+    "s": "KNSL",
+    "n": "Kinsale Capital Group, Inc.",
     "e": "US"
   },
   {
-    "s": "XCRA",
-    "n": "Xcerra Corp",
+    "s": "KT",
+    "n": "Kt Corp",
     "e": "US"
   },
   {
-    "s": "XENT",
-    "n": "Intersect Ent Inc",
+    "s": "ONTO",
+    "n": "Onto Innovation Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UMBF",
+    "n": "Umb Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "GWKSY",
+    "n": "Games Workshop Group Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "ARWR",
+    "n": "Arrowhead Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DOX",
+    "n": "Amdocs Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OSK",
+    "n": "Oshkosh Corp",
+    "e": "US"
+  },
+  {
+    "s": "PSO",
+    "n": "Pearson Plc",
+    "e": "US"
+  },
+  {
+    "s": "MORN",
+    "n": "Morningstar, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DINO",
+    "n": "Hf Sinclair Corp",
+    "e": "US"
+  },
+  {
+    "s": "ACI",
+    "n": "Albertsons Companies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ONB",
+    "n": "Old National Bancorp /In/",
+    "e": "US"
+  },
+  {
+    "s": "KVYO",
+    "n": "Klaviyo, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KNX",
+    "n": "Knight-Swift Transportation Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SITM",
+    "n": "Sitime Corp",
+    "e": "US"
+  },
+  {
+    "s": "TFII",
+    "n": "Tfi International Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AUR",
+    "n": "Aurora Innovation, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZION",
+    "n": "Zions Bancorporation, National Association /Ut/",
+    "e": "US"
+  },
+  {
+    "s": "TTEK",
+    "n": "Tetra Tech Inc",
+    "e": "US"
+  },
+  {
+    "s": "BZLFY",
+    "n": "Bunzl Plc",
+    "e": "US"
+  },
+  {
+    "s": "HALO",
+    "n": "Halozyme Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PPC",
+    "n": "Pilgrims Pride Corp",
+    "e": "US"
+  },
+  {
+    "s": "AG",
+    "n": "First Majestic Silver Corp",
+    "e": "US"
+  },
+  {
+    "s": "AHR",
+    "n": "American Healthcare Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VIPS",
+    "n": "Vipshop Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PLNT",
+    "n": "Planet Fitness, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LINE",
+    "n": "Lineage, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DOCS",
+    "n": "Doximity, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BIO",
+    "n": "Bio-Rad Laboratories, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMG",
+    "n": "Affiliated Managers Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XP",
+    "n": "Xp Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BPOP",
+    "n": "Popular, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GGAL",
+    "n": "Grupo Financiero Galicia Sa",
+    "e": "US"
+  },
+  {
+    "s": "OGE",
+    "n": "Oge Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MOG-A",
+    "n": "Moog Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CFR",
+    "n": "Cullen/Frost Bankers, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "COLB",
+    "n": "Columbia Banking System, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AXSM",
+    "n": "Axsome Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STEP",
+    "n": "Stepstone Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TIGO",
+    "n": "Millicom International Cellular Sa",
+    "e": "US"
+  },
+  {
+    "s": "SFD",
+    "n": "Smithfield Foods Inc",
+    "e": "US"
+  },
+  {
+    "s": "MINBY",
+    "n": "Minebea Mitsumi Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SANM",
+    "n": "Sanmina Corp",
+    "e": "US"
+  },
+  {
+    "s": "LNC",
+    "n": "Lincoln National Corp",
+    "e": "US"
+  },
+  {
+    "s": "HQY",
+    "n": "Healthequity, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCTY",
+    "n": "Paylocity Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "AEIS",
+    "n": "Advanced Energy Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "LEVI",
+    "n": "Levi Strauss & Co",
+    "e": "US"
+  },
+  {
+    "s": "PRI",
+    "n": "Primerica, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HBM",
+    "n": "Hudbay Minerals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CADE",
+    "n": "Cadence Bank",
+    "e": "US"
+  },
+  {
+    "s": "OMF",
+    "n": "Onemain Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CUBE",
+    "n": "Cubesmart",
+    "e": "US"
+  },
+  {
+    "s": "ALSN",
+    "n": "Allison Transmission Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "RGTI",
+    "n": "Rigetti Computing, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTRE",
+    "n": "Caretrust Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VMI",
+    "n": "Valmont Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "APLD",
+    "n": "Applied Digital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "G",
+    "n": "Genpact Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RRC",
+    "n": "Range Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "SOLS",
+    "n": "Solstice Advanced Materials Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AM",
+    "n": "Antero Midstream Corp",
+    "e": "US"
+  },
+  {
+    "s": "AVTR",
+    "n": "Avantor, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JBTM",
+    "n": "Jbt Marel Corp",
+    "e": "US"
+  },
+  {
+    "s": "OTEX",
+    "n": "Open Text Corp",
+    "e": "US"
+  },
+  {
+    "s": "MUSA",
+    "n": "Murphy Usa Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AWI",
+    "n": "Armstrong World Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "ESTC",
+    "n": "Elastic N.V.",
+    "e": "US"
+  },
+  {
+    "s": "TTC",
+    "n": "Toro Co",
+    "e": "US"
+  },
+  {
+    "s": "DUOL",
+    "n": "Duolingo, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMC",
+    "n": "Commercial Metals Co",
+    "e": "US"
+  },
+  {
+    "s": "HLNE",
+    "n": "Hamilton Lane Inc",
+    "e": "US"
+  },
+  {
+    "s": "APPF",
+    "n": "Appfolio Inc",
+    "e": "US"
+  },
+  {
+    "s": "FRHC",
+    "n": "Freedom Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LUMN",
+    "n": "Lumen Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CAI",
+    "n": "Caris Life Sciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADC",
+    "n": "Agree Realty Corp",
+    "e": "US"
+  },
+  {
+    "s": "AXS",
+    "n": "Axis Capital Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HIMS",
+    "n": "Hims & Hers Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "USO",
+    "n": "United States Oil Fund, Lp",
+    "e": "US"
+  },
+  {
+    "s": "BRKR",
+    "n": "Bruker Corp",
+    "e": "US"
+  },
+  {
+    "s": "LKQ",
+    "n": "Lkq Corp",
+    "e": "US"
+  },
+  {
+    "s": "AGCO",
+    "n": "Agco Corp /De",
+    "e": "US"
+  },
+  {
+    "s": "JXN",
+    "n": "Jackson Financial Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VFS",
+    "n": "Vinfast Auto Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CBSH",
+    "n": "Commerce Bancshares Inc /Mo/",
+    "e": "US"
+  },
+  {
+    "s": "CYTK",
+    "n": "Cytokinetics Inc",
+    "e": "US"
+  },
+  {
+    "s": "VARRY",
+    "n": "Var Energi Asa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TX",
+    "n": "Ternium S.A.",
+    "e": "US"
+  },
+  {
+    "s": "LYFT",
+    "n": "Lyft, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IDCC",
+    "n": "Interdigital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FR",
+    "n": "First Industrial Realty Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "ATR",
+    "n": "Aptargroup, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LAD",
+    "n": "Lithia Motors Inc",
+    "e": "US"
+  },
+  {
+    "s": "BRX",
+    "n": "Brixmor Property Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MMYT",
+    "n": "Makemytrip Ltd",
+    "e": "US"
+  },
+  {
+    "s": "UGI",
+    "n": "Ugi Corp /Pa/",
+    "e": "US"
+  },
+  {
+    "s": "SKM",
+    "n": "Sk Telecom Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CAVA",
+    "n": "Cava Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GGB",
+    "n": "Gerdau S.A.",
+    "e": "US"
+  },
+  {
+    "s": "GRFS",
+    "n": "Grifols Sa",
+    "e": "US"
+  },
+  {
+    "s": "AN",
+    "n": "Autonation, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MIDD",
+    "n": "Middleby Corp",
+    "e": "US"
+  },
+  {
+    "s": "BVN",
+    "n": "Buenaventura Mining Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "BOKF",
+    "n": "Bok Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "NUVL",
+    "n": "Nuvalent, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IESC",
+    "n": "Ies Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZWS",
+    "n": "Zurn Elkay Water Solutions Corp",
+    "e": "US"
+  },
+  {
+    "s": "PNDRY",
+    "n": "Pandora A/S / Adr",
+    "e": "US"
+  },
+  {
+    "s": "MNDY",
+    "n": "Monday.Com Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GSAT",
+    "n": "Globalstar, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BIRK",
+    "n": "Birkenstock Holding Plc",
+    "e": "US"
+  },
+  {
+    "s": "NNN",
+    "n": "Nnn Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EGO",
+    "n": "Eldorado Gold Corp /Fi",
+    "e": "US"
+  },
+  {
+    "s": "R",
+    "n": "Ryder System Inc",
+    "e": "US"
+  },
+  {
+    "s": "CHDN",
+    "n": "Churchill Downs Inc",
+    "e": "US"
+  },
+  {
+    "s": "SFGYY",
+    "n": "Sony Financial Group Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "EMN",
+    "n": "Eastman Chemical Co",
+    "e": "US"
+  },
+  {
+    "s": "KAIKY",
+    "n": "Kawasaki Kisen Kaisha Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AMTM",
+    "n": "Amentum Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PDI",
+    "n": "Pimco Dynamic Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "QRVO",
+    "n": "Qorvo, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VFC",
+    "n": "V F Corp",
+    "e": "US"
+  },
+  {
+    "s": "NFG",
+    "n": "National Fuel Gas Co",
+    "e": "US"
+  },
+  {
+    "s": "UWMC",
+    "n": "Uwm Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "VOYA",
+    "n": "Voya Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FROG",
+    "n": "Jfrog Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NGD",
+    "n": "New Gold Inc. /Fi",
+    "e": "US"
+  },
+  {
+    "s": "LLYVA",
+    "n": "Liberty Live Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PONY",
+    "n": "Pony Ai Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JHG",
+    "n": "Janus Henderson Group Plc",
+    "e": "US"
+  },
+  {
+    "s": "CIGI",
+    "n": "Colliers International Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BTDPY",
+    "n": "Barratt Developments Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DSGX",
+    "n": "Descartes Systems Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "MASI",
+    "n": "Masimo Corp",
+    "e": "US"
+  },
+  {
+    "s": "GDS",
+    "n": "Gds Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TKMTY",
+    "n": "Tokyo Metro Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "FCFS",
+    "n": "Firstcash Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRAX",
+    "n": "Praxis Precision Medicines, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SFM",
+    "n": "Sprouts Farmers Market, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TTMI",
+    "n": "Ttm Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "NICE",
+    "n": "Nice Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TFPM",
+    "n": "Triple Flag Precious Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OR",
+    "n": "Or Royalties Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WING",
+    "n": "Wingstop Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AL",
+    "n": "Air Lease Corp",
+    "e": "US"
+  },
+  {
+    "s": "CWAN",
+    "n": "Clearwater Analytics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FLR",
+    "n": "Fluor Corp",
+    "e": "US"
+  },
+  {
+    "s": "STAG",
+    "n": "Stag Industrial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXE",
+    "n": "Nexgen Energy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ICL",
+    "n": "Icl Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PJT",
+    "n": "Pjt Partners Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KRYS",
+    "n": "Krystal Biotech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DBX",
+    "n": "Dropbox, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "URBN",
+    "n": "Urban Outfitters Inc",
+    "e": "US"
+  },
+  {
+    "s": "BTSG",
+    "n": "Brightspring Health Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PL",
+    "n": "Planet Labs Pbc",
+    "e": "US"
+  },
+  {
+    "s": "INGR",
+    "n": "Ingredion Inc",
+    "e": "US"
+  },
+  {
+    "s": "PFSI",
+    "n": "Pennymac Financial Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SIRI",
+    "n": "Sirius Xm Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORA",
+    "n": "Ormat Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FSV",
+    "n": "Firstservice Corp",
+    "e": "US"
+  },
+  {
+    "s": "SMTC",
+    "n": "Semtech Corp",
+    "e": "US"
+  },
+  {
+    "s": "VNO",
+    "n": "Vornado Realty Trust",
+    "e": "US"
+  },
+  {
+    "s": "PSN",
+    "n": "Parsons Corp",
+    "e": "US"
+  },
+  {
+    "s": "VIRT",
+    "n": "Virtu Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BEPC",
+    "n": "Brookfield Renewable Corp",
+    "e": "US"
+  },
+  {
+    "s": "HESM",
+    "n": "Hess Midstream Lp",
+    "e": "US"
+  },
+  {
+    "s": "FND",
+    "n": "Floor & Decor Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UEC",
+    "n": "Uranium Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "MAT",
+    "n": "Mattel Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "CDTX",
+    "n": "Cidara Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IBP",
+    "n": "Installed Building Products, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EAT",
+    "n": "Brinker International, Inc",
+    "e": "US"
+  },
+  {
+    "s": "NTSK",
+    "n": "Netskope Inc",
+    "e": "US"
+  },
+  {
+    "s": "OLLI",
+    "n": "Ollie'S Bargain Outlet Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRIM",
+    "n": "Primoris Services Corp",
+    "e": "US"
+  },
+  {
+    "s": "AXTA",
+    "n": "Axalta Coating Systems Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FSS",
+    "n": "Federal Signal Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "LBRDA",
+    "n": "Liberty Broadband Corp",
+    "e": "US"
+  },
+  {
+    "s": "EXLS",
+    "n": "Exlservice Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BYD",
+    "n": "Boyd Gaming Corp",
+    "e": "US"
+  },
+  {
+    "s": "ESAB",
+    "n": "Esab Corp",
+    "e": "US"
+  },
+  {
+    "s": "ELP",
+    "n": "Energy Co Of Parana",
+    "e": "US"
+  },
+  {
+    "s": "SSD",
+    "n": "Simpson Manufacturing Co., Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KEX",
+    "n": "Kirby Corp",
+    "e": "US"
+  },
+  {
+    "s": "CLF",
+    "n": "Cleveland-Cliffs Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STWD",
+    "n": "Starwood Property Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PB",
+    "n": "Prosperity Bancshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "IDA",
+    "n": "Idacorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "QMMM",
+    "n": "Qmmm Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BETA",
+    "n": "Beta Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RYTM",
+    "n": "Rhythm Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LFUS",
+    "n": "Littelfuse Inc /De",
+    "e": "US"
+  },
+  {
+    "s": "GLBE",
+    "n": "Global-E Online Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "EXP",
+    "n": "Eagle Materials Inc",
+    "e": "US"
+  },
+  {
+    "s": "ESI",
+    "n": "Element Solutions Inc",
+    "e": "US"
+  },
+  {
+    "s": "VLY",
+    "n": "Valley National Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "ADT",
+    "n": "Adt Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TAL",
+    "n": "Tal Education Group",
+    "e": "US"
+  },
+  {
+    "s": "COMP",
+    "n": "Compass, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MHK",
+    "n": "Mohawk Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "MTG",
+    "n": "Mgic Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "MSA",
+    "n": "Msa Safety Inc",
+    "e": "US"
+  },
+  {
+    "s": "LOAR",
+    "n": "Loar Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OTF",
+    "n": "Blue Owl Technology Finance Corp.",
+    "e": "US"
+  },
+  {
+    "s": "QS",
+    "n": "Quantumscape Corp",
+    "e": "US"
+  },
+  {
+    "s": "NEU",
+    "n": "Newmarket Corp",
+    "e": "US"
+  },
+  {
+    "s": "ENLT",
+    "n": "Enlight Renewable Energy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GKOS",
+    "n": "Glaukos Corp",
+    "e": "US"
+  },
+  {
+    "s": "FMCC",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "CWEN",
+    "n": "Clearway Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MKTX",
+    "n": "Marketaxess Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "CRK",
+    "n": "Comstock Resources Inc",
+    "e": "US"
+  },
+  {
+    "s": "LEA",
+    "n": "Lear Corp",
+    "e": "US"
+  },
+  {
+    "s": "WAY",
+    "n": "Waystar Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TXNM",
+    "n": "Txnm Energy Inc",
+    "e": "US"
+  },
+  {
+    "s": "CMS-PB",
+    "n": "Consumers Energy Co",
+    "e": "US"
+  },
+  {
+    "s": "LOTMY",
+    "n": "Lottomatica Group S.P.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BMA",
+    "n": "Macro Bank Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHE",
+    "n": "Chemed Corp",
+    "e": "US"
+  },
+  {
+    "s": "CWST",
+    "n": "Casella Waste Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "PACS",
+    "n": "Pacs Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "THG",
+    "n": "Hanover Insurance Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CIG",
+    "n": "Energy Co Of Minas Gerais",
+    "e": "US"
+  },
+  {
+    "s": "CGNX",
+    "n": "Cognex Corp",
+    "e": "US"
+  },
+  {
+    "s": "AAON",
+    "n": "Aaon, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CIFR",
+    "n": "Cipher Mining Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRMB",
+    "n": "Primo Brands Corp",
+    "e": "US"
+  },
+  {
+    "s": "KMX",
+    "n": "Carmax Inc",
+    "e": "US"
+  },
+  {
+    "s": "FNB",
+    "n": "Fnb Corp/Pa/",
+    "e": "US"
+  },
+  {
+    "s": "HXL",
+    "n": "Hexcel Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "RRR",
+    "n": "Red Rock Resorts, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ESNT",
+    "n": "Essent Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MOD",
+    "n": "Modine Manufacturing Co",
+    "e": "US"
+  },
+  {
+    "s": "GXO",
+    "n": "Gxo Logistics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OBDC",
+    "n": "Blue Owl Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "VICR",
+    "n": "Vicor Corp",
+    "e": "US"
+  },
+  {
+    "s": "KD",
+    "n": "Kyndryl Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NOV",
+    "n": "Nov Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HUT",
+    "n": "Hut 8 Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FAF",
+    "n": "First American Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "ROAD",
+    "n": "Construction Partners, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXST",
+    "n": "Nexstar Media Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FBIN",
+    "n": "Fortune Brands Innovations, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SRAD",
+    "n": "Sportradar Group Ag",
+    "e": "US"
+  },
+  {
+    "s": "ACHR",
+    "n": "Archer Aviation Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GATX",
+    "n": "Gatx Corp",
+    "e": "US"
+  },
+  {
+    "s": "UELMO",
+    "n": "Union Electric Co",
+    "e": "US"
+  },
+  {
+    "s": "WFRD",
+    "n": "Weatherford International Plc",
+    "e": "US"
+  },
+  {
+    "s": "PTCT",
+    "n": "Ptc Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GTLB",
+    "n": "Gitlab Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RITM",
+    "n": "Rithm Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BLTE",
+    "n": "Belite Bio, Inc",
+    "e": "US"
+  },
+  {
+    "s": "BLCO",
+    "n": "Bausch & Lomb Corp",
+    "e": "US"
+  },
+  {
+    "s": "DLB",
+    "n": "Dolby Laboratories, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MSGS",
+    "n": "Madison Square Garden Sports Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CRUS",
+    "n": "Cirrus Logic, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KYMR",
+    "n": "Kymera Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TKR",
+    "n": "Timken Co",
+    "e": "US"
+  },
+  {
+    "s": "ETSY",
+    "n": "Etsy Inc",
+    "e": "US"
+  },
+  {
+    "s": "SEE",
+    "n": "Sealed Air Corp/De",
+    "e": "US"
+  },
+  {
+    "s": "TRNO",
+    "n": "Terreno Realty Corp",
+    "e": "US"
+  },
+  {
+    "s": "PIPR",
+    "n": "Piper Sandler Companies",
+    "e": "US"
+  },
+  {
+    "s": "HR",
+    "n": "Healthcare Realty Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "CAMT",
+    "n": "Camtek Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LMND",
+    "n": "Lemonade, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LTH",
+    "n": "Life Time Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GBCI",
+    "n": "Glacier Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IRTC",
+    "n": "Irhythm Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCVX",
+    "n": "Vaxcyte, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ANF",
+    "n": "Abercrombie & Fitch Co /De/",
+    "e": "US"
+  },
+  {
+    "s": "RDNT",
+    "n": "Radnet, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "M",
+    "n": "Macy'S, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MIR",
+    "n": "Mirion Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STVN",
+    "n": "Stevanato Group S.P.A.",
+    "e": "US"
+  },
+  {
+    "s": "EPRT",
+    "n": "Essential Properties Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WH",
+    "n": "Wyndham Hotels & Resorts, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BLSH",
+    "n": "Bullish",
+    "e": "US"
+  },
+  {
+    "s": "BTG",
+    "n": "B2gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "MNSO",
+    "n": "Miniso Group Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BXSL",
+    "n": "Blackstone Secured Lending Fund",
+    "e": "US"
+  },
+  {
+    "s": "PI",
+    "n": "Impinj Inc",
+    "e": "US"
+  },
+  {
+    "s": "BFAM",
+    "n": "Bright Horizons Family Solutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RAL",
+    "n": "Ralliant Corp",
+    "e": "US"
+  },
+  {
+    "s": "LEU",
+    "n": "Centrus Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "OLED",
+    "n": "Universal Display Corp \\Pa\\",
+    "e": "US"
+  },
+  {
+    "s": "ACT",
+    "n": "Enact Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPEN",
+    "n": "Opendoor Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BOOT",
+    "n": "Boot Barn Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DAR",
+    "n": "Darling Ingredients Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FOUR",
+    "n": "Shift4 Payments, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SWX",
+    "n": "Southwest Gas Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RHP",
+    "n": "Ryman Hospitality Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALK",
+    "n": "Alaska Air Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLM",
+    "n": "Slm Corp",
+    "e": "US"
+  },
+  {
+    "s": "OS",
+    "n": "Onestream, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENIC",
+    "n": "Enel Chile S.A.",
+    "e": "US"
+  },
+  {
+    "s": "SITE",
+    "n": "Siteone Landscape Supply, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENS",
+    "n": "Enersys",
+    "e": "US"
+  },
+  {
+    "s": "ARW",
+    "n": "Arrow Electronics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CBC",
+    "n": "Central Bancompany, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CVLT",
+    "n": "Commvault Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "TMHC",
+    "n": "Taylor Morrison Home Corp",
+    "e": "US"
+  },
+  {
+    "s": "ZETA",
+    "n": "Zeta Global Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FCN",
+    "n": "Fti Consulting, Inc",
+    "e": "US"
+  },
+  {
+    "s": "ATAT",
+    "n": "Atour Lifestyle Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RIOT",
+    "n": "Riot Platforms, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALGM",
+    "n": "Allegro Microsystems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BILL",
+    "n": "Bill Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HWC",
+    "n": "Hancock Whitney Corp",
+    "e": "US"
+  },
+  {
+    "s": "THO",
+    "n": "Thor Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "GTES",
+    "n": "Gates Industrial Corp Plc",
+    "e": "US"
+  },
+  {
+    "s": "TFX",
+    "n": "Teleflex Inc",
+    "e": "US"
+  },
+  {
+    "s": "WIX",
+    "n": "Wix.Com Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "COGT",
+    "n": "Cogent Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HOMB",
+    "n": "Home Bancshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "HRB",
+    "n": "H&R Block Inc",
+    "e": "US"
+  },
+  {
+    "s": "BC",
+    "n": "Brunswick Corp",
+    "e": "US"
+  },
+  {
+    "s": "MC",
+    "n": "Moelis & Co",
+    "e": "US"
+  },
+  {
+    "s": "CRSP",
+    "n": "Crispr Therapeutics Ag",
+    "e": "US"
+  },
+  {
+    "s": "UBSI",
+    "n": "United Bankshares Inc/Wv",
+    "e": "US"
+  },
+  {
+    "s": "LPX",
+    "n": "Louisiana-Pacific Corp",
+    "e": "US"
+  },
+  {
+    "s": "SMR",
+    "n": "Nuscale Power Corp",
+    "e": "US"
+  },
+  {
+    "s": "VNT",
+    "n": "Vontier Corp",
+    "e": "US"
+  },
+  {
+    "s": "CCC",
+    "n": "Ccc Intelligent Solutions Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RLI",
+    "n": "Rli Corp",
+    "e": "US"
+  },
+  {
+    "s": "POR",
+    "n": "Portland General Electric Co /Or/",
+    "e": "US"
+  },
+  {
+    "s": "KBR",
+    "n": "Kbr, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MAIN",
+    "n": "Main Street Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "SOBO",
+    "n": "South Bow Corp",
+    "e": "US"
+  },
+  {
+    "s": "MMSI",
+    "n": "Merit Medical Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "KRG",
+    "n": "Kite Realty Group Trust",
+    "e": "US"
+  },
+  {
+    "s": "BKH",
+    "n": "Black Hills Corp /Sd/",
+    "e": "US"
+  },
+  {
+    "s": "OMAB",
+    "n": "Central North Airport Group",
+    "e": "US"
+  },
+  {
+    "s": "UFPI",
+    "n": "Ufp Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "APGE",
+    "n": "Apogee Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMVT",
+    "n": "Immunovant, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNEX",
+    "n": "Stonex Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HRI",
+    "n": "Herc Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "ESE",
+    "n": "Esco Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "GNTX",
+    "n": "Gentex Corp",
+    "e": "US"
+  },
+  {
+    "s": "SHC",
+    "n": "Sotera Health Co",
+    "e": "US"
+  },
+  {
+    "s": "CNX",
+    "n": "Cnx Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "ACA",
+    "n": "Arcosa, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BIPC",
+    "n": "Brookfield Infrastructure Corp",
+    "e": "US"
+  },
+  {
+    "s": "S",
+    "n": "Sentinelone, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WEX",
+    "n": "Wex Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DOO",
+    "n": "Brp Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FRO",
+    "n": "Frontline Plc",
+    "e": "US"
+  },
+  {
+    "s": "SGHC",
+    "n": "Super Group (Sghc) Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ABCB",
+    "n": "Ameris Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "OZK",
+    "n": "Bank Ozk",
+    "e": "US"
+  },
+  {
+    "s": "OPCH",
+    "n": "Option Care Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CPA",
+    "n": "Copa Holdings, S.A.",
+    "e": "US"
+  },
+  {
+    "s": "FRMI",
+    "n": "Fermi Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AUB",
+    "n": "Atlantic Union Bankshares Corp",
+    "e": "US"
+  },
+  {
+    "s": "WTM",
+    "n": "White Mountains Insurance Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "WULF",
+    "n": "Terawulf Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GVA",
+    "n": "Granite Construction Inc",
+    "e": "US"
+  },
+  {
+    "s": "FLG",
+    "n": "Flagstar Bank, National Association",
+    "e": "US"
+  },
+  {
+    "s": "LGN",
+    "n": "Legence Corp.",
+    "e": "US"
+  },
+  {
+    "s": "REZI",
+    "n": "Resideo Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CACC",
+    "n": "Credit Acceptance Corp",
+    "e": "US"
+  },
+  {
+    "s": "MMS",
+    "n": "Maximus, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CSW",
+    "n": "Csw Industrials, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LSTR",
+    "n": "Landstar System Inc",
+    "e": "US"
+  },
+  {
+    "s": "AX",
+    "n": "Axos Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PTGX",
+    "n": "Protagonist Therapeutics, Inc",
+    "e": "US"
+  },
+  {
+    "s": "WK",
+    "n": "Workiva Inc",
+    "e": "US"
+  },
+  {
+    "s": "SIGI",
+    "n": "Selective Insurance Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "VSAT",
+    "n": "Viasat Inc",
+    "e": "US"
+  },
+  {
+    "s": "LIF",
+    "n": "Life360, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MRCY",
+    "n": "Mercury Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "LAUR",
+    "n": "Laureate Education, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHRD",
+    "n": "Chord Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "XNJJY",
+    "n": "Xinjiang Goldwind Science & Technology Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "CRNX",
+    "n": "Crinetics Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CELC",
+    "n": "Celcuity Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CORZ",
+    "n": "Core Scientific, Inc./Tx",
+    "e": "US"
+  },
+  {
+    "s": "POST",
+    "n": "Post Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NIQ",
+    "n": "Niq Global Intelligence Plc",
+    "e": "US"
+  },
+  {
+    "s": "BCPC",
+    "n": "Balchem Corp",
+    "e": "US"
+  },
+  {
+    "s": "GOLF",
+    "n": "Acushnet Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ST",
+    "n": "Sensata Technologies Holding Plc",
+    "e": "US"
+  },
+  {
+    "s": "SLFPY",
+    "n": "Standard Life Plc",
+    "e": "US"
+  },
+  {
+    "s": "GPI",
+    "n": "Group 1 Automotive Inc",
+    "e": "US"
+  },
+  {
+    "s": "MTDR",
+    "n": "Matador Resources Co",
+    "e": "US"
+  },
+  {
+    "s": "WPP",
+    "n": "Wpp Plc",
+    "e": "US"
+  },
+  {
+    "s": "MCY",
+    "n": "Mercury General Corp",
+    "e": "US"
+  },
+  {
+    "s": "BCO",
+    "n": "Brinks Co",
+    "e": "US"
+  },
+  {
+    "s": "TGS",
+    "n": "Gas Transporter Of The South Inc",
+    "e": "US"
+  },
+  {
+    "s": "MBRFY",
+    "n": "Marfrig Global Foods S.A.",
+    "e": "US"
+  },
+  {
+    "s": "TKC",
+    "n": "Turkcell Iletisim Hizmetleri A S",
+    "e": "US"
+  },
+  {
+    "s": "AQN",
+    "n": "Algonquin Power & Utilities Corp.",
+    "e": "US"
+  },
+  {
+    "s": "YKLTY",
+    "n": "Yakult Honsha Co., Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "MAC",
+    "n": "Macerich Co",
+    "e": "US"
+  },
+  {
+    "s": "SKY",
+    "n": "Champion Homes, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SAIC",
+    "n": "Science Applications International Corp",
+    "e": "US"
+  },
+  {
+    "s": "BMI",
+    "n": "Badger Meter Inc",
+    "e": "US"
+  },
+  {
+    "s": "SBRA",
+    "n": "Sabra Health Care Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INGM",
+    "n": "Ingram Micro Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "DOCN",
+    "n": "Digitalocean Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ELF",
+    "n": "E.L.F. Beauty, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UPST",
+    "n": "Upstart Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNDR",
+    "n": "Schneider National, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VSCO",
+    "n": "Victoria'S Secret & Co.",
+    "e": "US"
+  },
+  {
+    "s": "NNI",
+    "n": "Nelnet Inc",
+    "e": "US"
+  },
+  {
+    "s": "PECO",
+    "n": "Phillips Edison & Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LAZ",
+    "n": "Lazard, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CVCO",
+    "n": "Cavco Industries, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALKS",
+    "n": "Alkermes Plc.",
+    "e": "US"
+  },
+  {
+    "s": "FORM",
+    "n": "Formfactor Inc",
+    "e": "US"
+  },
+  {
+    "s": "AVAL",
+    "n": "Grupo Aval Acciones Y Valores S.A.",
+    "e": "US"
+  },
+  {
+    "s": "ORLA",
+    "n": "Orla Mining Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "REYN",
+    "n": "Reynolds Consumer Products Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SR",
+    "n": "Spire Inc",
+    "e": "US"
+  },
+  {
+    "s": "WFG",
+    "n": "West Fraser Timber Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GHC",
+    "n": "Graham Holdings Co",
+    "e": "US"
+  },
+  {
+    "s": "MTN",
+    "n": "Vail Resorts Inc",
+    "e": "US"
+  },
+  {
+    "s": "YOU",
+    "n": "Clear Secure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HCC",
+    "n": "Warrior Met Coal, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RDN",
+    "n": "Radian Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "TDS",
+    "n": "Telephone & Data Systems Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "TGTX",
+    "n": "Tg Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VSNT",
+    "n": "Versant Media Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TEO",
+    "n": "Telecom Argentina Sa",
+    "e": "US"
+  },
+  {
+    "s": "HHH",
+    "n": "Howard Hughes Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MRP",
+    "n": "Millrose Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CZR",
+    "n": "Caesars Entertainment, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IFS",
+    "n": "Intercorp Financial Services Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TNL",
+    "n": "Travel & Leisure Co.",
+    "e": "US"
+  },
+  {
+    "s": "QLYS",
+    "n": "Qualys, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLAB",
+    "n": "Silicon Laboratories Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HAPVY",
+    "n": "Hapvida Participacoes E Investimentos S.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ACIW",
+    "n": "Aci Worldwide, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OSCR",
+    "n": "Oscar Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ABG",
+    "n": "Asbury Automotive Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "LOPE",
+    "n": "Grand Canyon Education, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNR",
+    "n": "Core Natural Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LNTH",
+    "n": "Lantheus Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHH",
+    "n": "Choice Hotels International Inc /De",
+    "e": "US"
+  },
+  {
+    "s": "AD",
+    "n": "Array Digital Infrastructure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MTH",
+    "n": "Meritage Homes Corp",
+    "e": "US"
+  },
+  {
+    "s": "TMDX",
+    "n": "Transmedics Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GPCR",
+    "n": "Structure Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CE",
+    "n": "Celanese Corp",
+    "e": "US"
+  },
+  {
+    "s": "SIM",
+    "n": "Grupo Simec, S.A.B. De C.V.",
+    "e": "US"
+  },
+  {
+    "s": "ACAD",
+    "n": "Acadia Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "KRC",
+    "n": "Kilroy Realty Corp",
+    "e": "US"
+  },
+  {
+    "s": "CROX",
+    "n": "Crocs, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NPO",
+    "n": "Enpro Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PHI",
+    "n": "Pldt Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OSIS",
+    "n": "Osi Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "AGX",
+    "n": "Argan Inc",
+    "e": "US"
+  },
+  {
+    "s": "NJR",
+    "n": "New Jersey Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "PAM",
+    "n": "Pampa Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IEP",
+    "n": "Icahn Enterprises L.P.",
+    "e": "US"
+  },
+  {
+    "s": "SOUN",
+    "n": "Soundhound Ai, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ONDS",
+    "n": "Ondas Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RIG",
+    "n": "Transocean Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "STUB",
+    "n": "Stubhub Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AEO",
+    "n": "American Eagle Outfitters Inc",
+    "e": "US"
+  },
+  {
+    "s": "ERELY",
+    "n": "Eregli Demir Ve Celik Fabrikalari Tas/Adr",
+    "e": "US"
+  },
+  {
+    "s": "OGS",
+    "n": "One Gas, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NE",
+    "n": "Noble Corp Plc",
+    "e": "US"
+  },
+  {
+    "s": "CLBT",
+    "n": "Cellebrite Di Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "VIST",
+    "n": "Vista Energy, S.A.B. De C.V.",
+    "e": "US"
+  },
+  {
+    "s": "VSEC",
+    "n": "Vse Corp",
+    "e": "US"
+  },
+  {
+    "s": "MZTI",
+    "n": "Marzetti Co",
+    "e": "US"
+  },
+  {
+    "s": "ENPH",
+    "n": "Enphase Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBWI",
+    "n": "Bath & Body Works, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EOSE",
+    "n": "Eos Energy Enterprises, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SSRM",
+    "n": "Ssr Mining Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MSM",
+    "n": "Msc Industrial Direct Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "HPP",
+    "n": "Hudson Pacific Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ECG",
+    "n": "Everus Construction Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SRRK",
+    "n": "Scholar Rock Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "SON",
+    "n": "Sonoco Products Co",
+    "e": "US"
+  },
+  {
+    "s": "AROC",
+    "n": "Archrock, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADMA",
+    "n": "Adma Biologics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HGTY",
+    "n": "Hagerty, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NGXXF",
+    "n": "Ngex Minerals Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "UUUU",
+    "n": "Energy Fuels Inc",
+    "e": "US"
+  },
+  {
+    "s": "NAVN",
+    "n": "Navan, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INDV",
+    "n": "Indivior Plc",
+    "e": "US"
+  },
+  {
+    "s": "NWSGY",
+    "n": "Ctf Services Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BDC",
+    "n": "Belden Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PAGP",
+    "n": "Plains Gp Holdings Lp",
+    "e": "US"
+  },
+  {
+    "s": "CAR",
+    "n": "Avis Budget Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QTWO",
+    "n": "Q2 Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NOVT",
+    "n": "Novanta Inc",
+    "e": "US"
+  },
+  {
+    "s": "GPK",
+    "n": "Graphic Packaging Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "ITRI",
+    "n": "Itron, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FFIN",
+    "n": "First Financial Bankshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "RUSHA",
+    "n": "Rush Enterprises Inc \\Tx\\",
+    "e": "US"
+  },
+  {
+    "s": "NMRK",
+    "n": "Newmark Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "COPR",
+    "n": "Idaho Copper Corp",
+    "e": "US"
+  },
+  {
+    "s": "SEB",
+    "n": "Seaboard Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "FOLD",
+    "n": "Amicus Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DLO",
+    "n": "Dlocal Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VCTR",
+    "n": "Victory Capital Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BGSI",
+    "n": "Boyd Group Services Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LPL",
+    "n": "Lg Display Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ASB",
+    "n": "Associated Banc-Corp",
+    "e": "US"
+  },
+  {
+    "s": "TCBI",
+    "n": "Texas Capital Bancshares Inc/Tx",
+    "e": "US"
+  },
+  {
+    "s": "FELE",
+    "n": "Franklin Electric Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "EBC",
+    "n": "Eastern Bankshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLGN",
+    "n": "Silgan Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "FLY",
+    "n": "Firefly Aerospace Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TERN",
+    "n": "Terns Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CUZ",
+    "n": "Cousins Properties Inc",
+    "e": "US"
+  },
+  {
+    "s": "NSA",
+    "n": "National Storage Affiliates Trust",
+    "e": "US"
+  },
+  {
+    "s": "CAAP",
+    "n": "Corporacion America Airports S.A.",
+    "e": "US"
+  },
+  {
+    "s": "ATMU",
+    "n": "Atmus Filtration Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "POWL",
+    "n": "Powell Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "WHR",
+    "n": "Whirlpool Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "AB",
+    "n": "Alliancebernstein Holding L.P.",
+    "e": "US"
+  },
+  {
+    "s": "BOX",
+    "n": "Box Inc",
+    "e": "US"
+  },
+  {
+    "s": "PTXKY",
+    "n": "Pt Xlsmart Telecom Sejahtera Tbk/Adr",
+    "e": "US"
+  },
+  {
+    "s": "AUGO",
+    "n": "Aura Minerals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AGO",
+    "n": "Assured Guaranty Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MUR",
+    "n": "Murphy Oil Corp",
+    "e": "US"
+  },
+  {
+    "s": "IBOC",
+    "n": "International Bancshares Corp",
+    "e": "US"
+  },
+  {
+    "s": "FTDR",
+    "n": "Frontdoor, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALH",
+    "n": "Alliance Laundry Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RSI",
+    "n": "Rush Street Interactive, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IRT",
+    "n": "Independence Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MIRM",
+    "n": "Mirum Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GBTG",
+    "n": "Global Business Travel Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRM",
+    "n": "Perimeter Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KNF",
+    "n": "Knife River Corp",
+    "e": "US"
+  },
+  {
+    "s": "HSAI",
+    "n": "Hesai Group",
+    "e": "US"
+  },
+  {
+    "s": "BULL",
+    "n": "Webull Corp",
+    "e": "US"
+  },
+  {
+    "s": "CNO",
+    "n": "Cno Financial Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LEGN",
+    "n": "Legend Biotech Corp",
+    "e": "US"
+  },
+  {
+    "s": "BGC",
+    "n": "Bgc Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALHC",
+    "n": "Alignment Healthcare, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VRNS",
+    "n": "Varonis Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "AMRX",
+    "n": "Amneal Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLXS",
+    "n": "Plexus Corp",
+    "e": "US"
+  },
+  {
+    "s": "MATX",
+    "n": "Matson, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VIAV",
+    "n": "Viavi Solutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NWE",
+    "n": "Northwestern Energy Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SIMO",
+    "n": "Silicon Motion Technology Corp",
+    "e": "US"
+  },
+  {
+    "s": "UGP",
+    "n": "Ultrapar Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "BLLN",
+    "n": "Billiontoone, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FHI",
+    "n": "Federated Hermes, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HASI",
+    "n": "Ha Sustainable Infrastructure Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SSL",
+    "n": "Sasol Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HGV",
+    "n": "Hilton Grand Vacations Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBAR",
+    "n": "Banco Bbva Argentina S.A.",
+    "e": "US"
+  },
+  {
+    "s": "MDU",
+    "n": "Mdu Resources Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "TMC",
+    "n": "Tmc The Metals Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGY",
+    "n": "Magnolia Oil & Gas Corp",
+    "e": "US"
+  },
+  {
+    "s": "OUT",
+    "n": "Outfront Media Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENVA",
+    "n": "Enova International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRAL",
+    "n": "Grail, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GEF",
+    "n": "Greif, Inc",
+    "e": "US"
+  },
+  {
+    "s": "NG",
+    "n": "Novagold Resources Inc",
+    "e": "US"
+  },
+  {
+    "s": "RUN",
+    "n": "Sunrun Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SFBS",
+    "n": "Servisfirst Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NAMS",
+    "n": "Newamsterdam Pharma Co N.V.",
+    "e": "US"
+  },
+  {
+    "s": "CRC",
+    "n": "California Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "CENX",
+    "n": "Century Aluminum Co",
+    "e": "US"
+  },
+  {
+    "s": "HAE",
+    "n": "Haemonetics Corp",
+    "e": "US"
+  },
+  {
+    "s": "AVT",
+    "n": "Avnet Inc",
+    "e": "US"
+  },
+  {
+    "s": "ATGE",
+    "n": "Adtalem Global Education Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FSK",
+    "n": "Fs Kkr Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "SXT",
+    "n": "Sensient Technologies Corp",
+    "e": "US"
+  },
+  {
+    "s": "FG",
+    "n": "F&G Annuities & Life, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLBL",
+    "n": "Polibeli Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "UCB",
+    "n": "United Community Banks Inc",
+    "e": "US"
+  },
+  {
+    "s": "TBBB",
+    "n": "Bbb Foods Inc",
+    "e": "US"
+  },
+  {
+    "s": "SKYW",
+    "n": "Skywest Inc",
+    "e": "US"
+  },
+  {
+    "s": "AKO-A",
+    "n": "Andina Bottling Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "WGS",
+    "n": "Genedx Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PSMT",
+    "n": "Pricesmart Inc",
+    "e": "US"
+  },
+  {
+    "s": "LGND",
+    "n": "Ligand Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "ABQQ",
+    "n": "Ai Era Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GLNG",
+    "n": "Golar Lng Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EPR",
+    "n": "Epr Properties",
+    "e": "US"
+  },
+  {
+    "s": "COMM",
+    "n": "Commscope Holding Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TREX",
+    "n": "Trex Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "SKT",
+    "n": "Tanger Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BTU",
+    "n": "Peabody Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "CORT",
+    "n": "Corcept Therapeutics Inc",
+    "e": "US"
+  },
+  {
+    "s": "PII",
+    "n": "Polaris Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NEXHY",
+    "n": "Nippon Express Holdings, Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "RH",
+    "n": "Rh",
+    "e": "US"
+  },
+  {
+    "s": "CWK",
+    "n": "Cushman & Wakefield Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HNGE",
+    "n": "Hinge Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SHAK",
+    "n": "Shake Shack Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INTR",
+    "n": "Inter & Co, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YETI",
+    "n": "Yeti Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VVV",
+    "n": "Valvoline Inc",
+    "e": "US"
+  },
+  {
+    "s": "CSAN",
+    "n": "Cosan S.A.",
+    "e": "US"
+  },
+  {
+    "s": "NP",
+    "n": "Neptune Insurance Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DJT",
+    "n": "Trump Media & Technology Group Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MARA",
+    "n": "Mara Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NVST",
+    "n": "Envista Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "BRC",
+    "n": "Brady Corp",
+    "e": "US"
+  },
+  {
+    "s": "TFSL",
+    "n": "Tfs Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "DORM",
+    "n": "Dorman Products, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASO",
+    "n": "Academy Sports & Outdoors, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FIBK",
+    "n": "First Interstate Bancsystem Inc",
+    "e": "US"
+  },
+  {
+    "s": "PAY",
+    "n": "Paymentus Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MWA",
+    "n": "Mueller Water Products, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TEX",
+    "n": "Terex Corp",
+    "e": "US"
+  },
+  {
+    "s": "CALM",
+    "n": "Cal-Maine Foods Inc",
+    "e": "US"
+  },
+  {
+    "s": "CARG",
+    "n": "Cargurus, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STNE",
+    "n": "Stoneco Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PATK",
+    "n": "Patrick Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "FLNC",
+    "n": "Fluence Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WSC",
+    "n": "Willscot Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "LBTYA",
+    "n": "Liberty Global Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ACLX",
+    "n": "Arcellx, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TPC",
+    "n": "Tutor Perini Corp",
+    "e": "US"
+  },
+  {
+    "s": "CBT",
+    "n": "Cabot Corp",
+    "e": "US"
+  },
+  {
+    "s": "SIG",
+    "n": "Signet Jewelers Ltd",
+    "e": "US"
+  },
+  {
+    "s": "INTA",
+    "n": "Intapp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NHI",
+    "n": "National Health Investors Inc",
+    "e": "US"
+  },
+  {
+    "s": "BHF",
+    "n": "Brighthouse Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ICUI",
+    "n": "Icu Medical Inc/De",
+    "e": "US"
+  },
+  {
+    "s": "EXPO",
+    "n": "Exponent Inc",
+    "e": "US"
+  },
+  {
+    "s": "DNP",
+    "n": "Dnp Select Income Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "ADOOY",
+    "n": "Adaro Energy Pt/Adr/",
+    "e": "US"
+  },
+  {
+    "s": "INDB",
+    "n": "Independent Bank Corp",
+    "e": "US"
+  },
+  {
+    "s": "COLD",
+    "n": "Americold Realty Trust",
+    "e": "US"
+  },
+  {
+    "s": "SEI",
+    "n": "Solaris Energy Infrastructure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VRRM",
+    "n": "Verra Mobility Corp",
+    "e": "US"
+  },
+  {
+    "s": "MYRG",
+    "n": "Myr Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VKTX",
+    "n": "Viking Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TAC",
+    "n": "Transalta Corp",
+    "e": "US"
+  },
+  {
+    "s": "VAL",
+    "n": "Valaris Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GNW",
+    "n": "Genworth Financial Inc",
+    "e": "US"
+  },
+  {
+    "s": "USLM",
+    "n": "United States Lime & Minerals Inc",
+    "e": "US"
+  },
+  {
+    "s": "BFH",
+    "n": "Bread Financial Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCXI",
+    "n": "Churchill Capital Corp Xi",
+    "e": "US"
+  },
+  {
+    "s": "ARQT",
+    "n": "Arcutis Biotherapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLG",
+    "n": "Sl Green Realty Corp",
+    "e": "US"
+  },
+  {
+    "s": "MIAX",
+    "n": "Miami International Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VEON",
+    "n": "Veon Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BANF",
+    "n": "Bancfirst Corp /Ok/",
+    "e": "US"
+  },
+  {
+    "s": "CRVL",
+    "n": "Corvel Corp",
+    "e": "US"
+  },
+  {
+    "s": "AIR",
+    "n": "Aar Corp",
+    "e": "US"
+  },
+  {
+    "s": "BRZE",
+    "n": "Braze, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GTX",
+    "n": "Garrett Motion Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GBDC",
+    "n": "Golub Capital Bdc, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SMSEY",
+    "n": "Samsonite International Sa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GPOR",
+    "n": "Gulfport Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "JOE",
+    "n": "St Joe Co",
+    "e": "US"
+  },
+  {
+    "s": "UNF",
+    "n": "Unifirst Corp",
+    "e": "US"
+  },
+  {
+    "s": "BNL",
+    "n": "Broadstone Net Lease, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VCYT",
+    "n": "Veracyte, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LCID",
+    "n": "Lucid Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SAND",
+    "n": "Sandstorm Gold Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KEN",
+    "n": "Kenon Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PPTA",
+    "n": "Perpetua Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FULT",
+    "n": "Fulton Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "RYN",
+    "n": "Rayonier Inc",
+    "e": "US"
+  },
+  {
+    "s": "LIVN",
+    "n": "Livanova Plc",
+    "e": "US"
+  },
+  {
+    "s": "LB",
+    "n": "Landbridge Co Llc",
+    "e": "US"
+  },
+  {
+    "s": "SPSC",
+    "n": "Sps Commerce Inc",
+    "e": "US"
+  },
+  {
+    "s": "NEA",
+    "n": "Nuveen Amt-Free Quality Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "GFF",
+    "n": "Griffon Corp",
+    "e": "US"
+  },
+  {
+    "s": "XMTR",
+    "n": "Xometry, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CALX",
+    "n": "Calix, Inc",
+    "e": "US"
+  },
+  {
+    "s": "BL",
+    "n": "Blackline, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KBH",
+    "n": "Kb Home",
+    "e": "US"
+  },
+  {
+    "s": "KFY",
+    "n": "Korn Ferry",
+    "e": "US"
+  },
+  {
+    "s": "KAI",
+    "n": "Kadant Inc",
+    "e": "US"
+  },
+  {
+    "s": "ARMN",
+    "n": "Aris Mining Corp",
+    "e": "US"
+  },
+  {
+    "s": "FRSH",
+    "n": "Freshworks Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLMR",
+    "n": "Palomar Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JOYY",
+    "n": "Joyy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARX",
+    "n": "Accelerant Holdings",
+    "e": "US"
+  },
+  {
+    "s": "VERA",
+    "n": "Vera Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SMNR",
+    "n": "Semnur Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CATY",
+    "n": "Cathay General Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "MEOH",
+    "n": "Methanex Corp",
+    "e": "US"
+  },
+  {
+    "s": "CGON",
+    "n": "Cg Oncology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SMG",
+    "n": "Scotts Miracle-Gro Co",
+    "e": "US"
+  },
+  {
+    "s": "AHL",
+    "n": "Aspen Insurance Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "WHD",
+    "n": "Cactus, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OTTR",
+    "n": "Otter Tail Corp",
+    "e": "US"
+  },
+  {
+    "s": "BKU",
+    "n": "Bankunited, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HPHTY",
+    "n": "Hamamatsu Photonics K.K./Adr",
+    "e": "US"
+  },
+  {
+    "s": "DAN",
+    "n": "Dana Inc",
+    "e": "US"
+  },
+  {
+    "s": "FBP",
+    "n": "First Bancorp /Pr/",
+    "e": "US"
+  },
+  {
+    "s": "CNS",
+    "n": "Cohen & Steers, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HAYW",
+    "n": "Hayward Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RNST",
+    "n": "Renasant Corp",
+    "e": "US"
+  },
+  {
+    "s": "MHO",
+    "n": "M/I Homes, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GTM",
+    "n": "Zoominfo Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AGYS",
+    "n": "Agilysys Inc",
+    "e": "US"
+  },
+  {
+    "s": "APLS",
+    "n": "Apellis Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IDYA",
+    "n": "Ideaya Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HTGC",
+    "n": "Hercules Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNTA",
+    "n": "Centessa Pharmaceuticals Plc",
+    "e": "US"
+  },
+  {
+    "s": "TARS",
+    "n": "Tarsus Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SA",
+    "n": "Seabridge Gold Inc",
+    "e": "US"
+  },
+  {
+    "s": "WRD",
+    "n": "Weride Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WRBY",
+    "n": "Warby Parker Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FUL",
+    "n": "Fuller H B Co",
+    "e": "US"
+  },
+  {
+    "s": "EBOSY",
+    "n": "Ebos Group Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "AZZ",
+    "n": "Azz Inc",
+    "e": "US"
+  },
+  {
+    "s": "SPHR",
+    "n": "Sphere Entertainment Co.",
+    "e": "US"
+  },
+  {
+    "s": "WNS",
+    "n": "Wns (Holdings) Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FHB",
+    "n": "First Hawaiian, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WSBC",
+    "n": "Wesbanco Inc",
+    "e": "US"
+  },
+  {
+    "s": "KTB",
+    "n": "Kontoor Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XXI",
+    "n": "Twenty One Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPLN",
+    "n": "Openlane, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PBF",
+    "n": "Pbf Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UTG",
+    "n": "Reaves Utility Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "EE",
+    "n": "Excelerate Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATEC",
+    "n": "Alphatec Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CDP",
+    "n": "Copt Defense Properties",
+    "e": "US"
+  },
+  {
+    "s": "XENE",
+    "n": "Xenon Pharmaceuticals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BXMT",
+    "n": "Blackstone Mortgage Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TVTX",
+    "n": "Travere Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SYNA",
+    "n": "Synaptics Inc",
+    "e": "US"
+  },
+  {
+    "s": "IPGP",
+    "n": "Ipg Photonics Corp",
+    "e": "US"
+  },
+  {
+    "s": "MPW",
+    "n": "Medical Properties Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "MCHB",
+    "n": "Mechanics Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "ASAN",
+    "n": "Asana, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KNSA",
+    "n": "Kiniksa Pharmaceuticals International, Plc",
+    "e": "US"
+  },
+  {
+    "s": "CBU",
+    "n": "Community Financial System, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SHOO",
+    "n": "Steven Madden, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TBBK",
+    "n": "Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DYN",
+    "n": "Dyne Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLSK",
+    "n": "Cleanspark, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VERX",
+    "n": "Vertex, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PVH",
+    "n": "Pvh Corp. /De/",
+    "e": "US"
+  },
+  {
+    "s": "REVG",
+    "n": "Rev Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLUG",
+    "n": "Plug Power Inc",
+    "e": "US"
+  },
+  {
+    "s": "DAVE",
+    "n": "Dave Inc./De",
+    "e": "US"
+  },
+  {
+    "s": "AVA",
+    "n": "Avista Corp",
+    "e": "US"
+  },
+  {
+    "s": "SBCF",
+    "n": "Seacoast Banking Corp Of Florida",
+    "e": "US"
+  },
+  {
+    "s": "BANC",
+    "n": "Banc Of California, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WSFS",
+    "n": "Wsfs Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "KC",
+    "n": "Kingsoft Cloud Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CMBT",
+    "n": "Cmb.Tech Nv",
+    "e": "US"
+  },
+  {
+    "s": "AERO",
+    "n": "Grupo Aeromexico, S.A.B. De C.V.",
+    "e": "US"
+  },
+  {
+    "s": "CSQ",
+    "n": "Calamos Strategic Total Return Fund",
+    "e": "US"
+  },
+  {
+    "s": "CGAU",
+    "n": "Centerra Gold Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EEFT",
+    "n": "Euronet Worldwide, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HURN",
+    "n": "Huron Consulting Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLOB",
+    "n": "Globant S.A.",
+    "e": "US"
+  },
+  {
+    "s": "WU",
+    "n": "Western Union Co",
+    "e": "US"
+  },
+  {
+    "s": "NMIH",
+    "n": "Nmi Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IAC",
+    "n": "Iac Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TGNA",
+    "n": "Tegna Inc",
+    "e": "US"
+  },
+  {
+    "s": "PCH",
+    "n": "Potlatchdeltic Corp",
+    "e": "US"
+  },
+  {
+    "s": "HWKN",
+    "n": "Hawkins Inc",
+    "e": "US"
+  },
+  {
+    "s": "COCO",
+    "n": "Vita Coco Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PBH",
+    "n": "Prestige Consumer Healthcare Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FSM",
+    "n": "Fortuna Mining Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LCII",
+    "n": "Lci Industries",
+    "e": "US"
+  },
+  {
+    "s": "ACMR",
+    "n": "Acm Research, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KGS",
+    "n": "Kodiak Gas Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LBRT",
+    "n": "Liberty Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARLP",
+    "n": "Alliance Resource Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "AAUC",
+    "n": "Allied Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "IRON",
+    "n": "Disc Medicine, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TTAM",
+    "n": "Titan America Sa",
+    "e": "US"
+  },
+  {
+    "s": "SKE",
+    "n": "Skeena Resources Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AMBA",
+    "n": "Ambarella Inc",
+    "e": "US"
+  },
+  {
+    "s": "FBK",
+    "n": "Fb Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "CPRI",
+    "n": "Capri Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NUVB",
+    "n": "Nuvation Bio Inc.",
+    "e": "US"
+  },
+  {
+    "s": "COLM",
+    "n": "Columbia Sportswear Co",
+    "e": "US"
+  },
+  {
+    "s": "FRPT",
+    "n": "Freshpet, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AVPT",
+    "n": "Avepoint, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HP",
+    "n": "Helmerich & Payne, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ERO",
+    "n": "Ero Copper Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DBRG",
+    "n": "Digitalbridge Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APAM",
+    "n": "Artisan Partners Asset Management Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBU",
+    "n": "Brookfield Business Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "FIZZ",
+    "n": "National Beverage Corp",
+    "e": "US"
+  },
+  {
+    "s": "BLKB",
+    "n": "Blackbaud Inc",
+    "e": "US"
+  },
+  {
+    "s": "DNN",
+    "n": "Denison Mines Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PRVA",
+    "n": "Privia Health Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LRN",
+    "n": "Stride, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TDC",
+    "n": "Teradata Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "LXP",
+    "n": "Lxp Industrial Trust",
+    "e": "US"
+  },
+  {
+    "s": "EXK",
+    "n": "Endeavour Silver Corp",
+    "e": "US"
+  },
+  {
+    "s": "HIW",
+    "n": "Highwoods Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BWIN",
+    "n": "Baldwin Insurance Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KYIV",
+    "n": "Kyivstar Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BHC",
+    "n": "Bausch Health Companies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AVNT",
+    "n": "Avient Corp",
+    "e": "US"
+  },
+  {
+    "s": "EXG",
+    "n": "Eaton Vance Tax-Managed Global Diversified Equity Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "TNET",
+    "n": "Trinet Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "USAC",
+    "n": "Usa Compression Partners, Lp",
+    "e": "US"
+  },
+  {
+    "s": "SUPN",
+    "n": "Supernus Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BEAM",
+    "n": "Beam Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMR",
+    "n": "Alpha Metallurgical Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NCNO",
+    "n": "Ncino, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INSP",
+    "n": "Inspire Medical Systems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IFHLY",
+    "n": "Inficon Holding Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "RLX",
+    "n": "Rlx Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AKR",
+    "n": "Acadia Realty Trust",
+    "e": "US"
+  },
+  {
+    "s": "VRDN",
+    "n": "Viridian Therapeutics, Inc.\\De",
+    "e": "US"
+  },
+  {
+    "s": "JPC",
+    "n": "Nuveen Preferred & Income Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "STNG",
+    "n": "Scorpio Tankers Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TENB",
+    "n": "Tenable Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CBZ",
+    "n": "Cbiz, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RCUS",
+    "n": "Arcus Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACLS",
+    "n": "Axcelis Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "WVE",
+    "n": "Wave Life Sciences Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CPK",
+    "n": "Chesapeake Utilities Corp",
+    "e": "US"
+  },
+  {
+    "s": "APLE",
+    "n": "Apple Hospitality Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGEE",
+    "n": "Mge Energy Inc",
+    "e": "US"
+  },
+  {
+    "s": "RELY",
+    "n": "Remitly Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BRSL",
+    "n": "Brightstar Lottery Plc",
+    "e": "US"
+  },
+  {
+    "s": "LFST",
+    "n": "Lifestance Health Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BSM",
+    "n": "Black Stone Minerals, L.P.",
+    "e": "US"
+  },
+  {
+    "s": "NATL",
+    "n": "Ncr Atleos Corp",
+    "e": "US"
+  },
+  {
+    "s": "ITGR",
+    "n": "Integer Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "RHI",
+    "n": "Robert Half Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HAFN",
+    "n": "Hafnia Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KLIC",
+    "n": "Kulicke & Soffa Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "MRX",
+    "n": "Marex Group Plc",
+    "e": "US"
+  },
+  {
+    "s": "NAD",
+    "n": "Nuveen Quality Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "SXI",
+    "n": "Standex International Corp/De/",
+    "e": "US"
+  },
+  {
+    "s": "MANU",
+    "n": "Manchester United Plc",
+    "e": "US"
+  },
+  {
+    "s": "AWR",
+    "n": "American States Water Co",
+    "e": "US"
+  },
+  {
+    "s": "PAGS",
+    "n": "Pagseguro Digital Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GRBK",
+    "n": "Green Brick Partners, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADX",
+    "n": "Adams Diversified Equity Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GSHD",
+    "n": "Goosehead Insurance, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MLYS",
+    "n": "Mineralys Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DRD",
+    "n": "Drdgold Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MH",
+    "n": "Mcgraw Hill, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CPRX",
+    "n": "Catalyst Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CSTM",
+    "n": "Constellium Se",
+    "e": "US"
+  },
+  {
+    "s": "ETOR",
+    "n": "Etoro Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HYPMY",
+    "n": "Hypermarcas S.A.",
+    "e": "US"
+  },
+  {
+    "s": "BOH",
+    "n": "Bank Of Hawaii Corp",
+    "e": "US"
+  },
+  {
+    "s": "CAKE",
+    "n": "Cheesecake Factory Inc",
+    "e": "US"
+  },
+  {
+    "s": "PAX",
+    "n": "Patria Investments Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HTFL",
+    "n": "Heartflow, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BRBR",
+    "n": "Bellring Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UPWK",
+    "n": "Upwork, Inc",
+    "e": "US"
+  },
+  {
+    "s": "VC",
+    "n": "Visteon Corp",
+    "e": "US"
+  },
+  {
+    "s": "CXT",
+    "n": "Crane Nxt, Co.",
+    "e": "US"
+  },
+  {
+    "s": "PTRN",
+    "n": "Pattern Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BKE",
+    "n": "Buckle Inc",
+    "e": "US"
+  },
+  {
+    "s": "ATS",
+    "n": "Ats Corp /Ats",
+    "e": "US"
+  },
+  {
+    "s": "PTON",
+    "n": "Peloton Interactive, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HUBG",
+    "n": "Hub Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SFNC",
+    "n": "Simmons First National Corp",
+    "e": "US"
+  },
+  {
+    "s": "IPAR",
+    "n": "Interparfums Inc",
+    "e": "US"
+  },
+  {
+    "s": "MTRN",
+    "n": "Materion Corp",
+    "e": "US"
+  },
+  {
+    "s": "BCC",
+    "n": "Boise Cascade Co",
+    "e": "US"
+  },
+  {
+    "s": "MLCO",
+    "n": "Melco Resorts & Entertainment Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ASH",
+    "n": "Ashland Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NVG",
+    "n": "Nuveen Amt-Free Municipal Credit Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "COTY",
+    "n": "Coty Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNXC",
+    "n": "Concentrix Corp",
+    "e": "US"
+  },
+  {
+    "s": "TPH",
+    "n": "Tri Pointe Homes, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LQDA",
+    "n": "Liquidia Corp",
+    "e": "US"
+  },
+  {
+    "s": "NSIT",
+    "n": "Insight Enterprises Inc",
+    "e": "US"
+  },
+  {
+    "s": "WDFC",
+    "n": "Wd 40 Co",
+    "e": "US"
+  },
+  {
+    "s": "ZIM",
+    "n": "Zim Integrated Shipping Services Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SII",
+    "n": "Sprott Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BATRA",
+    "n": "Atlanta Braves Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BKD",
+    "n": "Brookdale Senior Living Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CUBI",
+    "n": "Customers Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INSW",
+    "n": "International Seaways, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DXC",
+    "n": "Dxc Technology Co",
+    "e": "US"
+  },
+  {
+    "s": "ABM",
+    "n": "Abm Industries Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "ZGN",
+    "n": "Ermenegildo Zegna N.V.",
+    "e": "US"
+  },
+  {
+    "s": "FFBC",
+    "n": "First Financial Bancorp /Oh/",
+    "e": "US"
+  },
+  {
+    "s": "CNK",
+    "n": "Cinemark Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FA",
+    "n": "First Advantage Corp",
+    "e": "US"
+  },
+  {
+    "s": "HCM",
+    "n": "Hutchmed (China) Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DNLI",
+    "n": "Denali Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APPN",
+    "n": "Appian Corp",
+    "e": "US"
+  },
+  {
+    "s": "HG",
+    "n": "Hamilton Insurance Group, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SHTPY",
+    "n": "Schott Pharma Ag & Co. Kgaa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SUNC",
+    "n": "Sunococorp Llc",
+    "e": "US"
+  },
+  {
+    "s": "VTMX",
+    "n": "Vesta Real Estate Corporation, S.A.B. De C.V.",
+    "e": "US"
+  },
+  {
+    "s": "WB",
+    "n": "Weibo Corp",
+    "e": "US"
+  },
+  {
+    "s": "TDW",
+    "n": "Tidewater Inc",
+    "e": "US"
+  },
+  {
+    "s": "AAOI",
+    "n": "Applied Optoelectronics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGRC",
+    "n": "Mcgrath Rentcorp",
+    "e": "US"
+  },
+  {
+    "s": "CTRI",
+    "n": "Centuri Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TR",
+    "n": "Tootsie Roll Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "PFS",
+    "n": "Provident Financial Services Inc",
+    "e": "US"
+  },
+  {
+    "s": "EWTX",
+    "n": "Edgewise Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QUBT",
+    "n": "Quantum Computing Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CVBF",
+    "n": "Cvb Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "BBAI",
+    "n": "Bigbear.Ai Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALRM",
+    "n": "Alarm.Com Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATHM",
+    "n": "Autohome Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ANDG",
+    "n": "Andersen Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GT",
+    "n": "Goodyear Tire & Rubber Co /Oh/",
+    "e": "US"
+  },
+  {
+    "s": "AAPG",
+    "n": "Ascentage Pharma Group International",
+    "e": "US"
+  },
+  {
+    "s": "MAUTF",
+    "n": "Montage Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SEZL",
+    "n": "Sezzle Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UE",
+    "n": "Urban Edge Properties",
+    "e": "US"
+  },
+  {
+    "s": "PHIN",
+    "n": "Phinia Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CWT",
+    "n": "California Water Service Group",
+    "e": "US"
+  },
+  {
+    "s": "CEPU",
+    "n": "Central Puerto S.A.",
+    "e": "US"
+  },
+  {
+    "s": "OII",
+    "n": "Oceaneering International Inc",
+    "e": "US"
+  },
+  {
+    "s": "AMBP",
+    "n": "Ardagh Metal Packaging S.A.",
+    "e": "US"
+  },
+  {
+    "s": "IHS",
+    "n": "Ihs Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LION",
+    "n": "Lionsgate Studios Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GOF",
+    "n": "Guggenheim Strategic Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "ADPT",
+    "n": "Adaptive Biotechnologies Corp",
+    "e": "US"
+  },
+  {
+    "s": "BTDR",
+    "n": "Bitdeer Technologies Group",
+    "e": "US"
+  },
+  {
+    "s": "WOR",
+    "n": "Worthington Enterprises, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PTEN",
+    "n": "Patterson Uti Energy Inc",
+    "e": "US"
+  },
+  {
+    "s": "MSGE",
+    "n": "Madison Square Garden Entertainment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CRGY",
+    "n": "Crescent Energy Co",
+    "e": "US"
+  },
+  {
+    "s": "FORTY",
+    "n": "Formula Systems (1985) Ltd",
+    "e": "US"
+  },
+  {
+    "s": "QFIN",
+    "n": "Qfin Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRND",
+    "n": "Grindr Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HOG",
+    "n": "Harley-Davidson, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BKV",
+    "n": "Bkv Corp",
+    "e": "US"
+  },
+  {
+    "s": "RXRX",
+    "n": "Recursion Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TXG",
+    "n": "10x Genomics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PTY",
+    "n": "Pimco Corporate & Income Opportunity Fund",
+    "e": "US"
+  },
+  {
+    "s": "WAFD",
+    "n": "Wafd Inc",
+    "e": "US"
+  },
+  {
+    "s": "RNG",
+    "n": "Ringcentral, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DBC",
+    "n": "Invesco Db Commodity Index Tracking Fund",
+    "e": "US"
+  },
+  {
+    "s": "TLX",
+    "n": "Telix Pharmaceuticals Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KWR",
+    "n": "Quaker Chemical Corp",
+    "e": "US"
+  },
+  {
+    "s": "GDV",
+    "n": "Gabelli Dividend & Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "VNET",
+    "n": "Vnet Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CON",
+    "n": "Concentra Group Holdings Parent, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KMPR",
+    "n": "Kemper Corp",
+    "e": "US"
+  },
+  {
+    "s": "DKL",
+    "n": "Delek Logistics Partners, Lp",
+    "e": "US"
+  },
+  {
+    "s": "DIOD",
+    "n": "Diodes Inc /Del/",
+    "e": "US"
+  },
+  {
+    "s": "CCU",
+    "n": "United Breweries Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "PRK",
+    "n": "Park National Corp /Oh/",
+    "e": "US"
+  },
+  {
+    "s": "FCPT",
+    "n": "Four Corners Property Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SID",
+    "n": "National Steel Co",
+    "e": "US"
+  },
+  {
+    "s": "CHA",
+    "n": "Chagee Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CMPO",
+    "n": "Composecure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AAP",
+    "n": "Advance Auto Parts Inc",
+    "e": "US"
+  },
+  {
+    "s": "MESO",
+    "n": "Mesoblast Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GENI",
+    "n": "Genius Sports Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HYMC",
+    "n": "Hycroft Mining Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "XRAY",
+    "n": "Dentsply Sirona Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALKT",
+    "n": "Alkami Technology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SRPT",
+    "n": "Sarepta Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CURB",
+    "n": "Curbline Properties Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OLN",
+    "n": "Olin Corp",
+    "e": "US"
+  },
+  {
+    "s": "NZF",
+    "n": "Nuveen Municipal Credit Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "DBD",
+    "n": "Diebold Nixdorf, Inc",
+    "e": "US"
+  },
+  {
+    "s": "OCUL",
+    "n": "Ocular Therapeutix, Inc",
+    "e": "US"
+  },
+  {
+    "s": "CHEF",
+    "n": "Chefs' Warehouse, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ETY",
+    "n": "Eaton Vance Tax-Managed Diversified Equity Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "DNOW",
+    "n": "Dnow Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALM",
+    "n": "Almonty Industries Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MODG",
+    "n": "Topgolf Callaway Brands Corp.",
+    "e": "US"
+  },
+  {
+    "s": "UAA",
+    "n": "Under Armour, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OSSUY",
+    "n": "Embla Medical Hf/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DRVN",
+    "n": "Driven Brands Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGNI",
+    "n": "Magnite, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DRSHF",
+    "n": "Droneshield Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IE",
+    "n": "Ivanhoe Electric Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SYRE",
+    "n": "Spyre Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRMK",
+    "n": "Trustmark Corp",
+    "e": "US"
+  },
+  {
+    "s": "AYR",
+    "n": "Aircastle Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CLM",
+    "n": "Cornerstone Strategic Investment Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBUC",
+    "n": "Brookfield Business Corp",
+    "e": "US"
+  },
+  {
+    "s": "USAR",
+    "n": "Usa Rare Earth, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BTE",
+    "n": "Baytex Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SPNT",
+    "n": "Siriuspoint Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SLNO",
+    "n": "Soleno Therapeutics Inc",
+    "e": "US"
+  },
+  {
+    "s": "NVTS",
+    "n": "Navitas Semiconductor Corp",
+    "e": "US"
+  },
+  {
+    "s": "LU",
+    "n": "Lufax Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SBLK",
+    "n": "Star Bulk Carriers Corp.",
+    "e": "US"
+  },
+  {
+    "s": "UTF",
+    "n": "Cohen & Steers Infrastructure Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "OI",
+    "n": "O-I Glass, Inc. /De/",
+    "e": "US"
+  },
+  {
+    "s": "RARE",
+    "n": "Ultragenyx Pharmaceutical Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRN",
+    "n": "Trinity Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "SLDE",
+    "n": "Slide Insurance Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KSS",
+    "n": "Kohls Corp",
+    "e": "US"
+  },
+  {
+    "s": "PGNY",
+    "n": "Progyny, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HE",
+    "n": "Hawaiian Electric Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "CVI",
+    "n": "Cvr Energy Inc",
+    "e": "US"
+  },
+  {
+    "s": "PLUS",
+    "n": "Eplus Inc",
+    "e": "US"
+  },
+  {
+    "s": "LC",
+    "n": "Lendingclub Corp",
+    "e": "US"
+  },
+  {
+    "s": "BB",
+    "n": "Blackberry Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GEO",
+    "n": "Geo Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "DEI",
+    "n": "Douglas Emmett Inc",
+    "e": "US"
+  },
+  {
+    "s": "KNTK",
+    "n": "Kinetik Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "POWI",
+    "n": "Power Integrations Inc",
+    "e": "US"
+  },
+  {
+    "s": "VIA",
+    "n": "Via Transportation, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QDEL",
+    "n": "Quidelortho Corp",
+    "e": "US"
+  },
+  {
+    "s": "CSGS",
+    "n": "Csg Systems International Inc",
+    "e": "US"
+  },
+  {
+    "s": "BELFA",
+    "n": "Bel Fuse Inc /Nj",
+    "e": "US"
+  },
+  {
+    "s": "NGVT",
+    "n": "Ingevity Corp",
+    "e": "US"
+  },
+  {
+    "s": "CLVT",
+    "n": "Clarivate Plc",
+    "e": "US"
+  },
+  {
+    "s": "HCI",
+    "n": "Hci Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RXO",
+    "n": "Rxo, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBT",
+    "n": "Beacon Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "HI",
+    "n": "Hillenbrand, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OSW",
+    "n": "Onespaworld Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RUM",
+    "n": "Rumble Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IVT",
+    "n": "Inventrust Properties Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TRMD",
+    "n": "Torm Plc",
+    "e": "US"
+  },
+  {
+    "s": "TWST",
+    "n": "Twist Bioscience Corp",
+    "e": "US"
+  },
+  {
+    "s": "TGLS",
+    "n": "Tecnoglass Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NBTB",
+    "n": "Nbt Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "SAM",
+    "n": "Boston Beer Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "RVLV",
+    "n": "Revolve Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KMT",
+    "n": "Kennametal Inc",
+    "e": "US"
+  },
+  {
+    "s": "LUNR",
+    "n": "Intuitive Machines, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATKR",
+    "n": "Atkore Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TIC",
+    "n": "Tic Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMNM",
+    "n": "Immunome Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALG",
+    "n": "Alamo Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "EVCM",
+    "n": "Evercommerce Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FMCXF",
+    "n": "Foran Mining Corp",
+    "e": "US"
+  },
+  {
+    "s": "VSH",
+    "n": "Vishay Intertechnology Inc",
+    "e": "US"
+  },
+  {
+    "s": "BANR",
+    "n": "Banner Corp",
+    "e": "US"
+  },
+  {
+    "s": "FRME",
+    "n": "First Merchants Corp",
+    "e": "US"
+  },
+  {
+    "s": "TGB",
+    "n": "Taseko Mines Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CIVI",
+    "n": "Civitas Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ODD",
+    "n": "Oddity Tech Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OMCL",
+    "n": "Omnicell, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FBNC",
+    "n": "First Bancorp /Nc/",
+    "e": "US"
+  },
+  {
+    "s": "GLPG",
+    "n": "Galapagos Nv",
+    "e": "US"
+  },
+  {
+    "s": "GCMG",
+    "n": "Gcm Grosvenor Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MQ",
+    "n": "Marqeta, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OLMA",
+    "n": "Olema Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HTH",
+    "n": "Hilltop Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IBRX",
+    "n": "Immunitybio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HRMY",
+    "n": "Harmony Biosciences Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EXTR",
+    "n": "Extreme Networks Inc",
+    "e": "US"
+  },
+  {
+    "s": "TSCFY",
+    "n": "Tisco Financial Group Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SAH",
+    "n": "Sonic Automotive Inc",
+    "e": "US"
+  },
+  {
+    "s": "PK",
+    "n": "Park Hotels & Resorts Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FLO",
+    "n": "Flowers Foods Inc",
+    "e": "US"
+  },
+  {
+    "s": "OGN",
+    "n": "Organon & Co.",
+    "e": "US"
+  },
+  {
+    "s": "AORT",
+    "n": "Artivion, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SDRL",
+    "n": "Seadrill Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ASGN",
+    "n": "Asgn Inc",
+    "e": "US"
+  },
+  {
+    "s": "BUSE",
+    "n": "First Busey Corp /Nv/",
+    "e": "US"
+  },
+  {
+    "s": "VAC",
+    "n": "Marriott Vacations Worldwide Corp",
+    "e": "US"
+  },
+  {
+    "s": "AVDL",
+    "n": "Avadel Pharmaceuticals Plc",
+    "e": "US"
+  },
+  {
+    "s": "AUPH",
+    "n": "Aurinia Pharmaceuticals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DHT",
+    "n": "Dht Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZLAB",
+    "n": "Zai Lab Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BWLP",
+    "n": "Bw Lpg Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EYE",
+    "n": "National Vision Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EPAC",
+    "n": "Enerpac Tool Group Corp",
+    "e": "US"
+  },
+  {
+    "s": "CECO",
+    "n": "Ceco Environmental Corp",
+    "e": "US"
+  },
+  {
+    "s": "STC",
+    "n": "Stewart Information Services Corp",
+    "e": "US"
+  },
+  {
+    "s": "NTB",
+    "n": "Bank Of N.T. Butterfield & Son Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ADUS",
+    "n": "Addus Homecare Corp",
+    "e": "US"
+  },
+  {
+    "s": "ATRO",
+    "n": "Astronics Corp",
+    "e": "US"
+  },
+  {
+    "s": "WD",
+    "n": "Walker & Dunlop, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATRC",
+    "n": "Atricure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLAB",
+    "n": "Photronics Inc",
+    "e": "US"
+  },
+  {
+    "s": "KYN",
+    "n": "Kayne Anderson Energy Infrastructure Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IQ",
+    "n": "Iqiyi, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DX",
+    "n": "Dynex Capital Inc",
+    "e": "US"
+  },
+  {
+    "s": "NHC",
+    "n": "National Healthcare Corp",
+    "e": "US"
+  },
+  {
+    "s": "PRDO",
+    "n": "Perdoceo Education Corp",
+    "e": "US"
+  },
+  {
+    "s": "VCEL",
+    "n": "Vericel Corp",
+    "e": "US"
+  },
+  {
+    "s": "INOD",
+    "n": "Innodata Inc",
+    "e": "US"
+  },
+  {
+    "s": "TNK",
+    "n": "Teekay Tankers Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BUR",
+    "n": "Burford Capital Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ARR",
+    "n": "Armour Residential Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ESTA",
+    "n": "Establishment Labs Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UNFI",
+    "n": "United Natural Foods Inc",
+    "e": "US"
+  },
+  {
+    "s": "CXW",
+    "n": "Corecivic, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SGRY",
+    "n": "Surgery Partners, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XZO",
+    "n": "Exzeo Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PENN",
+    "n": "Penn Entertainment, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SM",
+    "n": "Sm Energy Co",
+    "e": "US"
+  },
+  {
+    "s": "SONO",
+    "n": "Sonos Inc",
+    "e": "US"
+  },
+  {
+    "s": "EFSC",
+    "n": "Enterprise Financial Services Corp",
+    "e": "US"
+  },
+  {
+    "s": "STOK",
+    "n": "Stoke Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRGO",
+    "n": "Perrigo Co Plc",
+    "e": "US"
+  },
+  {
+    "s": "VZLA",
+    "n": "Vizsla Silver Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FIHL",
+    "n": "Fidelis Insurance Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TSLX",
+    "n": "Sixth Street Specialty Lending, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NTCT",
+    "n": "Netscout Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "SBET",
+    "n": "Sharplink Gaming, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VECO",
+    "n": "Veeco Instruments Inc",
+    "e": "US"
+  },
+  {
+    "s": "PRKS",
+    "n": "United Parks & Resorts Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KALU",
+    "n": "Kaiser Aluminum Corp",
+    "e": "US"
+  },
+  {
+    "s": "NOG",
+    "n": "Northern Oil & Gas, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RVT",
+    "n": "Royce Small-Cap Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NN",
+    "n": "Nextnav Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NYAX",
+    "n": "Nayax Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ADEA",
+    "n": "Adeia Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SVM",
+    "n": "Silvercorp Metals Inc",
+    "e": "US"
+  },
+  {
+    "s": "MTX",
+    "n": "Minerals Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "MDCOY",
+    "n": "Pt Medco Energi Internasional Tbk/Adr",
+    "e": "US"
+  },
+  {
+    "s": "WLTH",
+    "n": "Wealthfront Corp",
+    "e": "US"
+  },
+  {
+    "s": "CENT",
+    "n": "Central Garden & Pet Co",
+    "e": "US"
+  },
+  {
+    "s": "HNI",
+    "n": "Hni Corp",
+    "e": "US"
+  },
+  {
+    "s": "TPB",
+    "n": "Turning Point Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FIGS",
+    "n": "Figs, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GNL",
+    "n": "Global Net Lease, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMRE",
+    "n": "Costamare Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRDN",
+    "n": "Guardian Pharmacy Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PAYO",
+    "n": "Payoneer Global Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RNW",
+    "n": "Renew Energy Global Plc",
+    "e": "US"
+  },
+  {
+    "s": "DQ",
+    "n": "Daqo New Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CC",
+    "n": "Chemours Co",
+    "e": "US"
+  },
+  {
+    "s": "STRA",
+    "n": "Strategic Education, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PGY",
+    "n": "Pagaya Technologies Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "IOSP",
+    "n": "Innospec Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MAZE",
+    "n": "Maze Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NWN",
+    "n": "Northwest Natural Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "FXCNY",
+    "n": "Fih Mobile Ltd",
+    "e": "US"
+  },
+  {
+    "s": "WT",
+    "n": "Wisdomtree, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SYBT",
+    "n": "Stock Yards Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KN",
+    "n": "Knowles Corp",
+    "e": "US"
+  },
+  {
+    "s": "SMPL",
+    "n": "Simply Good Foods Co",
+    "e": "US"
+  },
+  {
+    "s": "WERN",
+    "n": "Werner Enterprises Inc",
+    "e": "US"
+  },
+  {
+    "s": "SION",
+    "n": "Sionna Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PDO",
+    "n": "Pimco Dynamic Income Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "UFPT",
+    "n": "Ufp Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "AI",
+    "n": "C3.Ai, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNDX",
+    "n": "Syndax Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "REAL",
+    "n": "Therealreal, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CXM",
+    "n": "Sprinklr, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YELP",
+    "n": "Yelp Inc",
+    "e": "US"
+  },
+  {
+    "s": "IRDM",
+    "n": "Iridium Communications Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MD",
+    "n": "Pediatrix Medical Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HOUS",
+    "n": "Anywhere Real Estate Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LASR",
+    "n": "Nlight, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLVM",
+    "n": "Sylvamo Corp",
+    "e": "US"
+  },
+  {
+    "s": "LMAT",
+    "n": "Lemaitre Vascular Inc",
+    "e": "US"
+  },
+  {
+    "s": "MCW",
+    "n": "Mister Car Wash, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARCB",
+    "n": "Arcbest Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "EBCRY",
+    "n": "Embracer Group Ab/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GAB",
+    "n": "Gabelli Equity Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "PRCT",
+    "n": "Procept Biorobotics Corp",
+    "e": "US"
+  },
+  {
+    "s": "GTBIF",
+    "n": "Green Thumb Industries Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AGM",
+    "n": "Federal Agricultural Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "ESRT",
+    "n": "Empire State Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CURLF",
+    "n": "Curaleaf Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVTC",
+    "n": "Evertec, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVT",
+    "n": "Eaton Vance Tax-Advantaged Dividend Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "HLIO",
+    "n": "Helios Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HROW",
+    "n": "Harrow, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SEM",
+    "n": "Select Medical Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "AVVSY",
+    "n": "Avio S.P.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "EYUBY",
+    "n": "Electricity Generating Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "ALMS",
+    "n": "Alumis Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZYME",
+    "n": "Zymeworks Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SKWD",
+    "n": "Skyward Specialty Insurance Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NUV",
+    "n": "Nuveen Municipal Value Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "NRIX",
+    "n": "Nurix Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GEL",
+    "n": "Genesis Energy Lp",
+    "e": "US"
+  },
+  {
+    "s": "HLMN",
+    "n": "Hillman Solutions Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HUN",
+    "n": "Huntsman Corp",
+    "e": "US"
+  },
+  {
+    "s": "LZ",
+    "n": "Legalzoom.Com, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "USA",
+    "n": "Liberty All Star Equity Fund",
+    "e": "US"
+  },
+  {
+    "s": "RAMP",
+    "n": "Liveramp Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AVAH",
+    "n": "Aveanna Healthcare Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRGS",
+    "n": "Progress Software Corp /Ma",
+    "e": "US"
+  },
+  {
+    "s": "CLDX",
+    "n": "Celldex Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OFG",
+    "n": "Ofg Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "NIC",
+    "n": "Nicolet Bankshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "IMAX",
+    "n": "Imax Corp",
+    "e": "US"
+  },
+  {
+    "s": "DRH",
+    "n": "Diamondrock Hospitality Co",
+    "e": "US"
+  },
+  {
+    "s": "DV",
+    "n": "Doubleverify Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VVX",
+    "n": "V2x, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JBLU",
+    "n": "Jetblue Airways Corp",
+    "e": "US"
+  },
+  {
+    "s": "PARR",
+    "n": "Par Pacific Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FMC",
+    "n": "Fmc Corp",
+    "e": "US"
+  },
+  {
+    "s": "SEDG",
+    "n": "Solaredge Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UNIT",
+    "n": "Uniti Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MNR",
+    "n": "Mach Natural Resources Lp",
+    "e": "US"
+  },
+  {
+    "s": "HMN",
+    "n": "Horace Mann Educators Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "TALO",
+    "n": "Talos Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DVAX",
+    "n": "Dynavax Technologies Corp",
+    "e": "US"
+  },
+  {
+    "s": "HTO",
+    "n": "H2o America",
+    "e": "US"
+  },
+  {
+    "s": "EFXT",
+    "n": "Enerflex Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "WBTN",
+    "n": "Webtoon Entertainment Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DAC",
+    "n": "Danaos Corp",
+    "e": "US"
+  },
+  {
+    "s": "MNKD",
+    "n": "Mannkind Corp",
+    "e": "US"
+  },
+  {
+    "s": "SEMR",
+    "n": "Semrush Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "USAS",
+    "n": "Americas Gold & Silver Corp",
+    "e": "US"
+  },
+  {
+    "s": "FCF",
+    "n": "First Commonwealth Financial Corp /Pa/",
+    "e": "US"
+  },
+  {
+    "s": "HBNB",
+    "n": "Hotel101 Global Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ANIP",
+    "n": "Ani Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "RHLD",
+    "n": "Resolute Holdings Management, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCB",
+    "n": "Coastal Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "TIGR",
+    "n": "Up Fintech Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ETG",
+    "n": "Eaton Vance Tax-Advantaged Global Dividend Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "FLYW",
+    "n": "Flywire Corp",
+    "e": "US"
+  },
+  {
+    "s": "ABTC",
+    "n": "American Bitcoin Corp.",
+    "e": "US"
+  },
+  {
+    "s": "STEW",
+    "n": "Srh Total Return Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LNXSY",
+    "n": "Lanxess Ag",
+    "e": "US"
+  },
+  {
+    "s": "ANDE",
+    "n": "Andersons, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CDRE",
+    "n": "Cadre Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NWBI",
+    "n": "Northwest Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SXGCF",
+    "n": "Southern Cross Gold Consolidated Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CDLR",
+    "n": "Cadeler A/S",
+    "e": "US"
+  },
+  {
+    "s": "CHCO",
+    "n": "City Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "ENVX",
+    "n": "Enovix Corp",
+    "e": "US"
+  },
+  {
+    "s": "DK",
+    "n": "Delek Us Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PBI",
+    "n": "Pitney Bowes Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "SHCO",
+    "n": "Soho House & Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VOYG",
+    "n": "Voyager Technologies, Inc./De",
+    "e": "US"
+  },
+  {
+    "s": "NOMD",
+    "n": "Nomad Foods Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NAC",
+    "n": "Nuveen California Quality Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "SHO",
+    "n": "Sunstone Hotel Investors, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HTZ",
+    "n": "Hertz Global Holdings, Inc",
+    "e": "US"
+  },
+  {
+    "s": "WS",
+    "n": "Worthington Steel, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JAMF",
+    "n": "Jamf Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "JJSF",
+    "n": "J&J Snack Foods Corp",
+    "e": "US"
+  },
+  {
+    "s": "JMIA",
+    "n": "Jumia Technologies Ag",
+    "e": "US"
+  },
+  {
+    "s": "SGML",
+    "n": "Sigma Lithium Corp",
+    "e": "US"
+  },
+  {
+    "s": "AAMI",
+    "n": "Acadian Asset Management Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FLOC",
+    "n": "Flowco Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KDK",
+    "n": "Kodiak Ai, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IAS",
+    "n": "Integral Ad Science Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SMA",
+    "n": "Smartstop Self Storage Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TY",
+    "n": "Tri-Continental Corp",
+    "e": "US"
+  },
+  {
+    "s": "AZTA",
+    "n": "Azenta, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMPR",
+    "n": "Cimpress Plc",
+    "e": "US"
+  },
+  {
+    "s": "TRIP",
+    "n": "Tripadvisor, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PGEN",
+    "n": "Precigen, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLMT",
+    "n": "Calumet, Inc. /De",
+    "e": "US"
+  },
+  {
+    "s": "CCS",
+    "n": "Century Communities, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ESBA",
+    "n": "Empire State Realty Op, L.P.",
+    "e": "US"
+  },
+  {
+    "s": "IMCR",
+    "n": "Immunocore Holdings Plc",
+    "e": "US"
+  },
+  {
+    "s": "AILIH",
+    "n": "Ameren Illinois Co",
+    "e": "US"
+  },
+  {
+    "s": "ALGT",
+    "n": "Allegiant Travel Co",
+    "e": "US"
+  },
+  {
+    "s": "MAAS",
+    "n": "Maase Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LTC",
+    "n": "Ltc Properties Inc",
+    "e": "US"
+  },
+  {
+    "s": "LAC",
+    "n": "Lithium Americas Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MCRI",
+    "n": "Monarch Casino & Resort Inc",
+    "e": "US"
+  },
+  {
+    "s": "ROG",
+    "n": "Rogers Corp",
+    "e": "US"
+  },
+  {
+    "s": "ETV",
+    "n": "Eaton Vance Tax-Managed Buy-Write Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "WLDN",
+    "n": "Willdan Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NTST",
+    "n": "Netstreit Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PWP",
+    "n": "Perella Weinberg Partners",
+    "e": "US"
+  },
+  {
+    "s": "TILE",
+    "n": "Interface Inc",
+    "e": "US"
+  },
+  {
+    "s": "BITF",
+    "n": "Bitfarms Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BDJ",
+    "n": "Blackrock Enhanced Equity Dividend Trust",
+    "e": "US"
+  },
+  {
+    "s": "BCRX",
+    "n": "Biocryst Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "FDP",
+    "n": "Fresh Del Monte Produce Inc",
+    "e": "US"
+  },
+  {
+    "s": "CASH",
+    "n": "Pathward Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AGIO",
+    "n": "Agios Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VRE",
+    "n": "Veris Residential, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NWL",
+    "n": "Newell Brands Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DXPE",
+    "n": "Dxp Enterprises Inc",
+    "e": "US"
+  },
+  {
+    "s": "KOD",
+    "n": "Kodiak Sciences Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MNSKY",
+    "n": "Moneysupermarket.Com Group Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "LSPD",
+    "n": "Lightspeed Commerce Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GTY",
+    "n": "Getty Realty Corp /Md/",
+    "e": "US"
+  },
+  {
+    "s": "NESR",
+    "n": "National Energy Services Reunited Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NEO",
+    "n": "Neogenomics Inc",
+    "e": "US"
+  },
+  {
+    "s": "LMRI",
+    "n": "Lumexa Imaging Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LOB",
+    "n": "Live Oak Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARCO",
+    "n": "Arcos Dorados Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DNTH",
+    "n": "Dianthus Therapeutics, Inc. /De/",
+    "e": "US"
+  },
+  {
+    "s": "AESI",
+    "n": "Atlas Energy Solutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MXL",
+    "n": "Maxlinear, Inc",
+    "e": "US"
+  },
+  {
+    "s": "ABR",
+    "n": "Arbor Realty Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "PHVS",
+    "n": "Pharvaris N.V.",
+    "e": "US"
+  },
+  {
+    "s": "XPRO",
+    "n": "Expro Group Holdings N.V.",
+    "e": "US"
+  },
+  {
+    "s": "PCT",
+    "n": "Purecycle Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RDW",
+    "n": "Redwire Corp",
+    "e": "US"
+  },
+  {
+    "s": "CRML",
+    "n": "Critical Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ICFI",
+    "n": "Icf International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTRE",
+    "n": "Fortrea Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NVCR",
+    "n": "Novocure Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NMM",
+    "n": "Navios Maritime Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "DGII",
+    "n": "Digi International Inc",
+    "e": "US"
+  },
+  {
+    "s": "STEL",
+    "n": "Stellar Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TYRA",
+    "n": "Tyra Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MNFYY",
+    "n": "Money Forward, Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "WLY",
+    "n": "John Wiley & Sons, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BSTZ",
+    "n": "Blackrock Science & Technology Term Trust",
+    "e": "US"
+  },
+  {
+    "s": "NEOG",
+    "n": "Neogen Corp",
+    "e": "US"
+  },
+  {
+    "s": "BRKK",
+    "n": "Barentsz Capital Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PAHC",
+    "n": "Phibro Animal Health Corp",
+    "e": "US"
+  },
+  {
+    "s": "BHE",
+    "n": "Benchmark Electronics Inc",
+    "e": "US"
+  },
+  {
+    "s": "CLBK",
+    "n": "Columbia Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NSP",
+    "n": "Insperity, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MBIN",
+    "n": "Merchants Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "GCT",
+    "n": "Gigacloud Technology Inc",
+    "e": "US"
+  },
+  {
+    "s": "BLX",
+    "n": "Foreign Trade Bank Of Latin America, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TNGX",
+    "n": "Tango Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LEG",
+    "n": "Leggett & Platt Inc",
+    "e": "US"
+  },
+  {
+    "s": "ENOV",
+    "n": "Enovis Corp",
+    "e": "US"
+  },
+  {
+    "s": "DFH",
+    "n": "Dream Finders Homes, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NNE",
+    "n": "Nano Nuclear Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WMK",
+    "n": "Weis Markets Inc",
+    "e": "US"
+  },
+  {
+    "s": "GBX",
+    "n": "Greenbrier Companies Inc",
+    "e": "US"
+  },
+  {
+    "s": "BMEZ",
+    "n": "Blackrock Health Sciences Term Trust",
+    "e": "US"
+  },
+  {
+    "s": "LOMA",
+    "n": "Loma Negra Compania Industrial Argentina Sociedad Anonima",
+    "e": "US"
+  },
+  {
+    "s": "FSLY",
+    "n": "Fastly, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIN",
+    "n": "Albany International Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "TCNNF",
+    "n": "Trulieve Cannabis Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WEN",
+    "n": "Wendy'S Co",
+    "e": "US"
+  },
+  {
+    "s": "ADNT",
+    "n": "Adient Plc",
+    "e": "US"
+  },
+  {
+    "s": "AMPL",
+    "n": "Amplitude, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BHVN",
+    "n": "Biohaven Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TCBK",
+    "n": "Trico Bancshares /",
+    "e": "US"
+  },
+  {
+    "s": "ECAT",
+    "n": "Blackrock Esg Capital Allocation Term Trust",
+    "e": "US"
+  },
+  {
+    "s": "FIVN",
+    "n": "Five9, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TFIN",
+    "n": "Triumph Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INVX",
+    "n": "Innovex International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXRT",
+    "n": "Nexpoint Residential Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RQI",
+    "n": "Cohen & Steers Quality Income Realty Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "SRCE",
+    "n": "1st Source Corp",
+    "e": "US"
+  },
+  {
+    "s": "LZB",
+    "n": "La-Z-Boy Inc",
+    "e": "US"
+  },
+  {
+    "s": "KMTS",
+    "n": "Kestra Medical Technologies, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AMRC",
+    "n": "Ameresco, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TV",
+    "n": "Grupo Televisa, S.A.B.",
+    "e": "US"
+  },
+  {
+    "s": "EVEX",
+    "n": "Eve Holding, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TE",
+    "n": "T1 Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRUP",
+    "n": "Trupanion, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OUST",
+    "n": "Ouster, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACVA",
+    "n": "Acv Auctions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TNDM",
+    "n": "Tandem Diabetes Care Inc",
+    "e": "US"
+  },
+  {
+    "s": "FUN",
+    "n": "Six Flags Entertainment Corporation/New",
+    "e": "US"
+  },
+  {
+    "s": "ARHS",
+    "n": "Arhaus, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BXMX",
+    "n": "Nuveen S&P 500 Buywrite Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "ELME",
+    "n": "Elme Communities",
+    "e": "US"
+  },
+  {
+    "s": "TSAT",
+    "n": "Telesat Corp",
+    "e": "US"
+  },
+  {
+    "s": "CYD",
+    "n": "China Yuchai International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "UCTT",
+    "n": "Ultra Clean Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UPB",
+    "n": "Upstream Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STBA",
+    "n": "S&T Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "AXGN",
+    "n": "Axogen, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLUE",
+    "n": "Monte Rosa Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WINA",
+    "n": "Winmark Corp",
+    "e": "US"
+  },
+  {
+    "s": "EFC",
+    "n": "Ellington Financial Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CERT",
+    "n": "Certara, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCAT",
+    "n": "Blackrock Capital Allocation Term Trust",
+    "e": "US"
+  },
+  {
+    "s": "SPB",
+    "n": "Spectrum Brands Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALEX",
+    "n": "Alexander & Baldwin, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NNNN",
+    "n": "Anbio Biotechnology",
+    "e": "US"
+  },
+  {
+    "s": "TRVI",
+    "n": "Trevi Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CET",
+    "n": "Central Securities Corp",
+    "e": "US"
+  },
+  {
+    "s": "EXPI",
+    "n": "Exp World Holdings, Inc.",
     "e": "US"
   },
   {
     "s": "XHR",
-    "n": "Xenia Hotels & Resorts Inc",
+    "n": "Xenia Hotels & Resorts, Inc.",
     "e": "US"
   },
   {
-    "s": "XLRN",
-    "n": "Acceleron Pharma Inc",
+    "s": "DCO",
+    "n": "Ducommun Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "COLL",
+    "n": "Collegium Pharmaceutical, Inc",
+    "e": "US"
+  },
+  {
+    "s": "BLBD",
+    "n": "Blue Bird Corp",
+    "e": "US"
+  },
+  {
+    "s": "BTT",
+    "n": "Blackrock Municipal 2030 Target Term Trust",
+    "e": "US"
+  },
+  {
+    "s": "IPX",
+    "n": "Iperionx Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NBHC",
+    "n": "National Bank Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "UTI",
+    "n": "Universal Technical Institute Inc",
+    "e": "US"
+  },
+  {
+    "s": "SVV",
+    "n": "Savers Value Village, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SHLS",
+    "n": "Shoals Technologies Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PSIX",
+    "n": "Power Solutions International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CSIQ",
+    "n": "Canadian Solar Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WWW",
+    "n": "Wolverine World Wide Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "GABC",
+    "n": "German American Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JKS",
+    "n": "Jinkosolar Holding Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HLF",
+    "n": "Herbalife Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ARLO",
+    "n": "Arlo Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ERAS",
+    "n": "Erasca, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NSSC",
+    "n": "Napco Security Technologies, Inc",
+    "e": "US"
+  },
+  {
+    "s": "AMSC",
+    "n": "American Superconductor Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "CNXN",
+    "n": "Pc Connection Inc",
+    "e": "US"
+  },
+  {
+    "s": "MBX",
+    "n": "Mbx Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WKC",
+    "n": "World Kinect Corp",
+    "e": "US"
+  },
+  {
+    "s": "INVA",
+    "n": "Innoviva, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TSHA",
+    "n": "Taysha Gene Therapies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XPEL",
+    "n": "Xpel, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NVRI",
+    "n": "Enviri Corp",
+    "e": "US"
+  },
+  {
+    "s": "GSG",
+    "n": "Ishares S&P Gsci Commodity-Indexed Trust",
+    "e": "US"
+  },
+  {
+    "s": "ALVO",
+    "n": "Alvotech",
+    "e": "US"
+  },
+  {
+    "s": "HIMX",
+    "n": "Himax Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATAI",
+    "n": "Atai Beckley N.V.",
+    "e": "US"
+  },
+  {
+    "s": "BTX",
+    "n": "Blackrock Technology & Private Equity Term Trust",
+    "e": "US"
+  },
+  {
+    "s": "HYT",
+    "n": "Blackrock Corporate High Yield Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HOPE",
+    "n": "Hope Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "SBH",
+    "n": "Sally Beauty Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QURE",
+    "n": "Uniqure N.V.",
+    "e": "US"
+  },
+  {
+    "s": "EYPT",
+    "n": "Eyepoint, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TUYA",
+    "n": "Tuya Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RAPP",
+    "n": "Rapport Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ROCK",
+    "n": "Gibraltar Industries, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MBC",
+    "n": "Masterbrand, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OXLC",
+    "n": "Oxford Lane Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CAPR",
+    "n": "Capricor Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AAT",
+    "n": "American Assets Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LKFN",
+    "n": "Lakeland Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "VYX",
+    "n": "Ncr Voyix Corp",
+    "e": "US"
+  },
+  {
+    "s": "AEGXF",
+    "n": "Aecon Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KARO",
+    "n": "Karooooo Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "RLAY",
+    "n": "Relay Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MRVI",
+    "n": "Maravai Lifesciences Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRAI",
+    "n": "Cra International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AHCO",
+    "n": "Adapthealth Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ASTH",
+    "n": "Astrana Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BST",
+    "n": "Blackrock Science & Technology Trust",
+    "e": "US"
+  },
+  {
+    "s": "ARDX",
+    "n": "Ardelyx, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PAR",
+    "n": "Par Technology Corp",
+    "e": "US"
+  },
+  {
+    "s": "TRS",
+    "n": "Trimas Corp",
+    "e": "US"
+  },
+  {
+    "s": "GAM",
+    "n": "General American Investors Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "MSDL",
+    "n": "Morgan Stanley Direct Lending Fund",
+    "e": "US"
+  },
+  {
+    "s": "NABL",
+    "n": "N-Able, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLTK",
+    "n": "Playtika Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "QQQX",
+    "n": "Nuveen Nasdaq 100 Dynamic Overwrite Fund",
+    "e": "US"
+  },
+  {
+    "s": "HCSG",
+    "n": "Healthcare Services Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "QCRH",
+    "n": "Qcr Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "FLNG",
+    "n": "Flex Lng Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "LILA",
+    "n": "Liberty Latin America Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ZD",
+    "n": "Ziff Davis, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENR",
+    "n": "Energizer Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SDGR",
+    "n": "Schrodinger, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBNX",
+    "n": "Beta Bionics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MAN",
+    "n": "Manpowergroup Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TNC",
+    "n": "Tennant Co",
+    "e": "US"
+  },
+  {
+    "s": "SLSR",
+    "n": "Solaris Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PEB",
+    "n": "Pebblebrook Hotel Trust",
+    "e": "US"
+  },
+  {
+    "s": "ARRY",
+    "n": "Array Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DAO",
+    "n": "Youdao, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EDN",
+    "n": "Edenor",
+    "e": "US"
+  },
+  {
+    "s": "IIPR",
+    "n": "Innovative Industrial Properties Inc",
+    "e": "US"
+  },
+  {
+    "s": "BFC",
+    "n": "Bank First Corp",
+    "e": "US"
+  },
+  {
+    "s": "NRP",
+    "n": "Natural Resource Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "CNL",
+    "n": "Collective Mining Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "KW",
+    "n": "Kennedy-Wilson Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MNMD",
+    "n": "Mind Medicine (Mindmed) Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DFIN",
+    "n": "Donnelley Financial Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SKYT",
+    "n": "Skywater Technology, Inc",
+    "e": "US"
+  },
+  {
+    "s": "GLP",
+    "n": "Global Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "UMH",
+    "n": "Umh Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RBTK",
+    "n": "Zhen Ding Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LADR",
+    "n": "Ladder Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "ARI",
+    "n": "Apollo Commercial Real Estate Finance, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BY",
+    "n": "Byline Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORKA",
+    "n": "Oruka Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DOLE",
+    "n": "Dole Plc",
+    "e": "US"
+  },
+  {
+    "s": "CNMD",
+    "n": "Conmed Corp",
+    "e": "US"
+  },
+  {
+    "s": "VITL",
+    "n": "Vital Farms, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TDOC",
+    "n": "Teladoc Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FINV",
+    "n": "Finvolution Group",
+    "e": "US"
+  },
+  {
+    "s": "AFYA",
+    "n": "Afya Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NBY",
+    "n": "Novabay Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTOS",
+    "n": "Custom Truck One Source, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "METC",
+    "n": "Ramaco Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DSGR",
+    "n": "Distribution Solutions Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IRS",
+    "n": "Irsa Investments & Representations Inc",
+    "e": "US"
+  },
+  {
+    "s": "MGIC",
+    "n": "Magic Software Enterprises Ltd",
+    "e": "US"
+  },
+  {
+    "s": "JCAP",
+    "n": "Jefferson Capital, Inc. / De",
+    "e": "US"
+  },
+  {
+    "s": "NEXT",
+    "n": "Nextdecade Corp",
+    "e": "US"
+  },
+  {
+    "s": "RBCAA",
+    "n": "Republic Bancorp Inc /Ky/",
+    "e": "US"
+  },
+  {
+    "s": "CTS",
+    "n": "Cts Corp",
+    "e": "US"
+  },
+  {
+    "s": "UVV",
+    "n": "Universal Corp /Va/",
+    "e": "US"
+  },
+  {
+    "s": "PAEXY",
+    "n": "Parex Resources Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "CNOB",
+    "n": "Connectone Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMTX",
+    "n": "Immatics N.V.",
+    "e": "US"
+  },
+  {
+    "s": "AZULQ",
+    "n": "Azul Sa",
+    "e": "US"
+  },
+  {
+    "s": "AMLX",
+    "n": "Amylyx Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AXTI",
+    "n": "Axt Inc",
+    "e": "US"
+  },
+  {
+    "s": "IMKTA",
+    "n": "Ingles Markets Inc",
+    "e": "US"
+  },
+  {
+    "s": "WTTR",
+    "n": "Select Water Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BORR",
+    "n": "Borr Drilling Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IDT",
+    "n": "Idt Corp",
+    "e": "US"
+  },
+  {
+    "s": "ECPG",
+    "n": "Encore Capital Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "GSL",
+    "n": "Global Ship Lease, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPRA",
+    "n": "Opera Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GEMI",
+    "n": "Gemini Space Station, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DSL",
+    "n": "Doubleline Income Solutions Fund",
+    "e": "US"
+  },
+  {
+    "s": "ARDT",
+    "n": "Ardent Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EZPW",
+    "n": "Ezcorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "CLOV",
+    "n": "Clover Health Investments, Corp. /De",
+    "e": "US"
+  },
+  {
+    "s": "DCOM",
+    "n": "Dime Community Bancshares, Inc. /Ny/",
+    "e": "US"
+  },
+  {
+    "s": "ECO",
+    "n": "Okeanis Eco Tankers Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EVO",
+    "n": "Evotec Se",
+    "e": "US"
+  },
+  {
+    "s": "DHC",
+    "n": "Diversified Healthcare Trust",
+    "e": "US"
+  },
+  {
+    "s": "BH-A",
+    "n": "Biglari Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PHAT",
+    "n": "Phathom Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TTI",
+    "n": "Tetra Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "GRC",
+    "n": "Gorman Rupp Co",
+    "e": "US"
+  },
+  {
+    "s": "NEXA",
+    "n": "Nexa Resources S.A.",
+    "e": "US"
+  },
+  {
+    "s": "PRLB",
+    "n": "Proto Labs Inc",
+    "e": "US"
+  },
+  {
+    "s": "LNN",
+    "n": "Lindsay Corp",
+    "e": "US"
+  },
+  {
+    "s": "MLKN",
+    "n": "Millerknoll, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RERE",
+    "n": "Atrenew Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PSEC",
+    "n": "Prospect Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "NAVI",
+    "n": "Navient Corp",
+    "e": "US"
+  },
+  {
+    "s": "AMPH",
+    "n": "Amphastar Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CSWC",
+    "n": "Capital Southwest Corp",
+    "e": "US"
+  },
+  {
+    "s": "SILA",
+    "n": "Sila Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JFR",
+    "n": "Nuveen Floating Rate Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "ATEN",
+    "n": "A10 Networks, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GOOS",
+    "n": "Canada Goose Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PDFS",
+    "n": "Pdf Solutions Inc",
+    "e": "US"
+  },
+  {
+    "s": "ANAB",
+    "n": "Anaptysbio, Inc",
+    "e": "US"
+  },
+  {
+    "s": "IAUX",
+    "n": "I-80 Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SANA",
+    "n": "Sana Biotechnology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NUTX",
+    "n": "Nutex Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORC",
+    "n": "Orchid Island Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FSCO",
+    "n": "Fs Credit Opportunities Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NFJ",
+    "n": "Virtus Dividend, Interest & Premium Strategy Fund",
+    "e": "US"
+  },
+  {
+    "s": "THR",
+    "n": "Thermon Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FOR",
+    "n": "Forestar Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STGW",
+    "n": "Stagwell Inc",
+    "e": "US"
+  },
+  {
+    "s": "CRI",
+    "n": "Carters Inc",
+    "e": "US"
+  },
+  {
+    "s": "IRMD",
+    "n": "Iradimed Corp",
+    "e": "US"
+  },
+  {
+    "s": "SLI",
+    "n": "Standard Lithium Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "COHU",
+    "n": "Cohu Inc",
+    "e": "US"
+  },
+  {
+    "s": "TBLA",
+    "n": "Taboola.Com Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SOC",
+    "n": "Sable Offshore Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RCAT",
+    "n": "Red Cat Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GIII",
+    "n": "G Iii Apparel Group Ltd /De/",
+    "e": "US"
+  },
+  {
+    "s": "ACHC",
+    "n": "Acadia Healthcare Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RES",
+    "n": "Rpc Inc",
+    "e": "US"
+  },
+  {
+    "s": "CRF",
+    "n": "Cornerstone Total Return Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "GUYGF",
+    "n": "G2 Goldfields Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KRP",
+    "n": "Kimbell Royalty Partners, Lp",
+    "e": "US"
+  },
+  {
+    "s": "COUR",
+    "n": "Coursera, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NVGS",
+    "n": "Navigator Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "NVAX",
+    "n": "Novavax Inc",
+    "e": "US"
+  },
+  {
+    "s": "PRA",
+    "n": "Proassurance Corp",
+    "e": "US"
+  },
+  {
+    "s": "EVLV",
+    "n": "Evolv Technologies Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EOS",
+    "n": "Eaton Vance Enhanced Equity Income Fund Ii",
+    "e": "US"
+  },
+  {
+    "s": "PZZA",
+    "n": "Papa Johns International Inc",
+    "e": "US"
+  },
+  {
+    "s": "NAK",
+    "n": "Northern Dynasty Minerals Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ABCL",
+    "n": "Abcellera Biologics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BV",
+    "n": "Brightview Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LUCK",
+    "n": "Lucky Strike Entertainment Corp",
+    "e": "US"
+  },
+  {
+    "s": "BLFS",
+    "n": "Biolife Solutions Inc",
+    "e": "US"
+  },
+  {
+    "s": "WABC",
+    "n": "Westamerica Bancorporation",
+    "e": "US"
+  },
+  {
+    "s": "OCS",
+    "n": "Oculis Holding Ag",
+    "e": "US"
+  },
+  {
+    "s": "USPH",
+    "n": "U S Physical Therapy Inc /Nv",
+    "e": "US"
+  },
+  {
+    "s": "NMZ",
+    "n": "Nuveen Municipal High Income Opportunity Fund",
+    "e": "US"
+  },
+  {
+    "s": "VET",
+    "n": "Vermilion Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WGO",
+    "n": "Winnebago Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "CCEC",
+    "n": "Capital Clean Energy Carriers Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LPG",
+    "n": "Dorian Lpg Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SWRD",
+    "n": "Stewards, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PHAR",
+    "n": "Pharming Group N.V.",
+    "e": "US"
+  },
+  {
+    "s": "XERS",
+    "n": "Xeris Biopharma Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PVLA",
+    "n": "Palvella Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPH",
+    "n": "Suburban Propane Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "PD",
+    "n": "Pagerduty, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OBK",
+    "n": "Origin Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRG",
+    "n": "Prog Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CSTL",
+    "n": "Castle Biosciences Inc",
+    "e": "US"
+  },
+  {
+    "s": "CSR",
+    "n": "Centerspace",
+    "e": "US"
+  },
+  {
+    "s": "SEPN",
+    "n": "Septerna, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "THS",
+    "n": "Treehouse Foods, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TIXT",
+    "n": "Telus International (Cda) Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SFDMY",
+    "n": "Shanghai Fudan Microelectronics Co Limited/Adr/",
+    "e": "US"
+  },
+  {
+    "s": "AMPX",
+    "n": "Amprius Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PFBC",
+    "n": "Preferred Bank",
+    "e": "US"
+  },
+  {
+    "s": "SVRA",
+    "n": "Savara Inc",
+    "e": "US"
+  },
+  {
+    "s": "NTLA",
+    "n": "Intellia Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMOS",
+    "n": "Chipmos Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "NBXG",
+    "n": "Neuberger Next Generation Connectivity Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCRX",
+    "n": "Pacira Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ROOT",
+    "n": "Root, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASA",
+    "n": "Asa Gold & Precious Metals Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ECVT",
+    "n": "Ecovyst Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRIN",
+    "n": "Trinity Capital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVV",
+    "n": "Eaton Vance Ltd Duration Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "RUPRF",
+    "n": "Rupert Resources Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GIC",
+    "n": "Global Industrial Co",
+    "e": "US"
+  },
+  {
+    "s": "CBL",
+    "n": "Cbl & Associates Properties Inc",
+    "e": "US"
+  },
+  {
+    "s": "LAR",
+    "n": "Lithium Argentina Ag",
+    "e": "US"
+  },
+  {
+    "s": "GLIBA",
+    "n": "Gci Liberty, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "THRM",
+    "n": "Gentherm Inc",
+    "e": "US"
+  },
+  {
+    "s": "BAK",
+    "n": "Braskem Sa",
+    "e": "US"
+  },
+  {
+    "s": "HLIT",
+    "n": "Harmonic Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PXED",
+    "n": "Phoenix Education Partners, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLPC",
+    "n": "Preformed Line Products Co",
+    "e": "US"
+  },
+  {
+    "s": "UAN",
+    "n": "Cvr Partners, Lp",
+    "e": "US"
+  },
+  {
+    "s": "SAFT",
+    "n": "Safety Insurance Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "RLJ",
+    "n": "Rlj Lodging Trust",
+    "e": "US"
+  },
+  {
+    "s": "WLFC",
+    "n": "Willis Lease Finance Corp",
+    "e": "US"
+  },
+  {
+    "s": "ALX",
+    "n": "Alexanders Inc",
+    "e": "US"
+  },
+  {
+    "s": "FPF",
+    "n": "First Trust Intermediate Duration Preferred & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "ELE",
+    "n": "Elemental Royalty Corp",
+    "e": "US"
+  },
+  {
+    "s": "SCL",
+    "n": "Stepan Co",
+    "e": "US"
+  },
+  {
+    "s": "ABXXF",
+    "n": "Abaxx Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VRTS",
+    "n": "Virtus Investment Partners, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PX",
+    "n": "P10, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DEA",
+    "n": "Easterly Government Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TWO",
+    "n": "Two Harbors Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SSII",
+    "n": "Ss Innovations International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GHRS",
+    "n": "Gh Research Plc",
+    "e": "US"
+  },
+  {
+    "s": "YALA",
+    "n": "Yalla Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NGL",
+    "n": "Ngl Energy Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "BFS",
+    "n": "Saul Centers, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INBX",
+    "n": "Inhibrx Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VTOL",
+    "n": "Bristow Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OCSL",
+    "n": "Oaktree Specialty Lending Corp",
+    "e": "US"
+  },
+  {
+    "s": "OLPX",
+    "n": "Olaplex Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IOVA",
+    "n": "Iovance Biotherapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SVMB",
+    "n": "Jingbo Technology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LUXE",
+    "n": "Luxexperience B.V.",
+    "e": "US"
+  },
+  {
+    "s": "UAMY",
+    "n": "United States Antimony Corp",
+    "e": "US"
+  },
+  {
+    "s": "PEBO",
+    "n": "Peoples Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "SPRY",
+    "n": "Ars Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STAA",
+    "n": "Staar Surgical Co",
+    "e": "US"
+  },
+  {
+    "s": "SFL",
+    "n": "Sfl Corp Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PMT",
+    "n": "Pennymac Mortgage Investment Trust",
+    "e": "US"
+  },
+  {
+    "s": "AGRO",
+    "n": "Adecoagro S.A.",
+    "e": "US"
+  },
+  {
+    "s": "KUBR",
+    "n": "Kuber Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "RZLV",
+    "n": "Rezolve Ai Plc",
+    "e": "US"
+  },
+  {
+    "s": "MUX",
+    "n": "Mcewen Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCOI",
+    "n": "Cogent Communications Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ELVR",
+    "n": "Elevra Lithium Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MALG",
+    "n": "Microalliance Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PTA",
+    "n": "Cohen & Steers Tax-Advantaged Preferred Securities & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "JBGS",
+    "n": "Jbg Smith Properties",
+    "e": "US"
+  },
+  {
+    "s": "URGN",
+    "n": "Urogen Pharma Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AEBI",
+    "n": "Aebi Schmidt Holding Ag",
+    "e": "US"
+  },
+  {
+    "s": "MMI",
+    "n": "Marcus & Millichap, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPK",
+    "n": "Opko Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ULCC",
+    "n": "Frontier Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HQH",
+    "n": "Abrdn Healthcare Investors",
+    "e": "US"
+  },
+  {
+    "s": "DMLP",
+    "n": "Dorchester Minerals, L.P.",
+    "e": "US"
+  },
+  {
+    "s": "CRTO",
+    "n": "Criteo S.A.",
+    "e": "US"
+  },
+  {
+    "s": "FSUN",
+    "n": "Firstsun Capital Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "UPBD",
+    "n": "Upbound Group, Inc.",
     "e": "US"
   },
   {
@@ -11886,113 +13376,38163 @@ const globalTickers = [
     "e": "US"
   },
   {
-    "s": "XNPT",
-    "n": "Xenoport Inc",
+    "s": "GILT",
+    "n": "Gilat Satellite Networks Ltd",
     "e": "US"
   },
   {
-    "s": "XOMA",
-    "n": "Xoma Ltd",
+    "s": "VLRS",
+    "n": "Controladora Vuela Compania De Aviacion, S.A.B. De C.V.",
     "e": "US"
   },
   {
-    "s": "XONE",
-    "n": "The Exone Company",
+    "s": "MOMO",
+    "n": "Hello Group Inc.",
     "e": "US"
   },
   {
-    "s": "XOXO",
-    "n": "Xoxo Group Inc",
+    "s": "BFLY",
+    "n": "Butterfly Network, Inc.",
     "e": "US"
   },
   {
-    "s": "XPO",
-    "n": "Express-1 Expedited Solutions",
+    "s": "RIOFF",
+    "n": "Rio2 Ltd",
     "e": "US"
   },
   {
-    "s": "XRM",
-    "n": "Xerium Technologies",
+    "s": "INMD",
+    "n": "Inmode Ltd.",
     "e": "US"
   },
   {
-    "s": "XXIA",
-    "n": "IXIA",
+    "s": "NFGC",
+    "n": "New Found Gold Corp.",
     "e": "US"
   },
   {
-    "s": "YDKN",
-    "n": "Yadkin Valley Financial Corp",
+    "s": "TASK",
+    "n": "Taskus, Inc.",
     "e": "US"
   },
   {
-    "s": "YORW",
-    "n": "The York Water Company",
+    "s": "RDWR",
+    "n": "Radware Ltd",
     "e": "US"
   },
   {
-    "s": "YRCW",
-    "n": "YRC Worldwide",
+    "s": "TMP",
+    "n": "Tompkins Financial Corp",
     "e": "US"
   },
   {
-    "s": "ZAGG",
-    "n": "Zagg Inc",
+    "s": "PHR",
+    "n": "Phreesia, Inc.",
     "e": "US"
   },
   {
-    "s": "ZAIS",
-    "n": "Zais Group Holdings Inc",
+    "s": "ASTE",
+    "n": "Astec Industries Inc",
     "e": "US"
   },
   {
-    "s": "ZEN",
-    "n": "Zendesk Inc",
+    "s": "REX",
+    "n": "Rex American Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "SUPV",
+    "n": "Grupo Supervielle S.A.",
+    "e": "US"
+  },
+  {
+    "s": "DEC",
+    "n": "Diversified Energy Co",
+    "e": "US"
+  },
+  {
+    "s": "NRDS",
+    "n": "Nerdwallet, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRCT",
+    "n": "Cricut, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RSRBF",
+    "n": "Robex Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TLRY",
+    "n": "Tilray Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OSBC",
+    "n": "Old Second Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "NBTX",
+    "n": "Nanobiotix S.A.",
+    "e": "US"
+  },
+  {
+    "s": "CIM",
+    "n": "Chimera Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "AOD",
+    "n": "Abrdn Total Dynamic Dividend Fund",
+    "e": "US"
+  },
+  {
+    "s": "CTBI",
+    "n": "Community Trust Bancorp Inc /Ky/",
+    "e": "US"
+  },
+  {
+    "s": "ATLC",
+    "n": "Atlanticus Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "MVST",
+    "n": "Microvast Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SAFE",
+    "n": "Safehold Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IGIC",
+    "n": "International General Insurance Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PDM",
+    "n": "Piedmont Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MFIC",
+    "n": "Midcap Financial Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "NEGG",
+    "n": "Newegg Commerce, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLSE",
+    "n": "Pulse Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCO",
+    "n": "Clear Channel Outdoor Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IART",
+    "n": "Integra Lifesciences Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "GSBD",
+    "n": "Goldman Sachs Bdc, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AEVA",
+    "n": "Aeva Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NPKI",
+    "n": "Npk International Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRON",
+    "n": "Cronos Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SBGI",
+    "n": "Sinclair, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EH",
+    "n": "Ehang Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EIG",
+    "n": "Employers Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MRTN",
+    "n": "Marten Transport Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MUC",
+    "n": "Blackrock Muniholdings California Quality Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMAL",
+    "n": "Amalgamated Financial Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KBDC",
+    "n": "Kayne Anderson Bdc, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBN",
+    "n": "Blackrock Taxable Municipal Bond Trust",
+    "e": "US"
+  },
+  {
+    "s": "DAKT",
+    "n": "Daktronics Inc /Sd/",
+    "e": "US"
+  },
+  {
+    "s": "HDL",
+    "n": "Super Hi International Holding Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CDNA",
+    "n": "Caredx, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ETW",
+    "n": "Eaton Vance Tax-Managed Global Buy-Write Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "XIFR",
+    "n": "Xplr Infrastructure, Lp",
+    "e": "US"
+  },
+  {
+    "s": "SERV",
+    "n": "Serve Robotics Inc. /De/",
+    "e": "US"
+  },
+  {
+    "s": "BTZ",
+    "n": "Blackrock Credit Allocation Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "HLX",
+    "n": "Helix Energy Solutions Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "PNTG",
+    "n": "Pennant Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OMER",
+    "n": "Omeros Corp",
+    "e": "US"
+  },
+  {
+    "s": "YEXT",
+    "n": "Yext, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NMAX",
+    "n": "Newsmax Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DLX",
+    "n": "Deluxe Corp",
+    "e": "US"
+  },
+  {
+    "s": "LGIH",
+    "n": "Lgi Homes, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OCFC",
+    "n": "Oceanfirst Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "GDRX",
+    "n": "Goodrx Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EAI",
+    "n": "Entergy Arkansas, Llc",
+    "e": "US"
+  },
+  {
+    "s": "GROY",
+    "n": "Gold Royalty Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BBOT",
+    "n": "Bridgebio Oncology Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLYM",
+    "n": "Plymouth Industrial Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DAWN",
+    "n": "Day One Biopharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IVA",
+    "n": "Inventiva S.A.",
+    "e": "US"
+  },
+  {
+    "s": "PENG",
+    "n": "Penguin Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "POET",
+    "n": "Poet Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CII",
+    "n": "Blackrock Enhanced Large Cap Core Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VTYX",
+    "n": "Ventyx Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASM",
+    "n": "Avino Silver & Gold Mines Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SIFY",
+    "n": "Sify Technologies Ltd",
+    "e": "US"
+  },
+  {
+    "s": "THH",
+    "n": "Tryhard Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ACEL",
+    "n": "Accel Entertainment, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALIT",
+    "n": "Alight, Inc. / Delaware",
+    "e": "US"
+  },
+  {
+    "s": "PRCH",
+    "n": "Porch Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMPX",
+    "n": "Compass Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PUMP",
+    "n": "Propetro Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EQBK",
+    "n": "Equity Bancshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "MFA",
+    "n": "Mfa Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LQDT",
+    "n": "Liquidity Services Inc",
+    "e": "US"
+  },
+  {
+    "s": "SBR",
+    "n": "Sabine Royalty Trust",
+    "e": "US"
+  },
+  {
+    "s": "SLDP",
+    "n": "Solid Power, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALNT",
+    "n": "Allient Inc",
+    "e": "US"
+  },
+  {
+    "s": "MFI",
+    "n": "Mf International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RNP",
+    "n": "Cohen & Steers Reit & Preferred & Income Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "OMDA",
+    "n": "Omada Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVGO",
+    "n": "Evgo Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TBPH",
+    "n": "Theravance Biopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RPD",
+    "n": "Rapid7, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MDXG",
+    "n": "Mimedx Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GMRE",
+    "n": "Global Medical Reit Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBSI",
+    "n": "Barrett Business Services Inc",
+    "e": "US"
+  },
+  {
+    "s": "JBI",
+    "n": "Janus International Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BJRI",
+    "n": "Bjs Restaurants Inc",
+    "e": "US"
+  },
+  {
+    "s": "FMBH",
+    "n": "First Mid Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BHRB",
+    "n": "Burke & Herbert Financial Services Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BBDC",
+    "n": "Barings Bdc, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ABUS",
+    "n": "Arbutus Biopharma Corp",
+    "e": "US"
+  },
+  {
+    "s": "BCAX",
+    "n": "Bicara Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NMFC",
+    "n": "New Mountain Finance Corp",
+    "e": "US"
+  },
+  {
+    "s": "CHY",
+    "n": "Calamos Convertible & High Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "GOLD",
+    "n": "Gold.Com, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCCX",
+    "n": "Churchill Capital Corp X/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "PRSU",
+    "n": "Pursuit Attractions & Hospitality, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FWRG",
+    "n": "First Watch Restaurant Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMP",
+    "n": "Compass Minerals International Inc",
+    "e": "US"
+  },
+  {
+    "s": "ESQ",
+    "n": "Esquire Financial Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UVSP",
+    "n": "Univest Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "SIBN",
+    "n": "Si-Bone, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PDS",
+    "n": "Precision Drilling Corp",
+    "e": "US"
+  },
+  {
+    "s": "PFLT",
+    "n": "Pennantpark Floating Rate Capital Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MSEX",
+    "n": "Middlesex Water Co",
+    "e": "US"
+  },
+  {
+    "s": "SBSI",
+    "n": "Southside Bancshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "AWF",
+    "n": "Alliancebernstein Global High Income Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "EVER",
+    "n": "Everquote, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCN",
+    "n": "Pimco Corporate & Income Strategy Fund",
+    "e": "US"
+  },
+  {
+    "s": "ELVN",
+    "n": "Enliven Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LOT",
+    "n": "Lotus Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EEX",
+    "n": "Emerald Holding, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASIC",
+    "n": "Ategrity Specialty Insurance Co Holdings",
+    "e": "US"
+  },
+  {
+    "s": "YB",
+    "n": "Yuanbao Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARVN",
+    "n": "Arvinas, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NRGV",
+    "n": "Energy Vault Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UFCS",
+    "n": "United Fire Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "ESPR",
+    "n": "Esperion Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GSM",
+    "n": "Ferroglobe Plc",
+    "e": "US"
+  },
+  {
+    "s": "VSTS",
+    "n": "Vestis Corp",
+    "e": "US"
+  },
+  {
+    "s": "ASST",
+    "n": "Strive, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CDNL",
+    "n": "Cardinal Infrastructure Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RJET",
+    "n": "Republic Airways Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ODV",
+    "n": "Osisko Development Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WSHP",
+    "n": "Weshop Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NBBK",
+    "n": "Nb Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RAPT",
+    "n": "Rapt Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GO",
+    "n": "Grocery Outlet Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CGBD",
+    "n": "Carlyle Secured Lending, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CPAC",
+    "n": "Cementos Pacasmayo Saa",
+    "e": "US"
+  },
+  {
+    "s": "GLDD",
+    "n": "Great Lakes Dredge & Dock Corp",
+    "e": "US"
+  },
+  {
+    "s": "LMB",
+    "n": "Limbach Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPFI",
+    "n": "Oppfi Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MEG",
+    "n": "Montrose Environmental Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IIIV",
+    "n": "I3 Verticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MNTN",
+    "n": "Mntn, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZBIO",
+    "n": "Zenas Biopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NKTR",
+    "n": "Nektar Therapeutics",
+    "e": "US"
+  },
+  {
+    "s": "BOW",
+    "n": "Bowhead Specialty Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NRK",
+    "n": "Nuveen New York Amt-Free Quality Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "BCX",
+    "n": "Blackrock Resources & Commodities Strategy Trust",
+    "e": "US"
+  },
+  {
+    "s": "NBR",
+    "n": "Nabors Industries Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CRMD",
+    "n": "Cormedix Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCSF",
+    "n": "Bain Capital Specialty Finance, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TYG",
+    "n": "Tortoise Energy Infrastructure Corp",
+    "e": "US"
+  },
+  {
+    "s": "UVE",
+    "n": "Universal Insurance Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CFFN",
+    "n": "Capitol Federal Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BKSY",
+    "n": "Blacksky Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ITRN",
+    "n": "Ituran Location & Control Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GES",
+    "n": "Guess Inc",
+    "e": "US"
+  },
+  {
+    "s": "GERN",
+    "n": "Geron Corp",
+    "e": "US"
+  },
+  {
+    "s": "CHI",
+    "n": "Calamos Convertible Opportunities & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "TMQ",
+    "n": "Trilogy Metals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SCSC",
+    "n": "Scansource, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UTL",
+    "n": "Unitil Corp",
+    "e": "US"
+  },
+  {
+    "s": "BVC",
+    "n": "Bitventures Ltd",
+    "e": "US"
+  },
+  {
+    "s": "UTZ",
+    "n": "Utz Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CAZGF",
+    "n": "Catapult Group International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KURA",
+    "n": "Kura Oncology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FLGT",
+    "n": "Fulgent Genetics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HEPS",
+    "n": "D-Market Electronic Services & Trading",
+    "e": "US"
+  },
+  {
+    "s": "SG",
+    "n": "Sweetgreen, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QNST",
+    "n": "Quinstreet, Inc",
+    "e": "US"
+  },
+  {
+    "s": "SSYS",
+    "n": "Stratasys Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AENT",
+    "n": "Alliance Entertainment Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "PHK",
+    "n": "Pimco High Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "VIR",
+    "n": "Vir Biotechnology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UDMY",
+    "n": "Udemy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VALN",
+    "n": "Valneva Se",
+    "e": "US"
+  },
+  {
+    "s": "HBNC",
+    "n": "Horizon Bancorp Inc /In/",
+    "e": "US"
+  },
+  {
+    "s": "AMTB",
+    "n": "Amerant Bancorp Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FUBO",
+    "n": "Fubotv Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RIGL",
+    "n": "Rigel Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "RYI",
+    "n": "Ryerson Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "BFST",
+    "n": "Business First Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EOI",
+    "n": "Eaton Vance Enhanced Equity Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "BBW",
+    "n": "Build-A-Bear Workshop Inc",
+    "e": "US"
+  },
+  {
+    "s": "CBLL",
+    "n": "Ceribell, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PDX",
+    "n": "Pimco Dynamic Income Strategy Fund",
+    "e": "US"
+  },
+  {
+    "s": "ORIC",
+    "n": "Oric Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLB",
+    "n": "Core Laboratories Inc. /De/",
+    "e": "US"
+  },
+  {
+    "s": "WOOF",
+    "n": "Petco Health & Wellness Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIV",
+    "n": "Apartment Investment & Management Co",
+    "e": "US"
+  },
+  {
+    "s": "GDYN",
+    "n": "Grid Dynamics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JANX",
+    "n": "Janux Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MBWM",
+    "n": "Mercantile Bank Corp",
+    "e": "US"
+  },
+  {
+    "s": "CPF",
+    "n": "Central Pacific Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "DBVT",
+    "n": "Dbv Technologies S.A.",
+    "e": "US"
+  },
+  {
+    "s": "FPH",
+    "n": "Five Point Holdings, Llc",
+    "e": "US"
+  },
+  {
+    "s": "BGM",
+    "n": "Bgm Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AVO",
+    "n": "Mission Produce, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HAFC",
+    "n": "Hanmi Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "PSNL",
+    "n": "Personalis, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LIND",
+    "n": "Lindblad Expeditions Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HTD",
+    "n": "John Hancock Tax-Advantaged Dividend Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "LDI",
+    "n": "Loandepot, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VINP",
+    "n": "Vinci Compass Investments Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TDAY",
+    "n": "Usa Today Co., Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TK",
+    "n": "Teekay Corp Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MQY",
+    "n": "Blackrock Muniyield Quality Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KALV",
+    "n": "Kalvista Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SMP",
+    "n": "Standard Motor Products, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLRC",
+    "n": "Slr Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "THQ",
+    "n": "Abrdn Healthcare Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "CRESY",
+    "n": "Cresud Inc",
+    "e": "US"
+  },
+  {
+    "s": "MCB",
+    "n": "Metropolitan Bank Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RSKD",
+    "n": "Riskified Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HRTG",
+    "n": "Heritage Insurance Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INDI",
+    "n": "Indie Semiconductor, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EMO",
+    "n": "Clearbridge Energy Midstream Opportunity Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SCHL",
+    "n": "Scholastic Corp",
+    "e": "US"
+  },
+  {
+    "s": "MATW",
+    "n": "Matthews International Corp",
+    "e": "US"
+  },
+  {
+    "s": "HBT",
+    "n": "Hbt Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ANNX",
+    "n": "Annexon, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AXL",
+    "n": "American Axle & Manufacturing Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "CNNE",
+    "n": "Cannae Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNCY",
+    "n": "Sun Country Airlines Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GGN",
+    "n": "Gamco Global Gold, Natural Resources & Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "BLND",
+    "n": "Blend Labs, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FWRD",
+    "n": "Forward Air Corp",
+    "e": "US"
+  },
+  {
+    "s": "BLDP",
+    "n": "Ballard Power Systems Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FMCB",
+    "n": "Farmers & Merchants Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "GNK",
+    "n": "Genco Shipping & Trading Ltd",
+    "e": "US"
+  },
+  {
+    "s": "REAX",
+    "n": "Real Brokerage Inc",
+    "e": "US"
+  },
+  {
+    "s": "NPK",
+    "n": "National Presto Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "BALY",
+    "n": "Bally'S Corp",
+    "e": "US"
+  },
+  {
+    "s": "ICHR",
+    "n": "Ichor Holdings, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "WBI",
+    "n": "Waterbridge Infrastructure Llc",
+    "e": "US"
+  },
+  {
+    "s": "AVBP",
+    "n": "Arrivent Biopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MOFG",
+    "n": "Midwestone Financial Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YDES",
+    "n": "Yd Bio Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HFWA",
+    "n": "Heritage Financial Corp /Wa/",
+    "e": "US"
+  },
+  {
+    "s": "WRLD",
+    "n": "World Acceptance Corp",
+    "e": "US"
+  },
+  {
+    "s": "JBSS",
+    "n": "Sanfilippo John B & Son Inc",
+    "e": "US"
+  },
+  {
+    "s": "ABX",
+    "n": "Abacus Global Management, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXDR",
+    "n": "Nextdoor Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PBT",
+    "n": "Permian Basin Royalty Trust",
+    "e": "US"
+  },
+  {
+    "s": "PLOW",
+    "n": "Douglas Dynamics, Inc",
+    "e": "US"
+  },
+  {
+    "s": "TROX",
+    "n": "Tronox Holdings Plc",
+    "e": "US"
+  },
+  {
+    "s": "AMWD",
+    "n": "American Woodmark Corp",
+    "e": "US"
+  },
+  {
+    "s": "FBRT",
+    "n": "Franklin Bsp Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TH",
+    "n": "Target Hospitality Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MLTX",
+    "n": "Moonlake Immunotherapeutics",
+    "e": "US"
+  },
+  {
+    "s": "HIPO",
+    "n": "Hippo Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NAT",
+    "n": "Nordic American Tankers Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CAPL",
+    "n": "Crossamerica Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "HNRG",
+    "n": "Hallador Energy Co",
+    "e": "US"
+  },
+  {
+    "s": "FFC",
+    "n": "Flaherty & Crumrine Preferred & Income Securities Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "HTLD",
+    "n": "Heartland Express Inc",
+    "e": "US"
+  },
+  {
+    "s": "UXIN",
+    "n": "Uxin Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NB",
+    "n": "Niocorp Developments Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CTLP",
+    "n": "Cantaloupe, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EPC",
+    "n": "Edgewell Personal Care Co",
+    "e": "US"
+  },
+  {
+    "s": "DJCO",
+    "n": "Daily Journal Corp",
+    "e": "US"
+  },
+  {
+    "s": "LINC",
+    "n": "Lincoln Educational Services Corp",
+    "e": "US"
+  },
+  {
+    "s": "AMC",
+    "n": "Amc Entertainment Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KODK",
+    "n": "Eastman Kodak Co",
+    "e": "US"
+  },
+  {
+    "s": "MTUS",
+    "n": "Metallus Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FSBC",
+    "n": "Five Star Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "AHG",
+    "n": "Akso Health Group",
+    "e": "US"
+  },
+  {
+    "s": "AIO",
+    "n": "Virtus Artificial Intelligence & Technology Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "TRST",
+    "n": "Trustco Bank Corp N Y",
+    "e": "US"
+  },
+  {
+    "s": "RGNX",
+    "n": "Regenxbio Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MTA",
+    "n": "Metalla Royalty & Streaming Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SENEA",
+    "n": "Seneca Foods Corp",
+    "e": "US"
+  },
+  {
+    "s": "DGNX",
+    "n": "Diginex Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BRELY",
+    "n": "Brazilian Rare Earths Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "IDR",
+    "n": "Idaho Strategic Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPY",
+    "n": "Oppenheimer Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "FOXF",
+    "n": "Fox Factory Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "ECC",
+    "n": "Eagle Point Credit Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AXG",
+    "n": "Solowin Holdings, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MAX",
+    "n": "Mediaalpha, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCNE",
+    "n": "Cnb Financial Corp/Pa",
+    "e": "US"
+  },
+  {
+    "s": "AQST",
+    "n": "Aquestive Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KRNGY",
+    "n": "Karoon Gas Australia Ltd /Adr/",
+    "e": "US"
+  },
+  {
+    "s": "TDUP",
+    "n": "Thredup Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MCBS",
+    "n": "Metrocity Bankshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SES",
+    "n": "Ses Ai Corp",
+    "e": "US"
+  },
+  {
+    "s": "SPPP",
+    "n": "Sprott Physical Platinum & Palladium Trust",
+    "e": "US"
+  },
+  {
+    "s": "AIP",
+    "n": "Arteris, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HTB",
+    "n": "Hometrust Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JQC",
+    "n": "Nuveen Credit Strategies Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "HTBK",
+    "n": "Heritage Commerce Corp",
+    "e": "US"
+  },
+  {
+    "s": "BTQ",
+    "n": "Btq Technologies Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ATXS",
+    "n": "Astria Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMPS",
+    "n": "Compass Pathways Plc",
+    "e": "US"
+  },
+  {
+    "s": "DSP",
+    "n": "Viant Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ERII",
+    "n": "Energy Recovery, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACDC",
+    "n": "Profrac Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CARS",
+    "n": "Cars.Com Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DRUG",
+    "n": "Bright Minds Biosciences Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BRSP",
+    "n": "Brightspire Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RDVT",
+    "n": "Red Violet, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CAC",
+    "n": "Camden National Corp",
+    "e": "US"
+  },
+  {
+    "s": "NOAH",
+    "n": "Noah Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EBS",
+    "n": "Emergent Biosolutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EMBC",
+    "n": "Embecta Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AIOT",
+    "n": "Powerfleet, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LAES",
+    "n": "Sealsq Corp",
+    "e": "US"
+  },
+  {
+    "s": "NXP",
+    "n": "Nuveen Select Tax Free Income Portfolio",
+    "e": "US"
+  },
+  {
+    "s": "VTS",
+    "n": "Vitesse Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LXEO",
+    "n": "Lexeo Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AEHR",
+    "n": "Aehr Test Systems",
+    "e": "US"
+  },
+  {
+    "s": "DNUT",
+    "n": "Krispy Kreme, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRME",
+    "n": "Prime Medicine, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MPLT",
+    "n": "Maplight Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTMX",
+    "n": "Cytomx Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FVRR",
+    "n": "Fiverr International Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HIVE",
+    "n": "Hive Digital Technologies Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PROK",
+    "n": "Prokidney Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CCBG",
+    "n": "Capital City Bank Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "TREE",
+    "n": "Lendingtree, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GHM",
+    "n": "Graham Corp",
+    "e": "US"
+  },
+  {
+    "s": "MYE",
+    "n": "Myers Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "HCAC",
+    "n": "Hall Chadwick Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "WSR",
+    "n": "Whitestone Reit",
+    "e": "US"
+  },
+  {
+    "s": "HBIA",
+    "n": "Hills Bancorporation",
+    "e": "US"
+  },
+  {
+    "s": "DGICA",
+    "n": "Donegal Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "MYI",
+    "n": "Blackrock Muniyield Quality Fund Iii, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TEN",
+    "n": "Tsakos Energy Navigation Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NX",
+    "n": "Quanex Building Products Corp",
+    "e": "US"
+  },
+  {
+    "s": "STRW",
+    "n": "Strawberry Fields Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLASF",
+    "n": "Glass House Brands Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SWIM",
+    "n": "Latham Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INNV",
+    "n": "Innovage Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RA",
+    "n": "Brookfield Real Assets Income Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "THFF",
+    "n": "First Financial Corp /In/",
+    "e": "US"
+  },
+  {
+    "s": "DBA",
+    "n": "Invesco Db Agriculture Fund",
+    "e": "US"
+  },
+  {
+    "s": "ODC",
+    "n": "Oil-Dri Corp Of America",
+    "e": "US"
+  },
+  {
+    "s": "PAXS",
+    "n": "Pimco Access Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "GDOT",
+    "n": "Green Dot Corp",
+    "e": "US"
+  },
+  {
+    "s": "DLY",
+    "n": "Doubleline Yield Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "APEI",
+    "n": "American Public Education Inc",
+    "e": "US"
+  },
+  {
+    "s": "WDI",
+    "n": "Western Asset Diversified Income Fund (Wdi)",
+    "e": "US"
+  },
+  {
+    "s": "MPB",
+    "n": "Mid Penn Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "BTBT",
+    "n": "Bit Digital, Inc",
+    "e": "US"
+  },
+  {
+    "s": "ITRG",
+    "n": "Integra Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AMSF",
+    "n": "Amerisafe Inc",
+    "e": "US"
+  },
+  {
+    "s": "ANGX",
+    "n": "Angel Studios, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PIII",
+    "n": "P3 Health Partners Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GDEN",
+    "n": "Golden Entertainment, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VEL",
+    "n": "Velocity Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BTO",
+    "n": "John Hancock Financial Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "MEGI",
+    "n": "Nyli Cbre Global Infrastructure Megatrends Term Fund",
+    "e": "US"
+  },
+  {
+    "s": "ADTN",
+    "n": "Adtran Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GYRE",
+    "n": "Gyre Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTKB",
+    "n": "Cytek Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NIE",
+    "n": "Virtus Equity & Convertible Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "FDUS",
+    "n": "Fidus Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "IMSR",
+    "n": "Terrestrial Energy Inc. /De/",
+    "e": "US"
+  },
+  {
+    "s": "SKYH",
+    "n": "Sky Harbour Group Corp",
+    "e": "US"
+  },
+  {
+    "s": "REPL",
+    "n": "Replimune Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PFN",
+    "n": "Pimco Income Strategy Fund Ii",
+    "e": "US"
+  },
+  {
+    "s": "GSBC",
+    "n": "Great Southern Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADSE",
+    "n": "Ads-Tec Energy Public Ltd Co",
+    "e": "US"
+  },
+  {
+    "s": "CGNT",
+    "n": "Cognyte Software Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "NTGR",
+    "n": "Netgear, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KE",
+    "n": "Kimball Electronics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASPI",
+    "n": "Asp Isotopes Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WLKP",
+    "n": "Westlake Chemical Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "TRTX",
+    "n": "Tpg Re Finance Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HUYA",
+    "n": "Huya Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BHK",
+    "n": "Blackrock Core Bond Trust",
+    "e": "US"
+  },
+  {
+    "s": "RWT",
+    "n": "Redwood Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "APOG",
+    "n": "Apogee Enterprises, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SFIX",
+    "n": "Stitch Fix, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CWH",
+    "n": "Camping World Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GDLC",
+    "n": "Grayscale Coindesk Crypto 5 Etf",
+    "e": "US"
+  },
+  {
+    "s": "IGR",
+    "n": "Cbre Global Real Estate Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "WDH",
+    "n": "Waterdrop Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORRF",
+    "n": "Orrstown Financial Services Inc",
+    "e": "US"
+  },
+  {
+    "s": "AHH",
+    "n": "Armada Hoffler Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GAU",
+    "n": "Galiano Gold Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACP",
+    "n": "Abrdn Income Credit Strategies Fund",
+    "e": "US"
+  },
+  {
+    "s": "TCMD",
+    "n": "Tactile Systems Technology Inc",
+    "e": "US"
+  },
+  {
+    "s": "RR",
+    "n": "Richtech Robotics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IBCP",
+    "n": "Independent Bank Corp /Mi/",
+    "e": "US"
+  },
+  {
+    "s": "NEWP",
+    "n": "New Pacific Metals Corp",
+    "e": "US"
+  },
+  {
+    "s": "HSTM",
+    "n": "Healthstream Inc",
+    "e": "US"
+  },
+  {
+    "s": "ADAM",
+    "n": "Adamas Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KRUS",
+    "n": "Kura Sushi Usa, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MATV",
+    "n": "Mativ Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LVWR",
+    "n": "Livewire Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KRNT",
+    "n": "Kornit Digital Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "STK",
+    "n": "Columbia Seligman Premium Technology Growth Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TALK",
+    "n": "Talkspace, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SMBC",
+    "n": "Southern Missouri Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TIPT",
+    "n": "Tiptree Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GPRE",
+    "n": "Green Plains Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SSTK",
+    "n": "Shutterstock, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TATT",
+    "n": "Tat Technologies Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BOE",
+    "n": "Blackrock Enhanced Global Dividend Trust",
+    "e": "US"
+  },
+  {
+    "s": "CSV",
+    "n": "Carriage Services Inc",
+    "e": "US"
+  },
+  {
+    "s": "ASGI",
+    "n": "Abrdn Global Infrastructure Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "IRWD",
+    "n": "Ironwood Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "GRPN",
+    "n": "Groupon, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DVLT",
+    "n": "Datavault Ai Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VTEX",
+    "n": "Vtex",
+    "e": "US"
+  },
+  {
+    "s": "FWDI",
+    "n": "Forward Industries, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRAA",
+    "n": "Pra Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "DDL",
+    "n": "Dingdong (Cayman) Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AOSL",
+    "n": "Alpha & Omega Semiconductor Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BW",
+    "n": "Babcock & Wilcox Enterprises, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FULC",
+    "n": "Fulcrum Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VMO",
+    "n": "Invesco Municipal Opportunity Trust",
+    "e": "US"
+  },
+  {
+    "s": "AMRQF",
+    "n": "Amaroq Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SPT",
+    "n": "Sprout Social, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DC",
+    "n": "Dakota Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "JBIO",
+    "n": "Jade Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DMII",
+    "n": "Drugs Made In America Acquisition Ii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TBLD",
+    "n": "Thornburg Income Builder Opportunities Trust",
+    "e": "US"
+  },
+  {
+    "s": "MSC",
+    "n": "Studio City International Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NCDL",
+    "n": "Nuveen Churchill Direct Lending Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CGEM",
+    "n": "Cullinan Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALSAF",
+    "n": "Alpha Star Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "SXC",
+    "n": "Suncoke Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PACB",
+    "n": "Pacific Biosciences Of California, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DCBO",
+    "n": "Docebo Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SVA",
+    "n": "Sinovac Biotech Ltd",
+    "e": "US"
+  },
+  {
+    "s": "WRN",
+    "n": "Western Copper & Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "WYFI",
+    "n": "Whitefiber, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NKX",
+    "n": "Nuveen California Amt-Free Quality Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "MUJ",
+    "n": "Blackrock Muniholdings New Jersey Quality Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PHCI",
+    "n": "Panamera Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "LXU",
+    "n": "Lsb Industries, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EGBN",
+    "n": "Eagle Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "SMBK",
+    "n": "Smartfinancial Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FBYD",
+    "n": "Falcon'S Beyond Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SHEN",
+    "n": "Shenandoah Telecommunications Co/Va/",
+    "e": "US"
+  },
+  {
+    "s": "SMWB",
+    "n": "Similarweb Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CBRL",
+    "n": "Cracker Barrel Old Country Store, Inc",
+    "e": "US"
+  },
+  {
+    "s": "DSU",
+    "n": "Blackrock Debt Strategies Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CEVA",
+    "n": "Ceva Inc",
+    "e": "US"
+  },
+  {
+    "s": "FISI",
+    "n": "Financial Institutions Inc",
+    "e": "US"
+  },
+  {
+    "s": "GOGO",
+    "n": "Gogo Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EMD",
+    "n": "Western Asset Emerging Markets Debt Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPFI",
+    "n": "South Plains Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PDT",
+    "n": "John Hancock Premium Dividend Fund",
+    "e": "US"
+  },
+  {
+    "s": "FAX",
+    "n": "Abrdn Asia-Pacific Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OFIX",
+    "n": "Orthofix Medical Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALTI",
+    "n": "Alti Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGTX",
+    "n": "Meiragtx Holdings Plc",
+    "e": "US"
+  },
+  {
+    "s": "EVTL",
+    "n": "Vertical Aerospace Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CVLG",
+    "n": "Covenant Logistics Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LDP",
+    "n": "Cohen & Steers Ltd Duration Preferred & Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VREOF",
+    "n": "Vireo Growth Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IIIN",
+    "n": "Insteel Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "GOTU",
+    "n": "Gaotu Techedu Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FRGE",
+    "n": "Forge Global Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MYGN",
+    "n": "Myriad Genetics Inc",
+    "e": "US"
+  },
+  {
+    "s": "URG",
+    "n": "Ur-Energy Inc",
+    "e": "US"
+  },
+  {
+    "s": "AMN",
+    "n": "Amn Healthcare Services Inc",
+    "e": "US"
+  },
+  {
+    "s": "ECX",
+    "n": "Ecarx Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HTT",
+    "n": "Qudian Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MSIF",
+    "n": "Msc Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MHD",
+    "n": "Blackrock Muniholdings Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGMNF",
+    "n": "Magna Mining Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NWPX",
+    "n": "Nwpx Infrastructure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTO",
+    "n": "Cto Realty Growth, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCD",
+    "n": "Calamos Dynamic Convertible & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "NDMO",
+    "n": "Nuveen Dynamic Municipal Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "ABAT",
+    "n": "American Battery Technology Co",
+    "e": "US"
+  },
+  {
+    "s": "BWMN",
+    "n": "Bowman Consulting Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ISOU",
+    "n": "Isoenergy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ABSI",
+    "n": "Absci Corp",
+    "e": "US"
+  },
+  {
+    "s": "SNDA",
+    "n": "Sonida Senior Living, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CPS",
+    "n": "Cooper-Standard Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALPIB",
+    "n": "Alpine Banks Of Colorado",
+    "e": "US"
+  },
+  {
+    "s": "BZH",
+    "n": "Beazer Homes Usa Inc",
+    "e": "US"
+  },
+  {
+    "s": "CRSR",
+    "n": "Corsair Gaming, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IVR",
+    "n": "Invesco Mortgage Capital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KFRC",
+    "n": "Kforce Inc",
+    "e": "US"
+  },
+  {
+    "s": "BCAL",
+    "n": "California Bancorp Ca",
+    "e": "US"
+  },
+  {
+    "s": "MBUU",
+    "n": "Malibu Boats, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLS",
+    "n": "Sellas Life Sciences Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IBTA",
+    "n": "Ibotta, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NRIM",
+    "n": "Northrim Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "ETJ",
+    "n": "Eaton Vance Risk-Managed Diversified Equity Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "BWMX",
+    "n": "Betterware De Mexico, S.A.P.I. De C.V",
+    "e": "US"
+  },
+  {
+    "s": "FCBC",
+    "n": "First Community Bankshares Inc /Va/",
+    "e": "US"
+  },
+  {
+    "s": "EVAC",
+    "n": "Eqv Ventures Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "MNRO",
+    "n": "Monro, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMBQ",
+    "n": "Ambiq Micro, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WEAV",
+    "n": "Weave Communications, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CEPF",
+    "n": "Cantor Equity Partners Iv, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NPB",
+    "n": "Northpointe Bancshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "SHBI",
+    "n": "Shore Bancshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "ALRS",
+    "n": "Alerus Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "LYTS",
+    "n": "Lsi Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "IHRT",
+    "n": "Iheartmedia, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ETD",
+    "n": "Ethan Allen Interiors Inc",
+    "e": "US"
+  },
+  {
+    "s": "RHNO",
+    "n": "Rhino Bitcoin Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HOV",
+    "n": "Hovnanian Enterprises Inc",
+    "e": "US"
+  },
+  {
+    "s": "IIM",
+    "n": "Invesco Value Municipal Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "PEO",
+    "n": "Adams Natural Resources Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BUI",
+    "n": "Blackrock Utilities, Infrastructure & Power Opportunities Trust",
+    "e": "US"
+  },
+  {
+    "s": "FIP",
+    "n": "Ftai Infrastructure Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DNA",
+    "n": "Ginkgo Bioworks Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APPS",
+    "n": "Digital Turbine, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HZO",
+    "n": "Marinemax Inc",
+    "e": "US"
+  },
+  {
+    "s": "BIT",
+    "n": "Blackrock Multi-Sector Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "RMT",
+    "n": "Royce Micro-Cap Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BMBL",
+    "n": "Bumble Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FGOVF",
+    "n": "Freegold Ventures Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VSTM",
+    "n": "Verastem, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MMU",
+    "n": "Western Asset Managed Municipals Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTK",
+    "n": "Flotek Industries Inc/Cn/",
+    "e": "US"
+  },
+  {
+    "s": "CABO",
+    "n": "Cable One, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLAY",
+    "n": "Dave & Buster'S Entertainment, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NMCO",
+    "n": "Nuveen Municipal Credit Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "ENGN",
+    "n": "Engene Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IFN",
+    "n": "India Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CINT",
+    "n": "Ci&T Inc",
+    "e": "US"
+  },
+  {
+    "s": "RGR",
+    "n": "Sturm Ruger & Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "BLMN",
+    "n": "Bloomin' Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WASH",
+    "n": "Washington Trust Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "ZKH",
+    "n": "Zkh Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VGM",
+    "n": "Invesco Trust For Investment Grade Municipals",
+    "e": "US"
+  },
+  {
+    "s": "KROS",
+    "n": "Keros Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AVK",
+    "n": "Advent Convertible & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "AEXA",
+    "n": "American Exceptionalism Acquisition Corp. A",
+    "e": "US"
+  },
+  {
+    "s": "UURAF",
+    "n": "Ucore Rare Metals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LWLG",
+    "n": "Lightwave Logic, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DIAX",
+    "n": "Nuveen Dow 30sm Dynamic Overwrite Fund",
+    "e": "US"
+  },
+  {
+    "s": "DSGN",
+    "n": "Design Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRNS",
+    "n": "Transcat Inc",
+    "e": "US"
+  },
+  {
+    "s": "GFR",
+    "n": "Greenfire Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "NPCE",
+    "n": "Neuropace Inc",
+    "e": "US"
+  },
+  {
+    "s": "IVVD",
+    "n": "Invivyd, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PINWF",
+    "n": "Pinewood Technologies Group Plc",
+    "e": "US"
+  },
+  {
+    "s": "GOSS",
+    "n": "Gossamer Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALLT",
+    "n": "Allot Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CWCO",
+    "n": "Consolidated Water Co. Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TXO",
+    "n": "Txo Partners, L.P.",
+    "e": "US"
+  },
+  {
+    "s": "OWLS",
+    "n": "Obook Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KRO",
+    "n": "Kronos Worldwide Inc",
+    "e": "US"
+  },
+  {
+    "s": "LPTH",
+    "n": "Lightpath Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "CMCL",
+    "n": "Caledonia Mining Corp Plc",
+    "e": "US"
+  },
+  {
+    "s": "UHT",
+    "n": "Universal Health Realty Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "UROY",
+    "n": "Uranium Royalty Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DIN",
+    "n": "Dine Brands Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRNL",
+    "n": "Greenlite Ventures Inc",
+    "e": "US"
+  },
+  {
+    "s": "CRNC",
+    "n": "Cerence Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ANGI",
+    "n": "Angi Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SOHU",
+    "n": "Sohu.Com Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HY",
+    "n": "Hyster-Yale, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRNT",
+    "n": "Granite Ridge Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TROO",
+    "n": "Troops, Inc. /Cayman Islands/",
+    "e": "US"
+  },
+  {
+    "s": "ACIC",
+    "n": "American Coastal Insurance Corp",
+    "e": "US"
+  },
+  {
+    "s": "FEIM",
+    "n": "Frequency Electronics Inc",
+    "e": "US"
+  },
+  {
+    "s": "OXM",
+    "n": "Oxford Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "NGVC",
+    "n": "Natural Grocers By Vitamin Cottage, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORGO",
+    "n": "Organogenesis Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BGY",
+    "n": "Blackrock Enhanced International Dividend Trust",
+    "e": "US"
+  },
+  {
+    "s": "GAIN",
+    "n": "Gladstone Investment Corporation\\De",
+    "e": "US"
+  },
+  {
+    "s": "BME",
+    "n": "Blackrock Health Sciences Trust",
+    "e": "US"
+  },
+  {
+    "s": "TBN",
+    "n": "Tamboran Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "AVNS",
+    "n": "Avanos Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UMAC",
+    "n": "Unusual Machines, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EU",
+    "n": "Encore Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SABR",
+    "n": "Sabre Corp",
+    "e": "US"
+  },
+  {
+    "s": "HCKT",
+    "n": "Hackett Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTEV",
+    "n": "Claritev Corp",
+    "e": "US"
+  },
+  {
+    "s": "VKQ",
+    "n": "Invesco Municipal Trust",
+    "e": "US"
+  },
+  {
+    "s": "GETY",
+    "n": "Getty Images Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMCO",
+    "n": "Columbus Mckinnon Corp",
+    "e": "US"
+  },
+  {
+    "s": "GUT",
+    "n": "Gabelli Utility Trust",
+    "e": "US"
+  },
+  {
+    "s": "IMRX",
+    "n": "Immuneering Corp",
+    "e": "US"
+  },
+  {
+    "s": "VCV",
+    "n": "Invesco California Value Municipal Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "GOOD",
+    "n": "Gladstone Commercial Corp",
+    "e": "US"
+  },
+  {
+    "s": "CAN",
+    "n": "Canaan Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BIOA",
+    "n": "Bioage Labs, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CASS",
+    "n": "Cass Information Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "REPX",
+    "n": "Riley Exploration Permian, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FUEMF",
+    "n": "Fuerte Metals Corp",
+    "e": "US"
+  },
+  {
+    "s": "CYRX",
+    "n": "Cryoport, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PSTL",
+    "n": "Postal Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LYEL",
+    "n": "Lyell Immunopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BGB",
+    "n": "Blackstone Strategic Credit 2027 Term Fund",
+    "e": "US"
+  },
+  {
+    "s": "CANG",
+    "n": "Cango Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VPG",
+    "n": "Vishay Precision Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LBRX",
+    "n": "Lb Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "LTBR",
+    "n": "Lightbridge Corp",
+    "e": "US"
+  },
+  {
+    "s": "KOP",
+    "n": "Koppers Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRD-A",
+    "n": "Crawford & Co",
+    "e": "US"
+  },
+  {
+    "s": "CRVS",
+    "n": "Corvus Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BETR",
+    "n": "Better Home & Finance Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "BLW",
+    "n": "Blackrock Ltd Duration Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "IQI",
+    "n": "Invesco Quality Municipal Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "VREX",
+    "n": "Varex Imaging Corp",
+    "e": "US"
+  },
+  {
+    "s": "TCBX",
+    "n": "Third Coast Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WIW",
+    "n": "Western Asset Inflation-Linked Opportunities & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "SB",
+    "n": "Safe Bulkers, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KLC",
+    "n": "Kindercare Learning Companies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AROW",
+    "n": "Arrow Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "HLSCF",
+    "n": "Highlander Silver Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NAGE",
+    "n": "Niagen Bioscience, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "THW",
+    "n": "Abrdn World Healthcare Fund",
+    "e": "US"
+  },
+  {
+    "s": "HONE",
+    "n": "Harborone Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MSB",
+    "n": "Mesabi Trust",
+    "e": "US"
+  },
+  {
+    "s": "BHB",
+    "n": "Bar Harbor Bankshares",
+    "e": "US"
+  },
+  {
+    "s": "AUTL",
+    "n": "Autolus Therapeutics Plc",
+    "e": "US"
+  },
+  {
+    "s": "NXJ",
+    "n": "Nuveen New Jersey Quality Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "KYTX",
+    "n": "Kyverna Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCAP",
+    "n": "Crescent Capital Bdc, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LX",
+    "n": "Lexinfintech Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "UNTY",
+    "n": "Unity Bancorp Inc /Nj/",
+    "e": "US"
+  },
+  {
+    "s": "HPK",
+    "n": "Highpeak Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTHY",
+    "n": "First Trust High Yield Opportunities 2027 Term Fund",
+    "e": "US"
+  },
+  {
+    "s": "BCSS",
+    "n": "Bain Capital Gss Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TWI",
+    "n": "Titan International Inc",
+    "e": "US"
+  },
+  {
+    "s": "CLMB",
+    "n": "Climb Global Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STEX",
+    "n": "Streamex Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CLCO",
+    "n": "Cool Co Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GUG",
+    "n": "Guggenheim Active Allocation Fund",
+    "e": "US"
+  },
+  {
+    "s": "MAMA",
+    "n": "Mama'S Creations, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GHY",
+    "n": "Pgim Global High Yield Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FFWM",
+    "n": "First Foundation Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGPI",
+    "n": "Mgp Ingredients Inc",
+    "e": "US"
+  },
+  {
+    "s": "LENZ",
+    "n": "Lenz Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MAGN",
+    "n": "Magnera Corp",
+    "e": "US"
+  },
+  {
+    "s": "BDN",
+    "n": "Brandywine Realty Trust",
+    "e": "US"
+  },
+  {
+    "s": "BVS",
+    "n": "Bioventus Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVMN",
+    "n": "Evommune, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WOLF",
+    "n": "Wolfspeed, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PKST",
+    "n": "Peakstone Realty Trust",
+    "e": "US"
+  },
+  {
+    "s": "IBEX",
+    "n": "Ibex Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PML",
+    "n": "Pimco Municipal Income Fund Ii",
+    "e": "US"
+  },
+  {
+    "s": "VVR",
+    "n": "Invesco Senior Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "SRTA",
+    "n": "Strata Critical Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EIM",
+    "n": "Eaton Vance Municipal Bond Fund",
+    "e": "US"
+  },
+  {
+    "s": "HQL",
+    "n": "Abrdn Life Sciences Investors",
+    "e": "US"
+  },
+  {
+    "s": "VLGEA",
+    "n": "Village Super Market Inc",
+    "e": "US"
+  },
+  {
+    "s": "HLLY",
+    "n": "Holley Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OSPN",
+    "n": "Onespan Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VNDA",
+    "n": "Vanda Pharmaceuticals Inc.",
     "e": "US"
   },
   {
     "s": "ZEUS",
-    "n": "Olympic Steel",
+    "n": "Olympic Steel Inc",
     "e": "US"
   },
   {
-    "s": "ZFGN",
-    "n": "Zafgen Inc",
+    "s": "MCTA",
+    "n": "Charming Medical Ltd",
     "e": "US"
   },
   {
-    "s": "ZGNX",
-    "n": "Zogenix Inc",
+    "s": "DRTS",
+    "n": "Alpha Tau Medical Ltd.",
     "e": "US"
   },
   {
-    "s": "ZINC",
-    "n": "Horsehead Holding",
+    "s": "RBBN",
+    "n": "Ribbon Communications Inc.",
     "e": "US"
   },
   {
-    "s": "ZIOP",
-    "n": "Ziopharm Oncology Inc",
+    "s": "ELTP",
+    "n": "Elite Pharmaceuticals Inc /Nv/",
     "e": "US"
   },
   {
-    "s": "ZIXI",
-    "n": "Zix Corp",
+    "s": "FUFU",
+    "n": "Bitfufu Inc.",
     "e": "US"
   },
   {
-    "s": "ZLTQ",
-    "n": "Zeltiq Aesthetics Inc",
+    "s": "INN",
+    "n": "Summit Hotel Properties, Inc.",
     "e": "US"
   },
   {
-    "s": "ZOES",
-    "n": "Zoe'S Kitchen Inc",
+    "s": "ACNB",
+    "n": "Acnb Corp",
+    "e": "US"
+  },
+  {
+    "s": "KREF",
+    "n": "Kkr Real Estate Finance Trust Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FMAC",
+    "n": "Future Money Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "ARKO",
+    "n": "Arko Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PGC",
+    "n": "Peapack Gladstone Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "BLE",
+    "n": "Blackrock Municipal Income Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "ANRO",
+    "n": "Alto Neuroscience, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FMNB",
+    "n": "Farmers National Banc Corp /Oh/",
+    "e": "US"
+  },
+  {
+    "s": "OCGN",
+    "n": "Ocugen, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASMB",
+    "n": "Assembly Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PHDWY",
+    "n": "Pt Ace Hardware Indonesia, Tbk./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BWB",
+    "n": "Bridgewater Bancshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "GTN",
+    "n": "Gray Media, Inc",
+    "e": "US"
+  },
+  {
+    "s": "RYAM",
+    "n": "Rayonier Advanced Materials Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FFIC",
+    "n": "Flushing Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "LAB",
+    "n": "Standard Biotools Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PEPG",
+    "n": "Pepgen Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRTA",
+    "n": "Prothena Corp Public Ltd Co",
+    "e": "US"
+  },
+  {
+    "s": "NUS",
+    "n": "Nu Skin Enterprises, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SD",
+    "n": "Sandridge Energy Inc",
+    "e": "US"
+  },
+  {
+    "s": "SCVL",
+    "n": "Shoe Carnival Inc",
+    "e": "US"
+  },
+  {
+    "s": "SIGA",
+    "n": "Siga Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "CION",
+    "n": "Cion Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "ETO",
+    "n": "Eaton Vance Tax-Advantaged Global Dividend Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "BXC",
+    "n": "Bluelinx Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLOO",
+    "n": "Gloo Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CDZI",
+    "n": "Cadiz Inc",
+    "e": "US"
+  },
+  {
+    "s": "SGLA",
+    "n": "Sino Green Land Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MLAB",
+    "n": "Mesa Laboratories Inc /Co/",
+    "e": "US"
+  },
+  {
+    "s": "FFMGF",
+    "n": "First Mining Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HELE",
+    "n": "Helen Of Troy Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NMG",
+    "n": "Nouveau Monde Graphite Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MITK",
+    "n": "Mitek Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "ISD",
+    "n": "Pgim High Yield Bond Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MOV",
+    "n": "Movado Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "EHAB",
+    "n": "Enhabit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RRBI",
+    "n": "Red River Bancshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "CHW",
+    "n": "Calamos Global Dynamic Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "RSVR",
+    "n": "Reservoir Media, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PACK",
+    "n": "Ranpak Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EVH",
+    "n": "Evolent Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MYD",
+    "n": "Blackrock Muniyield Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHCT",
+    "n": "Community Healthcare Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "GLRE",
+    "n": "Greenlight Capital Re, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ASIX",
+    "n": "Advansix Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GEVO",
+    "n": "Gevo, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PSFE",
+    "n": "Paysafe Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PFIS",
+    "n": "Peoples Financial Services Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PURR",
+    "n": "Hyperliquid Strategies Inc",
+    "e": "US"
+  },
+  {
+    "s": "ZVRA",
+    "n": "Zevra Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KIO",
+    "n": "Kkr Income Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "KRSP",
+    "n": "Rice Acquisition Corp 3",
+    "e": "US"
+  },
+  {
+    "s": "LEGH",
+    "n": "Legacy Housing Corp",
+    "e": "US"
+  },
+  {
+    "s": "KRNY",
+    "n": "Kearny Financial Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NML",
+    "n": "Neuberger Berman Energy Infrastructure & Income Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCYC",
+    "n": "Bicycle Therapeutics Plc",
+    "e": "US"
+  },
+  {
+    "s": "ZEPP",
+    "n": "Zepp Health Corp",
+    "e": "US"
+  },
+  {
+    "s": "EXOD",
+    "n": "Exodus Movement, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASC",
+    "n": "Ardmore Shipping Corp",
+    "e": "US"
+  },
+  {
+    "s": "NFBK",
+    "n": "Northfield Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AFJK",
+    "n": "Aimei Health Technology Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MCS",
+    "n": "Marcus Corp",
+    "e": "US"
+  },
+  {
+    "s": "BYND",
+    "n": "Beyond Meat, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLNE",
+    "n": "Clean Energy Fuels Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ITIC",
+    "n": "Investors Title Co",
+    "e": "US"
+  },
+  {
+    "s": "VBNK",
+    "n": "Versabank",
+    "e": "US"
+  },
+  {
+    "s": "XNET",
+    "n": "Xunlei Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ATCX",
+    "n": "Atlas Critical Minerals Corp",
+    "e": "US"
+  },
+  {
+    "s": "CBNK",
+    "n": "Capital Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "LAW",
+    "n": "Cs Disco, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UP",
+    "n": "Wheels Up Experience Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GIW",
+    "n": "Gigcapital8 Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AAM",
+    "n": "Aa Mission Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KRT",
+    "n": "Karat Packaging Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTW",
+    "n": "Eqv Ventures Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NBB",
+    "n": "Nuveen Taxable Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "EBF",
+    "n": "Ennis, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DPG",
+    "n": "Duff & Phelps Utility & Infrastructure Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MRRDF",
+    "n": "Meridian Mining Uk Societas",
+    "e": "US"
+  },
+  {
+    "s": "KOPN",
+    "n": "Kopin Corp",
+    "e": "US"
+  },
+  {
+    "s": "GTEN",
+    "n": "Gores Holdings X, Inc. / Ci",
+    "e": "US"
+  },
+  {
+    "s": "CLLS",
+    "n": "Cellectis S.A.",
+    "e": "US"
+  },
+  {
+    "s": "HPS",
+    "n": "John Hancock Preferred Income Fund Iii",
+    "e": "US"
+  },
+  {
+    "s": "ANSC",
+    "n": "Agriculture & Natural Solutions Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "NPFD",
+    "n": "Nuveen Variable Rate Preferred & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "JOUT",
+    "n": "Johnson Outdoors Inc",
+    "e": "US"
+  },
+  {
+    "s": "BSRR",
+    "n": "Sierra Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "MSBI",
+    "n": "Midland States Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "THSGF",
+    "n": "Thesis Gold Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KIDS",
+    "n": "Orthopediatrics Corp",
+    "e": "US"
+  },
+  {
+    "s": "NBP",
+    "n": "Novabridge Biosciences",
+    "e": "US"
+  },
+  {
+    "s": "DHIL",
+    "n": "Diamond Hill Investment Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "MTW",
+    "n": "Manitowoc Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "IMXI",
+    "n": "International Money Express, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SUPX",
+    "n": "Superx Ai Technology Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SEAH",
+    "n": "Seahawk Recycling Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SWBI",
+    "n": "Smith & Wesson Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "THM",
+    "n": "International Tower Hill Mines Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CYH",
+    "n": "Community Health Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "CIVB",
+    "n": "Civista Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OIS",
+    "n": "Oil States International, Inc",
+    "e": "US"
+  },
+  {
+    "s": "TCPC",
+    "n": "Blackrock Tcp Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FET",
+    "n": "Forum Energy Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HBCP",
+    "n": "Home Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YORW",
+    "n": "York Water Co",
+    "e": "US"
+  },
+  {
+    "s": "GLAD",
+    "n": "Gladstone Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "BACQ",
+    "n": "Inflection Point Acquisition Corp. Iv",
+    "e": "US"
+  },
+  {
+    "s": "CLPT",
+    "n": "Clearpoint Neuro, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APXT",
+    "n": "Apex Treasury Corp",
+    "e": "US"
+  },
+  {
+    "s": "SBC",
+    "n": "Sbc Medical Group Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "ADCT",
+    "n": "Adc Therapeutics Sa",
+    "e": "US"
+  },
+  {
+    "s": "KMDA",
+    "n": "Kamada Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TCI",
+    "n": "Transcontinental Realty Investors Inc",
+    "e": "US"
+  },
+  {
+    "s": "ETB",
+    "n": "Eaton Vance Tax-Managed Buy-Write Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "OLP",
+    "n": "One Liberty Properties Inc",
+    "e": "US"
+  },
+  {
+    "s": "SCGX",
+    "n": "Saxon Capital Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "PKE",
+    "n": "Park Aerospace Corp",
+    "e": "US"
+  },
+  {
+    "s": "CARE",
+    "n": "Carter Bankshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRTH",
+    "n": "Priority Technology Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FBIZ",
+    "n": "First Business Financial Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IGD",
+    "n": "Voya Global Equity Dividend & Premium Opportunity Fund",
+    "e": "US"
+  },
+  {
+    "s": "LE",
+    "n": "Lands' End, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PANL",
+    "n": "Pangaea Logistics Solutions Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FPI",
+    "n": "Farmland Partners Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ANGO",
+    "n": "Angiodynamics Inc",
+    "e": "US"
+  },
+  {
+    "s": "IMMP",
+    "n": "Immutep Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EAF",
+    "n": "Graftech International Ltd",
     "e": "US"
   },
   {
     "s": "ZUMZ",
     "n": "Zumiez Inc",
+    "e": "US"
+  },
+  {
+    "s": "NQP",
+    "n": "Nuveen Pennsylvania Quality Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "BAND",
+    "n": "Bandwidth Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FDMT",
+    "n": "4d Molecular Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASTL",
+    "n": "Algoma Steel Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HSHP",
+    "n": "Himalaya Shipping Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FRPH",
+    "n": "Frp Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ETON",
+    "n": "Eton Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FINS",
+    "n": "Angel Oak Financial Strategies Income Term Trust",
+    "e": "US"
+  },
+  {
+    "s": "DMAC",
+    "n": "Diamedica Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VERI",
+    "n": "Veritone, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VRNO",
+    "n": "Verano Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "VELO",
+    "n": "Velo3d, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FFA",
+    "n": "First Trust Enhanced Equity Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "MLR",
+    "n": "Miller Industries Inc /Tn/",
+    "e": "US"
+  },
+  {
+    "s": "OWLT",
+    "n": "Owlet, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STKL",
+    "n": "Sunopta Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALT",
+    "n": "Altimmune, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BFK",
+    "n": "Blackrock Municipal Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "NWBO",
+    "n": "Northwest Biotherapeutics Inc",
+    "e": "US"
+  },
+  {
+    "s": "NMAI",
+    "n": "Nuveen Multi-Asset Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "CGC",
+    "n": "Canopy Growth Corp",
+    "e": "US"
+  },
+  {
+    "s": "EB",
+    "n": "Eventbrite, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KOS",
+    "n": "Kosmos Energy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GBFH",
+    "n": "Gbank Financial Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLDB",
+    "n": "Solid Biosciences Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRON",
+    "n": "Tron Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRLBF",
+    "n": "Cresco Labs Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NRC",
+    "n": "National Research Corp",
+    "e": "US"
+  },
+  {
+    "s": "HPI",
+    "n": "John Hancock Preferred Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "MNPR",
+    "n": "Monopar Therapeutics",
+    "e": "US"
+  },
+  {
+    "s": "HKD",
+    "n": "Amtd Digital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CAL",
+    "n": "Caleres Inc",
+    "e": "US"
+  },
+  {
+    "s": "DDI",
+    "n": "Doubledown Interactive Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HCIC",
+    "n": "Hennessy Capital Investment Corp. Viii",
+    "e": "US"
+  },
+  {
+    "s": "BWAY",
+    "n": "Brainsway Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MBVI",
+    "n": "M3-Brigade Acquisition Vi Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NGS",
+    "n": "Natural Gas Services Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "DFP",
+    "n": "Flaherty & Crumrine Dynamic Preferred & Income Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "HKHC",
+    "n": "Horizon Kinetics Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "CWBC",
+    "n": "Community West Bancshares",
+    "e": "US"
+  },
+  {
+    "s": "COFS",
+    "n": "Choiceone Financial Services Inc",
+    "e": "US"
+  },
+  {
+    "s": "EVN",
+    "n": "Eaton Vance Municipal Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "SFST",
+    "n": "Southern First Bancshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "TLNC",
+    "n": "Talon Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NOA",
+    "n": "North American Construction Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "LXRX",
+    "n": "Lexicon Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCAR",
+    "n": "D. Boral Arc Acquisition I Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SNDL",
+    "n": "Sndl Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRC",
+    "n": "Tejon Ranch Co",
+    "e": "US"
+  },
+  {
+    "s": "ARQQ",
+    "n": "Arqit Quantum Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FRA",
+    "n": "Blackrock Floating Rate Income Strategies Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LZM",
+    "n": "Lifezone Metals Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LCTX",
+    "n": "Lineage Cell Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DVS",
+    "n": "Dolly Varden Silver Corp",
+    "e": "US"
+  },
+  {
+    "s": "RCKT",
+    "n": "Rocket Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRTC",
+    "n": "Puretech Health Plc",
+    "e": "US"
+  },
+  {
+    "s": "ULH",
+    "n": "Universal Logistics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RTAC",
+    "n": "Renatus Tactical Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "CLFD",
+    "n": "Clearfield, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BMRC",
+    "n": "Bank Of Marin Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "DEFT",
+    "n": "Defi Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MUA",
+    "n": "Blackrock Muniassets Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NIKA",
+    "n": "Nika Pharmaceuticals, Inc",
+    "e": "US"
+  },
+  {
+    "s": "MG",
+    "n": "Mistras Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AERG",
+    "n": "Applied Energetics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TWFG",
+    "n": "Twfg, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBBY",
+    "n": "Bed Bath & Beyond, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTGO",
+    "n": "Contango Ore, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATEX",
+    "n": "Anterix Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRDA",
+    "n": "Entrada Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BNTC",
+    "n": "Benitec Biopharma Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCHT",
+    "n": "Birchtech Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WILC",
+    "n": "G Willi Food International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SDHY",
+    "n": "Pgim Short Duration High Yield Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "LEO",
+    "n": "Bny Mellon Strategic Municipals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TECX",
+    "n": "Tectonic Therapeutic, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FJET",
+    "n": "Starfighters Space, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EACO",
+    "n": "Eaco Corp",
+    "e": "US"
+  },
+  {
+    "s": "DXYZ",
+    "n": "Destiny Tech100 Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KFII",
+    "n": "K&F Growth Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "VKI",
+    "n": "Invesco Advantage Municipal Income Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "AKBA",
+    "n": "Akebia Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORN",
+    "n": "Orion Group Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "XRPN",
+    "n": "Armada Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "CCSI",
+    "n": "Consensus Cloud Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RMAX",
+    "n": "Re/Max Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GBAB",
+    "n": "Guggenheim Taxable Municipal Bond & Investment Grade Debt Trust",
+    "e": "US"
+  },
+  {
+    "s": "PUBM",
+    "n": "Pubmatic, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRVY",
+    "n": "Gravity Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "EAD",
+    "n": "Allspring Income Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "CERS",
+    "n": "Cerus Corp",
+    "e": "US"
+  },
+  {
+    "s": "REEMF",
+    "n": "Rare Element Resources Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ENTA",
+    "n": "Enanta Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "TOI",
+    "n": "Oncology Institute, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HVT",
+    "n": "Haverty Furniture Companies Inc",
+    "e": "US"
+  },
+  {
+    "s": "VFF",
+    "n": "Village Farms International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MVF",
+    "n": "Blackrock Munivest Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SGU",
+    "n": "Star Group, L.P.",
+    "e": "US"
+  },
+  {
+    "s": "VSTA",
+    "n": "Vasta Platform Ltd",
+    "e": "US"
+  },
+  {
+    "s": "XPOF",
+    "n": "Xponential Fitness, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IONR",
+    "n": "Ioneer Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ELVA",
+    "n": "Electrovaya Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BSVN",
+    "n": "Bank7 Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ADUR",
+    "n": "Aduro Clean Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMTG",
+    "n": "Claros Mortgage Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GBLI",
+    "n": "Global Indemnity Group, Llc",
+    "e": "US"
+  },
+  {
+    "s": "RXST",
+    "n": "Rxsight, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRAQ",
+    "n": "Cal Redwood Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AII",
+    "n": "American Integrity Insurance Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NPAC",
+    "n": "New Providence Acquisition Corp. Iii/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "BRBS",
+    "n": "Blue Ridge Bankshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LSAK",
+    "n": "Lesaka Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "SGHT",
+    "n": "Sight Sciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OBE",
+    "n": "Obsidian Energy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BOC",
+    "n": "Boston Omaha Corp",
+    "e": "US"
+  },
+  {
+    "s": "JACK",
+    "n": "Jack In The Box Inc",
+    "e": "US"
+  },
+  {
+    "s": "ONIT",
+    "n": "Onity Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ESEA",
+    "n": "Euroseas Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TTGT",
+    "n": "Techtarget, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BYRN",
+    "n": "Byrna Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCIX",
+    "n": "Churchill Capital Corp Ix/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "CRSF",
+    "n": "Crisp Momentum Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NMRA",
+    "n": "Neumora Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PERI",
+    "n": "Perion Network Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SOR",
+    "n": "Source Capital /De/",
+    "e": "US"
+  },
+  {
+    "s": "PNNT",
+    "n": "Pennantpark Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "PDLB",
+    "n": "Ponce Financial Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCAP",
+    "n": "Procap Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "TLS",
+    "n": "Telos Corp",
+    "e": "US"
+  },
+  {
+    "s": "CVGW",
+    "n": "Calavo Growers Inc",
+    "e": "US"
+  },
+  {
+    "s": "GPAT",
+    "n": "Gp-Act Iii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BRBI",
+    "n": "Brbi Br Partners S.A.",
+    "e": "US"
+  },
+  {
+    "s": "OBT",
+    "n": "Orange County Bancorp, Inc. /De/",
+    "e": "US"
+  },
+  {
+    "s": "BRCB",
+    "n": "Black Rock Coffee Bar, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMCX",
+    "n": "Amc Networks Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YSG",
+    "n": "Yatsen Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ILPT",
+    "n": "Industrial Logistics Properties Trust",
+    "e": "US"
+  },
+  {
+    "s": "MYN",
+    "n": "Blackrock Muniyield New York Quality Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MBAV",
+    "n": "M3-Brigade Acquisition V Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DOWAY",
+    "n": "Dowway Holdings Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "WNC",
+    "n": "Wabash National Corp",
+    "e": "US"
+  },
+  {
+    "s": "SLP",
+    "n": "Simulations Plus, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PFL",
+    "n": "Pimco Income Strategy Fund",
+    "e": "US"
+  },
+  {
+    "s": "USCB",
+    "n": "Uscb Financial Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NKLR",
+    "n": "Terra Innovatum Global N.V.",
+    "e": "US"
+  },
+  {
+    "s": "ALF",
+    "n": "Centurion Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RDAG",
+    "n": "Republic Digital Acquisition Co",
+    "e": "US"
+  },
+  {
+    "s": "CBAN",
+    "n": "Colony Bankcorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "NATR",
+    "n": "Natures Sunshine Products Inc",
+    "e": "US"
+  },
+  {
+    "s": "TACO",
+    "n": "Berto Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WENN",
+    "n": "Wen Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "INRE",
+    "n": "Inland Real Estate Income Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MTLS",
+    "n": "Materialise Nv",
+    "e": "US"
+  },
+  {
+    "s": "MCI",
+    "n": "Barings Corporate Investors",
+    "e": "US"
+  },
+  {
+    "s": "PSBD",
+    "n": "Palmer Square Capital Bdc Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMDB",
+    "n": "Costamare Bulkers Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GNE",
+    "n": "Genie Energy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HIX",
+    "n": "Western Asset High Income Fund Ii Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RM",
+    "n": "Regional Management Corp.",
+    "e": "US"
+  },
+  {
+    "s": "JRI",
+    "n": "Nuveen Real Asset Income & Growth Fund",
+    "e": "US"
+  },
+  {
+    "s": "ELLO",
+    "n": "Ellomay Capital Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "OPAL",
+    "n": "Opal Fuels Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DCTH",
+    "n": "Delcath Systems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NATH",
+    "n": "Nathans Famous, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACIU",
+    "n": "Ac Immune Sa",
+    "e": "US"
+  },
+  {
+    "s": "WTBA",
+    "n": "West Bancorporation Inc",
+    "e": "US"
+  },
+  {
+    "s": "IPI",
+    "n": "Intrepid Potash, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FOF",
+    "n": "Cohen & Steers Closed-End Opportunity Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FCEL",
+    "n": "Fuelcell Energy Inc",
+    "e": "US"
+  },
+  {
+    "s": "GCBC",
+    "n": "Greene County Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "BWFG",
+    "n": "Bankwell Financial Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EPRX",
+    "n": "Eupraxia Pharmaceuticals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "API",
+    "n": "Agora, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTRN",
+    "n": "Citi Trends Inc",
+    "e": "US"
+  },
+  {
+    "s": "AUNA",
+    "n": "Auna S.A.",
+    "e": "US"
+  },
+  {
+    "s": "SCM",
+    "n": "Stellus Capital Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "LXFR",
+    "n": "Luxfer Holdings Plc",
+    "e": "US"
+  },
+  {
+    "s": "ISTR",
+    "n": "Investar Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "EOLS",
+    "n": "Evolus, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GGAZF",
+    "n": "Goldgroup Mining Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AVXL",
+    "n": "Anavex Life Sciences Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BKKT",
+    "n": "Bakkt Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SAR",
+    "n": "Saratoga Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EGY",
+    "n": "Vaalco Energy Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "FCRS",
+    "n": "Futurecrest Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HELP",
+    "n": "Cybin Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GPRK",
+    "n": "Geopark Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CYDY",
+    "n": "Cytodyn Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DAVA",
+    "n": "Endava Plc",
+    "e": "US"
+  },
+  {
+    "s": "CNCK",
+    "n": "Coincheck Group N.V.",
+    "e": "US"
+  },
+  {
+    "s": "BBCP",
+    "n": "Concrete Pumping Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TITN",
+    "n": "Titan Machinery Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NNDM",
+    "n": "Nano Dimension Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MEC",
+    "n": "Mayville Engineering Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QDMI",
+    "n": "Qdm International Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DBI",
+    "n": "Designer Brands Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WEST",
+    "n": "Westrock Coffee Co",
+    "e": "US"
+  },
+  {
+    "s": "DOMO",
+    "n": "Domo, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZDCAF",
+    "n": "Zedcor, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CAEP",
+    "n": "Cantor Equity Partners Iii, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EDD",
+    "n": "Morgan Stanley Emerging Markets Domestic Debt Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BKT",
+    "n": "Blackrock Income Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CDRO",
+    "n": "Codere Online Luxembourg, S.A.",
+    "e": "US"
+  },
+  {
+    "s": "USNA",
+    "n": "Usana Health Sciences Inc",
+    "e": "US"
+  },
+  {
+    "s": "KTF",
+    "n": "Dws Municipal Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "XFLT",
+    "n": "Xai Octagon Floating Rate & Alternative Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "CODI",
+    "n": "Compass Diversified Holdings",
+    "e": "US"
+  },
+  {
+    "s": "SDHI",
+    "n": "Siddhi Acquisition Corp (Cayman Islands)",
+    "e": "US"
+  },
+  {
+    "s": "ALUB",
+    "n": "Alussa Energy Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "CZNC",
+    "n": "Citizens & Northern Corp",
+    "e": "US"
+  },
+  {
+    "s": "RMNI",
+    "n": "Rimini Street, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HIO",
+    "n": "Western Asset High Income Opportunity Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VENU",
+    "n": "Venu Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "JFIN",
+    "n": "Jiayin Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LND",
+    "n": "Brasilagro - Brazilian Agricultural Real Estate Co",
+    "e": "US"
+  },
+  {
+    "s": "CCII",
+    "n": "Cohen Circle Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "YRD",
+    "n": "Yiren Digital Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "RBB",
+    "n": "Rbb Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "KNOP",
+    "n": "Knot Offshore Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "CGCT",
+    "n": "Cartesian Growth Corp Iii",
+    "e": "US"
+  },
+  {
+    "s": "AREC",
+    "n": "American Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "KFS",
+    "n": "Kingsway Financial Services Inc",
+    "e": "US"
+  },
+  {
+    "s": "NCV",
+    "n": "Virtus Convertible & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "NCMI",
+    "n": "National Cinemedia, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TACH",
+    "n": "Titan Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CV",
+    "n": "Capsovision, Inc",
+    "e": "US"
+  },
+  {
+    "s": "VHI",
+    "n": "Valhi Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "GIG",
+    "n": "Gigcapital7 Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ISBA",
+    "n": "Isabella Bank Corp",
+    "e": "US"
+  },
+  {
+    "s": "OTLY",
+    "n": "Oatly Group Ab",
+    "e": "US"
+  },
+  {
+    "s": "NAN",
+    "n": "Nuveen New York Quality Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "BGR",
+    "n": "Blackrock Energy & Resources Trust",
+    "e": "US"
+  },
+  {
+    "s": "IPCX",
+    "n": "Inflection Point Acquisition Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "XFOR",
+    "n": "X4 Pharmaceuticals, Inc",
+    "e": "US"
+  },
+  {
+    "s": "BDCI",
+    "n": "Btc Development Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CTNM",
+    "n": "Contineum Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LAND",
+    "n": "Gladstone Land Corp",
+    "e": "US"
+  },
+  {
+    "s": "MBI",
+    "n": "Mbia Inc",
+    "e": "US"
+  },
+  {
+    "s": "SMRT",
+    "n": "Smartrent, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DMAA",
+    "n": "Drugs Made In America Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KCHV",
+    "n": "Kochav Defense Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HPF",
+    "n": "John Hancock Preferred Income Fund Ii",
+    "e": "US"
+  },
+  {
+    "s": "CEPT",
+    "n": "Cantor Equity Partners Ii, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PAII",
+    "n": "Pyrophyte Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "ELA",
+    "n": "Envela Corp",
+    "e": "US"
+  },
+  {
+    "s": "NFE",
+    "n": "New Fortress Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMRC",
+    "n": "Commerce.Com, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OTGA",
+    "n": "Otg Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "ACTG",
+    "n": "Acacia Research Corp",
+    "e": "US"
+  },
+  {
+    "s": "ORBS",
+    "n": "Eightco Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLSI",
+    "n": "Greenwich Lifesciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DBP",
+    "n": "Invesco Db Precious Metals Fund",
+    "e": "US"
+  },
+  {
+    "s": "ALMU",
+    "n": "Aeluma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CD",
+    "n": "Chaince Digital Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AURA",
+    "n": "Aura Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PPT",
+    "n": "Putnam Premier Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "SOUL",
+    "n": "Soulpower Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BLZR",
+    "n": "Trailblazer Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NEWT",
+    "n": "Newtekone, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SVC",
+    "n": "Service Properties Trust",
+    "e": "US"
+  },
+  {
+    "s": "ASLE",
+    "n": "Aersale Corp",
+    "e": "US"
+  },
+  {
+    "s": "MIY",
+    "n": "Blackrock Muniyield Michigan Quality Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RPAY",
+    "n": "Repay Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "VALU",
+    "n": "Value Line Inc",
+    "e": "US"
+  },
+  {
+    "s": "NC",
+    "n": "Nacco Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "ZURA",
+    "n": "Zura Bio Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CLDT",
+    "n": "Chatham Lodging Trust",
+    "e": "US"
+  },
+  {
+    "s": "DBO",
+    "n": "Invesco Db Oil Fund",
+    "e": "US"
+  },
+  {
+    "s": "ATGL",
+    "n": "Alpha Technology Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OYSE",
+    "n": "Oyster Enterprises Ii Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "ACCO",
+    "n": "Acco Brands Corp",
+    "e": "US"
+  },
+  {
+    "s": "HYLN",
+    "n": "Hyliion Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FCCN",
+    "n": "Spectral Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "BGT",
+    "n": "Blackrock Floating Rate Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "AXIN",
+    "n": "Axiom Intelligence Acquisition Corp 1",
+    "e": "US"
+  },
+  {
+    "s": "FVR",
+    "n": "Frontview Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LEGO",
+    "n": "Legato Merger Corp. Iv",
+    "e": "US"
+  },
+  {
+    "s": "GLAI",
+    "n": "Global Ai, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CARL",
+    "n": "Carlsmed, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HCMA",
+    "n": "Hcm Iii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SOPH",
+    "n": "Sophia Genetics Sa",
+    "e": "US"
+  },
+  {
+    "s": "OILSF",
+    "n": "Saturn Oil & Gas Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ONTF",
+    "n": "On24 Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALLO",
+    "n": "Allogene Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASG",
+    "n": "Liberty All Star Growth Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIRO",
+    "n": "Airo Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AZ",
+    "n": "A2z Cust2mate Solutions Corp.",
+    "e": "US"
+  },
+  {
+    "s": "XOMA",
+    "n": "Xoma Royalty Corp",
+    "e": "US"
+  },
+  {
+    "s": "VACH",
+    "n": "Voyager Acquisition Corp./Cayman Islands",
+    "e": "US"
+  },
+  {
+    "s": "ATNI",
+    "n": "Atn International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LWAY",
+    "n": "Lifeway Foods, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TWN",
+    "n": "Taiwan Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "MCFT",
+    "n": "Mastercraft Boat Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RVRC",
+    "n": "Revium Rx.",
+    "e": "US"
+  },
+  {
+    "s": "NEXN",
+    "n": "Nexxen International Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BLUW",
+    "n": "Blue Water Acquisition Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "AWP",
+    "n": "Abrdn Global Premier Properties Fund",
+    "e": "US"
+  },
+  {
+    "s": "PBFS",
+    "n": "Pioneer Bancorp, Inc./Md",
+    "e": "US"
+  },
+  {
+    "s": "WW",
+    "n": "Ww International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CBK",
+    "n": "Commercial Bancgroup, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SSP",
+    "n": "E.W. Scripps Co",
+    "e": "US"
+  },
+  {
+    "s": "HYAC",
+    "n": "Haymaker Acquisition Corp. 4",
+    "e": "US"
+  },
+  {
+    "s": "AVBC",
+    "n": "Avidia Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BEAG",
+    "n": "Bold Eagle Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EFR",
+    "n": "Eaton Vance Senior Floating-Rate Trust",
+    "e": "US"
+  },
+  {
+    "s": "MLP",
+    "n": "Maui Land & Pineapple Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "FMAO",
+    "n": "Farmers & Merchants Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "USAU",
+    "n": "U.S. Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ARTNA",
+    "n": "Artesian Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "SITC",
+    "n": "Site Centers Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MTRX",
+    "n": "Matrix Service Co",
+    "e": "US"
+  },
+  {
+    "s": "RWAY",
+    "n": "Runway Growth Finance Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FBRX",
+    "n": "Forte Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MVBF",
+    "n": "Mvb Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "RC",
+    "n": "Ready Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "BFZ",
+    "n": "Blackrock California Municipal Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "RNGR",
+    "n": "Ranger Energy Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPXX",
+    "n": "Nuveen S&P 500 Dynamic Overwrite Fund",
+    "e": "US"
+  },
+  {
+    "s": "CUB",
+    "n": "Lionheart Holdings",
+    "e": "US"
+  },
+  {
+    "s": "CEPV",
+    "n": "Cantor Equity Partners V, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHAC",
+    "n": "Crane Harbor Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TBRG",
+    "n": "Trubridge, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LGDTF",
+    "n": "Liberty Gold Corp. /Can",
+    "e": "US"
+  },
+  {
+    "s": "SATL",
+    "n": "Satellogic Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HFRO",
+    "n": "Highland Opportunities & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "TVA",
+    "n": "Texas Ventures Acquisition Iii Corp",
+    "e": "US"
+  },
+  {
+    "s": "SIMA",
+    "n": "Sim Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "PHOE",
+    "n": "Phoenix Asia Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RIV",
+    "n": "Rivernorth Opportunities Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GSVRF",
+    "n": "Guanajuato Silver Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PTLO",
+    "n": "Portillo'S Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AGL",
+    "n": "Agilon Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ISSC",
+    "n": "Innovative Solutions & Support Inc",
+    "e": "US"
+  },
+  {
+    "s": "MLAC",
+    "n": "Mountain Lake Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SHMD",
+    "n": "Schmid Group N.V.",
+    "e": "US"
+  },
+  {
+    "s": "XRX",
+    "n": "Xerox Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "FERA",
+    "n": "Fifth Era Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "CAMP",
+    "n": "Camp4 Therapeutics Corp",
+    "e": "US"
+  },
+  {
+    "s": "NREF",
+    "n": "Nexpoint Real Estate Finance, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LOCO",
+    "n": "El Pollo Loco Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DENN",
+    "n": "Denny'S Corp",
+    "e": "US"
+  },
+  {
+    "s": "BGIN",
+    "n": "Bgin Blockchain Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FRST",
+    "n": "Primis Financial Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ARDC",
+    "n": "Ares Dynamic Credit Allocation Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VOXR",
+    "n": "Vox Royalty Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GUTS",
+    "n": "Fractyl Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DRDB",
+    "n": "Roman Dbdr Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "BGS",
+    "n": "B&G Foods, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OOMA",
+    "n": "Ooma Inc",
+    "e": "US"
+  },
+  {
+    "s": "MPX",
+    "n": "Marine Products Corp",
+    "e": "US"
+  },
+  {
+    "s": "PACH",
+    "n": "Pioneer Acquisition I Corp",
+    "e": "US"
+  },
+  {
+    "s": "BRR",
+    "n": "Procap Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DDD",
+    "n": "3d Systems Corp",
+    "e": "US"
+  },
+  {
+    "s": "SPIR",
+    "n": "Spire Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SZZL",
+    "n": "Sizzle Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "PMTR",
+    "n": "Perimeter Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "CNDT",
+    "n": "Conduent Inc",
+    "e": "US"
+  },
+  {
+    "s": "OBA",
+    "n": "Oxley Bridge Acquisition Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RLMD",
+    "n": "Relmada Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OEC",
+    "n": "Orion S.A.",
+    "e": "US"
+  },
+  {
+    "s": "SMC",
+    "n": "Summit Midstream Corp",
+    "e": "US"
+  },
+  {
+    "s": "JOF",
+    "n": "Japan Smaller Capitalization Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "EVOX",
+    "n": "Evolution Global Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "SMLR",
+    "n": "Semler Scientific, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLTS",
+    "n": "Platinum Analytics Cayman Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FGPR",
+    "n": "Ferrellgas Partners L P",
+    "e": "US"
+  },
+  {
+    "s": "NAKA",
+    "n": "Kindly Md, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STRT",
+    "n": "Strattec Security Corp",
+    "e": "US"
+  },
+  {
+    "s": "AFB",
+    "n": "Alliancebernstein National Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "KOYN",
+    "n": "Cslm Digital Asset Acquisition Corp Iii, Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NVEC",
+    "n": "Nve Corp /New/",
+    "e": "US"
+  },
+  {
+    "s": "MENS",
+    "n": "Jyong Biotech Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CAF",
+    "n": "Morgan Stanley China A Share Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TEI",
+    "n": "Templeton Emerging Markets Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "VCIC",
+    "n": "Vine Hill Capital Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ALDF",
+    "n": "Aldel Financial Ii Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RFMZ",
+    "n": "Rivernorth Flexible Municipal Income Fund Ii, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NCA",
+    "n": "Nuveen California Municipal Value Fund",
+    "e": "US"
+  },
+  {
+    "s": "MHN",
+    "n": "Blackrock Muniholdings New York Quality Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NLCP",
+    "n": "Newlake Capital Partners, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SVAC",
+    "n": "Spring Valley Acquisition Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "WSBF",
+    "n": "Waterstone Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CADL",
+    "n": "Candel Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "POLE",
+    "n": "Andretti Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "KELYA",
+    "n": "Kelly Services Inc",
+    "e": "US"
+  },
+  {
+    "s": "RLGT",
+    "n": "Radiant Logistics, Inc",
+    "e": "US"
+  },
+  {
+    "s": "EVI",
+    "n": "Evi Industries, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZH",
+    "n": "Zhihu Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QTRX",
+    "n": "Quanterix Corp",
+    "e": "US"
+  },
+  {
+    "s": "VACI",
+    "n": "Viking Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "NVX",
+    "n": "Novonix Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LNKB",
+    "n": "Linkbancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TAKOF",
+    "n": "Volatus Aerospace Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCML",
+    "n": "Baycom Corp",
+    "e": "US"
+  },
+  {
+    "s": "JACS",
+    "n": "Jackson Acquisition Co Ii",
+    "e": "US"
+  },
+  {
+    "s": "MKLY",
+    "n": "Mckinley Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "FSBW",
+    "n": "Fs Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AVTX",
+    "n": "Avalo Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRAF",
+    "n": "Graf Global Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PLBC",
+    "n": "Plumas Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "DSM",
+    "n": "Bny Mellon Strategic Municipal Bond Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCB",
+    "n": "Pcb Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "HDSN",
+    "n": "Hudson Technologies Inc /Ny",
+    "e": "US"
+  },
+  {
+    "s": "PBYI",
+    "n": "Puma Biotechnology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATII",
+    "n": "Archimedes Tech Spac Partners Ii Co.",
+    "e": "US"
+  },
+  {
+    "s": "NLOP",
+    "n": "Net Lease Office Properties",
+    "e": "US"
+  },
+  {
+    "s": "BKRRF",
+    "n": "Blackrock Silver Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OFLX",
+    "n": "Omega Flex, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TARA",
+    "n": "Protara Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TLSI",
+    "n": "Trisalus Life Sciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LPAA",
+    "n": "Launch One Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "QUAD",
+    "n": "Quad/Graphics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PKOH",
+    "n": "Park Ohio Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "BGH",
+    "n": "Barings Global Short Duration High Yield Fund",
+    "e": "US"
+  },
+  {
+    "s": "AGD",
+    "n": "Abrdn Global Dynamic Dividend Fund",
+    "e": "US"
+  },
+  {
+    "s": "STTK",
+    "n": "Shattuck Labs, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ANPA",
+    "n": "Rich Sparkle Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RAC",
+    "n": "Rithm Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SIDU",
+    "n": "Sidus Space Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NBH",
+    "n": "Neuberger Municipal Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BMOOF",
+    "n": "Blue Moon Metals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLG",
+    "n": "Platinum Group Metals Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LWAC",
+    "n": "Lightwave Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EFT",
+    "n": "Eaton Vance Floating-Rate Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "EFTY",
+    "n": "Etoiles Capital Group Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NLST",
+    "n": "Netlist Inc",
+    "e": "US"
+  },
+  {
+    "s": "LPBB",
+    "n": "Launch Two Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "UNTC",
+    "n": "Unit Corp",
+    "e": "US"
+  },
+  {
+    "s": "PALI",
+    "n": "Palisade Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BRW",
+    "n": "Saba Capital Income & Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "BIXI",
+    "n": "Bitcoin Infrastructure Acquisition Corp Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ZNOG",
+    "n": "Zion Oil & Gas Inc",
+    "e": "US"
+  },
+  {
+    "s": "NECB",
+    "n": "Northeast Community Bancorp, Inc./Md/",
+    "e": "US"
+  },
+  {
+    "s": "YDDL",
+    "n": "One & One Green Technologies. Inc",
+    "e": "US"
+  },
+  {
+    "s": "PMO",
+    "n": "Putnam Municipal Opportunities Trust",
+    "e": "US"
+  },
+  {
+    "s": "SI",
+    "n": "Shoulder Innovations, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MIN",
+    "n": "Mfs Intermediate Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "SITKF",
+    "n": "Sitka Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "JGH",
+    "n": "Nuveen Global High Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "GRRR",
+    "n": "Gorilla Technology Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AARD",
+    "n": "Aardvark Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DBL",
+    "n": "Doubleline Opportunistic Credit Fund",
+    "e": "US"
+  },
+  {
+    "s": "SPMC",
+    "n": "Sound Point Meridian Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PROF",
+    "n": "Profound Medical Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FHTX",
+    "n": "Foghorn Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VOR",
+    "n": "Vor Biopharma Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CVEO",
+    "n": "Civeo Corp",
+    "e": "US"
+  },
+  {
+    "s": "GLATF",
+    "n": "Global Atomic Corp",
+    "e": "US"
+  },
+  {
+    "s": "AEF",
+    "n": "Abrdn Emerging Markets Ex-China Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZTR",
+    "n": "Virtus Total Return Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NGNE",
+    "n": "Neurogene Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LOKV",
+    "n": "Live Oak Acquisition Corp. V",
+    "e": "US"
+  },
+  {
+    "s": "CLW",
+    "n": "Clearwater Paper Corp",
+    "e": "US"
+  },
+  {
+    "s": "LFCR",
+    "n": "Lifecore Biomedical, Inc. De",
+    "e": "US"
+  },
+  {
+    "s": "JENA",
+    "n": "Jena Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "SMX",
+    "n": "Smx (Security Matters) Public Ltd Co",
+    "e": "US"
+  },
+  {
+    "s": "BLZE",
+    "n": "Backblaze, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HVMC",
+    "n": "Highview Merger Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EGAN",
+    "n": "Egain Corp",
+    "e": "US"
+  },
+  {
+    "s": "ZIP",
+    "n": "Ziprecruiter, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZHJD",
+    "n": "Intelligent Hotel Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HNST",
+    "n": "Honest Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CPZ",
+    "n": "Calamos Long/Short Equity & Dynamic Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "PKBK",
+    "n": "Parke Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GSRF",
+    "n": "Gsr Iv Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WRLGF",
+    "n": "West Red Lake Gold Mines Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "NPCT",
+    "n": "Nuveen Core Plus Impact Fund",
+    "e": "US"
+  },
+  {
+    "s": "RFI",
+    "n": "Cohen & Steers Total Return Realty Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "BKTI",
+    "n": "Bk Technologies Corp",
+    "e": "US"
+  },
+  {
+    "s": "MXF",
+    "n": "Mexico Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "LRMR",
+    "n": "Larimar Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FSTR",
+    "n": "Foster L B Co",
+    "e": "US"
+  },
+  {
+    "s": "TDF",
+    "n": "Templeton Dragon Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "BIOT",
+    "n": "Relativity Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMRN",
+    "n": "Amarin Corp Plc\\Uk",
+    "e": "US"
+  },
+  {
+    "s": "EM",
+    "n": "Smart Share Global Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EIC",
+    "n": "Eagle Point Income Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FNLC",
+    "n": "First Bancorp, Inc /Me/",
+    "e": "US"
+  },
+  {
+    "s": "RCS",
+    "n": "Pimco Strategic Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADV",
+    "n": "Advantage Solutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TSNDF",
+    "n": "Terrascend Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HRZN",
+    "n": "Horizon Technology Finance Corp",
+    "e": "US"
+  },
+  {
+    "s": "AVBH",
+    "n": "Avidbank Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACRS",
+    "n": "Aclaris Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OIA",
+    "n": "Invesco Municipal Income Opportunities Trust",
+    "e": "US"
+  },
+  {
+    "s": "CRAWA",
+    "n": "Crawford United Corp",
+    "e": "US"
+  },
+  {
+    "s": "UCFI",
+    "n": "Cn Healthy Food Tech Group Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WEYS",
+    "n": "Weyco Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "GTERA",
+    "n": "Globa Terra Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "AFRI",
+    "n": "Forafric Global Plc",
+    "e": "US"
+  },
+  {
+    "s": "NXG",
+    "n": "Nxg Nextgen Infrastructure Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "CLYM",
+    "n": "Climb Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NHIC",
+    "n": "Newhold Investment Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "BACC",
+    "n": "Blue Acquisition Corp/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "JRVR",
+    "n": "James River Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MMD",
+    "n": "Nyli Mackay Definedterm Muni Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "GASS",
+    "n": "Stealthgas Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AACB",
+    "n": "Artius Ii Acquisition Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TDRRF",
+    "n": "Tudor Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BYM",
+    "n": "Blackrock Municipal Income Quality Trust",
+    "e": "US"
+  },
+  {
+    "s": "GCO",
+    "n": "Genesco Inc",
+    "e": "US"
+  },
+  {
+    "s": "TII",
+    "n": "Titan Mining Corp",
+    "e": "US"
+  },
+  {
+    "s": "XPER",
+    "n": "Xperi Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MVIS",
+    "n": "Microvision, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CIO",
+    "n": "City Office Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLDG",
+    "n": "Goldmining Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VMD",
+    "n": "Viemed Healthcare, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ABEO",
+    "n": "Abeona Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TSBK",
+    "n": "Timberland Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "CIX",
+    "n": "Compx International Inc",
+    "e": "US"
+  },
+  {
+    "s": "NVA",
+    "n": "Nova Minerals Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PAL",
+    "n": "Proficient Auto Logistics, Inc",
+    "e": "US"
+  },
+  {
+    "s": "III",
+    "n": "Information Services Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NAUT",
+    "n": "Nautilus Biotechnology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LEGT",
+    "n": "Legato Merger Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "BRT",
+    "n": "Brt Apartments Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PRE",
+    "n": "Prenetics Global Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CZFS",
+    "n": "Citizens Financial Services Inc",
+    "e": "US"
+  },
+  {
+    "s": "AVNW",
+    "n": "Aviat Networks, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NODK",
+    "n": "Ni Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACV",
+    "n": "Virtus Diversified Income & Convertible Fund",
+    "e": "US"
+  },
+  {
+    "s": "COSO",
+    "n": "Coastalsouth Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACHV",
+    "n": "Achieve Life Sciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BNED",
+    "n": "Barnes & Noble Education, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TVAI",
+    "n": "Thayer Ventures Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "JMSB",
+    "n": "John Marshall Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVC",
+    "n": "Entravision Communications Corp",
+    "e": "US"
+  },
+  {
+    "s": "PNRG",
+    "n": "Primeenergy Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "RMR",
+    "n": "Rmr Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HERE",
+    "n": "Here Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SLN",
+    "n": "Silence Therapeutics Plc",
+    "e": "US"
+  },
+  {
+    "s": "SVRSF",
+    "n": "Silver Storm Mining Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MBCN",
+    "n": "Middlefield Banc Corp",
+    "e": "US"
+  },
+  {
+    "s": "MRAM",
+    "n": "Everspin Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FLWS",
+    "n": "1 800 Flowers Com Inc",
+    "e": "US"
+  },
+  {
+    "s": "RMM",
+    "n": "Rivernorth Managed Duration Municipal Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OABI",
+    "n": "Omniab, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APAD",
+    "n": "Aparadise Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EMF",
+    "n": "Templeton Emerging Markets Fund",
+    "e": "US"
+  },
+  {
+    "s": "GSIT",
+    "n": "Gsi Technology Inc",
+    "e": "US"
+  },
+  {
+    "s": "GDEV",
+    "n": "Gdev Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HVII",
+    "n": "Hennessy Capital Investment Corp. Vii",
+    "e": "US"
+  },
+  {
+    "s": "CCRN",
+    "n": "Cross Country Healthcare Inc",
+    "e": "US"
+  },
+  {
+    "s": "AVIR",
+    "n": "Atea Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QSI",
+    "n": "Quantum-Si Inc",
+    "e": "US"
+  },
+  {
+    "s": "NL",
+    "n": "Nl Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "GAMG",
+    "n": "Global Asset Management Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JCE",
+    "n": "Nuveen Core Equity Alpha Fund",
+    "e": "US"
+  },
+  {
+    "s": "OBIO",
+    "n": "Orchestra Biomed Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NCZ",
+    "n": "Virtus Convertible & Income Fund Ii",
+    "e": "US"
+  },
+  {
+    "s": "PAYS",
+    "n": "Paysign, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASPN",
+    "n": "Aspen Aerogels Inc",
+    "e": "US"
+  },
+  {
+    "s": "SBXD",
+    "n": "Silverbox Corp Iv",
+    "e": "US"
+  },
+  {
+    "s": "SENS",
+    "n": "Senseonics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RENT",
+    "n": "Rent The Runway, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EOT",
+    "n": "Eaton Vance National Municipal Opportunities Trust",
+    "e": "US"
+  },
+  {
+    "s": "SPOK",
+    "n": "Spok Holdings, Inc",
+    "e": "US"
+  },
+  {
+    "s": "EGHT",
+    "n": "8x8 Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "PMM",
+    "n": "Putnam Managed Municipal Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "MITT",
+    "n": "Tpg Mortgage Investment Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LANV",
+    "n": "Lanvin Group Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ALCO",
+    "n": "Alico, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DH",
+    "n": "Definitive Healthcare Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CEPO",
+    "n": "Cantor Equity Partners I, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMMX",
+    "n": "Immix Biopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DNMX",
+    "n": "Dynamix Corp Iii",
+    "e": "US"
+  },
+  {
+    "s": "SCD",
+    "n": "Lmp Capital & Income Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FUND",
+    "n": "Sprott Focus Trust Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SJT",
+    "n": "San Juan Basin Royalty Trust",
+    "e": "US"
+  },
+  {
+    "s": "TRX",
+    "n": "Trx Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "ERC",
+    "n": "Allspring Multi-Sector Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "CFAC",
+    "n": "Creative Future Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "PINE",
+    "n": "Alpine Income Property Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARL",
+    "n": "American Realty Investors Inc",
+    "e": "US"
+  },
+  {
+    "s": "BLFY",
+    "n": "Blue Foundry Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "TBCH",
+    "n": "Turtle Beach Corp",
+    "e": "US"
+  },
+  {
+    "s": "OACC",
+    "n": "Oaktree Acquisition Corp. Iii Life Sciences",
+    "e": "US"
+  },
+  {
+    "s": "ASUR",
+    "n": "Asure Software Inc",
+    "e": "US"
+  },
+  {
+    "s": "MCR",
+    "n": "Mfs Charter Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "KRMD",
+    "n": "Koru Medical Systems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AUDC",
+    "n": "Audiocodes Ltd",
+    "e": "US"
+  },
+  {
+    "s": "JWSMF",
+    "n": "Jaws Mustang Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "TPVG",
+    "n": "Triplepoint Venture Growth Bdc Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FENC",
+    "n": "Fennec Pharmaceuticals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNWV",
+    "n": "Sanuwave Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SKYX",
+    "n": "Skyx Platforms Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FCT",
+    "n": "First Trust Senior Floating Rate Income Fund Ii",
+    "e": "US"
+  },
+  {
+    "s": "VUZI",
+    "n": "Vuzix Corp",
+    "e": "US"
+  },
+  {
+    "s": "NUW",
+    "n": "Nuveen Amt-Free Municipal Value Fund",
+    "e": "US"
+  },
+  {
+    "s": "ACRE",
+    "n": "Ares Commercial Real Estate Corp",
+    "e": "US"
+  },
+  {
+    "s": "OPRX",
+    "n": "Optimizerx Corp",
+    "e": "US"
+  },
+  {
+    "s": "PDYN",
+    "n": "Palladyne Ai Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PESI",
+    "n": "Perma Fix Environmental Services Inc",
+    "e": "US"
+  },
+  {
+    "s": "VGZ",
+    "n": "Vista Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "NWFL",
+    "n": "Norwood Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "CHMG",
+    "n": "Chemung Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "PCYO",
+    "n": "Pure Cycle Corp",
+    "e": "US"
+  },
+  {
+    "s": "NTPIF",
+    "n": "Nam Tai Property Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TG",
+    "n": "Tredegar Corp",
+    "e": "US"
+  },
+  {
+    "s": "SEG",
+    "n": "Seaport Entertainment Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MMT",
+    "n": "Mfs Multimarket Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "EOD",
+    "n": "Allspring Global Dividend Opportunity Fund",
+    "e": "US"
+  },
+  {
+    "s": "SY",
+    "n": "So-Young International Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BZAI",
+    "n": "Blaize Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NIU",
+    "n": "Niu Technologies",
+    "e": "US"
+  },
+  {
+    "s": "GDC",
+    "n": "Gd Culture Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FACT",
+    "n": "Fact Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PPIH",
+    "n": "Perma-Pipe International Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WNEB",
+    "n": "Western New England Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INSE",
+    "n": "Inspired Entertainment, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "THRY",
+    "n": "Thryv Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLMK",
+    "n": "Plum Acquisition Corp, Iv",
+    "e": "US"
+  },
+  {
+    "s": "REFI",
+    "n": "Chicago Atlantic Real Estate Finance, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MYFW",
+    "n": "First Western Financial Inc",
+    "e": "US"
+  },
+  {
+    "s": "NTWO",
+    "n": "Newbury Street Ii Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "HYI",
+    "n": "Western Asset High Yield Opportunity Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DBB",
+    "n": "Invesco Db Base Metals Fund",
+    "e": "US"
+  },
+  {
+    "s": "ALDX",
+    "n": "Aldeyra Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VNME",
+    "n": "Vendome Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "OVLY",
+    "n": "Oak Valley Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "FTF",
+    "n": "Franklin Ltd Duration Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "CFNB",
+    "n": "California First Leasing Corp",
+    "e": "US"
+  },
+  {
+    "s": "ZY",
+    "n": "China Tobacco & Alcohol Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MDWD",
+    "n": "Mediwound Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BNY",
+    "n": "Blackrock New York Municipal Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "GLO",
+    "n": "Clough Global Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "XWIN",
+    "n": "Xmax Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XYF",
+    "n": "X Financial",
+    "e": "US"
+  },
+  {
+    "s": "FVCB",
+    "n": "Fvcbankcorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RLTY",
+    "n": "Cohen & Steers Real Estate Opportunities & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "SMDRF",
+    "n": "Sierra Madre Gold & Silver Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PSF",
+    "n": "Cohen & Steers Select Preferred & Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FOA",
+    "n": "Finance Of America Companies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIRJ",
+    "n": "Airjoule Technologies Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ELMD",
+    "n": "Electromed, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RXT",
+    "n": "Rackspace Technology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INV",
+    "n": "Innventure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BNR",
+    "n": "Burning Rock Biotech Ltd",
+    "e": "US"
+  },
+  {
+    "s": "STXS",
+    "n": "Stereotaxis, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BNC",
+    "n": "Cea Industries Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FDBC",
+    "n": "Fidelity D & D Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "MEI",
+    "n": "Methode Electronics Inc",
+    "e": "US"
+  },
+  {
+    "s": "MPAA",
+    "n": "Motorcar Parts Of America Inc",
+    "e": "US"
+  },
+  {
+    "s": "GWRS",
+    "n": "Global Water Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "COPL",
+    "n": "Copley Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "IIF",
+    "n": "Morgan Stanley India Investment Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PAMT",
+    "n": "Pamt Corp",
+    "e": "US"
+  },
+  {
+    "s": "SSVFF",
+    "n": "Southern Silver Exploration Corp",
+    "e": "US"
+  },
+  {
+    "s": "FBLA",
+    "n": "Fb Bancorp, Inc. /Md/",
+    "e": "US"
+  },
+  {
+    "s": "USBC",
+    "n": "Usbc, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACB",
+    "n": "Aurora Cannabis Inc",
+    "e": "US"
+  },
+  {
+    "s": "TCX",
+    "n": "Tucows Inc /Pa/",
+    "e": "US"
+  },
+  {
+    "s": "BHLL",
+    "n": "Bunker Hill Mining Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KLTR",
+    "n": "Kaltura Inc",
+    "e": "US"
+  },
+  {
+    "s": "TSSI",
+    "n": "Tss, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FUNC",
+    "n": "First United Corp/Md/",
+    "e": "US"
+  },
+  {
+    "s": "TWIN",
+    "n": "Twin Disc Inc",
+    "e": "US"
+  },
+  {
+    "s": "MCGA",
+    "n": "Yorkville Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NXPGY",
+    "n": "Mobico Group Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "MFIN",
+    "n": "Medallion Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "GEOS",
+    "n": "Geospace Technologies Corp",
+    "e": "US"
+  },
+  {
+    "s": "ARMP",
+    "n": "Armata Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FINW",
+    "n": "Finwise Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "KINS",
+    "n": "Kingstone Companies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PTNM",
+    "n": "Pitanium Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SSSS",
+    "n": "Suro Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SLQT",
+    "n": "Selectquote, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GPRO",
+    "n": "Gopro, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LIEN",
+    "n": "Chicago Atlantic Bdc, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SOCA",
+    "n": "Solarius Capital Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LMNR",
+    "n": "Limoneira Co",
+    "e": "US"
+  },
+  {
+    "s": "AMBR",
+    "n": "Amber International Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IGAC",
+    "n": "Invest Green Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "RAAQ",
+    "n": "Real Asset Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MFGCF",
+    "n": "Mayfair Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DAAQ",
+    "n": "Digital Asset Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "INVZ",
+    "n": "Innoviz Technologies Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HITI",
+    "n": "High Tide Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CIA",
+    "n": "Citizens, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPRT",
+    "n": "Oportun Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "SNFCA",
+    "n": "Security National Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "TDWD",
+    "n": "Tailwind 2.0 Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LGI",
+    "n": "Lazard Global Total Return & Income Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "SXTC",
+    "n": "China Sxt Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TSI",
+    "n": "Tcw Strategic Income Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "HUMA",
+    "n": "Humacyte, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HRTX",
+    "n": "Heron Therapeutics, Inc. /De/",
+    "e": "US"
+  },
+  {
+    "s": "SABA",
+    "n": "Saba Capital Income & Opportunities Fund Ii",
+    "e": "US"
+  },
+  {
+    "s": "LTRX",
+    "n": "Lantronix Inc",
+    "e": "US"
+  },
+  {
+    "s": "BPRN",
+    "n": "Princeton Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MACI",
+    "n": "Melar Acquisition Corp. I/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "AXREF",
+    "n": "Amarc Resources Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TDAC",
+    "n": "Translational Development Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "IKT",
+    "n": "Inhibikase Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HTLM",
+    "n": "Homestolife Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ETHM",
+    "n": "Dynamix Corp",
+    "e": "US"
+  },
+  {
+    "s": "LCNB",
+    "n": "Lcnb Corp",
+    "e": "US"
+  },
+  {
+    "s": "GALT",
+    "n": "Galectin Therapeutics Inc",
+    "e": "US"
+  },
+  {
+    "s": "DYOR",
+    "n": "Insight Digital Partners Ii",
+    "e": "US"
+  },
+  {
+    "s": "NHS",
+    "n": "Neuberger High Yield Strategies Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FLX",
+    "n": "Bingex Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PRQR",
+    "n": "Proqr Therapeutics N.V.",
+    "e": "US"
+  },
+  {
+    "s": "NPWR",
+    "n": "Net Power Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VYGR",
+    "n": "Voyager Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WEWA",
+    "n": "Wewards, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CFFI",
+    "n": "C & F Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "FCCO",
+    "n": "First Community Corp /Sc/",
+    "e": "US"
+  },
+  {
+    "s": "OGI",
+    "n": "Organigram Global Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RDNW",
+    "n": "Ridenow Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MAGH",
+    "n": "Magnitude International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NVCT",
+    "n": "Nuvectis Pharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NEN",
+    "n": "New England Realty Associates Limited Partnership",
+    "e": "US"
+  },
+  {
+    "s": "ANTA",
+    "n": "Antalpha Platform Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "TOYO",
+    "n": "Toyo Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FSFG",
+    "n": "First Savings Financial Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MVT",
+    "n": "Blackrock Munivest Fund Ii, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MQT",
+    "n": "Blackrock Muniyield Quality Fund Ii, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SVCC",
+    "n": "Stellar V Capital Corp. (Cayman Islands)",
+    "e": "US"
+  },
+  {
+    "s": "FRAF",
+    "n": "Franklin Financial Services Corp /Pa/",
+    "e": "US"
+  },
+  {
+    "s": "EWCZ",
+    "n": "European Wax Center, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MFM",
+    "n": "Mfs Municipal Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "CBNA",
+    "n": "Chain Bridge Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "HBB",
+    "n": "Hamilton Beach Brands Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "WTI",
+    "n": "W&T Offshore Inc",
+    "e": "US"
+  },
+  {
+    "s": "LOVE",
+    "n": "Lovesac Co",
+    "e": "US"
+  },
+  {
+    "s": "INR",
+    "n": "Infinity Natural Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FXNC",
+    "n": "First National Corp /Va/",
+    "e": "US"
+  },
+  {
+    "s": "BHR",
+    "n": "Braemar Hotels & Resorts Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FXE",
+    "n": "Invesco Currencyshares Euro Trust",
+    "e": "US"
+  },
+  {
+    "s": "ONCH",
+    "n": "1rt Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MUE",
+    "n": "Blackrock Muniholdings Quality Fund Ii, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HWBK",
+    "n": "Hawthorn Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JILL",
+    "n": "J.Jill, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TKNO",
+    "n": "Alpha Teknova, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MAMK",
+    "n": "Maxsmaking Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PNPNF",
+    "n": "Power Metallic Mines Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JRS",
+    "n": "Nuveen Real Estate Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "CRMT",
+    "n": "Americas Carmart Inc",
+    "e": "US"
+  },
+  {
+    "s": "SMTI",
+    "n": "Sanara Medtech Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RZLT",
+    "n": "Rezolute, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "REKR",
+    "n": "Rekor Systems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MNTK",
+    "n": "Montauk Renewables, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RCKY",
+    "n": "Rocky Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NTHI",
+    "n": "Neonc Technologies Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FC",
+    "n": "Franklin Covey Co",
+    "e": "US"
+  },
+  {
+    "s": "DOYU",
+    "n": "Douyu International Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TRAK",
+    "n": "Repositrak, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRDF",
+    "n": "Cardiff Oncology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RGCO",
+    "n": "Rgc Resources Inc",
+    "e": "US"
+  },
+  {
+    "s": "AGCC",
+    "n": "Agencia Comercial Spirits Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "NYXH",
+    "n": "Nyxoah Sa",
+    "e": "US"
+  },
+  {
+    "s": "SDA",
+    "n": "Suncar Technology Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CVRX",
+    "n": "Cvrx, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WLAC",
+    "n": "Willow Lane Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CCCC",
+    "n": "C4 Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMDX",
+    "n": "Insight Molecular Diagnostics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRAC",
+    "n": "Crown Reserve Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "AOMR",
+    "n": "Angel Oak Mortgage Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HUHU",
+    "n": "Huhutech International Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DIBS",
+    "n": "1stdibs.Com, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RDCM",
+    "n": "Radcom Ltd",
+    "e": "US"
+  },
+  {
+    "s": "UTKN",
+    "n": "Universal Token",
+    "e": "US"
+  },
+  {
+    "s": "SDSYA",
+    "n": "South Dakota Soybean Processors Llc",
+    "e": "US"
+  },
+  {
+    "s": "VABK",
+    "n": "Virginia National Bankshares Corp",
+    "e": "US"
+  },
+  {
+    "s": "DOUG",
+    "n": "Douglas Elliman Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TAYD",
+    "n": "Taylor Devices, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CATX",
+    "n": "Perspective Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DPRO",
+    "n": "Draganfly Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FNRN",
+    "n": "First Northern Community Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "EDIT",
+    "n": "Editas Medicine, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "POWW",
+    "n": "Outdoor Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "YMT",
+    "n": "Yimutian Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SWKH",
+    "n": "Swk Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "RICK",
+    "n": "Rci Hospitality Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GPJA",
+    "n": "Georgia Power Co",
+    "e": "US"
+  },
+  {
+    "s": "IMMR",
+    "n": "Immersion Corp",
+    "e": "US"
+  },
+  {
+    "s": "EFSI",
+    "n": "Eagle Financial Services Inc",
+    "e": "US"
+  },
+  {
+    "s": "GSHR",
+    "n": "Gesher Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "OPBK",
+    "n": "Op Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "LZMH",
+    "n": "Lz Technology Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DHY",
+    "n": "Credit Suisse High Yield Credit Fund",
+    "e": "US"
+  },
+  {
+    "s": "FFAI",
+    "n": "Faraday Future Intelligent Electric Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ONEW",
+    "n": "Onewater Marine Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FLXS",
+    "n": "Flexsteel Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "EGHA",
+    "n": "Egh Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DSX",
+    "n": "Diana Shipping Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NKSH",
+    "n": "National Bankshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "APGOF",
+    "n": "Apollo Silver Corp",
+    "e": "US"
+  },
+  {
+    "s": "LOGC",
+    "n": "Contextlogic Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IPOD",
+    "n": "Dune Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "OZ",
+    "n": "Belpointe Prep, Llc",
+    "e": "US"
+  },
+  {
+    "s": "DUOT",
+    "n": "Duos Technologies Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RAIL",
+    "n": "Freightcar America, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FOSL",
+    "n": "Fossil Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NPV",
+    "n": "Nuveen Virginia Quality Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "CABA",
+    "n": "Cabaletta Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JAKK",
+    "n": "Jakks Pacific Inc",
+    "e": "US"
+  },
+  {
+    "s": "TNYZF",
+    "n": "Tiny Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HAVA",
+    "n": "Harvard Ave Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "TRUE",
+    "n": "Truecar, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UIS",
+    "n": "Unisys Corp",
+    "e": "US"
+  },
+  {
+    "s": "STRS",
+    "n": "Stratus Properties Inc",
+    "e": "US"
+  },
+  {
+    "s": "AVR",
+    "n": "Anteris Technologies Global Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SHIP",
+    "n": "Seanergy Maritime Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HGLB",
+    "n": "Highland Global Allocation Fund",
+    "e": "US"
+  },
+  {
+    "s": "GOAI",
+    "n": "Eva Live Inc",
+    "e": "US"
+  },
+  {
+    "s": "ATLO",
+    "n": "Ames National Corp",
+    "e": "US"
+  },
+  {
+    "s": "NERV",
+    "n": "Minerva Neurosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DERM",
+    "n": "Journey Medical Corp",
+    "e": "US"
+  },
+  {
+    "s": "LODE",
+    "n": "Comstock Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LPRO",
+    "n": "Open Lending Corp",
+    "e": "US"
+  },
+  {
+    "s": "CXDO",
+    "n": "Crexendo, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRVG",
+    "n": "Trivago N.V.",
+    "e": "US"
+  },
+  {
+    "s": "DMB",
+    "n": "Bny Mellon Municipal Bond Infrastructure Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ETX",
+    "n": "Eaton Vance Municipal Income 2028 Term Trust",
+    "e": "US"
+  },
+  {
+    "s": "RNAC",
+    "n": "Cartesian Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CPSS",
+    "n": "Consumer Portfolio Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TSKFF",
+    "n": "Talisker Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SUGRF",
+    "n": "Sucro Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EARN",
+    "n": "Ellington Credit Co",
+    "e": "US"
+  },
+  {
+    "s": "SCAG",
+    "n": "Scage Future",
+    "e": "US"
+  },
+  {
+    "s": "SPCE",
+    "n": "Virgin Galactic Holdings, Inc",
+    "e": "US"
+  },
+  {
+    "s": "BXSY",
+    "n": "Bexil Investment Trust",
+    "e": "US"
+  },
+  {
+    "s": "TNXP",
+    "n": "Tonix Pharmaceuticals Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CMCM",
+    "n": "Cheetah Mobile Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FT",
+    "n": "Franklin Universal Trust",
+    "e": "US"
+  },
+  {
+    "s": "OMSE",
+    "n": "Oms Energy Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INGN",
+    "n": "Inogen Inc",
+    "e": "US"
+  },
+  {
+    "s": "PLBY",
+    "n": "Playboy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NNOX",
+    "n": "Nano-X Imaging Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MRBK",
+    "n": "Meridian Corp",
+    "e": "US"
+  },
+  {
+    "s": "CCFN",
+    "n": "Muncy Columbia Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "DFDV",
+    "n": "Defi Development Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MASS",
+    "n": "908 Devices Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WHGOF",
+    "n": "White Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AGXPF",
+    "n": "Silver X Mining Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OPP",
+    "n": "Rivernorth/Doubleline Strategic Opportunity Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRNT",
+    "n": "Ceragon Networks Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FIGX",
+    "n": "Figx Capital Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ENLV",
+    "n": "Enlivex Therapeutics Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BKN",
+    "n": "Blackrock Investment Quality Municipal Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ESCA",
+    "n": "Escalade Inc",
+    "e": "US"
+  },
+  {
+    "s": "ARCT",
+    "n": "Arcturus Therapeutics Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LKSP",
+    "n": "Lake Superior Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "CURI",
+    "n": "Curiositystream Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EHI",
+    "n": "Western Asset Global High Income Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GF",
+    "n": "New Germany Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "HHLKF",
+    "n": "Hot Chili Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GENC",
+    "n": "Gencor Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "STRZ",
+    "n": "Starz Entertainment Corp /Cn/",
+    "e": "US"
+  },
+  {
+    "s": "AREN",
+    "n": "Arena Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASYS",
+    "n": "Amtech Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "OSS",
+    "n": "One Stop Systems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SRFM",
+    "n": "Surf Air Mobility Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JELD",
+    "n": "Jeld-Wen Holding, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIIA",
+    "n": "Ai Infrastructure Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WIA",
+    "n": "Western Asset Inflation-Linked Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "SRG",
+    "n": "Seritage Growth Properties",
+    "e": "US"
+  },
+  {
+    "s": "GIFI",
+    "n": "Gulf Island Fabrication Inc",
+    "e": "US"
+  },
+  {
+    "s": "FNKO",
+    "n": "Funko, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NFTN",
+    "n": "Nfiniti Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OVBC",
+    "n": "Ohio Valley Banc Corp",
+    "e": "US"
+  },
+  {
+    "s": "NRO",
+    "n": "Neuberger Real Estate Securities Income Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "ALEC",
+    "n": "Alector, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LFMD",
+    "n": "Lifemd, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VPV",
+    "n": "Invesco Pennsylvania Value Municipal Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "SABS",
+    "n": "Sab Biotherapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HWAIF",
+    "n": "Healwell Ai Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PEBK",
+    "n": "Peoples Bancorp Of North Carolina Inc",
+    "e": "US"
+  },
+  {
+    "s": "GAMB",
+    "n": "Gambling.Com Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IDE",
+    "n": "Voya Infrastructure, Industrials & Materials Fund",
+    "e": "US"
+  },
+  {
+    "s": "BUKS",
+    "n": "Butler National Corp",
+    "e": "US"
+  },
+  {
+    "s": "NRDY",
+    "n": "Nerdy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RILY",
+    "n": "Brc Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EUBG",
+    "n": "Entrepreneur Universe Bright Group",
+    "e": "US"
+  },
+  {
+    "s": "ALTO",
+    "n": "Alto Ingredients, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WALD",
+    "n": "Waldencast Plc",
+    "e": "US"
+  },
+  {
+    "s": "GIX",
+    "n": "Gigcapital9 Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SNNGF",
+    "n": "Ppx Mining Corp.",
+    "e": "US"
+  },
+  {
+    "s": "UTMD",
+    "n": "Utah Medical Products Inc",
+    "e": "US"
+  },
+  {
+    "s": "LUD",
+    "n": "Luda Technology Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DSAC",
+    "n": "Daedalus Special Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MPV",
+    "n": "Barings Participation Investors",
+    "e": "US"
+  },
+  {
+    "s": "ALTS",
+    "n": "Alt5 Sigma Corp",
+    "e": "US"
+  },
+  {
+    "s": "SKIN",
+    "n": "Beauty Health Co",
+    "e": "US"
+  },
+  {
+    "s": "CBIO",
+    "n": "Crescent Biopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OSUR",
+    "n": "Orasure Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "DHF",
+    "n": "Bny Mellon High Yield Strategies Fund",
+    "e": "US"
+  },
+  {
+    "s": "MIST",
+    "n": "Milestone Pharmaceuticals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FLC",
+    "n": "Flaherty & Crumrine Total Return Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "REI",
+    "n": "Ring Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TMCI",
+    "n": "Treace Medical Concepts, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RDZN",
+    "n": "Roadzen Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INFU",
+    "n": "Infusystem Holdings, Inc",
+    "e": "US"
+  },
+  {
+    "s": "VWAV",
+    "n": "Visionwave Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PERF",
+    "n": "Perfect Corp.",
+    "e": "US"
+  },
+  {
+    "s": "UTGN",
+    "n": "Utg Inc",
+    "e": "US"
+  },
+  {
+    "s": "SRV",
+    "n": "Nxg Cushing Midstream Energy Fund",
+    "e": "US"
+  },
+  {
+    "s": "INBK",
+    "n": "First Internet Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "TLSA",
+    "n": "Tiziana Life Sciences Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TGMPF",
+    "n": "Tantalus Systems Holding Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STLRF",
+    "n": "Stllr Gold Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTCI",
+    "n": "Ftc Solar, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EMP",
+    "n": "Entergy Mississippi, Llc",
+    "e": "US"
+  },
+  {
+    "s": "KRYXF",
+    "n": "Koryx Copper Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SGMT",
+    "n": "Sagimet Biosciences Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PNBK",
+    "n": "Patriot National Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "BVFL",
+    "n": "Bv Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TONX",
+    "n": "Ton Strategy Co",
+    "e": "US"
+  },
+  {
+    "s": "ALTG",
+    "n": "Alta Equipment Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SMID",
+    "n": "Smith Midland Corp",
+    "e": "US"
+  },
+  {
+    "s": "FCAP",
+    "n": "First Capital Inc",
+    "e": "US"
+  },
+  {
+    "s": "ENJ",
+    "n": "Entergy New Orleans, Llc",
+    "e": "US"
+  },
+  {
+    "s": "PRLD",
+    "n": "Prelude Therapeutics Inc",
+    "e": "US"
+  },
+  {
+    "s": "DGXX",
+    "n": "Digi Power X Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMPY",
+    "n": "Amplify Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AIRRF",
+    "n": "Aurion Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HCAT",
+    "n": "Health Catalyst, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BSL",
+    "n": "Blackstone Senior Floating Rate 2027 Term Fund",
+    "e": "US"
+  },
+  {
+    "s": "MRT",
+    "n": "Marti Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UBFO",
+    "n": "United Security Bancshares",
+    "e": "US"
+  },
+  {
+    "s": "VBF",
+    "n": "Invesco Bond Fund",
+    "e": "US"
+  },
+  {
+    "s": "RGP",
+    "n": "Resources Connection, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPWR",
+    "n": "Sunpower Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TTEC",
+    "n": "Ttec Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZNTL",
+    "n": "Zentalis Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NUTR",
+    "n": "Nusatrip Inc",
+    "e": "US"
+  },
+  {
+    "s": "LONCF",
+    "n": "Loncor Gold Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLAMF",
+    "n": "Slam Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TNYA",
+    "n": "Tenaya Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHRS",
+    "n": "Coherus Oncology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LAWR",
+    "n": "Robot Consulting Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CHEC",
+    "n": "Chenghe Acquisition Iii Co.",
+    "e": "US"
+  },
+  {
+    "s": "CBFV",
+    "n": "Cb Financial Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MDXH",
+    "n": "Mdxhealth Sa",
+    "e": "US"
+  },
+  {
+    "s": "SLNH",
+    "n": "Soluna Holdings, Inc",
+    "e": "US"
+  },
+  {
+    "s": "GHI",
+    "n": "Greystone Housing Impact Investors Lp",
+    "e": "US"
+  },
+  {
+    "s": "SRZN",
+    "n": "Surrozen, Inc./De",
+    "e": "US"
+  },
+  {
+    "s": "NUAI",
+    "n": "New Era Energy & Digital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BANX",
+    "n": "Arrowmark Financial Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RANI",
+    "n": "Rani Therapeutics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MPTI",
+    "n": "M-Tron Industries, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BRLT",
+    "n": "Brilliant Earth Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VTN",
+    "n": "Invesco Trust For Investment Grade New York Municipals",
+    "e": "US"
+  },
+  {
+    "s": "NXDT",
+    "n": "Nexpoint Diversified Real Estate Trust",
+    "e": "US"
+  },
+  {
+    "s": "ESGL",
+    "n": "Esgl Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AGMRF",
+    "n": "Silver Mountain Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RELL",
+    "n": "Richardson Electronics, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SLMT",
+    "n": "Brera Holdings Plc",
+    "e": "US"
+  },
+  {
+    "s": "CZWI",
+    "n": "Citizens Community Bancorp Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IPHA",
+    "n": "Innate Pharma Sa",
+    "e": "US"
+  },
+  {
+    "s": "BCAC",
+    "n": "Brookline Capital Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "AMCI",
+    "n": "Amc Robotics Corp",
+    "e": "US"
+  },
+  {
+    "s": "CMTL",
+    "n": "Comtech Telecommunications Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "GHG",
+    "n": "Greentree Hospitality Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PCQ",
+    "n": "Pimco California Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "ACH",
+    "n": "Accendra Health Inc/Va/",
+    "e": "US"
+  },
+  {
+    "s": "RANG",
+    "n": "Range Capital Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SANG",
+    "n": "Sangoma Technologies Corp",
+    "e": "US"
+  },
+  {
+    "s": "ALPS",
+    "n": "Alps Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "KF",
+    "n": "Korea Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "TAVI",
+    "n": "Tavia Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CHPT",
+    "n": "Chargepoint Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRBU",
+    "n": "Caribou Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VTVT",
+    "n": "Vtv Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLND",
+    "n": "Southland Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NNY",
+    "n": "Nuveen New York Municipal Value Fund",
+    "e": "US"
+  },
+  {
+    "s": "CFBK",
+    "n": "Cf Bankshares Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNBR",
+    "n": "Sleep Number Corp",
+    "e": "US"
+  },
+  {
+    "s": "KLRS",
+    "n": "Kalaris Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SRI",
+    "n": "Stoneridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "AVX",
+    "n": "Avax One Technology Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AHMA",
+    "n": "Ambitions Enterprise Management Co. L.L.C",
+    "e": "US"
+  },
+  {
+    "s": "COE",
+    "n": "51talk Online Education Group",
+    "e": "US"
+  },
+  {
+    "s": "ECF",
+    "n": "Ellsworth Growth & Income Fund Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BZUN",
+    "n": "Baozun Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SMHI",
+    "n": "Seacor Marine Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HNVR",
+    "n": "Hanover Bancorp, Inc. /Md",
+    "e": "US"
+  },
+  {
+    "s": "QNCX",
+    "n": "Quince Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CGEN",
+    "n": "Compugen Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RFAI",
+    "n": "Rf Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "MERC",
+    "n": "Mercer International Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MXCT",
+    "n": "Maxcyte, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BMN",
+    "n": "Blackrock 2037 Municipal Target Term Trust",
+    "e": "US"
+  },
+  {
+    "s": "CMT",
+    "n": "Core Molding Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "WHF",
+    "n": "Whitehorse Finance, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NMP",
+    "n": "Nmp Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PIM",
+    "n": "Putnam Master Intermediate Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "MOLN",
+    "n": "Molecular Partners Ag",
+    "e": "US"
+  },
+  {
+    "s": "DOGZ",
+    "n": "Dogness (International) Corp",
+    "e": "US"
+  },
+  {
+    "s": "HYDTF",
+    "n": "Hydreight Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EMPD",
+    "n": "Empery Digital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VLN",
+    "n": "Valens Semiconductor Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "WHG",
+    "n": "Westwood Holdings Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "RENEF",
+    "n": "Cartesian Growth Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "EMIS",
+    "n": "Emmis Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BCIC",
+    "n": "Bcp Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "ACU",
+    "n": "Acme United Corp",
+    "e": "US"
+  },
+  {
+    "s": "SPE",
+    "n": "Special Opportunities Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QIPT",
+    "n": "Quipt Home Medical Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MAMO",
+    "n": "Massimo Group",
+    "e": "US"
+  },
+  {
+    "s": "SCTH",
+    "n": "Securetech Innovations, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SDHC",
+    "n": "Smith Douglas Homes Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PMTS",
+    "n": "Cpi Card Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CIK",
+    "n": "Credit Suisse Asset Management Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INSG",
+    "n": "Inseego Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LUCD",
+    "n": "Lucid Diagnostics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FORR",
+    "n": "Forrester Research, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LAFA",
+    "n": "Lafayette Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CLPR",
+    "n": "Clipper Realty Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KULR",
+    "n": "Kulr Technology Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EBMT",
+    "n": "Eagle Bancorp Montana, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZJK",
+    "n": "Zjk Industrial Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SRGXF",
+    "n": "Surge Copper Corp",
+    "e": "US"
+  },
+  {
+    "s": "SGMO",
+    "n": "Sangamo Therapeutics, Inc",
+    "e": "US"
+  },
+  {
+    "s": "HPAI",
+    "n": "Helport Ai Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BDTX",
+    "n": "Black Diamond Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FOTB",
+    "n": "First Ottawa Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXXT",
+    "n": "Nextnrg, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WTF",
+    "n": "Waton Financial Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SPEG",
+    "n": "Silver Pegasus Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LARK",
+    "n": "Landmark Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "SUIG",
+    "n": "Sui Group Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "EDF",
+    "n": "Virtus Stone Harbor Emerging Markets Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "CDXS",
+    "n": "Codexis, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SND",
+    "n": "Smart Sand, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATVK",
+    "n": "Ameritek Ventures, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MHF",
+    "n": "Western Asset Municipal High Income Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PFD",
+    "n": "Flaherty & Crumrine Preferred & Income Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "CNTX",
+    "n": "Context Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACTU",
+    "n": "Actuate Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ECBK",
+    "n": "Ecb Bancorp, Inc. /Md/",
+    "e": "US"
+  },
+  {
+    "s": "ARQ",
+    "n": "Arq, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGTE",
+    "n": "Marblegate Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "SGC",
+    "n": "Superior Group Of Companies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HQI",
+    "n": "Hirequest, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GGT",
+    "n": "Gabelli Multimedia Trust Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STEM",
+    "n": "Stem, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACNT",
+    "n": "Ascent Industries Co.",
+    "e": "US"
+  },
+  {
+    "s": "GORO",
+    "n": "Gold Resource Corp",
+    "e": "US"
+  },
+  {
+    "s": "FGFH",
+    "n": "Foresight Financial Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "DMRC",
+    "n": "Digimarc Corp",
+    "e": "US"
+  },
+  {
+    "s": "BMBN",
+    "n": "Benchmark Bankshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "IGA",
+    "n": "Voya Global Advantage & Premium Opportunity Fund",
+    "e": "US"
+  },
+  {
+    "s": "GRX",
+    "n": "Gabelli Healthcare & Wellnessrx Trust",
+    "e": "US"
+  },
+  {
+    "s": "MSD",
+    "n": "Morgan Stanley Emerging Markets Debt Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "ACR",
+    "n": "Acres Commercial Realty Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EVG",
+    "n": "Eaton Vance Short Duration Diversified Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "RCMT",
+    "n": "Rcm Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VLTLF",
+    "n": "Volt Lithium Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MNSB",
+    "n": "Mainstreet Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLGL",
+    "n": "Sol-Gel Technologies Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PCOK",
+    "n": "Pacific Oak Strategic Opportunity Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INAC",
+    "n": "Indigo Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RPID",
+    "n": "Rapid Micro Biosystems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLQ",
+    "n": "Clough Global Equity Fund",
+    "e": "US"
+  },
+  {
+    "s": "AEI",
+    "n": "Alset Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BGX",
+    "n": "Blackstone Long-Short Credit Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "CRBP",
+    "n": "Corbus Pharmaceuticals Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MAPS",
+    "n": "Wm Technology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NAZ",
+    "n": "Nuveen Arizona Quality Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "YCY",
+    "n": "Aa Mission Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "FNWD",
+    "n": "Finward Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "PCSC",
+    "n": "Perceptive Capital Solutions Corp",
+    "e": "US"
+  },
+  {
+    "s": "SPRO",
+    "n": "Spero Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NKTX",
+    "n": "Nkarta, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HYSR",
+    "n": "Sunhydrogen, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTLF",
+    "n": "Fitlife Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MDV",
+    "n": "Modiv Industrial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MPA",
+    "n": "Blackrock Muniyield Pennsylvania Quality Fund",
+    "e": "US"
+  },
+  {
+    "s": "IRD",
+    "n": "Opus Genetics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NEXM",
+    "n": "Nexmetals Mining Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OXSQ",
+    "n": "Oxford Square Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KVHI",
+    "n": "Kvh Industries Inc \\De\\",
+    "e": "US"
+  },
+  {
+    "s": "RVLGF",
+    "n": "Revival Gold Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCHG",
+    "n": "Grayscale Bitcoin Cash Trust (Bch)",
+    "e": "US"
+  },
+  {
+    "s": "SVCO",
+    "n": "Silvaco Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MCRB",
+    "n": "Seres Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACOG",
+    "n": "Alpha Cognition Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ELTX",
+    "n": "Elicio Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BWG",
+    "n": "Brandywineglobal-Global Income Opportunities Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "PLX",
+    "n": "Protalix Biotherapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EMPG",
+    "n": "Empro Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UNG",
+    "n": "United States Natural Gas Fund, Lp",
+    "e": "US"
+  },
+  {
+    "s": "PTHRF",
+    "n": "Pantheon Resources Plc",
+    "e": "US"
+  },
+  {
+    "s": "FF",
+    "n": "Futurefuel Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EDAP",
+    "n": "Edap Tms Sa",
+    "e": "US"
+  },
+  {
+    "s": "CSBB",
+    "n": "Csb Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APYX",
+    "n": "Apyx Medical Corp",
+    "e": "US"
+  },
+  {
+    "s": "BOOM",
+    "n": "Dmc Global Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MBOT",
+    "n": "Microbot Medical Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ANIK",
+    "n": "Anika Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TGLO",
+    "n": "Theglobe Com Inc",
+    "e": "US"
+  },
+  {
+    "s": "PMI",
+    "n": "Picard Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMTV",
+    "n": "Community Bancorp /Vt",
+    "e": "US"
+  },
+  {
+    "s": "BSET",
+    "n": "Bassett Furniture Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "EGG",
+    "n": "Enigmatig Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HSDT",
+    "n": "Solana Co",
+    "e": "US"
+  },
+  {
+    "s": "WRAP",
+    "n": "Wrap Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TBI",
+    "n": "Trueblue, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EMYB",
+    "n": "Embassy Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KOOYF",
+    "n": "Kootenay Silver Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SIEB",
+    "n": "Siebert Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "JMG",
+    "n": "Jm Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OCCI",
+    "n": "Ofs Credit Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FRD",
+    "n": "Friedman Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "ISPR",
+    "n": "Ispire Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GTE",
+    "n": "Gran Tierra Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LNSR",
+    "n": "Lensar, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NCAUF",
+    "n": "Newcore Gold Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "EXFY",
+    "n": "Expensify, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ROC",
+    "n": "Rank One Computing Corp Dba Roc",
+    "e": "US"
+  },
+  {
+    "s": "ZENA",
+    "n": "Zenatech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCBP",
+    "n": "Bcb Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "XGN",
+    "n": "Exagen Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ESOA",
+    "n": "Energy Services Of America Corp",
+    "e": "US"
+  },
+  {
+    "s": "JHS",
+    "n": "John Hancock Income Securities Trust",
+    "e": "US"
+  },
+  {
+    "s": "GCL",
+    "n": "Gcl Global Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ESP",
+    "n": "Espey Mfg & Electronics Corp",
+    "e": "US"
+  },
+  {
+    "s": "UPXI",
+    "n": "Upexi, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CAAS",
+    "n": "China Automotive Systems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMPP",
+    "n": "Imperial Petroleum Inc./Marshall Islands",
+    "e": "US"
+  },
+  {
+    "s": "CBUS",
+    "n": "Cibus, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IXHL",
+    "n": "Incannex Healthcare Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BTCS",
+    "n": "Btcs Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TTRX",
+    "n": "Turn Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIRS",
+    "n": "Airsculpt Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DLNG",
+    "n": "Dynagas Lng Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "KPTI",
+    "n": "Karyopharm Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JYNT",
+    "n": "Joint Corp",
+    "e": "US"
+  },
+  {
+    "s": "ENBP",
+    "n": "Enb Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "MRCC",
+    "n": "Monroe Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "RMBI",
+    "n": "Richmond Mutual Bancorporation, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATLX",
+    "n": "Atlas Lithium Corp",
+    "e": "US"
+  },
+  {
+    "s": "CURR",
+    "n": "Currenc Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FGNX",
+    "n": "Fg Nexus Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WEA",
+    "n": "Western Asset Premier Bond Fund",
+    "e": "US"
+  },
+  {
+    "s": "CPKF",
+    "n": "Chesapeake Financial Shares Inc",
+    "e": "US"
+  },
+  {
+    "s": "BCV",
+    "n": "Bancroft Fund Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LGCY",
+    "n": "Legacy Education Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FBIO",
+    "n": "Fortress Biotech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TGEN",
+    "n": "Tecogen Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LFAC",
+    "n": "Leapfrog Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "CLAR",
+    "n": "Clarus Corp",
+    "e": "US"
+  },
+  {
+    "s": "BEOB",
+    "n": "Beo Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "SAMG",
+    "n": "Silvercrest Asset Management Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QNBC",
+    "n": "Qnb Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CNTB",
+    "n": "Connect Biopharma Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PDEX",
+    "n": "Pro Dex Inc",
+    "e": "US"
+  },
+  {
+    "s": "SEVN",
+    "n": "Seven Hills Realty Trust",
+    "e": "US"
+  },
+  {
+    "s": "ESGH",
+    "n": "Esg Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RBKB",
+    "n": "Rhinebeck Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARBE",
+    "n": "Arbe Robotics Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "LIFE",
+    "n": "Ethos Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KUKE",
+    "n": "Kuke Music Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AAWH",
+    "n": "Ascend Wellness Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRXA",
+    "n": "T-Rex Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HEQ",
+    "n": "John Hancock Diversified Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "CGTX",
+    "n": "Cognition Therapeutics Inc",
+    "e": "US"
+  },
+  {
+    "s": "SBFG",
+    "n": "Sb Financial Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LMRXF",
+    "n": "Laramide Resources Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DBGI",
+    "n": "Digital Brands Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORMP",
+    "n": "Oramed Pharmaceuticals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZVIA",
+    "n": "Zevia Pbc",
+    "e": "US"
+  },
+  {
+    "s": "VRCA",
+    "n": "Verrica Pharmaceuticals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SRBK",
+    "n": "Sr Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DRTTF",
+    "n": "Dirtt Environmental Solutions Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MB",
+    "n": "Masterbeef Group",
+    "e": "US"
+  },
+  {
+    "s": "UNCY",
+    "n": "Unicycive Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GCUMF",
+    "n": "Gunnison Copper Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GNLX",
+    "n": "Genelux Corp",
+    "e": "US"
+  },
+  {
+    "s": "ALYAF",
+    "n": "Alithya Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "IDN",
+    "n": "Intellicheck, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ELDN",
+    "n": "Eledon Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NIPG",
+    "n": "Nip Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HOFT",
+    "n": "Hooker Furnishings Corp",
+    "e": "US"
+  },
+  {
+    "s": "MCN",
+    "n": "Xai Madison Equity Premium Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "CCLD",
+    "n": "Carecloud, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AFBI",
+    "n": "Affinity Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SUNS",
+    "n": "Sunrise Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SERA",
+    "n": "Sera Prognostics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AKA",
+    "n": "A.K.A. Brands Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BTA",
+    "n": "Blackrock Long-Term Municipal Advantage Trust",
+    "e": "US"
+  },
+  {
+    "s": "FATE",
+    "n": "Fate Therapeutics Inc",
+    "e": "US"
+  },
+  {
+    "s": "AGEN",
+    "n": "Agenus Inc",
+    "e": "US"
+  },
+  {
+    "s": "OVID",
+    "n": "Ovid Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ABVE",
+    "n": "Above Food Ingredients Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SEV",
+    "n": "Aptera Motors Corp",
+    "e": "US"
+  },
+  {
+    "s": "ICTSF",
+    "n": "Icts International N V",
+    "e": "US"
+  },
+  {
+    "s": "FLD",
+    "n": "Fold Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QUIK",
+    "n": "Quicklogic Corp",
+    "e": "US"
+  },
+  {
+    "s": "WHWK",
+    "n": "Whitehawk Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BHST",
+    "n": "Bioharvest Sciences Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EHTH",
+    "n": "Ehealth, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DMO",
+    "n": "Western Asset Mortgage Opportunity Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HFUS",
+    "n": "Hartford Creative Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VFL",
+    "n": "Abrdn National Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "ZEO",
+    "n": "Zeo Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GNT",
+    "n": "Gamco Natural Resources, Gold & Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "OMEX",
+    "n": "Odyssey Marine Exploration Inc",
+    "e": "US"
+  },
+  {
+    "s": "HYFT",
+    "n": "Mindwalk Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AIIO",
+    "n": "Robo.Ai Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHR",
+    "n": "Cheer Holding, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRBRF",
+    "n": "Simply Better Brands Corp.",
+    "e": "US"
+  },
+  {
+    "s": "USGO",
+    "n": "U.S. Goldmining Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FKYS",
+    "n": "First Keystone Corp",
+    "e": "US"
+  },
+  {
+    "s": "STIM",
+    "n": "Neuronetics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NEOV",
+    "n": "Neovolta Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PFO",
+    "n": "Flaherty & Crumrine Preferred & Income Opportunity Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "ONL",
+    "n": "Orion Properties Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RMMZ",
+    "n": "Rivernorth Managed Duration Municipal Income Fund Ii, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GPUS",
+    "n": "Hyperscale Data, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PHD",
+    "n": "Pioneer Floating Rate Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VNJA",
+    "n": "Vanjia Corp",
+    "e": "US"
+  },
+  {
+    "s": "PELI",
+    "n": "Pelican Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "IPEX",
+    "n": "Inflection Point Acquisition Corp. V",
+    "e": "US"
+  },
+  {
+    "s": "COOK",
+    "n": "Traeger, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SHIM",
+    "n": "Shimmick Corp",
+    "e": "US"
+  },
+  {
+    "s": "QMCO",
+    "n": "Quantum Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "KGEI",
+    "n": "Kolibri Global Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHCI",
+    "n": "Comstock Holding Companies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KISB",
+    "n": "Kish Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "RPT",
+    "n": "Rithm Property Trust Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WRIV",
+    "n": "White River Bancshares Co",
+    "e": "US"
+  },
+  {
+    "s": "ABOS",
+    "n": "Acumen Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TORO",
+    "n": "Toro Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GGZ",
+    "n": "Gabelli Global Small & Mid Cap Value Trust",
+    "e": "US"
+  },
+  {
+    "s": "FXY",
+    "n": "Invesco Currencyshares Japanese Yen Trust",
+    "e": "US"
+  },
+  {
+    "s": "IAF",
+    "n": "Abrdn Australia Equity Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JHI",
+    "n": "John Hancock Investors Trust",
+    "e": "US"
+  },
+  {
+    "s": "AEYE",
+    "n": "Audioeye Inc",
+    "e": "US"
+  },
+  {
+    "s": "ISTKF",
+    "n": "Intellistake Technologies Corp.",
+    "e": "US"
+  },
+  {
+    "s": "XTRAF",
+    "n": "Xtract One Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTW",
+    "n": "Ctw Cayman",
+    "e": "US"
+  },
+  {
+    "s": "NPT",
+    "n": "Texxon Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BAER",
+    "n": "Bridger Aerospace Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PAI",
+    "n": "Western Asset Investment Grade Income Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EPSN",
+    "n": "Epsilon Energy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FPRGF",
+    "n": "Falco Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BUUU",
+    "n": "Buuu Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GRAY",
+    "n": "Grayscale Investments, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LHAI",
+    "n": "Linkhome Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SVIIF",
+    "n": "Spring Valley Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "MED",
+    "n": "Medifast Inc",
+    "e": "US"
+  },
+  {
+    "s": "CXE",
+    "n": "Mfs High Income Municipal Trust",
+    "e": "US"
+  },
+  {
+    "s": "GRO",
+    "n": "Brazil Potash Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TCGL",
+    "n": "Techcreate Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BTMD",
+    "n": "Biote Corp.",
+    "e": "US"
+  },
+  {
+    "s": "QSEA",
+    "n": "Quartzsea Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "TYFG",
+    "n": "Tri-County Financial Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FONR",
+    "n": "Fonar Corp",
+    "e": "US"
+  },
+  {
+    "s": "NIM",
+    "n": "Nuveen Select Maturities Municipal Fund",
+    "e": "US"
+  },
+  {
+    "s": "FTCO",
+    "n": "Fortitude Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "LVRO",
+    "n": "Lavoro Ltd",
+    "e": "US"
+  },
+  {
+    "s": "JUSHF",
+    "n": "Jushi Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRGO",
+    "n": "Freightos Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CVVUF",
+    "n": "Canalaska Uranium Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CEE",
+    "n": "Central & Eastern Europe Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CGO",
+    "n": "Calamos Global Total Return Fund",
+    "e": "US"
+  },
+  {
+    "s": "GLU",
+    "n": "Gabelli Global Utility & Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "LSBK",
+    "n": "Lake Shore Bancorp, Inc. /Md/",
+    "e": "US"
+  },
+  {
+    "s": "INO",
+    "n": "Inovio Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HYNE",
+    "n": "Hoyne Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCF",
+    "n": "High Income Securities Fund",
+    "e": "US"
+  },
+  {
+    "s": "FURY",
+    "n": "Fury Gold Mines Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CHAR",
+    "n": "Charlton Aria Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "PGAC",
+    "n": "Pantages Capital Acqusition Corp",
+    "e": "US"
+  },
+  {
+    "s": "GRUSF",
+    "n": "Grown Rogue International Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGNX",
+    "n": "Macrogenics Inc",
+    "e": "US"
+  },
+  {
+    "s": "IHD",
+    "n": "Voya Emerging Markets High Dividend Equity Fund",
+    "e": "US"
+  },
+  {
+    "s": "AGGI",
+    "n": "Allied Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QUMS",
+    "n": "Quantumsphere Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "MMLP",
+    "n": "Martin Midstream Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "DMNIF",
+    "n": "Damon Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FGBI",
+    "n": "First Guaranty Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JEQ",
+    "n": "Abrdn Japan Equity Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGYR",
+    "n": "Magyar Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PSRHF",
+    "n": "Pulsar Helium Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IPSC",
+    "n": "Century Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CURV",
+    "n": "Torrid Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZOMDF",
+    "n": "Zomedica Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ARTV",
+    "n": "Artiva Biotherapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DBE",
+    "n": "Invesco Db Energy Fund",
+    "e": "US"
+  },
+  {
+    "s": "HFFG",
+    "n": "Hf Foods Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FNMCF",
+    "n": "First Nordic Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SSTI",
+    "n": "Soundthinking, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BRCC",
+    "n": "Brc Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GFLT",
+    "n": "Genflat Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CODA",
+    "n": "Coda Octopus Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SRL",
+    "n": "Scully Royalty Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BSBK",
+    "n": "Bogota Financial Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CSPI",
+    "n": "Csp Inc /Ma/",
+    "e": "US"
+  },
+  {
+    "s": "TWLV",
+    "n": "Twelve Seas Investment Co Iii/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "EPM",
+    "n": "Evolution Petroleum Corp",
+    "e": "US"
+  },
+  {
+    "s": "NMT",
+    "n": "Nuveen Massachusetts Quality Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "BEEP",
+    "n": "Mobile Infrastructure Corp",
+    "e": "US"
+  },
+  {
+    "s": "WWR",
+    "n": "Westwater Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLBK",
+    "n": "Skyline Bankshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EML",
+    "n": "Eastern Co",
+    "e": "US"
+  },
+  {
+    "s": "ICG",
+    "n": "Intchains Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RPTX",
+    "n": "Repare Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XTGRF",
+    "n": "Xtra-Gold Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "YOUL",
+    "n": "Youlife Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CGEH",
+    "n": "Capstone Green Energy Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TYGO",
+    "n": "Tigo Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RIVF",
+    "n": "Rivulet Entertainment, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YTRA",
+    "n": "Yatra Online, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRAN",
+    "n": "Grande Group Ltd/Hk",
+    "e": "US"
+  },
+  {
+    "s": "GPMT",
+    "n": "Granite Point Mortgage Trust Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SBI",
+    "n": "Western Asset Intermediate Muni Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KVAC",
+    "n": "Keen Vision Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "QTZM",
+    "n": "Quantumzyme Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FREVS",
+    "n": "First Real Estate Investment Trust Of New Jersey, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WAMFF",
+    "n": "Alaska Silver Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TNMG",
+    "n": "Tnl Mediagene",
+    "e": "US"
+  },
+  {
+    "s": "AP",
+    "n": "Ampco Pittsburgh Corp",
+    "e": "US"
+  },
+  {
+    "s": "OPTX",
+    "n": "Syntec Optics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATLN",
+    "n": "Atlantic International Corp.",
+    "e": "US"
+  },
+  {
+    "s": "UNB",
+    "n": "Union Bankshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "VIOT",
+    "n": "Viomi Technology Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "STHO",
+    "n": "Star Holdings",
+    "e": "US"
+  },
+  {
+    "s": "ANVS",
+    "n": "Annovis Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ANIX",
+    "n": "Anixa Biosciences Inc",
+    "e": "US"
+  },
+  {
+    "s": "WPGCF",
+    "n": "West Point Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MLCI",
+    "n": "Mount Logan Capital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "COYA",
+    "n": "Coya Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MSCLF",
+    "n": "Satellos Bioscience Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCRD",
+    "n": "Blueone Card, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATRA",
+    "n": "Atara Biotherapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BLNK",
+    "n": "Blink Charging Co.",
+    "e": "US"
+  },
+  {
+    "s": "KEQU",
+    "n": "Kewaunee Scientific Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "AVD",
+    "n": "American Vanguard Corp",
+    "e": "US"
+  },
+  {
+    "s": "SEER",
+    "n": "Seer, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLCE",
+    "n": "Childrens Place, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PGP",
+    "n": "Pimco Global Stocksplus & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "PMMCF",
+    "n": "Pampa Metals Corp",
+    "e": "US"
+  },
+  {
+    "s": "DWTX",
+    "n": "Dogwood Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLSN",
+    "n": "Solesence, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SWZ",
+    "n": "Total Return Securities Fund",
+    "e": "US"
+  },
+  {
+    "s": "THAR",
+    "n": "Tharimmune, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SAVA",
+    "n": "Cassava Sciences Inc",
+    "e": "US"
+  },
+  {
+    "s": "HAIN",
+    "n": "Hain Celestial Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "PROV",
+    "n": "Provident Financial Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "DTIL",
+    "n": "Precision Biosciences Inc",
+    "e": "US"
+  },
+  {
+    "s": "VCUFF",
+    "n": "Vizsla Copper Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AISP",
+    "n": "Airship Ai Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AOUT",
+    "n": "American Outdoor Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HURC",
+    "n": "Hurco Companies Inc",
+    "e": "US"
+  },
+  {
+    "s": "RVSB",
+    "n": "Riverview Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "AURE",
+    "n": "Aurelion Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AUGG",
+    "n": "Augusta Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FGMC",
+    "n": "Fg Merger Ii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ERH",
+    "n": "Allspring Utilities & High Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "SEAT",
+    "n": "Vivid Seats Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ONCY",
+    "n": "Oncolytics Biotech Inc",
+    "e": "US"
+  },
+  {
+    "s": "NMI",
+    "n": "Nuveen Municipal Income Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "SFBC",
+    "n": "Sound Financial Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INTT",
+    "n": "Intest Corp",
+    "e": "US"
+  },
+  {
+    "s": "MX",
+    "n": "Magnachip Semiconductor Corp",
+    "e": "US"
+  },
+  {
+    "s": "ITMSF",
+    "n": "Intermap Technologies Corp",
+    "e": "US"
+  },
+  {
+    "s": "FMBM",
+    "n": "F&M Bank Corp",
+    "e": "US"
+  },
+  {
+    "s": "MDWK",
+    "n": "Mdwerks, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VIRC",
+    "n": "Virco Mfg Corporation",
+    "e": "US"
+  },
+  {
+    "s": "AMTX",
+    "n": "Aemetis, Inc",
+    "e": "US"
+  },
+  {
+    "s": "PROP",
+    "n": "Prairie Operating Co.",
+    "e": "US"
+  },
+  {
+    "s": "CHPG",
+    "n": "Championsgate Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "NCTY",
+    "n": "The9 Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AEC",
+    "n": "Anfield Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BSAI",
+    "n": "Blusky Ai Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHGG",
+    "n": "Chegg, Inc",
+    "e": "US"
+  },
+  {
+    "s": "AXR",
+    "n": "Amrep Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ANNA",
+    "n": "Aleanna, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IH",
+    "n": "Ihuman Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LVPA",
+    "n": "Lvpai Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CRDL",
+    "n": "Cardiol Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CWGL",
+    "n": "Crimson Wine Group, Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VXRT",
+    "n": "Vaxart, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XTNT",
+    "n": "Xtant Medical Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BTM",
+    "n": "Bitcoin Depot Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RCEL",
+    "n": "Avita Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LTCN",
+    "n": "Grayscale Litecoin Trust (Ltc)",
+    "e": "US"
+  },
+  {
+    "s": "STRO",
+    "n": "Sutro Biopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNCR",
+    "n": "Synchronoss Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "CSTAF",
+    "n": "Constellation Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "ULBI",
+    "n": "Ultralife Corp",
+    "e": "US"
+  },
+  {
+    "s": "EP",
+    "n": "Empire Petroleum Corp",
+    "e": "US"
+  },
+  {
+    "s": "ARAY",
+    "n": "Accuray Inc",
+    "e": "US"
+  },
+  {
+    "s": "CUAUF",
+    "n": "C3 Metals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZNB",
+    "n": "Zeta Network Group",
+    "e": "US"
+  },
+  {
+    "s": "CCIF",
+    "n": "Carlyle Credit Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "SNT",
+    "n": "Senstar Technologies Corp",
+    "e": "US"
+  },
+  {
+    "s": "SPKL",
+    "n": "Spark I Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "DTI",
+    "n": "Drilling Tools International Corp",
+    "e": "US"
+  },
+  {
+    "s": "JLS",
+    "n": "Nuveen Mortgage & Income Fund/Ma/",
+    "e": "US"
+  },
+  {
+    "s": "LGO",
+    "n": "Largo Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LIDR",
+    "n": "Aeye, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NOEM",
+    "n": "Co2 Energy Transition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AURX",
+    "n": "Nuo Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGF",
+    "n": "Mfs Government Markets Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "UNIB",
+    "n": "University Bancorp Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "IGI",
+    "n": "Western Asset Investment Grade Opportunity Trust Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UHG",
+    "n": "United Homes Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPAI",
+    "n": "Safe Pro Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WSBK",
+    "n": "Winchester Bancorp, Inc./Md/",
+    "e": "US"
+  },
+  {
+    "s": "NCSM",
+    "n": "Ncs Multistage Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ELRE",
+    "n": "Yinfu Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CTOR",
+    "n": "Citius Oncology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HYPR",
+    "n": "Hyperfine, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PDCC",
+    "n": "Pearl Diver Credit Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GMGI",
+    "n": "Golden Matrix Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GNSS",
+    "n": "Genasys Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARAI",
+    "n": "Arrive Ai Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PEW",
+    "n": "Grabagun Digital Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTM",
+    "n": "Castellum, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVF",
+    "n": "Eaton Vance Senior Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "XBP",
+    "n": "Xbp Global Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HSPT",
+    "n": "Horizon Space Acquisition Ii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GECC",
+    "n": "Great Elm Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FSHP",
+    "n": "Flag Ship Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "FLNT",
+    "n": "Fluent, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BMHL",
+    "n": "Bluemount Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ETHZ",
+    "n": "Ethzilla Corp",
+    "e": "US"
+  },
+  {
+    "s": "HIT",
+    "n": "Health In Tech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VRM",
+    "n": "Vroom, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GARLF",
+    "n": "Axcap Ventures Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BMEA",
+    "n": "Biomea Fusion, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PFBX",
+    "n": "Peoples Financial Corp /Ms/",
+    "e": "US"
+  },
+  {
+    "s": "GDL",
+    "n": "Gdl Fund",
+    "e": "US"
+  },
+  {
+    "s": "DTSQ",
+    "n": "Dt Cloud Star Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "VIPRF",
+    "n": "Silver Viper Minerals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CHMI",
+    "n": "Cherry Hill Mortgage Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "VANI",
+    "n": "Vivani Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WKEY",
+    "n": "Wisekey International Holding S.A.",
+    "e": "US"
+  },
+  {
+    "s": "GRWG",
+    "n": "Growgeneration Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SCLX",
+    "n": "Scilex Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "ACRV",
+    "n": "Acrivon Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NOBH",
+    "n": "Nobility Homes Inc",
+    "e": "US"
+  },
+  {
+    "s": "CSBR",
+    "n": "Champions Oncology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SCTSF",
+    "n": "Scottie Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SPRU",
+    "n": "Spruce Power Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "GANX",
+    "n": "Gain Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TUSK",
+    "n": "Mammoth Energy Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FLL",
+    "n": "Full House Resorts Inc",
+    "e": "US"
+  },
+  {
+    "s": "RMI",
+    "n": "Rivernorth Opportunistic Municipal Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FSP",
+    "n": "Franklin Street Properties Corp /Ma/",
+    "e": "US"
+  },
+  {
+    "s": "HOVR",
+    "n": "New Horizon Aircraft Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "OPXS",
+    "n": "Optex Systems Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "BARK",
+    "n": "Bark, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLMJF",
+    "n": "Plum Acquisition Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "RSSS",
+    "n": "Research Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MATH",
+    "n": "Metalpha Technology Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "JFB",
+    "n": "Jfb Construction Holdings",
+    "e": "US"
+  },
+  {
+    "s": "KBLB",
+    "n": "Kraig Biocraft Laboratories, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LUNG",
+    "n": "Pulmonx Corp",
+    "e": "US"
+  },
+  {
+    "s": "EUDA",
+    "n": "Euda Health Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BIOX",
+    "n": "Bioceres Crop Solutions Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AUBN",
+    "n": "Auburn National Bancorporation, Inc",
+    "e": "US"
+  },
+  {
+    "s": "NORD",
+    "n": "Nordicus Partners Corp",
+    "e": "US"
+  },
+  {
+    "s": "LCCC",
+    "n": "Lakeshore Acquisition Iii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GPAC",
+    "n": "General Purpose Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CMU",
+    "n": "Mfs High Yield Municipal Trust",
+    "e": "US"
+  },
+  {
+    "s": "MGRT",
+    "n": "Mega Fortune Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VRA",
+    "n": "Vera Bradley, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HANNF",
+    "n": "Hannan Metals Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PZG",
+    "n": "Paramount Gold Nevada Corp.",
+    "e": "US"
+  },
+  {
+    "s": "VGI",
+    "n": "Virtus Global Multi-Sector Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "IROQ",
+    "n": "If Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BYNO",
+    "n": "Bynordic Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "FEAM",
+    "n": "5e Advanced Materials, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VMCAF",
+    "n": "Valuence Merger Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "DCGO",
+    "n": "Docgo Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PYXS",
+    "n": "Pyxis Oncology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GAIA",
+    "n": "Gaia, Inc",
+    "e": "US"
+  },
+  {
+    "s": "AZASF",
+    "n": "Arizona Gold & Silver Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PBHC",
+    "n": "Pathfinder Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SOHO",
+    "n": "Sotherly Hotels Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PFX",
+    "n": "Phenixfin Corp",
+    "e": "US"
+  },
+  {
+    "s": "GDO",
+    "n": "Western Asset Global Corporate Opportunity Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ELBM",
+    "n": "Electra Battery Materials Corp",
+    "e": "US"
+  },
+  {
+    "s": "MOB",
+    "n": "Mobilicom Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MMTX",
+    "n": "Miluna Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "TYHT",
+    "n": "Thai Yee Hong Technology Holdings Pte Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TSQ",
+    "n": "Townsquare Media, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORIQ",
+    "n": "Origin Investment Corp I",
+    "e": "US"
+  },
+  {
+    "s": "LAKE",
+    "n": "Lakeland Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "LCUT",
+    "n": "Lifetime Brands, Inc",
+    "e": "US"
+  },
+  {
+    "s": "FMN",
+    "n": "Federated Hermes Premier Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "SILC",
+    "n": "Silicom Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PTHS",
+    "n": "Pelthos Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATOS",
+    "n": "Atossa Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BURU",
+    "n": "Nuburu, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RGT",
+    "n": "Royce Global Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LQMT",
+    "n": "Liquidmetal Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "RFM",
+    "n": "Rivernorth Flexible Municipal Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VGAS",
+    "n": "Verde Clean Fuels, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXC",
+    "n": "Nuveen California Select Tax Free Income Portfolio",
+    "e": "US"
+  },
+  {
+    "s": "GCV",
+    "n": "Gabelli Convertible & Income Securities Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "LOMLF",
+    "n": "Lion One Metals Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AMWL",
+    "n": "American Well Corp",
+    "e": "US"
+  },
+  {
+    "s": "BWEN",
+    "n": "Broadwind, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MHH",
+    "n": "Mastech Digital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CAPN",
+    "n": "Cayson Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "OKYO",
+    "n": "Okyo Pharma Ltd",
+    "e": "US"
+  },
+  {
+    "s": "UBCP",
+    "n": "United Bancorp Inc /Oh/",
+    "e": "US"
+  },
+  {
+    "s": "BOTJ",
+    "n": "Bank Of The James Financial Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "SFWL",
+    "n": "Shengfeng Development Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FNWB",
+    "n": "First Northwest Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "ZTEK",
+    "n": "Zentek Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MRNO",
+    "n": "Murano Global Investments Plc",
+    "e": "US"
+  },
+  {
+    "s": "ZOOZ",
+    "n": "Zooz Strategy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "NWPP",
+    "n": "New Peoples Bankshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "DRIO",
+    "n": "Dariohealth Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ALIS",
+    "n": "Calisa Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "YHNA",
+    "n": "Yhn Acquisition I Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KORE",
+    "n": "Kore Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPRB",
+    "n": "Spruce Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PSTV",
+    "n": "Plus Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LPA",
+    "n": "Logistic Properties Of The Americas",
+    "e": "US"
+  },
+  {
+    "s": "OPTT",
+    "n": "Ocean Power Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCNB",
+    "n": "Coastal Carolina Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EXOZ",
+    "n": "Exozymes Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GENK",
+    "n": "Gen Restaurant Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMUX",
+    "n": "Immunic, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLRX",
+    "n": "Pliant Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NTIC",
+    "n": "Northern Technologies International Corp",
+    "e": "US"
+  },
+  {
+    "s": "CRTAF",
+    "n": "Cartica Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "FDSB",
+    "n": "Fifth District Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INVE",
+    "n": "Identiv, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DLTH",
+    "n": "Duluth Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FSI",
+    "n": "Flexible Solutions International Inc",
+    "e": "US"
+  },
+  {
+    "s": "CALC",
+    "n": "Calcimedica, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TOUR",
+    "n": "Tuniu Corp",
+    "e": "US"
+  },
+  {
+    "s": "BEAT",
+    "n": "Heartbeam, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "COLA",
+    "n": "Columbus Acquisition Corp/Cayman Islands",
+    "e": "US"
+  },
+  {
+    "s": "GEG",
+    "n": "Great Elm Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLNG",
+    "n": "Stabilis Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RSKIA",
+    "n": "George Risk Industries, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CBKM",
+    "n": "Consumers Bancorp Inc /Oh/",
+    "e": "US"
+  },
+  {
+    "s": "ASFH",
+    "n": "Asiafin Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LSE",
+    "n": "Leishen Energy Holding Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "STG",
+    "n": "Sunlands Technology Group",
+    "e": "US"
+  },
+  {
+    "s": "COEP",
+    "n": "Coeptis Therapeutics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IFRX",
+    "n": "Inflarx N.V.",
+    "e": "US"
+  },
+  {
+    "s": "CHUC",
+    "n": "Charlie'S Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "THMG",
+    "n": "Thunder Mountain Gold Inc",
+    "e": "US"
+  },
+  {
+    "s": "DTCX",
+    "n": "Datacentrex, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IAE",
+    "n": "Voya Asia Pacific High Dividend Equity Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "AMTD",
+    "n": "Amtd Idea Group",
+    "e": "US"
+  },
+  {
+    "s": "HCHL",
+    "n": "Happy City Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DMA",
+    "n": "Destra Multi-Alternative Fund",
+    "e": "US"
+  },
+  {
+    "s": "MAYS",
+    "n": "Mays J W Inc",
+    "e": "US"
+  },
+  {
+    "s": "BDCTF",
+    "n": "Builddirect.Com Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JLHL",
+    "n": "Julong Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TENX",
+    "n": "Tenax Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DTF",
+    "n": "Dtf Tax-Free Income 2028 Term Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "ACET",
+    "n": "Adicet Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DLHC",
+    "n": "Dlh Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ADAG",
+    "n": "Adagene Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APAC",
+    "n": "Stonebridge Acquisition Ii Corp",
+    "e": "US"
+  },
+  {
+    "s": "KRRO",
+    "n": "Korro Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTZFF",
+    "n": "Fitzroy Minerals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHSN",
+    "n": "Chanson International Holding",
+    "e": "US"
+  },
+  {
+    "s": "ARSMF",
+    "n": "Ares Strategic Mining Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MYPS",
+    "n": "Playstudios, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FVN",
+    "n": "Future Vision Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EQ",
+    "n": "Equillium, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WSTN",
+    "n": "Westin Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "VHC",
+    "n": "Virnetx Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "PYPD",
+    "n": "Polypid Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FUSB",
+    "n": "First Us Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LFVN",
+    "n": "Lifevantage Corp",
+    "e": "US"
+  },
+  {
+    "s": "TUNGF",
+    "n": "American Tungsten Corp.",
+    "e": "US"
+  },
+  {
+    "s": "JFU",
+    "n": "9f Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UWHR",
+    "n": "Uwharrie Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "OM",
+    "n": "Outset Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DHX",
+    "n": "Dhi Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PNI",
+    "n": "Pimco New York Municipal Income Fund Ii",
+    "e": "US"
+  },
+  {
+    "s": "UYSC",
+    "n": "Uy Scuti Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SPAUF",
+    "n": "Spanish Mountain Gold Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FNGR",
+    "n": "Fingermotion, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CBAT",
+    "n": "Cbak Energy Technology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "THCH",
+    "n": "Th International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CPHC",
+    "n": "Canterbury Park Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "FBSI",
+    "n": "First Bancshares Inc /Mo/",
+    "e": "US"
+  },
+  {
+    "s": "CPIX",
+    "n": "Cumberland Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "ATOM",
+    "n": "Atomera Inc",
+    "e": "US"
+  },
+  {
+    "s": "ROMA",
+    "n": "Roma Green Finance Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CDLX",
+    "n": "Cardlytics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HNNA",
+    "n": "Hennessy Advisors Inc",
+    "e": "US"
+  },
+  {
+    "s": "NA",
+    "n": "Nano Labs Ltd",
+    "e": "US"
+  },
+  {
+    "s": "WBSR",
+    "n": "Webstar Technology Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TVGN",
+    "n": "Tevogen Bio Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NSPR",
+    "n": "Inspiremd, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SQNS",
+    "n": "Sequans Communications",
+    "e": "US"
+  },
+  {
+    "s": "XBIT",
+    "n": "Xbiotech Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASPS",
+    "n": "Altisource Portfolio Solutions S.A.",
+    "e": "US"
+  },
+  {
+    "s": "SSEA",
+    "n": "Starry Sea Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "PRPL",
+    "n": "Purple Innovation, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KNDI",
+    "n": "Kandi Technologies Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KZIA",
+    "n": "Kazia Therapeutics Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NZAUF",
+    "n": "Rua Gold Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMA",
+    "n": "Imagenebio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLV",
+    "n": "Clough Global Dividend & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "BSEM",
+    "n": "Biostem Technologies",
+    "e": "US"
+  },
+  {
+    "s": "BSAA",
+    "n": "Best Spac I Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AEAE",
+    "n": "Altenergy Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "LFS",
+    "n": "Leifras Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "IZEA",
+    "n": "Izea Worldwide, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNDA",
+    "n": "Concord Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "PCM",
+    "n": "Pcm Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IVCAF",
+    "n": "Investcorp Ai Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MCHX",
+    "n": "Marchex Inc",
+    "e": "US"
+  },
+  {
+    "s": "RITR",
+    "n": "Reitar Logtech Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BRID",
+    "n": "Bridgford Foods Corp",
+    "e": "US"
+  },
+  {
+    "s": "GLXZ",
+    "n": "Galaxy Gaming, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WTG",
+    "n": "Wintergreen Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TZOO",
+    "n": "Travelzoo",
+    "e": "US"
+  },
+  {
+    "s": "SORA",
+    "n": "Asiastrategy",
+    "e": "US"
+  },
+  {
+    "s": "HTCO",
+    "n": "High-Trend International Group",
+    "e": "US"
+  },
+  {
+    "s": "AGIG",
+    "n": "Abundia Global Impact Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PYYX",
+    "n": "Pyxus International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BODI",
+    "n": "Beachbody Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRVO",
+    "n": "Cervomed Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MTC",
+    "n": "Mmtec, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RRGB",
+    "n": "Red Robin Gourmet Burgers Inc",
+    "e": "US"
+  },
+  {
+    "s": "VLT",
+    "n": "Invesco High Income Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "IOR",
+    "n": "Income Opportunity Realty Investors Inc /Tx/",
+    "e": "US"
+  },
+  {
+    "s": "ATYR",
+    "n": "Atyr Pharma Inc",
+    "e": "US"
+  },
+  {
+    "s": "MIND",
+    "n": "Mind Technology, Inc",
+    "e": "US"
+  },
+  {
+    "s": "ATHR",
+    "n": "Aether Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BLNC",
+    "n": "Balance Labs, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NRXP",
+    "n": "Nrx Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SRTS",
+    "n": "Sensus Healthcare, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PETS",
+    "n": "Petmed Express Inc",
+    "e": "US"
+  },
+  {
+    "s": "ALAR",
+    "n": "Alarum Technologies Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AMPG",
+    "n": "Amplitech Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STSS",
+    "n": "Sharps Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DXR",
+    "n": "Daxor Corp",
+    "e": "US"
+  },
+  {
+    "s": "VATE",
+    "n": "Innovate Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CPBI",
+    "n": "Central Plains Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BENF",
+    "n": "Beneficient",
+    "e": "US"
+  },
+  {
+    "s": "BRGC",
+    "n": "North America Lithium & Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "CEV",
+    "n": "Eaton Vance California Municipal Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "TLGYF",
+    "n": "Tlgy Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "VRDR",
+    "n": "Verde Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EEA",
+    "n": "European Equity Fund, Inc / Md",
+    "e": "US"
+  },
+  {
+    "s": "CCG",
+    "n": "Cheche Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SKIL",
+    "n": "Skillsoft Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NMS",
+    "n": "Nuveen Minnesota Quality Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "DWNX",
+    "n": "Delhi Bank Corp",
+    "e": "US"
+  },
+  {
+    "s": "AIFU",
+    "n": "Aifu Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HAIAF",
+    "n": "Healthcare Ai Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ZBAI",
+    "n": "Atif Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BYFC",
+    "n": "Broadway Financial Corp De",
+    "e": "US"
+  },
+  {
+    "s": "MCRP",
+    "n": "Micropolis Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "CSDX",
+    "n": "Cs Diagnostics Corp.",
+    "e": "US"
+  },
+  {
+    "s": "QSEP",
+    "n": "Qs Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PODC",
+    "n": "Podcastone, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORRCF",
+    "n": "Oroco Resource Corp",
+    "e": "US"
+  },
+  {
+    "s": "DOMH",
+    "n": "Dominari Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DIT",
+    "n": "Amcon Distributing Co",
+    "e": "US"
+  },
+  {
+    "s": "CSTE",
+    "n": "Caesarstone Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SGA",
+    "n": "Saga Communications Inc",
+    "e": "US"
+  },
+  {
+    "s": "ALOT",
+    "n": "Astronova, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MNOV",
+    "n": "Medicinova Inc",
+    "e": "US"
+  },
+  {
+    "s": "JUVF",
+    "n": "Juniata Valley Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "LRDC",
+    "n": "Laredo Oil, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NRT",
+    "n": "North European Oil Royalty Trust",
+    "e": "US"
+  },
+  {
+    "s": "CFSU",
+    "n": "Complete Financial Solutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LFT",
+    "n": "Lument Finance Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SYHBF",
+    "n": "Skyharbour Resources Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RIBB",
+    "n": "Ribbon Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LITM",
+    "n": "Snow Lake Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MGX",
+    "n": "Metagenomi, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QVCGA",
+    "n": "Qvc Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MPU",
+    "n": "Mega Matrix Inc",
+    "e": "US"
+  },
+  {
+    "s": "NSTS",
+    "n": "Nsts Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PGZ",
+    "n": "Principal Real Estate Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "KRFG",
+    "n": "King Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RFL",
+    "n": "Rafael Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XCH",
+    "n": "Xchg Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MREO",
+    "n": "Mereo Biopharma Group Plc",
+    "e": "US"
+  },
+  {
+    "s": "NRRSF",
+    "n": "Norsemont Mining Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TCRX",
+    "n": "Tscan Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BGL",
+    "n": "Blue Gold Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GCTS",
+    "n": "Gct Semiconductor Holding, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SKLZ",
+    "n": "Skillz Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NUVR",
+    "n": "Nuvera Communications, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UFI",
+    "n": "Unifi Inc",
+    "e": "US"
+  },
+  {
+    "s": "MLGO",
+    "n": "Microalgo Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UCL",
+    "n": "Ucloudlink Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMAQ",
+    "n": "International Media Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FLYX",
+    "n": "Flyexclusive Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OFS",
+    "n": "Ofs Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "FORA",
+    "n": "Forian Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SOTK",
+    "n": "Sono Tek Corp",
+    "e": "US"
+  },
+  {
+    "s": "AAPI",
+    "n": "Apple Isports Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RTGN",
+    "n": "Retinalgenix Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NKGFF",
+    "n": "Nevada King Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PMVP",
+    "n": "Pmv Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CXH",
+    "n": "Mfs Investment Grade Municipal Trust",
+    "e": "US"
+  },
+  {
+    "s": "KG",
+    "n": "Kestrel Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GOCO",
+    "n": "Gohealth, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLNH",
+    "n": "Planet 13 Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRT",
+    "n": "Trio-Tech International",
+    "e": "US"
+  },
+  {
+    "s": "CNTM",
+    "n": "Connectm Technology Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLNN",
+    "n": "Clene Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NNBR",
+    "n": "Nn Inc",
+    "e": "US"
+  },
+  {
+    "s": "OAKU",
+    "n": "Oak Woods Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "CLST",
+    "n": "Catalyst Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALXO",
+    "n": "Alx Oncology Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "PMVC",
+    "n": "Pmv Consumer Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "QTIH",
+    "n": "Qt Imaging Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SRCRF",
+    "n": "Scorpio Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "LCGMF",
+    "n": "Lion Copper & Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RFIL",
+    "n": "R F Industries Ltd",
+    "e": "US"
+  },
+  {
+    "s": "STKS",
+    "n": "One Group Hospitality, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XPL",
+    "n": "Solitario Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TISI",
+    "n": "Team Inc",
+    "e": "US"
+  },
+  {
+    "s": "BYSI",
+    "n": "Beyondspring Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HOUR",
+    "n": "Hour Loop, Inc",
+    "e": "US"
+  },
+  {
+    "s": "RSF",
+    "n": "Rivernorth Capital & Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NUKK",
+    "n": "Nukkleus Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RVI",
+    "n": "Robinhood Ventures Fund I",
+    "e": "US"
+  },
+  {
+    "s": "TETOF",
+    "n": "Tectonic Metals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRCUF",
+    "n": "Canagold Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AVAI",
+    "n": "Avant Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHEV",
+    "n": "Charging Robotics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TBMC",
+    "n": "Trailblazer Merger Corp I",
+    "e": "US"
+  },
+  {
+    "s": "ACRG",
+    "n": "American Clean Resources Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RDAC",
+    "n": "Rising Dragon Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MHUBF",
+    "n": "Minehub Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RGS",
+    "n": "Regis Corp",
+    "e": "US"
+  },
+  {
+    "s": "EJH",
+    "n": "E-Home Household Service Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CYPH",
+    "n": "Cypherpunk Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MIRA",
+    "n": "Mira Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AFCG",
+    "n": "Advanced Flower Capital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LINK",
+    "n": "Interlink Electronics Inc",
+    "e": "US"
+  },
+  {
+    "s": "BLGO",
+    "n": "Biolargo, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STKE",
+    "n": "Sol Strategies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NSRX",
+    "n": "Nasus Pharma Ltd",
+    "e": "US"
+  },
+  {
+    "s": "STI",
+    "n": "Solidion Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LGCXF",
+    "n": "Lahontan Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PVL",
+    "n": "Permianville Royalty Trust",
+    "e": "US"
+  },
+  {
+    "s": "TEAD",
+    "n": "Teads Holding Co.",
+    "e": "US"
+  },
+  {
+    "s": "NEUE",
+    "n": "Neuehealth, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AAME",
+    "n": "Atlantic American Corp",
+    "e": "US"
+  },
+  {
+    "s": "IBAC",
+    "n": "Ib Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KBSX",
+    "n": "Fst Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MAIA",
+    "n": "Maia Biotechnology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YXT",
+    "n": "Yxt.Com Group Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CATO",
+    "n": "Cato Corp",
+    "e": "US"
+  },
+  {
+    "s": "ASRT",
+    "n": "Assertio Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ONMD",
+    "n": "Onemednet Corp",
+    "e": "US"
+  },
+  {
+    "s": "FSEA",
+    "n": "First Seacoast Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INTG",
+    "n": "Intergroup Corp",
+    "e": "US"
+  },
+  {
+    "s": "ATHE",
+    "n": "Alterity Therapeutics Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VGES",
+    "n": "Vanguard Green Investment Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TMRC",
+    "n": "Texas Mineral Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WFCF",
+    "n": "Where Food Comes From, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SAGGF",
+    "n": "Sterling Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RCT",
+    "n": "Redcloud Holdings Plc",
+    "e": "US"
+  },
+  {
+    "s": "INKT",
+    "n": "Mink Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OESX",
+    "n": "Orion Energy Systems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CVGI",
+    "n": "Commercial Vehicle Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HYOR",
+    "n": "Hyorc Corp",
+    "e": "US"
+  },
+  {
+    "s": "MDNC",
+    "n": "Medinotec Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TLPH",
+    "n": "Talphera, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WYY",
+    "n": "Widepoint Corp",
+    "e": "US"
+  },
+  {
+    "s": "PSQH",
+    "n": "Psq Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALGS",
+    "n": "Aligos Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LBCMF",
+    "n": "Libero Copper & Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "ODYS",
+    "n": "Odysight.Ai Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNTL",
+    "n": "Sentinel Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "UBXG",
+    "n": "U-Bx Technology Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "NAMI",
+    "n": "Jinxin Technology Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "EDVR",
+    "n": "Endeavor Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "DUO",
+    "n": "Fangdd Network Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BDL",
+    "n": "Flanigans Enterprises Inc",
+    "e": "US"
+  },
+  {
+    "s": "PARK",
+    "n": "Park Dental Partners, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MI",
+    "n": "Nft Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LEAT",
+    "n": "Leatt Corp",
+    "e": "US"
+  },
+  {
+    "s": "SMOFF",
+    "n": "Sonoro Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HLP",
+    "n": "Hongli Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BGSF",
+    "n": "Bgsf, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIRE",
+    "n": "Realpha Tech Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TGE",
+    "n": "Generation Essentials Group",
+    "e": "US"
+  },
+  {
+    "s": "ELTK",
+    "n": "Eltek Ltd",
+    "e": "US"
+  },
+  {
+    "s": "JSPR",
+    "n": "Jasper Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PASG",
+    "n": "Passage Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LIVE",
+    "n": "Live Ventures Inc",
+    "e": "US"
+  },
+  {
+    "s": "SELF",
+    "n": "Global Self Storage, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RMCO",
+    "n": "Royalty Management Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "BIOF",
+    "n": "Blue Biofuels, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JMM",
+    "n": "Nuveen Multi-Market Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "SYPR",
+    "n": "Sypris Solutions Inc",
+    "e": "US"
+  },
+  {
+    "s": "YIBO",
+    "n": "Planet Image International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CPSH",
+    "n": "Cps Technologies Corp/De/",
+    "e": "US"
+  },
+  {
+    "s": "DDC",
+    "n": "Ddc Enterprise Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SIREF",
+    "n": "Sirios Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ABVC",
+    "n": "Abvc Biopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRCE",
+    "n": "Grace Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EQTRF",
+    "n": "Altamira Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ICCC",
+    "n": "Immucell Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "GNS",
+    "n": "Genius Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CDAQF",
+    "n": "Compass Digital Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CWBHF",
+    "n": "Charlotte'S Web Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XTIA",
+    "n": "Xti Aerospace, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SUUN",
+    "n": "Powerbank Corp",
+    "e": "US"
+  },
+  {
+    "s": "USPCY",
+    "n": "China Strategic Technology Group Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "JETBF",
+    "n": "Global Crossing Airlines Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NOMA",
+    "n": "Nomadar Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BRAG",
+    "n": "Bragg Gaming Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FMFG",
+    "n": "Farmers & Merchants Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NTRB",
+    "n": "Nutriband Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DMYY",
+    "n": "Dmy Squared Technology Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALCY",
+    "n": "Alchemy Investments Acquisition Corp 1",
+    "e": "US"
+  },
+  {
+    "s": "TLYS",
+    "n": "Tilly'S, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NEPH",
+    "n": "Nephros Inc",
+    "e": "US"
+  },
+  {
+    "s": "WBX",
+    "n": "Wallbox N.V.",
+    "e": "US"
+  },
+  {
+    "s": "BEBE",
+    "n": "Tge Value Creative Solutions Corp",
+    "e": "US"
+  },
+  {
+    "s": "DSWL",
+    "n": "Deswell Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "HFBL",
+    "n": "Home Federal Bancorp, Inc. Of Louisiana",
+    "e": "US"
+  },
+  {
+    "s": "ESLA",
+    "n": "Estrella Immunopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "POSC",
+    "n": "Positron Corp",
+    "e": "US"
+  },
+  {
+    "s": "BEWFF",
+    "n": "Bewhere Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "TDTH",
+    "n": "Trident Digital Tech Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MNY",
+    "n": "Moneyhero Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ZYBT",
+    "n": "Zhengye Biotechnology Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OSTX",
+    "n": "Os Therapies Inc",
+    "e": "US"
+  },
+  {
+    "s": "SPWH",
+    "n": "Sportsman'S Warehouse Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASRV",
+    "n": "Ameriserv Financial Inc /Pa/",
+    "e": "US"
+  },
+  {
+    "s": "MXE",
+    "n": "Mexico Equity & Income Fund Inc",
+    "e": "US"
+  },
+  {
+    "s": "ISPO",
+    "n": "Inspirato Inc",
+    "e": "US"
+  },
+  {
+    "s": "INVU",
+    "n": "Investview, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PPSI",
+    "n": "Pioneer Power Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPAD",
+    "n": "Offerpad Solutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DWSN",
+    "n": "Dawson Geophysical Co",
+    "e": "US"
+  },
+  {
+    "s": "WHEN",
+    "n": "World Health Energy Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LOOP",
+    "n": "Loop Industries, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STLE",
+    "n": "Steele Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "NAMM",
+    "n": "Namib Minerals",
+    "e": "US"
+  },
+  {
+    "s": "EURK",
+    "n": "Eureka Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "HMR",
+    "n": "Heidmar Maritime Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "IBO",
+    "n": "Impact Biomedical Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UAVS",
+    "n": "Ageagle Aerial Systems Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LITS",
+    "n": "Lite Strategy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MAXN",
+    "n": "Maxeon Solar Technologies, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HKIT",
+    "n": "Hitek Global Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PDSB",
+    "n": "Pds Biotechnology Corp",
+    "e": "US"
+  },
+  {
+    "s": "ZENV",
+    "n": "Zenvia Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LOAN",
+    "n": "Manhattan Bridge Capital, Inc",
+    "e": "US"
+  },
+  {
+    "s": "AGH",
+    "n": "Aureus Greenway Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "RDGT",
+    "n": "Ridgetech Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CVU",
+    "n": "Cpi Aerostructures Inc",
+    "e": "US"
+  },
+  {
+    "s": "FMY",
+    "n": "First Trust Mortgage Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "PED",
+    "n": "Pedevco Corp",
+    "e": "US"
+  },
+  {
+    "s": "GMHS",
+    "n": "Gamehaus Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTII",
+    "n": "Futuretech Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "INCR",
+    "n": "Intercure Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AASP",
+    "n": "Agassi Sports Entertainment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "VTSI",
+    "n": "Virtra, Inc",
+    "e": "US"
+  },
+  {
+    "s": "ANL",
+    "n": "Adlai Nortye Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TPCS",
+    "n": "Techprecision Corp",
+    "e": "US"
+  },
+  {
+    "s": "MDAI",
+    "n": "Spectral Ai, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CPPMF",
+    "n": "Coppernico Metals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LICN",
+    "n": "Lichen International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BLNE",
+    "n": "Beeline Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VNCE",
+    "n": "Vince Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ESHA",
+    "n": "Esh Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BSPA",
+    "n": "Ballston Spa Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CDIX",
+    "n": "Cardiff Lexington Corp",
+    "e": "US"
+  },
+  {
+    "s": "TELO",
+    "n": "Telomir Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTEK",
+    "n": "Fuel Tech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AZZTF",
+    "n": "Aztec Minerals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DXLG",
+    "n": "Destination Xl Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RCON",
+    "n": "Recon Technology, Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BRFH",
+    "n": "Barfresh Food Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DRYGF",
+    "n": "Dryden Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SLGB",
+    "n": "Smart Logistics Global Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CBLO",
+    "n": "C2 Blockchain, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TELA",
+    "n": "Tela Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIRT",
+    "n": "Air T Inc",
+    "e": "US"
+  },
+  {
+    "s": "SACH",
+    "n": "Sachem Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WELNF",
+    "n": "Integrated Wellness Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "LOCL",
+    "n": "Local Bounti Corporation/De",
+    "e": "US"
+  },
+  {
+    "s": "SDM",
+    "n": "Smart Digital Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ANEB",
+    "n": "Anebulo Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KANP",
+    "n": "Kaanapali Land Llc",
+    "e": "US"
+  },
+  {
+    "s": "OPHC",
+    "n": "Optimumbank Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MDIA",
+    "n": "Mediaco Holding Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CIGL",
+    "n": "Concorde International Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "APT",
+    "n": "Alpha Pro Tech Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NXTC",
+    "n": "Nextcure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIRG",
+    "n": "Airgain Inc",
+    "e": "US"
+  },
+  {
+    "s": "BREZ",
+    "n": "Breeze Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "PLUT",
+    "n": "Plutus Financial Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GMM",
+    "n": "Global Mofy Ai Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LVO",
+    "n": "Liveone, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CVM",
+    "n": "Cel Sci Corp",
+    "e": "US"
+  },
+  {
+    "s": "LITB",
+    "n": "Lightinthebox Holding Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FORL",
+    "n": "Four Leaf Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "GROV",
+    "n": "Grove Collaborative Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OAKV",
+    "n": "Oak View Bankshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IBIO",
+    "n": "Ibio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FKWL",
+    "n": "Franklin Wireless Corp",
+    "e": "US"
+  },
+  {
+    "s": "LASE",
+    "n": "Laser Photonics Corp",
+    "e": "US"
+  },
+  {
+    "s": "TCBS",
+    "n": "Texas Community Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TIL",
+    "n": "Instil Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRT",
+    "n": "Cross Timbers Royalty Trust",
+    "e": "US"
+  },
+  {
+    "s": "CNTY",
+    "n": "Century Casinos Inc /Co/",
+    "e": "US"
+  },
+  {
+    "s": "ZDGE",
+    "n": "Zedge, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HAFG",
+    "n": "Holistic Asset Finance Group Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HCMC",
+    "n": "Healthier Choices Management Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BDMD",
+    "n": "Baird Medical Investment Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VOC",
+    "n": "Voc Energy Trust",
+    "e": "US"
+  },
+  {
+    "s": "INDO",
+    "n": "Indonesia Energy Corp Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NTRP",
+    "n": "Nexttrip, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SOGP",
+    "n": "Sound Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GKOR",
+    "n": "Golkor Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DFLI",
+    "n": "Dragonfly Energy Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TWNP",
+    "n": "Twin Hospitality Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OTH",
+    "n": "Off The Hook Ys Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FUSE",
+    "n": "Fusemachines Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XLO",
+    "n": "Xilio Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GGR",
+    "n": "Gogoro Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXN",
+    "n": "Nuveen New York Select Tax -Free Income Portfolio",
+    "e": "US"
+  },
+  {
+    "s": "ACFN",
+    "n": "Acorn Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JANL",
+    "n": "Janel Corp",
+    "e": "US"
+  },
+  {
+    "s": "KNGRF",
+    "n": "Kingsmen Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BKHA",
+    "n": "Black Hawk Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "BDSX",
+    "n": "Biodesix Inc",
+    "e": "US"
+  },
+  {
+    "s": "UEIC",
+    "n": "Universal Electronics Inc",
+    "e": "US"
+  },
+  {
+    "s": "NRXS",
+    "n": "Neuraxis, Inc",
+    "e": "US"
+  },
+  {
+    "s": "ICCM",
+    "n": "Icecure Medical Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "UONE",
+    "n": "Urban One, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GPGCF",
+    "n": "Great Pacific Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WKHS",
+    "n": "Workhorse Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UMEWF",
+    "n": "Umeworld Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LPSN",
+    "n": "Liveperson Inc",
+    "e": "US"
+  },
+  {
+    "s": "POAS",
+    "n": "Phaos Technology (Cayman) Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KSCP",
+    "n": "Knightscope, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VPLM",
+    "n": "Voip-Pal.Com Inc",
+    "e": "US"
+  },
+  {
+    "s": "SRLZF",
+    "n": "Salazar Resources Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KZR",
+    "n": "Kezar Life Sciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AUXXF",
+    "n": "Allegiant Gold Ltd",
+    "e": "US"
+  },
+  {
+    "s": "QZMRF",
+    "n": "Quartz Mountain Resources Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ESAUF",
+    "n": "Esgold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NMTC",
+    "n": "Neuroone Medical Technologies Corp",
+    "e": "US"
+  },
+  {
+    "s": "ATNM",
+    "n": "Actinium Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IOBT",
+    "n": "Io Biotech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RPMT",
+    "n": "Rego Payment Architectures, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVAX",
+    "n": "Evaxion A/S",
+    "e": "US"
+  },
+  {
+    "s": "SST",
+    "n": "System1, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FSTJ",
+    "n": "First America Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "RAVE",
+    "n": "Rave Restaurant Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BTAI",
+    "n": "Bioxcel Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RYM",
+    "n": "Rythm, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XHG",
+    "n": "Xchange Tec.Inc",
+    "e": "US"
+  },
+  {
+    "s": "ORIS",
+    "n": "Oriental Rise Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HGBL",
+    "n": "Heritage Global Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APLM",
+    "n": "Apollomics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PYRGF",
+    "n": "Pyrogenesis Canada Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SKBL",
+    "n": "Skyline Builders Group Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GAME",
+    "n": "Gamesquare Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCG",
+    "n": "Binah Capital Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CULP",
+    "n": "Culp Inc",
+    "e": "US"
+  },
+  {
+    "s": "CMBM",
+    "n": "Cambium Networks Corp",
+    "e": "US"
+  },
+  {
+    "s": "BRIA",
+    "n": "Brillia Inc",
+    "e": "US"
+  },
+  {
+    "s": "ACCL",
+    "n": "Acco Group Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "COHN",
+    "n": "Cohen & Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DXST",
+    "n": "Decent Holding Inc.",
+    "e": "US"
+  },
+  {
+    "s": "REFR",
+    "n": "Research Frontiers Inc",
+    "e": "US"
+  },
+  {
+    "s": "UPLD",
+    "n": "Upland Software, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KNRX",
+    "n": "Knorex Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CXXIF",
+    "n": "C21 Investments Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KLXE",
+    "n": "Klx Energy Services Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RYES",
+    "n": "Rise Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LHSW",
+    "n": "Lianhe Sowell International Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "QRHC",
+    "n": "Quest Resource Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "GRF",
+    "n": "Eagle Capital Growth Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTSO",
+    "n": "Cytosorbents Corp",
+    "e": "US"
+  },
+  {
+    "s": "HOLO",
+    "n": "Microcloud Hologram Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BHAT",
+    "n": "Blue Hat Interactive Entertainment Technology",
+    "e": "US"
+  },
+  {
+    "s": "QETA",
+    "n": "Quetta Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "SVRN",
+    "n": "Oceanpal Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SMXT",
+    "n": "Solarmax Technology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIB",
+    "n": "Blockchain Digital Infrastructure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MTWO",
+    "n": "M2i Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AWRE",
+    "n": "Aware Inc /Ma/",
+    "e": "US"
+  },
+  {
+    "s": "HURA",
+    "n": "Tuhura Biosciences, Inc./Nv",
+    "e": "US"
+  },
+  {
+    "s": "BOF",
+    "n": "Branchout Food Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VVPR",
+    "n": "Vivopower International Plc",
+    "e": "US"
+  },
+  {
+    "s": "INMB",
+    "n": "Inmune Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BLBX",
+    "n": "Blackboxstocks Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TETEF",
+    "n": "Technology & Telecommunication Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "LPCN",
+    "n": "Lipocine Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AXIL",
+    "n": "Axil Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FOFO",
+    "n": "Hang Feng Technology Innovation Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PXLW",
+    "n": "Pixelworks, Inc",
+    "e": "US"
+  },
+  {
+    "s": "SCWO",
+    "n": "374water Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BHM",
+    "n": "Bluerock Homes Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WGRX",
+    "n": "Wellgistics Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TECTP",
+    "n": "Tectonic Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNVS",
+    "n": "Cineverse Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MGLD",
+    "n": "Marygold Companies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RKHNF",
+    "n": "Rockhaven Resources Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DYNR",
+    "n": "Dynaresource, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SAFX",
+    "n": "Xcf Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WTHVF",
+    "n": "Westhaven Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RLEA",
+    "n": "Rubber Leaf Inc",
+    "e": "US"
+  },
+  {
+    "s": "MKTW",
+    "n": "Marketwise, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QTTB",
+    "n": "Q32 Bio Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLIR",
+    "n": "Clearsign Technologies Corp",
+    "e": "US"
+  },
+  {
+    "s": "UFG",
+    "n": "Uni-Fuels Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PRPO",
+    "n": "Precipio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HWAUF",
+    "n": "Headwater Gold Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RYET",
+    "n": "Ruanyun Edai Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BAYA",
+    "n": "Bayview Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "PHUN",
+    "n": "Phunware, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KOSS",
+    "n": "Koss Corp",
+    "e": "US"
+  },
+  {
+    "s": "INUV",
+    "n": "Inuvo, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RVPH",
+    "n": "Reviva Pharmaceuticals Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MYO",
+    "n": "Myomo, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JG",
+    "n": "Aurora Mobile Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OTLC",
+    "n": "Oncotelic Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YJGJ",
+    "n": "Yijia Group Corp.",
+    "e": "US"
+  },
+  {
+    "s": "POM",
+    "n": "Pomdoctor Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BLIV",
+    "n": "Belive Holdings",
+    "e": "US"
+  },
+  {
+    "s": "VRHI",
+    "n": "Veri Medtech Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SODI",
+    "n": "Solitron Devices Inc",
+    "e": "US"
+  },
+  {
+    "s": "SPCB",
+    "n": "Supercom Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ETST",
+    "n": "Earth Science Tech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHAI",
+    "n": "Core Ai Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRKR",
+    "n": "Parkervision Inc",
+    "e": "US"
+  },
+  {
+    "s": "MDCX",
+    "n": "Medicus Pharma Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FCO",
+    "n": "Abrdn Global Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FGEN",
+    "n": "Fibrogen Inc",
+    "e": "US"
+  },
+  {
+    "s": "JRSH",
+    "n": "Jerash Holdings (Us), Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ICMB",
+    "n": "Investcorp Credit Management Bdc, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YYAI",
+    "n": "Airwa Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PTNT",
+    "n": "Palatin Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "RDI",
+    "n": "Reading International Inc",
+    "e": "US"
+  },
+  {
+    "s": "ASPC",
+    "n": "Aspac Iii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ECOR",
+    "n": "Electrocore, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TOON",
+    "n": "Kartoon Studios, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SSGC",
+    "n": "Safespace Global Corp",
+    "e": "US"
+  },
+  {
+    "s": "MSSAF",
+    "n": "Metal Sky Star Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "MSGY",
+    "n": "Masonglory Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BESS",
+    "n": "Bimergen Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "RADX",
+    "n": "Radiopharm Theranostics Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OKUR",
+    "n": "Onkure Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TOP",
+    "n": "Top Financial Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DTST",
+    "n": "Data Storage Corp",
+    "e": "US"
+  },
+  {
+    "s": "LTRN",
+    "n": "Lantern Pharma Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PMEC",
+    "n": "Primech Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VERU",
+    "n": "Veru Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EPOW",
+    "n": "Sunrise New Energy Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PSIG",
+    "n": "Ps International Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TACT",
+    "n": "Transact Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "OCC",
+    "n": "Optical Cable Corp",
+    "e": "US"
+  },
+  {
+    "s": "OTLK",
+    "n": "Outlook Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZJYL",
+    "n": "Jin Medical International Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "USIO",
+    "n": "Usio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATCH",
+    "n": "Atlasclear Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VTYB",
+    "n": "Victory Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "RMTI",
+    "n": "Rockwell Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MRMD",
+    "n": "Marimed Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PETV",
+    "n": "Petvivo Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NHTC",
+    "n": "Natural Health Trends Corp",
+    "e": "US"
+  },
+  {
+    "s": "WIMI",
+    "n": "Wimi Hologram Cloud Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FEMY",
+    "n": "Femasys Inc",
+    "e": "US"
+  },
+  {
+    "s": "ONEG",
+    "n": "Oneconstruction Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "APWC",
+    "n": "Asia Pacific Wire & Cable Corp Ltd",
+    "e": "US"
+  },
+  {
+    "s": "XCUR",
+    "n": "Exicure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NDLS",
+    "n": "Noodles & Co",
+    "e": "US"
+  },
+  {
+    "s": "STRR",
+    "n": "Star Equity Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RNXT",
+    "n": "Renovorx, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GBIO",
+    "n": "Generation Bio Co.",
+    "e": "US"
+  },
+  {
+    "s": "INIS",
+    "n": "International Isotopes Inc",
+    "e": "US"
+  },
+  {
+    "s": "BIRD",
+    "n": "Allbirds, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TAOX",
+    "n": "Tao Synergies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTHM",
+    "n": "Fathom Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MDBH",
+    "n": "Mdb Capital Holdings, Llc",
+    "e": "US"
+  },
+  {
+    "s": "WSTRF",
+    "n": "Western Uranium & Vanadium Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ACCS",
+    "n": "Access Newswire Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SDST",
+    "n": "Stardust Power Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NTWK",
+    "n": "Netsol Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "USREF",
+    "n": "Tactical Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TVRD",
+    "n": "Tvardi Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RYDE",
+    "n": "Ryde Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RITE",
+    "n": "Mineralrite Corp",
+    "e": "US"
+  },
+  {
+    "s": "LRRIF",
+    "n": "Lion Rock Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNF",
+    "n": "Cnfinance Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GTHP",
+    "n": "Guided Therapeutics Inc",
+    "e": "US"
+  },
+  {
+    "s": "CPOP",
+    "n": "Pop Culture Group Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "JUNS",
+    "n": "Jupiter Neurosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EDRY",
+    "n": "Eurodry Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ANGH",
+    "n": "Anghami Inc",
+    "e": "US"
+  },
+  {
+    "s": "MBBC",
+    "n": "Marathon Bancorp, Inc. /Md/",
+    "e": "US"
+  },
+  {
+    "s": "INLX",
+    "n": "Intellinetics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SURG",
+    "n": "Surgepays, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CELU",
+    "n": "Celularity Inc",
+    "e": "US"
+  },
+  {
+    "s": "KFFB",
+    "n": "Kentucky First Federal Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "SCOR",
+    "n": "Comscore, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CING",
+    "n": "Cingulate Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GWH",
+    "n": "Ess Tech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SKYE",
+    "n": "Skye Bioscience, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WTER",
+    "n": "Alkaline Water Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "MCAG",
+    "n": "Mountain Crest Acquisition Corp. V",
+    "e": "US"
+  },
+  {
+    "s": "CUE",
+    "n": "Cue Biopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UNXP",
+    "n": "Oz Vision Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WAVE",
+    "n": "Eco Wave Power Global Ab (Publ)",
+    "e": "US"
+  },
+  {
+    "s": "RGNT",
+    "n": "Regentis Biomaterials Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "VNRX",
+    "n": "Volitionrx Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BRLS",
+    "n": "Borealis Foods Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PGZFF",
+    "n": "Pan Global Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DYAI",
+    "n": "Dyadic International Inc",
+    "e": "US"
+  },
+  {
+    "s": "WPRT",
+    "n": "Westport Fuel Systems Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KARX",
+    "n": "Karbon-X Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LSBCF",
+    "n": "Lakeshore Biopharma Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GLBS",
+    "n": "Globus Maritime Ltd",
+    "e": "US"
+  },
+  {
+    "s": "USEG",
+    "n": "Us Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "KDOZF",
+    "n": "Kidoz Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNOBF",
+    "n": "Rocky Shore Gold Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "RAND",
+    "n": "Rand Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "LIXT",
+    "n": "Lixte Biotechnology Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SJ",
+    "n": "Scienjoy Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "IMTCF",
+    "n": "Intrepid Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SIF",
+    "n": "Sifco Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "HNOI",
+    "n": "Hno International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WBQNL",
+    "n": "Woodbridge Liquidation Trust",
+    "e": "US"
+  },
+  {
+    "s": "FMST",
+    "n": "Foremost Clean Energy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ORGN",
+    "n": "Origin Materials, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LISMF",
+    "n": "Lithium South Development Corp",
+    "e": "US"
+  },
+  {
+    "s": "BZFD",
+    "n": "Buzzfeed, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SWAG",
+    "n": "Stran & Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FARM",
+    "n": "Farmer Brothers Co",
+    "e": "US"
+  },
+  {
+    "s": "IINN",
+    "n": "Inspira Technologies Oxy B.H.N. Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GIFT",
+    "n": "Giftify, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MODD",
+    "n": "Modular Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRTS",
+    "n": "Carparts.Com, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLTO",
+    "n": "Galecto, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RGCCF",
+    "n": "Relevant Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "IBATF",
+    "n": "International Battery Metals Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FLUX",
+    "n": "Flux Power Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WYHG",
+    "n": "Wing Yip Food Holdings Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NTZ",
+    "n": "Natuzzi S P A",
+    "e": "US"
+  },
+  {
+    "s": "GNTA",
+    "n": "Genenta Science S.P.A.",
+    "e": "US"
+  },
+  {
+    "s": "CREX",
+    "n": "Creative Realities, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TKRFF",
+    "n": "Tinka Resources Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NAAS",
+    "n": "Naas Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SEOVF",
+    "n": "Sernova Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HRGN",
+    "n": "Harvard Apparatus Regenerative Technology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ABLV",
+    "n": "Able View Global Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNAL",
+    "n": "Snail, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CFND",
+    "n": "C1 Fund Inc.",
+    "e": "US"
+  },
+  {
+    "s": "POCI",
+    "n": "Precision Optics Corporation, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KPLT",
+    "n": "Katapult Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRT",
+    "n": "Permrock Royalty Trust",
+    "e": "US"
+  },
+  {
+    "s": "LNZA",
+    "n": "Lanzatech Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RNTX",
+    "n": "Rein Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SFCO",
+    "n": "Southern Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "CNTMF",
+    "n": "Fluent Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NSFDF",
+    "n": "Nxt Energy Solutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BHSIF",
+    "n": "Bayhorse Silver Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BAFN",
+    "n": "Bayfirst Financial Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ILAL",
+    "n": "International Land Alliance Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BEEM",
+    "n": "Beam Global",
+    "e": "US"
+  },
+  {
+    "s": "NEON",
+    "n": "Neonode Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LEE",
+    "n": "Lee Enterprises, Inc",
+    "e": "US"
+  },
+  {
+    "s": "ATCMF",
+    "n": "Atico Mining Corp",
+    "e": "US"
+  },
+  {
+    "s": "GROW",
+    "n": "U S Global Investors Inc",
+    "e": "US"
+  },
+  {
+    "s": "LGL",
+    "n": "Lgl Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "KAYS",
+    "n": "Kaya Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VEEA",
+    "n": "Veea Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YSXT",
+    "n": "Ysx Tech Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "STCB",
+    "n": "Starco Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RAIN",
+    "n": "Rain Enhancement Technologies Holdco, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HERZ",
+    "n": "Herzfeld Credit Income Fund, Inc",
+    "e": "US"
+  },
+  {
+    "s": "HOWL",
+    "n": "Werewolf Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VNTG",
+    "n": "Vantage Corp (Singapore)",
+    "e": "US"
+  },
+  {
+    "s": "FATN",
+    "n": "Fatpipe Inc/Ut",
+    "e": "US"
+  },
+  {
+    "s": "SELX",
+    "n": "Semilux International Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PXS",
+    "n": "Pyxis Tankers Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BONXF",
+    "n": "Bonterra Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVOH",
+    "n": "Evoair Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HYEX",
+    "n": "Healthy Extracts Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PFAI",
+    "n": "Pinnacle Food Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IZM",
+    "n": "Iczoom Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CIF",
+    "n": "Mfs Intermediate High Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "CLRCF",
+    "n": "Climaterock",
+    "e": "US"
+  },
+  {
+    "s": "STLNF",
+    "n": "Stallion Uranium Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PC",
+    "n": "Premium Catering (Holdings) Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TTIPF",
+    "n": "Thiogenesis Therapeutics, Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KWM",
+    "n": "K Wave Media Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ANTX",
+    "n": "An2 Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNTI",
+    "n": "Senti Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RLYB",
+    "n": "Rallybio Corp",
+    "e": "US"
+  },
+  {
+    "s": "NTIP",
+    "n": "Network-1 Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BMNM",
+    "n": "Bimini Capital Management, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RDGL",
+    "n": "Vivos Inc",
+    "e": "US"
+  },
+  {
+    "s": "BOSC",
+    "n": "Bos Better Online Solutions Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FOXX",
+    "n": "Foxx Development Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RDGMF",
+    "n": "Ridgeline Minerals Corp",
+    "e": "US"
+  },
+  {
+    "s": "BZDLF",
+    "n": "Kincora Copper Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VASO",
+    "n": "Vaso Corp",
+    "e": "US"
+  },
+  {
+    "s": "AMBI",
+    "n": "Ambipar Emergency Response",
+    "e": "US"
+  },
+  {
+    "s": "HBIO",
+    "n": "Harvard Bioscience Inc",
+    "e": "US"
+  },
+  {
+    "s": "BMR",
+    "n": "Beamr Imaging Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "KMRK",
+    "n": "K-Tech Solutions Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EHSI",
+    "n": "Elite Health Systems Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BRNS",
+    "n": "Barinthus Biotherapeutics Plc.",
+    "e": "US"
+  },
+  {
+    "s": "CRWS",
+    "n": "Crown Crafts Inc",
+    "e": "US"
+  },
+  {
+    "s": "PRKA",
+    "n": "Parks America, Inc",
+    "e": "US"
+  },
+  {
+    "s": "RYOJ",
+    "n": "Ryojbaba Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "IPWR",
+    "n": "Ideal Power Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATHA",
+    "n": "Athira Pharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DAIO",
+    "n": "Data I/O Corp",
+    "e": "US"
+  },
+  {
+    "s": "ZLME",
+    "n": "Zhanling International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IGC",
+    "n": "Igc Pharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KTCC",
+    "n": "Key Tronic Corp",
+    "e": "US"
+  },
+  {
+    "s": "QNTM",
+    "n": "Quantum Biopharma Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "QNTO",
+    "n": "Quaint Oak Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CGTL",
+    "n": "Creative Global Technology Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NXTT",
+    "n": "Next Technology Holding Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HYPD",
+    "n": "Hyperion Defi, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VTGN",
+    "n": "Vistagen Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GSIW",
+    "n": "Garden Stage Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EMCGF",
+    "n": "Embrace Change Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KLNG",
+    "n": "Koil Energy Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NVNI",
+    "n": "Nvni Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "YQ",
+    "n": "17 Education & Technology Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRMZ",
+    "n": "Creditriskmonitor Com Inc",
+    "e": "US"
+  },
+  {
+    "s": "BOLD",
+    "n": "Boundless Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AYTU",
+    "n": "Aytu Biopharma, Inc",
+    "e": "US"
+  },
+  {
+    "s": "HSPOF",
+    "n": "Horizon Space Acquisition I Corp.",
+    "e": "US"
+  },
+  {
+    "s": "UG",
+    "n": "United Guardian Inc",
+    "e": "US"
+  },
+  {
+    "s": "AHT",
+    "n": "Ashford Hospitality Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "EPSM",
+    "n": "Epsium Enterprise Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RSRV",
+    "n": "Reserve Petroleum Co",
+    "e": "US"
+  },
+  {
+    "s": "CCEL",
+    "n": "Cryo Cell International Inc",
+    "e": "US"
+  },
+  {
+    "s": "ELUT",
+    "n": "Elutia Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MRKR",
+    "n": "Marker Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DSY",
+    "n": "Big Tree Cloud Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "JSDA",
+    "n": "Jones Soda Co.",
+    "e": "US"
+  },
+  {
+    "s": "ELWT",
+    "n": "Elauwit Connection, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CREG",
+    "n": "Smart Powerr Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LDDD",
+    "n": "Longduoduo Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ZBAO",
+    "n": "Zhibao Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZKIN",
+    "n": "Zk International Group Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MSAI",
+    "n": "Multisensor Ai Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RDGA",
+    "n": "Ridgefield Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "GEBRF",
+    "n": "Greenbriar Sustainable Living Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZGM",
+    "n": "Zenta Group Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PLUR",
+    "n": "Pluri Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RAPH",
+    "n": "Raphael Pharmaceutical Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JGLDF",
+    "n": "Japan Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NOM",
+    "n": "Nuveen Missouri Quality Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "CVV",
+    "n": "Cvd Equipment Corp",
+    "e": "US"
+  },
+  {
+    "s": "POWMF",
+    "n": "Power Metal Resources Plc",
+    "e": "US"
+  },
+  {
+    "s": "CLPS",
+    "n": "Clps Inc",
+    "e": "US"
+  },
+  {
+    "s": "ITHUF",
+    "n": "Ianthus Capital Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMOD",
+    "n": "Alpha Modus Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TBHC",
+    "n": "Brand House Collective, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AWCA",
+    "n": "Awaysis Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SCYX",
+    "n": "Scynexis Inc",
+    "e": "US"
+  },
+  {
+    "s": "WCT",
+    "n": "Wellchange Holdings Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PVCT",
+    "n": "Provectus Biopharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CBSTF",
+    "n": "Cannabist Co Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NNVC",
+    "n": "Nanoviricides, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NOTE",
+    "n": "Fiscalnote Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FEDU",
+    "n": "Four Seasons Education (Cayman) Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DARE",
+    "n": "Dare Bioscience, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GDSRF",
+    "n": "Gold Strike Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SPND",
+    "n": "Spindletop Oil & Gas Co",
+    "e": "US"
+  },
+  {
+    "s": "AERT",
+    "n": "Aeries Technology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "REED",
+    "n": "Reed'S, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WNDW",
+    "n": "Solarwindow Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AACG",
+    "n": "Ata Creativity Global",
+    "e": "US"
+  },
+  {
+    "s": "USGDF",
+    "n": "American Pacific Mining Corp",
+    "e": "US"
+  },
+  {
+    "s": "PSHG",
+    "n": "Performance Shipping Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PAXH",
+    "n": "Preaxia Health Care Payment Systems Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STLY",
+    "n": "Hg Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AWHL",
+    "n": "Aspira Women'S Health Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MOBQ",
+    "n": "Mobiquity Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SER",
+    "n": "Serina Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORIO",
+    "n": "Orion Digital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AVNI",
+    "n": "Arvana Inc",
+    "e": "US"
+  },
+  {
+    "s": "GREE",
+    "n": "Greenidge Generation Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LSF",
+    "n": "Laird Superfood, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LIMN",
+    "n": "Liminatus Pharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APAAF",
+    "n": "Appia Rare Earths & Uranium Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FDCT",
+    "n": "Fdctech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHOW",
+    "n": "Chowchow Cloud International Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IGTA",
+    "n": "Inception Growth Acquisition Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SCIA",
+    "n": "Sci Engineered Materials, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YI",
+    "n": "111, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCAB",
+    "n": "Bioatla, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LEEEF",
+    "n": "Leef Brands Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WRPT",
+    "n": "Ulixe Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GMVMF",
+    "n": "Gmv Minerals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RECT",
+    "n": "Rectitude Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MNDO",
+    "n": "Mind Cti Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MKDW",
+    "n": "Mkdwell Tech Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PFSB",
+    "n": "Pfs Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LGPS",
+    "n": "Logprostyle Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NRSN",
+    "n": "Neurosense Therapeutics Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PAYD",
+    "n": "Paid Inc",
+    "e": "US"
+  },
+  {
+    "s": "PRZO",
+    "n": "Parazero Technologies Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "KLTO",
+    "n": "Klotho Neurosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BTOC",
+    "n": "Armlogi Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "INTZ",
+    "n": "Intrusion Inc",
+    "e": "US"
+  },
+  {
+    "s": "SAGT",
+    "n": "Sagtec Global Ltd",
+    "e": "US"
+  },
+  {
+    "s": "INAB",
+    "n": "In8bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NIXX",
+    "n": "Nixxy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGN",
+    "n": "Megan Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ROMJF",
+    "n": "Rubicon Organics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RVSN",
+    "n": "Rail Vision Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "NAII",
+    "n": "Natural Alternatives International Inc",
+    "e": "US"
+  },
+  {
+    "s": "WNW",
+    "n": "Meiwu Technology Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "UTSI",
+    "n": "Utstarcom Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EMGDF",
+    "n": "Eminent Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ARKR",
+    "n": "Ark Restaurants Corp",
+    "e": "US"
+  },
+  {
+    "s": "INTS",
+    "n": "Intensity Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BRYGF",
+    "n": "Terra Rossa Gold Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BBBXF",
+    "n": "Brixton Metals Corp",
+    "e": "US"
+  },
+  {
+    "s": "CLOQ",
+    "n": "Cyberloq Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JL",
+    "n": "J-Long Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TXMD",
+    "n": "Therapeuticsmd, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XOS",
+    "n": "Xos, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IPM",
+    "n": "Intelligent Protection Management Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GDST",
+    "n": "Goldenstone Acquisition Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "UPYY",
+    "n": "Upay",
+    "e": "US"
+  },
+  {
+    "s": "MNTS",
+    "n": "Momentus Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VRAR",
+    "n": "Glimpse Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TOPS",
+    "n": "Top Ships Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EKSO",
+    "n": "Ekso Bionics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VRSSF",
+    "n": "Verses Ai Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IDAI",
+    "n": "T Stamp Inc",
+    "e": "US"
+  },
+  {
+    "s": "IEHC",
+    "n": "Ieh Corp",
+    "e": "US"
+  },
+  {
+    "s": "SOPA",
+    "n": "Society Pass Incorporated.",
+    "e": "US"
+  },
+  {
+    "s": "AAUAF",
+    "n": "Almaden Minerals Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RVP",
+    "n": "Retractable Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "TIGCF",
+    "n": "Triumph Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FBLG",
+    "n": "Fibrobiologics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ECRO",
+    "n": "Ecc Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "HUIZ",
+    "n": "Huize Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CETX",
+    "n": "Cemtrex Inc",
+    "e": "US"
+  },
+  {
+    "s": "MXC",
+    "n": "Mexco Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "SFRX",
+    "n": "Seafarer Exploration Corp",
+    "e": "US"
+  },
+  {
+    "s": "TLF",
+    "n": "Tandy Leather Factory Inc",
+    "e": "US"
+  },
+  {
+    "s": "IVFH",
+    "n": "Innovative Food Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "MLSS",
+    "n": "Milestone Scientific Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AGPU",
+    "n": "Axe Compute Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MMCP",
+    "n": "Mag Mile Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPEX",
+    "n": "Spectre Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "KTTA",
+    "n": "Pasithea Therapeutics Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FENG",
+    "n": "Phoenix New Media Ltd",
+    "e": "US"
+  },
+  {
+    "s": "REE",
+    "n": "Ree Automotive Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AAQL",
+    "n": "Antiaging Quantum Living Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LNAI",
+    "n": "Lunai Bioworks Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AUST",
+    "n": "Austin Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TSE",
+    "n": "Trinseo Plc",
+    "e": "US"
+  },
+  {
+    "s": "ABIT",
+    "n": "Athena Bitcoin Global",
+    "e": "US"
+  },
+  {
+    "s": "ROLR",
+    "n": "High Roller Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JOB",
+    "n": "Gee Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MILIF",
+    "n": "Military Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TINFF",
+    "n": "Tincorp Metals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NYC",
+    "n": "American Strategic Investment Co.",
+    "e": "US"
+  },
+  {
+    "s": "PLAG",
+    "n": "Planet Green Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LRE",
+    "n": "Lead Real Estate Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "APUS",
+    "n": "Apimeds Pharmaceuticals Us, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LGCB",
+    "n": "Linkage Global Inc",
+    "e": "US"
+  },
+  {
+    "s": "COOT",
+    "n": "Australian Oilseeds Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EBON",
+    "n": "Ebang International Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NRDE",
+    "n": "Nu Ride Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NSYS",
+    "n": "Nortech Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "JVA",
+    "n": "Coffee Holding Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "SGRP",
+    "n": "Spar Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SWVL",
+    "n": "Swvl Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "SCNX",
+    "n": "Scienture Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTRK",
+    "n": "Fast Track Group",
+    "e": "US"
+  },
+  {
+    "s": "NEUP",
+    "n": "Neuphoria Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZEFIF",
+    "n": "Zefiro Methane Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OMH",
+    "n": "Ohmyhome Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HHS",
+    "n": "Harte Hanks Inc",
+    "e": "US"
+  },
+  {
+    "s": "TMDE",
+    "n": "Tmd Energy Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VVOS",
+    "n": "Vivos Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VAUCF",
+    "n": "Viva Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GAUZ",
+    "n": "Gauzy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MTEN",
+    "n": "Mingteng International Corp Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALUR",
+    "n": "Allurion Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NWGL",
+    "n": "Cl Workshop Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NOTV",
+    "n": "Inotiv, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CYN",
+    "n": "Cyngn Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTRM",
+    "n": "Castor Maritime Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KCCFF",
+    "n": "Kutcho Copper Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SNYR",
+    "n": "Synergy Chc Corp.",
+    "e": "US"
+  },
+  {
+    "s": "IRIX",
+    "n": "Iridex Corp",
+    "e": "US"
+  },
+  {
+    "s": "MYND",
+    "n": "Mynd.Ai, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADGM",
+    "n": "Adagio Medical Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CISO",
+    "n": "Ciso Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BNAI",
+    "n": "Brand Engagement Network Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GYRO",
+    "n": "Gyrodyne, Llc",
+    "e": "US"
+  },
+  {
+    "s": "MTVA",
+    "n": "Metavia Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KHOB",
+    "n": "Kheoba Corp.",
+    "e": "US"
+  },
+  {
+    "s": "YHC",
+    "n": "Lqr House Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FIEE",
+    "n": "Fiee, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "COCH",
+    "n": "Envoy Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPPL",
+    "n": "Simpple Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CCM",
+    "n": "Concord Medical Services Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MMTIF",
+    "n": "Micromem Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "EHLD",
+    "n": "Euroholdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TARSF",
+    "n": "Silver North Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "DLPN",
+    "n": "Dolphin Entertainment, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GNVR",
+    "n": "Genvor Inc",
+    "e": "US"
+  },
+  {
+    "s": "IONI",
+    "n": "I-On Digital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GUER",
+    "n": "Guerrilla Rf, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ELWS",
+    "n": "Earlyworks Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PN",
+    "n": "Skycorp Solar Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "COSM",
+    "n": "Cosmos Health Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PHNMF",
+    "n": "Phenom Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CHKR",
+    "n": "Chesapeake Granite Wash Trust",
+    "e": "US"
+  },
+  {
+    "s": "SNNF",
+    "n": "Seneca Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NMEX",
+    "n": "Northern Minerals & Exploration Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "WKSP",
+    "n": "Worksport Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BRQL",
+    "n": "Brooqly Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTXR",
+    "n": "Citius Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HIND",
+    "n": "Vyome Holdings, Inc",
+    "e": "US"
+  },
+  {
+    "s": "ITRM",
+    "n": "Iterum Therapeutics Plc",
+    "e": "US"
+  },
+  {
+    "s": "AUIAF",
+    "n": "Aurania Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SLTN",
+    "n": "Silverton Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BATL",
+    "n": "Battalion Oil Corp",
+    "e": "US"
+  },
+  {
+    "s": "CCTC",
+    "n": "Catalyst Crew Technologies Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KNDYF",
+    "n": "Kenadyr Metals Corp",
+    "e": "US"
+  },
+  {
+    "s": "MAPPF",
+    "n": "Prostar Holdings Inc. /Bc",
+    "e": "US"
+  },
+  {
+    "s": "CAHO",
+    "n": "Caro Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NIOMF",
+    "n": "First American Uranium Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AITTF",
+    "n": "Trenchant Technologies Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HIRU",
+    "n": "Hiru Corp",
+    "e": "US"
+  },
+  {
+    "s": "AQUC",
+    "n": "Aquaron Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ZEOX",
+    "n": "Zeo Scientifix, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CKX",
+    "n": "Ckx Lands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WETH",
+    "n": "Wetouch Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VBIX",
+    "n": "Viewbix Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LSH",
+    "n": "Lakeside Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CLGN",
+    "n": "Collplant Biotechnologies Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TBTC",
+    "n": "Table Trac Inc",
+    "e": "US"
+  },
+  {
+    "s": "QCLS",
+    "n": "Q/C Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LSTA",
+    "n": "Lisata Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LIMX",
+    "n": "Limitless X Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WETO",
+    "n": "Webus International Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SAIH",
+    "n": "Saiheat Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VYNE",
+    "n": "Vyne Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KALA",
+    "n": "Kala Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GOVB",
+    "n": "Gouverneur Bancorp, Inc./Md/",
+    "e": "US"
+  },
+  {
+    "s": "EQS",
+    "n": "Equus Total Return, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KDKGF",
+    "n": "Klondike Gold Corp /Fi",
+    "e": "US"
+  },
+  {
+    "s": "ZCRMF",
+    "n": "Zincore Metals Inc",
+    "e": "US"
+  },
+  {
+    "s": "ALLR",
+    "n": "Allarity Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPRS",
+    "n": "Surge Components Inc",
+    "e": "US"
+  },
+  {
+    "s": "AHNRF",
+    "n": "Athena Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "INIKF",
+    "n": "Popreach Corp",
+    "e": "US"
+  },
+  {
+    "s": "RMCF",
+    "n": "Rocky Mountain Chocolate Factory, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MWYN",
+    "n": "Marwynn Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HUDI",
+    "n": "Huadi International Group Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ASBP",
+    "n": "Aspire Biopharma Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASTI",
+    "n": "Ascent Solar Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KLGDD",
+    "n": "Kalo Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RBOT",
+    "n": "Vicarious Surgical Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MOGU",
+    "n": "Mogu Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VSEE",
+    "n": "Vsee Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIJTY",
+    "n": "Jianpu Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BGI",
+    "n": "Birks Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NNUP",
+    "n": "Nocopi Technologies Inc/Md/",
+    "e": "US"
+  },
+  {
+    "s": "TRSG",
+    "n": "Tungray Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "RCG",
+    "n": "Renn Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PMN",
+    "n": "Promis Neurosciences Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JDZG",
+    "n": "Jiade Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PEVM",
+    "n": "Phoenix Motor Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RTCJF",
+    "n": "Baijiayun Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SKYQ",
+    "n": "Sky Quarry Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BON",
+    "n": "Bon Natural Life Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NCEW",
+    "n": "New Century Logistics (Bvi) Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CVKD",
+    "n": "Cadrenal Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LEXX",
+    "n": "Lexaria Bioscience Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BTOG",
+    "n": "Bit Origin Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LIQT",
+    "n": "Liqtech International Inc",
+    "e": "US"
+  },
+  {
+    "s": "VERTF",
+    "n": "Vertiqal Studios Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PFHO",
+    "n": "Pacific Health Care Organization Inc",
+    "e": "US"
+  },
+  {
+    "s": "NINE",
+    "n": "Nine Energy Service, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KAPA",
+    "n": "Kairos Pharma, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BDCO",
+    "n": "Blue Dolphin Energy Co",
+    "e": "US"
+  },
+  {
+    "s": "JPOTF",
+    "n": "Jackpot Digital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IEGCF",
+    "n": "Independence Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CABR",
+    "n": "Caring Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NGLD",
+    "n": "Nevada Canyon Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ABCP",
+    "n": "Ambase Corp",
+    "e": "US"
+  },
+  {
+    "s": "MRAI",
+    "n": "Marpai, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GIDMF",
+    "n": "Golden Independence Mining Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CLIK",
+    "n": "Click Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "VIPZ",
+    "n": "Vip Play, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LESL",
+    "n": "Leslie'S, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BHV",
+    "n": "Blackrock Virginia Municipal Bond Trust",
+    "e": "US"
+  },
+  {
+    "s": "CSAI",
+    "n": "Cloudastructure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NRIS",
+    "n": "Norris Industries, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMG",
+    "n": "Cimg Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BNZI",
+    "n": "Banzai International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HCAI",
+    "n": "Huachen Ai Parking Management Technology Holding Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GRDX",
+    "n": "Gridai Technologies Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EONR",
+    "n": "Eon Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTFT",
+    "n": "Future Fintech Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LVLU",
+    "n": "Lulu'S Fashion Lounge Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VIZNF",
+    "n": "Visionary Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AQMS",
+    "n": "Aqua Metals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCSV",
+    "n": "Pcs Edventures!, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PT",
+    "n": "Pintec Technology Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ALDS",
+    "n": "Applife Digital Solutions Inc",
+    "e": "US"
+  },
+  {
+    "s": "IRVRF",
+    "n": "Irving Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXPL",
+    "n": "Nextplat Corp",
+    "e": "US"
+  },
+  {
+    "s": "GDTC",
+    "n": "Cytomed Therapeutics Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GPMTF",
+    "n": "Gpm Metals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RNGE",
+    "n": "Range Impact, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DUKR",
+    "n": "Duke Robotics Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GLGI",
+    "n": "Greystone Logistics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "USEA",
+    "n": "United Maritime Corp",
+    "e": "US"
+  },
+  {
+    "s": "TJGC",
+    "n": "Tjgc Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MOBX",
+    "n": "Mobix Labs, Inc",
+    "e": "US"
+  },
+  {
+    "s": "MSBB",
+    "n": "Mercer Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BTTC",
+    "n": "Black Titan Corp",
+    "e": "US"
+  },
+  {
+    "s": "OSRH",
+    "n": "Osr Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GIGM",
+    "n": "Gigamedia Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HOTH",
+    "n": "Hoth Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BNKK",
+    "n": "Bonk, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BKUCF",
+    "n": "Blue Sky Uranium Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AEON",
+    "n": "Aeon Biopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KPEA",
+    "n": "Kun Peng International Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ZCMD",
+    "n": "Zhongchao Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRNQ",
+    "n": "Greenpro Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BTCT",
+    "n": "Btc Digital Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "EDTK",
+    "n": "Skillful Craftsman Education Technology Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CRWE",
+    "n": "Crown Equity Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TWOH",
+    "n": "Two Hands Corp",
+    "e": "US"
+  },
+  {
+    "s": "TOMZ",
+    "n": "Tomi Environmental Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SFHG",
+    "n": "Samfine Creation Holdings Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "UEEC",
+    "n": "United Health Products, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TC",
+    "n": "Token Cat Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BFNH",
+    "n": "Bioforce Nanosciences Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AUID",
+    "n": "Authid Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PMNT",
+    "n": "Perfect Moment Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "YTFD",
+    "n": "Yale Transaction Finders, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BNGO",
+    "n": "Bionano Genomics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGIH",
+    "n": "Millennium Group International Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LEDS",
+    "n": "Semileds Corp",
+    "e": "US"
+  },
+  {
+    "s": "APLT",
+    "n": "Applied Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TOPP",
+    "n": "Toppoint Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MSGM",
+    "n": "Motorsport Games Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INTJ",
+    "n": "Intelligent Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MTEX",
+    "n": "Mannatech Inc",
+    "e": "US"
+  },
+  {
+    "s": "COCP",
+    "n": "Cocrystal Pharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WVVI",
+    "n": "Willamette Valley Vineyards Inc",
+    "e": "US"
+  },
+  {
+    "s": "SINT",
+    "n": "Sintx Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LILIF",
+    "n": "Argentina Lithium & Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SLAI",
+    "n": "Solai Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AGRZ",
+    "n": "Agroz Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SMSI",
+    "n": "Smith Micro Software, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AGAE",
+    "n": "Allied Gaming & Entertainment Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RLBY",
+    "n": "Reliability Inc",
+    "e": "US"
+  },
+  {
+    "s": "SKKY",
+    "n": "Skkynet Cloud Systems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HAO",
+    "n": "Haoxi Health Technology Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MRM",
+    "n": "Medirom Healthcare Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIRI",
+    "n": "Air Industries Group",
+    "e": "US"
+  },
+  {
+    "s": "NEWH",
+    "n": "Newhydrogen, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MMA",
+    "n": "Mixed Martial Arts Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SNGX",
+    "n": "Soligenix, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIFF",
+    "n": "Firefly Neuroscience, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ELSE",
+    "n": "Electro Sensors Inc",
+    "e": "US"
+  },
+  {
+    "s": "ZSPC",
+    "n": "Zspace, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JBDI",
+    "n": "Jbdi Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ELOG",
+    "n": "Eastern International Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "INBS",
+    "n": "Intelligent Bio Solutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DLXY",
+    "n": "Delixy Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IVF",
+    "n": "Invo Fertility, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IPST",
+    "n": "Heritage Distilling Holding Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GFAI",
+    "n": "Guardforce Ai Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SPST",
+    "n": "Superstar Platforms Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MWG",
+    "n": "Multi Ways Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "WLFFF",
+    "n": "Wolfden Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "BFGFF",
+    "n": "Giant Mining Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GWTI",
+    "n": "Greenway Technologies, Inc. & Subsidiaries",
+    "e": "US"
+  },
+  {
+    "s": "SNSE",
+    "n": "Sensei Biotherapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMS",
+    "n": "American Shared Hospital Services",
+    "e": "US"
+  },
+  {
+    "s": "ITHR",
+    "n": "Intelithrive, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRIB",
+    "n": "Trinity Biotech Plc",
+    "e": "US"
+  },
+  {
+    "s": "SOS",
+    "n": "Sos Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CLRB",
+    "n": "Cellectar Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DAIC",
+    "n": "Cid Holdco, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QYOUF",
+    "n": "Qyou Media Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXGL",
+    "n": "Nexgel, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXL",
+    "n": "Nexalin Technology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OCLN",
+    "n": "Originclear, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SRXH",
+    "n": "Srx Health Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCDA",
+    "n": "Biocardia, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CSRIF",
+    "n": "Level 14 Ventures Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GTEC",
+    "n": "Greenland Technologies Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BRN",
+    "n": "Barnwell Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "MDRR",
+    "n": "Medalist Diversified Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CVAT",
+    "n": "Cavitation Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TPST",
+    "n": "Tempest Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SYBX",
+    "n": "Synlogic, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCTX",
+    "n": "Briacell Therapeutics Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RMSG",
+    "n": "Real Messenger Corp",
+    "e": "US"
+  },
+  {
+    "s": "BLRX",
+    "n": "Biolinerx Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ABTS",
+    "n": "Abits Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "MFON",
+    "n": "Mobivity Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BLMH",
+    "n": "Blum Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CVR",
+    "n": "Chicago Rivet & Machine Co",
+    "e": "US"
+  },
+  {
+    "s": "IQST",
+    "n": "Iqstel Inc",
+    "e": "US"
+  },
+  {
+    "s": "CNFN",
+    "n": "Cfn Enterprises Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KRTL",
+    "n": "Krtl Holding Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "JYD",
+    "n": "Jayud Global Logistics Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MGRX",
+    "n": "Mangoceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YYGH",
+    "n": "Yy Group Holding Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CAPT",
+    "n": "Captivision Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CENN",
+    "n": "Cenntro Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CFOO",
+    "n": "China Foods Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "XIN",
+    "n": "Xinyuan Real Estate Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PHIO",
+    "n": "Phio Pharmaceuticals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BLTH",
+    "n": "American Battery Materials, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMNN",
+    "n": "Imunon, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCOOF",
+    "n": "Core Silver Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CPIVF",
+    "n": "Captiva Verde Wellness Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CRCW",
+    "n": "Crypto Co",
+    "e": "US"
+  },
+  {
+    "s": "ELECF",
+    "n": "Electric Royalties Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AZI",
+    "n": "Autozi Internet Technology (Global) Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "LGVN",
+    "n": "Longeveron Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TGL",
+    "n": "Treasure Global Inc",
+    "e": "US"
+  },
+  {
+    "s": "PEXZF",
+    "n": "Pacific Ridge Exploration Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LBGJ",
+    "n": "Li Bang International Corp Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PBMLF",
+    "n": "Pacific Booker Minerals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TKLF",
+    "n": "Tokyo Lifestyle Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AITX",
+    "n": "Artificial Intelligence Technology Solutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RSMXF",
+    "n": "Regency Silver Corp.",
+    "e": "US"
+  },
+  {
+    "s": "COPAF",
+    "n": "Copaur Minerals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SDCH",
+    "n": "Sidechannel, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BMGL",
+    "n": "Basel Medical Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TRBMF",
+    "n": "Torq Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLRZ",
+    "n": "Polyrizon Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GTIM",
+    "n": "Good Times Restaurants Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MSW",
+    "n": "Ming Shing Group Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EDSA",
+    "n": "Edesa Biotech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CASI",
+    "n": "Casi Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QMCI",
+    "n": "Quotemedia Inc",
+    "e": "US"
+  },
+  {
+    "s": "HLEO",
+    "n": "Helio Corp /Fl/",
+    "e": "US"
+  },
+  {
+    "s": "MVO",
+    "n": "Mv Oil Trust",
+    "e": "US"
+  },
+  {
+    "s": "CODX",
+    "n": "Co-Diagnostics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IHT",
+    "n": "Innsuites Hospitality Trust",
+    "e": "US"
+  },
+  {
+    "s": "EFOI",
+    "n": "Energy Focus, Inc/De",
+    "e": "US"
+  },
+  {
+    "s": "SABOF",
+    "n": "Sabio Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "REBN",
+    "n": "Reborn Coffee, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PBSV",
+    "n": "Pharma-Bio Serv, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PKKFF",
+    "n": "Tenet Fintech Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NCRA",
+    "n": "Nocera, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLCKF",
+    "n": "Plurilock Security Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STKH",
+    "n": "Steakholder Foods Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AIMD",
+    "n": "Ainos, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENGS",
+    "n": "Energys Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VRME",
+    "n": "Verifyme, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FRECF",
+    "n": "Frequency Exchange Corp.",
+    "e": "US"
+  },
+  {
+    "s": "JCSE",
+    "n": "Je Cleantech Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "REVFF",
+    "n": "Gitennes Exploration Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ABP",
+    "n": "Abpro Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APCX",
+    "n": "Apptech Payments Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NTCL",
+    "n": "Netclass Technology Inc",
+    "e": "US"
+  },
+  {
+    "s": "USAQ",
+    "n": "Qhslab, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FXBY",
+    "n": "Foxby Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FEBO",
+    "n": "Fenbo Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SGBX",
+    "n": "Safe & Green Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TAOP",
+    "n": "Taoping Inc.",
+    "e": "US"
+  },
+  {
+    "s": "URZEF",
+    "n": "Urz3 Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ARTW",
+    "n": "Arts Way Manufacturing Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "CEIN",
+    "n": "Camber Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LDDFF",
+    "n": "Liberty Defense Holdings, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FLYE",
+    "n": "Fly-E Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EDUC",
+    "n": "Educational Development Corp",
+    "e": "US"
+  },
+  {
+    "s": "SNTW",
+    "n": "Summit Networks Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LFWD",
+    "n": "Lifeward Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FBGL",
+    "n": "Fbs Global Ltd",
+    "e": "US"
+  },
+  {
+    "s": "UECXF",
+    "n": "Urano Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CMMB",
+    "n": "Chemomab Therapeutics Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TURB",
+    "n": "Turbo Energy, S.A.",
+    "e": "US"
+  },
+  {
+    "s": "SVRE",
+    "n": "Saverone 2014 Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PTHL",
+    "n": "Pheton Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SNES",
+    "n": "Senestech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QNRX",
+    "n": "Quoin Pharmaceuticals, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BRGX",
+    "n": "Bioregenx, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DROR",
+    "n": "Dror Ortho-Design, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ULTHF",
+    "n": "United Lithium Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TLIH",
+    "n": "Ten-League International Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "USIC",
+    "n": "Uncle'S Ice Cream",
+    "e": "US"
+  },
+  {
+    "s": "ALRTF",
+    "n": "Alr Technologies Sg Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MYNZ",
+    "n": "Mainz Biomed N.V.",
+    "e": "US"
+  },
+  {
+    "s": "CXAI",
+    "n": "Cxapp Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BOLT",
+    "n": "Bolt Biotherapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GSUN",
+    "n": "Golden Sun Technology Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ANY",
+    "n": "Sphere 3d Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LPSIF",
+    "n": "Legend Power Systems Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLRO",
+    "n": "Clearone Inc",
+    "e": "US"
+  },
+  {
+    "s": "TNON",
+    "n": "Tenon Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UUU",
+    "n": "Universal Safety Products, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MOJO",
+    "n": "Equator Beverage Co",
+    "e": "US"
+  },
+  {
+    "s": "PTLE",
+    "n": "Ptl Ltd",
+    "e": "US"
+  },
+  {
+    "s": "YCBD",
+    "n": "Cbdmd, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WFF",
+    "n": "Wf Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FGI",
+    "n": "Fgi Industries Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BMXI",
+    "n": "Brookmount Explorations Inc",
+    "e": "US"
+  },
+  {
+    "s": "BANL",
+    "n": "Cbl International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TBH",
+    "n": "Brag House Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HUBC",
+    "n": "Hub Cyber Security Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SVBL",
+    "n": "Silver Bull Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INBP",
+    "n": "Integrated Biopharma Inc",
+    "e": "US"
+  },
+  {
+    "s": "CRIS",
+    "n": "Curis Inc",
+    "e": "US"
+  },
+  {
+    "s": "MTEK",
+    "n": "Maris Tech Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HWH",
+    "n": "Hwh International Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STSBF",
+    "n": "South Star Battery Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TRAW",
+    "n": "Traws Pharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCLA",
+    "n": "Picocela Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STAI",
+    "n": "Scantech Ai Systems Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WATT",
+    "n": "Energous Corp",
+    "e": "US"
+  },
+  {
+    "s": "SSM",
+    "n": "Sono Group N.V.",
+    "e": "US"
+  },
+  {
+    "s": "AWX",
+    "n": "Avalon Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "HGTXU",
+    "n": "Hugoton Royalty Trust",
+    "e": "US"
+  },
+  {
+    "s": "CYCU",
+    "n": "Cycurion, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WLDS",
+    "n": "Wearable Devices Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TIRX",
+    "n": "Tian Ruixiang Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NCEL",
+    "n": "Newcelx Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MBAI",
+    "n": "Check-Cap Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GARWF",
+    "n": "Golden Arrow Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "APMCF",
+    "n": "Morien Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TGHL",
+    "n": "Growhub Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CURX",
+    "n": "Curanex Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "LTUM",
+    "n": "Lithium Corp",
+    "e": "US"
+  },
+  {
+    "s": "BRTX",
+    "n": "Biorestorative Therapies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QURT",
+    "n": "Quarta-Rad, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JXG",
+    "n": "Jx Luxventure Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CVSI",
+    "n": "Cv Sciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AKTX",
+    "n": "Akari Therapeutics Plc",
+    "e": "US"
+  },
+  {
+    "s": "ACPS",
+    "n": "Ac Partners, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BLIN",
+    "n": "Bridgeline Digital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GEDC",
+    "n": "Calethos, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STTDF",
+    "n": "Standard Uranium Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CCHH",
+    "n": "Cch Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ARBB",
+    "n": "Arb Iot Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PETZ",
+    "n": "Tdh Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OXBR",
+    "n": "Oxbridge Re Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "YHGJ",
+    "n": "Yunhong Green Cti Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "RMXI",
+    "n": "Rmx Industries, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLNV",
+    "n": "Clean Vision Corp",
+    "e": "US"
+  },
+  {
+    "s": "BNET",
+    "n": "Bion Environmental Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "EVGN",
+    "n": "Evogene Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BIVI",
+    "n": "Biovie Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MASK",
+    "n": "3 E Network Technology Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NGTF",
+    "n": "Nightfood Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HLRTF",
+    "n": "Hillcrest Energy Technologies Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GREH",
+    "n": "Green Rain Energy Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INLF",
+    "n": "Inlif Ltd",
+    "e": "US"
+  },
+  {
+    "s": "JZ",
+    "n": "Jianzhi Education Technology Group Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "YMAT",
+    "n": "J-Star Holding Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BFRG",
+    "n": "Bullfrog Ai Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TOGI",
+    "n": "Turnongreen, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INEO",
+    "n": "Inneova Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SBDS",
+    "n": "Solo Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CUPR",
+    "n": "Cuprina Holdings (Cayman) Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EDHL",
+    "n": "Everbright Digital Holding Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AUSI",
+    "n": "Aura Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "ORESF",
+    "n": "Orestone Mining Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ERNA",
+    "n": "Ernexa Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HSCS",
+    "n": "Heartsciences Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BRKCF",
+    "n": "Barksdale Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RBNE",
+    "n": "Robin Energy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ACUT",
+    "n": "Accustem Sciences Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SUGP",
+    "n": "Su Group Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OHCFF",
+    "n": "Light Ai Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADXN",
+    "n": "Addex Therapeutics Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MIMI",
+    "n": "Mint Inc Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PASW",
+    "n": "Ping An Biomedical Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CIIT",
+    "n": "Tianci International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ICU",
+    "n": "Seastar Medical Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "LUCY",
+    "n": "Innovative Eyewear Inc",
+    "e": "US"
+  },
+  {
+    "s": "BGLC",
+    "n": "Bionexus Gene Lab Corp",
+    "e": "US"
+  },
+  {
+    "s": "ECTM",
+    "n": "Eca Marcellus Trust I",
+    "e": "US"
+  },
+  {
+    "s": "AMST",
+    "n": "Amesite Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VYND",
+    "n": "Vynleads, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GELS",
+    "n": "Gelteq Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FCCI",
+    "n": "Fast Casual Concepts, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INHD",
+    "n": "Inno Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ELVG",
+    "n": "Elvictor Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CWD",
+    "n": "Calibercos Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BFRI",
+    "n": "Biofrontera Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RPGL",
+    "n": "Republic Power Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VCGMF",
+    "n": "Visionary Copper & Gold Mines Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBGI",
+    "n": "Beasley Broadcast Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "HKPD",
+    "n": "Cellyan Biotechnology Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HYFM",
+    "n": "Hydrofarm Holdings Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OST",
+    "n": "Ostin Technology Group Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MCUJF",
+    "n": "Medicure Inc",
+    "e": "US"
+  },
+  {
+    "s": "ATER",
+    "n": "Aterian, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLWT",
+    "n": "Euro Tech Holdings Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FNFI",
+    "n": "First Niles Financial Inc",
+    "e": "US"
+  },
+  {
+    "s": "KTEL",
+    "n": "Konatel, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALZN",
+    "n": "Alzamend Neuro, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BTBD",
+    "n": "Bt Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GOVX",
+    "n": "Geovax Labs, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DSS",
+    "n": "Dss, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SEED",
+    "n": "Origin Agritech Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SRRE",
+    "n": "Sunrise Real Estate Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "PRSO",
+    "n": "Peraso Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ETS",
+    "n": "Elite Express Holding Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BQ",
+    "n": "Boqii Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ONEI",
+    "n": "Onemeta Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SUND",
+    "n": "Sundance Strategies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MYSE",
+    "n": "Myseum, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AEHL",
+    "n": "Antelope Enterprise Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "APM",
+    "n": "Aptorum Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BTCY",
+    "n": "Biotricity Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLE",
+    "n": "Global Engine Group Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "UUUFF",
+    "n": "Recharge Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "XPON",
+    "n": "Expion360 Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INTI",
+    "n": "Inhibitor Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ILAG",
+    "n": "Intelligent Living Application Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATON",
+    "n": "Alphaton Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "JCTC",
+    "n": "Jewett Cameron Trading Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PRHI",
+    "n": "Presurance Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZTSTF",
+    "n": "Ztest Electronics Inc /Fi",
+    "e": "US"
+  },
+  {
+    "s": "GXAI",
+    "n": "Gaxos.Ai Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PFSA",
+    "n": "Profusa, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MBRX",
+    "n": "Moleculin Biotech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PMCB",
+    "n": "Pharmacyte Biotech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PULM",
+    "n": "Pulmatrix, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LOBO",
+    "n": "Lobo Technologies Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "REDRF",
+    "n": "Red Canyon Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "APVO",
+    "n": "Aptevo Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PUBC",
+    "n": "Purebase Corp",
+    "e": "US"
+  },
+  {
+    "s": "ENDMF",
+    "n": "Enduro Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CELZ",
+    "n": "Creative Medical Technology Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IFBD",
+    "n": "Infobird Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AIEV",
+    "n": "Thunder Power Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLDI",
+    "n": "Calidi Biotherapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KRKR",
+    "n": "36kr Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FGHFF",
+    "n": "Forte Group Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MARPS",
+    "n": "Marine Petroleum Trust",
+    "e": "US"
+  },
+  {
+    "s": "DTCK",
+    "n": "Davis Commodities Ltd",
+    "e": "US"
+  },
+  {
+    "s": "STME",
+    "n": "Stimcell Energetics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BMRA",
+    "n": "Biomerica Inc",
+    "e": "US"
+  },
+  {
+    "s": "MBIO",
+    "n": "Mustang Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SCKT",
+    "n": "Socket Mobile, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBBMF",
+    "n": "Huntsman Exploration Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MSN",
+    "n": "Emerson Radio Corp",
+    "e": "US"
+  },
+  {
+    "s": "CRVW",
+    "n": "Careview Communications Inc",
+    "e": "US"
+  },
+  {
+    "s": "NPRFF",
+    "n": "Nepra Foods Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PIAC",
+    "n": "Princeton Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "AMBO",
+    "n": "Ambow Education Holding Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CBIH",
+    "n": "Cannabis Bioscience International Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADTI",
+    "n": "Adapti, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMHSF",
+    "n": "Comprehensive Healthcare Systems Inc. (Canada)",
+    "e": "US"
+  },
+  {
+    "s": "ELPW",
+    "n": "Elong Power Holding Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BITTF",
+    "n": "Bitterroot Resources Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KPRX",
+    "n": "Kiora Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "MTR",
+    "n": "Mesa Royalty Trust/Tx",
+    "e": "US"
+  },
+  {
+    "s": "TRRFF",
+    "n": "Trifecta Gold Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CMGHF",
+    "n": "Chaoda Modern Agriculture Holdings Ltd /Fi",
+    "e": "US"
+  },
+  {
+    "s": "NWTG",
+    "n": "Newton Golf Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MSS",
+    "n": "Maison Solutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MVNC",
+    "n": "Marvion Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APHP",
+    "n": "American Picture House Corp",
+    "e": "US"
+  },
+  {
+    "s": "KIQSF",
+    "n": "Kelso Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "MKZR",
+    "n": "Mackenzie Realty Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SMTK",
+    "n": "Smartkem, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HTCR",
+    "n": "Heartcore Enterprises, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SERPY",
+    "n": "Top End Energy Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "ZICX",
+    "n": "Zicix Corp",
+    "e": "US"
+  },
+  {
+    "s": "GLNS",
+    "n": "Golden Star Resource Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FOFA",
+    "n": "Family Office Of America, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BGAVF",
+    "n": "Bravada Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "IPW",
+    "n": "Ipower Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GTBP",
+    "n": "Gt Biopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCSA",
+    "n": "Processa Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GPOX",
+    "n": "Gpo Plus, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EHGO",
+    "n": "Eshallgo Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BASA",
+    "n": "Basanite, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XERI",
+    "n": "Xeriant, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SSKN",
+    "n": "Strata Skin Sciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HXHX",
+    "n": "Haoxin Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TPET",
+    "n": "Trio Petroleum Corp",
+    "e": "US"
+  },
+  {
+    "s": "SYNX",
+    "n": "Silynxcom Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CPCPF",
+    "n": "Coppercorp Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMZE",
+    "n": "Amaze Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMRN",
+    "n": "Immuron Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GNLN",
+    "n": "Greenlane Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TOVX",
+    "n": "Theriva Biologics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HTOO",
+    "n": "Fusion Fuel Green Plc",
+    "e": "US"
+  },
+  {
+    "s": "CRE",
+    "n": "Cre8 Enterprise Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BUDZ",
+    "n": "Weed, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APYP",
+    "n": "Appyea, Inc",
+    "e": "US"
+  },
+  {
+    "s": "BVAXF",
+    "n": "Biovaxys Technology Corp.",
+    "e": "US"
+  },
+  {
+    "s": "UCAR",
+    "n": "U Power Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GBUX",
+    "n": "Givbux, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FAT",
+    "n": "Fat Brands, Inc",
+    "e": "US"
+  },
+  {
+    "s": "YOTA",
+    "n": "Yotta Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "ADIA",
+    "n": "Adia Nutrition, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NVNO",
+    "n": "Envveno Medical Corp",
+    "e": "US"
+  },
+  {
+    "s": "IMCC",
+    "n": "Im Cannabis Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ELDCF",
+    "n": "Electrum Discovery Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LMFA",
+    "n": "Lm Funding America, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMIMF",
+    "n": "Interra Copper Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TDIC",
+    "n": "Dreamland Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DTSS",
+    "n": "Datasea Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FAMI",
+    "n": "Farmmi, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PPBT",
+    "n": "Purple Biotech Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FCUV",
+    "n": "Focus Universal Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADVB",
+    "n": "Advanced Biomed Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TCRT",
+    "n": "Alaunos Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCMC",
+    "n": "Public Co Management Corp",
+    "e": "US"
+  },
+  {
+    "s": "WAFU",
+    "n": "Wah Fu Education Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GPUSF",
+    "n": "Alset Capital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XONI",
+    "n": "Xtreme One Entertainment, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GULTU",
+    "n": "Gulf Coast Ultra Deep Royalty Trust",
+    "e": "US"
+  },
+  {
+    "s": "BABB",
+    "n": "Bab, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLE",
+    "n": "Super League Enterprise, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OFAL",
+    "n": "Ofa Group",
+    "e": "US"
+  },
+  {
+    "s": "NROM",
+    "n": "Noble Romans Inc",
+    "e": "US"
+  },
+  {
+    "s": "GIBO",
+    "n": "Gibo Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KXIN",
+    "n": "Kaixin Holdings",
+    "e": "US"
+  },
+  {
+    "s": "NCT",
+    "n": "Intercont (Cayman) Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TCRI",
+    "n": "Techcom, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LUDG",
+    "n": "Ludwig Enterprises, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GGLXF",
+    "n": "Ggl Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TWAV",
+    "n": "Taoweave, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DRMA",
+    "n": "Dermata Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BICX",
+    "n": "Biocorrx Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XCRT",
+    "n": "Xcelerate, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EEIQ",
+    "n": "Epicquest Education Group International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ULY",
+    "n": "Urgent.Ly Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SBFM",
+    "n": "Sunshine Biopharma Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NCNA",
+    "n": "Nucana Plc",
+    "e": "US"
+  },
+  {
+    "s": "CPHI",
+    "n": "China Pharma Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACXP",
+    "n": "Acurx Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LAZRQ",
+    "n": "Luminar Technologies, Inc./De",
+    "e": "US"
+  },
+  {
+    "s": "CYCN",
+    "n": "Cyclerion Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RNAZ",
+    "n": "Transcode Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DXYN",
+    "n": "Dixie Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "SKAS",
+    "n": "Saker Aviation Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NDRA",
+    "n": "Endra Life Sciences Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BNBX",
+    "n": "Bnb Plus Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EWSB",
+    "n": "Ewsb Bancorp, Inc. /Md/",
+    "e": "US"
+  },
+  {
+    "s": "PAVM",
+    "n": "Pavmed Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PWDY",
+    "n": "Powerdyne International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IPSI",
+    "n": "Innovative Payment Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MITQ",
+    "n": "Moving Image Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XXII",
+    "n": "22nd Century Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YAAS",
+    "n": "Youxin Technology Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NZERF",
+    "n": "New Zealand Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CETY",
+    "n": "Clean Energy Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XAIR",
+    "n": "Beyond Air, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EUEMF",
+    "n": "European Energy Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DQWS",
+    "n": "Dswiss Inc",
+    "e": "US"
+  },
+  {
+    "s": "FMFC",
+    "n": "Kandal M Venture Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LCTC",
+    "n": "Lifeloc Technologies, Inc",
+    "e": "US"
+  },
+  {
+    "s": "DKI",
+    "n": "Darkiris Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IVDN",
+    "n": "Innovative Designs Inc",
+    "e": "US"
+  },
+  {
+    "s": "SLXN",
+    "n": "Silexion Therapeutics Corp",
+    "e": "US"
+  },
+  {
+    "s": "PPCB",
+    "n": "Propanc Biopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EXDW",
+    "n": "Exceed World, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IRBTQ",
+    "n": "Irobot Corp",
+    "e": "US"
+  },
+  {
+    "s": "MOVE",
+    "n": "Movano Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASTC",
+    "n": "Astrotech Corp",
+    "e": "US"
+  },
+  {
+    "s": "XELB",
+    "n": "Xcel Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APRE",
+    "n": "Aprea Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YJ",
+    "n": "Yunji Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SOWG",
+    "n": "Sow Good Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VS",
+    "n": "Versus Systems Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RLYGF",
+    "n": "Riley Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SNOA",
+    "n": "Sonoma Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNRCF",
+    "n": "Canter Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LYRA",
+    "n": "Lyra Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RAY",
+    "n": "Raytech Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ADIL",
+    "n": "Adial Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NCL",
+    "n": "Northann Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WAST",
+    "n": "Waste Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MMTRS",
+    "n": "Mills Music Trust",
+    "e": "US"
+  },
+  {
+    "s": "ZDAI",
+    "n": "Directbooking Technology Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "IVDA",
+    "n": "Iveda Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LDWY",
+    "n": "Lendway, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IOTR",
+    "n": "Iothree Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BIXT",
+    "n": "Bioxytran, Inc",
+    "e": "US"
+  },
+  {
+    "s": "RDHL",
+    "n": "Redhill Biopharma Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HIGR",
+    "n": "Hi-Great Group Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "FFLO",
+    "n": "Free Flow Usa, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XTLB",
+    "n": "Xtl Biopharmaceuticals Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DEVS",
+    "n": "Devvstream Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AAUGD",
+    "n": "Aero Energy Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MEGL",
+    "n": "Magic Empire Global Ltd",
+    "e": "US"
+  },
+  {
+    "s": "YDKG",
+    "n": "Yueda Digital Holding",
+    "e": "US"
+  },
+  {
+    "s": "TANH",
+    "n": "Tantech Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CAPS",
+    "n": "Capstone Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FRSX",
+    "n": "Foresight Autonomous Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ADMT",
+    "n": "Adm Tronics Unlimited, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LGCL",
+    "n": "Lucas Gc Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SCND",
+    "n": "Scientific Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "BCLI",
+    "n": "Brainstorm Cell Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TWG",
+    "n": "Top Wealth Group Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GURE",
+    "n": "Gulf Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ANVI",
+    "n": "Anvi Global Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MAGE",
+    "n": "Magellan Copper & Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "BKYI",
+    "n": "Bio Key International Inc",
+    "e": "US"
+  },
+  {
+    "s": "BIAF",
+    "n": "Bioaffinity Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGAM",
+    "n": "Mobile Global Esports, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PUCCF",
+    "n": "Carolina Rush Corp",
+    "e": "US"
+  },
+  {
+    "s": "KLYG",
+    "n": "Kelyniam Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IPDN",
+    "n": "Professional Diversity Network, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CPMD",
+    "n": "Cannapharmarx, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VIVS",
+    "n": "Vivosim Labs, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STAK",
+    "n": "Stak Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HIHO",
+    "n": "Highway Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SKK",
+    "n": "Skk Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MFBI",
+    "n": "Monroe Federal Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QWTR",
+    "n": "Quest Water Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PURE",
+    "n": "Pure Bioscience, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LBSR",
+    "n": "Liberty Star Uranium & Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HAMRF",
+    "n": "Silver Hammer Mining Corp",
+    "e": "US"
+  },
+  {
+    "s": "LCFY",
+    "n": "Locafy Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RVYL",
+    "n": "Ryvyl Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AAMTF",
+    "n": "Armada Mercantile Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AIXI",
+    "n": "Xiao-I Corp",
+    "e": "US"
+  },
+  {
+    "s": "FLYYQ",
+    "n": "Spirit Aviation Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KIDZ",
+    "n": "Classover Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLEV",
+    "n": "Concrete Leveling Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "SNTG",
+    "n": "Sentage Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RELI",
+    "n": "Reliance Global Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BYAH",
+    "n": "Park Ha Biological Technology Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HLYK",
+    "n": "Healthlynked Corp",
+    "e": "US"
+  },
+  {
+    "s": "FUNI",
+    "n": "Hypha Labs, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCTG",
+    "n": "Ccsc Technology International Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BETRF",
+    "n": "Betterlife Pharma Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RETO",
+    "n": "Reto Eco-Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OLB",
+    "n": "Olb Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JEM",
+    "n": "707 Cayman Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "IBG",
+    "n": "Innovation Beverage Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ZDPY",
+    "n": "Zoned Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BIYA",
+    "n": "Baiya International Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPFX",
+    "n": "Standard Premium Finance Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "REVB",
+    "n": "Revelation Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GDHG",
+    "n": "Golden Heaven Group Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "KWIK",
+    "n": "Kwikclick, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HCWC",
+    "n": "Healthy Choice Wellness Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LMRMF",
+    "n": "Lomiko Metals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FLGC",
+    "n": "Flora Growth Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SQFT",
+    "n": "Presidio Property Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CJMB",
+    "n": "Callan Jmb Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SGLY",
+    "n": "Singularity Future Technology Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MIGI",
+    "n": "Mawson Infrastructure Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CETI",
+    "n": "Cyber Enviro-Tech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CDIO",
+    "n": "Cardio Diagnostics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SILO",
+    "n": "Silo Pharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NCPL",
+    "n": "Netcapital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GHST",
+    "n": "Ghst World Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AREB",
+    "n": "American Rebel Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "KITT",
+    "n": "Nauticus Robotics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TGNT",
+    "n": "Totaligent, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WXM",
+    "n": "Wf International Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "NCI",
+    "n": "Neo-Concept International Group Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GV",
+    "n": "Visionary Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VEST",
+    "n": "Loan Artificial Intelligence Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AIHS",
+    "n": "Senmiao Technology Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VYCO",
+    "n": "Vycor Medical Inc",
+    "e": "US"
+  },
+  {
+    "s": "SRGZ",
+    "n": "Star Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SPRC",
+    "n": "Scisparc Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "XBIO",
+    "n": "Xenetic Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UK",
+    "n": "Ucommune International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RHEP",
+    "n": "Regional Health Properties, Inc",
+    "e": "US"
+  },
+  {
+    "s": "SSEBF",
+    "n": "Silver Spruce Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLRX",
+    "n": "Salarius Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VCIG",
+    "n": "Vci Global Ltd",
+    "e": "US"
+  },
+  {
+    "s": "WYGC",
+    "n": "Wenyuan Group Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BCUFF",
+    "n": "Bell Copper Corp",
+    "e": "US"
+  },
+  {
+    "s": "POLA",
+    "n": "Polar Power, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SOAR",
+    "n": "Volato Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VMAR",
+    "n": "Vision Marine Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FCHL",
+    "n": "Fitness Champs Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EMBYF",
+    "n": "Nexera Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HVGDF",
+    "n": "Harvest Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "BPPTU",
+    "n": "Bp Prudhoe Bay Royalty Trust",
+    "e": "US"
+  },
+  {
+    "s": "CRUCF",
+    "n": "Colibri Resource Corp",
+    "e": "US"
+  },
+  {
+    "s": "NISN",
+    "n": "Nisun International Enterprise Development Group Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IRME",
+    "n": "Ir-Med, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATPC",
+    "n": "Agape Atp Corp",
+    "e": "US"
+  },
+  {
+    "s": "FECOF",
+    "n": "Fec Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INDP",
+    "n": "Indaptus Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PHIL",
+    "n": "Phi Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "CHKKF",
+    "n": "Chakana Copper Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TOBAF",
+    "n": "Taat Global Alternatives Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HMBL",
+    "n": "Humbl, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IDXG",
+    "n": "Interpace Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JWEL",
+    "n": "Jowell Global Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ONFO",
+    "n": "Onfolio Holdings, Inc",
+    "e": "US"
+  },
+  {
+    "s": "ALBT",
+    "n": "Avalon Globocare Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LNKS",
+    "n": "Linkers Industries Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ORKT",
+    "n": "Orangekloud Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLMD",
+    "n": "Galmed Pharmaceuticals Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SRCO",
+    "n": "Sparta Commercial Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NVVE",
+    "n": "Nuvve Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "JAGX",
+    "n": "Jaguar Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AUMN",
+    "n": "Golden Minerals Co",
+    "e": "US"
+  },
+  {
+    "s": "ATXG",
+    "n": "Addentax Group Corp.",
+    "e": "US"
+  },
+  {
+    "s": "VSME",
+    "n": "Vs Media Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CHNR",
+    "n": "China Natural Resources Inc",
+    "e": "US"
+  },
+  {
+    "s": "SONM",
+    "n": "Sonim Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "DSNY",
+    "n": "Destiny Media Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "NVSGF",
+    "n": "Nevada Sunrise Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PAIYY",
+    "n": "Aesthetic Medical International Holdings Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PRSI",
+    "n": "Portsmouth Square Inc",
+    "e": "US"
+  },
+  {
+    "s": "VEEE",
+    "n": "Twin Vee Powercats, Co.",
+    "e": "US"
+  },
+  {
+    "s": "CNET",
+    "n": "Zw Data Action Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTEL",
+    "n": "Fitell Corp",
+    "e": "US"
+  },
+  {
+    "s": "PGOL",
+    "n": "Patriot Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "XITO",
+    "n": "Xenous Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CANF",
+    "n": "Can-Fite Biopharma Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AGMH",
+    "n": "Agm Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DFSC",
+    "n": "Defsec Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PMAX",
+    "n": "Powell Max Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MTNB",
+    "n": "Matinas Biopharma Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRHI",
+    "n": "Gold Rock Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CDTG",
+    "n": "Cdt Environmental Technology Investment Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VSTD",
+    "n": "Vestand Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XTKG",
+    "n": "X3 Holdings Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ENVB",
+    "n": "Enveric Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NITO",
+    "n": "N2off, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AVPMF",
+    "n": "Avrupa Minerals Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CTTH",
+    "n": "Ctt Pharmaceutical Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNEY",
+    "n": "Cn Energy Group. Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SBLX",
+    "n": "Stablex Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIXN",
+    "n": "Aixin Life International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XRTX",
+    "n": "Xortx Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STFS",
+    "n": "Star Fashion Culture Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TRCK",
+    "n": "Track Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SOBR",
+    "n": "Sobr Safe, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VIVC",
+    "n": "Vivic Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HCTI",
+    "n": "Healthcare Triangle, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KSEZ",
+    "n": "Kinetic Seas Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BAOS",
+    "n": "Baosheng Media Group Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "XHLD",
+    "n": "Ten Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTNT",
+    "n": "Cheetah Net Supply Chain Service Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LXEH",
+    "n": "Lixiang Education Holding Co. Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GIPR",
+    "n": "Generation Income Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GWAV",
+    "n": "Greenwave Technology Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIPG",
+    "n": "Ai Technology Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NTRX",
+    "n": "Entrex Carbon Market, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BGMS",
+    "n": "Bio Green Med Solution, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ITP",
+    "n": "It Tech Packaging, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STQN",
+    "n": "Strategic Acquisitions Inc /Nv/",
+    "e": "US"
+  },
+  {
+    "s": "GLXG",
+    "n": "Galaxy Payroll Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GBR",
+    "n": "New Concept Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACON",
+    "n": "Aclarion, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENSC",
+    "n": "Ensysce Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APTOF",
+    "n": "Aptose Biosciences Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NVGLF",
+    "n": "Nv Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "WAI",
+    "n": "Top Kingwin Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GLABF",
+    "n": "Gemina Laboratories Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CMND",
+    "n": "Clearmind Medicine Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SHPH",
+    "n": "Shuttle Pharmaceuticals Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NYMXF",
+    "n": "Nymox Pharmaceutical Corp",
+    "e": "US"
+  },
+  {
+    "s": "AIM",
+    "n": "Aim Immunotech Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MEHA",
+    "n": "Functional Brands Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GTII",
+    "n": "Global Tech Industries Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CPMV",
+    "n": "Mosaic Immunoengineering Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ODYY",
+    "n": "Odyssey Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IWSH",
+    "n": "Wright Investors Service Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TOFB",
+    "n": "Tofutti Brands Inc",
+    "e": "US"
+  },
+  {
+    "s": "SUNE",
+    "n": "Sunation Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OGEN",
+    "n": "Oragenics Inc",
+    "e": "US"
+  },
+  {
+    "s": "CLSDQ",
+    "n": "Clearside Biomedical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPHL",
+    "n": "Springview Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "UGRO",
+    "n": "Urban-Gro, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SHFS",
+    "n": "Shf Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AVCRF",
+    "n": "Avricore Health Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WHLR",
+    "n": "Wheeler Real Estate Investment Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GCTK",
+    "n": "Glucotrack, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AQB",
+    "n": "Aquabounty Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "ZPHYF",
+    "n": "Zephyr Minerals Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TRNR",
+    "n": "Interactive Strength, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLRI",
+    "n": "Cleartronic, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WBUY",
+    "n": "Webuy Global Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RAYA",
+    "n": "Erayak Power Solution Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNRG",
+    "n": "Susglobal Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "VSBGF",
+    "n": "Vsblty Groupe Technologies Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TIVC",
+    "n": "Tivic Health Systems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INM",
+    "n": "Inmed Pharmaceuticals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GEGP",
+    "n": "Gold Enterprise Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "AMIX",
+    "n": "Autonomix Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BLIS",
+    "n": "Napc Defense, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VTAK",
+    "n": "Catheter Precision, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CYAN",
+    "n": "Cyanotech Corp",
+    "e": "US"
+  },
+  {
+    "s": "RIME",
+    "n": "Algorhythm Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RKDA",
+    "n": "Arcadia Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PHGE",
+    "n": "Biomx Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CREV",
+    "n": "Carbon Revolution Public Ltd Co",
+    "e": "US"
+  },
+  {
+    "s": "FTSP",
+    "n": "Fintrade Sherpa, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SDOT",
+    "n": "Sadot Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FRGT",
+    "n": "Freight Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FGL",
+    "n": "Founder Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ASNS",
+    "n": "Actelis Networks Inc",
+    "e": "US"
+  },
+  {
+    "s": "TUTH",
+    "n": "Standard Dental Labs Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AZTR",
+    "n": "Azitra, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLTYF",
+    "n": "Plastec Technologies, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "KCRD",
+    "n": "Kindcard, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HCWB",
+    "n": "Hcw Biologics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GVH",
+    "n": "Globavend Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CNSP",
+    "n": "Cns Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AUUD",
+    "n": "Auddia Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SEGG",
+    "n": "Lottery.Com Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ONAR",
+    "n": "Onar Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "WORX",
+    "n": "Scworx Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ALTX",
+    "n": "Altex Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "CMCT",
+    "n": "Creative Media & Community Trust Corp",
+    "e": "US"
+  },
+  {
+    "s": "ENZN",
+    "n": "Enzon Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZYXIQ",
+    "n": "Zynex Inc",
+    "e": "US"
+  },
+  {
+    "s": "ISPC",
+    "n": "Ispecimen Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ROYL",
+    "n": "Royale Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GNPX",
+    "n": "Genprex, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GTIJF",
+    "n": "Graphjet Technology",
+    "e": "US"
+  },
+  {
+    "s": "LVRLF",
+    "n": "Cordovacann Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SRKZF",
+    "n": "Sky Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ARTL",
+    "n": "Artelo Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADN",
+    "n": "Advent Technologies Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRI",
+    "n": "Gri Bio, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VRAX",
+    "n": "Virax Biolabs Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PTOP",
+    "n": "Peer To Peer Network",
+    "e": "US"
+  },
+  {
+    "s": "BRQSF",
+    "n": "Borqs Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PW",
+    "n": "Power Reit",
+    "e": "US"
+  },
+  {
+    "s": "GTLL",
+    "n": "Global Technologies Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GITS",
+    "n": "Global Interactive Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DXF",
+    "n": "Eason Technology Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MLEC",
+    "n": "Moolec Science Sa",
+    "e": "US"
+  },
+  {
+    "s": "RUBI",
+    "n": "Rubico Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DRCT",
+    "n": "Direct Digital Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRFX",
+    "n": "Painreform Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ONCO",
+    "n": "Onconetix, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DEFG",
+    "n": "Grayscale Decentralized Finance (Defi) Fund Llc",
+    "e": "US"
+  },
+  {
+    "s": "VERO",
+    "n": "Venus Concept Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBLG",
+    "n": "Bone Biologics Corp",
+    "e": "US"
+  },
+  {
+    "s": "MYSZ",
+    "n": "My Size, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HGYN",
+    "n": "Hong Yuan Holding Group",
+    "e": "US"
+  },
+  {
+    "s": "TBLLF",
+    "n": "Tombill Mines Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BRWC",
+    "n": "Birdie Win Corp",
+    "e": "US"
+  },
+  {
+    "s": "AYRWF",
+    "n": "Ayr Wellness Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MNDR",
+    "n": "Mobile-Health Network Solutions",
+    "e": "US"
+  },
+  {
+    "s": "CDT",
+    "n": "Cdt Equity Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZONE",
+    "n": "Cleancore Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VISM",
+    "n": "Visium Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRLEF",
+    "n": "Trillion Energy International Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AEMD",
+    "n": "Aethlon Medical Inc",
+    "e": "US"
+  },
+  {
+    "s": "SKVI",
+    "n": "Skinvisible, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BABYF",
+    "n": "Else Nutrition Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VSA",
+    "n": "Visionsys Ai Inc",
+    "e": "US"
+  },
+  {
+    "s": "THURF",
+    "n": "Thunderstruck Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "EZOO",
+    "n": "Ezagoo Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FUST",
+    "n": "Fuse Group Holding Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DOGP",
+    "n": "Dogecoin Cash, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XWEL",
+    "n": "Xwell, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BZYR",
+    "n": "Burzynski Research Institute Inc",
+    "e": "US"
+  },
+  {
+    "s": "VPER",
+    "n": "Viper Networks Inc",
+    "e": "US"
+  },
+  {
+    "s": "QIND",
+    "n": "Quality Industrial Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RMSL",
+    "n": "Remsleep Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MITI",
+    "n": "Mitesco, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UPC",
+    "n": "Universe Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "SCNI",
+    "n": "Scinai Immunotherapeutics Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "JZXN",
+    "n": "Jiuzi Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WHLT",
+    "n": "Chase Packaging Corp",
+    "e": "US"
+  },
+  {
+    "s": "ECIA",
+    "n": "Encision Inc",
+    "e": "US"
+  },
+  {
+    "s": "FDXTF",
+    "n": "Fendx Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LUVU",
+    "n": "Luvu Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WOK",
+    "n": "Work Medical Technology Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FEED",
+    "n": "Envue Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVTV",
+    "n": "Envirotech Vehicles, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JFBR",
+    "n": "Jeffs' Brands Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IMTH",
+    "n": "Antix Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATXI",
+    "n": "Avenue Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MDLK",
+    "n": "Modulink Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JTAI",
+    "n": "Jet.Ai Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GP",
+    "n": "Greenpower Motor Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PKTX",
+    "n": "Protokinetix, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CAPC",
+    "n": "Capstone Companies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EDBL",
+    "n": "Edible Garden Ag Inc",
+    "e": "US"
+  },
+  {
+    "s": "OVTZ",
+    "n": "Oculus Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PMHS",
+    "n": "Polomar Health Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MMEX",
+    "n": "Mmex Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "LIFD",
+    "n": "Lftd Partners Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMLS",
+    "n": "Cumulus Media Inc",
+    "e": "US"
+  },
+  {
+    "s": "LINMF",
+    "n": "Linear Minerals Corp",
+    "e": "US"
+  },
+  {
+    "s": "PSYCF",
+    "n": "Psyched Wellness Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ATMH",
+    "n": "All Things Mobile Analytic, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UOKA",
+    "n": "Mdjm Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CRCE",
+    "n": "Circle Energy, Inc./Nv",
+    "e": "US"
+  },
+  {
+    "s": "ABCFF",
+    "n": "Abacus Mining & Exploration Corp",
+    "e": "US"
+  },
+  {
+    "s": "VIIQ",
+    "n": "Visitiq Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BNRG",
+    "n": "Brenmiller Energy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "YBGJ",
+    "n": "Yubo International Biotech Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IVP",
+    "n": "Inspire Veterinary Partners, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RMESF",
+    "n": "Red Metal Resources, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "RAKR",
+    "n": "Rainmaker Worldwide Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AGSS",
+    "n": "Ameriguard Security Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SXTP",
+    "n": "60 Degrees Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OWPC",
+    "n": "One World Products, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SENR",
+    "n": "Strategic Environmental & Energy Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DPLS",
+    "n": "Darkpulse, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNBH",
+    "n": "Sentient Brands Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLVT",
+    "n": "Greenlit Ventures Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BDRX",
+    "n": "Biodexa Pharmaceuticals Plc",
+    "e": "US"
+  },
+  {
+    "s": "SBEV",
+    "n": "Splash Beverage Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LBUY",
+    "n": "Leafbuyer Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FWFW",
+    "n": "Flywheel Advanced Technology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MWAI",
+    "n": "Medwellai, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MNTR",
+    "n": "Mentor Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PAPL",
+    "n": "Pineapple Financial Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VRRCF",
+    "n": "Vr Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "XYLB",
+    "n": "Xy Labs, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AHRO",
+    "n": "Authentic Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRUG",
+    "n": "Trugolf Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SGN",
+    "n": "Signing Day Sports, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RENX",
+    "n": "Renx Enterprises Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ICON",
+    "n": "Icon Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "GTCH",
+    "n": "Gbt Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MHUAF",
+    "n": "Meihua International Medical Technologies Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "NUWE",
+    "n": "Nuwellis, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VIVK",
+    "n": "Vivakor, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EGMCF",
+    "n": "Emergent Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "IMTE",
+    "n": "Integrated Media Technology Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NRRWF",
+    "n": "Nuran Wireless Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DCX",
+    "n": "Digital Currency X Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VPRB",
+    "n": "Vpr Brands, Lp.",
+    "e": "US"
+  },
+  {
+    "s": "NBBI",
+    "n": "Bmp Ai Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EZGO",
+    "n": "Ezgo Technologies Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "INKW",
+    "n": "Greene Concepts, Inc",
+    "e": "US"
+  },
+  {
+    "s": "GRTX",
+    "n": "Galera Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DGLY",
+    "n": "Digital Ally, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPEV",
+    "n": "Shorepower Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DGTEF",
+    "n": "Eat & Beyond Global Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SIGY",
+    "n": "Sigyn Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BSLK",
+    "n": "Bolt Projects Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BOXL",
+    "n": "Boxlight Corp",
+    "e": "US"
+  },
+  {
+    "s": "NUMD",
+    "n": "Nu-Med Plus, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BSPK",
+    "n": "Bespoke Extracts, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WTO",
+    "n": "Utime Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AGTX",
+    "n": "Agentix Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ADTX",
+    "n": "Aditxt, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MRPT",
+    "n": "Macreport Net Inc",
+    "e": "US"
+  },
+  {
+    "s": "SEAV",
+    "n": "Seatech Ventures Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PBM",
+    "n": "Psyence Biomedical Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BRVO",
+    "n": "Bravo Multinational Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MDCE",
+    "n": "Medical Care Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PAVS",
+    "n": "Paranovus Entertainment Technology Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BHIC",
+    "n": "Bioscience Health Innovations, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LQWC",
+    "n": "Lifequest World Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CBMJ",
+    "n": "Conservative Broadcast Media & Publishing, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARBK",
+    "n": "Argo Blockchain Plc",
+    "e": "US"
+  },
+  {
+    "s": "LNTO",
+    "n": "Lelantos Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRVE",
+    "n": "Groove Botanicals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NMHI",
+    "n": "Nature'S Miracle Holding Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PNYG",
+    "n": "Pony Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PTOS",
+    "n": "P2 Solar, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MSTH",
+    "n": "Mystic Holdings Inc./Nv",
+    "e": "US"
+  },
+  {
+    "s": "OZSC",
+    "n": "Ozop Energy Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OMQS",
+    "n": "Omniq Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NGCG",
+    "n": "New Generation Consumer Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MCOM",
+    "n": "Micromobility.Com Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CERO",
+    "n": "Cero Therapeutics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASFT",
+    "n": "Appsoft Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PTIX",
+    "n": "Protagenic Therapeutics, Inc.New",
+    "e": "US"
+  },
+  {
+    "s": "BJDX",
+    "n": "Bluejay Diagnostics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SETO",
+    "n": "Seto Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "ZVSA",
+    "n": "Zyversa Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BDCC",
+    "n": "Blackwell 3d Construction Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LRHC",
+    "n": "La Rosa Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MSPR",
+    "n": "Msp Recovery, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LGHL",
+    "n": "Lion Group Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ESMC",
+    "n": "Escalon Medical Corp",
+    "e": "US"
+  },
+  {
+    "s": "EVFM",
+    "n": "Evofem Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASRE",
+    "n": "Astra Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ISCO",
+    "n": "International Stem Cell Corp",
+    "e": "US"
+  },
+  {
+    "s": "HSTA",
+    "n": "Hestia Insight Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QH",
+    "n": "Quhuo Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VHAI",
+    "n": "Vocodia Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "ELAB",
+    "n": "Pmgc Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BMTM",
+    "n": "Bright Mountain Media, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CBDY",
+    "n": "Target Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBLR",
+    "n": "Bubblr Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CISS",
+    "n": "C3is Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GMER",
+    "n": "Good Gaming, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZAPPF",
+    "n": "Zapp Electric Vehicles Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PREM",
+    "n": "Premier Air Charter Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OVATF",
+    "n": "Ovation Science Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WINT",
+    "n": "Windtree Therapeutics Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "VYST",
+    "n": "Vystar Corp",
+    "e": "US"
+  },
+  {
+    "s": "DREM",
+    "n": "Dream Homes & Development Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SYRA",
+    "n": "Syra Health Corp",
+    "e": "US"
+  },
+  {
+    "s": "AIBT",
+    "n": "Aibotics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARRT",
+    "n": "Artisan Consumer Goods, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OILCF",
+    "n": "Permex Petroleum Corp",
+    "e": "US"
+  },
+  {
+    "s": "QSJC",
+    "n": "Tancheng Group Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "EMMA",
+    "n": "Emmaus Life Sciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CBDL",
+    "n": "Cbd Life Sciences Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FHLD",
+    "n": "Awareness Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRPH",
+    "n": "Prophase Labs, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENRT",
+    "n": "Enertopia Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ENFY",
+    "n": "Enlightify Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RGBP",
+    "n": "Regen Biopharma Inc",
+    "e": "US"
+  },
+  {
+    "s": "CMRF",
+    "n": "Cim Real Estate Finance Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HWKE",
+    "n": "Hawkeye Systems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TESI",
+    "n": "Titan Environmental Solutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EEGI",
+    "n": "Eline Entertainment Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPTY",
+    "n": "Specificity, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CSUI",
+    "n": "Cannabis Suisse Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BRST",
+    "n": "Broad Street Realty, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NIVF",
+    "n": "Newgenivf Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PTCO",
+    "n": "Petrogas Co",
+    "e": "US"
+  },
+  {
+    "s": "LIPO",
+    "n": "Lipella Pharmaceuticals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GNTOF",
+    "n": "Gentor Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORGS",
+    "n": "Orgenesis Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NULGF",
+    "n": "Nulegacy Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "JFIL",
+    "n": "Jubilant Flame International, Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HEPA",
+    "n": "Hepion Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DBMM",
+    "n": "Digital Brand Media & Marketing Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NFSN",
+    "n": "Nongfu Shop Digital New Retail Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SBIG",
+    "n": "Springbig Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IPTNF",
+    "n": "Impact Analytics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DYNT",
+    "n": "Dynatronics Corp",
+    "e": "US"
+  },
+  {
+    "s": "ECDA",
+    "n": "Ecd Automotive Design, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PITEF",
+    "n": "Heramba Electric Plc",
+    "e": "US"
+  },
+  {
+    "s": "SVUHF",
+    "n": "Srivaru Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "QPRC",
+    "n": "Quest Patent Research Corp",
+    "e": "US"
+  },
+  {
+    "s": "FRZT",
+    "n": "Freeze Tag, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LITSF",
+    "n": "Lithos Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "LILMF",
+    "n": "Lilium N.V.",
+    "e": "US"
+  },
+  {
+    "s": "SKFG",
+    "n": "Stark Focus Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ILUS",
+    "n": "Ilustrato Pictures International Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLDVF",
+    "n": "Cloud3 Ventures Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TPICQ",
+    "n": "Tpi Composites, Inc",
+    "e": "US"
+  },
+  {
+    "s": "PRTX",
+    "n": "Parataxis Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LGMK",
+    "n": "Logicmark, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPOWF",
+    "n": "Strata Power Corp",
+    "e": "US"
+  },
+  {
+    "s": "PAPA",
+    "n": "Papa Medical Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLOW",
+    "n": "Cloudweb, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BPTH",
+    "n": "Bio-Path Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ILST",
+    "n": "International Star Inc",
+    "e": "US"
+  },
+  {
+    "s": "EPWK",
+    "n": "Epwk Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GMPW",
+    "n": "Givemepower Corp",
+    "e": "US"
+  },
+  {
+    "s": "GRPS",
+    "n": "Trans American Aquaculture, Inc",
+    "e": "US"
+  },
+  {
+    "s": "BOTY",
+    "n": "Lingerie Fighting Championships, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XAGE",
+    "n": "Longevity Health Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FBCD",
+    "n": "Fbc Holding, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FGNV",
+    "n": "Forge Innovation Development Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RMTG",
+    "n": "Regenerative Medical Technology Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WNLV",
+    "n": "Winvest Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OCG",
+    "n": "Oriental Culture Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NNAX",
+    "n": "New Momentum Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CYTOF",
+    "n": "Altamira Therapeutics Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SATT",
+    "n": "Sativus Tech Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BACK",
+    "n": "Imac Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AOXY",
+    "n": "Advanced Oxygen Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "EDXC",
+    "n": "Endexx Corp",
+    "e": "US"
+  },
+  {
+    "s": "NIHK",
+    "n": "Video River Networks, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLDC",
+    "n": "Solidus Communications, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GFMH",
+    "n": "Goliath Film & Media Holdings",
+    "e": "US"
+  },
+  {
+    "s": "NSTM",
+    "n": "Novelstem International Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ITOX",
+    "n": "Iiot-Oxys, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "REOS",
+    "n": "Reostar Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "SKYI",
+    "n": "Sky Century Investment, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AKAN",
+    "n": "Akanda Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ZCAR",
+    "n": "Zoomcar Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VIRX",
+    "n": "Viracta Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GSAC",
+    "n": "Gelstat Corp",
+    "e": "US"
+  },
+  {
+    "s": "CWPE",
+    "n": "Cw Petroleum Corp",
+    "e": "US"
+  },
+  {
+    "s": "WOLV",
+    "n": "Wolverine Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KAVL",
+    "n": "Kaival Brands Innovations Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NIMU",
+    "n": "Non Invasive Monitoring Systems Inc /Fl/",
+    "e": "US"
+  },
+  {
+    "s": "CCCP",
+    "n": "Crona Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MTLK",
+    "n": "Metalink Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ECPL",
+    "n": "Ecoplus Inc",
+    "e": "US"
+  },
+  {
+    "s": "LNBY",
+    "n": "Landbay Inc",
+    "e": "US"
+  },
+  {
+    "s": "SVVC",
+    "n": "Firsthand Technology Value Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TMGI",
+    "n": "Marquie Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PTPI",
+    "n": "Petros Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHMX",
+    "n": "Next-Chemx Corporation.",
+    "e": "US"
+  },
+  {
+    "s": "GPLB",
+    "n": "Green Planet Bio Engineering Co. Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GRLF",
+    "n": "Green Leaf Innovations Inc",
+    "e": "US"
+  },
+  {
+    "s": "OCEA",
+    "n": "Ocean Biomedical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNBX",
+    "n": "Cnbx Pharmaceuticals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OMTK",
+    "n": "Omnitek Engineering Corp",
+    "e": "US"
+  },
+  {
+    "s": "FMTOF",
+    "n": "Femto Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ETUGF",
+    "n": "E2gold Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HGAS",
+    "n": "Global Gas Corp",
+    "e": "US"
+  },
+  {
+    "s": "CBDW",
+    "n": "1606 Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BDPT",
+    "n": "Bioadaptives, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ESHSF",
+    "n": "Eddy Smart Home Solutions Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HWNI",
+    "n": "High Wire Networks, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GNOLF",
+    "n": "Genoil Inc",
+    "e": "US"
+  },
+  {
+    "s": "CRKN",
+    "n": "Crown Electrokinetics Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LEEN",
+    "n": "Leopard Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FRQN",
+    "n": "Frequency Holdings, Inc",
+    "e": "US"
+  },
+  {
+    "s": "GCAN",
+    "n": "Greater Cannabis Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FYNN",
+    "n": "Fyntechnical Innovations Inc",
+    "e": "US"
+  },
+  {
+    "s": "FOXO",
+    "n": "Foxo Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADAC",
+    "n": "American Drive Acquisition Co",
+    "e": "US"
+  },
+  {
+    "s": "PNXP",
+    "n": "Pineapple Express Cannabis Co",
+    "e": "US"
+  },
+  {
+    "s": "STEK",
+    "n": "Stemtech Corp",
+    "e": "US"
+  },
+  {
+    "s": "SISI",
+    "n": "Shineco, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NRHI",
+    "n": "Natural Resource Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CIRX",
+    "n": "Cirtran Corp",
+    "e": "US"
+  },
+  {
+    "s": "LEBGF",
+    "n": "Legible Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALDA",
+    "n": "Atlantica Inc",
+    "e": "US"
+  },
+  {
+    "s": "NBND",
+    "n": "Netbrands Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FCHS",
+    "n": "First Choice Healthcare Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LDTCF",
+    "n": "Leddartech Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INND",
+    "n": "Innerscope Hearing Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VINC",
+    "n": "Vincerx Pharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATDS",
+    "n": "Data443 Risk Mitigation, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QTTOY",
+    "n": "Qutoutiao Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BSFC",
+    "n": "Blue Star Foods Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MLRT",
+    "n": "Metalert, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BINI",
+    "n": "Bollinger Innovations, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CGBSF",
+    "n": "Crown Lng Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GTIC",
+    "n": "Greentech Innovations, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TLLTF",
+    "n": "Tilt Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EMRH",
+    "n": "Emerging Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "STBXF",
+    "n": "Starbox Group Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BLMZF",
+    "n": "Harrison Global Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NCNCF",
+    "n": "Noco-Noco Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YGMZF",
+    "n": "Mingzhu Logistics Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ONSS",
+    "n": "Onassis Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CAMG",
+    "n": "Cam Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SONDQ",
+    "n": "Sonder Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NOVAQ",
+    "n": "Sunnova Energy International Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WLGSF",
+    "n": "Wang & Lee Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CWNOF",
+    "n": "Chineseworldnet Com Inc",
+    "e": "US"
+  },
+  {
+    "s": "LADX",
+    "n": "Ladrx Corp",
+    "e": "US"
+  },
+  {
+    "s": "DTII",
+    "n": "Defense Technologies International Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NXUR",
+    "n": "Nxu, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CONC",
+    "n": "Conectisys Corp",
+    "e": "US"
+  },
+  {
+    "s": "STRG",
+    "n": "Starguide Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALCE",
+    "n": "Alternus Clean Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OTRKQ",
+    "n": "Ontrak, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KTN",
+    "n": "Structured Products Corp Cred Enhance Corts Tr For Aon Cap A",
+    "e": "US"
+  },
+  {
+    "s": "IPB",
+    "n": "Merrill Lynch Depositor Inc Indexplus Trust Series 2003-1",
+    "e": "US"
+  },
+  {
+    "s": "OSG",
+    "n": "Octave Specialty Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "VBREY",
+    "n": "Vibra Energia S.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "NHFLF",
+    "n": "Northfield Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "IVHI",
+    "n": "Invech Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTBB",
+    "n": "Qwest Corp",
+    "e": "US"
+  },
+  {
+    "s": "CITR",
+    "n": "General Enterprise Ventures, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TFC.PJ",
+    "n": "Truist Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "NRUC",
+    "n": "National Rural Utilities Cooperative Finance Corp /Dc/",
+    "e": "US"
+  },
+  {
+    "s": "CHSCP",
+    "n": "Chs Inc",
+    "e": "US"
+  },
+  {
+    "s": "BUHPY",
+    "n": "Bumrungrad Hospital Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "QVCD",
+    "n": "Qvc Inc",
+    "e": "US"
+  },
+  {
+    "s": "GLDM",
+    "n": "World Gold Trust",
+    "e": "US"
+  },
+  {
+    "s": "UUP",
+    "n": "Invesco Db Us Dollar Index Bullish Fund",
+    "e": "US"
+  },
+  {
+    "s": "USCI",
+    "n": "United States Commodity Index Funds Trust",
+    "e": "US"
+  },
+  {
+    "s": "SIVR",
+    "n": "Abrdn Silver Etf Trust",
+    "e": "US"
+  },
+  {
+    "s": "KTH",
+    "n": "Structured Products Corp Corts Tr For Peco Energy Cap Tr Iii",
+    "e": "US"
+  },
+  {
+    "s": "FXB",
+    "n": "Invesco Currencyshares British Pound Sterling Trust",
+    "e": "US"
+  },
+  {
+    "s": "GJO",
+    "n": "Strats Sm Trust For Wal-Mart Stores, Inc. Securities, Series 2005-4",
+    "e": "US"
+  },
+  {
+    "s": "USL",
+    "n": "United States 12 Month Oil Fund, Lp",
+    "e": "US"
+  },
+  {
+    "s": "FXA",
+    "n": "Invesco Currencyshares Australian Dollar Trust",
+    "e": "US"
+  },
+  {
+    "s": "ELC",
+    "n": "Entergy Louisiana, Llc",
+    "e": "US"
+  },
+  {
+    "s": "OAK-PA",
+    "n": "Brookfield Oaktree Holdings, Llc",
+    "e": "US"
+  },
+  {
+    "s": "UGA",
+    "n": "United States Gasoline Fund, Lp",
+    "e": "US"
+  },
+  {
+    "s": "OPITQ",
+    "n": "Office Properties Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "PPLT",
+    "n": "Abrdn Platinum Etf Trust",
+    "e": "US"
+  },
+  {
+    "s": "SCRNY",
+    "n": "Screen Holdings Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "AIXC",
+    "n": "Aixcrypto Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SGOL",
+    "n": "Abrdn Gold Etf Trust",
+    "e": "US"
+  },
+  {
+    "s": "JTGEY",
+    "n": "Citibank,N.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "GJH",
+    "n": "Strats Sm Trust For U S Cell Corp Sec Series 2004 6",
+    "e": "US"
+  },
+  {
+    "s": "GJT",
+    "n": "Strats(Sm) Trust For Allstate Corp Securities, Series 2006-3",
+    "e": "US"
+  },
+  {
+    "s": "FXF",
+    "n": "Invesco Currencyshares Swiss Franc Trust",
+    "e": "US"
+  },
+  {
+    "s": "JBK",
+    "n": "Lehman Abs Corp Goldman Sachs Cap 1 Sec Backed Ser 2004-6",
+    "e": "US"
+  },
+  {
+    "s": "GEHDF",
+    "n": "Great Eastern Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PALL",
+    "n": "Abrdn Palladium Etf Trust",
+    "e": "US"
+  },
+  {
+    "s": "BNO",
+    "n": "United States Brent Oil Fund, Lp",
+    "e": "US"
+  },
+  {
+    "s": "MADL",
+    "n": "Man Ahl Diversified I Lp",
+    "e": "US"
+  },
+  {
+    "s": "AEBMY",
+    "n": "Anadolu Efes Biracilik Ve Malt Sanayi A S/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PYT",
+    "n": "Pplus Trust Series Gsc-2",
+    "e": "US"
+  },
+  {
+    "s": "ODOT",
+    "n": "Osprey Polkadot Trust",
+    "e": "US"
+  },
+  {
+    "s": "ETHV",
+    "n": "Vaneck Ethereum Etf",
+    "e": "US"
+  },
+  {
+    "s": "FBTC",
+    "n": "Fidelity Wise Origin Bitcoin Fund",
+    "e": "US"
+  },
+  {
+    "s": "ORIB",
+    "n": "Orion Bliss Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HODL",
+    "n": "Vaneck Bitcoin Etf",
+    "e": "US"
+  },
+  {
+    "s": "GACW",
+    "n": "Gacw Inc",
+    "e": "US"
+  },
+  {
+    "s": "FGDL",
+    "n": "Franklin Templeton Holdings Trust",
+    "e": "US"
+  },
+  {
+    "s": "PICS",
+    "n": "Picpay Holdings Netherlands B.V.",
+    "e": "US"
+  },
+  {
+    "s": "MANA",
+    "n": "Grayscale Decentraland Trust (Mana)",
+    "e": "US"
+  },
+  {
+    "s": "GLNK",
+    "n": "Grayscale Chainlink Trust Etf",
+    "e": "US"
+  },
+  {
+    "s": "GBAT",
+    "n": "Grayscale Basic Attention Token Trust (Bat)",
+    "e": "US"
+  },
+  {
+    "s": "OSOL",
+    "n": "Osprey Solana Trust",
+    "e": "US"
+  },
+  {
+    "s": "BTCW",
+    "n": "Wisdomtree Bitcoin Fund",
+    "e": "US"
+  },
+  {
+    "s": "ZRCN",
+    "n": "Zrcn Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NGEN",
+    "n": "Nervgen Pharma Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PDSRX",
+    "n": "Principal Real Asset Fund",
+    "e": "US"
+  },
+  {
+    "s": "LBZZ",
+    "n": "Lendbuzz Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ETHE",
+    "n": "Grayscale Ethereum Staking Etf",
+    "e": "US"
+  },
+  {
+    "s": "OPTU",
+    "n": "Optimum Communications, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ICR-PA",
+    "n": "Inpoint Commercial Real Estate Income, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GXLM",
+    "n": "Grayscale Stellar Lumens Trust (Xlm)",
+    "e": "US"
+  },
+  {
+    "s": "PASTY",
+    "n": "Plastic Omnium/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SVIX",
+    "n": "Vs Trust",
+    "e": "US"
+  },
+  {
+    "s": "AAAU",
+    "n": "Goldman Sachs Physical Gold Etf",
+    "e": "US"
+  },
+  {
+    "s": "DCFBS",
+    "n": "Dcfc Holdings, Llc",
+    "e": "US"
+  },
+  {
+    "s": "ODRS",
+    "n": "Outdoor Specialty Products, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIDG",
+    "n": "Ais Holdings Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EQPT",
+    "n": "Equipmentshare.Com Inc",
+    "e": "US"
+  },
+  {
+    "s": "ZCSH",
+    "n": "Grayscale Zcash Trust (Zec)",
+    "e": "US"
+  },
+  {
+    "s": "OBTC",
+    "n": "Osprey Bitcoin Trust",
+    "e": "US"
+  },
+  {
+    "s": "BITB",
+    "n": "Bitwise Bitcoin Etf",
+    "e": "US"
+  },
+  {
+    "s": "BITW",
+    "n": "Bitwise 10 Crypto Index Etf",
+    "e": "US"
+  },
+  {
+    "s": "HZEN",
+    "n": "Grayscale Horizen Trust (Zen)",
+    "e": "US"
+  },
+  {
+    "s": "OFRM",
+    "n": "Once Upon A Farm, Pbc",
+    "e": "US"
+  },
+  {
+    "s": "ALEH",
+    "n": "Ale Group Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "WDSP",
+    "n": "World Scan Project, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ETCG",
+    "n": "Grayscale Ethereum Classic Trust (Etc)",
+    "e": "US"
+  },
+  {
+    "s": "BAR",
+    "n": "Graniteshares Gold Trust",
+    "e": "US"
+  },
+  {
+    "s": "PLTM",
+    "n": "Graniteshares Platinum Trust",
+    "e": "US"
+  },
+  {
+    "s": "GOEVQ",
+    "n": "Canoo Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IPSAY",
+    "n": "Ipsos/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BPRE",
+    "n": "Bluerock Private Real Estate Fund",
+    "e": "US"
+  },
+  {
+    "s": "CPPBY",
+    "n": "Central Pattana Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "OUNZ",
+    "n": "Vaneck Merk Gold Etf",
+    "e": "US"
+  },
+  {
+    "s": "NHPAP",
+    "n": "National Healthcare Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WNHK",
+    "n": "Winning Catering Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENTXW",
+    "n": "Entera Bio Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TFSA",
+    "n": "Terra Income Fund 6, Llc",
+    "e": "US"
+  },
+  {
+    "s": "DSRNY",
+    "n": "Diasorin Spa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "RSHL",
+    "n": "Rise Smart Group Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "INKS",
+    "n": "Aimfinity Investment Merger Sub I",
+    "e": "US"
+  },
+  {
+    "s": "INHI",
+    "n": "Unitrend Entertainment Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BORMF",
+    "n": "Borealis Mining Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EZBC",
+    "n": "Franklin Templeton Digital Holdings Trust",
+    "e": "US"
+  },
+  {
+    "s": "QETH",
+    "n": "Invesco Galaxy Ethereum Etf",
+    "e": "US"
+  },
+  {
+    "s": "EZET",
+    "n": "Franklin Ethereum Trust",
+    "e": "US"
+  },
+  {
+    "s": "CRGT",
+    "n": "Cortigent, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SKNGY",
+    "n": "Skan Group Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "LBRJ",
+    "n": "Libera Gaming Operations, Inc",
+    "e": "US"
+  },
+  {
+    "s": "ETHA",
+    "n": "Ishares Ethereum Trust Etf",
+    "e": "US"
+  },
+  {
+    "s": "PRGY",
+    "n": "Igta Merger Sub Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NBRG",
+    "n": "Newbridge Acquisition Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EIIA",
+    "n": "Eagle Point Institutional Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "FNXMF",
+    "n": "Finex Metals Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MECPF",
+    "n": "Mustang Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HWEP",
+    "n": "Hw Electro Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "EDVLY",
+    "n": "Endeavour Group Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "AVG",
+    "n": "Anew Health Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AAS",
+    "n": "Antharas Inc",
+    "e": "US"
+  },
+  {
+    "s": "BTC",
+    "n": "Grayscale Bitcoin Mini Trust Etf",
+    "e": "US"
+  },
+  {
+    "s": "KMYGY",
+    "n": "Kumyang Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "NSNFY",
+    "n": "Nissin Foods Holdings Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "GTAO",
+    "n": "Grayscale Bittensor Trust (Tao)",
+    "e": "US"
+  },
+  {
+    "s": "NCIQ",
+    "n": "Hashdex Nasdaq Crypto Index Us Etf",
+    "e": "US"
+  },
+  {
+    "s": "MSTKY",
+    "n": "Matsukiyococokara & Co./Adr",
+    "e": "US"
+  },
+  {
+    "s": "MIMDF",
+    "n": "Mimedia Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FRFAF",
+    "n": "Fresh Factory B.C. Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "RCWBY",
+    "n": "Rockwool A/S/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TETH",
+    "n": "21shares Ethereum Etf",
+    "e": "US"
+  },
+  {
+    "s": "SYNSY",
+    "n": "Syensqo Sa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "VROYF",
+    "n": "Vizsla Royalties Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DDHLY",
+    "n": "Digital Domain Holdings Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "IBIT",
+    "n": "Ishares Bitcoin Trust Etf",
+    "e": "US"
+  },
+  {
+    "s": "TDGGF",
+    "n": "Tdg Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NXNT",
+    "n": "Nexscient, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DEFI",
+    "n": "Tidal Commodities Trust I",
+    "e": "US"
+  },
+  {
+    "s": "NOPFF",
+    "n": "Nevada Organic Phosphate Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CGL",
+    "n": "Cgl Logistics Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CTWO",
+    "n": "Cotwo Advisors Physical European Carbon Allowance Trust",
+    "e": "US"
+  },
+  {
+    "s": "TMGX",
+    "n": "Thoughtful Media Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "USDW",
+    "n": "Made In Usa Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRDIY",
+    "n": "Paradox Interactive Ab/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DTZNY",
+    "n": "Dotz Nano Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "KPL",
+    "n": "Kepler Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GDEL",
+    "n": "Global Development Engineering Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ETH",
+    "n": "Grayscale Ethereum Staking Mini Etf",
+    "e": "US"
+  },
+  {
+    "s": "ETHW",
+    "n": "Bitwise Ethereum Etf",
+    "e": "US"
+  },
+  {
+    "s": "OMNI",
+    "n": "Omnigenicsai Corp",
+    "e": "US"
+  },
+  {
+    "s": "GSOL",
+    "n": "Grayscale Solana Staking Etf",
+    "e": "US"
+  },
+  {
+    "s": "OBNB",
+    "n": "Osprey Bnb Chain Trust",
+    "e": "US"
+  },
+  {
+    "s": "TSLVF",
+    "n": "Tier One Silver Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MIBE",
+    "n": "Miami Breeze Car Care Inc",
+    "e": "US"
+  },
+  {
+    "s": "GLIV",
+    "n": "Grayscale Livepeer Trust (Lpt)",
+    "e": "US"
+  },
+  {
+    "s": "CBPHF",
+    "n": "Clover Biopharmaceuticals, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "INAI",
+    "n": "Invea Therapeutics, Inc",
+    "e": "US"
+  },
+  {
+    "s": "ISRLF",
+    "n": "Israel Acquisitions Corp",
+    "e": "US"
+  },
+  {
+    "s": "EMI",
+    "n": "Encore Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BRRR",
+    "n": "Coinshares Bitcoin Etf",
+    "e": "US"
+  },
+  {
+    "s": "MYX",
+    "n": "Maywood Acquisition Corp. 2",
+    "e": "US"
+  },
+  {
+    "s": "DYBTY",
+    "n": "Duality Biotherapeutics Inc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PAAC",
+    "n": "Proem Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "SNEVY",
+    "n": "Sunevision Holdings/Adr",
+    "e": "US"
+  },
+  {
+    "s": "LKYLY",
+    "n": "Locksley Resources Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "OBOCY",
+    "n": "Ottobock Se & Co. Kgaa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DBCA",
+    "n": "D. Boral Acquisition I Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BLDC",
+    "n": "Blockfusion Data Centers, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UAC",
+    "n": "United Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "FRTRY",
+    "n": "Fortior Technology (Shenzhen) Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ETHB",
+    "n": "Ishares Staked Ethereum Trust Etf",
+    "e": "US"
+  },
+  {
+    "s": "AFA",
+    "n": "Farlong Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "NHLTY",
+    "n": "Nightingale Health Plc",
+    "e": "US"
+  },
+  {
+    "s": "IDPEY",
+    "n": "Idp Education Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BGHL",
+    "n": "Billion Group Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BLRK",
+    "n": "Bluerock Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GRCPY",
+    "n": "Canal Plus Sa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DNCLY",
+    "n": "Dena Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "HIFI",
+    "n": "Hillhouse Frontier Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALD",
+    "n": "Altech Digital Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PLYX",
+    "n": "Polaryx Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SAPUY",
+    "n": "Saputo Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BRAI",
+    "n": "Braiin Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TDST",
+    "n": "Thunderstone Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "SCII",
+    "n": "Sc Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "QSOL",
+    "n": "Invesco Galaxy Solana Etf",
+    "e": "US"
+  },
+  {
+    "s": "IDXMF",
+    "n": "Idex Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FNIGY",
+    "n": "Finning International Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "TPZEY",
+    "n": "Topaz Energy Corp./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BKPOY",
+    "n": "Bank Pekao S.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "RNGT",
+    "n": "Range Capital Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "BWOW",
+    "n": "Bitwise Dogecoin Etf",
+    "e": "US"
+  },
+  {
+    "s": "LCDC",
+    "n": "Lorenzo Developments Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CAEA",
+    "n": "Caedryn Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "FCHDF",
+    "n": "Fairchild Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PWRL",
+    "n": "Powerlaw Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CSCCY",
+    "n": "Capstone Copper Corp./Adr",
+    "e": "US"
+  },
+  {
+    "s": "PTOR",
+    "n": "Praetorian Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SWBKY",
+    "n": "Shawbrook Group Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SICCY",
+    "n": "Sicc Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "VSGRY",
+    "n": "Vusiongroup",
+    "e": "US"
+  },
+  {
+    "s": "KII",
+    "n": "K2 Capital Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "KBON",
+    "n": "Karbon Capital Partners Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GLVPY",
+    "n": "Glenveagh Properties Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "AWATY",
+    "n": "Air Water Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "RONE",
+    "n": "Reserveone Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EUPX",
+    "n": "Eupec International Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BWIV",
+    "n": "Blue Water Acquisition Corp. Iv",
+    "e": "US"
+  },
+  {
+    "s": "SSRLY",
+    "n": "Sienna Senior Living Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "SVICY",
+    "n": "Storagevault Canada Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "GIVE",
+    "n": "Wealth Management System Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZSICY",
+    "n": "Zhejiang Sanhua Intelligent Controls Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "MBSHY",
+    "n": "Mitsubishi Gas Chemical Company, Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "SGPIY",
+    "n": "Seres Group Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "MSSHY",
+    "n": "Mitsui-Soko Holdings Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BJGPY",
+    "n": "Beijing Geekplus Technology Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "XYJG",
+    "n": "Xyj Technology Corp",
+    "e": "US"
+  },
+  {
+    "s": "TRAD",
+    "n": "Apex Tech Acquisition Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YSS",
+    "n": "Yellowstone Midco Holdings Ii, Llc",
+    "e": "US"
+  },
+  {
+    "s": "BIII",
+    "n": "Black Spade Acquisition Iii Co",
+    "e": "US"
+  },
+  {
+    "s": "LBIO",
+    "n": "Longevity Biomedical Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "QADR",
+    "n": "Qdro Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "UATCY",
+    "n": "Unisound Ai Technology Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "AMVOY",
+    "n": "Aumovio Se",
+    "e": "US"
+  },
+  {
+    "s": "JSKJ",
+    "n": "Jiansu (Shanghai) Information Technology Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MEVO",
+    "n": "M Evo Global Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "GTLRY",
+    "n": "Greatland Resources Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CRAUY",
+    "n": "Chery Automobile Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BORAY",
+    "n": "Bora Pharmaceuticals Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ANJFY",
+    "n": "Anjoy Foods Group Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "MPJPY",
+    "n": "Metaplanet Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AFNDY",
+    "n": "Allfunds Group Plc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "YMXK",
+    "n": "Charming Wow Inc",
+    "e": "US"
+  },
+  {
+    "s": "JHPCY",
+    "n": "Jiangsu Hengrui Pharmaceuticals Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "USDE",
+    "n": "Stablecoinx Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MFHK",
+    "n": "Mibee Aviation Technology Holding Inc",
+    "e": "US"
+  },
+  {
+    "s": "SBCLY",
+    "n": "Sumitomo Bakelite Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "XFLH",
+    "n": "Xflh Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "OBBCY",
+    "n": "Obic Business Consultants Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ITHA",
+    "n": "Ithax Acquisition Corp Iii",
+    "e": "US"
+  },
+  {
+    "s": "SSAC",
+    "n": "Spacsphere Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MESH",
+    "n": "Meshflow Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "GADA",
+    "n": "Grayscale Cardano Trust Etf",
+    "e": "US"
+  },
+  {
+    "s": "XCBE",
+    "n": "X3 Acquisition Corp. Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ADBT",
+    "n": "Advasa Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AFNX",
+    "n": "Afternext Acquisition I Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TCLXY",
+    "n": "Tcl Electronics Holdings Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BUDA",
+    "n": "Buda Juice, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GONYF",
+    "n": "Go Residential Real Estate Investment Trust",
+    "e": "US"
+  },
+  {
+    "s": "GRVT",
+    "n": "Greenvector Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VRXA",
+    "n": "Veraxa Biotech Holding Ag",
+    "e": "US"
+  },
+  {
+    "s": "AEAQ",
+    "n": "Activate Energy Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LPCV",
+    "n": "Launchpad Cadenza Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "IEAG",
+    "n": "Infinite Eagle Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ZKP",
+    "n": "Lafayette Digital Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "ZGJLY",
+    "n": "Zhejiang Leapmotor Technology Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ZSHLY",
+    "n": "Zensho Holdings Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "APXC",
+    "n": "Apex Critical Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PRNSY",
+    "n": "Princes Group Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BXRLY",
+    "n": "Boxer Retail Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SOEZ",
+    "n": "Franklin Solana Trust",
+    "e": "US"
+  },
+  {
+    "s": "SNHIY",
+    "n": "Sany Heavy Industries Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "CAQ",
+    "n": "Cambridge Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FSSL",
+    "n": "Fs Specialty Lending Fund",
+    "e": "US"
+  },
+  {
+    "s": "MTMTY",
+    "n": "Metlen Energy & Metals Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "RKGRY",
+    "n": "Renk Group Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "OIM",
+    "n": "Oneim Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AMTU",
+    "n": "Amatuhi Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HRBAY",
+    "n": "Horiba, Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "HAMA",
+    "n": "Hama Intelligence Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SSTR",
+    "n": "Solar Strategy Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NPIXY",
+    "n": "Northland Power Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BIREY",
+    "n": "Birchcliff Energy Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "METRY",
+    "n": "Metro Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BVENY",
+    "n": "Brava Energia S.A.",
+    "e": "US"
+  },
+  {
+    "s": "LNTCY",
+    "n": "Lens Technology Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "QRED",
+    "n": "Quasaredge Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "LPSL",
+    "n": "Launchpad Streetlight Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "CLSO",
+    "n": "Climate Transition Special Opportunities Spac I",
+    "e": "US"
+  },
+  {
+    "s": "VHCP",
+    "n": "Vine Hill Capital Investment Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "NHKSY",
+    "n": "Nhk Spring Co. Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PTAXY",
+    "n": "Paltac Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TEICY",
+    "n": "Tosei Corp/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CDTHY",
+    "n": "Conduit Holdings Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "NGCOY",
+    "n": "Nagase & Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "NBKBY",
+    "n": "Noba Bank Group Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "ZJGIY",
+    "n": "Zijin Gold International Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "MRUWY",
+    "n": "Maruwa Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ASKRY",
+    "n": "Asker Healthcare Group Ab/Adr",
+    "e": "US"
+  },
+  {
+    "s": "STJNY",
+    "n": "Stella-Jones Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "NWCYY",
+    "n": "North West Co Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "EVON",
+    "n": "Evonexus Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CPXXY",
+    "n": "Capital Power Corp/Adr",
+    "e": "US"
+  },
+  {
+    "s": "ELFTY",
+    "n": "Element Fleet Management Corp./Adr",
+    "e": "US"
+  },
+  {
+    "s": "RENGY",
+    "n": "Rengo Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "APUR",
+    "n": "Aperture Ac",
+    "e": "US"
+  },
+  {
+    "s": "MMED",
+    "n": "Minimed Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PSBTY",
+    "n": "Pt Sumber Alfaria Trijaya Tbk/Adr",
+    "e": "US"
+  },
+  {
+    "s": "JOSS",
+    "n": "Joss Realty Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BMOK",
+    "n": "Bm Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GSUI",
+    "n": "Grayscale Sui Trust (Sui)",
+    "e": "US"
+  },
+  {
+    "s": "ELCG",
+    "n": "Elc Group Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SMFSY",
+    "n": "Sumitomo Forestry Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ALEUY",
+    "n": "Allegro.Eu Sa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "OPTH",
+    "n": "Optimi Health Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SGIHY",
+    "n": "Sugi Holdings Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "THCLY",
+    "n": "Toho Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "FIT",
+    "n": "Fitness Fanatics Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ACMIF",
+    "n": "Allied Critical Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "JXAMY",
+    "n": "Jx Advanced Metals Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SMPHY",
+    "n": "Sm Prime Holdings Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "AMPM",
+    "n": "Am Pm Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SUWA",
+    "n": "Sharewow Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MEON",
+    "n": "Mediaon Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIGO",
+    "n": "Aigo Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GFTTY",
+    "n": "Gft Technologies Se/Adr",
+    "e": "US"
+  },
+  {
+    "s": "LPCHY",
+    "n": "Lapco Holdings Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "HMH",
+    "n": "Hmh Holding Inc",
+    "e": "US"
+  },
+  {
+    "s": "MEDG",
+    "n": "Medi Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TTEI",
+    "n": "Tde Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "YGSHY",
+    "n": "Yangzijiang Shipbuilding Holdings Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "NEOA",
+    "n": "Neo Aeronautics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BSOL",
+    "n": "Bitwise Solana Staking Etf",
+    "e": "US"
+  },
+  {
+    "s": "SPED",
+    "n": "Speed Group Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CUPPF",
+    "n": "Super Copper Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KKSIY",
+    "n": "Kokusai Electric Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GTSG",
+    "n": "Gates Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SCTAY",
+    "n": "Sectra Ab/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PDYTY",
+    "n": "Pt Dayamitra Telekomunikasi Tbk/Adr",
+    "e": "US"
+  },
+  {
+    "s": "FETH",
+    "n": "Fidelity Ethereum Fund",
+    "e": "US"
+  },
+  {
+    "s": "FGXC",
+    "n": "Fg Merger Iii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HCYC",
+    "n": "Hcyc Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "ZDAN",
+    "n": "Zerolimit Technology Holding Co. Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TMKVY",
+    "n": "Tamarack Valley Energy Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "LSHGY",
+    "n": "Louis Hachette Group/Adr",
+    "e": "US"
+  },
+  {
+    "s": "NWAX",
+    "n": "New America Acquisition I Corp.",
+    "e": "US"
+  },
+  {
+    "s": "JAGU",
+    "n": "Jaguar Uranium Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PRNCF",
+    "n": "Prince Silver Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GHRTF",
+    "n": "Greenheart Gold Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UPX",
+    "n": "Uptrend Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SPGNY",
+    "n": "Springer Nature Ag & Co. Kgaa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SIBO",
+    "n": "Sibo Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GFCHY",
+    "n": "Georg Fischer Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PCPGY",
+    "n": "Pc Partner Group Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DBIM",
+    "n": "Dbim Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "XRPZ",
+    "n": "Franklin Xrp Trust",
+    "e": "US"
+  },
+  {
+    "s": "TMRD",
+    "n": "Timber Road Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "BPAC",
+    "n": "Blueport Acquisition Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MNZLY",
+    "n": "Mercury Nz Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "SCSXY",
+    "n": "Scsk Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "FSOL",
+    "n": "Fidelity Solana Fund",
+    "e": "US"
+  },
+  {
+    "s": "KLK",
+    "n": "Klook Technology Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HNPHY",
+    "n": "Hansoh Pharmaceutical Group Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GBH",
+    "n": "Gigabit Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GDNT",
+    "n": "Guident Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KCG",
+    "n": "Keystone Global Financial Group",
+    "e": "US"
+  },
+  {
+    "s": "MKTR",
+    "n": "Monkey Tree Investment Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SLBT",
+    "n": "Sl Science Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RECCY",
+    "n": "Reece Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "MSMU",
+    "n": "Msm Frontier Capital Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RGGG",
+    "n": "Regenique Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GST",
+    "n": "Ga Sai Tong Enterprise Ltd",
+    "e": "US"
+  },
+  {
+    "s": "XPD",
+    "n": "Xpand Boom Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MXUBY",
+    "n": "Mixue Bingcheng Co Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DAVI",
+    "n": "Davion Healthcare Plc",
+    "e": "US"
+  },
+  {
+    "s": "GRLMF",
+    "n": "Greenlight Metals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ATHNY",
+    "n": "Athens International Airport Sa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "VTEK",
+    "n": "Vistek Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GYGLF",
+    "n": "Guzman Y Gomez Ltd",
+    "e": "US"
+  },
+  {
+    "s": "STCK",
+    "n": "Grayscale Stacks Trust (Stx)",
+    "e": "US"
+  },
+  {
+    "s": "MYCRY",
+    "n": "Mycronic Ab/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BTAB",
+    "n": "Iwac Holding Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARSTY",
+    "n": "Ariston Holding N.V./Adr",
+    "e": "US"
+  },
+  {
+    "s": "SMIP",
+    "n": "Spectral Ip, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OBNK",
+    "n": "Osprey Bonk Trust",
+    "e": "US"
+  },
+  {
+    "s": "SBMW",
+    "n": "Security Midwest Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TREO",
+    "n": "Plum Iii Merger Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MDDTY",
+    "n": "Mandatum Oyj/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GSNR",
+    "n": "Grayscale Near Trust (Near)",
+    "e": "US"
+  },
+  {
+    "s": "AVAX",
+    "n": "Grayscale Avalanche Trust (Avax)",
+    "e": "US"
+  },
+  {
+    "s": "AKTS",
+    "n": "Aktis Oncology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GVSE",
+    "n": "Gameverse Interactive Corp",
+    "e": "US"
+  },
+  {
+    "s": "MOGMF",
+    "n": "Mogotes Metals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SCPQ",
+    "n": "Social Commerce Partners Corp",
+    "e": "US"
+  },
+  {
+    "s": "LATA",
+    "n": "Galata Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "PAXG",
+    "n": "Pine Tree Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MLIZY",
+    "n": "Meliuz S.A.",
+    "e": "US"
+  },
+  {
+    "s": "EVVO",
+    "n": "Evvolutions Leadtech Inc",
+    "e": "US"
+  },
+  {
+    "s": "SBXE",
+    "n": "Silverbox Corp V",
+    "e": "US"
+  },
+  {
+    "s": "PBRRY",
+    "n": "Pt Barito Renewables Energy Tbk/Adr",
+    "e": "US"
+  },
+  {
+    "s": "UHP",
+    "n": "Ultra High Point Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TSOL",
+    "n": "21shares Solana Etf",
+    "e": "US"
+  },
+  {
+    "s": "LRVIY",
+    "n": "Laboratorios Farmaceuticos Rovi, S.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "UHL",
+    "n": "United Hydrogen Global Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GINT",
+    "n": "Gifts International Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GLSA",
+    "n": "Green Solar Energy Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SOLC",
+    "n": "Canary Marinade Solana Etf",
+    "e": "US"
+  },
+  {
+    "s": "KYTFY",
+    "n": "Kyoto Financial Group Inc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SQEI",
+    "n": "Squirrel Enlivened International Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EZPZ",
+    "n": "Franklin Crypto Trust",
+    "e": "US"
+  },
+  {
+    "s": "ONWRY",
+    "n": "Onward Medical N.V./Adr",
+    "e": "US"
+  },
+  {
+    "s": "HZRBY",
+    "n": "Horizon Robotics, Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "TKCYY",
+    "n": "Tokyo Ohka Kogyo Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "YLY",
+    "n": "Zi Yun Dong Fang Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KXIAY",
+    "n": "Kioxia Holdings Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PLAI",
+    "n": "Presslogic Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QF",
+    "n": "Quad Global Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASBHY",
+    "n": "Asahi Group Holdings, Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "GGTKY",
+    "n": "Pt Goto Gojek Tokopedia Tbk/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CADV",
+    "n": "Club Versante Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ECST",
+    "n": "Ecst Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GDOG",
+    "n": "Grayscale Dogecoin Trust Etf",
+    "e": "US"
+  },
+  {
+    "s": "TRMOY",
+    "n": "Tourmaline Oil Corp/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GBNXY",
+    "n": "Gibson Energy Inc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BENN",
+    "n": "Bend Novatech Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SMJF",
+    "n": "Smj International Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JSTT",
+    "n": "Nihon Shintatsu Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "LHI",
+    "n": "Living Homeopathy International Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "XRP",
+    "n": "Bitwise Xrp Etf",
+    "e": "US"
+  },
+  {
+    "s": "KOKO",
+    "n": "Kokobots Group",
+    "e": "US"
+  },
+  {
+    "s": "BTFT",
+    "n": "Beta Fintech Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DTDT",
+    "n": "Dt House Ltd",
+    "e": "US"
+  },
+  {
+    "s": "INNP",
+    "n": "Innocan Pharma Corp",
+    "e": "US"
+  },
+  {
+    "s": "PGIM",
+    "n": "Pgim Private Credit Fund",
+    "e": "US"
+  },
+  {
+    "s": "BRBF",
+    "n": "Brb Foods Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TVCN",
+    "n": "Tv Channels Network Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TCRG",
+    "n": "Cannaisseur Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XXC",
+    "n": "Xinxu Copper Industry Technology Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ARKB",
+    "n": "Ark 21shares Bitcoin Etf",
+    "e": "US"
+  },
+  {
+    "s": "BTCO",
+    "n": "Invesco Galaxy Bitcoin Etf",
+    "e": "US"
+  },
+  {
+    "s": "EOHC",
+    "n": "Edison Oncology Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "IAUM",
+    "n": "Ishares Gold Trust Micro",
+    "e": "US"
+  },
+  {
+    "s": "VCRDX",
+    "n": "Harrison Street Infrastructure Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "FGO",
+    "n": "Fg Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MPJS",
+    "n": "Mpjs Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NRYCF",
+    "n": "Nations Royalty Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TOXR",
+    "n": "21shares Xrp Etf",
+    "e": "US"
+  },
+  {
+    "s": "PMHMY",
+    "n": "Perfect Medical Health Management Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "GXRP",
+    "n": "Grayscale Xrp Trust Etf",
+    "e": "US"
+  },
+  {
+    "s": "IDTL",
+    "n": "Idea Tech Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OTSA",
+    "n": "Otsaw Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RNBW",
+    "n": "Rainbow Capital Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MGNO",
+    "n": "Magnolia Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KBAT",
+    "n": "Kbat Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BAO",
+    "n": "Bao Holding Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "STA",
+    "n": "Starton Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLBZ",
+    "n": "Collab Z Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IRHO",
+    "n": "Iron Horse Acquisition Ii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CLRLY",
+    "n": "Central Retail Corp Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "RIKU",
+    "n": "Riku Dining Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TMTNY",
+    "n": "Toromont Industries Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "SBAQ",
+    "n": "Subversive Bitcoin Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GGRPY",
+    "n": "Gpt Group/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CSC",
+    "n": "Csc Collective Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "APEX",
+    "n": "Apex Global Solutions Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PRSKY",
+    "n": "Prairiesky Royalty Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "MREGY",
+    "n": "Meridian Energy Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SCBXY",
+    "n": "Scb X Public Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FRLCY",
+    "n": "Freelancer Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HLXC",
+    "n": "Helix Acquisition Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "ARTC",
+    "n": "Art Technology Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FTY",
+    "n": "Feitu Shanglian Cloud Information Technology Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AKCLY",
+    "n": "Aica Kogyo Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DPDSY",
+    "n": "Dpc Dash Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "MLAA",
+    "n": "Mountain Lake Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "RMIX",
+    "n": "Suncrete, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TVIV",
+    "n": "Texas Ventures Acquisition Iv Corp",
+    "e": "US"
+  },
+  {
+    "s": "SAC",
+    "n": "Safeguard Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SVAQ",
+    "n": "Silicon Valley Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SORN",
+    "n": "Soren Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LBKX",
+    "n": "Boluoc Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "ZSSK",
+    "n": "Zhongshang Technology Inc",
+    "e": "US"
+  },
+  {
+    "s": "CRAN",
+    "n": "Crane Harbor Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "FHFFY",
+    "n": "Foshan Haitian Flavouring & Food Co Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "MRCA",
+    "n": "Canary American-Made Crypto Etf",
+    "e": "US"
+  },
+  {
+    "s": "DOT",
+    "n": "Grayscale Polkadot Trust Etf",
+    "e": "US"
+  },
+  {
+    "s": "HBAR",
+    "n": "Grayscale Hedera Trust Etf",
+    "e": "US"
+  },
+  {
+    "s": "XSIAX",
+    "n": "Voya Credit Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "GJP",
+    "n": "Strats(Sm) Trust For Dominion Resources, Inc. Securities, Series 2005-6",
+    "e": "US"
+  },
+  {
+    "s": "GJS",
+    "n": "Strats(Sm) Trust For Goldman Sachs Group Securities, Series 2006-2",
+    "e": "US"
+  },
+  {
+    "s": "GJR",
+    "n": "Strats(Sm) Trust For Procter & Gamble Securities, Series 2006-1",
+    "e": "US"
+  },
+  {
+    "s": "FXC",
+    "n": "Invesco Currencyshares Canadian Dollar Trust",
+    "e": "US"
+  },
+  {
+    "s": "UDN",
+    "n": "Invesco Db Us Dollar Index Bearish Fund",
+    "e": "US"
+  },
+  {
+    "s": "ETI-P",
+    "n": "Entergy Texas, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UNL",
+    "n": "United States 12 Month Natural Gas Fund, Lp",
+    "e": "US"
+  },
+  {
+    "s": "FUU",
+    "n": "F3 Uranium Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TPTA",
+    "n": "Terra Property Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BTGO",
+    "n": "Bitgo Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CAST",
+    "n": "Freecast, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MROSY",
+    "n": "Melrose Industries Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GLTR",
+    "n": "Abrdn Precious Metals Basket Etf Trust",
+    "e": "US"
+  },
+  {
+    "s": "BMYMP",
+    "n": "Bristol Myers Squibb Co",
+    "e": "US"
+  },
+  {
+    "s": "USB-PA",
+    "n": "Us Bancorp \\De\\",
+    "e": "US"
+  },
+  {
+    "s": "BRK-A",
+    "n": "Berkshire Hathaway Inc",
+    "e": "US"
+  },
+  {
+    "s": "ASMLF",
+    "n": "Asml Holding Nv",
+    "e": "US"
+  },
+  {
+    "s": "TSMWF",
+    "n": "Taiwan Semiconductor Manufacturing Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BABAF",
+    "n": "Alibaba Group Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "JPM-PC",
+    "n": "Jpmorgan Chase & Co",
+    "e": "US"
+  },
+  {
+    "s": "JPM-PD",
+    "n": "Jpmorgan Chase & Co",
+    "e": "US"
+  },
+  {
+    "s": "BML-PG",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "AZNCF",
+    "n": "Astrazeneca Plc",
+    "e": "US"
+  },
+  {
+    "s": "RCIT",
+    "n": "Reelcause Inc",
+    "e": "US"
+  },
+  {
+    "s": "SAPGF",
+    "n": "Sap Se",
+    "e": "US"
+  },
+  {
+    "s": "NVSEF",
+    "n": "Novartis Ag",
+    "e": "US"
+  },
+  {
+    "s": "PCCYF",
+    "n": "Petrochina Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BML-PH",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "BML-PL",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "BAC-PB",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "NONOF",
+    "n": "Novo Nordisk A S",
+    "e": "US"
+  },
+  {
+    "s": "TOYOF",
+    "n": "Toyota Motor Corp/",
+    "e": "US"
+  },
+  {
+    "s": "BAC-PK",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "BML-PJ",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "BAC-PE",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "CILJF",
+    "n": "China Life Insurance Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RYDAF",
+    "n": "Shell Plc",
+    "e": "US"
+  },
+  {
+    "s": "EADSF",
+    "n": "Airbus Se/Adr",
+    "e": "US"
+  },
+  {
+    "s": "HBCYF",
+    "n": "Hsbc Holdings Plc",
+    "e": "US"
+  },
+  {
+    "s": "WFC-PY",
+    "n": "Wells Fargo & Company/Mn",
+    "e": "US"
+  },
+  {
+    "s": "MBFJF",
+    "n": "Mitsubishi Ufj Financial Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "WFC-PL",
+    "n": "Wells Fargo & Company/Mn",
+    "e": "US"
+  },
+  {
+    "s": "BCDRF",
+    "n": "Banco Santander, S.A.",
+    "e": "US"
+  },
+  {
+    "s": "SNEJF",
+    "n": "Sony Group Corp",
+    "e": "US"
+  },
+  {
+    "s": "BHPLF",
+    "n": "Bhp Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TBB",
+    "n": "At&T Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ABLZF",
+    "n": "Abb Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ABBNY",
+    "n": "Abb Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SNYNF",
+    "n": "Sanofi",
+    "e": "US"
+  },
+  {
+    "s": "BUDFF",
+    "n": "Anheuser-Busch Inbev Sa/Nv",
+    "e": "US"
+  },
+  {
+    "s": "WFC-PC",
+    "n": "Wells Fargo & Company/Mn",
+    "e": "US"
+  },
+  {
+    "s": "DTEGF",
+    "n": "Deutsche Telekom Ag",
+    "e": "US"
+  },
+  {
+    "s": "BPAQF",
+    "n": "Bp Plc",
+    "e": "US"
+  },
+  {
+    "s": "BTAFF",
+    "n": "British American Tobacco P.L.C.",
+    "e": "US"
+  },
+  {
+    "s": "RTPPF",
+    "n": "Rio Tinto Plc",
+    "e": "US"
+  },
+  {
+    "s": "SMFNF",
+    "n": "Sumitomo Mitsui Financial Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IDEXF",
+    "n": "Industria De Diseno Textil Inditex Sa / Adr",
+    "e": "US"
+  },
+  {
+    "s": "GLAXF",
+    "n": "Gsk Plc",
+    "e": "US"
+  },
+  {
+    "s": "BYDDF",
+    "n": "Byd Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NCRRP",
+    "n": "Ncr Voyix Corp",
+    "e": "US"
+  },
+  {
+    "s": "AIQUF",
+    "n": "L Air Liquide Sa /Fi",
+    "e": "US"
+  },
+  {
+    "s": "SNPMF",
+    "n": "China Petroleum & Chemical Corp",
+    "e": "US"
+  },
+  {
+    "s": "MBGAF",
+    "n": "Daimler Ag",
+    "e": "US"
+  },
+  {
+    "s": "NETTF",
+    "n": "Netease, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NTTYY",
+    "n": "Nippon Telegraph & Telephone Corp",
+    "e": "US"
+  },
+  {
+    "s": "FMCCT",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "USB-PH",
+    "n": "Us Bancorp \\De\\",
+    "e": "US"
+  },
+  {
+    "s": "EBBNF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "CTA-PB",
+    "n": "Eidp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "USB-PP",
+    "n": "Us Bancorp \\De\\",
+    "e": "US"
+  },
+  {
+    "s": "BAESF",
+    "n": "Bae Systems Plc /Fi/",
+    "e": "US"
+  },
+  {
+    "s": "GS-PA",
+    "n": "Goldman Sachs Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "PPRUF",
+    "n": "Kering",
+    "e": "US"
+  },
+  {
+    "s": "AMXOF",
+    "n": "America Movil Sab De Cv/",
+    "e": "US"
+  },
+  {
+    "s": "GS-PD",
+    "n": "Goldman Sachs Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "MS-PA",
+    "n": "Morgan Stanley",
+    "e": "US"
+  },
+  {
+    "s": "BAMXF",
+    "n": "Bayerische Motoren Werke Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "MS-PK",
+    "n": "Morgan Stanley",
+    "e": "US"
+  },
+  {
+    "s": "MS-PI",
+    "n": "Morgan Stanley",
+    "e": "US"
+  },
+  {
+    "s": "PBR-A",
+    "n": "Petrobras - Petroleo Brasileiro Sa",
+    "e": "US"
+  },
+  {
+    "s": "KDDIF",
+    "n": "Kddi Corp",
+    "e": "US"
+  },
+  {
+    "s": "MS-PF",
+    "n": "Morgan Stanley",
+    "e": "US"
+  },
+  {
+    "s": "MS-PE",
+    "n": "Morgan Stanley",
+    "e": "US"
+  },
+  {
+    "s": "RLXXF",
+    "n": "Relx Plc",
+    "e": "US"
+  },
+  {
+    "s": "DUK-PA",
+    "n": "Duke Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "STOHF",
+    "n": "Equinor Asa",
+    "e": "US"
+  },
+  {
+    "s": "EIPAF",
+    "n": "Eni Spa",
+    "e": "US"
+  },
+  {
+    "s": "CCZ",
+    "n": "Comcast Corp",
+    "e": "US"
+  },
+  {
+    "s": "BAIDF",
+    "n": "Baidu, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BYMOF",
+    "n": "Bayerische Motoren Werke Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "WEBNF",
+    "n": "Westpac Banking Corp",
+    "e": "US"
+  },
+  {
+    "s": "SCHW-PD",
+    "n": "Schwab Charles Corp",
+    "e": "US"
+  },
+  {
+    "s": "IFNNF",
+    "n": "Infineon Technologies Ag",
+    "e": "US"
+  },
+  {
+    "s": "MZHOF",
+    "n": "Mizuho Financial Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "HTHIF",
+    "n": "Hitachi Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NGGTF",
+    "n": "National Grid Plc",
+    "e": "US"
+  },
+  {
+    "s": "TKPHF",
+    "n": "Takeda Pharmaceutical Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DKILF",
+    "n": "Daikin Industries Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BECEF",
+    "n": "Bce Inc",
+    "e": "US"
+  },
+  {
+    "s": "SPG-PJ",
+    "n": "Simon Property Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BSQKZ",
+    "n": "Block, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DGEAF",
+    "n": "Diageo Plc",
+    "e": "US"
+  },
+  {
+    "s": "CTA-PA",
+    "n": "Eidp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TNCAF",
+    "n": "Tc Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "INGVF",
+    "n": "Ing Groep Nv",
+    "e": "US"
+  },
+  {
+    "s": "MET-PA",
+    "n": "Metlife Inc",
+    "e": "US"
+  },
+  {
+    "s": "TRPCF",
+    "n": "Trip.Com Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ITOCF",
+    "n": "Itochu Corp",
+    "e": "US"
+  },
+  {
+    "s": "JDCMF",
+    "n": "Jd.Com, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MET-PE",
+    "n": "Metlife Inc",
+    "e": "US"
+  },
+  {
+    "s": "PLDGP",
+    "n": "Prologis, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LLDTF",
+    "n": "Lloyds Banking Group Plc",
+    "e": "US"
+  },
+  {
+    "s": "BBVXF",
+    "n": "Banco Bilbao Vizcaya Argentaria, S.A.",
+    "e": "US"
+  },
+  {
+    "s": "HLNCF",
+    "n": "Haleon Plc",
+    "e": "US"
+  },
+  {
+    "s": "TCANF",
+    "n": "Tc Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "HEI-A",
+    "n": "Heico Corp",
+    "e": "US"
+  },
+  {
+    "s": "PUKPF",
+    "n": "Prudential Plc",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PH",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "SVNDF",
+    "n": "Seven & I Holdings Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HNDAF",
+    "n": "Honda Motor Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BAMGF",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "NOKBF",
+    "n": "Nokia Corp",
+    "e": "US"
+  },
+  {
+    "s": "TCKRF",
+    "n": "Teck Resources Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CRARF",
+    "n": "Credit Agricole S A",
+    "e": "US"
+  },
+  {
+    "s": "ENAKF",
+    "n": "E.On Se",
+    "e": "US"
+  },
+  {
+    "s": "ALL-PB",
+    "n": "Allstate Corp",
+    "e": "US"
+  },
+  {
+    "s": "RBSPF",
+    "n": "Natwest Group Plc",
+    "e": "US"
+  },
+  {
+    "s": "ERIXF",
+    "n": "Ericsson Lm Telephone Co",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PK",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "ALL-PH",
+    "n": "Allstate Corp",
+    "e": "US"
+  },
+  {
+    "s": "WOPEF",
+    "n": "Woodside Energy Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FNCTF",
+    "n": "Orange",
+    "e": "US"
+  },
+  {
+    "s": "FUJIF",
+    "n": "Fuji Photo Film Co Ltd /Fi",
+    "e": "US"
+  },
+  {
+    "s": "LEN-B",
+    "n": "Lennar Corp /New/",
+    "e": "US"
+  },
+  {
+    "s": "CIXPF",
+    "n": "Caixabank/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BCLYF",
+    "n": "Barclays Plc",
+    "e": "US"
+  },
+  {
+    "s": "RSMDF",
+    "n": "Resmed Inc",
+    "e": "US"
+  },
+  {
+    "s": "CODGF",
+    "n": "Compagnie De Saint Gobain",
+    "e": "US"
+  },
+  {
+    "s": "LAAOF",
+    "n": "Li Auto Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORXCF",
+    "n": "Orix Corp",
+    "e": "US"
+  },
+  {
+    "s": "TEFOF",
+    "n": "Telefonica S A",
+    "e": "US"
+  },
+  {
+    "s": "CAJPY",
+    "n": "Canon Inc",
+    "e": "US"
+  },
+  {
+    "s": "VODPF",
+    "n": "Vodafone Group Public Ltd Co",
+    "e": "US"
+  },
+  {
+    "s": "BBDO",
+    "n": "Bank Bradesco",
+    "e": "US"
+  },
+  {
+    "s": "FCNCB",
+    "n": "First Citizens Bancshares Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "GNMSF",
+    "n": "Genmab A/S",
+    "e": "US"
+  },
+  {
+    "s": "ANNSF",
+    "n": "Aena S.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "DLR-PK",
+    "n": "Digital Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STMEF",
+    "n": "Stmicroelectronics N.V.",
+    "e": "US"
+  },
+  {
+    "s": "ASHTF",
+    "n": "Ashtead Group Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "HKHHF",
+    "n": "Heineken Holding N V",
+    "e": "US"
+  },
+  {
+    "s": "HRNNF",
+    "n": "Hydro One Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AMSYF",
+    "n": "Arcelormittal",
+    "e": "US"
+  },
+  {
+    "s": "SAXPF",
+    "n": "Sampo Oyj",
+    "e": "US"
+  },
+  {
+    "s": "FWONK",
+    "n": "Liberty Media Corp",
+    "e": "US"
+  },
+  {
+    "s": "RYAOF",
+    "n": "Ryanair Holdings Plc",
+    "e": "US"
+  },
+  {
+    "s": "MKC-V",
+    "n": "Mccormick & Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "TNRSF",
+    "n": "Tenaris Sa",
+    "e": "US"
+  },
+  {
+    "s": "RSTRF",
+    "n": "Restaurant Brands International Limited Partnership",
+    "e": "US"
+  },
+  {
+    "s": "SOJC",
+    "n": "Southern Co",
+    "e": "US"
+  },
+  {
+    "s": "CAJFF",
+    "n": "Canon Inc",
+    "e": "US"
+  },
+  {
+    "s": "DLR-PJ",
+    "n": "Digital Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "COCSF",
+    "n": "Coca Cola Femsa Sab De Cv",
+    "e": "US"
+  },
+  {
+    "s": "TELNF",
+    "n": "Telenor Asa",
+    "e": "US"
+  },
+  {
+    "s": "XPNGF",
+    "n": "Xpeng Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RCIAF",
+    "n": "Rogers Communications Inc",
+    "e": "US"
+  },
+  {
+    "s": "ICHGF",
+    "n": "Intercontinental Hotels Group Plc /New/",
+    "e": "US"
+  },
+  {
+    "s": "Z",
+    "n": "Zillow Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STT-PG",
+    "n": "State Street Corp",
+    "e": "US"
+  },
+  {
+    "s": "WLMIF",
+    "n": "Wilmar International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EJPRF",
+    "n": "East Japan Railway Co /Fi",
+    "e": "US"
+  },
+  {
+    "s": "FNMAS",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "FNMAJ",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "HIG-PG",
+    "n": "Hartford Insurance Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FWONB",
+    "n": "Liberty Media Corp",
+    "e": "US"
+  },
+  {
+    "s": "FNMAH",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "POAHF",
+    "n": "Porsche Automobil Holding Se / Adr",
+    "e": "US"
+  },
+  {
+    "s": "NRSCF",
+    "n": "Nomura Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "JHIUF",
+    "n": "James Hardie Industries Plc",
+    "e": "US"
+  },
+  {
+    "s": "SPXSF",
+    "n": "Spirax-Sarco Engineering Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "RYLPF",
+    "n": "Koninklijke Philips Nv",
+    "e": "US"
+  },
+  {
+    "s": "AMCCF",
+    "n": "Amcor Plc",
+    "e": "US"
+  },
+  {
+    "s": "SURDF",
+    "n": "Sumitomo Realty & Development Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BIO-B",
+    "n": "Bio-Rad Laboratories, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHEAF",
+    "n": "China Eastern Airlines Corp Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CHKIF",
+    "n": "China Southern Airlines Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ADTTF",
+    "n": "Advantest Corp",
+    "e": "US"
+  },
+  {
+    "s": "KEY-PK",
+    "n": "Keycorp /New/",
+    "e": "US"
+  },
+  {
+    "s": "FSNUF",
+    "n": "Fresenius Se & Co. Kgaa",
+    "e": "US"
+  },
+  {
+    "s": "TEVJF",
+    "n": "Teva Pharmaceutical Industries Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KEY-PJ",
+    "n": "Keycorp /New/",
+    "e": "US"
+  },
+  {
+    "s": "SSMXF",
+    "n": "Sysmex Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CRERF",
+    "n": "Carrefour Sa",
+    "e": "US"
+  },
+  {
+    "s": "JBARF",
+    "n": "Julius Baer Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SGIOF",
+    "n": "Shionogi & Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NLY-PG",
+    "n": "Annaly Capital Management Inc",
+    "e": "US"
+  },
+  {
+    "s": "FRFFF",
+    "n": "Fairfax Financial Holdings Ltd/ Can",
+    "e": "US"
+  },
+  {
+    "s": "NLY-PF",
+    "n": "Annaly Capital Management Inc",
+    "e": "US"
+  },
+  {
+    "s": "PTPIF",
+    "n": "Pt Chandra Asri Petrochemical Tbk/Adr",
+    "e": "US"
+  },
+  {
+    "s": "NVZMF",
+    "n": "Novozymes As/Fi",
+    "e": "US"
+  },
+  {
+    "s": "APO-PA",
+    "n": "Apollo Global Management, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KEY-PI",
+    "n": "Keycorp /New/",
+    "e": "US"
+  },
+  {
+    "s": "NIOIF",
+    "n": "Nio Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FNGD",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "GFIOF",
+    "n": "Gold Fields Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NCSYF",
+    "n": "Nice Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "RKLIF",
+    "n": "Rentokil Initial Plc /Fi",
+    "e": "US"
+  },
+  {
+    "s": "SVYSF",
+    "n": "Solvay S A /Adr/",
+    "e": "US"
+  },
+  {
+    "s": "GELYF",
+    "n": "Geely Automobile Holdings Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "NMPGY",
+    "n": "Navios Maritime Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WSO-B",
+    "n": "Watsco Inc",
+    "e": "US"
+  },
+  {
+    "s": "FMCQF",
+    "n": "Fresenius Medical Care Ag",
+    "e": "US"
+  },
+  {
+    "s": "MAA-PI",
+    "n": "Mid America Apartment Communities Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LBRDB",
+    "n": "Liberty Broadband Corp",
+    "e": "US"
+  },
+  {
+    "s": "RF-PC",
+    "n": "Regions Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "SNNUF",
+    "n": "Smith & Nephew Plc",
+    "e": "US"
+  },
+  {
+    "s": "ACGLO",
+    "n": "Arch Capital Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "LBRDK",
+    "n": "Liberty Broadband Corp",
+    "e": "US"
+  },
+  {
+    "s": "BZLFF",
+    "n": "Bunzl Plc",
+    "e": "US"
+  },
+  {
+    "s": "ALMMF",
+    "n": "Aluminum Corp Of China Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BF-B",
+    "n": "Brown Forman Corp",
+    "e": "US"
+  },
+  {
+    "s": "ERRAF",
+    "n": "Emera Inc",
+    "e": "US"
+  },
+  {
+    "s": "SBYSF",
+    "n": "Sibanye Stillwater Ltd",
+    "e": "US"
+  },
+  {
+    "s": "UHAL-B",
+    "n": "U-Haul Holding Co /Nv/",
+    "e": "US"
+  },
+  {
+    "s": "TAP-A",
+    "n": "Molson Coors Beverage Co",
+    "e": "US"
+  },
+  {
+    "s": "DQJCF",
+    "n": "Don Quijote Holdings Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PBNNF",
+    "n": "Pt Bank Negara Indonesia (Persero) Tbk/Adr",
+    "e": "US"
+  },
+  {
+    "s": "WPPGF",
+    "n": "Wpp Plc",
+    "e": "US"
+  },
+  {
+    "s": "PRYMF",
+    "n": "Prysmian S.P.A.",
+    "e": "US"
+  },
+  {
+    "s": "NNGPF",
+    "n": "Nn Group Nv/Adr",
+    "e": "US"
+  },
+  {
+    "s": "AOMFF",
+    "n": "Alstom",
+    "e": "US"
+  },
+  {
+    "s": "GPAEF",
+    "n": "Pacific Airport Group",
+    "e": "US"
+  },
+  {
+    "s": "MNBEF",
+    "n": "Minebea Mitsumi Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KIKOF",
+    "n": "Kikkoman Corp",
+    "e": "US"
+  },
+  {
+    "s": "AEGOF",
+    "n": "Aegon Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CUKPF",
+    "n": "Carnival Plc",
+    "e": "US"
+  },
+  {
+    "s": "FREJO",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "YAMHF",
+    "n": "Yamaha Motor Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GLIBB",
+    "n": "Gci Liberty, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FMCKI",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "NDEKF",
+    "n": "Nitto Denko Corp / Adr/",
+    "e": "US"
+  },
+  {
+    "s": "ASRMF",
+    "n": "Southeast Airport Group",
+    "e": "US"
+  },
+  {
+    "s": "JGSHF",
+    "n": "Jg Summit Holdings, Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "LBTYB",
+    "n": "Liberty Global Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "RCWLY",
+    "n": "Rockwool A/S/Adr",
+    "e": "US"
+  },
+  {
+    "s": "UEPCN",
+    "n": "Union Electric Co",
+    "e": "US"
+  },
+  {
+    "s": "CXMSF",
+    "n": "Cemex Sab De Cv",
+    "e": "US"
+  },
+  {
+    "s": "SAPIF",
+    "n": "Saputo Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "DINRF",
+    "n": "Screen Holdings Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "PSORF",
+    "n": "Pearson Plc",
+    "e": "US"
+  },
+  {
+    "s": "RZB",
+    "n": "Reinsurance Group Of America Inc",
+    "e": "US"
+  },
+  {
+    "s": "AGNCM",
+    "n": "Agnc Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AGNCN",
+    "n": "Agnc Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FMCCI",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "UEPEP",
+    "n": "Union Electric Co",
+    "e": "US"
+  },
+  {
+    "s": "UEPEO",
+    "n": "Union Electric Co",
+    "e": "US"
+  },
+  {
+    "s": "PSNYW",
+    "n": "Polestar Automotive Holding Uk Plc",
+    "e": "US"
+  },
+  {
+    "s": "SASOF",
+    "n": "Sasol Ltd",
+    "e": "US"
+  },
+  {
+    "s": "VNORP",
+    "n": "Vornado Realty Trust",
+    "e": "US"
+  },
+  {
+    "s": "AMH-PH",
+    "n": "American Homes 4 Rent",
+    "e": "US"
+  },
+  {
+    "s": "FRT-PC",
+    "n": "Federal Realty Investment Trust",
+    "e": "US"
+  },
+  {
+    "s": "OSCUF",
+    "n": "Japan Exchange Group, Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "NWOEF",
+    "n": "New Oriental Education & Technology Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLUS",
+    "n": "Cluster Group Holdings Ltd Co",
+    "e": "US"
+  },
+  {
+    "s": "VNO-PL",
+    "n": "Vornado Realty Trust",
+    "e": "US"
+  },
+  {
+    "s": "AMH-PG",
+    "n": "American Homes 4 Rent",
+    "e": "US"
+  },
+  {
+    "s": "GS-PC",
+    "n": "Goldman Sachs Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "UEPCP",
+    "n": "Union Electric Co",
+    "e": "US"
+  },
+  {
+    "s": "YMHAY",
+    "n": "Yamaha Motor Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ATH-PA",
+    "n": "Athene Holding Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "VNO-PM",
+    "n": "Vornado Realty Trust",
+    "e": "US"
+  },
+  {
+    "s": "CIG-C",
+    "n": "Energy Co Of Minas Gerais",
+    "e": "US"
+  },
+  {
+    "s": "UEPEN",
+    "n": "Union Electric Co",
+    "e": "US"
+  },
+  {
+    "s": "BLBLF",
+    "n": "Bilibili Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VOYA-PB",
+    "n": "Voya Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XZJCF",
+    "n": "Mitsui Kinzoku Co Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "GIFLF",
+    "n": "Grifols Sa",
+    "e": "US"
+  },
+  {
+    "s": "KOSCF",
+    "n": "Kose Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PADEF",
+    "n": "Adaro Energy Pt/Adr/",
+    "e": "US"
+  },
+  {
+    "s": "GIFOF",
+    "n": "Grifols Sa",
+    "e": "US"
+  },
+  {
+    "s": "MSUXF",
+    "n": "Misumi Group Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "RNR-PF",
+    "n": "Renaissancere Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "JCYCF",
+    "n": "Jardine Cycle & Carriage Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SNV",
+    "n": "Synovus Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "UEPEM",
+    "n": "Union Electric Co",
+    "e": "US"
+  },
+  {
+    "s": "MRUS",
+    "n": "Merus N.V.",
+    "e": "US"
+  },
+  {
+    "s": "DSECF",
+    "n": "Daiwa Securities Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMSA",
+    "n": "Cms Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "KIM-PM",
+    "n": "Kimco Realty Corp",
+    "e": "US"
+  },
+  {
+    "s": "SLG-PI",
+    "n": "Sl Green Realty Corp",
+    "e": "US"
+  },
+  {
+    "s": "SFGRF",
+    "n": "Sony Financial Group Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "KIM-PL",
+    "n": "Kimco Realty Corp",
+    "e": "US"
+  },
+  {
+    "s": "FANUF",
+    "n": "Fanuc Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CWEN-A",
+    "n": "Clearway Energy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BCUCF",
+    "n": "Brunello Cucinelli S.P.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "KAKKF",
+    "n": "Kawasaki Kisen Kaisha Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LIFX",
+    "n": "Life360, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GIKLY",
+    "n": "Grifols Sa",
+    "e": "US"
+  },
+  {
+    "s": "PCG-PA",
+    "n": "Pg&E Corp",
+    "e": "US"
+  },
+  {
+    "s": "ALTB",
+    "n": "Alpine Auto Brokers Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCG-PB",
+    "n": "Pg&E Corp",
+    "e": "US"
+  },
+  {
+    "s": "JSM",
+    "n": "Navient Corp",
+    "e": "US"
+  },
+  {
+    "s": "OAK-PB",
+    "n": "Brookfield Oaktree Holdings, Llc",
+    "e": "US"
+  },
+  {
+    "s": "UNMA",
+    "n": "Unum Group",
+    "e": "US"
+  },
+  {
+    "s": "SNV-PD",
+    "n": "Synovus Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "SLFPF",
+    "n": "Standard Life Plc",
+    "e": "US"
+  },
+  {
+    "s": "MITUF",
+    "n": "Mitsui Chemicals Inc",
+    "e": "US"
+  },
+  {
+    "s": "BLFBY",
+    "n": "Balfour Beatty Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BPOPO",
+    "n": "Popular, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HACBY",
+    "n": "Hachijuni Bank Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HGMCF",
+    "n": "Harmony Gold Mining Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SSRGF",
+    "n": "Ssr Mining Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZLDPF",
+    "n": "Zealand Pharma A/S/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PHTCF",
+    "n": "Pldt Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCG-PE",
+    "n": "Pg&E Corp",
+    "e": "US"
+  },
+  {
+    "s": "ATGFF",
+    "n": "Altagas Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PPENF",
+    "n": "Pampa Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EPR-PG",
+    "n": "Epr Properties",
+    "e": "US"
+  },
+  {
+    "s": "PCG-PD",
+    "n": "Pg&E Corp",
+    "e": "US"
+  },
+  {
+    "s": "PCG-PC",
+    "n": "Pg&E Corp",
+    "e": "US"
+  },
+  {
+    "s": "GAB-PG",
+    "n": "Gabelli Equity Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "FNMFN",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "PCG-PH",
+    "n": "Pg&E Corp",
+    "e": "US"
+  },
+  {
+    "s": "AKO-B",
+    "n": "Andina Bottling Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "FURCF",
+    "n": "Forvia Se/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PCG-PG",
+    "n": "Pg&E Corp",
+    "e": "US"
+  },
+  {
+    "s": "RUSHB",
+    "n": "Rush Enterprises Inc \\Tx\\",
+    "e": "US"
+  },
+  {
+    "s": "GAERF",
+    "n": "Central North Airport Group",
+    "e": "US"
+  },
+  {
+    "s": "AXS-PE",
+    "n": "Axis Capital Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DTW",
+    "n": "Dte Energy Co",
+    "e": "US"
+  },
+  {
+    "s": "SR-PA",
+    "n": "Spire Inc",
+    "e": "US"
+  },
+  {
+    "s": "PCG-PI",
+    "n": "Pg&E Corp",
+    "e": "US"
+  },
+  {
+    "s": "SPTJF",
+    "n": "Sinopec Shanghai Petrochemical Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TCMFF",
+    "n": "Telecom Argentina Sa",
+    "e": "US"
+  },
+  {
+    "s": "SLMBP",
+    "n": "Slm Corp",
+    "e": "US"
+  },
+  {
+    "s": "ROYMY",
+    "n": "Royal Mail Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PBI-PB",
+    "n": "Pitney Bowes Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "DLAKF",
+    "n": "Deutsche Lufthansa A G /Fi",
+    "e": "US"
+  },
+  {
+    "s": "REXR-PB",
+    "n": "Rexford Industrial Realty, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SF-PB",
+    "n": "Stifel Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "LBTYK",
+    "n": "Liberty Global Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TWO-PC",
+    "n": "Two Harbors Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GRP-UN",
+    "n": "Granite Real Estate Investment Trust",
+    "e": "US"
+  },
+  {
+    "s": "JTKWY",
+    "n": "Just Eat Takeaway.Com N.V.",
+    "e": "US"
+  },
+  {
+    "s": "GEF-B",
+    "n": "Greif, Inc",
+    "e": "US"
+  },
+  {
+    "s": "BHFAL",
+    "n": "Brighthouse Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CIM-PB",
+    "n": "Chimera Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "CIM-PD",
+    "n": "Chimera Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "TYTMF",
+    "n": "Tokyo Tatemono Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MOG-B",
+    "n": "Moog Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VLYPP",
+    "n": "Valley National Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "RYKKF",
+    "n": "Ryohin Keikaku Co/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CIM-PC",
+    "n": "Chimera Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "TWO-PB",
+    "n": "Two Harbors Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TWO-PA",
+    "n": "Two Harbors Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HOVNP",
+    "n": "Hovnanian Enterprises Inc",
+    "e": "US"
+  },
+  {
+    "s": "WRB-PE",
+    "n": "Berkley W R Corp",
+    "e": "US"
+  },
+  {
+    "s": "SOHGY",
+    "n": "Alsok Co Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "WBS-PF",
+    "n": "Webster Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "VLYPO",
+    "n": "Valley National Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "RLJ-PA",
+    "n": "Rlj Lodging Trust",
+    "e": "US"
+  },
+  {
+    "s": "PEB-PF",
+    "n": "Pebblebrook Hotel Trust",
+    "e": "US"
+  },
+  {
+    "s": "PEB-PE",
+    "n": "Pebblebrook Hotel Trust",
+    "e": "US"
+  },
+  {
+    "s": "CIM-PA",
+    "n": "Chimera Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "ASB-PE",
+    "n": "Associated Banc-Corp",
+    "e": "US"
+  },
+  {
+    "s": "PEGRF",
+    "n": "Pennon Group Plc / Adr",
+    "e": "US"
+  },
+  {
+    "s": "TY-P",
+    "n": "Tri-Continental Corp",
+    "e": "US"
+  },
+  {
+    "s": "BHFAP",
+    "n": "Brighthouse Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MFA-PB",
+    "n": "Mfa Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PTXAF",
+    "n": "Pt Xlsmart Telecom Sejahtera Tbk/Adr",
+    "e": "US"
+  },
+  {
+    "s": "HMDCF",
+    "n": "Hutchmed (China) Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FMCCG",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "BATRK",
+    "n": "Atlanta Braves Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FNMAM",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "AILLI",
+    "n": "Ameren Illinois Co",
+    "e": "US"
+  },
+  {
+    "s": "UA",
+    "n": "Under Armour, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRTN-PA",
+    "n": "Triton International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NSA-PA",
+    "n": "National Storage Affiliates Trust",
+    "e": "US"
+  },
+  {
+    "s": "BATRB",
+    "n": "Atlanta Braves Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WELPP",
+    "n": "Wisconsin Electric Power Co",
+    "e": "US"
+  },
+  {
+    "s": "AILLM",
+    "n": "Ameren Illinois Co",
+    "e": "US"
+  },
+  {
+    "s": "AILLN",
+    "n": "Ameren Illinois Co",
+    "e": "US"
+  },
+  {
+    "s": "BELFB",
+    "n": "Bel Fuse Inc /Nj",
+    "e": "US"
+  },
+  {
+    "s": "SOCGP",
+    "n": "Southern California Gas Co",
+    "e": "US"
+  },
+  {
+    "s": "CDGLF",
+    "n": "Comfortdelgro Corp Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FNMAN",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "SRG-PA",
+    "n": "Seritage Growth Properties",
+    "e": "US"
+  },
+  {
+    "s": "TROLB",
+    "n": "Tootsie Roll Industries Inc",
+    "e": "US"
+  },
+  {
+    "s": "AILIM",
+    "n": "Ameren Illinois Co",
+    "e": "US"
+  },
+  {
+    "s": "FMCCJ",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "FNMAI",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "NHNKF",
+    "n": "Nihon Kohden Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CODQL",
+    "n": "Coronado Global Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WBHC",
+    "n": "Wilson Bank Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "GLPGF",
+    "n": "Galapagos Nv",
+    "e": "US"
+  },
+  {
+    "s": "AILLO",
+    "n": "Ameren Illinois Co",
+    "e": "US"
+  },
+  {
+    "s": "LXP-PC",
+    "n": "Lxp Industrial Trust",
+    "e": "US"
+  },
+  {
+    "s": "ATROB",
+    "n": "Astronics Corp",
+    "e": "US"
+  },
+  {
+    "s": "FNMAT",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "AILIN",
+    "n": "Ameren Illinois Co",
+    "e": "US"
+  },
+  {
+    "s": "FNMAK",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "IVR-PC",
+    "n": "Invesco Mortgage Capital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IFCNF",
+    "n": "Inficon Holding Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "AEBZY",
+    "n": "Anadolu Efes Biracilik Ve Malt Sanayi A S/Adr",
+    "e": "US"
+  },
+  {
+    "s": "FNMAL",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "FNMFM",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "AILLP",
+    "n": "Ameren Illinois Co",
+    "e": "US"
+  },
+  {
+    "s": "WLYB",
+    "n": "John Wiley & Sons, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FNMAO",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "AGM-A",
+    "n": "Federal Agricultural Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "FNMAG",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "FNMFO",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "AHL-PE",
+    "n": "Aspen Insurance Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CENTA",
+    "n": "Central Garden & Pet Co",
+    "e": "US"
+  },
+  {
+    "s": "NGL-PB",
+    "n": "Ngl Energy Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "ARZTF",
+    "n": "Aryzta Ag (Fka Iaws Group Plc)",
+    "e": "US"
+  },
+  {
+    "s": "GDV-PH",
+    "n": "Gabelli Dividend & Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "FISK",
+    "n": "Empire State Realty Op, L.P.",
+    "e": "US"
+  },
+  {
+    "s": "GRPFF",
+    "n": "Grupo Televisa, S.A.B.",
+    "e": "US"
+  },
+  {
+    "s": "EVOTF",
+    "n": "Evotec Se",
+    "e": "US"
+  },
+  {
+    "s": "NGL-PC",
+    "n": "Ngl Energy Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "BFS-PD",
+    "n": "Saul Centers, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FMCCL",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "OGCP",
+    "n": "Empire State Realty Op, L.P.",
+    "e": "US"
+  },
+  {
+    "s": "GNL-PA",
+    "n": "Global Net Lease, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FMCKL",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "PMT-PA",
+    "n": "Pennymac Mortgage Investment Trust",
+    "e": "US"
+  },
+  {
+    "s": "PMT-PB",
+    "n": "Pennymac Mortgage Investment Trust",
+    "e": "US"
+  },
+  {
+    "s": "LILAK",
+    "n": "Liberty Latin America Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SBOEF",
+    "n": "Sbo Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "LILAB",
+    "n": "Liberty Latin America Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "STSFF",
+    "n": "Smartstop Self Storage Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HCXY",
+    "n": "Hercules Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GAB-PH",
+    "n": "Gabelli Equity Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "FMCCS",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "MHLA",
+    "n": "Maiden Holdings, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FMCCO",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "BH",
+    "n": "Biglari Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AHL-PD",
+    "n": "Aspen Insurance Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CODI-PB",
+    "n": "Compass Diversified Holdings",
+    "e": "US"
+  },
+  {
+    "s": "FMCKN",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "FREJN",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "CMGMF",
+    "n": "Chemring Group Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "FMCCN",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "FMCKO",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "GLOP-PB",
+    "n": "Gaslog Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "FMCKJ",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "FMCKM",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "GLOP-PC",
+    "n": "Gaslog Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "FREGP",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "GLOP-PA",
+    "n": "Gaslog Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "FMCCH",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "CVAC",
+    "n": "Curevac N.V.",
+    "e": "US"
+  },
+  {
+    "s": "FMCCK",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "FGPRB",
+    "n": "Ferrellgas Partners L P",
+    "e": "US"
+  },
+  {
+    "s": "HL-PB",
+    "n": "Hecla Mining Co/De/",
+    "e": "US"
+  },
+  {
+    "s": "FMCCP",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "FMCCM",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "FMCKP",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "SPLP",
+    "n": "Steel Partners Holdings L.P.",
+    "e": "US"
+  },
+  {
+    "s": "AHH-PA",
+    "n": "Armada Hoffler Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRAF-UN",
+    "n": "Graf Global Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FXCNF",
+    "n": "Fih Mobile Ltd",
+    "e": "US"
+  },
+  {
+    "s": "INN-PE",
+    "n": "Summit Hotel Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HCACU",
+    "n": "Hall Chadwick Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "GAM-PB",
+    "n": "General American Investors Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "IIPR-PA",
+    "n": "Innovative Industrial Properties Inc",
+    "e": "US"
+  },
+  {
+    "s": "RNLXY",
+    "n": "Renalytix Plc",
+    "e": "US"
+  },
+  {
+    "s": "ABL",
+    "n": "Abacus Global Management, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CODI-PA",
+    "n": "Compass Diversified Holdings",
+    "e": "US"
+  },
+  {
+    "s": "DGICB",
+    "n": "Donegal Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "GTN-A",
+    "n": "Gray Media, Inc",
+    "e": "US"
+  },
+  {
+    "s": "SENEB",
+    "n": "Seneca Foods Corp",
+    "e": "US"
+  },
+  {
+    "s": "MEOBF",
+    "n": "Mesoblast Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DRDGF",
+    "n": "Drdgold Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CMRE-PB",
+    "n": "Costamare Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHTH",
+    "n": "Cnl Healthcare Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HOVVB",
+    "n": "Hovnanian Enterprises Inc",
+    "e": "US"
+  },
+  {
+    "s": "CMRE-PD",
+    "n": "Costamare Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CMRE-PC",
+    "n": "Costamare Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AGM-PD",
+    "n": "Federal Agricultural Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "HLTC",
+    "n": "National Healthcare Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HVT-A",
+    "n": "Haverty Furniture Companies Inc",
+    "e": "US"
+  },
+  {
+    "s": "GGT-PE",
+    "n": "Gabelli Multimedia Trust Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GGN-PB",
+    "n": "Gamco Global Gold, Natural Resources & Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "MDRX",
+    "n": "Veradigm Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BRSYF",
+    "n": "Brainsway Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CIO-PA",
+    "n": "City Office Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MITT-PA",
+    "n": "Tpg Mortgage Investment Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIRTP",
+    "n": "Air T Inc",
+    "e": "US"
+  },
+  {
+    "s": "UMH-PD",
+    "n": "Umh Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MTGRF",
+    "n": "Mgx Resources Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "NGENF",
+    "n": "Nervgen Pharma Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MITT-PB",
+    "n": "Tpg Mortgage Investment Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ECCX",
+    "n": "Eagle Point Credit Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WOW",
+    "n": "Wideopenwest, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GDRZF",
+    "n": "Gold Reserve Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NCV-PA",
+    "n": "Virtus Convertible & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "NEWTI",
+    "n": "Newtekone, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PTCHF",
+    "n": "Puretech Health Plc",
+    "e": "US"
+  },
+  {
+    "s": "OXLCO",
+    "n": "Oxford Lane Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CRD-B",
+    "n": "Crawford & Co",
+    "e": "US"
+  },
+  {
+    "s": "CYBN",
+    "n": "Cybin Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LANDM",
+    "n": "Gladstone Land Corp",
+    "e": "US"
+  },
+  {
+    "s": "GMRE-PA",
+    "n": "Global Medical Reit Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARTNB",
+    "n": "Artesian Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "GSCCF",
+    "n": "Ioneer Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ERLFF",
+    "n": "Entree Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AVHHL",
+    "n": "Avita Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VSOGF",
+    "n": "Vista Energy, S.A.B. De C.V.",
+    "e": "US"
+  },
+  {
+    "s": "CKDXF",
+    "n": "Opthea Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CNTHP",
+    "n": "Connecticut Light & Power Co",
+    "e": "US"
+  },
+  {
+    "s": "IHRTB",
+    "n": "Iheartmedia, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNLPL",
+    "n": "Connecticut Light & Power Co",
+    "e": "US"
+  },
+  {
+    "s": "GUT-PC",
+    "n": "Gabelli Utility Trust",
+    "e": "US"
+  },
+  {
+    "s": "NCZ-PA",
+    "n": "Virtus Convertible & Income Fund Ii",
+    "e": "US"
+  },
+  {
+    "s": "DFPH",
+    "n": "Oncology Institute, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DSX-PB",
+    "n": "Diana Shipping Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNTHO",
+    "n": "Connecticut Light & Power Co",
+    "e": "US"
+  },
+  {
+    "s": "KELYB",
+    "n": "Kelly Services Inc",
+    "e": "US"
+  },
+  {
+    "s": "RVRF",
+    "n": "River Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "MTMV",
+    "n": "Motomova Inc",
+    "e": "US"
+  },
+  {
+    "s": "NVNXF",
+    "n": "Novonix Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CHMI-PB",
+    "n": "Cherry Hill Mortgage Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "RLFTY",
+    "n": "Relief Therapeutics Holding Sa",
+    "e": "US"
+  },
+  {
+    "s": "AHT-PD",
+    "n": "Ashford Hospitality Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "BHR-PB",
+    "n": "Braemar Hotels & Resorts Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRRUF",
+    "n": "Immutep Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CNTHN",
+    "n": "Connecticut Light & Power Co",
+    "e": "US"
+  },
+  {
+    "s": "SLNCF",
+    "n": "Silence Therapeutics Plc",
+    "e": "US"
+  },
+  {
+    "s": "FNMCD",
+    "n": "First Nordic Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BHR-PD",
+    "n": "Braemar Hotels & Resorts Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APLMW",
+    "n": "Apollomics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNLHP",
+    "n": "Connecticut Light & Power Co",
+    "e": "US"
+  },
+  {
+    "s": "ARCXF",
+    "n": "Arcelormittal",
+    "e": "US"
+  },
+  {
+    "s": "CNLTP",
+    "n": "Connecticut Light & Power Co",
+    "e": "US"
+  },
+  {
+    "s": "AHT-PG",
+    "n": "Ashford Hospitality Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "AHT-PH",
+    "n": "Ashford Hospitality Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "CNLTL",
+    "n": "Connecticut Light & Power Co",
+    "e": "US"
+  },
+  {
+    "s": "IPHYF",
+    "n": "Innate Pharma Sa",
+    "e": "US"
+  },
+  {
+    "s": "AHT-PI",
+    "n": "Ashford Hospitality Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "CNPWM",
+    "n": "Connecticut Light & Power Co",
+    "e": "US"
+  },
+  {
+    "s": "AHT-PF",
+    "n": "Ashford Hospitality Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "PRTHU",
+    "n": "Priority Technology Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHMI-PA",
+    "n": "Cherry Hill Mortgage Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "CNPWP",
+    "n": "Connecticut Light & Power Co",
+    "e": "US"
+  },
+  {
+    "s": "LANDP",
+    "n": "Gladstone Land Corp",
+    "e": "US"
+  },
+  {
+    "s": "CNLPM",
+    "n": "Connecticut Light & Power Co",
+    "e": "US"
+  },
+  {
+    "s": "CNLHO",
+    "n": "Connecticut Light & Power Co",
+    "e": "US"
+  },
+  {
+    "s": "CNLTN",
+    "n": "Connecticut Light & Power Co",
+    "e": "US"
+  },
+  {
+    "s": "CTGL",
+    "n": "Citrine Global, Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OMI",
+    "n": "Accendra Health Inc/Va/",
+    "e": "US"
+  },
+  {
+    "s": "VNUE",
+    "n": "Vnue, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENO",
+    "n": "Entergy New Orleans, Llc",
+    "e": "US"
+  },
+  {
+    "s": "CNLHN",
+    "n": "Connecticut Light & Power Co",
+    "e": "US"
+  },
+  {
+    "s": "BNIGF",
+    "n": "Beroni Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PMHG",
+    "n": "Prime Meridian Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "IVEVF",
+    "n": "Inventiva S.A.",
+    "e": "US"
+  },
+  {
+    "s": "ECXJ",
+    "n": "Cxj Group Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CDR-PC",
+    "n": "Cedar Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SINC",
+    "n": "Sincerity Applied Materials Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SB-PD",
+    "n": "Safe Bulkers, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SB-PC",
+    "n": "Safe Bulkers, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TTSH",
+    "n": "Tile Shop Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CDR-PB",
+    "n": "Cedar Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EBRCZ",
+    "n": "Ebr Systems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OCGSF",
+    "n": "Outcrop Silver & Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "DLNG-PA",
+    "n": "Dynagas Lng Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "WONDF",
+    "n": "Wonderfi Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BFIN",
+    "n": "Bankfinancial Corp",
+    "e": "US"
+  },
+  {
+    "s": "MRSN",
+    "n": "Mersana Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LUCN",
+    "n": "Lucent, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBXIB",
+    "n": "Bbx Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPGN",
+    "n": "Opgen Inc",
+    "e": "US"
+  },
+  {
+    "s": "EXNRF",
+    "n": "Excellon Resources Inc",
+    "e": "US"
+  },
+  {
+    "s": "GEVI",
+    "n": "General Enterprise Ventures, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SBBCF",
+    "n": "Simply Better Brands Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AOAO",
+    "n": "Alpha One Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RDIB",
+    "n": "Reading International Inc",
+    "e": "US"
+  },
+  {
+    "s": "ECF-PA",
+    "n": "Ellsworth Growth & Income Fund Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RAASY",
+    "n": "Cloopen Group Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FATBB",
+    "n": "Fat Brands, Inc",
+    "e": "US"
+  },
+  {
+    "s": "SOHOO",
+    "n": "Sotherly Hotels Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SFDL",
+    "n": "Security Federal Corp",
+    "e": "US"
+  },
+  {
+    "s": "IRRX",
+    "n": "Integrated Rail & Resources Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "BCV-PA",
+    "n": "Bancroft Fund Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HRBR",
+    "n": "Harbor Diversified, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RGBPP",
+    "n": "Regen Biopharma Inc",
+    "e": "US"
+  },
+  {
+    "s": "OFED",
+    "n": "Oconee Federal Financial Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GLU-PB",
+    "n": "Gabelli Global Utility & Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "VCUFD",
+    "n": "Vizsla Copper Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ATEK",
+    "n": "Athena Technology Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "BCTF",
+    "n": "Bancorp 34, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENDI",
+    "n": "Endi Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RLFTF",
+    "n": "Relief Therapeutics Holding Sa",
+    "e": "US"
+  },
+  {
+    "s": "PRMLF",
+    "n": "Nexmetals Mining Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CPTP",
+    "n": "Capital Properties Inc /Ri/",
+    "e": "US"
+  },
+  {
+    "s": "IXAQF",
+    "n": "Ix Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BKSC",
+    "n": "Bank Of South Carolina Corp",
+    "e": "US"
+  },
+  {
+    "s": "GSL-PB",
+    "n": "Global Ship Lease, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KBSR",
+    "n": "Kbs Real Estate Investment Trust Iii, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FUUFF",
+    "n": "F3 Uranium Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MPVDF",
+    "n": "Mountain Province Diamonds Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JOCM",
+    "n": "Jocom Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GGROU",
+    "n": "Golden Growers Cooperative",
+    "e": "US"
+  },
+  {
+    "s": "CULL",
+    "n": "Cullman Bancorp, Inc. /Md/",
+    "e": "US"
+  },
+  {
+    "s": "CNGL",
+    "n": "Canna-Global Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "CBRRF",
+    "n": "Chain Bridge I",
+    "e": "US"
+  },
+  {
+    "s": "ENTX",
+    "n": "Entera Bio Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SHVLF",
+    "n": "Starcore International Mines Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SOHOB",
+    "n": "Sotherly Hotels Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SOHON",
+    "n": "Sotherly Hotels Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARRKF",
+    "n": "Arras Minerals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HSTC",
+    "n": "Hst Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RMHI",
+    "n": "Retrieve Medical Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HCIL",
+    "n": "Hongchang International Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ASCBF",
+    "n": "Aspac Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FSHPU",
+    "n": "Flag Ship Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "STRC",
+    "n": "Strategy Inc",
+    "e": "US"
+  },
+  {
+    "s": "NSRCF",
+    "n": "Nextsource Materials Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UBOH",
+    "n": "United Bancshares Inc/Oh",
+    "e": "US"
+  },
+  {
+    "s": "BCOW",
+    "n": "1895 Bancorp Of Wisconsin, Inc. /Md/",
+    "e": "US"
+  },
+  {
+    "s": "MLMC",
+    "n": "Frankspeech Network, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRLC",
+    "n": "Trilinc Global Impact Fund Llc",
+    "e": "US"
+  },
+  {
+    "s": "MTBLY",
+    "n": "Moatable, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GTMAY",
+    "n": "Grupo Tmm Sab",
+    "e": "US"
+  },
+  {
+    "s": "GRFXF",
+    "n": "Graphex Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FBIOP",
+    "n": "Fortress Biotech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PBBK",
+    "n": "Pb Bankshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MDNAF",
+    "n": "Medicenna Therapeutics Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AVLNF",
+    "n": "Avalon Advanced Materials Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AKOM",
+    "n": "Aerkomm Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ANPCF",
+    "n": "Angle Plc",
+    "e": "US"
+  },
+  {
+    "s": "VICP",
+    "n": "Vicapsys Life Sciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NZEOF",
+    "n": "New Zealand Oil & Gas Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TKLS",
+    "n": "Trutankless, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBXIA",
+    "n": "Bbx Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CIZN",
+    "n": "Citizens Holding Co /Ms/",
+    "e": "US"
+  },
+  {
+    "s": "UONEK",
+    "n": "Urban One, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XNDA",
+    "n": "Tribal Rides International Corp.",
+    "e": "US"
+  },
+  {
+    "s": "JUPGF",
+    "n": "Atlas Critical Minerals Corp",
+    "e": "US"
+  },
+  {
+    "s": "GBNY",
+    "n": "Generations Bancorp Ny, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LUNA",
+    "n": "Luna Innovations Inc",
+    "e": "US"
+  },
+  {
+    "s": "ILLMF",
+    "n": "Illumin Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JETMF",
+    "n": "Global Crossing Airlines Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCTSF",
+    "n": "Cactus Acquisition Corp. 1 Ltd",
+    "e": "US"
+  },
+  {
+    "s": "WSKEF",
+    "n": "Wisekey International Holding S.A.",
+    "e": "US"
+  },
+  {
+    "s": "ZIVO",
+    "n": "Zivo Bioscience, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NOWG",
+    "n": "Nowigence Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EAXR",
+    "n": "Ealixir, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BIOE",
+    "n": "Bio Essence Corp",
+    "e": "US"
+  },
+  {
+    "s": "AATC",
+    "n": "Autoscope Technologies Corp",
+    "e": "US"
+  },
+  {
+    "s": "TKCM",
+    "n": "Token Communities Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "PTN",
+    "n": "Palatin Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "LTSV",
+    "n": "Lightstone Value Plus Reit Iv, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HSTI",
+    "n": "High Sierra Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GSTX",
+    "n": "Graphene & Solar Technologies Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GWLL",
+    "n": "Goldenwell Biotech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLCS",
+    "n": "Cell Source, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VMNT",
+    "n": "Vemanti Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OSBK",
+    "n": "Oconee Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "XTXXF",
+    "n": "Adastra Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "IDWM",
+    "n": "Idw Media Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BZRD",
+    "n": "Blubuzzard, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MOGO",
+    "n": "Orion Digital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ANPCY",
+    "n": "Angle Plc",
+    "e": "US"
+  },
+  {
+    "s": "WVVIP",
+    "n": "Willamette Valley Vineyards Inc",
+    "e": "US"
+  },
+  {
+    "s": "OMCC",
+    "n": "Old Market Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "GRFXY",
+    "n": "Graphex Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GFASY",
+    "n": "Gafisa S.A.",
+    "e": "US"
+  },
+  {
+    "s": "FNCH",
+    "n": "Finch Therapeutics Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VWFB",
+    "n": "Vwf Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WTMA",
+    "n": "Evolution Metals & Technologies Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SCYYF",
+    "n": "Scandium International Mining Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AFGC",
+    "n": "American Financial Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "PAANF",
+    "n": "Pan American Energy Corp. (Canada)",
+    "e": "US"
+  },
+  {
+    "s": "WHLM",
+    "n": "Wilhelmina International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SFES",
+    "n": "Safeguard Scientifics Inc",
+    "e": "US"
+  },
+  {
+    "s": "SALM",
+    "n": "Salem Media Group, Inc. /De/",
+    "e": "US"
+  },
+  {
+    "s": "BQST",
+    "n": "Bioquest Corp",
+    "e": "US"
+  },
+  {
+    "s": "BRCNF",
+    "n": "Burcon Nutrascience Corp",
+    "e": "US"
+  },
+  {
+    "s": "HMMR",
+    "n": "Hammer Technology Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WHLRD",
+    "n": "Wheeler Real Estate Investment Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ODDAF",
+    "n": "Odd Burger Corp",
+    "e": "US"
+  },
+  {
+    "s": "GLBZ",
+    "n": "Glen Burnie Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "PRNAF",
+    "n": "Alterity Therapeutics Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SITS",
+    "n": "Southern Its International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SILEF",
+    "n": "Silver Elephant Mining Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TVE",
+    "n": "Tennessee Valley Authority",
+    "e": "US"
+  },
+  {
+    "s": "MCLE",
+    "n": "Medicale Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BNSOF",
+    "n": "Bonso Electronics International Inc",
+    "e": "US"
+  },
+  {
+    "s": "TVC",
+    "n": "Tennessee Valley Authority",
+    "e": "US"
+  },
+  {
+    "s": "CUBT",
+    "n": "Curative Biotechnology Inc",
+    "e": "US"
+  },
+  {
+    "s": "HOOK",
+    "n": "Hookipa Pharma Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SGTM",
+    "n": "Sustainable Green Team, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SWISF",
+    "n": "Sekur Private Data Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AGLY",
+    "n": "Atlantis Glory Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PNPL",
+    "n": "Pineapple, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVTK",
+    "n": "Eventiko Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PMDI",
+    "n": "Psychemedics Corp",
+    "e": "US"
+  },
+  {
+    "s": "MGTI",
+    "n": "Mgt Capital Investments, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CARV",
+    "n": "Carver Bancorp Inc",
+    "e": "US"
+  },
+  {
+    "s": "APHD",
+    "n": "Verde Bio Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CJAX",
+    "n": "Cojax Oil & Gas Corp",
+    "e": "US"
+  },
+  {
+    "s": "FALC",
+    "n": "Falconstor Software Inc",
+    "e": "US"
+  },
+  {
+    "s": "SEAC",
+    "n": "Seachange International Inc",
+    "e": "US"
+  },
+  {
+    "s": "PMEDF",
+    "n": "Predictmedix Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NEXCF",
+    "n": "Nextech3d.Ai Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HLLK",
+    "n": "Hallmark Venture Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ABTI",
+    "n": "Alterola Biotech Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TAIT",
+    "n": "Taitron Components Inc",
+    "e": "US"
+  },
+  {
+    "s": "FULO",
+    "n": "Fullnet Communications Inc",
+    "e": "US"
+  },
+  {
+    "s": "SCGY",
+    "n": "Scientific Energy, Inc",
+    "e": "US"
+  },
+  {
+    "s": "NGHI",
+    "n": "Galenfeha, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CYCA",
+    "n": "Cytta Corp.",
+    "e": "US"
+  },
+  {
+    "s": "VQSSF",
+    "n": "Viq Solutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GBCS",
+    "n": "Selectis Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADMQ",
+    "n": "Adm Endeavors, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RBCN",
+    "n": "Rubicon Technology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NKGN",
+    "n": "Nkgen Biotech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BRRN",
+    "n": "Byrn, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRTD",
+    "n": "Creatd, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MVCO",
+    "n": "Metavesco, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SFUNY",
+    "n": "Fang Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EBZT",
+    "n": "Everything Blockchain, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FGCO",
+    "n": "Financial Gravity Companies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "YQAI",
+    "n": "Youneeqai Technical Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JETR",
+    "n": "Star Jets International Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EGLXF",
+    "n": "Enthusiast Gaming Holdings Inc. / Canada",
+    "e": "US"
+  },
+  {
+    "s": "LCHD",
+    "n": "Leader Capital Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "VISL",
+    "n": "Vislink Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLUC",
+    "n": "Glucose Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASPU",
+    "n": "Aspen Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EGRX",
+    "n": "Eagle Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXMH",
+    "n": "Next Meats Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RSCF",
+    "n": "Reflect Scientific, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRST",
+    "n": "Ethema Health Corp",
+    "e": "US"
+  },
+  {
+    "s": "CANN",
+    "n": "Trees Corp (Colorado)",
+    "e": "US"
+  },
+  {
+    "s": "SIPN",
+    "n": "Sipp International Industries, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EGTYF",
+    "n": "Eguana Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TGCB",
+    "n": "Tego Cyber, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BWMG",
+    "n": "Brownie'S Marine Group, Inc",
+    "e": "US"
+  },
+  {
+    "s": "NMGX",
+    "n": "Nano Magic Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DTGI",
+    "n": "Digerati Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADXS",
+    "n": "Ayala Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GOGR",
+    "n": "Go Green Global Technologies Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ACRL",
+    "n": "Atacama Resources International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MTTCF",
+    "n": "Steakholder Foods Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AXIM",
+    "n": "Axim Biotechnologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NUVI",
+    "n": "Emo Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "VCNX",
+    "n": "Vaccinex, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TAAG",
+    "n": "Awareness Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SRMX",
+    "n": "Saddle Ranch Media, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRNLD",
+    "n": "Greenlite Ventures Inc",
+    "e": "US"
+  },
+  {
+    "s": "VYRE",
+    "n": "Cabo Verde Capital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UCIX",
+    "n": "Umbra Companies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UCLE",
+    "n": "Us Nuclear Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RDAR",
+    "n": "Telvantis, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SSHT",
+    "n": "Ssht S&T Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "UCASU",
+    "n": "Uc Asset Lp",
+    "e": "US"
+  },
+  {
+    "s": "HOFV",
+    "n": "Hall Of Fame Resort & Entertainment Co",
+    "e": "US"
+  },
+  {
+    "s": "PHBI",
+    "n": "Pharmagreen Biotech Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CETXP",
+    "n": "Cemtrex Inc",
+    "e": "US"
+  },
+  {
+    "s": "SUIC",
+    "n": "Suic Worldwide Holdings Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GPLL",
+    "n": "Gpl Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WDLF",
+    "n": "Decentral Life, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARBKF",
+    "n": "Argo Blockchain Plc",
+    "e": "US"
+  },
+  {
+    "s": "WNFT",
+    "n": "Worldwide Nft Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HHHEF",
+    "n": "37 Capital Inc",
+    "e": "US"
+  },
+  {
+    "s": "TPHS",
+    "n": "Trinity Place Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MAJI",
+    "n": "Exousia Pro, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JRSS",
+    "n": "Jrsis Health Care Corp",
+    "e": "US"
+  },
+  {
+    "s": "CPWR",
+    "n": "Ocean Thermal Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "SMKG",
+    "n": "Smartcard Marketing Systems Inc",
+    "e": "US"
+  },
+  {
+    "s": "TKOI",
+    "n": "Telkonet Inc",
+    "e": "US"
+  },
+  {
+    "s": "MYCB",
+    "n": "My City Builders, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KNOS",
+    "n": "Kronos Advanced Technologies Inc",
+    "e": "US"
+  },
+  {
+    "s": "AGNPF",
+    "n": "Algernon Health Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CARM",
+    "n": "Carisma Therapeutics Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADNH",
+    "n": "Advent Technologies Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FZMD",
+    "n": "Fuse Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMPM",
+    "n": "Impac Mortgage Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "BYOC",
+    "n": "Beyond Commerce, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNNC",
+    "n": "Sibannac, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RNGC",
+    "n": "Ranger Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SYIN",
+    "n": "Synbio International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GMZP",
+    "n": "Gemz Corp. Nv",
+    "e": "US"
+  },
+  {
+    "s": "SRNE",
+    "n": "Sorrento Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BKTH",
+    "n": "Megola Inc",
+    "e": "US"
+  },
+  {
+    "s": "WHLRP",
+    "n": "Wheeler Real Estate Investment Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FMHS",
+    "n": "Farmhouse, Inc. /Nv",
+    "e": "US"
+  },
+  {
+    "s": "IWAL",
+    "n": "Iwallet Corp",
+    "e": "US"
+  },
+  {
+    "s": "SFWJ",
+    "n": "Software Effective Solutions, Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SPQS",
+    "n": "Sportsquest, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FBDS",
+    "n": "Fuss Brands Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MGHL",
+    "n": "Morgan Group Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "XELA",
+    "n": "Exela Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KITL",
+    "n": "Kisses From Italy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLSH",
+    "n": "Panacea Life Sciences Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MOBBW",
+    "n": "Mobilicom Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AIMI",
+    "n": "Aim Immunotech Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FVTI",
+    "n": "Fortune Valley Treasures, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EESH",
+    "n": "Eestech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GSPI",
+    "n": "Green Star Products, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HBUV",
+    "n": "Hubilu Venture Corp",
+    "e": "US"
+  },
+  {
+    "s": "TNBI",
+    "n": "Tanke Biosciences Corp",
+    "e": "US"
+  },
+  {
+    "s": "CTHR",
+    "n": "Charles & Colvard Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CDSG",
+    "n": "China Dongsheng International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KOAN",
+    "n": "Resonate Blends, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NTRR",
+    "n": "Neutra Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ESSI",
+    "n": "Eco Science Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TLSS",
+    "n": "Transportation & Logistics Systems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IPIX",
+    "n": "Innovation Pharmaceuticals Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EHVVF",
+    "n": "Ehave, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MDEX",
+    "n": "Madison Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CUEN",
+    "n": "Cuentas Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADMG",
+    "n": "Adamant Dri Processing & Minerals Group",
+    "e": "US"
+  },
+  {
+    "s": "CRDV",
+    "n": "Community Redevelopment Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KACLF",
+    "n": "Kairous Acquisition Corp. Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ZPTA",
+    "n": "Zapata Quantum, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APSI",
+    "n": "Aqua Power Systems Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KGKG",
+    "n": "Kona Gold Beverage, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FKST",
+    "n": "Flowerkist Skin Care & Cosmetics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASII",
+    "n": "Accredited Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INNI",
+    "n": "Innovaro, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MMMW",
+    "n": "Mass Megawatts Wind Power Inc",
+    "e": "US"
+  },
+  {
+    "s": "TKMO",
+    "n": "Tekumo, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GESI",
+    "n": "General European Strategic Investments, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GMBL",
+    "n": "Esports Entertainment Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BLPG",
+    "n": "Blue Line Protection Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SRAX",
+    "n": "Srax, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "INQD",
+    "n": "Indoor Harvest Corp",
+    "e": "US"
+  },
+  {
+    "s": "RTON",
+    "n": "Right On Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MASN",
+    "n": "Maison Luxe, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SANW",
+    "n": "S&W Seed Co",
+    "e": "US"
+  },
+  {
+    "s": "SHGI",
+    "n": "Sparx Holdings Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BZWR",
+    "n": "Business Warrior Corp",
+    "e": "US"
+  },
+  {
+    "s": "GXXM",
+    "n": "Gex Management, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MARK",
+    "n": "Remark Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENSV",
+    "n": "Enservco Corp",
+    "e": "US"
+  },
+  {
+    "s": "PLPL",
+    "n": "Plandai Biotechnology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EDGM",
+    "n": "Edgemode, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OXBRW",
+    "n": "Oxbridge Re Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MODVQ",
+    "n": "Modivcare Inc",
+    "e": "US"
+  },
+  {
+    "s": "CTKYY",
+    "n": "Cootek(Cayman)Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STAL",
+    "n": "Star Alliance International Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GWSO",
+    "n": "Global Warming Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EMED",
+    "n": "Electromedical Technologies, Inc",
+    "e": "US"
+  },
+  {
+    "s": "TCBPY",
+    "n": "Tc Biopharm (Holdings) Plc",
+    "e": "US"
+  },
+  {
+    "s": "DPUI",
+    "n": "Discount Print Usa, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENDV",
+    "n": "Endonovo Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TTOO",
+    "n": "T2 Biosystems, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SONX",
+    "n": "Sonendo, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMMJ",
+    "n": "American Cannabis Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "USDP",
+    "n": "Usd Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "NBIO",
+    "n": "Nascent Biotech Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARDS",
+    "n": "Aridis Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SSOK",
+    "n": "Sunstock, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GIPL",
+    "n": "Global Innovative Platforms Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SAML",
+    "n": "Samsara Luggage, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NVOS",
+    "n": "Novo Integrated Sciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TBLT",
+    "n": "Toughbuilt Industries, Inc",
+    "e": "US"
+  },
+  {
+    "s": "RGIN",
+    "n": "Regenicin, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DWAY",
+    "n": "Driveitaway Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACBM",
+    "n": "Acro Biomedical Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SNPW",
+    "n": "Sun Pacific Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SING",
+    "n": "Singlepoint Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RTSL",
+    "n": "Rapid Therapeutic Science Laboratories, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PGTK",
+    "n": "Pacific Green Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VFRM",
+    "n": "Veritas Farms, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SMFL",
+    "n": "Smart For Life, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LPTVQ",
+    "n": "Loop Media, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DLTI",
+    "n": "Dlt Resolution Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNAX",
+    "n": "Stryve Foods, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPIEF",
+    "n": "Spi Energy Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SCPX",
+    "n": "Scorpius Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DHCC",
+    "n": "Diamondhead Casino Corp",
+    "e": "US"
+  },
+  {
+    "s": "ALPP",
+    "n": "Alpine 4 Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SONG",
+    "n": "Music Licensing Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMPE",
+    "n": "Ampio Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AFIB",
+    "n": "Acutus Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WDDD",
+    "n": "Worlds Inc",
+    "e": "US"
+  },
+  {
+    "s": "SYRS",
+    "n": "Syros Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "COMS",
+    "n": "Comsovereign Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "THCT",
+    "n": "Thc Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BISA",
+    "n": "Baltic International Usa Inc",
+    "e": "US"
+  },
+  {
+    "s": "FPAY",
+    "n": "Flexshopper, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UTRS",
+    "n": "Minerva Surgical Inc",
+    "e": "US"
+  },
+  {
+    "s": "CALA",
+    "n": "Calithera Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AHII",
+    "n": "American Heritage International Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLVR",
+    "n": "Clever Leaves Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BAC-PL",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "BAC-PM",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "MER-PK",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "BAC-PN",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "BAC-PO",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "BAC-PP",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "BAC-PQ",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "BAC-PS",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "BACRP",
+    "n": "Bank Of America Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "TCPA",
+    "n": "Transcanada Pipelines Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FHN-PC",
+    "n": "First Horizon Corp",
+    "e": "US"
+  },
+  {
+    "s": "FHN-PE",
+    "n": "First Horizon Corp",
+    "e": "US"
+  },
+  {
+    "s": "FHN-PF",
+    "n": "First Horizon Corp",
+    "e": "US"
+  },
+  {
+    "s": "CELG-RI",
+    "n": "Bristol Myers Squibb Co",
+    "e": "US"
+  },
+  {
+    "s": "SF-PC",
+    "n": "Stifel Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "SF-PD",
+    "n": "Stifel Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "SFB",
+    "n": "Stifel Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "CDZIP",
+    "n": "Cadiz Inc",
+    "e": "US"
+  },
+  {
+    "s": "BPPFF",
+    "n": "Bp Plc",
+    "e": "US"
+  },
+  {
+    "s": "CMSC",
+    "n": "Cms Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "CMSD",
+    "n": "Cms Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "CMS-PC",
+    "n": "Cms Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "FCELB",
+    "n": "Fuelcell Energy Inc",
+    "e": "US"
+  },
+  {
+    "s": "F-PB",
+    "n": "Ford Motor Co",
+    "e": "US"
+  },
+  {
+    "s": "F-PC",
+    "n": "Ford Motor Co",
+    "e": "US"
+  },
+  {
+    "s": "F-PD",
+    "n": "Ford Motor Co",
+    "e": "US"
+  },
+  {
+    "s": "HBANM",
+    "n": "Huntington Bancshares Inc /Md/",
+    "e": "US"
+  },
+  {
+    "s": "HBANP",
+    "n": "Huntington Bancshares Inc /Md/",
+    "e": "US"
+  },
+  {
+    "s": "LNC-PD",
+    "n": "Lincoln National Corp",
+    "e": "US"
+  },
+  {
+    "s": "INPAP",
+    "n": "International Paper Co /New/",
+    "e": "US"
+  },
+  {
+    "s": "HBANL",
+    "n": "Huntington Bancshares Inc /Md/",
+    "e": "US"
+  },
+  {
+    "s": "SLNHP",
+    "n": "Soluna Holdings, Inc",
+    "e": "US"
+  },
+  {
+    "s": "WELPM",
+    "n": "Wisconsin Electric Power Co",
+    "e": "US"
+  },
+  {
+    "s": "KEY-PL",
+    "n": "Keycorp /New/",
+    "e": "US"
+  },
+  {
+    "s": "SCE-PG",
+    "n": "Southern California Edison Co",
+    "e": "US"
+  },
+  {
+    "s": "SCE-PM",
+    "n": "Southern California Edison Co",
+    "e": "US"
+  },
+  {
+    "s": "SCE-PK",
+    "n": "Southern California Edison Co",
+    "e": "US"
+  },
+  {
+    "s": "SCE-PL",
+    "n": "Southern California Edison Co",
+    "e": "US"
+  },
+  {
+    "s": "SCE-PN",
+    "n": "Southern California Edison Co",
+    "e": "US"
+  },
+  {
+    "s": "ALL-PI",
+    "n": "Allstate Corp",
+    "e": "US"
+  },
+  {
+    "s": "ALL-PJ",
+    "n": "Allstate Corp",
+    "e": "US"
+  },
+  {
+    "s": "BC-PC",
+    "n": "Brunswick Corp",
+    "e": "US"
+  },
+  {
+    "s": "AUB-PA",
+    "n": "Atlantic Union Bankshares Corp",
+    "e": "US"
+  },
+  {
+    "s": "INVUP",
+    "n": "Investview, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FCNCO",
+    "n": "First Citizens Bancshares Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "FCNCP",
+    "n": "First Citizens Bancshares Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "CHSCL",
+    "n": "Chs Inc",
+    "e": "US"
+  },
+  {
+    "s": "CHSCM",
+    "n": "Chs Inc",
+    "e": "US"
+  },
+  {
+    "s": "CHSCN",
+    "n": "Chs Inc",
+    "e": "US"
+  },
+  {
+    "s": "CHSCO",
+    "n": "Chs Inc",
+    "e": "US"
+  },
+  {
+    "s": "HWCPZ",
+    "n": "Hancock Whitney Corp",
+    "e": "US"
+  },
+  {
+    "s": "CFG-PE",
+    "n": "Citizens Financial Group Inc/Ri",
+    "e": "US"
+  },
+  {
+    "s": "CFG-PH",
+    "n": "Citizens Financial Group Inc/Ri",
+    "e": "US"
+  },
+  {
+    "s": "CFG-PI",
+    "n": "Citizens Financial Group Inc/Ri",
+    "e": "US"
+  },
+  {
+    "s": "CNOBP",
+    "n": "Connectone Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KGCRF",
+    "n": "Kinross Gold Corp",
+    "e": "US"
+  },
+  {
+    "s": "GENVR",
+    "n": "Gen Digital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CLSKW",
+    "n": "Cleanspark, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "C-PN",
+    "n": "Citigroup Inc",
+    "e": "US"
+  },
+  {
+    "s": "ONBPO",
+    "n": "Old National Bancorp /In/",
+    "e": "US"
+  },
+  {
+    "s": "ONBPP",
+    "n": "Old National Bancorp /In/",
+    "e": "US"
+  },
+  {
+    "s": "BCHTD",
+    "n": "Birchtech Corp.",
+    "e": "US"
+  },
+  {
+    "s": "XOMAO",
+    "n": "Xoma Royalty Corp",
+    "e": "US"
+  },
+  {
+    "s": "XOMAP",
+    "n": "Xoma Royalty Corp",
+    "e": "US"
+  },
+  {
+    "s": "SENEM",
+    "n": "Seneca Foods Corp",
+    "e": "US"
+  },
+  {
+    "s": "SENEL",
+    "n": "Seneca Foods Corp",
+    "e": "US"
+  },
+  {
+    "s": "WFC-PD",
+    "n": "Wells Fargo & Company/Mn",
+    "e": "US"
+  },
+  {
+    "s": "WSBCO",
+    "n": "Wesbanco Inc",
+    "e": "US"
+  },
+  {
+    "s": "USB-PR",
+    "n": "Us Bancorp \\De\\",
+    "e": "US"
+  },
+  {
+    "s": "USB-PS",
+    "n": "Us Bancorp \\De\\",
+    "e": "US"
+  },
+  {
+    "s": "USB-PQ",
+    "n": "Us Bancorp \\De\\",
+    "e": "US"
+  },
+  {
+    "s": "MNESP",
+    "n": "Msa Safety Inc",
+    "e": "US"
+  },
+  {
+    "s": "WFC-PZ",
+    "n": "Wells Fargo & Company/Mn",
+    "e": "US"
+  },
+  {
+    "s": "WFCNP",
+    "n": "Wells Fargo & Company/Mn",
+    "e": "US"
+  },
+  {
+    "s": "WFC-PA",
+    "n": "Wells Fargo & Company/Mn",
+    "e": "US"
+  },
+  {
+    "s": "ZIONP",
+    "n": "Zions Bancorporation, National Association /Ut/",
+    "e": "US"
+  },
+  {
+    "s": "UNLYD",
+    "n": "Unilever Plc",
+    "e": "US"
+  },
+  {
+    "s": "ATMP",
+    "n": "Barclays Bank Plc",
+    "e": "US"
+  },
+  {
+    "s": "BWVTF",
+    "n": "Barclays Bank Plc",
+    "e": "US"
+  },
+  {
+    "s": "DJP",
+    "n": "Barclays Bank Plc",
+    "e": "US"
+  },
+  {
+    "s": "GBUG",
+    "n": "Barclays Bank Plc",
+    "e": "US"
+  },
+  {
+    "s": "GRN",
+    "n": "Barclays Bank Plc",
+    "e": "US"
+  },
+  {
+    "s": "VXX",
+    "n": "Barclays Bank Plc",
+    "e": "US"
+  },
+  {
+    "s": "VXZ",
+    "n": "Barclays Bank Plc",
+    "e": "US"
+  },
+  {
+    "s": "JJETF",
+    "n": "Barclays Bank Plc",
+    "e": "US"
+  },
+  {
+    "s": "TAPR",
+    "n": "Barclays Bank Plc",
+    "e": "US"
+  },
+  {
+    "s": "FRMEP",
+    "n": "First Merchants Corp",
+    "e": "US"
+  },
+  {
+    "s": "RJF-PB",
+    "n": "Raymond James Financial Inc",
+    "e": "US"
+  },
+  {
+    "s": "UEPCO",
+    "n": "Union Electric Co",
+    "e": "US"
+  },
+  {
+    "s": "SNV-PE",
+    "n": "Synovus Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "FITBO",
+    "n": "Fifth Third Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "FITBP",
+    "n": "Fifth Third Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "CTO-PA",
+    "n": "Cto Realty Growth, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JPM-PJ",
+    "n": "Jpmorgan Chase & Co",
+    "e": "US"
+  },
+  {
+    "s": "AMJB",
+    "n": "Jpmorgan Chase & Co",
+    "e": "US"
+  },
+  {
+    "s": "JPM-PK",
+    "n": "Jpmorgan Chase & Co",
+    "e": "US"
+  },
+  {
+    "s": "JPM-PL",
+    "n": "Jpmorgan Chase & Co",
+    "e": "US"
+  },
+  {
+    "s": "JPM-PM",
+    "n": "Jpmorgan Chase & Co",
+    "e": "US"
+  },
+  {
+    "s": "VYLD",
+    "n": "Jpmorgan Chase & Co",
+    "e": "US"
+  },
+  {
+    "s": "VAL-WT",
+    "n": "Valaris Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TFC-PI",
+    "n": "Truist Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "TFC-PO",
+    "n": "Truist Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "TFC-PR",
+    "n": "Truist Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "PNMXO",
+    "n": "Public Service Co Of New Mexico",
+    "e": "US"
+  },
+  {
+    "s": "XELLL",
+    "n": "Xcel Energy Inc",
+    "e": "US"
+  },
+  {
+    "s": "BOH-PA",
+    "n": "Bank Of Hawaii Corp",
+    "e": "US"
+  },
+  {
+    "s": "BOH-PB",
+    "n": "Bank Of Hawaii Corp",
+    "e": "US"
+  },
+  {
+    "s": "PAASF",
+    "n": "Pan American Silver Corp",
+    "e": "US"
+  },
+  {
+    "s": "AEFC",
+    "n": "Aegon Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "NEE-PS",
+    "n": "Nextera Energy Inc",
+    "e": "US"
+  },
+  {
+    "s": "NEE-PT",
+    "n": "Nextera Energy Inc",
+    "e": "US"
+  },
+  {
+    "s": "NEE-PU",
+    "n": "Nextera Energy Inc",
+    "e": "US"
+  },
+  {
+    "s": "NEE-PN",
+    "n": "Nextera Energy Inc",
+    "e": "US"
+  },
+  {
+    "s": "FULTP",
+    "n": "Fulton Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "VNO-PN",
+    "n": "Vornado Realty Trust",
+    "e": "US"
+  },
+  {
+    "s": "VNO-PO",
+    "n": "Vornado Realty Trust",
+    "e": "US"
+  },
+  {
+    "s": "ENBFF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "BA-PA",
+    "n": "Boeing Co",
+    "e": "US"
+  },
+  {
+    "s": "EBGEF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "EBRGF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "EBRZF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "EBBGF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "ENFFF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "ENBHF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "ENBMF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "ENBOF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "ENBSF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "ENBNF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "ENBGF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "ENBRF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "ENNPF",
+    "n": "Enbridge Inc",
+    "e": "US"
+  },
+  {
+    "s": "WOLTF",
+    "n": "Wolters Kluwer N V /Fi",
+    "e": "US"
+  },
+  {
+    "s": "SOCGM",
+    "n": "Southern California Gas Co",
+    "e": "US"
+  },
+  {
+    "s": "NTRSO",
+    "n": "Northern Trust Corp",
+    "e": "US"
+  },
+  {
+    "s": "CFR-PB",
+    "n": "Cullen/Frost Bankers, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DDT",
+    "n": "Dillard'S, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MOVAA",
+    "n": "Movado Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "MSEXP",
+    "n": "Middlesex Water Co",
+    "e": "US"
+  },
+  {
+    "s": "WBS-PG",
+    "n": "Webster Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "ASB-PF",
+    "n": "Associated Banc-Corp",
+    "e": "US"
+  },
+  {
+    "s": "ASBA",
+    "n": "Associated Banc-Corp",
+    "e": "US"
+  },
+  {
+    "s": "WRB-PF",
+    "n": "Berkley W R Corp",
+    "e": "US"
+  },
+  {
+    "s": "WRB-PG",
+    "n": "Berkley W R Corp",
+    "e": "US"
+  },
+  {
+    "s": "WRB-PH",
+    "n": "Berkley W R Corp",
+    "e": "US"
+  },
+  {
+    "s": "DHTI",
+    "n": "Dalrada Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "WBKCY",
+    "n": "Westpac Banking Corp",
+    "e": "US"
+  },
+  {
+    "s": "BPOPM",
+    "n": "Popular, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GAB-PK",
+    "n": "Gabelli Equity Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "FNMAP",
+    "n": "Federal National Mortgage Association Fannie Mae",
+    "e": "US"
+  },
+  {
+    "s": "SCHW-PJ",
+    "n": "Schwab Charles Corp",
+    "e": "US"
+  },
+  {
+    "s": "GL-PD",
+    "n": "Globe Life Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PFH",
+    "n": "Prudential Financial Inc",
+    "e": "US"
+  },
+  {
+    "s": "PRH",
+    "n": "Prudential Financial Inc",
+    "e": "US"
+  },
+  {
+    "s": "PRS",
+    "n": "Prudential Financial Inc",
+    "e": "US"
+  },
+  {
+    "s": "PTCCY",
+    "n": "Petrochina Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CSCIF",
+    "n": "Cosciens Biopharma Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KMPB",
+    "n": "Kemper Corp",
+    "e": "US"
+  },
+  {
+    "s": "AFGD",
+    "n": "American Financial Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "AFGE",
+    "n": "American Financial Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "AFGB",
+    "n": "American Financial Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "NXPLW",
+    "n": "Nextplat Corp",
+    "e": "US"
+  },
+  {
+    "s": "GLDI",
+    "n": "Credit Suisse Ag",
+    "e": "US"
+  },
+  {
+    "s": "SLVO",
+    "n": "Credit Suisse Ag",
+    "e": "US"
+  },
+  {
+    "s": "USOI",
+    "n": "Credit Suisse Ag",
+    "e": "US"
+  },
+  {
+    "s": "SLFIF",
+    "n": "Sun Life Financial Inc",
+    "e": "US"
+  },
+  {
+    "s": "SUNFF",
+    "n": "Sun Life Financial Inc",
+    "e": "US"
+  },
+  {
+    "s": "MET-PF",
+    "n": "Metlife Inc",
+    "e": "US"
+  },
+  {
+    "s": "SLFQF",
+    "n": "Sun Life Financial Inc",
+    "e": "US"
+  },
+  {
+    "s": "DTK",
+    "n": "Dte Energy Co",
+    "e": "US"
+  },
+  {
+    "s": "DTG",
+    "n": "Dte Energy Co",
+    "e": "US"
+  },
+  {
+    "s": "DTB",
+    "n": "Dte Energy Co",
+    "e": "US"
+  },
+  {
+    "s": "RNR-PG",
+    "n": "Renaissancere Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MLCMF",
+    "n": "Millicom International Cellular Sa",
+    "e": "US"
+  },
+  {
+    "s": "PREJF",
+    "n": "Partnerre Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EMRJF",
+    "n": "Emera Inc",
+    "e": "US"
+  },
+  {
+    "s": "EMICF",
+    "n": "Emera Inc",
+    "e": "US"
+  },
+  {
+    "s": "LLOBF",
+    "n": "Lloyds Banking Group Plc",
+    "e": "US"
+  },
+  {
+    "s": "QXO-PB",
+    "n": "Qxo, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HYT-RW",
+    "n": "Blackrock Corporate High Yield Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AGQPF",
+    "n": "Algonquin Power & Utilities Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AQNB",
+    "n": "Algonquin Power & Utilities Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PAAPU",
+    "n": "Plains All American Pipeline Lp",
+    "e": "US"
+  },
+  {
+    "s": "EFSCP",
+    "n": "Enterprise Financial Services Corp",
+    "e": "US"
+  },
+  {
+    "s": "CNDIF",
+    "n": "Canadian Imperial Bank Of Commerce /Can/",
+    "e": "US"
+  },
+  {
+    "s": "EXEEZ",
+    "n": "Expand Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "EXEEW",
+    "n": "Expand Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "EXEEL",
+    "n": "Expand Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "CTLPP",
+    "n": "Cantaloupe, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPE-PC",
+    "n": "Special Opportunities Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BKFOF",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "BRPSF",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "BRFCF",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "BKPA",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "BNH",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "BNJ",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "BROXF",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "BXDIF",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "BRCFF",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "BKFDF",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "BAMKF",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "BKAMF",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "BKFAF",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "BKFPF",
+    "n": "Brookfield Corp /On/",
+    "e": "US"
+  },
+  {
+    "s": "LFMDP",
+    "n": "Lifemd, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARES-PB",
+    "n": "Ares Management Corp",
+    "e": "US"
+  },
+  {
+    "s": "LGNDZ",
+    "n": "Ligand Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "LGNXZ",
+    "n": "Ligand Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "LGNYZ",
+    "n": "Ligand Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "LGNZZ",
+    "n": "Ligand Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "MSTLW",
+    "n": "Morgan Stanley",
+    "e": "US"
+  },
+  {
+    "s": "MS-PQ",
+    "n": "Morgan Stanley",
+    "e": "US"
+  },
+  {
+    "s": "MS-PO",
+    "n": "Morgan Stanley",
+    "e": "US"
+  },
+  {
+    "s": "MS-PP",
+    "n": "Morgan Stanley",
+    "e": "US"
+  },
+  {
+    "s": "MS-PL",
+    "n": "Morgan Stanley",
+    "e": "US"
+  },
+  {
+    "s": "GPUS-PD",
+    "n": "Hyperscale Data, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "REGCO",
+    "n": "Regency Centers Corp",
+    "e": "US"
+  },
+  {
+    "s": "REGCP",
+    "n": "Regency Centers Corp",
+    "e": "US"
+  },
+  {
+    "s": "TDBCP",
+    "n": "Toronto Dominion Bank",
+    "e": "US"
+  },
+  {
+    "s": "XXAAU",
+    "n": "Aei Income & Growth Fund Xxi Ltd Partnership",
+    "e": "US"
+  },
+  {
+    "s": "ADC-PA",
+    "n": "Agree Realty Corp",
+    "e": "US"
+  },
+  {
+    "s": "ALB-PA",
+    "n": "Albemarle Corp",
+    "e": "US"
+  },
+  {
+    "s": "ANG-PD",
+    "n": "American National Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "POWWP",
+    "n": "Outdoor Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "WTFCN",
+    "n": "Wintrust Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "RYLBF",
+    "n": "Royal Bank Of Canada",
+    "e": "US"
+  },
+  {
+    "s": "MBNKO",
+    "n": "Medallion Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "BMPA",
+    "n": "Bmp Ai Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBBY-WT",
+    "n": "Bed Bath & Beyond, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TDS-PU",
+    "n": "Telephone & Data Systems Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "TDS-PV",
+    "n": "Telephone & Data Systems Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "NBRWF",
+    "n": "Nabors Industries Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BANC-PF",
+    "n": "Banc Of California, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TSLTF",
+    "n": "Transalta Corp",
+    "e": "US"
+  },
+  {
+    "s": "TACPF",
+    "n": "Transalta Corp",
+    "e": "US"
+  },
+  {
+    "s": "HNNAZ",
+    "n": "Hennessy Advisors Inc",
+    "e": "US"
+  },
+  {
+    "s": "DGP",
+    "n": "Deutsche Bank Aktiengesellschaft",
+    "e": "US"
+  },
+  {
+    "s": "DEENF",
+    "n": "Deutsche Bank Aktiengesellschaft",
+    "e": "US"
+  },
+  {
+    "s": "ADZCF",
+    "n": "Deutsche Bank Aktiengesellschaft",
+    "e": "US"
+  },
+  {
+    "s": "DGZ",
+    "n": "Deutsche Bank Aktiengesellschaft",
+    "e": "US"
+  },
+  {
+    "s": "DZZ",
+    "n": "Deutsche Bank Aktiengesellschaft",
+    "e": "US"
+  },
+  {
+    "s": "OLOXF",
+    "n": "Deutsche Bank Aktiengesellschaft",
+    "e": "US"
+  },
+  {
+    "s": "AILIO",
+    "n": "Ameren Illinois Co",
+    "e": "US"
+  },
+  {
+    "s": "AILIP",
+    "n": "Ameren Illinois Co",
+    "e": "US"
+  },
+  {
+    "s": "MTB-PK",
+    "n": "M&T Bank Corp",
+    "e": "US"
+  },
+  {
+    "s": "MTB-PJ",
+    "n": "M&T Bank Corp",
+    "e": "US"
+  },
+  {
+    "s": "MTB-PH",
+    "n": "M&T Bank Corp",
+    "e": "US"
+  },
+  {
+    "s": "UZE",
+    "n": "Array Digital Infrastructure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UZF",
+    "n": "Array Digital Infrastructure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UZD",
+    "n": "Array Digital Infrastructure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CWLXF",
+    "n": "C21 Investments Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DCOMP",
+    "n": "Dime Community Bancshares, Inc. /Ny/",
+    "e": "US"
+  },
+  {
+    "s": "DCOMG",
+    "n": "Dime Community Bancshares, Inc. /Ny/",
+    "e": "US"
+  },
+  {
+    "s": "FIISP",
+    "n": "Financial Institutions Inc",
+    "e": "US"
+  },
+  {
+    "s": "FIISO",
+    "n": "Financial Institutions Inc",
+    "e": "US"
+  },
+  {
+    "s": "BANFP",
+    "n": "Bancfirst Corp /Ok/",
+    "e": "US"
+  },
+  {
+    "s": "LNWO",
+    "n": "Light & Wonder, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LAWIL",
+    "n": "Light & Wonder, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OXY-WT",
+    "n": "Occidental Petroleum Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "AIMDW",
+    "n": "Ainos, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HACBF",
+    "n": "Hachijuni Bank Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CCNEP",
+    "n": "Cnb Financial Corp/Pa",
+    "e": "US"
+  },
+  {
+    "s": "T-PA",
+    "n": "At&T Inc.",
+    "e": "US"
+  },
+  {
+    "s": "T-PC",
+    "n": "At&T Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UMBFO",
+    "n": "Umb Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "CTDD",
+    "n": "Qwest Corp",
+    "e": "US"
+  },
+  {
+    "s": "SOJD",
+    "n": "Southern Co",
+    "e": "US"
+  },
+  {
+    "s": "SOJE",
+    "n": "Southern Co",
+    "e": "US"
+  },
+  {
+    "s": "SOMN",
+    "n": "Southern Co",
+    "e": "US"
+  },
+  {
+    "s": "SOJF",
+    "n": "Southern Co",
+    "e": "US"
+  },
+  {
+    "s": "CHNEY",
+    "n": "China Eastern Airlines Corp Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CRESW",
+    "n": "Cresud Inc",
+    "e": "US"
+  },
+  {
+    "s": "PCG-PX",
+    "n": "Pg&E Corp",
+    "e": "US"
+  },
+  {
+    "s": "WAFDP",
+    "n": "Wafd Inc",
+    "e": "US"
+  },
+  {
+    "s": "WINTW",
+    "n": "Windtree Therapeutics Inc /De/",
+    "e": "US"
+  },
+  {
+    "s": "GRLFD",
+    "n": "Green Leaf Innovations Inc",
+    "e": "US"
+  },
+  {
+    "s": "ELCPF",
+    "n": "Edp Energias De Portugal Sa",
+    "e": "US"
+  },
+  {
+    "s": "PTNRF",
+    "n": "Partner Communications Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TGOPF",
+    "n": "3i Group Plc",
+    "e": "US"
+  },
+  {
+    "s": "SWKHL",
+    "n": "Swk Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "AMUB",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "BDCX",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "BDCZ",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "CEFD",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "CEFZ",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "UCIB",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "USML",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "SMHB",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "MTUL",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "MVRL",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "PFFL",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "QULL",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "SCDL",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "IWFL",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "IWML",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "MLPB",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "MLPR",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "HDLB",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "IFED",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "IWDL",
+    "n": "Ubs Ag",
+    "e": "US"
+  },
+  {
+    "s": "NIXXW",
+    "n": "Nixxy, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SBBTF",
+    "n": "Vend Marketplaces Asa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PFXNZ",
+    "n": "Phenixfin Corp",
+    "e": "US"
+  },
+  {
+    "s": "NMFCZ",
+    "n": "New Mountain Finance Corp",
+    "e": "US"
+  },
+  {
+    "s": "KRNGF",
+    "n": "Karoon Gas Australia Ltd /Adr/",
+    "e": "US"
+  },
+  {
+    "s": "CLDT-PA",
+    "n": "Chatham Lodging Trust",
+    "e": "US"
+  },
+  {
+    "s": "LOB-PA",
+    "n": "Live Oak Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JTGLF",
+    "n": "Citibank,N.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "SKLTF",
+    "n": "Seek Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CUBB",
+    "n": "Customers Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HPP-PC",
+    "n": "Hudson Pacific Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SFDMF",
+    "n": "Shanghai Fudan Microelectronics Co Limited/Adr/",
+    "e": "US"
+  },
+  {
+    "s": "SSSSL",
+    "n": "Suro Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ATHS",
+    "n": "Athene Holding Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ATH-PB",
+    "n": "Athene Holding Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ATH-PD",
+    "n": "Athene Holding Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ATH-PE",
+    "n": "Athene Holding Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BTGRF",
+    "n": "Bts Group Holdings Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BTLWF",
+    "n": "Bts Group Holdings Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BEPH",
+    "n": "Brookfield Renewable Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "BEPI",
+    "n": "Brookfield Renewable Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "BEP-PA",
+    "n": "Brookfield Renewable Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "BRENF",
+    "n": "Brookfield Renewable Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "BEPJ",
+    "n": "Brookfield Renewable Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "BIPH",
+    "n": "Brookfield Infrastructure Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "BIPI",
+    "n": "Brookfield Infrastructure Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "BIP-PA",
+    "n": "Brookfield Infrastructure Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "BIP-PB",
+    "n": "Brookfield Infrastructure Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "BRIPF",
+    "n": "Brookfield Infrastructure Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "BIPJ",
+    "n": "Brookfield Infrastructure Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "GFSAY",
+    "n": "Gafisa S.A.",
+    "e": "US"
+  },
+  {
+    "s": "BK-PK",
+    "n": "Bank Of New York Mellon Corp",
+    "e": "US"
+  },
+  {
+    "s": "ACR-PC",
+    "n": "Acres Commercial Realty Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ACR-PD",
+    "n": "Acres Commercial Realty Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SGBAF",
+    "n": "Ses S.A.",
+    "e": "US"
+  },
+  {
+    "s": "QVCGP",
+    "n": "Qvc Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QVCGB",
+    "n": "Qvc Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXDT-PA",
+    "n": "Nexpoint Diversified Real Estate Trust",
+    "e": "US"
+  },
+  {
+    "s": "AXIA-PC",
+    "n": "Brazilian Electric Power Co",
+    "e": "US"
+  },
+  {
+    "s": "AXIA-P",
+    "n": "Brazilian Electric Power Co",
+    "e": "US"
+  },
+  {
+    "s": "OPIRQ",
+    "n": "Office Properties Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "ATLCL",
+    "n": "Atlanticus Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "ATLCP",
+    "n": "Atlanticus Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "ATLCZ",
+    "n": "Atlanticus Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "CIMP",
+    "n": "Chimera Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "CIMN",
+    "n": "Chimera Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "CIMO",
+    "n": "Chimera Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "AGQ",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "BOIL",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "EUO",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "GLL",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "KOLD",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "YCL",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "YCS",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "ZSL",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "UGL",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "ULE",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "UVXY",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "VIXM",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "VIXY",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "SCO",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "SVXY",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "UCO",
+    "n": "Proshares Trust Ii",
+    "e": "US"
+  },
+  {
+    "s": "CYJBF",
+    "n": "Cargotec Corp Oyj",
+    "e": "US"
+  },
+  {
+    "s": "YRAIF",
+    "n": "Yara International Asa",
+    "e": "US"
+  },
+  {
+    "s": "MFICL",
+    "n": "Midcap Financial Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "MSBIP",
+    "n": "Midland States Bancorp, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASPSZ",
+    "n": "Altisource Portfolio Solutions S.A.",
+    "e": "US"
+  },
+  {
+    "s": "ASPSW",
+    "n": "Altisource Portfolio Solutions S.A.",
+    "e": "US"
+  },
+  {
+    "s": "NXPGF",
+    "n": "Mobico Group Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "RILYZ",
+    "n": "Brc Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RILYG",
+    "n": "Brc Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RILYK",
+    "n": "Brc Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RILYL",
+    "n": "Brc Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RILYN",
+    "n": "Brc Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RILYP",
+    "n": "Brc Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RILYT",
+    "n": "Brc Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DSX-WT",
+    "n": "Diana Shipping Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GME-WT",
+    "n": "Gamestop Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SNIRF",
+    "n": "Senior Plc",
+    "e": "US"
+  },
+  {
+    "s": "RSNHF",
+    "n": "Resona Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "BYDIF",
+    "n": "Byd Electronic (International) Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NWSZF",
+    "n": "Ctf Services Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OSSFF",
+    "n": "Embla Medical Hf/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TWOD",
+    "n": "Two Harbors Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NEMCL",
+    "n": "Newmont Corp /De/",
+    "e": "US"
+  },
+  {
+    "s": "CANE",
+    "n": "Teucrium Commodity Trust",
+    "e": "US"
+  },
+  {
+    "s": "CORN",
+    "n": "Teucrium Commodity Trust",
+    "e": "US"
+  },
+  {
+    "s": "SOYB",
+    "n": "Teucrium Commodity Trust",
+    "e": "US"
+  },
+  {
+    "s": "TAGS",
+    "n": "Teucrium Commodity Trust",
+    "e": "US"
+  },
+  {
+    "s": "WEAT",
+    "n": "Teucrium Commodity Trust",
+    "e": "US"
+  },
+  {
+    "s": "NCPLW",
+    "n": "Netcapital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EFC-PA",
+    "n": "Ellington Financial Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EFC-PB",
+    "n": "Ellington Financial Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EFC-PC",
+    "n": "Ellington Financial Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EFC-PD",
+    "n": "Ellington Financial Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HCIIP",
+    "n": "Hci Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FGBIP",
+    "n": "First Guaranty Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRBK-PA",
+    "n": "Green Brick Partners, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BWBBP",
+    "n": "Bridgewater Bancshares Inc",
+    "e": "US"
+  },
+  {
+    "s": "CODI-PC",
+    "n": "Compass Diversified Holdings",
+    "e": "US"
+  },
+  {
+    "s": "TOGIW",
+    "n": "Turnongreen, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SBFMW",
+    "n": "Sunshine Biopharma Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PI",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PJ",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PF",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PG",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PL",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PM",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PN",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PO",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PP",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PQ",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PR",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "PSA-PS",
+    "n": "Public Storage",
+    "e": "US"
+  },
+  {
+    "s": "LEXXW",
+    "n": "Lexaria Bioscience Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NFTM",
+    "n": "Buildablock Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SNBHD",
+    "n": "Sentient Brands Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNVEF",
+    "n": "Cenovus Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BNCWW",
+    "n": "Cea Industries Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CPER",
+    "n": "United States Commodity Index Funds Trust",
+    "e": "US"
+  },
+  {
+    "s": "DTSTW",
+    "n": "Data Storage Corp",
+    "e": "US"
+  },
+  {
+    "s": "NSKFF",
+    "n": "Kongsberg Gruppen Asa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PPLOF",
+    "n": "Pembina Pipeline Corp",
+    "e": "US"
+  },
+  {
+    "s": "PBPRF",
+    "n": "Pembina Pipeline Corp",
+    "e": "US"
+  },
+  {
+    "s": "PBNAF",
+    "n": "Pembina Pipeline Corp",
+    "e": "US"
+  },
+  {
+    "s": "PMBPF",
+    "n": "Pembina Pipeline Corp",
+    "e": "US"
+  },
+  {
+    "s": "PMMBF",
+    "n": "Pembina Pipeline Corp",
+    "e": "US"
+  },
+  {
+    "s": "PPLAF",
+    "n": "Pembina Pipeline Corp",
+    "e": "US"
+  },
+  {
+    "s": "PW-PA",
+    "n": "Power Reit",
+    "e": "US"
+  },
+  {
+    "s": "HTFB",
+    "n": "Horizon Technology Finance Corp",
+    "e": "US"
+  },
+  {
+    "s": "HTFC",
+    "n": "Horizon Technology Finance Corp",
+    "e": "US"
+  },
+  {
+    "s": "VIASP",
+    "n": "Via Renewables, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LAAI",
+    "n": "Loan Artificial Intelligence Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GLDW",
+    "n": "World Gold Trust",
+    "e": "US"
+  },
+  {
+    "s": "SPNT-PB",
+    "n": "Siriuspoint Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SSPFF",
+    "n": "Siriuspoint Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NUGND",
+    "n": "Livento Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VRMWW",
+    "n": "Vroom, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IHICF",
+    "n": "Ihi Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "INBKZ",
+    "n": "First Internet Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "SBEVW",
+    "n": "Splash Beverage Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NMPRY",
+    "n": "Navios Maritime Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QVCC",
+    "n": "Qvc Inc",
+    "e": "US"
+  },
+  {
+    "s": "OXSQH",
+    "n": "Oxford Square Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OXSQG",
+    "n": "Oxford Square Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BDRY",
+    "n": "Amplify Commodity Trust",
+    "e": "US"
+  },
+  {
+    "s": "BWET",
+    "n": "Amplify Commodity Trust",
+    "e": "US"
+  },
+  {
+    "s": "FCRX",
+    "n": "Crescent Capital Bdc, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADAPY",
+    "n": "Adaptimmune Therapeutics Plc",
+    "e": "US"
+  },
+  {
+    "s": "SHMZF",
+    "n": "Shimadzu Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "JBHIF",
+    "n": "Jb Hi-Fi Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PRHIZ",
+    "n": "Presurance Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TNONW",
+    "n": "Tenon Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BUGDF",
+    "n": "Bumrungrad Hospital Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BUHPF",
+    "n": "Bumrungrad Hospital Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BUHHF",
+    "n": "Bumrungrad Hospital Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "AUIWF",
+    "n": "Aurania Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BIVIW",
+    "n": "Biovie Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBAAY",
+    "n": "Alibaba Group Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FGNXP",
+    "n": "Fg Nexus Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AUUDW",
+    "n": "Auddia Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WTERD",
+    "n": "Alkaline Water Co Inc",
+    "e": "US"
+  },
+  {
+    "s": "WHLRL",
+    "n": "Wheeler Real Estate Investment Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCID",
+    "n": "Carlyle Credit Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "BSMLP",
+    "n": "Black Stone Minerals, L.P.",
+    "e": "US"
+  },
+  {
+    "s": "GGBY",
+    "n": "Alpha Investment Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MYSEW",
+    "n": "Myseum, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ACGP",
+    "n": "Associated Capital Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WEIBF",
+    "n": "Weibo Corp",
+    "e": "US"
+  },
+  {
+    "s": "FTAIM",
+    "n": "Ftai Aviation Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FTAIN",
+    "n": "Ftai Aviation Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HPHTF",
+    "n": "Hamamatsu Photonics K.K./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BCTXW",
+    "n": "Briacell Therapeutics Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BCTXZ",
+    "n": "Briacell Therapeutics Corp.",
+    "e": "US"
+  },
+  {
+    "s": "IHETW",
+    "n": "Iheartmedia, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IVDAW",
+    "n": "Iveda Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SAJ",
+    "n": "Saratoga Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SAT",
+    "n": "Saratoga Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SAY",
+    "n": "Saratoga Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SAZ",
+    "n": "Saratoga Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DUKB",
+    "n": "Duke Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "CITAF",
+    "n": "China Shipping Container Lines Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GAINN",
+    "n": "Gladstone Investment Corporation\\De",
+    "e": "US"
+  },
+  {
+    "s": "GAINZ",
+    "n": "Gladstone Investment Corporation\\De",
+    "e": "US"
+  },
+  {
+    "s": "GAINI",
+    "n": "Gladstone Investment Corporation\\De",
+    "e": "US"
+  },
+  {
+    "s": "KKRS",
+    "n": "Kkr & Co. Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KKRT",
+    "n": "Kkr & Co. Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KKR-PD",
+    "n": "Kkr & Co. Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CUENW",
+    "n": "Cuentas Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AGNCL",
+    "n": "Agnc Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ODVWZ",
+    "n": "Osisko Development Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AGNCO",
+    "n": "Agnc Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AGNCP",
+    "n": "Agnc Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AGNCZ",
+    "n": "Agnc Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NZEOY",
+    "n": "New Zealand Oil & Gas Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "AEBMF",
+    "n": "Anadolu Efes Biracilik Ve Malt Sanayi A S/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CMCSV",
+    "n": "Comcast Corp",
+    "e": "US"
+  },
+  {
+    "s": "SHMLF",
+    "n": "Shl Telemedicine Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CNO-PA",
+    "n": "Cno Financial Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SHO-PH",
+    "n": "Sunstone Hotel Investors, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SHO-PI",
+    "n": "Sunstone Hotel Investors, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BGMSP",
+    "n": "Bio Green Med Solution, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STRF",
+    "n": "Strategy Inc",
+    "e": "US"
+  },
+  {
+    "s": "STRK",
+    "n": "Strategy Inc",
+    "e": "US"
+  },
+  {
+    "s": "STRD",
+    "n": "Strategy Inc",
+    "e": "US"
+  },
+  {
+    "s": "NLY-PI",
+    "n": "Annaly Capital Management Inc",
+    "e": "US"
+  },
+  {
+    "s": "NLY-PJ",
+    "n": "Annaly Capital Management Inc",
+    "e": "US"
+  },
+  {
+    "s": "MOBQW",
+    "n": "Mobiquity Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FREJP",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "FMCKK",
+    "n": "Federal Home Loan Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "RDWQS",
+    "n": "Ridgewood Energy Q Fund Llc",
+    "e": "US"
+  },
+  {
+    "s": "GLU-PA",
+    "n": "Gabelli Global Utility & Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "ET-PI",
+    "n": "Energy Transfer Lp",
+    "e": "US"
+  },
+  {
+    "s": "GDV-PK",
+    "n": "Gabelli Dividend & Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "AHL-PF",
+    "n": "Aspen Insurance Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "STRRP",
+    "n": "Star Equity Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OXLCP",
+    "n": "Oxford Lane Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OXLCZ",
+    "n": "Oxford Lane Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OXLCL",
+    "n": "Oxford Lane Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ARR-PC",
+    "n": "Armour Residential Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OXLCG",
+    "n": "Oxford Lane Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OXLCI",
+    "n": "Oxford Lane Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OXLCN",
+    "n": "Oxford Lane Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PEB-PG",
+    "n": "Pebblebrook Hotel Trust",
+    "e": "US"
+  },
+  {
+    "s": "PEB-PH",
+    "n": "Pebblebrook Hotel Trust",
+    "e": "US"
+  },
+  {
+    "s": "FRSPF",
+    "n": "First Phosphate Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HWLDF",
+    "n": "H World Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RIV-PA",
+    "n": "Rivernorth Opportunities Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SMTGF",
+    "n": "Sma Solar Technology Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CIVII",
+    "n": "Civitas Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NASC",
+    "n": "Can B Corp",
+    "e": "US"
+  },
+  {
+    "s": "GOODN",
+    "n": "Gladstone Commercial Corp",
+    "e": "US"
+  },
+  {
+    "s": "GOODO",
+    "n": "Gladstone Commercial Corp",
+    "e": "US"
+  },
+  {
+    "s": "WAL-PA",
+    "n": "Western Alliance Bancorporation",
+    "e": "US"
+  },
+  {
+    "s": "TCEYF",
+    "n": "Tc Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "TCENF",
+    "n": "Tc Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "TCNCF",
+    "n": "Tc Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "TRPRF",
+    "n": "Tc Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "TRPPF",
+    "n": "Tc Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "TRPEF",
+    "n": "Tc Energy Corp",
+    "e": "US"
+  },
+  {
+    "s": "RGPX",
+    "n": "Regenerex Pharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ISMCF",
+    "n": "Ishares S&P Gsci Commodity-Indexed Trust",
+    "e": "US"
+  },
+  {
+    "s": "PSEC-PA",
+    "n": "Prospect Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "DLR-PL",
+    "n": "Digital Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SEAL-PA",
+    "n": "Seapeak Llc",
+    "e": "US"
+  },
+  {
+    "s": "SEAL-PB",
+    "n": "Seapeak Llc",
+    "e": "US"
+  },
+  {
+    "s": "GLP-PB",
+    "n": "Global Partners Lp",
+    "e": "US"
+  },
+  {
+    "s": "ABR-PD",
+    "n": "Arbor Realty Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "ABR-PE",
+    "n": "Arbor Realty Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "ABR-PF",
+    "n": "Arbor Realty Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "TEN-PE",
+    "n": "Tsakos Energy Navigation Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TEN-PF",
+    "n": "Tsakos Energy Navigation Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PNFPP",
+    "n": "Pinnacle Financial Partners Inc",
+    "e": "US"
+  },
+  {
+    "s": "BRKRP",
+    "n": "Bruker Corp",
+    "e": "US"
+  },
+  {
+    "s": "BFH-PA",
+    "n": "Bread Financial Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNTUF",
+    "n": "Santander Uk Plc",
+    "e": "US"
+  },
+  {
+    "s": "STNDF",
+    "n": "Santander Uk Plc",
+    "e": "US"
+  },
+  {
+    "s": "NMPWP",
+    "n": "National Grid Plc",
+    "e": "US"
+  },
+  {
+    "s": "NEWEN",
+    "n": "National Grid Plc",
+    "e": "US"
+  },
+  {
+    "s": "NMKCP",
+    "n": "National Grid Plc",
+    "e": "US"
+  },
+  {
+    "s": "NMKBP",
+    "n": "National Grid Plc",
+    "e": "US"
+  },
+  {
+    "s": "MGR",
+    "n": "Affiliated Managers Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGRB",
+    "n": "Affiliated Managers Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGRD",
+    "n": "Affiliated Managers Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGRE",
+    "n": "Affiliated Managers Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORANY",
+    "n": "Orange",
+    "e": "US"
+  },
+  {
+    "s": "SREA",
+    "n": "Sempra",
+    "e": "US"
+  },
+  {
+    "s": "ZIVOW",
+    "n": "Zivo Bioscience, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MNLCF",
+    "n": "Manulife Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "MNUPF",
+    "n": "Manulife Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "MNQFF",
+    "n": "Manulife Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "MNUFF",
+    "n": "Manulife Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "FNFPA",
+    "n": "First Niles Financial Inc",
+    "e": "US"
+  },
+  {
+    "s": "TMSOF",
+    "n": "Thomson Reuters Corp /Can/",
+    "e": "US"
+  },
+  {
+    "s": "DHCNI",
+    "n": "Diversified Healthcare Trust",
+    "e": "US"
+  },
+  {
+    "s": "DHCNL",
+    "n": "Diversified Healthcare Trust",
+    "e": "US"
+  },
+  {
+    "s": "TCBIO",
+    "n": "Texas Capital Bancshares Inc/Tx",
+    "e": "US"
+  },
+  {
+    "s": "NOVTU",
+    "n": "Novanta Inc",
+    "e": "US"
+  },
+  {
+    "s": "RZC",
+    "n": "Reinsurance Group Of America Inc",
+    "e": "US"
+  },
+  {
+    "s": "AERGP",
+    "n": "Applied Energetics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZNOGW",
+    "n": "Zion Oil & Gas Inc",
+    "e": "US"
+  },
+  {
+    "s": "EQH-PA",
+    "n": "Equitable Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EQH-PC",
+    "n": "Equitable Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LNXSF",
+    "n": "Lanxess Ag",
+    "e": "US"
+  },
+  {
+    "s": "VNUED",
+    "n": "Vnue, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIZN",
+    "n": "Assurant, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RF-PE",
+    "n": "Regions Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "RF-PF",
+    "n": "Regions Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "TMUSI",
+    "n": "T-Mobile Us, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TMUSL",
+    "n": "T-Mobile Us, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RCKTW",
+    "n": "Rocket Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TMUSZ",
+    "n": "T-Mobile Us, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MHNC",
+    "n": "Maiden Holdings, Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BBLGW",
+    "n": "Bone Biologics Corp",
+    "e": "US"
+  },
+  {
+    "s": "GNT-PA",
+    "n": "Gamco Natural Resources, Gold & Income Trust",
+    "e": "US"
+  },
+  {
+    "s": "TXEMF",
+    "n": "Templeton Emerging Markets Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "FLG-PU",
+    "n": "Flagstar Bank, National Association",
+    "e": "US"
+  },
+  {
+    "s": "FLG-PA",
+    "n": "Flagstar Bank, National Association",
+    "e": "US"
+  },
+  {
+    "s": "BFS-PE",
+    "n": "Saul Centers, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RWT-PA",
+    "n": "Redwood Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "RWTN",
+    "n": "Redwood Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "RWTP",
+    "n": "Redwood Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "RWTQ",
+    "n": "Redwood Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "RWTO",
+    "n": "Redwood Trust Inc",
+    "e": "US"
+  },
+  {
+    "s": "ACGLN",
+    "n": "Arch Capital Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BERZ",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "PTIXW",
+    "n": "Protagenic Therapeutics, Inc.New",
+    "e": "US"
+  },
+  {
+    "s": "FNGO",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "FNGS",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "FNGU",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "GDXD",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "DULL",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "FLYD",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "FLYU",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "COF-PI",
+    "n": "Capital One Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "COF-PJ",
+    "n": "Capital One Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "COF-PK",
+    "n": "Capital One Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "COF-PL",
+    "n": "Capital One Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "COF-PN",
+    "n": "Capital One Financial Corp",
+    "e": "US"
+  },
+  {
+    "s": "BNKD",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "BNKU",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "BULZ",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "JETU",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "JETD",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "CARD",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "CARU",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "SHNY",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "WTID",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "WTIU",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "GDXU",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "NRGD",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "NRGU",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "OILD",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "OILU",
+    "n": "Bank Of Montreal /Can/",
+    "e": "US"
+  },
+  {
+    "s": "SCLXW",
+    "n": "Scilex Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "MSOGF",
+    "n": "Miniso Group Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HGASW",
+    "n": "Global Gas Corp",
+    "e": "US"
+  },
+  {
+    "s": "PHXE-P",
+    "n": "Phoenix Energy One, Llc",
+    "e": "US"
+  },
+  {
+    "s": "RELIW",
+    "n": "Reliance Global Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KUKEY",
+    "n": "Kuke Music Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PMVCW",
+    "n": "Pmv Consumer Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "VGASW",
+    "n": "Verde Clean Fuels, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BNAIW",
+    "n": "Brand Engagement Network Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SDSTW",
+    "n": "Stardust Power Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TLSIW",
+    "n": "Trisalus Life Sciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IONQ-WT",
+    "n": "Ionq, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PDYNW",
+    "n": "Palladyne Ai Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NOTE-WT",
+    "n": "Fiscalnote Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MFGCD",
+    "n": "Mayfair Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AENTW",
+    "n": "Alliance Entertainment Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "ACHR-WT",
+    "n": "Archer Aviation Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TCBWF",
+    "n": "Tc Biopharm (Holdings) Plc",
+    "e": "US"
+  },
+  {
+    "s": "CYCUW",
+    "n": "Cycurion, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FGIWW",
+    "n": "Fgi Industries Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BULLW",
+    "n": "Webull Corp",
+    "e": "US"
+  },
+  {
+    "s": "TOIIW",
+    "n": "Oncology Institute, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DNOPF",
+    "n": "Dino Polska S.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "MSAIW",
+    "n": "Multisensor Ai Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALSUF",
+    "n": "Alpha Star Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "ALSWF",
+    "n": "Alpha Star Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "ALSTF",
+    "n": "Alpha Star Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "CINGW",
+    "n": "Cingulate Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AQUNR",
+    "n": "Aquaron Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AQUNU",
+    "n": "Aquaron Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FILG",
+    "n": "Grayscale Filecoin Trust (Fil)",
+    "e": "US"
+  },
+  {
+    "s": "BEAGU",
+    "n": "Bold Eagle Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BEAGR",
+    "n": "Bold Eagle Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "IAUX-WT",
+    "n": "I-80 Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NUVB-WT",
+    "n": "Nuvation Bio Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ISLUF",
+    "n": "Israel Acquisitions Corp",
+    "e": "US"
+  },
+  {
+    "s": "ISLWF",
+    "n": "Israel Acquisitions Corp",
+    "e": "US"
+  },
+  {
+    "s": "GSTK",
+    "n": "Growth Stalk Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "ESHAR",
+    "n": "Esh Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SATA",
+    "n": "Strive, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNCKW",
+    "n": "Coincheck Group N.V.",
+    "e": "US"
+  },
+  {
+    "s": "CLRRF",
+    "n": "Climaterock",
+    "e": "US"
+  },
+  {
+    "s": "CLRUF",
+    "n": "Climaterock",
+    "e": "US"
+  },
+  {
+    "s": "CLRWF",
+    "n": "Climaterock",
+    "e": "US"
+  },
+  {
+    "s": "SWVLW",
+    "n": "Swvl Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "CEROW",
+    "n": "Cero Therapeutics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BZAIW",
+    "n": "Blaize Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SVREW",
+    "n": "Saverone 2014 Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TETWF",
+    "n": "Technology & Telecommunication Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "TETUF",
+    "n": "Technology & Telecommunication Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "FEAV",
+    "n": "5e Advanced Materials, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RAJAF",
+    "n": "Cordyceps Sunshine Biotech Holdings Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "KVACU",
+    "n": "Keen Vision Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KVACW",
+    "n": "Keen Vision Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HOLOW",
+    "n": "Microcloud Hologram Inc.",
+    "e": "US"
+  },
+  {
+    "s": "COCHW",
+    "n": "Envoy Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PL-WT",
+    "n": "Planet Labs Pbc",
+    "e": "US"
+  },
+  {
+    "s": "DJTWW",
+    "n": "Trump Media & Technology Group Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RNWWW",
+    "n": "Renew Energy Global Plc",
+    "e": "US"
+  },
+  {
+    "s": "EUDAW",
+    "n": "Euda Health Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "GHBWF",
+    "n": "Glass House Brands Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ANNAW",
+    "n": "Aleanna, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AISPW",
+    "n": "Airship Ai Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ONFOW",
+    "n": "Onfolio Holdings, Inc",
+    "e": "US"
+  },
+  {
+    "s": "ONFOP",
+    "n": "Onfolio Holdings, Inc",
+    "e": "US"
+  },
+  {
+    "s": "MYPSW",
+    "n": "Playstudios, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FRBP",
+    "n": "Franklin Bsp Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "ICUCW",
+    "n": "Seastar Medical Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "RUMBW",
+    "n": "Rumble Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LIANY",
+    "n": "Lianbio",
+    "e": "US"
+  },
+  {
+    "s": "JXN-PA",
+    "n": "Jackson Financial Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BKKT-WT",
+    "n": "Bakkt Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KITTW",
+    "n": "Nauticus Robotics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OKMN",
+    "n": "Okmin Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DC-WT",
+    "n": "Dakota Gold Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ZCARW",
+    "n": "Zoomcar Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTSWF",
+    "n": "Cactus Acquisition Corp. 1 Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CTSUF",
+    "n": "Cactus Acquisition Corp. 1 Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CDIOW",
+    "n": "Cardio Diagnostics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RDZNW",
+    "n": "Roadzen Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WELWF",
+    "n": "Integrated Wellness Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "WELUF",
+    "n": "Integrated Wellness Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "EMCWF",
+    "n": "Embrace Change Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EMCRF",
+    "n": "Embrace Change Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EMCUF",
+    "n": "Embrace Change Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AMODW",
+    "n": "Alpha Modus Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VLN-WT",
+    "n": "Valens Semiconductor Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "BTSGU",
+    "n": "Brightspring Health Services, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMPX-WT",
+    "n": "Amprius Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BAKR",
+    "n": "Baker Global Asset Management Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DMYYU",
+    "n": "Dmy Squared Technology Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DMYYW",
+    "n": "Dmy Squared Technology Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VFSWW",
+    "n": "Vinfast Auto Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FORLU",
+    "n": "Four Leaf Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "FORLW",
+    "n": "Four Leaf Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "RZLVW",
+    "n": "Rezolve Ai Plc",
+    "e": "US"
+  },
+  {
+    "s": "SDAWW",
+    "n": "Suncar Technology Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DAZSF",
+    "n": "Zkgc New Energy Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ASPCU",
+    "n": "Aspac Iii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ASPCR",
+    "n": "Aspac Iii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FLDDW",
+    "n": "Fold Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BKLPF",
+    "n": "Pt Bukalapak.Com Tbk/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TFLM",
+    "n": "Tofla Megaline Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LSEB",
+    "n": "Lseb Creative Corp.",
+    "e": "US"
+  },
+  {
+    "s": "IVNHW",
+    "n": "Ivanhoe Electric Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADSEW",
+    "n": "Ads-Tec Energy Public Ltd Co",
+    "e": "US"
+  },
+  {
+    "s": "MTEKW",
+    "n": "Maris Tech Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CDROW",
+    "n": "Codere Online Luxembourg, S.A.",
+    "e": "US"
+  },
+  {
+    "s": "TVAIR",
+    "n": "Thayer Ventures Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "TVAIU",
+    "n": "Thayer Ventures Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "LMMY",
+    "n": "Lamy",
+    "e": "US"
+  },
+  {
+    "s": "GLTK",
+    "n": "Globaltech Corp",
+    "e": "US"
+  },
+  {
+    "s": "FUFUW",
+    "n": "Bitfufu Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AKPPS",
+    "n": "Ark7 Properties Plus Llc",
+    "e": "US"
+  },
+  {
+    "s": "TDACU",
+    "n": "Translational Development Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TDACW",
+    "n": "Translational Development Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BTMWW",
+    "n": "Bitcoin Depot Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENGNW",
+    "n": "Engene Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AFJKR",
+    "n": "Aimei Health Technology Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AFJKU",
+    "n": "Aimei Health Technology Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "LDTDF",
+    "n": "Leddartech Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NIVFW",
+    "n": "Newgenivf Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NPEHF",
+    "n": "Nippon Express Holdings, Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "RDPTF",
+    "n": "Radiopharm Theranostics Ltd",
+    "e": "US"
+  },
+  {
+    "s": "QLUNF",
+    "n": "Qilun Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "THQQF",
+    "n": "Embracer Group Ab/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SIMAW",
+    "n": "Sim Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "SIMAU",
+    "n": "Sim Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "PMCUF",
+    "n": "Pro Medicus Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "YDESW",
+    "n": "Yd Bio Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AGMWF",
+    "n": "Silver Mountain Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EURKR",
+    "n": "Eureka Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "EURKU",
+    "n": "Eureka Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "DTZZF",
+    "n": "Dotz Nano Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DSYWW",
+    "n": "Big Tree Cloud Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MGSD",
+    "n": "Maitong Sunshine Cultural Development Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PRXXF",
+    "n": "Paradox Interactive Ab/Adr",
+    "e": "US"
+  },
+  {
+    "s": "ABVEW",
+    "n": "Above Food Ingredients Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MRNOW",
+    "n": "Murano Global Investments Plc",
+    "e": "US"
+  },
+  {
+    "s": "SHMDW",
+    "n": "Schmid Group N.V.",
+    "e": "US"
+  },
+  {
+    "s": "LZM-WT",
+    "n": "Lifezone Metals Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BCGWW",
+    "n": "Binah Capital Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MACT",
+    "n": "Machten, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SVUWF",
+    "n": "Srivaru Holding Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LIMNW",
+    "n": "Liminatus Pharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCGWW",
+    "n": "Cheche Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALMP",
+    "n": "Almco Plumbing Inc",
+    "e": "US"
+  },
+  {
+    "s": "NOEMW",
+    "n": "Co2 Energy Transition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NOEMU",
+    "n": "Co2 Energy Transition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NOEMR",
+    "n": "Co2 Energy Transition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ALUR-WT",
+    "n": "Allurion Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LOTWW",
+    "n": "Lotus Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HYAC-UN",
+    "n": "Haymaker Acquisition Corp. 4",
+    "e": "US"
+  },
+  {
+    "s": "SEPSF",
+    "n": "Asep Medical Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HYAC-WT",
+    "n": "Haymaker Acquisition Corp. 4",
+    "e": "US"
+  },
+  {
+    "s": "BKHAU",
+    "n": "Black Hawk Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "BKHAR",
+    "n": "Black Hawk Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "UCFIW",
+    "n": "Cn Healthy Food Tech Group Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TBMCR",
+    "n": "Trailblazer Merger Corp I",
+    "e": "US"
+  },
+  {
+    "s": "NTCS",
+    "n": "Natics Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SXTPW",
+    "n": "60 Degrees Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MGNC",
+    "n": "Mag Magna Corp",
+    "e": "US"
+  },
+  {
+    "s": "CRMLW",
+    "n": "Critical Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CRTMF",
+    "n": "Critical Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "VCICU",
+    "n": "Vine Hill Capital Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "VCICW",
+    "n": "Vine Hill Capital Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NTWOW",
+    "n": "Newbury Street Ii Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "NTWOU",
+    "n": "Newbury Street Ii Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "RAINW",
+    "n": "Rain Enhancement Technologies Holdco, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NUAIW",
+    "n": "New Era Energy & Digital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PUIGF",
+    "n": "Puig Brands S.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "CRBD",
+    "n": "Corebridge Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VMCWF",
+    "n": "Valuence Merger Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "VMCUF",
+    "n": "Valuence Merger Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "NE-WTA",
+    "n": "Noble Corp Plc",
+    "e": "US"
+  },
+  {
+    "s": "NE-WT",
+    "n": "Noble Corp Plc",
+    "e": "US"
+  },
+  {
+    "s": "NBLWF",
+    "n": "Noble Corp Plc",
+    "e": "US"
+  },
+  {
+    "s": "IBACR",
+    "n": "Ib Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GMTH",
+    "n": "Gmtech Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LPAAU",
+    "n": "Launch One Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LPAAW",
+    "n": "Launch One Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BGLWW",
+    "n": "Blue Gold Ltd",
+    "e": "US"
+  },
+  {
+    "s": "EDVGF",
+    "n": "Endeavour Group Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CHPGU",
+    "n": "Championsgate Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "CHPGR",
+    "n": "Championsgate Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "SMNRW",
+    "n": "Semnur Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KLTOW",
+    "n": "Klotho Neurosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRRRW",
+    "n": "Gorilla Technology Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIMUF",
+    "n": "Aimfinity Investment Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "AIMWF",
+    "n": "Aimfinity Investment Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "AIMTF",
+    "n": "Aimfinity Investment Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "GRAF-WT",
+    "n": "Graf Global Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ALVOW",
+    "n": "Alvotech",
+    "e": "US"
+  },
+  {
+    "s": "CDTTW",
+    "n": "Cdt Equity Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ABPWW",
+    "n": "Abpro Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WLDSW",
+    "n": "Wearable Devices Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SPKLW",
+    "n": "Spark I Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "SPKLU",
+    "n": "Spark I Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "CCIXU",
+    "n": "Churchill Capital Corp Ix/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "CCIXW",
+    "n": "Churchill Capital Corp Ix/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "LANV-WT",
+    "n": "Lanvin Group Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HOVRW",
+    "n": "New Horizon Aircraft Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FGN",
+    "n": "F&G Annuities & Life, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FGSN",
+    "n": "F&G Annuities & Life, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KMFG",
+    "n": "Keemo Fashion Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FMSTW",
+    "n": "Foremost Clean Energy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "AMBWQ",
+    "n": "Ambipar Emergency Response",
+    "e": "US"
+  },
+  {
+    "s": "AMBIQ",
+    "n": "Ambipar Emergency Response",
+    "e": "US"
+  },
+  {
+    "s": "BAERW",
+    "n": "Bridger Aerospace Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RKWBF",
+    "n": "Rockwool A/S/Adr",
+    "e": "US"
+  },
+  {
+    "s": "RKWAF",
+    "n": "Rockwool A/S/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GFRWF",
+    "n": "Greenfire Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ZAPWF",
+    "n": "Zapp Electric Vehicles Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "AAVXF",
+    "n": "Abivax S.A.",
+    "e": "US"
+  },
+  {
+    "s": "LSBWF",
+    "n": "Lakeshore Biopharma Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "LDXC",
+    "n": "Londax Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TOYWF",
+    "n": "Toyo Co., Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LGSP",
+    "n": "Legend Spices, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DGMDF",
+    "n": "Digital Domain Holdings Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TVACU",
+    "n": "Texas Ventures Acquisition Iii Corp",
+    "e": "US"
+  },
+  {
+    "s": "TVACW",
+    "n": "Texas Ventures Acquisition Iii Corp",
+    "e": "US"
+  },
+  {
+    "s": "SVCCW",
+    "n": "Stellar V Capital Corp. (Cayman Islands)",
+    "e": "US"
+  },
+  {
+    "s": "TICAW",
+    "n": "Tic Solutions, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SVCCU",
+    "n": "Stellar V Capital Corp. (Cayman Islands)",
+    "e": "US"
+  },
+  {
+    "s": "AVSBS",
+    "n": "Arrived Homes 5, Llc",
+    "e": "US"
+  },
+  {
+    "s": "AVPKS",
+    "n": "Arrived Homes 5, Llc",
+    "e": "US"
+  },
+  {
+    "s": "AEHGS",
+    "n": "Arrived Homes 5, Llc",
+    "e": "US"
+  },
+  {
+    "s": "ALOIS",
+    "n": "Arrived Homes 5, Llc",
+    "e": "US"
+  },
+  {
+    "s": "NAMMW",
+    "n": "Namib Minerals",
+    "e": "US"
+  },
+  {
+    "s": "OYCG",
+    "n": "Oyocar Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PERF-WT",
+    "n": "Perfect Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HUBCW",
+    "n": "Hub Cyber Security Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HUBCZ",
+    "n": "Hub Cyber Security Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FGMCU",
+    "n": "Fg Merger Ii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FGMCR",
+    "n": "Fg Merger Ii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RPDL",
+    "n": "Rapid Line Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WLSS",
+    "n": "Welsis Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FERAR",
+    "n": "Fifth Era Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "FERAU",
+    "n": "Fifth Era Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "GGROW",
+    "n": "Gogoro Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TYBB",
+    "n": "Triunity Business Services Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OAKUW",
+    "n": "Oak Woods Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "NELR",
+    "n": "Neolara Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HSPUF",
+    "n": "Horizon Space Acquisition I Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HSPWF",
+    "n": "Horizon Space Acquisition I Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OAKUU",
+    "n": "Oak Woods Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "OAKUR",
+    "n": "Oak Woods Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "NMHIW",
+    "n": "Nature'S Miracle Holding Inc.",
+    "e": "US"
+  },
+  {
+    "s": "USGOW",
+    "n": "U.S. Goldmining Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ABLVW",
+    "n": "Able View Global Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ECDAW",
+    "n": "Ecd Automotive Design, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SBCWW",
+    "n": "Sbc Medical Group Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "SMXWW",
+    "n": "Smx (Security Matters) Public Ltd Co",
+    "e": "US"
+  },
+  {
+    "s": "QETAU",
+    "n": "Quetta Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "QETAR",
+    "n": "Quetta Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "PBMWW",
+    "n": "Psyence Biomedical Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ATCHW",
+    "n": "Atlasclear Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "COOTW",
+    "n": "Australian Oilseeds Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KWMWW",
+    "n": "K Wave Media Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MKDWW",
+    "n": "Mkdwell Tech Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZOOZW",
+    "n": "Zooz Strategy Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CCCXW",
+    "n": "Churchill Capital Corp X/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "CCCXU",
+    "n": "Churchill Capital Corp X/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "SPME",
+    "n": "Sound Point Meridian Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPMA",
+    "n": "Sound Point Meridian Capital, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RLNDF",
+    "n": "Royaland Co Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TRWD",
+    "n": "Tradewinds Universal",
+    "e": "US"
+  },
+  {
+    "s": "OCSAW",
+    "n": "Oculis Holding Ag",
+    "e": "US"
+  },
+  {
+    "s": "BDMDW",
+    "n": "Baird Medical Investment Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IMAA",
+    "n": "Ima Tech",
+    "e": "US"
+  },
+  {
+    "s": "PDPA",
+    "n": "Pearl Diver Credit Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TBNRL",
+    "n": "Tamboran Resources Corp",
+    "e": "US"
+  },
+  {
+    "s": "TLPPF",
+    "n": "Telix Pharmaceuticals Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RFAIU",
+    "n": "Rf Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "RFAIR",
+    "n": "Rf Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "FOXXW",
+    "n": "Foxx Development Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SBXD-UN",
+    "n": "Silverbox Corp Iv",
+    "e": "US"
+  },
+  {
+    "s": "SBXD-WT",
+    "n": "Silverbox Corp Iv",
+    "e": "US"
+  },
+  {
+    "s": "TANAF",
+    "n": "Tian'An Technology Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CRGOW",
+    "n": "Freightos Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NAKAW",
+    "n": "Kindly Md, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIIOW",
+    "n": "Robo.Ai Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NVNIW",
+    "n": "Nvni Group Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ESGLW",
+    "n": "Esgl Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "HNIT",
+    "n": "Huineng Technology Corp",
+    "e": "US"
+  },
+  {
+    "s": "SPHIF",
+    "n": "Super Hi International Holding Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MDCXW",
+    "n": "Medicus Pharma Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "INVLW",
+    "n": "Innventure, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VTBAS",
+    "n": "Vestible Assets, Llc",
+    "e": "US"
+  },
+  {
+    "s": "GTENW",
+    "n": "Gores Holdings X, Inc. / Ci",
+    "e": "US"
+  },
+  {
+    "s": "GTENU",
+    "n": "Gores Holdings X, Inc. / Ci",
+    "e": "US"
+  },
+  {
+    "s": "RMSGW",
+    "n": "Real Messenger Corp",
+    "e": "US"
+  },
+  {
+    "s": "GGT-PG",
+    "n": "Gabelli Multimedia Trust Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRWLF",
+    "n": "Great-West Lifeco Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRWTF",
+    "n": "Great-West Lifeco Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GWLPF",
+    "n": "Great-West Lifeco Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRWFF",
+    "n": "Great-West Lifeco Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KIM-PN",
+    "n": "Kimco Realty Corp",
+    "e": "US"
+  },
+  {
+    "s": "GSCE",
+    "n": "Goldman Sachs Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "DX-PC",
+    "n": "Dynex Capital Inc",
+    "e": "US"
+  },
+  {
+    "s": "MCHPP",
+    "n": "Microchip Technology Inc",
+    "e": "US"
+  },
+  {
+    "s": "AGM-PE",
+    "n": "Federal Agricultural Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "AGM-PF",
+    "n": "Federal Agricultural Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "AGM-PG",
+    "n": "Federal Agricultural Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "AGM-PH",
+    "n": "Federal Agricultural Mortgage Corp",
+    "e": "US"
+  },
+  {
+    "s": "ABAKF",
+    "n": "Abrdn Asia-Pacific Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UNTCW",
+    "n": "Unit Corp",
+    "e": "US"
+  },
+  {
+    "s": "BCAEF",
+    "n": "Bce Inc",
+    "e": "US"
+  },
+  {
+    "s": "NPPXF",
+    "n": "Nippon Telegraph & Telephone Corp",
+    "e": "US"
+  },
+  {
+    "s": "TDDWW",
+    "n": "Tidewater Inc",
+    "e": "US"
+  },
+  {
+    "s": "TDGMW",
+    "n": "Tidewater Inc",
+    "e": "US"
+  },
+  {
+    "s": "BUSEP",
+    "n": "First Busey Corp /Nv/",
+    "e": "US"
+  },
+  {
+    "s": "SIGIP",
+    "n": "Selective Insurance Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "VLYPN",
+    "n": "Valley National Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "BCEFF",
+    "n": "Bce Inc",
+    "e": "US"
+  },
+  {
+    "s": "BCEPF",
+    "n": "Bce Inc",
+    "e": "US"
+  },
+  {
+    "s": "BCEXF",
+    "n": "Bce Inc",
+    "e": "US"
+  },
+  {
+    "s": "BCENF",
+    "n": "Bce Inc",
+    "e": "US"
+  },
+  {
+    "s": "BCPPF",
+    "n": "Bce Inc",
+    "e": "US"
+  },
+  {
+    "s": "NSARO",
+    "n": "Nstar Electric Co",
+    "e": "US"
+  },
+  {
+    "s": "NSARP",
+    "n": "Nstar Electric Co",
+    "e": "US"
+  },
+  {
+    "s": "CMA-PB",
+    "n": "Comerica Inc",
+    "e": "US"
+  },
+  {
+    "s": "MAWAF",
+    "n": "Maruwa Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ZJNGF",
+    "n": "Zijin Gold International Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "NGSCF",
+    "n": "Nagase & Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "CNDHF",
+    "n": "Conduit Holdings Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TOETF",
+    "n": "Tosei Corp/Adr",
+    "e": "US"
+  },
+  {
+    "s": "NHKGF",
+    "n": "Nhk Spring Co. Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PCCOF",
+    "n": "Paltac Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "VHCPU",
+    "n": "Vine Hill Capital Investment Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "CPWPF",
+    "n": "Capital Power Corp/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CPRHF",
+    "n": "Capital Power Corp/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CPXWF",
+    "n": "Capital Power Corp/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PSBAF",
+    "n": "Pt Sumber Alfaria Trijaya Tbk/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BCSS-UN",
+    "n": "Bain Capital Gss Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BCSS-WT",
+    "n": "Bain Capital Gss Investment Corp.",
+    "e": "US"
+  },
+  {
+    "s": "APXCF",
+    "n": "Apex Critical Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LWACU",
+    "n": "Lightwave Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LWACW",
+    "n": "Lightwave Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NNWWF",
+    "n": "North West Co Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ELEEF",
+    "n": "Element Fleet Management Corp./Adr",
+    "e": "US"
+  },
+  {
+    "s": "IGACU",
+    "n": "Invest Green Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "IGACR",
+    "n": "Invest Green Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "STLJF",
+    "n": "Stella-Jones Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "YCY-UN",
+    "n": "Aa Mission Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "YCY-WT",
+    "n": "Aa Mission Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "BEBE-UN",
+    "n": "Tge Value Creative Solutions Corp",
+    "e": "US"
+  },
+  {
+    "s": "SCIIU",
+    "n": "Sc Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SVACU",
+    "n": "Spring Valley Acquisition Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "SVACW",
+    "n": "Spring Valley Acquisition Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "IDPUF",
+    "n": "Idp Education Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "NGHLF",
+    "n": "Nightingale Health Plc",
+    "e": "US"
+  },
+  {
+    "s": "MCGAW",
+    "n": "Yorkville Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MCGAU",
+    "n": "Yorkville Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DNACF",
+    "n": "Dena Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "PCAPU",
+    "n": "Procap Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "PCAPW",
+    "n": "Procap Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "OBCKF",
+    "n": "Ottobock Se & Co. Kgaa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "LKYRF",
+    "n": "Locksley Resources Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GPACU",
+    "n": "General Purpose Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SVNHF",
+    "n": "Sunevision Holdings/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DUTBF",
+    "n": "Duality Biotherapeutics Inc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "LFACU",
+    "n": "Leapfrog Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "GIWWU",
+    "n": "Gigcapital8 Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GIWWR",
+    "n": "Gigcapital8 Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ADACU",
+    "n": "American Drive Acquisition Co",
+    "e": "US"
+  },
+  {
+    "s": "BLRKU",
+    "n": "Bluerock Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PNFP-PB",
+    "n": "Pinnacle Financial Partners, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PNFP-PC",
+    "n": "Pinnacle Financial Partners, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PNFP-PA",
+    "n": "Pinnacle Financial Partners, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APXTU",
+    "n": "Apex Treasury Corp",
+    "e": "US"
+  },
+  {
+    "s": "APXTW",
+    "n": "Apex Treasury Corp",
+    "e": "US"
+  },
+  {
+    "s": "AWTRF",
+    "n": "Air Water Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "GLVHF",
+    "n": "Glenveagh Properties Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "KBONU",
+    "n": "Karbon Capital Partners Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DNMXU",
+    "n": "Dynamix Corp Iii",
+    "e": "US"
+  },
+  {
+    "s": "DNMXW",
+    "n": "Dynamix Corp Iii",
+    "e": "US"
+  },
+  {
+    "s": "SRBEF",
+    "n": "Vusiongroup",
+    "e": "US"
+  },
+  {
+    "s": "SWBGF",
+    "n": "Shawbrook Group Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "EMISR",
+    "n": "Emmis Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CSCCF",
+    "n": "Capstone Copper Corp./Adr",
+    "e": "US"
+  },
+  {
+    "s": "DYORW",
+    "n": "Insight Digital Partners Ii",
+    "e": "US"
+  },
+  {
+    "s": "DYORU",
+    "n": "Insight Digital Partners Ii",
+    "e": "US"
+  },
+  {
+    "s": "TDWDR",
+    "n": "Tailwind 2.0 Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TDWDU",
+    "n": "Tailwind 2.0 Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EVOXW",
+    "n": "Evolution Global Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "EVOXU",
+    "n": "Evolution Global Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "BSAAR",
+    "n": "Best Spac I Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BSAAU",
+    "n": "Best Spac I Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FINGF",
+    "n": "Finning International Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "WTGUU",
+    "n": "Wintergreen Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WTGUR",
+    "n": "Wintergreen Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RNGTU",
+    "n": "Range Capital Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "RNGTW",
+    "n": "Range Capital Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "BKPKF",
+    "n": "Bank Pekao S.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BRRWW",
+    "n": "Procap Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TPZEF",
+    "n": "Topaz Energy Corp./Adr",
+    "e": "US"
+  },
+  {
+    "s": "LPUGF",
+    "n": "Laopu Gold Co. Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BLZRW",
+    "n": "Trailblazer Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BLZRU",
+    "n": "Trailblazer Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PAII-UN",
+    "n": "Pyrophyte Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "PAII-WT",
+    "n": "Pyrophyte Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "HCMAU",
+    "n": "Hcm Iii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HCMAW",
+    "n": "Hcm Iii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TCLHF",
+    "n": "Tcl Electronics Holdings Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BIREF",
+    "n": "Birchcliff Energy Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "NPIFF",
+    "n": "Northland Power Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "NPICF",
+    "n": "Northland Power Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "HRIBF",
+    "n": "Horiba, Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "RNKGF",
+    "n": "Renk Group Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "MTLPF",
+    "n": "Metlen Energy & Metals Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SOCAW",
+    "n": "Solarius Capital Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SOCAU",
+    "n": "Solarius Capital Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RNGOF",
+    "n": "Rengo Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ZSHOF",
+    "n": "Zensho Holdings Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ZJLMF",
+    "n": "Zhejiang Leapmotor Technology Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "LPCVU",
+    "n": "Launchpad Cadenza Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "BIXIU",
+    "n": "Bitcoin Infrastructure Acquisition Corp Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BIXIW",
+    "n": "Bitcoin Infrastructure Acquisition Corp Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SPIWF",
+    "n": "Spie Sa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "AEAQU",
+    "n": "Activate Energy Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LLYVK",
+    "n": "Liberty Live Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LLYVB",
+    "n": "Liberty Live Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DSACU",
+    "n": "Daedalus Special Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DLMAF",
+    "n": "Dollarama Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "FCRS-WT",
+    "n": "Futurecrest Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FCRS-UN",
+    "n": "Futurecrest Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KRSP-WT",
+    "n": "Rice Acquisition Corp 3",
+    "e": "US"
+  },
+  {
+    "s": "KRSP-UN",
+    "n": "Rice Acquisition Corp 3",
+    "e": "US"
+  },
+  {
+    "s": "BGTCF",
+    "n": "Beijing Geekplus Technology Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BIII-UN",
+    "n": "Black Spade Acquisition Iii Co",
+    "e": "US"
+  },
+  {
+    "s": "MSOKF",
+    "n": "Mitsui-Soko Holdings Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GGPSF",
+    "n": "Greatland Resources Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "AMVIF",
+    "n": "Aumovio Se",
+    "e": "US"
+  },
+  {
+    "s": "MBGCF",
+    "n": "Mitsubishi Gas Chemical Company, Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "VACI-WT",
+    "n": "Viking Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "VACI-UN",
+    "n": "Viking Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "MMTXU",
+    "n": "Miluna Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "MMTXW",
+    "n": "Miluna Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "LAFAU",
+    "n": "Lafayette Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LAFAR",
+    "n": "Lafayette Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LWSCF",
+    "n": "Sienna Senior Living Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "SVAUF",
+    "n": "Storagevault Canada Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "TLNCU",
+    "n": "Talon Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TLNCW",
+    "n": "Talon Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MESHU",
+    "n": "Meshflow Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "JELLF",
+    "n": "Jeol Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "OBIBF",
+    "n": "Obic Business Consultants Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ITHAU",
+    "n": "Ithax Acquisition Corp Iii",
+    "e": "US"
+  },
+  {
+    "s": "SBKLF",
+    "n": "Sumitomo Bakelite Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GSRFU",
+    "n": "Gsr Iv Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GSRFR",
+    "n": "Gsr Iv Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "JNGHF",
+    "n": "Jiangsu Hengrui Pharmaceuticals Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "MTPLF",
+    "n": "Metaplanet Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QUMSU",
+    "n": "Quantumsphere Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "QUMSR",
+    "n": "Quantumsphere Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "FKURF",
+    "n": "Fujikura Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "XRPNW",
+    "n": "Armada Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "XRPNU",
+    "n": "Armada Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "KYFGF",
+    "n": "Kyoto Financial Group Inc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DAAQW",
+    "n": "Digital Asset Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DAAQU",
+    "n": "Digital Asset Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PEW-WT",
+    "n": "Grabagun Digital Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LABFF",
+    "n": "Laboratorios Farmaceuticos Rovi, S.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "OACCU",
+    "n": "Oaktree Acquisition Corp. Iii Life Sciences",
+    "e": "US"
+  },
+  {
+    "s": "OACCW",
+    "n": "Oaktree Acquisition Corp. Iii Life Sciences",
+    "e": "US"
+  },
+  {
+    "s": "VRBCF",
+    "n": "Virbac Sa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "OBAWU",
+    "n": "Oxley Bridge Acquisition Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OBAWW",
+    "n": "Oxley Bridge Acquisition Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DRDBU",
+    "n": "Roman Dbdr Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "DRDBW",
+    "n": "Roman Dbdr Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "ASBRF",
+    "n": "Asahi Group Holdings, Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "GLIBK",
+    "n": "Gci Liberty, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ONWRF",
+    "n": "Onward Medical N.V./Adr",
+    "e": "US"
+  },
+  {
+    "s": "KXHCF",
+    "n": "Kioxia Holdings Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "EGHAR",
+    "n": "Egh Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EGHAU",
+    "n": "Egh Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TOKCF",
+    "n": "Tokyo Ohka Kogyo Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "STHRF",
+    "n": "Strathcona Resources Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "HRZRF",
+    "n": "Horizon Robotics, Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "KYIVW",
+    "n": "Kyivstar Group Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GIBOW",
+    "n": "Gibo Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CCIIU",
+    "n": "Cohen Circle Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "CCIIW",
+    "n": "Cohen Circle Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "HSPTU",
+    "n": "Horizon Space Acquisition Ii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HSPTR",
+    "n": "Horizon Space Acquisition Ii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RAAQU",
+    "n": "Real Asset Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KCHVU",
+    "n": "Kochav Defense Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "KCHVR",
+    "n": "Kochav Defense Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LOKVW",
+    "n": "Live Oak Acquisition Corp. V",
+    "e": "US"
+  },
+  {
+    "s": "LOKVU",
+    "n": "Live Oak Acquisition Corp. V",
+    "e": "US"
+  },
+  {
+    "s": "SUNXF",
+    "n": "Stardust Solar Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CGCTW",
+    "n": "Cartesian Growth Corp Iii",
+    "e": "US"
+  },
+  {
+    "s": "CGCTU",
+    "n": "Cartesian Growth Corp Iii",
+    "e": "US"
+  },
+  {
+    "s": "RAAQW",
+    "n": "Real Asset Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "COPL-WT",
+    "n": "Copley Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "COPL-UN",
+    "n": "Copley Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "CHECW",
+    "n": "Chenghe Acquisition Iii Co.",
+    "e": "US"
+  },
+  {
+    "s": "CHECU",
+    "n": "Chenghe Acquisition Iii Co.",
+    "e": "US"
+  },
+  {
+    "s": "BDTB",
+    "n": "Bodhi Tree Biotechnology Inc",
+    "e": "US"
+  },
+  {
+    "s": "MBVIW",
+    "n": "M3-Brigade Acquisition Vi Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MBVIU",
+    "n": "M3-Brigade Acquisition Vi Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AIIA-RI",
+    "n": "Ai Infrastructure Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AIIA-UN",
+    "n": "Ai Infrastructure Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GBNXF",
+    "n": "Gibson Energy Inc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TRMLF",
+    "n": "Tourmaline Oil Corp/Adr",
+    "e": "US"
+  },
+  {
+    "s": "VSNTV",
+    "n": "Versant Media Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NMPAU",
+    "n": "Nmp Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NMPAR",
+    "n": "Nmp Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ONCHW",
+    "n": "1rt Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ONCHU",
+    "n": "1rt Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CHACU",
+    "n": "Crane Harbor Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CHACR",
+    "n": "Crane Harbor Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BACCR",
+    "n": "Blue Acquisition Corp/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "BACCU",
+    "n": "Blue Acquisition Corp/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "FTW-WT",
+    "n": "Eqv Ventures Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FTW-UN",
+    "n": "Eqv Ventures Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "STTPF",
+    "n": "Schott Pharma Ag & Co. Kgaa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "FSTWF",
+    "n": "Fst Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TNMWF",
+    "n": "Tnl Mediagene",
+    "e": "US"
+  },
+  {
+    "s": "IPCXU",
+    "n": "Inflection Point Acquisition Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "IPCXR",
+    "n": "Inflection Point Acquisition Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "SBXE-UN",
+    "n": "Silverbox Corp V",
+    "e": "US"
+  },
+  {
+    "s": "LATAU",
+    "n": "Galata Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "LATAW",
+    "n": "Galata Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "SCPQU",
+    "n": "Social Commerce Partners Corp",
+    "e": "US"
+  },
+  {
+    "s": "AVVOF",
+    "n": "Avio S.P.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "FVNNU",
+    "n": "Future Vision Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FVNNR",
+    "n": "Future Vision Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "COLAU",
+    "n": "Columbus Acquisition Corp/Cayman Islands",
+    "e": "US"
+  },
+  {
+    "s": "COLAR",
+    "n": "Columbus Acquisition Corp/Cayman Islands",
+    "e": "US"
+  },
+  {
+    "s": "MANDF",
+    "n": "Mandatum Oyj/Adr",
+    "e": "US"
+  },
+  {
+    "s": "JACS-UN",
+    "n": "Jackson Acquisition Co Ii",
+    "e": "US"
+  },
+  {
+    "s": "JACS-RI",
+    "n": "Jackson Acquisition Co Ii",
+    "e": "US"
+  },
+  {
+    "s": "USRED",
+    "n": "Tactical Resources Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RDAGU",
+    "n": "Republic Digital Acquisition Co",
+    "e": "US"
+  },
+  {
+    "s": "RDAGW",
+    "n": "Republic Digital Acquisition Co",
+    "e": "US"
+  },
+  {
+    "s": "EVAC-UN",
+    "n": "Eqv Ventures Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "EVAC-WT",
+    "n": "Eqv Ventures Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "TKMEF",
+    "n": "Tokyo Metro Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ALUB-WT",
+    "n": "Alussa Energy Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "ALUB-UN",
+    "n": "Alussa Energy Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "DWWYF",
+    "n": "Dowway Holdings Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "NHICU",
+    "n": "Newhold Investment Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "NHICW",
+    "n": "Newhold Investment Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "GSHRU",
+    "n": "Gesher Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "GSHRW",
+    "n": "Gesher Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "SDHIU",
+    "n": "Siddhi Acquisition Corp (Cayman Islands)",
+    "e": "US"
+  },
+  {
+    "s": "SDHIR",
+    "n": "Siddhi Acquisition Corp (Cayman Islands)",
+    "e": "US"
+  },
+  {
+    "s": "PGACU",
+    "n": "Pantages Capital Acqusition Corp",
+    "e": "US"
+  },
+  {
+    "s": "PGACR",
+    "n": "Pantages Capital Acqusition Corp",
+    "e": "US"
+  },
+  {
+    "s": "MICLF",
+    "n": "Mycronic Ab/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SZZLU",
+    "n": "Sizzle Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "SZZLR",
+    "n": "Sizzle Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "KFIIR",
+    "n": "K&F Growth Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "KFIIU",
+    "n": "K&F Growth Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "IPEXU",
+    "n": "Inflection Point Acquisition Corp. V",
+    "e": "US"
+  },
+  {
+    "s": "IPEXR",
+    "n": "Inflection Point Acquisition Corp. V",
+    "e": "US"
+  },
+  {
+    "s": "ATHNF",
+    "n": "Athens International Airport Sa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BRETF",
+    "n": "Brazilian Rare Earths Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CUBWW",
+    "n": "Lionheart Holdings",
+    "e": "US"
+  },
+  {
+    "s": "CUBWU",
+    "n": "Lionheart Holdings",
+    "e": "US"
+  },
+  {
+    "s": "MBAVU",
+    "n": "M3-Brigade Acquisition V Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MBAVW",
+    "n": "M3-Brigade Acquisition V Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GMWKF",
+    "n": "Games Workshop Group Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "MXUGF",
+    "n": "Mixue Bingcheng Co Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "AAM-WT",
+    "n": "Aa Mission Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AAM-UN",
+    "n": "Aa Mission Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PELIU",
+    "n": "Pelican Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "RANGR",
+    "n": "Range Capital Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RANGU",
+    "n": "Range Capital Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "PELIR",
+    "n": "Pelican Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "HAVAU",
+    "n": "Harvard Ave Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "HAVAR",
+    "n": "Harvard Ave Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "DMIIR",
+    "n": "Drugs Made In America Acquisition Ii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DMIIU",
+    "n": "Drugs Made In America Acquisition Ii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BLUWU",
+    "n": "Blue Water Acquisition Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "BLUWW",
+    "n": "Blue Water Acquisition Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "NPACW",
+    "n": "New Providence Acquisition Corp. Iii/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "NPACU",
+    "n": "New Providence Acquisition Corp. Iii/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "LCCCU",
+    "n": "Lakeshore Acquisition Iii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LCCCR",
+    "n": "Lakeshore Acquisition Iii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "APACU",
+    "n": "Stonebridge Acquisition Ii Corp",
+    "e": "US"
+  },
+  {
+    "s": "APACR",
+    "n": "Stonebridge Acquisition Ii Corp",
+    "e": "US"
+  },
+  {
+    "s": "GTERR",
+    "n": "Globa Terra Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "GTERW",
+    "n": "Globa Terra Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "GTERU",
+    "n": "Globa Terra Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "YSHLF",
+    "n": "Yangzijiang Shipbuilding Holdings Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SLXNW",
+    "n": "Silexion Therapeutics Corp",
+    "e": "US"
+  },
+  {
+    "s": "TYHOF",
+    "n": "Toyota Tsusho Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "ALPWF",
+    "n": "Alps Group Inc",
+    "e": "US"
+  },
+  {
+    "s": "POLEU",
+    "n": "Andretti Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "POLEW",
+    "n": "Andretti Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "LACHF",
+    "n": "Lapco Holdings Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TYNPF",
+    "n": "Nippon Sanso Holdings Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "WENNW",
+    "n": "Wen Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "WENNU",
+    "n": "Wen Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "JENA-UN",
+    "n": "Jena Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "JENA-RI",
+    "n": "Jena Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "PMTRU",
+    "n": "Perimeter Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "PMTRW",
+    "n": "Perimeter Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "FIGXW",
+    "n": "Figx Capital Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FIGXU",
+    "n": "Figx Capital Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SSEAU",
+    "n": "Starry Sea Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "SSEAR",
+    "n": "Starry Sea Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "SPHXF",
+    "n": "Sm Prime Holdings Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "SOUL-RI",
+    "n": "Soulpower Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SOUL-UN",
+    "n": "Soulpower Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CAPNU",
+    "n": "Cayson Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "CAPNR",
+    "n": "Cayson Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "ATIIU",
+    "n": "Archimedes Tech Spac Partners Ii Co.",
+    "e": "US"
+  },
+  {
+    "s": "ATIIW",
+    "n": "Archimedes Tech Spac Partners Ii Co.",
+    "e": "US"
+  },
+  {
+    "s": "OPTHF",
+    "n": "Optimi Health Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SGIPF",
+    "n": "Sugi Holdings Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ALEGF",
+    "n": "Allegro.Eu Sa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "LKSPR",
+    "n": "Lake Superior Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "LKSPU",
+    "n": "Lake Superior Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "SMFRF",
+    "n": "Sumitomo Forestry Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "PACHW",
+    "n": "Pioneer Acquisition I Corp",
+    "e": "US"
+  },
+  {
+    "s": "PACHU",
+    "n": "Pioneer Acquisition I Corp",
+    "e": "US"
+  },
+  {
+    "s": "LTMGF",
+    "n": "Lottomatica Group S.P.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "UYSCR",
+    "n": "Uy Scuti Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "UYSCU",
+    "n": "Uy Scuti Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RIBBU",
+    "n": "Ribbon Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RIBBR",
+    "n": "Ribbon Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BLNH",
+    "n": "Blue Line Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FACTU",
+    "n": "Fact Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "FACTW",
+    "n": "Fact Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ETHMU",
+    "n": "Dynamix Corp",
+    "e": "US"
+  },
+  {
+    "s": "ETHMW",
+    "n": "Dynamix Corp",
+    "e": "US"
+  },
+  {
+    "s": "DMAAU",
+    "n": "Drugs Made In America Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DMAAR",
+    "n": "Drugs Made In America Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RDACR",
+    "n": "Rising Dragon Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RDACU",
+    "n": "Rising Dragon Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "VACHW",
+    "n": "Voyager Acquisition Corp./Cayman Islands",
+    "e": "US"
+  },
+  {
+    "s": "VACHU",
+    "n": "Voyager Acquisition Corp./Cayman Islands",
+    "e": "US"
+  },
+  {
+    "s": "STWI",
+    "n": "Stagewise Strategies Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NWAX-UN",
+    "n": "New America Acquisition I Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TNEYF",
+    "n": "Tamarack Valley Energy Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "MKLYR",
+    "n": "Mckinley Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "MKLYU",
+    "n": "Mckinley Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "TE-WT",
+    "n": "T1 Energy Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CCXIU",
+    "n": "Churchill Capital Corp Xi",
+    "e": "US"
+  },
+  {
+    "s": "HPAIW",
+    "n": "Helport Ai Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KOKSF",
+    "n": "Kokusai Electric Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "STKTF",
+    "n": "Sectra Ab/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DAICW",
+    "n": "Cid Holdco, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MLACU",
+    "n": "Mountain Lake Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MLACR",
+    "n": "Mountain Lake Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BACQU",
+    "n": "Inflection Point Acquisition Corp. Iv",
+    "e": "US"
+  },
+  {
+    "s": "BACQR",
+    "n": "Inflection Point Acquisition Corp. Iv",
+    "e": "US"
+  },
+  {
+    "s": "KIDZW",
+    "n": "Classover Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LPBBW",
+    "n": "Launch Two Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LPBBU",
+    "n": "Launch Two Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ALISU",
+    "n": "Calisa Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "ALISR",
+    "n": "Calisa Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "TAVIU",
+    "n": "Tavia Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TAVIR",
+    "n": "Tavia Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "YHNAR",
+    "n": "Yhn Acquisition I Ltd",
+    "e": "US"
+  },
+  {
+    "s": "YHNAU",
+    "n": "Yhn Acquisition I Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SNNRF",
+    "n": "Sunrise Communications Ag",
+    "e": "US"
+  },
+  {
+    "s": "SNRBY",
+    "n": "Sunrise Communications Ag",
+    "e": "US"
+  },
+  {
+    "s": "REECF",
+    "n": "Reece Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BCARW",
+    "n": "D. Boral Arc Acquisition I Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BCARU",
+    "n": "D. Boral Arc Acquisition I Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HNSPF",
+    "n": "Hansoh Pharmaceutical Group Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "HVMCU",
+    "n": "Highview Merger Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HVMCW",
+    "n": "Highview Merger Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CTATF",
+    "n": "Contemporary Amperex Technology Co., Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "LSHGF",
+    "n": "Louis Hachette Group/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SCSKF",
+    "n": "Scsk Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BPACU",
+    "n": "Blueport Acquisition Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BPACR",
+    "n": "Blueport Acquisition Ltd",
+    "e": "US"
+  },
+  {
+    "s": "INACR",
+    "n": "Indigo Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "INACU",
+    "n": "Indigo Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MGHTF",
+    "n": "Mercury Nz Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "CRAQU",
+    "n": "Cal Redwood Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CRAQR",
+    "n": "Cal Redwood Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AXINU",
+    "n": "Axiom Intelligence Acquisition Corp 1",
+    "e": "US"
+  },
+  {
+    "s": "AXINR",
+    "n": "Axiom Intelligence Acquisition Corp 1",
+    "e": "US"
+  },
+  {
+    "s": "PCPPF",
+    "n": "Pc Partner Group Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TGE-WT",
+    "n": "Generation Essentials Group",
+    "e": "US"
+  },
+  {
+    "s": "FCHRF",
+    "n": "Georg Fischer Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TWLVU",
+    "n": "Twelve Seas Investment Co Iii/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "RAC-UN",
+    "n": "Rithm Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RAC-WT",
+    "n": "Rithm Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ORIQW",
+    "n": "Origin Investment Corp I",
+    "e": "US"
+  },
+  {
+    "s": "ORIQU",
+    "n": "Origin Investment Corp I",
+    "e": "US"
+  },
+  {
+    "s": "VWAVW",
+    "n": "Visionwave Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AACBR",
+    "n": "Artius Ii Acquisition Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AACBU",
+    "n": "Artius Ii Acquisition Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IPODW",
+    "n": "Dune Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "IPODU",
+    "n": "Dune Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "MGCOF",
+    "n": "Midea Group Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "BDCIW",
+    "n": "Btc Development Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BDCIU",
+    "n": "Btc Development Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SPGDF",
+    "n": "Springer Nature Ag & Co. Kgaa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "LANDO",
+    "n": "Gladstone Land Corp",
+    "e": "US"
+  },
+  {
+    "s": "BCKIF",
+    "n": "Babcock International Group Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PETVW",
+    "n": "Petvivo Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXGLW",
+    "n": "Nexgel, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WHFCL",
+    "n": "Whitehorse Finance, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WYTC",
+    "n": "Wytec International Inc",
+    "e": "US"
+  },
+  {
+    "s": "CCLDO",
+    "n": "Carecloud, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NEWTZ",
+    "n": "Newtekone, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NEWTP",
+    "n": "Newtekone, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NEWTG",
+    "n": "Newtekone, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NEWTH",
+    "n": "Newtekone, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ECCC",
+    "n": "Eagle Point Credit Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ECCF",
+    "n": "Eagle Point Credit Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ECCU",
+    "n": "Eagle Point Credit Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ECC-PD",
+    "n": "Eagle Point Credit Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ECCV",
+    "n": "Eagle Point Credit Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ECCW",
+    "n": "Eagle Point Credit Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LBRA",
+    "n": "1847 Holdings Llc",
+    "e": "US"
+  },
+  {
+    "s": "SMSOF",
+    "n": "Samsonite International Sa/Adr",
+    "e": "US"
+  },
+  {
+    "s": "MONRF",
+    "n": "Moncler S.P.A./Adr",
+    "e": "US"
+  },
+  {
+    "s": "HSDTW",
+    "n": "Solana Co",
+    "e": "US"
+  },
+  {
+    "s": "DBVTF",
+    "n": "Dbv Technologies S.A.",
+    "e": "US"
+  },
+  {
+    "s": "SYF-PA",
+    "n": "Synchrony Financial",
+    "e": "US"
+  },
+  {
+    "s": "SYF-PB",
+    "n": "Synchrony Financial",
+    "e": "US"
+  },
+  {
+    "s": "KREF-PA",
+    "n": "Kkr Real Estate Finance Trust Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MBINM",
+    "n": "Merchants Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "MBINN",
+    "n": "Merchants Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "MBINL",
+    "n": "Merchants Bancorp",
+    "e": "US"
+  },
+  {
+    "s": "LFT-PA",
+    "n": "Lument Finance Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OFSSH",
+    "n": "Ofs Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "OFSSO",
+    "n": "Ofs Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "INN-PF",
+    "n": "Summit Hotel Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRIF-PD",
+    "n": "Priority Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRIF-PJ",
+    "n": "Priority Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRIF-PK",
+    "n": "Priority Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRIF-PL",
+    "n": "Priority Income Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTPUF",
+    "n": "Central Pattana Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CPNNF",
+    "n": "Central Pattana Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "MPLXP",
+    "n": "Mplx Lp",
+    "e": "US"
+  },
+  {
+    "s": "OZKAP",
+    "n": "Bank Ozk",
+    "e": "US"
+  },
+  {
+    "s": "FBRT-PE",
+    "n": "Franklin Bsp Realty Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EYGPF",
+    "n": "Electricity Generating Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "EYUUF",
+    "n": "Electricity Generating Public Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "IPSOF",
+    "n": "Ipsos/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CTRVP",
+    "n": "Hepion Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNROF",
+    "n": "Sanrio Company, Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ABQQD",
+    "n": "Ai Era Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BWNB",
+    "n": "Babcock & Wilcox Enterprises, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BW-PA",
+    "n": "Babcock & Wilcox Enterprises, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AREBW",
+    "n": "American Rebel Holdings Inc",
+    "e": "US"
+  },
+  {
+    "s": "MITT-PC",
+    "n": "Tpg Mortgage Investment Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMPGW",
+    "n": "Amplitech Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NVNBW",
+    "n": "Envveno Medical Corp",
+    "e": "US"
+  },
+  {
+    "s": "MITN",
+    "n": "Tpg Mortgage Investment Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MITP",
+    "n": "Tpg Mortgage Investment Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CICB",
+    "n": "Cion Investment Corp",
+    "e": "US"
+  },
+  {
+    "s": "DPLMF",
+    "n": "Diploma Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "EBOSF",
+    "n": "Ebos Group Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GNL-PB",
+    "n": "Global Net Lease, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GNL-PE",
+    "n": "Global Net Lease, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GNL-PD",
+    "n": "Global Net Lease, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CGABL",
+    "n": "Carlyle Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GDHLF",
+    "n": "Gds Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RCD",
+    "n": "Ready Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "RCB",
+    "n": "Ready Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "RCC",
+    "n": "Ready Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "RC-PC",
+    "n": "Ready Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "RC-PE",
+    "n": "Ready Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "MBUMF",
+    "n": "Mabuchi Motor Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ACP-PA",
+    "n": "Abrdn Income Credit Strategies Fund",
+    "e": "US"
+  },
+  {
+    "s": "PNDZF",
+    "n": "Pandora A/S / Adr",
+    "e": "US"
+  },
+  {
+    "s": "NIOBW",
+    "n": "Niocorp Developments Ltd",
+    "e": "US"
+  },
+  {
+    "s": "YKLTF",
+    "n": "Yakult Honsha Co., Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DTLAP",
+    "n": "Brookfield Dtla Fund Office Trust Investor Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NCHEF",
+    "n": "Nichirei Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "NHPBP",
+    "n": "National Healthcare Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NWSLL",
+    "n": "News Corp",
+    "e": "US"
+  },
+  {
+    "s": "ACONW",
+    "n": "Aclarion, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RPT-PC",
+    "n": "Rithm Property Trust Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LBRDP",
+    "n": "Liberty Broadband Corp",
+    "e": "US"
+  },
+  {
+    "s": "LENDX",
+    "n": "Stone Ridge Trust V",
+    "e": "US"
+  },
+  {
+    "s": "BEIGF",
+    "n": "Beone Medicines Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "MDV-PA",
+    "n": "Modiv Industrial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HPE-PC",
+    "n": "Hewlett Packard Enterprise Co",
+    "e": "US"
+  },
+  {
+    "s": "OPP-PA",
+    "n": "Rivernorth/Doubleline Strategic Opportunity Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPP-PB",
+    "n": "Rivernorth/Doubleline Strategic Opportunity Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPP-PC",
+    "n": "Rivernorth/Doubleline Strategic Opportunity Fund, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASCIX",
+    "n": "Angel Oak Strategic Credit Fund",
+    "e": "US"
+  },
+  {
+    "s": "HYNLY",
+    "n": "Hydro One Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ZNKUF",
+    "n": "Zenkoku Hosho Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "NSA-PB",
+    "n": "National Storage Affiliates Trust",
+    "e": "US"
+  },
+  {
+    "s": "SQLLW",
+    "n": "Atlantic International Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SSST",
+    "n": "Smartstop Self Storage Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CEHCF",
+    "n": "Cosmo Energy Holdings Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "NTRBW",
+    "n": "Nutriband Inc.",
+    "e": "US"
+  },
+  {
+    "s": "XPTFX",
+    "n": "Federated Hermes Project & Trade Finance Tender Fund",
+    "e": "US"
+  },
+  {
+    "s": "LMND-WT",
+    "n": "Lemonade, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BYCBF",
+    "n": "Barry Callebaut Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "HFRO-PA",
+    "n": "Highland Opportunities & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "HFRO-PB",
+    "n": "Highland Opportunities & Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "NRXPW",
+    "n": "Nrx Pharmaceuticals, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRSO",
+    "n": "Transuite.Org Inc.",
+    "e": "US"
+  },
+  {
+    "s": "COEPW",
+    "n": "Coeptis Therapeutics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SAABF",
+    "n": "Saab Ab/Adr",
+    "e": "US"
+  },
+  {
+    "s": "KPLTW",
+    "n": "Katapult Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ANKM",
+    "n": "Ankam, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MAPSW",
+    "n": "Wm Technology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CHWRF",
+    "n": "China Tower Corp Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "NEOVW",
+    "n": "Neovolta Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FOUR-PA",
+    "n": "Shift4 Payments, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ORGNW",
+    "n": "Origin Materials, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SSTPW",
+    "n": "System1, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BEATW",
+    "n": "Heartbeam, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JSPRW",
+    "n": "Jasper Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MRCIF",
+    "n": "Mercari, Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "EICA",
+    "n": "Eagle Point Income Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EICC",
+    "n": "Eagle Point Income Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TCMEF",
+    "n": "Tencent Music Entertainment Group",
+    "e": "US"
+  },
+  {
+    "s": "ADDTF",
+    "n": "Addtech Ab/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CAHPF",
+    "n": "Evolution Mining Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "JUPGD",
+    "n": "Atlas Critical Minerals Corp",
+    "e": "US"
+  },
+  {
+    "s": "ATGAF",
+    "n": "Altagas Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "IBIDF",
+    "n": "Ibiden Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "FATBP",
+    "n": "Fat Brands, Inc",
+    "e": "US"
+  },
+  {
+    "s": "MEIUF",
+    "n": "Meitu Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "AMLIF",
+    "n": "American Lithium Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BHFAM",
+    "n": "Brighthouse Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BHFAN",
+    "n": "Brighthouse Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BHFAO",
+    "n": "Brighthouse Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRXK",
+    "n": "Procaccianti Hotel Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PRXA",
+    "n": "Procaccianti Hotel Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASRRF",
+    "n": "Asr Nederland N.V./Adr",
+    "e": "US"
+  },
+  {
+    "s": "OZVN",
+    "n": "Oz Vision Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LARAX",
+    "n": "Lord Abbett Credit Opportunities Fund",
+    "e": "US"
+  },
+  {
+    "s": "QFNHF",
+    "n": "Qfin Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GFAIW",
+    "n": "Guardforce Ai Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "EDBLW",
+    "n": "Edible Garden Ag Inc",
+    "e": "US"
+  },
+  {
+    "s": "LUCYW",
+    "n": "Innovative Eyewear Inc",
+    "e": "US"
+  },
+  {
+    "s": "TALKW",
+    "n": "Talkspace, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NCLTF",
+    "n": "Nitori Holdings Co., Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ADYYF",
+    "n": "Adyen N.V./Adr",
+    "e": "US"
+  },
+  {
+    "s": "PSKRF",
+    "n": "Protector Forsikring/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PINE-PA",
+    "n": "Alpine Income Property Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GECCO",
+    "n": "Great Elm Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GECCI",
+    "n": "Great Elm Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GECCH",
+    "n": "Great Elm Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GECCG",
+    "n": "Great Elm Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "DBRG-PH",
+    "n": "Digitalbridge Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DBRG-PI",
+    "n": "Digitalbridge Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DBRG-PJ",
+    "n": "Digitalbridge Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FVGPY",
+    "n": "Finvolution Group",
+    "e": "US"
+  },
+  {
+    "s": "SONGD",
+    "n": "Music Licensing Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HTZWW",
+    "n": "Hertz Global Holdings, Inc",
+    "e": "US"
+  },
+  {
+    "s": "NRSAX",
+    "n": "Nexpoint Real Estate Strategies Fund",
+    "e": "US"
+  },
+  {
+    "s": "RWAYL",
+    "n": "Runway Growth Finance Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RWAYZ",
+    "n": "Runway Growth Finance Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OPENW",
+    "n": "Opendoor Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPENL",
+    "n": "Opendoor Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPENZ",
+    "n": "Opendoor Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADNWW",
+    "n": "Advent Technologies Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WRLRF",
+    "n": "West Red Lake Gold Mines Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "WLGMF",
+    "n": "West Red Lake Gold Mines Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "STSSW",
+    "n": "Sharps Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GNFTY",
+    "n": "Genfit S.A.",
+    "e": "US"
+  },
+  {
+    "s": "MPNGF",
+    "n": "Meituan Dianping/Adr",
+    "e": "US"
+  },
+  {
+    "s": "MVSTW",
+    "n": "Microvast Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WTCHF",
+    "n": "Wisetech Global Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "MNTSW",
+    "n": "Momentus Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WEBJF",
+    "n": "Webjet Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PASTF",
+    "n": "Plastic Omnium/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TRINZ",
+    "n": "Trinity Capital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRINI",
+    "n": "Trinity Capital Inc.",
+    "e": "US"
+  },
+  {
+    "s": "REVBW",
+    "n": "Revelation Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BFLY-WT",
+    "n": "Butterfly Network, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SBIGW",
+    "n": "Springbig Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ABXL",
+    "n": "Abacus Global Management, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OWLTW",
+    "n": "Owlet, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WGSWW",
+    "n": "Genedx Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HUMAW",
+    "n": "Humacyte, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WSUPW",
+    "n": "Wheels Up Experience Inc.",
+    "e": "US"
+  },
+  {
+    "s": "UVIX",
+    "n": "Vs Trust",
+    "e": "US"
+  },
+  {
+    "s": "BYNOU",
+    "n": "Bynordic Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "BYNOW",
+    "n": "Bynordic Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "TMCWW",
+    "n": "Tmc The Metals Co Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NREF-PA",
+    "n": "Nexpoint Real Estate Finance, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PMFAX",
+    "n": "Pimco Flexible Municipal Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "RTEZ",
+    "n": "Rest Ez Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BIAFW",
+    "n": "Bioaffinity Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AOMD",
+    "n": "Angel Oak Mortgage Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AOMN",
+    "n": "Angel Oak Mortgage Reit, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BENFW",
+    "n": "Beneficient",
+    "e": "US"
+  },
+  {
+    "s": "SRTAW",
+    "n": "Strata Critical Medical, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SYAXF",
+    "n": "Elevra Lithium Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BKSY-WT",
+    "n": "Blacksky Technology Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SACH-PA",
+    "n": "Sachem Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SCCD",
+    "n": "Sachem Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SCCE",
+    "n": "Sachem Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SCCF",
+    "n": "Sachem Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SCCG",
+    "n": "Sachem Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SWDR",
+    "n": "Starwood Real Estate Income Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GPMT-PA",
+    "n": "Granite Point Mortgage Trust Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MNSBP",
+    "n": "Mainstreet Bancshares, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FFAIW",
+    "n": "Faraday Future Intelligent Electric Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VENAF",
+    "n": "Microalgo Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MCOMW",
+    "n": "Micromobility.Com Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VTTGF",
+    "n": "Vat Group Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "COBA",
+    "n": "Chilean Cobalt Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OWSCX",
+    "n": "1ws Credit Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "PDSKX",
+    "n": "Principal Real Asset Fund",
+    "e": "US"
+  },
+  {
+    "s": "CELUW",
+    "n": "Celularity Inc",
+    "e": "US"
+  },
+  {
+    "s": "NRRWD",
+    "n": "Nuran Wireless Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SATLF",
+    "n": "Start Today Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "ICRP",
+    "n": "Inpoint Commercial Real Estate Income, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "METCB",
+    "n": "Ramaco Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "METCZ",
+    "n": "Ramaco Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "METCI",
+    "n": "Ramaco Resources, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BTBDW",
+    "n": "Bt Brands, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AIBRF",
+    "n": "Aib Group Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "VSSYW",
+    "n": "Versus Systems Inc.",
+    "e": "US"
+  },
+  {
+    "s": "STSR",
+    "n": "Strategic Student & Senior Housing Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPTEY",
+    "n": "Opthea Ltd",
+    "e": "US"
+  },
+  {
+    "s": "DFDVW",
+    "n": "Defi Development Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EVLVW",
+    "n": "Evolv Technologies Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRTN-PB",
+    "n": "Triton International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TRTN-PC",
+    "n": "Triton International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "BSTT",
+    "n": "Blackstone Real Estate Income Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TRTN-PD",
+    "n": "Triton International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TRTN-PE",
+    "n": "Triton International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TRTN-PF",
+    "n": "Triton International Ltd",
+    "e": "US"
+  },
+  {
+    "s": "OUSTZ",
+    "n": "Ouster, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GCGJ",
+    "n": "Guochun International Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IVBXF",
+    "n": "Innovent Biologics Inc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "ACAT",
+    "n": "Np Life Sciences Health Industry Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MSPRW",
+    "n": "Msp Recovery, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MSPRZ",
+    "n": "Msp Recovery, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KCLHF",
+    "n": "Kingsoft Cloud Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "UWMCW",
+    "n": "Uwm Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "RGTIW",
+    "n": "Rigetti Computing, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BETRW",
+    "n": "Better Home & Finance Holding Co",
+    "e": "US"
+  },
+  {
+    "s": "PIIIW",
+    "n": "P3 Health Partners Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MDAIW",
+    "n": "Spectral Ai, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASAIY",
+    "n": "Sendas Distributor S.A.",
+    "e": "US"
+  },
+  {
+    "s": "XAGEW",
+    "n": "Longevity Health Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WALDW",
+    "n": "Waldencast Plc",
+    "e": "US"
+  },
+  {
+    "s": "VEEAW",
+    "n": "Veea Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HVIIR",
+    "n": "Hennessy Capital Investment Corp. Vii",
+    "e": "US"
+  },
+  {
+    "s": "HVIIU",
+    "n": "Hennessy Capital Investment Corp. Vii",
+    "e": "US"
+  },
+  {
+    "s": "FIGP",
+    "n": "Forge Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SLDPW",
+    "n": "Solid Power, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AMPWF",
+    "n": "Ardagh Metal Packaging S.A.",
+    "e": "US"
+  },
+  {
+    "s": "PRIAF",
+    "n": "Prime Impact Acquisition I",
+    "e": "US"
+  },
+  {
+    "s": "JFBRW",
+    "n": "Jeffs' Brands Ltd",
+    "e": "US"
+  },
+  {
+    "s": "RBOTW",
+    "n": "Vicarious Surgical Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVEX-WT",
+    "n": "Eve Holding, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPADW",
+    "n": "Offerpad Solutions Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CPTKW",
+    "n": "Crown Proptech Acquisitions",
+    "e": "US"
+  },
+  {
+    "s": "XOSWW",
+    "n": "Xos, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SKYH-WT",
+    "n": "Sky Harbour Group Corp",
+    "e": "US"
+  },
+  {
+    "s": "ASUUF",
+    "n": "Aspac Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ASCRF",
+    "n": "Aspac Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ASCWF",
+    "n": "Aspac Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LCFYW",
+    "n": "Locafy Ltd",
+    "e": "US"
+  },
+  {
+    "s": "MSSUF",
+    "n": "Metal Sky Star Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "MSSWF",
+    "n": "Metal Sky Star Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "PGYWW",
+    "n": "Pagaya Technologies Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "IGTAR",
+    "n": "Inception Growth Acquisition Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IGTAU",
+    "n": "Inception Growth Acquisition Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IGTAW",
+    "n": "Inception Growth Acquisition Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TVGNW",
+    "n": "Tevogen Bio Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LNZAW",
+    "n": "Lanzatech Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TBLAW",
+    "n": "Taboola.Com Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SVIUF",
+    "n": "Spring Valley Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "DFLIW",
+    "n": "Dragonfly Energy Holdings Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GDLG",
+    "n": "Glidelogic Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GDEVW",
+    "n": "Gdev Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KUST",
+    "n": "Clover Leaf Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BFRIW",
+    "n": "Biofrontera Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MCAGR",
+    "n": "Mountain Crest Acquisition Corp. V",
+    "e": "US"
+  },
+  {
+    "s": "MCAGU",
+    "n": "Mountain Crest Acquisition Corp. V",
+    "e": "US"
+  },
+  {
+    "s": "AEAEU",
+    "n": "Altenergy Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "AEAEW",
+    "n": "Altenergy Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "AIRJW",
+    "n": "Airjoule Technologies Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NVAWW",
+    "n": "Nova Minerals Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NVAAF",
+    "n": "Nova Minerals Ltd",
+    "e": "US"
+  },
+  {
+    "s": "TPGXL",
+    "n": "Tpg Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IMPPP",
+    "n": "Imperial Petroleum Inc./Marshall Islands",
+    "e": "US"
+  },
+  {
+    "s": "PRENW",
+    "n": "Prenetics Global Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ATEKU",
+    "n": "Athena Technology Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "ATEKW",
+    "n": "Athena Technology Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "FTIIU",
+    "n": "Futuretech Ii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LVWR-WT",
+    "n": "Livewire Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRTUF",
+    "n": "Cartica Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "CRTWF",
+    "n": "Cartica Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "FSHPR",
+    "n": "Flag Ship Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "KORGW",
+    "n": "Kore Group Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASTLW",
+    "n": "Algoma Steel Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VSEEW",
+    "n": "Vsee Health, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARBEW",
+    "n": "Arbe Robotics Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "ECXWW",
+    "n": "Ecarx Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SOUNW",
+    "n": "Soundhound Ai, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ONMDW",
+    "n": "Onemednet Corp",
+    "e": "US"
+  },
+  {
+    "s": "CDAWF",
+    "n": "Compass Digital Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CDAUF",
+    "n": "Compass Digital Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WTMAR",
+    "n": "Evolution Metals & Technologies Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WTMAU",
+    "n": "Evolution Metals & Technologies Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CLDWW",
+    "n": "Calidi Biotherapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ANSCU",
+    "n": "Agriculture & Natural Solutions Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "ANSCW",
+    "n": "Agriculture & Natural Solutions Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "BFRGW",
+    "n": "Bullfrog Ai Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RSVRW",
+    "n": "Reservoir Media, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVGOW",
+    "n": "Evgo Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ISPOW",
+    "n": "Inspirato Inc",
+    "e": "US"
+  },
+  {
+    "s": "GEGGL",
+    "n": "Great Elm Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GLCP",
+    "n": "Global Leaders Corp",
+    "e": "US"
+  },
+  {
+    "s": "CPPTL",
+    "n": "Copper Property Ctl Pass Through Trust",
+    "e": "US"
+  },
+  {
+    "s": "CORZW",
+    "n": "Core Scientific, Inc./Tx",
+    "e": "US"
+  },
+  {
+    "s": "CORZZ",
+    "n": "Core Scientific, Inc./Tx",
+    "e": "US"
+  },
+  {
+    "s": "CORZR",
+    "n": "Core Scientific, Inc./Tx",
+    "e": "US"
+  },
+  {
+    "s": "DMXCF",
+    "n": "District Metals Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ZHIHF",
+    "n": "Zhihu Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BZFDW",
+    "n": "Buzzfeed, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCTTU",
+    "n": "Purecycle Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCTTW",
+    "n": "Purecycle Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PCTBP",
+    "n": "Purecycle Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RNLXD",
+    "n": "Renalytix Plc",
+    "e": "US"
+  },
+  {
+    "s": "RENXF",
+    "n": "Renalytix Plc",
+    "e": "US"
+  },
+  {
+    "s": "MOBXW",
+    "n": "Mobix Labs, Inc",
+    "e": "US"
+  },
+  {
+    "s": "GDSTR",
+    "n": "Goldenstone Acquisition Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GDSTU",
+    "n": "Goldenstone Acquisition Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "GDSTW",
+    "n": "Goldenstone Acquisition Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "FOXOW",
+    "n": "Foxo Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QSIAW",
+    "n": "Quantum-Si Inc",
+    "e": "US"
+  },
+  {
+    "s": "CXAIW",
+    "n": "Cxapp Inc.",
+    "e": "US"
+  },
+  {
+    "s": "JOBY-WT",
+    "n": "Joby Aviation, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LIDRW",
+    "n": "Aeye, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AERTW",
+    "n": "Aeries Technology, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SHFSW",
+    "n": "Shf Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MINR",
+    "n": "Minerva Gold Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GROVW",
+    "n": "Grove Collaborative Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GREEL",
+    "n": "Greenidge Generation Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AYWWF",
+    "n": "Ayr Wellness Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ASBPW",
+    "n": "Aspire Biopharma Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SAIHW",
+    "n": "Saiheat Ltd",
+    "e": "US"
+  },
+  {
+    "s": "NPWR-WT",
+    "n": "Net Power Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BSLKW",
+    "n": "Bolt Projects Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OSRHW",
+    "n": "Osr Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SPWRW",
+    "n": "Sunpower Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BBAI-WT",
+    "n": "Bigbear.Ai Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GPATU",
+    "n": "Gp-Act Iii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GPATW",
+    "n": "Gp-Act Iii Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GROY-WT",
+    "n": "Gold Royalty Corp.",
+    "e": "US"
+  },
+  {
+    "s": "HLLY-WT",
+    "n": "Holley Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BODYW",
+    "n": "Beachbody Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "AUROW",
+    "n": "Aurora Innovation, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DNABW",
+    "n": "Ginkgo Bioworks Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLMUF",
+    "n": "Plum Acquisition Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "PLMWF",
+    "n": "Plum Acquisition Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "FLYX-WT",
+    "n": "Flyexclusive Inc.",
+    "e": "US"
+  },
+  {
+    "s": "QTIWW",
+    "n": "Qt Imaging Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DAVEW",
+    "n": "Dave Inc./De",
+    "e": "US"
+  },
+  {
+    "s": "ZPTAW",
+    "n": "Zapata Quantum, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GRABW",
+    "n": "Grab Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "SOARW",
+    "n": "Volato Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KDKRW",
+    "n": "Kodiak Ai, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CNDAU",
+    "n": "Concord Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "CNDAW",
+    "n": "Concord Acquisition Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "GCTS-WT",
+    "n": "Gct Semiconductor Holding, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APOS",
+    "n": "Apollo Global Management, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ARQQW",
+    "n": "Arqit Quantum Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZEOWW",
+    "n": "Zeo Energy Corp.",
+    "e": "US"
+  },
+  {
+    "s": "NNAVW",
+    "n": "Nextnav Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NXNVW",
+    "n": "Nextnav Inc.",
+    "e": "US"
+  },
+  {
+    "s": "WBXWF",
+    "n": "Wallbox N.V.",
+    "e": "US"
+  },
+  {
+    "s": "GLEI",
+    "n": "Galaxy Enterprises Inc. /Wy/",
+    "e": "US"
+  },
+  {
+    "s": "ANGHW",
+    "n": "Anghami Inc",
+    "e": "US"
+  },
+  {
+    "s": "TLGUF",
+    "n": "Tlgy Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "TLGWF",
+    "n": "Tlgy Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "NRSNW",
+    "n": "Neurosense Therapeutics Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "TOMYF",
+    "n": "Tomy Co Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BNZIW",
+    "n": "Banzai International, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SES-WT",
+    "n": "Ses Ai Corp",
+    "e": "US"
+  },
+  {
+    "s": "PVOZ",
+    "n": "Park View Oz Reit Inc",
+    "e": "US"
+  },
+  {
+    "s": "ALCYU",
+    "n": "Alchemy Investments Acquisition Corp 1",
+    "e": "US"
+  },
+  {
+    "s": "ALCYW",
+    "n": "Alchemy Investments Acquisition Corp 1",
+    "e": "US"
+  },
+  {
+    "s": "NVVEW",
+    "n": "Nuvve Holding Corp.",
+    "e": "US"
+  },
+  {
+    "s": "IINNW",
+    "n": "Inspira Technologies Oxy B.H.N. Ltd",
+    "e": "US"
+  },
+  {
+    "s": "XBPEW",
+    "n": "Xbp Global Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EONR-WT",
+    "n": "Eon Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SVIWF",
+    "n": "Spring Valley Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "SVIRF",
+    "n": "Spring Valley Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "ULIX",
+    "n": "Ulixe Corp.",
+    "e": "US"
+  },
+  {
+    "s": "INVZW",
+    "n": "Innoviz Technologies Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "CSTUF",
+    "n": "Constellation Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "CSTWF",
+    "n": "Constellation Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "JWSUF",
+    "n": "Jaws Mustang Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "JWSWF",
+    "n": "Jaws Mustang Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "UHGWW",
+    "n": "United Homes Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FOACW",
+    "n": "Finance Of America Companies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SABSW",
+    "n": "Sab Biotherapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TFIN-P",
+    "n": "Triumph Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BPYPM",
+    "n": "Brookfield Property Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "BPYPN",
+    "n": "Brookfield Property Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "BPYPO",
+    "n": "Brookfield Property Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "GRTUF",
+    "n": "Granite Real Estate Investment Trust",
+    "e": "US"
+  },
+  {
+    "s": "RITM-PA",
+    "n": "Rithm Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RITM-PB",
+    "n": "Rithm Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RITM-PE",
+    "n": "Rithm Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RITM-PC",
+    "n": "Rithm Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RITM-PD",
+    "n": "Rithm Capital Corp.",
+    "e": "US"
+  },
+  {
+    "s": "REXR-PC",
+    "n": "Rexford Industrial Realty, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CTTRF",
+    "n": "Controladora Vuela Compania De Aviacion, S.A.B. De C.V.",
+    "e": "US"
+  },
+  {
+    "s": "MLSPF",
+    "n": "Melrose Industries Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "BTDPF",
+    "n": "Barratt Developments Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GMRE-PB",
+    "n": "Global Medical Reit Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SOHGF",
+    "n": "Alsok Co Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "LTAFX",
+    "n": "Alternative Strategies Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "LTCFX",
+    "n": "Alternative Strategies Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "BAFBF",
+    "n": "Balfour Beatty Plc/Adr",
+    "e": "US"
+  },
+  {
+    "s": "LOMWF",
+    "n": "Lion One Metals Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "EP-PC",
+    "n": "Kinder Morgan, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GMBLP",
+    "n": "Esports Entertainment Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GMBLZ",
+    "n": "Esports Entertainment Group, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PMTU",
+    "n": "Pennymac Mortgage Investment Trust",
+    "e": "US"
+  },
+  {
+    "s": "PMTW",
+    "n": "Pennymac Mortgage Investment Trust",
+    "e": "US"
+  },
+  {
+    "s": "PMTV",
+    "n": "Pennymac Mortgage Investment Trust",
+    "e": "US"
+  },
+  {
+    "s": "PMT-PC",
+    "n": "Pennymac Mortgage Investment Trust",
+    "e": "US"
+  },
+  {
+    "s": "WCPRF",
+    "n": "Whitecap Resources Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MIMTF",
+    "n": "Mitsubishi Materials Corp / Adr",
+    "e": "US"
+  },
+  {
+    "s": "HSCSW",
+    "n": "Heartsciences Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SNPTF",
+    "n": "Sunny Optical Technology (Group) Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SHLAF",
+    "n": "Schindler Holding Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SHLRF",
+    "n": "Schindler Holding Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TRTX-PC",
+    "n": "Tpg Re Finance Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "RVMDW",
+    "n": "Revolution Medicines, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GIPRW",
+    "n": "Generation Income Properties, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FORFF",
+    "n": "Fortis Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTRSF",
+    "n": "Fortis Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FINCF",
+    "n": "Fortis Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FRTSF",
+    "n": "Fortis Inc.",
+    "e": "US"
+  },
+  {
+    "s": "FTPSF",
+    "n": "Fortis Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ENSCW",
+    "n": "Ensysce Biosciences, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OCCIN",
+    "n": "Ofs Credit Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OCCIM",
+    "n": "Ofs Credit Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OCCIO",
+    "n": "Ofs Credit Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BGFR",
+    "n": "Bestgofer Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HYMCW",
+    "n": "Hycroft Mining Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "DRRKF",
+    "n": "Dormakaba Holding Ag",
+    "e": "US"
+  },
+  {
+    "s": "XJNGF",
+    "n": "Xinjiang Goldwind Science & Technology Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "LTRYW",
+    "n": "Lottery.Com Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ZTOEF",
+    "n": "Zto Express (Cayman) Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IRS-WT",
+    "n": "Irsa Investments & Representations Inc",
+    "e": "US"
+  },
+  {
+    "s": "RHEPZ",
+    "n": "Regional Health Properties, Inc",
+    "e": "US"
+  },
+  {
+    "s": "RHEPA",
+    "n": "Regional Health Properties, Inc",
+    "e": "US"
+  },
+  {
+    "s": "RHEPB",
+    "n": "Regional Health Properties, Inc",
+    "e": "US"
+  },
+  {
+    "s": "MFA-PC",
+    "n": "Mfa Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MFAN",
+    "n": "Mfa Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "MFAO",
+    "n": "Mfa Financial, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EPR-PC",
+    "n": "Epr Properties",
+    "e": "US"
+  },
+  {
+    "s": "EPR-PE",
+    "n": "Epr Properties",
+    "e": "US"
+  },
+  {
+    "s": "ELPC",
+    "n": "Energy Co Of Parana",
+    "e": "US"
+  },
+  {
+    "s": "SQFTP",
+    "n": "Presidio Property Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SQFTW",
+    "n": "Presidio Property Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "APCXW",
+    "n": "Apptech Payments Corp.",
+    "e": "US"
+  },
+  {
+    "s": "EPDU",
+    "n": "Enterprise Products Partners L.P.",
+    "e": "US"
+  },
+  {
+    "s": "GIGGF",
+    "n": "Giga Metals Corp",
+    "e": "US"
+  },
+  {
+    "s": "COPRD",
+    "n": "Idaho Copper Corp",
+    "e": "US"
+  },
+  {
+    "s": "CADE-PA",
+    "n": "Cadence Bank",
+    "e": "US"
+  },
+  {
+    "s": "DRH-PA",
+    "n": "Diamondrock Hospitality Co",
+    "e": "US"
+  },
+  {
+    "s": "ADAMG",
+    "n": "Adamas Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADAMM",
+    "n": "Adamas Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADAMH",
+    "n": "Adamas Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADAML",
+    "n": "Adamas Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADAMZ",
+    "n": "Adamas Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADAMI",
+    "n": "Adamas Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ADAMN",
+    "n": "Adamas Trust, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "KPHMW",
+    "n": "Kiora Pharmaceuticals Inc",
+    "e": "US"
+  },
+  {
+    "s": "UUGWF",
+    "n": "United Utilities Group Plc",
+    "e": "US"
+  },
+  {
+    "s": "AEVAW",
+    "n": "Aeva Technologies, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NUKKW",
+    "n": "Nukkleus Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALTG-PA",
+    "n": "Alta Equipment Group Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PSPX",
+    "n": "Pacific Sports Exchange Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SKILW",
+    "n": "Skillsoft Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RVSNW",
+    "n": "Rail Vision Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "NICHX",
+    "n": "Variant Alternative Income Fund",
+    "e": "US"
+  },
+  {
+    "s": "HIPOW",
+    "n": "Hippo Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TSPH",
+    "n": "Tusimple Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SRZNW",
+    "n": "Surrozen, Inc./De",
+    "e": "US"
+  },
+  {
+    "s": "VLDXW",
+    "n": "Velo3d, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BURUW",
+    "n": "Nuburu, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPFI-WT",
+    "n": "Oppfi Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SONWQ",
+    "n": "Sonder Holdings Inc.",
+    "e": "US"
+  },
+  {
+    "s": "GWH-WT",
+    "n": "Ess Tech, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BARKW",
+    "n": "Bark, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "LSRCF",
+    "n": "Lasertec Corporation/Adr",
+    "e": "US"
+  },
+  {
+    "s": "PSEWF",
+    "n": "Paysafe Ltd",
+    "e": "US"
+  },
+  {
+    "s": "ESLAW",
+    "n": "Estrella Immunopharma, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CBGGF",
+    "n": "Chain Bridge I",
+    "e": "US"
+  },
+  {
+    "s": "IMAQR",
+    "n": "International Media Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "IMAQU",
+    "n": "International Media Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "IMAQW",
+    "n": "International Media Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "RMCOW",
+    "n": "Royalty Management Holding Corp",
+    "e": "US"
+  },
+  {
+    "s": "KTTAW",
+    "n": "Pasithea Therapeutics Corp.",
+    "e": "US"
+  },
+  {
+    "s": "LOCLW",
+    "n": "Local Bounti Corporation/De",
+    "e": "US"
+  },
+  {
+    "s": "LVROW",
+    "n": "Lavoro Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CREVW",
+    "n": "Carbon Revolution Public Ltd Co",
+    "e": "US"
+  },
+  {
+    "s": "MGTEW",
+    "n": "Marblegate Capital Corp",
+    "e": "US"
+  },
+  {
+    "s": "APADR",
+    "n": "Aparadise Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "APADU",
+    "n": "Aparadise Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MNYWW",
+    "n": "Moneyhero Ltd",
+    "e": "US"
+  },
+  {
+    "s": "CAPTW",
+    "n": "Captivision Inc.",
+    "e": "US"
+  },
+  {
+    "s": "BAYAU",
+    "n": "Bayview Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "BAYAR",
+    "n": "Bayview Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "MLECW",
+    "n": "Moolec Science Sa",
+    "e": "US"
+  },
+  {
+    "s": "FBYDW",
+    "n": "Falcon'S Beyond Global, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "NAMSW",
+    "n": "Newamsterdam Pharma Co N.V.",
+    "e": "US"
+  },
+  {
+    "s": "AFRIW",
+    "n": "Forafric Global Plc",
+    "e": "US"
+  },
+  {
+    "s": "DFSCW",
+    "n": "Defsec Technologies Inc.",
+    "e": "US"
+  },
+  {
+    "s": "REEWF",
+    "n": "Cartesian Growth Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "REEUF",
+    "n": "Cartesian Growth Corp Ii",
+    "e": "US"
+  },
+  {
+    "s": "INNPF",
+    "n": "Innocan Pharma Corp",
+    "e": "US"
+  },
+  {
+    "s": "CBRGF",
+    "n": "Chain Bridge I",
+    "e": "US"
+  },
+  {
+    "s": "OABIW",
+    "n": "Omniab, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PSQH-WT",
+    "n": "Psq Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "IXQUF",
+    "n": "Ix Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "IXQWF",
+    "n": "Ix Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "BRLSW",
+    "n": "Borealis Foods Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HMELF",
+    "n": "Hold Me Ltd",
+    "e": "US"
+  },
+  {
+    "s": "IRRXU",
+    "n": "Integrated Rail & Resources Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "IRRXW",
+    "n": "Integrated Rail & Resources Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "DRMAW",
+    "n": "Dermata Therapeutics, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "SEATW",
+    "n": "Vivid Seats Inc.",
+    "e": "US"
+  },
+  {
+    "s": "HNSDF",
+    "n": "Hensoldt Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "NVACW",
+    "n": "Profusa, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "OPTXW",
+    "n": "Syntec Optics Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "VHAIW",
+    "n": "Vocodia Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "VHABW",
+    "n": "Vocodia Holdings Corp",
+    "e": "US"
+  },
+  {
+    "s": "PLSAD",
+    "n": "Polestar Automotive Holding Uk Plc",
+    "e": "US"
+  },
+  {
+    "s": "SLND-WT",
+    "n": "Southland Holdings, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "EVTWF",
+    "n": "Vertical Aerospace Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SWAGW",
+    "n": "Stran & Company, Inc.",
+    "e": "US"
+  },
+  {
+    "s": "DRTSW",
+    "n": "Alpha Tau Medical Ltd.",
+    "e": "US"
+  },
+  {
+    "s": "SATLW",
+    "n": "Satellogic Inc.",
+    "e": "US"
+  },
+  {
+    "s": "CRANU",
+    "n": "Crane Harbor Acquisition Corp. Ii",
+    "e": "US"
+  },
+  {
+    "s": "ARTCU",
+    "n": "Art Technology Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SORNU",
+    "n": "Soren Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SAC-UN",
+    "n": "Safeguard Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SVAQU",
+    "n": "Silicon Valley Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "AIKCF",
+    "n": "Aica Kogyo Co Limited/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DPCDF",
+    "n": "Dpc Dash Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "SCXBF",
+    "n": "Scb X Public Co Ltd",
+    "e": "US"
+  },
+  {
+    "s": "FLNCF",
+    "n": "Freelancer Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KOYNW",
+    "n": "Cslm Digital Asset Acquisition Corp Iii, Ltd",
+    "e": "US"
+  },
+  {
+    "s": "KOYNU",
+    "n": "Cslm Digital Asset Acquisition Corp Iii, Ltd",
+    "e": "US"
+  },
+  {
+    "s": "PREKF",
+    "n": "Prairiesky Royalty Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "CRACW",
+    "n": "Crown Reserve Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "CRACU",
+    "n": "Crown Reserve Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "CRACR",
+    "n": "Crown Reserve Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "WSTNU",
+    "n": "Westin Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "WSTNR",
+    "n": "Westin Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "WIPKF",
+    "n": "Winpak Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "OTGAU",
+    "n": "Otg Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "OTGAW",
+    "n": "Otg Acquisition Corp. I",
+    "e": "US"
+  },
+  {
+    "s": "OBIIF",
+    "n": "Obic Co., Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "PARXF",
+    "n": "Parex Resources Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "TMTNF",
+    "n": "Toromont Industries Ltd./Adr",
+    "e": "US"
+  },
+  {
+    "s": "TNDEF",
+    "n": "Top End Energy Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "GPTGF",
+    "n": "Gpt Group/Adr",
+    "e": "US"
+  },
+  {
+    "s": "VNMEW",
+    "n": "Vendome Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "MDDNF",
+    "n": "Meridian Energy Ltd/Adr",
+    "e": "US"
+  },
+  {
+    "s": "IRHOU",
+    "n": "Iron Horse Acquisition Ii Corp.",
+    "e": "US"
+  },
+  {
+    "s": "QSEAR",
+    "n": "Quartzsea Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "QSEAU",
+    "n": "Quartzsea Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "VNMEU",
+    "n": "Vendome Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "FUSEW",
+    "n": "Fusemachines Inc.",
+    "e": "US"
+  },
+  {
+    "s": "TACOU",
+    "n": "Berto Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "TACOW",
+    "n": "Berto Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "OYSEU",
+    "n": "Oyster Enterprises Ii Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "OYSER",
+    "n": "Oyster Enterprises Ii Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "RTACW",
+    "n": "Renatus Tactical Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "RTACU",
+    "n": "Renatus Tactical Acquisition Corp I",
+    "e": "US"
+  },
+  {
+    "s": "PLMKW",
+    "n": "Plum Acquisition Corp, Iv",
+    "e": "US"
+  },
+  {
+    "s": "WLACU",
+    "n": "Willow Lane Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "WLACW",
+    "n": "Willow Lane Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ALDFU",
+    "n": "Aldel Financial Ii Inc.",
+    "e": "US"
+  },
+  {
+    "s": "ALDFW",
+    "n": "Aldel Financial Ii Inc.",
+    "e": "US"
+  },
+  {
+    "s": "PLMKU",
+    "n": "Plum Acquisition Corp, Iv",
+    "e": "US"
+  },
+  {
+    "s": "SPEGU",
+    "n": "Silver Pegasus Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "SPEGR",
+    "n": "Silver Pegasus Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "CHARR",
+    "n": "Charlton Aria Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "CHARU",
+    "n": "Charlton Aria Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "GIGGU",
+    "n": "Gigcapital7 Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GIGGW",
+    "n": "Gigcapital7 Corp.",
+    "e": "US"
+  },
+  {
+    "s": "IMSRW",
+    "n": "Terrestrial Energy Inc. /De/",
+    "e": "US"
+  },
+  {
+    "s": "GDERF",
+    "n": "Galderma Group Ag/Adr",
+    "e": "US"
+  },
+  {
+    "s": "DTSQR",
+    "n": "Dt Cloud Star Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "DTSQU",
+    "n": "Dt Cloud Star Acquisition Corp",
+    "e": "US"
+  },
+  {
+    "s": "MACIW",
+    "n": "Melar Acquisition Corp. I/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "MACIU",
+    "n": "Melar Acquisition Corp. I/Cayman",
+    "e": "US"
+  },
+  {
+    "s": "ARHUF",
+    "n": "Aak Ab/Adr",
+    "e": "US"
+  },
+  {
+    "s": "TACHW",
+    "n": "Titan Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "MNYFF",
+    "n": "Money Forward, Inc./Adr",
+    "e": "US"
+  },
+  {
+    "s": "TACHU",
+    "n": "Titan Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ALFUW",
+    "n": "Centurion Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "ALFUU",
+    "n": "Centurion Acquisition Corp.",
+    "e": "US"
+  },
+  {
+    "s": "GAFC",
+    "n": "Guru App Factory Corp",
+    "e": "US"
+  },
+  {
+    "s": "LEGT-UN",
+    "n": "Legato Merger Corp. Iii",
+    "e": "US"
+  },
+  {
+    "s": "SCAGW",
+    "n": "Scage Future",
+    "e": "US"
+  },
+  {
+    "s": "GCLWW",
+    "n": "Gcl Global Holdings Ltd",
+    "e": "US"
+  },
+  {
+    "s": "LEGT-WT",
+    "n": "Legato Merger Corp. Iii",
     "e": "US"
   },
   {

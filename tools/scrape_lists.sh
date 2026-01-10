@@ -14,8 +14,9 @@ echo "Downloading Shanghai Connect (Jacktth)..."
 curl -s -L -A "$UA" "https://raw.githubusercontent.com/jacktth/ga-hk_stock_info/main/shanghai-connect/date.json" -o tools/data/shanghai_test.json
 
 
-# Russell 2000
-echo "Downloading Russell 2000..."
-curl -s -L -A "$UA" "https://raw.githubusercontent.com/ikoniaris/Russell2000/master/russell_2000_components.csv" -o tools/data/russell2000.csv
+# SEC Official List (All US Stocks)
+echo "Downloading SEC Tickers..."
+# SEC requires a user-agent with an email
+curl -s -L -A "CommonInvestor/1.0 (admin@commoninvestor.net)" "https://www.sec.gov/files/company_tickers.json" -o tools/data/sec_tickers.json
 
 echo "Done."

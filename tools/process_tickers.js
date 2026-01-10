@@ -75,32 +75,21 @@ function parseShanghai() {
     return [];
 }
 
-function parseRussell2000() {
-    console.log('Parsing Russell 2000...');
+function parseSEC() {
+    console.log('Parsing SEC Tickers...');
     try {
-        const raw = fs.readFileSync(path.join(DATA_DIR, 'russell2000.csv'), 'utf8');
-        const lines = raw.split('\n');
-        const matches = [];
-        // Skip header
-        for (let i = 1; i < lines.length; i++) {
-            const line = lines[i].trim();
-            if (!line) continue;
-            // CSV: Ticker,Name - simple split by comma, but handle comma in name?
-            // The file seems simple: A,A Company
-            // Let's regex it to be safe: ^([^,]+),(.*)$
-            const parts = line.match(/^([^,]+),(.*)$/);
-            if (parts) {
-                matches.push({
-                    s: parts[1].trim().toUpperCase(),
-                    n: parts[2].trim(),
-                    e: 'US'
-                });
-            }
-        }
-        console.log(`Found ${matches.length} Russell 2000 stocks.`);
+        const raw = fs.readFileSync(path.join(DATA_DIR, 'sec_tickers.json'), 'utf8');
+        const data = JSON.parse(raw);
+        // Format: "0": { "cik_str": 320193, "ticker": "AAPL", "title": "Apple Inc." }
+        const matches = Object.values(data).map(d => ({
+            s: d.ticker,
+            n: d.title.replace(/(\w)(\w*)/g, (g0, g1, g2) => g1.toUpperCase() + g2.toLowerCase()), // Title Case
+            e: 'US'
+        }));
+        console.log(`Found ${matches.length} SEC stocks.`);
         return matches;
     } catch (e) {
-        console.error('Failed to parse Russell 2000:', e.message);
+        console.error('Failed to parse SEC list:', e.message);
         return [];
     }
 }
@@ -114,18 +103,23 @@ const MANUAL_ADDITIONS = [
     { s: 'BIDU', n: 'Baidu', e: 'US' },
     { s: 'NIO', n: 'NIO Inc', e: 'US' },
     { s: 'TSM', n: 'Taiwan Semiconductor', e: 'US' },
-    { s: 'RELIANCE.NS', n: 'Reliance Industries', e: 'NSE' }, // Ensure coverage
+    { s: 'RELIANCE.NS', n: 'Reliance Industries', e: 'NSE' },
     { s: 'TCS.NS', n: 'Tata Consultancy Services', e: 'NSE' }
 ];
 
 function run() {
+    // SEC covers SP500 and Russell, so we might not need separate SP500 parser effectively, 
+    // but SP500 parser might likely have better names? 
+    // Actually SEC has legal names "MICROSOFT CORP", sp500 parser gets "Microsoft".
+    // Let's keep existing parsers but merge.
+
     const sp500 = parseSP500();
     const india = parseIndia();
     const shanghai = parseShanghai();
-    const russell = parseRussell2000();
+    const sec = parseSEC();
 
-    // Combine
-    let all = [...MANUAL_ADDITIONS, ...sp500, ...russell, ...india, ...shanghai];
+    // Combine - prioritize manually added, then SP500 (better names), then SEC (catch-all), then others
+    let all = [...MANUAL_ADDITIONS, ...sp500, ...sec, ...india, ...shanghai];
 
     // Deduplicate by symbol
     const seen = new Set();
