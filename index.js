@@ -1677,7 +1677,10 @@ async function searchStocks(query) {
      4. Name contains
   */
 
+  // Ensure data is loaded (fix race condition)
+  await ensureStocksLoaded();
   const source = window.globalTickers || [];
+  console.log(`Searching for "${q}" in ${source.length} tickers`);
   // Also include any local SP500 data if not in global (redundant usually but safe)
   // Actually process_tickers included SP500.
 
