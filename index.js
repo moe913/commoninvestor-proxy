@@ -1450,20 +1450,33 @@ function renderSavedItems() {
 
           // Sync Delete to Cloud
           if (isPremium) {
-            const username = localStorage.getItem('username');
             if (username) {
               fetch('/api/user-data', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ username, calculations: savedItems })
-              }).catch(err => {
-                console.error(err);
-                alert('Failed to save deletion. Check your token permissions.');
-              });
+              })
+                .then(res => {
+                  if (!res.ok) throw new Error('Save failed');
+                  // Only update UI if save succeeded
+                  renderList(savedItems);
+                })
+                .catch(err => {
+                  console.error(err);
+                  alert('Cloud Save Failed: Check your GitHub Token in Vercel Settings.\n\nItem was NOT deleted.');
+                  // Revert local array change
+                  // (Ideally we'd re-fetch, but for now just don't re-render the list so it stays visible? 
+                  //  Actually we already spliced it. We need to reload or undo splice.)
+                  savedItems.splice(index, 0, item); // Undo splice? warning: item reference might work
+                  renderSavedItems(); // Re-fetch to be safe
+                });
+            } else {
+              renderList(savedItems); // Local only
             }
+          } else {
+            // Not Premium? Should not happen here usually
+            renderList(savedItems);
           }
-
-          renderList(savedItems);
         }
       });
 
