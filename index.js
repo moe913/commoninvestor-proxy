@@ -1825,9 +1825,10 @@ const handleInput = debounce(async (e) => {
 }, 300);
 
 stock.addEventListener('input', (e) => {
-  // Show local results instantly?
-  // For now, let's trust the debounce to be fast enough or we can render local first.
-  // Let's stick to the debounced async flow for simplicity and API politeness.
+  // Sync to Insights Input if it exists
+  const stockInsights = document.getElementById('stockInsights');
+  if (stockInsights) stockInsights.value = e.target.value;
+
   handleInput(e);
 });
 stock.addEventListener('blur', () => setTimeout(() => stockList.classList.remove('show'), 150));
@@ -3671,16 +3672,9 @@ const stockInsights = document.getElementById('stockInsights');
 const stockListInsights = document.getElementById('stockListInsights');
 
 // Sync Inputs (One-way: Main -> Insights)
+// Logic moved to main stock event listener around line 1828 to avoid duplicates
 if (stock && stockInsights) {
-  stock.addEventListener('input', (e) => {
-    // When main calculator input changes, update insights input
-    stockInsights.value = e.target.value;
-    // Also trigger chart update if it's a valid stock in mock data
-    // Note: We might want to wait for selection, but user asked for "pre-selected" behavior.
-    // If they type, we just mirror text. Real update happens on selection/autofill.
-  });
-
-  // REMOVED: stockInsights listener that updated stock (User requested one-way sync)
+  // Duplicate listener removed
 }
 
 // Initialize Autocomplete for Insights
