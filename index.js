@@ -1793,8 +1793,18 @@ async function renderAC(inputEl = stock, listEl = stockList, onSelect = null) {
     div.className = 'ac-item';
     // Add exchange info if available
     const exch = item.exchange ? `<span class="ac-exch">${item.exchange}</span>` : '';
-    // cleaner layout without mdash, let flex gap handle it
-    div.innerHTML = `<strong>${item.symbol}</strong><span class="ac-name">${item.name}</span>${exch}`;
+
+    // Aesthetic Improvement:
+    // If symbol is numeric (e.g. 600519.SS), it looks "sloppy" to a US user.
+    // Swap them: Show Name (Bold) first, then Symbol (muted).
+    const isNumeric = /^\d/.test(item.symbol); // Starts with digit
+
+    if (isNumeric) {
+      div.innerHTML = `<strong>${item.name}</strong><span class="ac-name">${item.symbol}</span>${exch}`;
+    } else {
+      div.innerHTML = `<strong>${item.symbol}</strong><span class="ac-name">${item.name}</span>${exch}`;
+    }
+
     div.setAttribute('role', 'option'); div.id = 'opt-' + i; div.dataset.symbol = item.symbol;
     div.addEventListener('mousedown', () => {
       inputEl.value = item.symbol || item.name;
