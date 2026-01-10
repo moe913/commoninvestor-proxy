@@ -8,14 +8,11 @@ module.exports = async (req, res) => {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.setHeader('Access-Control-Expose-Headers', 'X-Data-Source, X-Token-Status');
+    res.setHeader('Access-Control-Expose-Headers', 'X-Data-Source'); // Keep this for now, useful for support
 
     if (req.method === 'OPTIONS') {
         return res.status(200).end();
     }
-
-    // Debug: Check if token exists
-    res.setHeader('X-Token-Status', GITHUB_TOKEN ? 'Present' : 'Missing');
 
     if (!GITHUB_TOKEN) {
         console.error('Missing GITHUB_TOKEN environment variable');
