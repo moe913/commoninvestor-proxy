@@ -51,11 +51,20 @@
             try {
                 const res = await fetch('/api/user-data?username=moe');
                 const source = res.headers.get('X-Data-Source');
+                const tokenStatus = res.headers.get('X-Token-Status'); // NEW
                 const status = res.status;
                 const text = await res.text();
 
                 log(`Status: ${status}`);
                 log(`Source Header: ${source || 'MISSING'}`);
+                log(`Token Status: ${tokenStatus || 'MISSING'}`);
+
+                if (tokenStatus === 'Missing') {
+                    log('❌ CRITICAL: The server explicitly reports the Token is MISSING.');
+                    log('   (Did you redeploy after adding it?)');
+                } else if (tokenStatus === 'Present') {
+                    log('✅ The server sees the Token.');
+                }
 
                 if (source === 'local') {
                     log('⚠️ WARNING: Serving from BACKUP (Read-Only). GitHub Token likely invalid or file missing.');
