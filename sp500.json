@@ -459,23 +459,58 @@
     "history": [
       {
         "year": "2021",
-        "revenue": 18.9
+        "revenue": 18.9,
+        "earnings": 8.7,
+        "eps": 8.76,
+        "fcf": 8.5,
+        "margin": 46.0,
+        "shares": 0.99,
+        "roe": 122.0,
+        "pe": 0
       },
       {
         "year": "2022",
-        "revenue": 22.2
+        "revenue": 22.2,
+        "earnings": 9.9,
+        "eps": 10.22,
+        "fcf": 9.8,
+        "margin": 44.6,
+        "shares": 0.96,
+        "roe": 145.0,
+        "pe": 0
       },
       {
         "year": "2023",
-        "revenue": 25.1
+        "revenue": 25.1,
+        "earnings": 11.2,
+        "eps": 11.83,
+        "fcf": 10.5,
+        "margin": 44.6,
+        "shares": 0.94,
+        "roe": 160.0,
+        "pe": 0
       },
       {
         "year": "2024",
-        "revenue": 28.2
+        "revenue": 28.2,
+        "earnings": 12.8,
+        "eps": 13.90,
+        "fcf": 11.8,
+        "margin": 45.4,
+        "shares": 0.92,
+        "roe": 175.0,
+        "pe": 0
       },
       {
         "year": "TTM",
-        "revenue": 31.5
+        "revenue": 31.5,
+        "earnings": 14.3,
+        "eps": 15.11,
+        "fcf": 13.2,
+        "margin": 45.3,
+        "shares": 0.89,
+        "roe": 180.0,
+        "pe": 34.84
       }
     ]
   },
