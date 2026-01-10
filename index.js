@@ -1792,8 +1792,9 @@ async function renderAC(inputEl = stock, listEl = stockList, onSelect = null) {
     const div = document.createElement('div');
     div.className = 'ac-item';
     // Add exchange info if available
-    const exch = item.exchange ? `<span class="ac-exch">(${item.exchange})</span>` : '';
-    div.innerHTML = `<strong>${item.symbol}</strong> &mdash; <span class="ac-name">${item.name}</span> ${exch}`;
+    const exch = item.exchange ? `<span class="ac-exch">${item.exchange}</span>` : '';
+    // cleaner layout without mdash, let flex gap handle it
+    div.innerHTML = `<strong>${item.symbol}</strong><span class="ac-name">${item.name}</span>${exch}`;
     div.setAttribute('role', 'option'); div.id = 'opt-' + i; div.dataset.symbol = item.symbol;
     div.addEventListener('mousedown', () => {
       inputEl.value = item.symbol || item.name;

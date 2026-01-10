@@ -416,8 +416,12 @@ textarea:disabled {
 }
 
 .ac-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   padding: 10px 12px;
-  cursor: pointer
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .ac-item:hover {
@@ -430,13 +434,28 @@ textarea:disabled {
 }
 
 .ac-item strong {
-  display: inline-block;
-  width: 90px
+  flex: 0 0 auto;
+  min-width: 50px;
+  color: var(--text);
 }
 
 .ac-item .ac-name {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: var(--muted);
-  margin-left: 6px
+  font-size: 0.95em;
+}
+
+.ac-exch {
+  flex: 0 0 auto;
+  font-size: 0.75em;
+  background: var(--chip);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--muted);
 }
 
 /* Table (no bottom rules) */
