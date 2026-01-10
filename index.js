@@ -1710,8 +1710,20 @@ async function searchStocks(query) {
     }
   }
 
-  // Sort by score then alpha
-  matches.sort((a, b) => b.score - a.score || a.symbol.localeCompare(b.symbol));
+  // Sort by score (desc), then US priority, then alpha
+  matches.sort((a, b) => {
+    // 1. Score
+    if (b.score !== a.score) return b.score - a.score;
+
+    // 2. US Priority (US first)
+    const aUS = a.exchange === 'US';
+    const bUS = b.exchange === 'US';
+    if (aUS && !bUS) return -1;
+    if (!aUS && bUS) return 1;
+
+    // 3. Alphabetical
+    return a.symbol.localeCompare(b.symbol);
+  });
 
   // Return top 20
   return matches.slice(0, 20);
