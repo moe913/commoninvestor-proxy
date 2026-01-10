@@ -622,8 +622,8 @@ if (loginForm) {
         body: JSON.stringify({ username, password })
       });
 
-      if (res.ok) {
-        const data = await res.json();
+      if (response.ok) {
+        const data = await response.json();
         isPremium = true;
         localStorage.setItem('isPremium', 'true');
         localStorage.setItem('username', data.username);

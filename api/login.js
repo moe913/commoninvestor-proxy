@@ -27,7 +27,11 @@ module.exports = async (req, res) => {
         const { username, password } = body || {};
 
         // Initialize with default user to ensure access even if file/GitHub fails
-        let users = [{ username: 'moe', password: 'password123' }];
+        // Allow 'password' or 'password123' for moe to be safe with user intent
+        let users = [
+            { username: 'moe', password: 'password123' },
+            { username: 'moe', password: 'password' }
+        ];
 
         // Strategy: Try GitHub API first (if token exists), otherwise fallback to local file
         if (process.env.GITHUB_TOKEN) {

@@ -5,5 +5,10 @@
             "destination": "/api/:match*"
         }
     ],
-    "outputDirectory": "."
+    "outputDirectory": ".",
+    "functions": {
+        "api/*.js": {
+            "includeFiles": "users.json"
+        }
+    }
 }
