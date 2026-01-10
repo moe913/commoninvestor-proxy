@@ -249,107 +249,51 @@ const stocksNotice = (() => {
 })();
 
 // Ticker Loader with Timeout
+// Ticker Loader with Timeout (Simplified & Robust)
 async function ensureStocksLoaded() {
-  // If allStocks is already populated, return it immediately.
-  if (allStocks.length) return allStocks;
+  if (allStocks.length > 500) return allStocks;
 
-  // Prioritize globalTickers if loaded via script tag and has sufficient data
+  // 1. Check if globalTickers is already here
   if (window.globalTickers && window.globalTickers.length > 500) {
     allStocks = window.globalTickers;
     return allStocks;
   }
 
-  // If a loading promise is already active, return it to avoid duplicate efforts.
-  if (_stocksLoadingPromise) return _stocksLoadingPromise;
-
-  // Create a new promise for loading stocks, incorporating a timeout for globalTickers.
-  _stocksLoadingPromise = new Promise(async (resolve) => {
-    let attempts = 0;
-    const maxAttempts = 50; // 5 seconds max (100ms * 50)
-    const checkInterval = 100; // ms
-
-    const intervalId = setInterval(() => {
-      attempts++;
-      if (window.globalTickers && window.globalTickers.length > 500) {
-        clearInterval(intervalId);
-        allStocks = window.globalTickers;
-        resolve(allStocks);
-        return;
-      } else if (attempts >= maxAttempts) {
-        clearInterval(intervalId);
-        console.warn("Global Tickers did not load within 5 seconds. Falling back to other sources.");
-        // Proceed to load from STOCK_SOURCES or inline data
-        loadFromOtherSources().then(resolve);
-      }
-    }, checkInterval);
-
-    // If globalTickers is not expected or doesn't load, proceed with other sources immediately
-    // This handles cases where globalTickers might not be used or is empty.
-    // We'll give it a short head start, then proceed.
-    setTimeout(() => {
-      if (!allStocks.length) { // Only proceed if not already resolved by globalTickers
-        clearInterval(intervalId); // Stop the interval if we're taking over
-        loadFromOtherSources().then(resolve);
-      }
-    }, 1000); // Give globalTickers 1 second to load before forcing other sources
-  });
-
-  // Helper function to load from STOCK_SOURCES and inline data
-  async function loadFromOtherSources() {
-    for (const url of STOCK_SOURCES) {
-      try {
-        const res = await fetch(url, { cache: 'no-store' });
-        if (!res.ok) {
-          console.warn(`stocks.json fetch returned ${res.status} for ${url}`);
-          continue;
-        }
-        const data = await res.json();
-        if (Array.isArray(data) && data.length) {
-          allStocks = data;
-          window.__allStocks = allStocks;
-          if (stocksNotice) { stocksNotice.style.display = 'none'; stocksNotice.textContent = ''; }
-          return allStocks;
-        }
-      } catch (err) {
-        console.error(`Failed to load ${url}:`, err);
-      }
+  // 2. Poll for up to 3 seconds for globalTickers to load
+  console.log('Waiting for ticker data...');
+  for (let i = 0; i < 30; i++) {
+    await new Promise(r => setTimeout(r, 100));
+    if (window.globalTickers && window.globalTickers.length > 500) {
+      allStocks = window.globalTickers;
+      console.log('Ticker data loaded via wait.');
+      return allStocks;
     }
+  }
 
-    // Inline fallback: allow embedding <script type="application/json" data-role="stocks">[…]</script>
+  // 3. Fallback: Load sp500 or other sources if global failed
+  console.warn('Global tickers timed out. Using fallback.');
+
+  try {
     const inline = document.querySelector('script[type="application/json"][data-role="stocks"]');
     if (inline?.textContent?.trim()) {
-      try {
-        const parsed = JSON.parse(inline.textContent);
-        if (Array.isArray(parsed) && parsed.length) {
-          allStocks = parsed;
-          window.__allStocks = allStocks;
-          return allStocks;
-        }
-      } catch (err) {
-        console.error('Failed to parse inline stocks JSON:', err);
-      }
+      const parsed = JSON.parse(inline.textContent);
+      if (Array.isArray(parsed)) allStocks = parsed;
     }
+  } catch (e) {
+    console.error('Fallback parse error:', e);
+  }
 
-    console.warn('Stocks dataset unavailable — autocomplete will fall back to popular list.');
-    if (stocksNotice) {
-      stocksNotice.style.display = 'none';
-      stocksNotice.textContent = '';
-    }
-    // As a final fallback, populate from bundled sp500.json if available
-    await loadSp500Data();
-    if (!allStocks.length && mergedStocks && typeof mergedStocks === 'object') {
+  if (allStocks.length === 0) {
+    await loadSp500Data(); // Assume this populates mergedStocks/allStocks
+    // Force pop from merged if needed
+    if ((!allStocks.length) && mergedStocks) {
       Object.entries(mergedStocks).forEach(([symbol, v]) => {
         allStocks.push({ symbol, name: v?.name || symbol });
       });
     }
-    return allStocks;
   }
 
-  try {
-    return await _stocksLoadingPromise;
-  } finally {
-    _stocksLoadingPromise = null;
-  }
+  return allStocks;
 }
 
 // Embedded Mock Data for Prototype (avoids CORS issues with file://)
