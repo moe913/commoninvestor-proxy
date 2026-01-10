@@ -35,13 +35,49 @@
 
 <body>
     <h1>Hub Data Debugger</h1>
-    <button class="btn" onclick="runCheck()">Run Diagnostics</button>
+    <button class="btn" onclick="runCheck()">Run Read Diagnostics</button>
+    <button class="btn" style="background:#e00;" onclick="runWriteCheck()">Run WRITE/SAVE Test</button>
     <div id="output"></div>
 
     <script>
         const logBox = document.getElementById('output');
         const log = (msg) => logBox.innerHTML += `<div>${msg}</div>`;
         const logSection = (title) => logBox.innerHTML += `<div style="color:#0f0; margin-top:20px; font-weight:bold">=== ${title} ===</div>`;
+
+        async function runWriteCheck() {
+            if (!confirm('This will try to save your current data back to the server. Continue?')) return;
+            logSection('Checking API WRITE (POST)');
+            log('Fetching current data first...');
+
+            try {
+                // 1. Get Data
+                const res = await fetch('/api/user-data?username=moe&t=' + Date.now());
+                if (!res.ok) throw new Error('Read failed: ' + res.status);
+                const data = await res.json();
+                log(`Current Items: ${data.length}`);
+
+                // 2. Post Same Data Back (Loopback Test)
+                log('Attempting to SAVE data back (Write Test)...');
+                const saveRes = await fetch('/api/user-data', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: 'moe', calculations: data })
+                });
+
+                const saveText = await saveRes.text();
+                log(`Save Status: ${saveRes.status}`);
+                log(`Response: ${saveText}`);
+
+                if (saveRes.ok) {
+                    log('✅ WRITE SUCCESSFUL. The server accepted the save.');
+                } else {
+                    log('❌ WRITE FAILED. The server rejected the save.');
+                }
+
+            } catch (e) {
+                log(`❌ Error: ${e.message}`);
+            }
+        }
 
         async function runCheck() {
             logBox.innerHTML = 'Starting...';

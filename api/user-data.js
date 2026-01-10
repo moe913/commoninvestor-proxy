@@ -119,7 +119,11 @@ module.exports = async (req, res) => {
 async function fetchFileFromGitHub() {
     const url = `https://api.github.com/repos/${REPO}/contents/${FILE_PATH}?ref=${BRANCH}`;
     const res = await fetch(url, {
-        headers: { 'Authorization': `Bearer ${GITHUB_TOKEN}` }
+        headers: {
+            'Authorization': `Bearer ${GITHUB_TOKEN}`,
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache'
+        }
     });
     if (res.status === 404) return null; // File not found is okay
     if (!res.ok) {
