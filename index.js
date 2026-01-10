@@ -1661,10 +1661,9 @@ async function searchStocks(query) {
 
   // Ensure data is loaded (fix race condition)
   await ensureStocksLoaded();
-  const source = window.globalTickers || [];
+  // BUG FIX: Use allStocks (which contains fallback if global fails) instead of window.globalTickers
+  const source = allStocks && allStocks.length > 0 ? allStocks : (window.globalTickers || []);
   console.log(`Searching for "${q}" in ${source.length} tickers`);
-  // Also include any local SP500 data if not in global (redundant usually but safe)
-  // Actually process_tickers included SP500.
 
   const matches = [];
 
