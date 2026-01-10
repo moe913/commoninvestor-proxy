@@ -25,10 +25,25 @@ module.exports = async (req, res) => {
         if (!username) return res.status(400).send('Missing username');
 
         try {
-            const fileData = await fetchFileFromGitHub();
-            if (!fileData) return res.status(200).json([]); // File doesn't exist yet
+            let fileData = await fetchFileFromGitHub();
+            let rawContent = null;
 
-            const allData = JSON.parse(Buffer.from(fileData.content, 'base64').toString('utf-8'));
+            if (fileData) {
+                rawContent = Buffer.from(fileData.content, 'base64').toString('utf-8');
+            } else {
+                // Fallback to local file if GitHub API fails/token missing
+                const fs = require('fs');
+                const path = require('path');
+                const localPath = path.join(process.cwd(), FILE_PATH);
+                if (fs.existsSync(localPath)) {
+                    console.log('Using local fallback for calculations.json');
+                    rawContent = fs.readFileSync(localPath, 'utf8');
+                }
+            }
+
+            if (!rawContent) return res.status(200).json([]); // No data found
+
+            const allData = JSON.parse(rawContent);
             const userData = allData[username] || [];
 
             return res.status(200).json(userData);

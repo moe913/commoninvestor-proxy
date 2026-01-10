@@ -8,7 +8,7 @@
     "outputDirectory": ".",
     "functions": {
         "api/*.js": {
-            "includeFiles": "users.json"
+            "includeFiles": "users.json,calculations.json"
         }
     }
 }
