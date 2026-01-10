@@ -38,24 +38,69 @@
     "price": 277.55,
     "history": [
       {
+        "year": "2021",
+        "revenue": 365.8,
+        "earnings": 94.7,
+        "eps": 5.61,
+        "fcf": 93.0,
+        "margin": 25.9,
+        "shares": 16.7,
+        "roe": 145.0,
+        "pe": 26.0,
+        "revGrowth": 33.3,
+        "earnGrowth": 64.9
+      },
+      {
         "year": "2022",
-        "revenue": 394.3
+        "revenue": 394.3,
+        "earnings": 99.8,
+        "eps": 6.11,
+        "fcf": 111.4,
+        "margin": 25.3,
+        "shares": 16.3,
+        "roe": 175.0,
+        "pe": 24.5,
+        "revGrowth": 7.8,
+        "earnGrowth": 5.4
       },
       {
         "year": "2023",
-        "revenue": 383.3
+        "revenue": 383.3,
+        "earnings": 97.0,
+        "eps": 6.13,
+        "fcf": 99.6,
+        "margin": 25.3,
+        "shares": 15.8,
+        "roe": 172.0,
+        "pe": 29.0,
+        "revGrowth": -2.8,
+        "earnGrowth": -2.8
       },
       {
         "year": "2024",
-        "revenue": 391
-      },
-      {
-        "year": "2025",
-        "revenue": 416.2
+        "revenue": 391.0,
+        "earnings": 93.7,
+        "eps": 6.08,
+        "fcf": 108.8,
+        "margin": 24.0,
+        "shares": 15.4,
+        "roe": 165.0,
+        "pe": 32.0,
+        "revGrowth": 2.0,
+        "earnGrowth": -3.4
       },
       {
         "year": "TTM",
-        "revenue": 416.2
+        "revenue": 391.0,
+        "earnings": 93.7,
+        "eps": 6.08,
+        "fcf": 108.8,
+        "margin": 24.0,
+        "shares": 15.4,
+        "roe": 160.0,
+        "pe": 37.16,
+        "revGrowth": 2.0,
+        "earnGrowth": -3.4
       }
     ]
   },
@@ -68,24 +113,69 @@
     "price": 485.5,
     "history": [
       {
+        "year": "2021",
+        "revenue": 168.1,
+        "earnings": 61.3,
+        "eps": 8.05,
+        "fcf": 56.1,
+        "margin": 36.5,
+        "shares": 7.6,
+        "roe": 47.0,
+        "pe": 34.0,
+        "revGrowth": 17.5,
+        "earnGrowth": 38.0
+      },
+      {
         "year": "2022",
-        "revenue": 198.3
+        "revenue": 198.3,
+        "earnings": 72.7,
+        "eps": 9.65,
+        "fcf": 65.1,
+        "margin": 36.7,
+        "shares": 7.5,
+        "roe": 42.0,
+        "pe": 27.0,
+        "revGrowth": 18.0,
+        "earnGrowth": 18.7
       },
       {
         "year": "2023",
-        "revenue": 211.9
+        "revenue": 211.9,
+        "earnings": 72.4,
+        "eps": 9.68,
+        "fcf": 59.5,
+        "margin": 34.2,
+        "shares": 7.46,
+        "roe": 38.0,
+        "pe": 36.0,
+        "revGrowth": 6.9,
+        "earnGrowth": -0.5
       },
       {
         "year": "2024",
-        "revenue": 245.1
-      },
-      {
-        "year": "2025",
-        "revenue": 281.7
+        "revenue": 245.1,
+        "earnings": 78.6,
+        "eps": 11.80,
+        "fcf": 74.1,
+        "margin": 36.0,
+        "shares": 7.40,
+        "roe": 39.0,
+        "pe": 38.0,
+        "revGrowth": 15.7,
+        "earnGrowth": 8.6
       },
       {
         "year": "TTM",
-        "revenue": 293.8
+        "revenue": 254.2,
+        "earnings": 88.1,
+        "eps": 11.85,
+        "fcf": 78.0,
+        "margin": 36.5,
+        "shares": 7.40,
+        "roe": 40.0,
+        "pe": 34.48,
+        "revGrowth": 16.0,
+        "earnGrowth": 12.0
       }
     ]
   },
