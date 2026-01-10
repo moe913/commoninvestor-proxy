@@ -1642,7 +1642,71 @@ function disablePremiumMode() {
 // Auto-fill logic
 
 let acIndex = -1; // currently highlighted suggestion index
-function suggestions(q) {
+// Debounce helper
+function debounce(func, wait) {
+  let timeout;
+  return function (...args) {
+    const context = this;
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(context, args), wait);
+  };
+}
+
+// Remote Search Cache
+const searchCache = new Map();
+
+// Hybrid Search Function
+async function searchStocks(query) {
+  if (!query) return [];
+  const raw = query.toString().trim();
+  if (!raw) return [];
+  const q = raw.toUpperCase();
+
+  // 1. Local Search (Instant)
+  const localMatches = suggestionsLocal(q);
+
+  // 2. Remote Search (if query length > 2)
+  let remoteMatches = [];
+  if (raw.length >= 2) {
+    if (searchCache.has(q)) {
+      remoteMatches = searchCache.get(q);
+    } else {
+      try {
+        const res = await fetch(`/.netlify/functions/search?q=${encodeURIComponent(raw)}`);
+        if (res.ok) {
+          const data = await res.json();
+          // Map to our format
+          remoteMatches = data.map(d => ({
+            symbol: d.symbol,
+            name: d.name,
+            exchange: d.exchange, // meaningful info
+            score: 70 // default score for remote
+          }));
+          searchCache.set(q, remoteMatches);
+        }
+      } catch (e) {
+        console.warn('Search API failed', e);
+      }
+    }
+  }
+
+  // 3. Merge and Dedup
+  // Map local symbols to set for fast exclusion
+  const seen = new Set(localMatches.map(m => m.symbol));
+  const merged = [...localMatches];
+
+  for (const r of remoteMatches) {
+    if (!seen.has(r.symbol)) {
+      merged.push(r);
+      seen.add(r.symbol);
+    }
+  }
+
+  return merged;
+}
+
+// Renamed original synchronous suggestions to suggestionsLocal
+function suggestionsLocal(q) {
   if (!q) return [];
   const raw = q.toString().trim();
   if (!raw) return [];
@@ -1732,6 +1796,7 @@ function suggestions(q) {
   for (const m of matches) { const k = (m.symbol || '') + "|" + (m.name || ''); if (!seen.has(k)) { seen.add(k); uniq.push({ symbol: m.symbol, name: m.name }); } if (uniq.length >= 12) break; }
   return uniq;
 }
+
 function editDistance(a, b) {
   const dp = Array.from({ length: a.length + 1 }, () => Array(b.length + 1).fill(0));
   for (let i = 0; i <= a.length; i++) dp[i][0] = i; for (let j = 0; j <= b.length; j++) dp[0][j] = j;
@@ -1741,9 +1806,16 @@ function editDistance(a, b) {
   }
   return dp[a.length][b.length];
 }
-function renderAC(inputEl = stock, listEl = stockList, onSelect = null) {
+
+async function renderAC(inputEl = stock, listEl = stockList, onSelect = null) {
   const val = inputEl.value;
-  const list = suggestions(val);
+  // Just show local matches immediately? No, wait for hybrid logic but maybe show loading
+  // Actually, for best UX: Show local instantly, then update.
+  // Converting renderAC to be pure async/render logic is cleaner.
+
+  // Note: This is now async.
+  const list = await searchStocks(val);
+
   acIndex = -1;
   inputEl.setAttribute('aria-expanded', String(list.length > 0 || val.trim().length > 0));
   listEl.innerHTML = '';
@@ -1781,7 +1853,9 @@ function renderAC(inputEl = stock, listEl = stockList, onSelect = null) {
   list.forEach((item, i) => {
     const div = document.createElement('div');
     div.className = 'ac-item';
-    div.innerHTML = `<strong>${item.symbol}</strong> &mdash; <span class="ac-name">${item.name}</span>`;
+    // Add exchange info if available
+    const exch = item.exchange ? `<span class="ac-exch">(${item.exchange})</span>` : '';
+    div.innerHTML = `<strong>${item.symbol}</strong> &mdash; <span class="ac-name">${item.name}</span> ${exch}`;
     div.setAttribute('role', 'option'); div.id = 'opt-' + i; div.dataset.symbol = item.symbol;
     div.addEventListener('mousedown', () => {
       inputEl.value = item.symbol || item.name;
@@ -1800,14 +1874,23 @@ function renderAC(inputEl = stock, listEl = stockList, onSelect = null) {
 
   // Re-index all children for keyboard nav
   Array.from(listEl.children).forEach((child, idx) => {
-    child.addEventListener('mouseover', () => setACIndex(idx)); // Note: setACIndex might need refactoring too if it relies on global vars, but for now it's visual.
+    child.addEventListener('mouseover', () => setACIndex(idx));
   });
 }
-stock.addEventListener('input', async (e) => {
+
+// Debounced input handler
+const handleInput = debounce(async (e) => {
   // Try to ensure the stock list is loaded; if it fails we keep using the fallback list.
   if (!allStocks.length) await ensureStocksLoaded();
-  renderAC(stock, stockList);
-  updateActiveCompany();
+  await renderAC(stock, stockList);
+  // updateActiveCompany(); // Maybe don't update active company on every keystroke if it's heavy
+}, 300);
+
+stock.addEventListener('input', (e) => {
+  // Show local results instantly?
+  // For now, let's trust the debounce to be fast enough or we can render local first.
+  // Let's stick to the debounced async flow for simplicity and API politeness.
+  handleInput(e);
 });
 stock.addEventListener('blur', () => setTimeout(() => stockList.classList.remove('show'), 150));
 
