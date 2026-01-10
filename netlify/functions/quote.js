@@ -16,10 +16,23 @@ exports.handler = async function (event, context) {
         const quote = await yahooFinance.quote(symbol);
 
         // Fetch History (Financials)
-        // We need annual income statements for the graphs.
-        // yahoo-finance2 'quoteSummary' with 'incomeStatementHistory' module gives this.
-        // Added 'incomeStatementHistoryQuarterly' for TTM growth calculation
-        const summary = await yahooFinance.quoteSummary(symbol, { modules: ['incomeStatementHistory', 'incomeStatementHistoryQuarterly', 'defaultKeyStatistics', 'financialData', 'earnings', 'cashflowStatementHistory', 'balanceSheetHistory'] });
+        const fetchWithRetry = async (sym, retries = 2) => {
+            try {
+                return await yahooFinance.quoteSummary(sym, {
+                    modules: ['incomeStatementHistory', 'incomeStatementHistoryQuarterly', 'defaultKeyStatistics', 'financialData', 'earnings', 'cashflowStatementHistory', 'balanceSheetHistory']
+                });
+            } catch (err) {
+                if (retries > 0 && (err.message.includes('Too Many Requests') || err.message.includes('429'))) {
+                    console.warn(`[${sym}] Rate limit. Retrying...`);
+                    // Random delay 2-5s
+                    await new Promise(r => setTimeout(r, 2000 + Math.random() * 3000));
+                    return fetchWithRetry(sym, retries - 1);
+                }
+                throw err;
+            }
+        };
+
+        const summary = await fetchWithRetry(symbol);
 
         let incomeHistory = summary.incomeStatementHistory?.incomeStatementHistory || [];
         const quarterlyIncome = summary.incomeStatementHistoryQuarterly?.incomeStatementHistory || [];
