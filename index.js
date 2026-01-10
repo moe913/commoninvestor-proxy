@@ -1652,149 +1652,75 @@ function debounce(func, wait) {
   };
 }
 
-// Remote Search Cache
-const searchCache = new Map();
+// Static Search Cache (not really needed but keeps signature)
+// Using window.globalTickers derived from tools/process_tickers.js
 
-// Hybrid Search Function
+// Unified Search Function (Client-Side)
 async function searchStocks(query) {
   if (!query) return [];
   const raw = query.toString().trim();
   if (!raw) return [];
   const q = raw.toUpperCase();
+  const tokens = q.split(/\s+/).filter(Boolean);
 
-  // 1. Local Search (Instant)
-  const localMatches = suggestionsLocal(q);
+  /* 
+     globalTickers format: [{ s: 'AAPL', n: 'Apple Inc', e: 'US' }, ...] 
+     We prioritize:
+     1. Exact Symbol match
+     2. Symbol starts with
+     3. Name starts with
+     4. Name contains
+  */
 
-  // 2. Remote Search (if query length > 2)
-  let remoteMatches = [];
-  if (raw.length >= 2) {
-    if (searchCache.has(q)) {
-      remoteMatches = searchCache.get(q);
-    } else {
-      try {
-        const res = await fetch(`/.netlify/functions/search?q=${encodeURIComponent(raw)}`);
-        if (res.ok) {
-          const data = await res.json();
-          // Map to our format
-          remoteMatches = data.map(d => ({
-            symbol: d.symbol,
-            name: d.name,
-            exchange: d.exchange, // meaningful info
-            score: 70 // default score for remote
-          }));
-          searchCache.set(q, remoteMatches);
+  const source = window.globalTickers || [];
+  // Also include any local SP500 data if not in global (redundant usually but safe)
+  // Actually process_tickers included SP500.
+
+  const matches = [];
+
+  // Heuristic scoring:
+  // 100: Exact Symbol
+  // 90: Symbol starts with
+  // 80: Name starts with
+  // 70: Word match
+  // 50: Contains
+
+  for (const item of source) {
+    const sym = item.s.toUpperCase();
+    const name = item.n.toUpperCase();
+    let score = 0;
+
+    if (sym === q) score = 100;
+    else if (sym.startsWith(q)) score = 90;
+    else if (name.startsWith(q)) score = 80;
+    else {
+      // Token matching
+      let allTokens = true;
+      for (const t of tokens) {
+        if (!sym.includes(t) && !name.includes(t)) {
+          allTokens = false;
+          break;
         }
-      } catch (e) {
-        console.warn('Search API failed', e);
       }
+      if (allTokens) score = 60;
+    }
+
+    if (score > 0) {
+      matches.push({ symbol: item.s, name: item.n, exchange: item.e, score });
     }
   }
 
-  // 3. Merge and Dedup
-  // Map local symbols to set for fast exclusion
-  const seen = new Set(localMatches.map(m => m.symbol));
-  const merged = [...localMatches];
+  // Sort by score then alpha
+  matches.sort((a, b) => b.score - a.score || a.symbol.localeCompare(b.symbol));
 
-  for (const r of remoteMatches) {
-    if (!seen.has(r.symbol)) {
-      merged.push(r);
-      seen.add(r.symbol);
-    }
-  }
-
-  return merged;
+  // Return top 20
+  return matches.slice(0, 20);
 }
 
 // Renamed original synchronous suggestions to suggestionsLocal
+// (Deprecated/Unused now, simplified to single searchStocks)
 function suggestionsLocal(q) {
-  if (!q) return [];
-  const raw = q.toString().trim();
-  if (!raw) return [];
-  const l = raw.toUpperCase();
-  const tokens = l.split(/\s+/).filter(Boolean);
-
-  // helper: match tokens against company name by word-prefixes in sequence
-  const nameMatchesTokens = (tokens, nameUpper) => {
-    const words = nameUpper.split(/\s+/).filter(Boolean);
-    // try matching tokens to consecutive words starting at any position
-    for (let start = 0; start < words.length; start++) {
-      let ok = true;
-      for (let t = 0; t < tokens.length; t++) {
-        const w = words[start + t];
-        if (!w || !w.startsWith(tokens[t])) { ok = false; break; }
-      }
-      if (ok) return true;
-    }
-    // also try matching against the full name without spaces (useful for joined names)
-    const joined = nameUpper.replace(/\s+/g, '');
-    if (joined.startsWith(tokens.join(''))) return true;
-    return false;
-  };
-
-  const matches = [];
-  if (allStocks?.length) {
-    // First pass: prioritize symbol prefix matches and name prefix / word-prefix matches
-    for (const s of allStocks) {
-      const sym = (s.symbol || '').toUpperCase();
-      const name = (s.name || '').toUpperCase();
-
-      // Symbol: if tokens combined (no spaces) match the symbol prefix
-      const combined = tokens.join('');
-      if (combined && sym.startsWith(combined)) { matches.push({ symbol: s.symbol, name: s.name, score: 100 }); continue; }
-
-      // If single token and symbol startsWith that token, match
-      if (tokens.length === 1 && sym.startsWith(tokens[0])) { matches.push({ symbol: s.symbol, name: s.name, score: 90 }); continue; }
-
-      // Name: check if the full name starts with the raw input or name word-prefixes match tokens
-      if (name.startsWith(l) || nameMatchesTokens(tokens, name)) { matches.push({ symbol: s.symbol, name: s.name, score: 80 }); continue; }
-    }
-
-    // If we found none, relax to includes matching (symbol or name contains the typed text)
-    if (matches.length === 0) {
-      for (const s of allStocks) {
-        const sym = (s.symbol || '').toUpperCase();
-        const name = (s.name || '').toUpperCase();
-        if (sym.includes(l) || name.includes(l)) matches.push({ symbol: s.symbol, name: s.name, score: 50 });
-      }
-    }
-
-    // Final fallback: small fuzzy distance on names
-    if (matches.length === 0) {
-      const sset = new Set();
-      for (const s of allStocks) {
-        const name = (s.name || '').toUpperCase();
-        const dist = editDistance(l, name);
-        if (dist <= 3 && !sset.has(s.name)) { sset.add(s.name); matches.push({ symbol: s.symbol, name: s.name, score: 10 }); }
-      }
-    }
-  } else {
-    // fallback to popular list (search by name)
-    const l2 = l.toLowerCase();
-    for (const p of popular) {
-      if (p.toLowerCase().includes(l2)) {
-        let sym = '';
-        // Map popular names to symbols for the prototype
-        if (p === 'Apple') sym = 'AAPL';
-        else if (p === 'Microsoft') sym = 'MSFT';
-        else if (p === 'Amazon') sym = 'AMZN';
-        else if (p === 'Alphabet (Google)') sym = 'GOOGL';
-        else if (p === 'Tesla') sym = 'TSLA';
-        else if (p === 'Meta (Facebook)') sym = 'META';
-        else if (p === 'NVIDIA') sym = 'NVDA';
-        else if (p === 'Berkshire Hathaway') sym = 'BRK.B';
-        else if (p === 'Johnson & Johnson') sym = 'JNJ';
-        else if (p === 'Visa') sym = 'V';
-
-        matches.push({ symbol: sym, name: p, score: 40 });
-      }
-    }
-  }
-  // Limit, de-duplicate and sort by score (higher first), then symbol/name
-  matches.sort((a, b) => (b.score || 0) - (a.score || 0) || (a.symbol || '').localeCompare(b.symbol || '') || (a.name || '').localeCompare(b.name || ''));
-  const uniq = [];
-  const seen = new Set();
-  for (const m of matches) { const k = (m.symbol || '') + "|" + (m.name || ''); if (!seen.has(k)) { seen.add(k); uniq.push({ symbol: m.symbol, name: m.name }); } if (uniq.length >= 12) break; }
-  return uniq;
+  return [];
 }
 
 function editDistance(a, b) {
