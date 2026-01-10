@@ -1,6 +1,15 @@
 const YahooFinance = require('yahoo-finance2').default;
 const yahooFinance = new YahooFinance();
 
+// Spoof User-Agent to avoid 429/Blocks on Vercel IPs
+yahooFinance.setGlobalConfig({
+    req: {
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        }
+    }
+});
+
 module.exports = async (req, res) => {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
