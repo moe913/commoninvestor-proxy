@@ -7,15 +7,20 @@ const FILE_PATH = 'calculations.json';
 module.exports = async (req, res) => {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Expose-Headers', 'X-Data-Source, X-Token-Status');
 
     if (req.method === 'OPTIONS') {
         return res.status(200).end();
     }
 
+    // Debug: Check if token exists
+    res.setHeader('X-Token-Status', GITHUB_TOKEN ? 'Present' : 'Missing');
+
     if (!GITHUB_TOKEN) {
         console.error('Missing GITHUB_TOKEN environment variable');
-        return res.status(500).send('Server Error: Missing GITHUB_TOKEN');
+        // Don't error immediately, let fallback logic handle it for GET
+        // But for POST it will fail.
     }
 
     const { method } = req;
