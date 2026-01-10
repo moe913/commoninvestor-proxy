@@ -1,5 +1,4 @@
 // Auto-generated detailed ticker list
-// Auto-generated detailed ticker list
 window.globalTickers = [
   {
     "s": "BABA",
@@ -71208,10 +71207,6 @@ window.globalTickers = [
   }
 ];
 
-// Optimizing for search? No, just raw list is fine for client side filter ~4k items.
-// Export for CommonJS and Browser
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = globalTickers;
-} else {
-  window.globalTickers = globalTickers;
+    module.exports = window.globalTickers;
 }
