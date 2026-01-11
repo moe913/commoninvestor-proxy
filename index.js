@@ -1337,6 +1337,9 @@ async function pushToCloud(username, dataWrapper) {
 }
 
 function renderList(savedItems) {
+  const savedList = document.getElementById('hubSavedList');
+  if (!savedList) return;
+
   if (savedItems.length === 0) {
     savedList.innerHTML = '<div class="empty-state">No saved items yet.</div>';
     return;
