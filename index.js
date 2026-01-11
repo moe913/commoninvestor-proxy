@@ -1294,12 +1294,21 @@ function renderSavedItems() {
 
         // 3. Compare Timestamps ("Newer Wins")
         if (cloudData.lastModified > localData.lastModified) {
-          // Cloud is newer -> PULL
-          console.log('Cloud is newer. Pulling...');
-          localData = cloudData;
-          localStorage.setItem(storageKey, JSON.stringify(localData));
-          renderList(localData.items);
-          toast('Synced from Cloud', 2000);
+          // Safeguard: Don't let an empty cloud state wipe a populated local state
+          if (cloudData.items.length === 0 && localData.items.length > 0) {
+            console.warn('Cloud is newer but empty. Keeping local data and re-syncing.');
+            localData.lastModified = Date.now(); // Update local to win
+            localStorage.setItem(storageKey, JSON.stringify(localData));
+            // Force push to fix cloud
+            pushToCloud(username, localData).then(() => toast('Sync Fixed (Local Kept)', 2000));
+          } else {
+            // Cloud is newer -> PULL
+            console.log('Cloud is newer. Pulling...');
+            localData = cloudData;
+            localStorage.setItem(storageKey, JSON.stringify(localData));
+            renderList(localData.items);
+            toast('Synced from Cloud', 2000);
+          }
         }
         else if (localData.lastModified > cloudData.lastModified) {
           // Local is newer -> PUSH
