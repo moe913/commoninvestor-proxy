@@ -4,7 +4,7 @@
     "description": "Proxy server for Common Investor",
     "main": "index.js",
     "scripts": {
-        "dev": "netlify dev",
+        "dev": "vercel dev",
         "build": "echo 'No build command'"
     },
     "dependencies": {

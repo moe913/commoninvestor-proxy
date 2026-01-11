@@ -51,10 +51,15 @@ module.exports = async (req, res) => {
                 }
             }
 
-            if (!rawContent) return res.status(200).json([]); // No data found
+            if (!rawContent) return res.status(200).json({ lastModified: 0, items: [] });
 
             const allData = JSON.parse(rawContent);
-            const userData = allData[username] || [];
+            let userData = allData[username] || { lastModified: 0, items: [] };
+
+            // Migration: If legacy array, wrap it
+            if (Array.isArray(userData)) {
+                userData = { lastModified: 0, items: userData };
+            }
 
             return res.status(200).json(userData);
         } catch (e) {
@@ -74,10 +79,20 @@ module.exports = async (req, res) => {
                 }
             }
 
-            const { username, calculations } = body || {};
+            // Expect { username, data: { lastModified, items } }
+            // Support legacy: { username, calculations: [] }
+            const { username, data, calculations } = body || {};
 
-            if (!username || !Array.isArray(calculations)) {
-                return res.status(400).send('Invalid input');
+            if (!username) return res.status(400).send('Missing username');
+
+            let payloadToSave = data;
+            if (!payloadToSave && Array.isArray(calculations)) {
+                // Legacy Save adaptation
+                payloadToSave = { lastModified: Date.now(), items: calculations };
+            }
+
+            if (!payloadToSave || !Array.isArray(payloadToSave.items)) {
+                return res.status(400).send('Invalid input structure');
             }
 
             // 1. Fetch current file
@@ -96,13 +111,13 @@ module.exports = async (req, res) => {
             }
 
             // 2. Update user data
-            allData[username] = calculations;
+            allData[username] = payloadToSave;
 
             // 3. Commit back
             const newContent = Buffer.from(JSON.stringify(allData, null, 2)).toString('base64');
             await updateFileInGitHub(newContent, currentSha, `Update calculations for ${username}`);
 
-            return res.status(200).json({ success: true });
+            return res.status(200).json({ success: true, savedTimestamp: payloadToSave.lastModified });
 
         } catch (e) {
             console.error(e);

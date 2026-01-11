@@ -683,7 +683,7 @@ async function tryAutoFill(symbol) {
   // Try to fetch full data from our secure proxy (FMP)
   let proxyData = null;
   try {
-    const res = await fetch(`/.netlify/functions/quote?symbol=${sym}`);
+    const res = await fetch(`/api/quote?symbol=${sym}`);
     if (res.ok) {
       proxyData = await res.json();
       console.log('Proxy data received:', proxyData);
@@ -1142,35 +1142,39 @@ function saveCalculationToHub() {
 
     // Save to localStorage (Cache)
     // Add companyName to the item (cleaned)
+    // Save to localStorage (Cache) - with Wrapper
     const newItem = { ticker, companyName: cleanName(companyName), date, timestamp: Date.now(), inputs, currentMetrics, results };
     const storageKey = getHubStorageKey();
-    const savedItems = JSON.parse(localStorage.getItem(storageKey) || '[]');
-    savedItems.unshift(newItem);
-    if (savedItems.length > 50) savedItems.pop(); // Limit to 50
-    localStorage.setItem(storageKey, JSON.stringify(savedItems));
+    let savedData = { lastModified: 0, items: [] };
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) savedData.items = parsed;
+        else savedData = parsed;
+      }
+    } catch (e) { }
+
+    savedData.items.unshift(newItem);
+    if (savedData.items.length > 50) savedData.items.pop(); // Limit to 50
+    savedData.lastModified = Date.now(); // Update TS
+
+    localStorage.setItem(storageKey, JSON.stringify(savedData));
+    const savedItems = savedData.items; // For UI render
 
     // Sync to Cloud (Premium)
+    // Sync to Cloud (Premium) - with wrapper
     if (isPremium) {
       const username = localStorage.getItem('username');
       if (username) {
         toast('Syncing to cloud...', 1000);
-        fetch('/api/user-data', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username, calculations: savedItems })
-        }).then(async res => {
-          if (!res.ok) {
-            const txt = await res.text();
-            console.warn('Cloud sync failed:', txt);
-            toast('Cloud sync failed: ' + txt, 3000);
-          } else {
-            console.log('Cloud sync success');
-            toast('Saved to cloud!', 2000);
-          }
-        }).catch(err => {
-          console.error('Cloud sync error:', err);
-          toast('Cloud sync error: ' + err.message, 3000);
-        });
+        // Note: savedItems is just the array. We need the wrapper properly.
+        const wrapper = { lastModified: Date.now(), items: savedItems };
+        // Update local with timestamp
+        localStorage.setItem(storageKey, JSON.stringify(wrapper));
+
+        // Push
+        pushToCloud(username, wrapper).then(() => toast('Saved to cloud!', 2000));
       }
     }
 
@@ -1264,93 +1268,137 @@ function renderSavedItems() {
     if (!savedList.hasChildNodes() || savedList.querySelector('.empty-state')) {
       savedList.innerHTML = '<div class="empty-state">Syncing...</div>';
     }
+    // --- Newer Wins Sync Strategy ---
 
+    // 1. Get Local Data & Metadata
+    const storageKey = getHubStorageKey();
+    let localRaw = localStorage.getItem(storageKey);
+    let localData = { lastModified: 0, items: [] };
+
+    if (localRaw) {
+      try {
+        const parsed = JSON.parse(localRaw);
+        if (Array.isArray(parsed)) {
+          // Legacy format detected, wrap it
+          localData = { lastModified: 0, items: parsed };
+          // If we have items but 0 timestamp, set it to now so we don't strictly lose to cloud immediately if cloud is empty
+          // But actually, we want cloud to win if it has real timestamp.
+          // Let's rely on migration logic: if legacy, we should probably set a timestamp if we want to keep it.
+          // For safety: if local legacy exists, set timestamp to now to force push (unless cloud is strictly newer)
+          if (parsed.length > 0) localData.lastModified = Date.now();
+        } else {
+          localData = parsed;
+        }
+      } catch (e) { console.warn('Local storage parse error', e); }
+    }
+
+    // Run migration on local data
+    if (migrateLegacyData(localData.items)) {
+      localData.lastModified = Date.now(); // Mark as modified
+      localStorage.setItem(storageKey, JSON.stringify(localData));
+    }
+
+    // Render Local Immediately
+    renderList(localData.items);
+
+
+    // 2. Fetch Cloud Data
     fetch(`/api/user-data?username=${username}&t=${Date.now()}`)
       .then(res => {
-        if (!res.ok) throw new Error(res.statusText);
+        if (!res.ok) throw new Error('Cloud fetch failed');
         return res.json();
       })
-      .then(data => {
-        if (Array.isArray(data)) {
-          // Update local cache
-          const storageKey = getHubStorageKey();
+      .then(cloudWrapper => {
+        // Ensure cloudWrapper is standard
+        let cloudData = { lastModified: 0, items: [] };
+        if (Array.isArray(cloudWrapper)) {
+          cloudData.items = cloudWrapper; // Legacy cloud response
+        } else if (cloudWrapper && Array.isArray(cloudWrapper.items)) {
+          cloudData = cloudWrapper;
+        }
 
-          // Run Migration
-          if (migrateLegacyData(data)) {
-            // If data changed, save properly (Cloud + Local)
-            localStorage.setItem(storageKey, JSON.stringify(data));
-            // Trigger cloud save silently to persist fixes
-            fetch('/api/user-data', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ username, calculations: data })
-            }).catch(err => console.warn('Migration sync failed', err));
+        // Run migration on cloud data (if it's not already migrated)
+        if (migrateLegacyData(cloudData.items)) {
+          cloudData.lastModified = Date.now(); // Mark as modified
+          // We don't save cloud data back to cloud here, only if local is newer
+        }
 
-            toast(`Migrated ${data.length} legacy items`, 2000);
+        console.log('Sync Check - Local:', localData.lastModified, 'Cloud:', cloudData.lastModified);
+
+        // 3. Compare Timestamps ("Newer Wins")
+        if (cloudData.lastModified > localData.lastModified) {
+          // Cloud is newer -> PULL
+          console.log('Cloud is newer. Pulling...');
+          localData = cloudData;
+          localStorage.setItem(storageKey, JSON.stringify(localData));
+          renderList(localData.items);
+          toast('Synced from Cloud', 2000);
+        }
+        else if (localData.lastModified > cloudData.lastModified) {
+          // Local is newer -> PUSH
+          console.log('Local is newer. Pushing...');
+          pushToCloud(username, localData).then(() => toast('Synced to Cloud', 2000));
+        }
+        else {
+          // Timestamps equal. Do nothing.
+          // If both are 0 (fresh start / legacy), maybe prefer cloud if local is empty?
+          if (localData.lastModified === 0 && cloudData.items.length > 0 && localData.items.length === 0) {
+            localData = cloudData;
+            localStorage.setItem(storageKey, JSON.stringify(localData));
+            renderList(localData.items);
+            toast('Synced from Cloud (initial)', 2000);
           } else {
-            localStorage.setItem(storageKey, JSON.stringify(data));
-            toast(`Synced ${data.length} items from cloud`, 2000);
+            console.log('Timestamps equal, no sync needed.');
           }
-          renderList(data);
-        } else {
-          toast('Cloud data empty or invalid', 2000);
         }
       })
-      .catch(err => {
-        console.error('Sync fetch error:', err);
-        toast('Sync load failed: ' + err.message, 3000);
-        // Fallback to local
-        const storageKey = getHubStorageKey();
-        const localData = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      .catch(err => console.warn('Sync failed:', err));
+  }
+}
 
-        if (migrateLegacyData(localData)) {
-          localStorage.setItem(storageKey, JSON.stringify(localData));
-        }
+async function pushToCloud(username, dataWrapper) {
+  try {
+    await fetch('/api/user-data', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, data: dataWrapper })
+    });
+    console.log('Push success');
+  } catch (e) {
+    console.error('Push failed', e);
+  }
+}
 
-        renderList(localData);
-      });
-    // Fallback to local
-    const storageKey = getHubStorageKey();
-    const localData = JSON.parse(localStorage.getItem(storageKey) || '[]');
-
-    if (migrateLegacyData(localData)) {
-      localStorage.setItem(storageKey, JSON.stringify(localData));
-      console.log('Migrated legacy local items');
-    }
-
-    renderList(localData);
+function renderList(savedItems) {
+  if (savedItems.length === 0) {
+    savedList.innerHTML = '<div class="empty-state">No saved items yet.</div>';
+    return;
   }
 
-  function renderList(savedItems) {
-    if (savedItems.length === 0) {
-      savedList.innerHTML = '<div class="empty-state">No saved items yet.</div>';
-      return;
+  savedList.innerHTML = '';
+  savedItems.forEach((item, index) => {
+    // Determine display name and clean it
+    let displayName = item.companyName || item.ticker || 'Unknown';
+    displayName = displayName.replace(/,?\s*(Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG).*$/i, '').trim();
+
+
+    // Legacy Data Fix: specific fields might be missing.
+    // Back-calculate 2x and S&P if possible
+    let beatSnp = item.results?.beatSnpPrice;
+    let doubleRet = item.results?.doubleReturnPrice;
+
+    const futPStr = item.results?.futurePrice;
+    if ((!beatSnp || beatSnp === '-') && futPStr && futPStr !== '-') {
+      const val = parseFloat(futPStr.replace(/[$,]/g, ''));
+      if (val > 0) {
+        beatSnp = '$' + (val / 1.5).toFixed(2);
+        doubleRet = '$' + (val / 2.0).toFixed(2);
+      }
     }
 
-    savedList.innerHTML = '';
-    savedItems.forEach((item, index) => {
-      // Determine display name and clean it
-      let displayName = item.companyName || item.ticker || 'Unknown';
-      displayName = displayName.replace(/,?\s*(Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG).*$/i, '').trim();
-
-
-      // Legacy Data Fix: specific fields might be missing.
-      // Back-calculate 2x and S&P if possible
-      let beatSnp = item.results?.beatSnpPrice;
-      let doubleRet = item.results?.doubleReturnPrice;
-
-      const futPStr = item.results?.futurePrice;
-      if ((!beatSnp || beatSnp === '-') && futPStr && futPStr !== '-') {
-        const val = parseFloat(futPStr.replace(/[$,]/g, ''));
-        if (val > 0) {
-          beatSnp = '$' + (val / 1.5).toFixed(2);
-          doubleRet = '$' + (val / 2.0).toFixed(2);
-        }
-      }
-
-      const div = document.createElement('div');
-      div.className = 'saved-item';
-      div.innerHTML = `
+    const div = document.createElement('div');
+    div.className = 'saved-item';
+    div.innerHTML = `
         <div class="saved-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px 14px; cursor:pointer">
           <div style="display: flex; flex-direction:column;">
             <div class="saved-title-text" style="font-weight:700; font-size:1.05em; margin-bottom: 2px;">${displayName}</div>
@@ -1421,75 +1469,72 @@ function renderSavedItems() {
       </div>
     `;
 
-      // Toggle details on click
-      const header = div.querySelector('.saved-header');
-      const details = div.querySelector('.saved-details');
-      const titleSpan = div.querySelector('.saved-title-text');
+    // Toggle details on click
+    const header = div.querySelector('.saved-header');
+    const details = div.querySelector('.saved-details');
+    const titleSpan = div.querySelector('.saved-title-text');
 
-      header.addEventListener('click', (e) => {
-        if (e.target.closest('.delete-btn')) return;
-        const isHidden = details.style.display === 'none';
-        details.style.display = isHidden ? 'block' : 'none';
-        div.style.background = isHidden ? 'var(--surface-2)' : ''; // Highlight when expanded
+    header.addEventListener('click', (e) => {
+      if (e.target.closest('.delete-btn')) return;
+      const isHidden = details.style.display === 'none';
+      details.style.display = isHidden ? 'block' : 'none';
+      div.style.background = isHidden ? 'var(--surface-2)' : ''; // Highlight when expanded
 
-        // Toggle title text: Name + " Analysis" when collapsed, Name only when expanded
-        if (isHidden) {
-          titleSpan.textContent = displayName;
-        } else {
-          titleSpan.textContent = `${displayName} Analysis`;
-        }
-      });
+      // Toggle title text: Name + " Analysis" when collapsed, Name only when expanded
+      if (isHidden) {
+        titleSpan.textContent = displayName;
+      } else {
+        titleSpan.textContent = `${displayName} Analysis`;
+      }
+    });
 
-      // Delete logic
-      const delBtn = div.querySelector('.delete-btn');
-      delBtn.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent loading
-        if (confirm('Delete this saved calculation?')) {
-          savedItems.splice(index, 1);
-          localStorage.setItem(getHubStorageKey(), JSON.stringify(savedItems));
+    // Delete logic
+    const delBtn = div.querySelector('.delete-btn');
+    delBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent loading
+      if (confirm('Delete this saved calculation?')) {
+        savedItems.splice(index, 1);
+        // Delete Logic - Update Timestamp
+        const storageKey = getHubStorageKey();
+        let currentData = { lastModified: 0, items: savedItems };
 
-          // Sync Delete to Cloud
-          if (isPremium) {
-            if (username) {
-              fetch('/api/user-data', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, calculations: savedItems })
-              })
-                .then(async res => {
-                  if (!res.ok) {
-                    const data = await res.json().catch(() => ({}));
-                    if (data.error === 'MISSING_TOKEN') {
-                      throw new Error('MISSING_TOKEN');
-                    }
-                    throw new Error(data.message || 'Save failed');
-                  }
-                  renderList(savedItems);
-                })
-                .catch(err => {
-                  console.error(err);
-                  if (err.message === 'MISSING_TOKEN') {
-                    alert('⚠️ Cannot Save Changes ⚠️\n\nThe "GITHUB_TOKEN" is missing from your Vercel Settings.\n\nTo fix this:\n1. Go to Vercel Dashboard > Settings > Environment Variables\n2. Add Key: GITHUB_TOKEN\n3. Value: (Your Token)\n4. Redploy');
-                  } else {
-                    alert('Cloud Save Failed: ' + err.message);
-                  }
-                  // Revert local array change
-                  // (Ideally we'd re-fetch, but for now just don't re-render the list so it stays visible? 
-                  //  Actually we already spliced it. We need to reload or undo splice.)
-                  savedItems.splice(index, 0, item); // Undo splice? warning: item reference might work
-                  renderSavedItems(); // Re-fetch to be safe
-                });
-            } else {
-              renderList(savedItems); // Local only
-            }
-          } else {
-            // Not Premium? Should not happen here usually
-            renderList(savedItems);
+        // Re-fetch wrapper from local to be safe (since savedItems is just a reference to array)
+        try {
+          const raw = localStorage.getItem(storageKey);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            if (!Array.isArray(parsed)) currentData = parsed;
           }
+        } catch (e) { }
+
+        // Find and splice from currentData.items using index OR match? 
+        // Index from render is risky if list changed. Better to filter by timestamp of item.
+        // But for now, index matches renderList.
+
+        // Update the specific array reference passing in
+        savedItems.splice(index, 1);
+
+        // Ensure currentData.items reflects this (if savedItems is same ref, good)
+        currentData.items = savedItems;
+        currentData.lastModified = Date.now(); // Mark as newer
+
+        localStorage.setItem(storageKey, JSON.stringify(currentData));
+
+        // Sync Delete to Cloud
+        if (isPremium && username) {
+          pushToCloud(username, currentData)
+            .then(() => renderList(currentData.items))
+            .catch(err => alert('Cloud Save Failed: ' + err));
+        } else {
+          renderList(currentData.items);
         }
+      }
+    });
+  });
+}
       });
 
-      savedList.appendChild(div);
+savedList.appendChild(div);
     });
   }
 }
