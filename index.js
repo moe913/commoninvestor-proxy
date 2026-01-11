@@ -1530,13 +1530,10 @@ function renderList(savedItems) {
         }
       }
     });
-  });
-}
-      });
 
-savedList.appendChild(div);
-    });
-  }
+
+    savedList.appendChild(div);
+  });
 }
 
 function saveResultsAsText() {
