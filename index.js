@@ -3560,13 +3560,16 @@ function getCommunityTop10() {
   return list.slice(0, 10);
 }
 
-function renderCommunityTop10() {
+const COMMUNITY_CACHE_KEY = 'communityPrices_v1';
+const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
+
+async function renderCommunityTop10() {
   const listEl = document.getElementById('communityList');
   const listElInsights = document.getElementById('communityListInsights');
   const listElProjections = document.getElementById('communityListProjections');
 
   // Helper to render list into an element
-  const renderList = (container) => {
+  const renderList = (container, priceMap = {}) => {
     if (!container) return;
     container.innerHTML = '';
 
@@ -3589,7 +3592,14 @@ function renderCommunityTop10() {
 
     const dynamicList = getCommunityTop10();
     dynamicList.forEach((symbol, index) => {
-      const data = window.__sp500Data ? window.__sp500Data[symbol] : null;
+      // 1. Try passed priceMap (fresh)
+      // 2. Try window data (static fallback)
+      let price = priceMap[symbol];
+      if (price === undefined) {
+        const data = window.__sp500Data ? window.__sp500Data[symbol] : null;
+        if (data) price = data.price;
+      }
+
       const div = document.createElement('div');
       div.className = 'saved-item'; // Reuse saved-item style for consistency
 
@@ -3612,9 +3622,9 @@ function renderCommunityTop10() {
       leftDiv.appendChild(nameSpan);
 
       const rightDiv = document.createElement('div');
-      if (data) {
+      if (price !== undefined) {
         const priceSpan = document.createElement('span');
-        priceSpan.textContent = `$${data.price.toFixed(2)}`;
+        priceSpan.textContent = `$${Number(price).toFixed(2)}`;
         priceSpan.style.color = 'var(--muted)';
         priceSpan.style.fontSize = '0.9rem';
         rightDiv.appendChild(priceSpan);
@@ -3627,9 +3637,66 @@ function renderCommunityTop10() {
     });
   };
 
+  // Initial Render (Fast, using static/old data)
   renderList(listEl);
   renderList(listElInsights);
   renderList(listElProjections);
+
+  // --- Async Update Logic ---
+  if (!isPremium) return;
+
+  const now = Date.now();
+  let cachedParams = {};
+  try {
+    const raw = localStorage.getItem(COMMUNITY_CACHE_KEY);
+    if (raw) cachedParams = JSON.parse(raw);
+  } catch (e) {
+    console.warn('Cache parse error', e);
+  }
+
+  // Check validity
+  if (cachedParams.timestamp && (now - cachedParams.timestamp < CACHE_DURATION)) {
+    console.log('Using cached community prices (valid for 24h)');
+    // Re-render with cached prices to be sure
+    renderList(listEl, cachedParams.prices);
+    renderList(listElInsights, cachedParams.prices);
+    renderList(listElProjections, cachedParams.prices);
+    return;
+  }
+
+  // Fetch Fresh Data
+  console.log('Fetching fresh community prices...');
+  const top10 = getCommunityTop10();
+  const prices = {};
+
+  // Throttle: Process one by one or small batches to strictly avoid 429
+  // (Even with proxy, 10 rapid fire might be too much if many users do it)
+  for (const sym of top10) {
+    if (window.__sp500Data && window.__sp500Data[sym]) {
+      prices[sym] = window.__sp500Data[sym].price; // Default to static first
+    }
+    try {
+      const data = await getQuote(sym);
+      if (data && data.price) {
+        prices[sym] = data.price;
+      }
+      // Small delay to be nice to API
+      await new Promise(r => setTimeout(r, 200));
+    } catch (e) {
+      console.warn(`Failed to update ${sym}`, e);
+    }
+  }
+
+  // Save to Cache
+  localStorage.setItem(COMMUNITY_CACHE_KEY, JSON.stringify({
+    timestamp: now,
+    prices: prices
+  }));
+
+  // Final Re-render with fresh data
+  renderList(listEl, prices);
+  renderList(listElInsights, prices);
+  renderList(listElProjections, prices);
 }
 
 // Event Delegation for Community List
