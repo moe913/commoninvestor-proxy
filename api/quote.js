@@ -284,9 +284,22 @@ module.exports = async (req, res) => {
             revenue: finData.totalRevenue || 0,
             shares: stats.sharesOutstanding || 0,
             pe: quote.trailingPE || 0,
-            profitMargin: (finData.totalRevenue && finData.netIncomeToCommon)
-                ? (finData.netIncomeToCommon / finData.totalRevenue) * 100
-                : (finData.profitMargins ? finData.profitMargins * 100 : 0),
+            profitMargin: (() => {
+                // 1. Try calculation from raw currency (Best Source)
+                if (finData.totalRevenue && (finData.netIncomeToCommon || finData.netIncome)) {
+                    const income = finData.netIncomeToCommon || finData.netIncome;
+                    return (income / finData.totalRevenue) * 100;
+                }
+                // 2. Fallback to pre-calculated field with Heuristic
+                // Some providers return 0.13 (decimal), others 13.0 (percent) for the same field
+                if (finData.profitMargins) {
+                    // Safety Threshold: If margin > 4 (400%), assume it's already scaled (e.g. 13.66)
+                    // Unless it's a penny stock with massive margin, but this handles the "NOW" case (1300%)
+                    if (Math.abs(finData.profitMargins) > 4) return finData.profitMargins;
+                    return finData.profitMargins * 100;
+                }
+                return 0;
+            })(),
             history: history
         };
 
