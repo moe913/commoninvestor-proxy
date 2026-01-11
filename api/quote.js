@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    res.setHeader('Cache-Control', 'public, s-maxage=3600, max-age=3600');
+    res.setHeader('Cache-Control', 'no-store, max-age=0'); // Disable cache to fix stale data issues
 
     if (req.method === 'OPTIONS') {
         return res.status(200).end();
@@ -239,7 +239,9 @@ module.exports = async (req, res) => {
                 year: 'TTM',
                 revenue: ttmRevenue / 1e9,
                 earnings: ttmNetIncome / 1e9,
-                margin: ttmMargin * 100,
+                margin: (ttmRevenue > 0 && ttmNetIncome)
+                    ? (ttmNetIncome / ttmRevenue * 100)
+                    : (Math.abs(ttmMargin) > 4 ? ttmMargin : ttmMargin * 100),
                 revGrowth: ttmRevGrowth,
                 earnGrowth: ttmEarnGrowth,
                 eps: 0,

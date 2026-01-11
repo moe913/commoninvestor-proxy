@@ -683,7 +683,7 @@ async function tryAutoFill(symbol) {
   // Try to fetch full data from our secure proxy (FMP)
   let proxyData = null;
   try {
-    const res = await fetch(`/api/quote?symbol=${sym}`);
+    const res = await fetch(`/api/quote?symbol=${sym}&t=${Date.now()}`);
     if (res.ok) {
       proxyData = await res.json();
       console.log('Proxy data received:', proxyData);
