@@ -1051,17 +1051,29 @@ function saveCalculationToHub() {
     // Capture Snapshot Data
     const curPriceVal = getVal(price);
 
-    // Improved Future Price Capture: Use calculated data if available to avoid DOM parsing issues
+    // Improved Future Price Capture: Use calculated data if available, else fallback to DOM
     let futPriceVal = 0;
     if (typeof lastFutureCalc !== 'undefined' && lastFutureCalc && lastFutureCalc.futPrice > 0) {
       futPriceVal = lastFutureCalc.futPrice;
     } else {
-      const futPriceText = document.getElementById('futureStockPrice')?.textContent || '0';
-      if (!el) return '-';
-      return el.value || el.textContent || '-';
-    };
+      // Fallback: Grab from DOM based on mode
+      const isDual = typeof dualCaseEnabled !== 'undefined' ? dualCaseEnabled : false;
+      let rawText = '';
+      if (isDual) {
+        // In Dual Mode, use Base Case as the primary saved value
+        const baseEl = document.getElementById('futureStockPriceBase');
+        if (baseEl) rawText = baseEl.textContent;
+      }
 
-    // ... [Original Data Collection Block] ...
+      // If Single mode or Base retrieval failed (or empty), try standard single ID
+      if (!rawText || rawText === '–') {
+        const singleEl = document.getElementById('futureStockPrice');
+        if (singleEl) rawText = singleEl.textContent;
+      }
+
+      futPriceVal = parseFloat((rawText || '').replace(/[^0-9.-]/g, '')) || 0;
+    }
+
     // Re-implementing explicitly to ensure no silent variable access errors
     const inputs = {
       stock: ticker,
@@ -1087,8 +1099,6 @@ function saveCalculationToHub() {
 
     // Check if future calculation ran
     if (inputs.future.price === '-' || inputs.future.price === '$0.00') {
-      // Just warn, don't stop? Or maybe they want to save snapshot only.
-      // Let's allow it but log it.
       console.log('Saving without future projections.');
     }
 
@@ -1103,12 +1113,29 @@ function saveCalculationToHub() {
 
     const results = {
       futurePrice: getVal(fPrice),
-      upside: document.getElementById('dualCaseResults') ? '-' : (document.querySelector('#singleCaseResults tr:nth-child(1) td')?.textContent || '-'), // Approximation
-      cagr: '-', // Hard to grab from UI if not stored. 
-      // Note: The original code accessed `upside` variable which might be out of scope if not global. 
-      // `upside` was defined in `calculateFuture` scope, NOT here. 
-      // THIS IS LIKELY THE ERROR: `upside` is not defined in this function.
+      upside: '-',
+      cagr: '-',
     };
+
+    // Explicitly Calculate Upside & CAGR (Fix for Missing Data)
+    console.log('Hub Save Debug - Cur:', curPriceVal, 'Fut:', futPriceVal); // Debug Log
+
+    // Ensure we have valid numbers
+    if (curPriceVal > 0 && futPriceVal > 0) {
+      const up = ((futPriceVal - curPriceVal) / curPriceVal) * 100;
+      const c = (Math.pow(futPriceVal / curPriceVal, 1 / 5) - 1) * 100;
+
+      const upStr = (up > 0 ? '+' : '') + up.toFixed(1) + '%';
+      const cagrStr = c.toFixed(1) + '%';
+
+      results.upside = upStr;
+      results.cagr = cagrStr;
+
+      // Also update futurePrice in results to match the one we used for calc (if it was from base case)
+      if (results.futurePrice === 0 && futPriceVal > 0) {
+        results.futurePrice = '$' + futPriceVal.toFixed(2);
+      }
+    }
 
     // Fix: Re-calculate or grab from UI
     // Let's grab from UI text content if possible, or sets to '-'
@@ -1228,107 +1255,72 @@ function renderSavedItems() {
     return;
   }
 
-  // Cloud Sync Fetch
+  // --- LOCAL AUTHORITY STRATEGY ---
+  // 1. Get Local Data
+  const storageKey = getHubStorageKey();
+  let localRaw = localStorage.getItem(storageKey);
+  let localData = { lastModified: 0, items: [] };
+
+  try {
+    if (localRaw) {
+      const parsed = JSON.parse(localRaw);
+      // Handle legacy array format
+      if (Array.isArray(parsed)) localData = { lastModified: Date.now(), items: parsed };
+      else localData = parsed;
+    }
+  } catch (e) {
+    console.warn('Local storage parse error (resetting):', e);
+    localData = { lastModified: 0, items: [] };
+  }
+
+  // Migrate any old data structures
+  if (migrateLegacyData(localData.items)) {
+    localData.lastModified = Date.now();
+    localStorage.setItem(storageKey, JSON.stringify(localData));
+  }
+
+  // 2. Render Local IMMEDIATELY (Source of Truth)
+  renderList(localData.items);
+
+  // 3. Cloud Background Sync (Backup/Restore)
   const username = localStorage.getItem('username');
   if (username) {
-    // Show loading state if empty
-    if (!savedList.hasChildNodes() || savedList.querySelector('.empty-state')) {
-      savedList.innerHTML = '<div class="empty-state">Syncing...</div>';
-    }
-    // --- Newer Wins Sync Strategy ---
+    if (localData.items.length > 0) {
+      // SCENARIO A: We have work. Cloud is just a backup.
+      // Force Push (Fire & Forget)
+      console.log('Local has data. Enforcing backup to Cloud.');
+      pushToCloud(username, localData).catch(err => console.warn('Backup failed (offline?):', err));
+    } else {
+      // SCENARIO B: Local is empty. Maybe new device?
+      // Check Cloud for Restore.
+      console.log('Local is empty. Checking Cloud for restore...');
+      if (!savedList.hasChildNodes() || savedList.querySelector('.empty-state')) {
+        savedList.innerHTML = '<div class="empty-state">Checking cloud backup...</div>';
+      }
 
-    // 1. Get Local Data & Metadata
-    const storageKey = getHubStorageKey();
-    let localRaw = localStorage.getItem(storageKey);
-    let localData = { lastModified: 0, items: [] };
+      fetch(`/api/user-data?username=${username}&t=${Date.now()}`)
+        .then(res => res.json())
+        .then(cloudWrapper => {
+          let cloudItems = [];
+          if (Array.isArray(cloudWrapper)) cloudItems = cloudWrapper;
+          else if (cloudWrapper && Array.isArray(cloudWrapper.items)) cloudItems = cloudWrapper.items;
 
-    if (localRaw) {
-      try {
-        const parsed = JSON.parse(localRaw);
-        if (Array.isArray(parsed)) {
-          // Legacy format detected, wrap it
-          localData = { lastModified: 0, items: parsed };
-          // If we have items but 0 timestamp, set it to now so we don't strictly lose to cloud immediately if cloud is empty
-          // But actually, we want cloud to win if it has real timestamp.
-          // Let's rely on migration logic: if legacy, we should probably set a timestamp if we want to keep it.
-          // For safety: if local legacy exists, set timestamp to now to force push (unless cloud is strictly newer)
-          if (parsed.length > 0) localData.lastModified = Date.now();
-        } else {
-          localData = parsed;
-        }
-      } catch (e) { console.warn('Local storage parse error', e); }
-    }
-
-    // Run migration on local data
-    if (migrateLegacyData(localData.items)) {
-      localData.lastModified = Date.now(); // Mark as modified
-      localStorage.setItem(storageKey, JSON.stringify(localData));
-    }
-
-    // Render Local Immediately
-    renderList(localData.items);
-
-
-    // 2. Fetch Cloud Data
-    fetch(`/api/user-data?username=${username}&t=${Date.now()}`)
-      .then(res => {
-        if (!res.ok) throw new Error('Cloud fetch failed');
-        return res.json();
-      })
-      .then(cloudWrapper => {
-        // Ensure cloudWrapper is standard
-        let cloudData = { lastModified: 0, items: [] };
-        if (Array.isArray(cloudWrapper)) {
-          cloudData.items = cloudWrapper; // Legacy cloud response
-        } else if (cloudWrapper && Array.isArray(cloudWrapper.items)) {
-          cloudData = cloudWrapper;
-        }
-
-        // Run migration on cloud data (if it's not already migrated)
-        if (migrateLegacyData(cloudData.items)) {
-          cloudData.lastModified = Date.now(); // Mark as modified
-          // We don't save cloud data back to cloud here, only if local is newer
-        }
-
-        console.log('Sync Check - Local:', localData.lastModified, 'Cloud:', cloudData.lastModified);
-
-        // 3. Compare Timestamps ("Newer Wins")
-        if (cloudData.lastModified > localData.lastModified) {
-          // Safeguard: Don't let an empty cloud state wipe a populated local state
-          if (cloudData.items.length === 0 && localData.items.length > 0) {
-            console.warn('Cloud is newer but empty. Keeping local data and re-syncing.');
-            localData.lastModified = Date.now(); // Update local to win
-            localStorage.setItem(storageKey, JSON.stringify(localData));
-            // Force push to fix cloud
-            pushToCloud(username, localData).then(() => toast('Sync Fixed (Local Kept)', 2000));
-          } else {
-            // Cloud is newer -> PULL
-            console.log('Cloud is newer. Pulling...');
-            localData = cloudData;
+          if (cloudItems.length > 0) {
+            console.log('Restoring from Cloud...', cloudItems);
+            localData = { lastModified: Date.now(), items: cloudItems };
             localStorage.setItem(storageKey, JSON.stringify(localData));
             renderList(localData.items);
-            toast('Synced from Cloud', 2000);
-          }
-        }
-        else if (localData.lastModified > cloudData.lastModified) {
-          // Local is newer -> PUSH
-          console.log('Local is newer. Pushing...');
-          pushToCloud(username, localData).then(() => toast('Synced to Cloud', 2000));
-        }
-        else {
-          // Timestamps equal. Do nothing.
-          // If both are 0 (fresh start / legacy), maybe prefer cloud if local is empty?
-          if (localData.lastModified === 0 && cloudData.items.length > 0 && localData.items.length === 0) {
-            localData = cloudData;
-            localStorage.setItem(storageKey, JSON.stringify(localData));
-            renderList(localData.items);
-            toast('Synced from Cloud (initial)', 2000);
+            toast('Restored from Cloud', 2000);
           } else {
-            console.log('Timestamps equal, no sync needed.');
+            // Cloud also empty
+            renderList([]);
           }
-        }
-      })
-      .catch(err => console.warn('Sync failed:', err));
+        })
+        .catch(err => {
+          console.warn('Cloud check failed:', err);
+          renderList([]); // Just show empty
+        });
+    }
   }
 }
 
@@ -1339,9 +1331,10 @@ async function pushToCloud(username, dataWrapper) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, data: dataWrapper })
     });
-    console.log('Push success');
+    console.log('Cloud Backup Success');
   } catch (e) {
-    console.error('Push failed', e);
+    console.error('Cloud Backup Failed', e);
+    throw e; // Let caller verify/toast if needed
   }
 }
 
@@ -1360,13 +1353,12 @@ function renderList(savedItems) {
     let displayName = item.companyName || item.ticker || 'Unknown';
     displayName = displayName.replace(/,?\s*(Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG).*$/i, '').trim();
 
-
-    // Legacy Data Fix: specific fields might be missing.
-    // Back-calculate 2x and S&P if possible
+    // Legacy Data Fix / Formatting
+    // Safely handle futurePrice as string for replace
     let beatSnp = item.results?.beatSnpPrice;
     let doubleRet = item.results?.doubleReturnPrice;
-
     const futPStr = item.results?.futurePrice;
+
     if ((!beatSnp || beatSnp === '-') && futPStr && futPStr !== '-') {
       const val = parseFloat(String(futPStr).replace(/[$,]/g, ''));
       if (val > 0) {
@@ -1388,7 +1380,7 @@ function renderList(savedItems) {
         
         <div class="saved-details" style="display:none; padding:16px; border-top:1px solid var(--border)">
           <div style="display: flex; flex-wrap: wrap; gap: 24px;">
-              <!-- Section 1: Snapshot at Time -->
+              <!-- Section 1: Snapshot -->
               <div style="flex: 1; min-width: 180px;">
                   <h4 style="margin:0 0 12px; font-size:0.85em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.7; border-bottom: 1px solid var(--border); padding-bottom: 4px;">Snapshot</h4>
                   <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:0.9em">
@@ -1401,7 +1393,7 @@ function renderList(savedItems) {
                   </div>
               </div>
 
-              <!-- Section 2: Your Thesis -->
+              <!-- Section 2: Thesis -->
               <div style="flex: 1; min-width: 180px;">
                   <h4 style="margin:0 0 12px; font-size:0.85em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.7; border-bottom: 1px solid var(--border); padding-bottom: 4px;">Thesis</h4>
                   <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:0.9em">
@@ -1430,7 +1422,6 @@ function renderList(savedItems) {
                         <span style="font-size:0.85em; opacity:0.6; font-weight:400">CAGR</span>
                         <span style="color:var(--success)">${item.results?.cagr || '-'}</span>
                     </div>
-
                 </div>
                 <!-- Extra Metrics Rows -->
                 <div style="margin-top: 12px; padding-top: 8px; border-top: 1px dashed var(--border); font-size: 0.9em; font-weight:600">
@@ -1457,9 +1448,8 @@ function renderList(savedItems) {
       if (e.target.closest('.delete-btn')) return;
       const isHidden = details.style.display === 'none';
       details.style.display = isHidden ? 'block' : 'none';
-      div.style.background = isHidden ? 'var(--surface-2)' : ''; // Highlight when expanded
+      div.style.background = isHidden ? 'var(--surface-2)' : '';
 
-      // Toggle title text: Name + " Analysis" when collapsed, Name only when expanded
       if (isHidden) {
         titleSpan.textContent = displayName;
       } else {
@@ -1467,49 +1457,27 @@ function renderList(savedItems) {
       }
     });
 
-    // Delete logic
+    // Delete logic with Local Authority
     const delBtn = div.querySelector('.delete-btn');
     delBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // Prevent loading
+      e.stopPropagation();
       if (confirm('Delete this saved calculation?')) {
+        // 1. Update Local (Immediate)
         savedItems.splice(index, 1);
-        // Delete Logic - Update Timestamp
         const storageKey = getHubStorageKey();
-        let currentData = { lastModified: 0, items: savedItems };
+        const wrapper = { lastModified: Date.now(), items: savedItems };
+        localStorage.setItem(storageKey, JSON.stringify(wrapper));
 
-        // Re-fetch wrapper from local to be safe (since savedItems is just a reference to array)
-        try {
-          const raw = localStorage.getItem(storageKey);
-          if (raw) {
-            const parsed = JSON.parse(raw);
-            if (!Array.isArray(parsed)) currentData = parsed;
-          }
-        } catch (e) { }
+        // 2. Render Loop (Update UI)
+        renderList(savedItems);
 
-        // Find and splice from currentData.items using index OR match? 
-        // Index from render is risky if list changed. Better to filter by timestamp of item.
-        // But for now, index matches renderList.
-
-        // Update the specific array reference passing in
-        savedItems.splice(index, 1);
-
-        // Ensure currentData.items reflects this (if savedItems is same ref, good)
-        currentData.items = savedItems;
-        currentData.lastModified = Date.now(); // Mark as newer
-
-        localStorage.setItem(storageKey, JSON.stringify(currentData));
-
-        // Sync Delete to Cloud
+        // 3. Cloud Backup
+        const username = localStorage.getItem('username');
         if (isPremium && username) {
-          pushToCloud(username, currentData)
-            .then(() => renderList(currentData.items))
-            .catch(err => alert('Cloud Save Failed: ' + err));
-        } else {
-          renderList(currentData.items);
+          pushToCloud(username, wrapper).catch(console.error);
         }
       }
     });
-
 
     savedList.appendChild(div);
   });
