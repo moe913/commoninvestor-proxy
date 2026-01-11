@@ -284,7 +284,9 @@ module.exports = async (req, res) => {
             revenue: finData.totalRevenue || 0,
             shares: stats.sharesOutstanding || 0,
             pe: quote.trailingPE || 0,
-            profitMargin: finData.profitMargins ? (finData.profitMargins * 100) : 0,
+            profitMargin: (finData.totalRevenue && finData.netIncomeToCommon)
+                ? (finData.netIncomeToCommon / finData.totalRevenue) * 100
+                : (finData.profitMargins ? finData.profitMargins * 100 : 0),
             history: history
         };
 
