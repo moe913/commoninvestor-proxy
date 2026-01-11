@@ -1367,6 +1367,28 @@ function renderList(savedItems) {
       }
     }
 
+    // Fix: Retroactive Upside/CAGR Calculation for Legacy Items
+    // If upside/CAGR is missing or '-', try to calculate it now for display
+    let displayUpside = item.results?.upside;
+    let displayCAGR = item.results?.cagr;
+
+    if ((!displayUpside || displayUpside === '-' || !displayCAGR || displayCAGR === '-') && futPStr && futPStr !== '-') {
+      const futVal = parseFloat(String(futPStr).replace(/[$,]/g, ''));
+      const curVal = parseFloat(String(item.currentMetrics?.price || '0').replace(/[$,]/g, ''));
+
+      if (futVal > 0 && curVal > 0) {
+        const up = ((futVal - curVal) / curVal) * 100;
+        const c = (Math.pow(futVal / curVal, 1 / 5) - 1) * 100;
+
+        if (!displayUpside || displayUpside === '-') {
+          displayUpside = (up > 0 ? '+' : '') + up.toFixed(1) + '%';
+        }
+        if (!displayCAGR || displayCAGR === '-') {
+          displayCAGR = c.toFixed(1) + '%';
+        }
+      }
+    }
+
     const div = document.createElement('div');
     div.className = 'saved-item';
     div.innerHTML = `
@@ -1416,11 +1438,11 @@ function renderList(savedItems) {
                       </div>
                     <div style="display:flex; justify-content:space-between">
                         <span style="font-size:0.85em; opacity:0.6; font-weight:400">Upside</span>
-                        <span style="color:var(--success)">${item.results?.upside || '-'}</span>
+                        <span style="color:var(--success)">${displayUpside || '-'}</span>
                     </div>
                     <div style="display:flex; justify-content:space-between">
                         <span style="font-size:0.85em; opacity:0.6; font-weight:400">CAGR</span>
-                        <span style="color:var(--success)">${item.results?.cagr || '-'}</span>
+                        <span style="color:var(--success)">${displayCAGR || '-'}</span>
                     </div>
                 </div>
                 <!-- Extra Metrics Rows -->
