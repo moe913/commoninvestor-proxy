@@ -1051,17 +1051,29 @@ function saveCalculationToHub() {
     // Capture Snapshot Data
     const curPriceVal = getVal(price);
 
-    // Improved Future Price Capture: Use calculated data if available to avoid DOM parsing issues
+    // Improved Future Price Capture: Use calculated data if available, else fallback to DOM
     let futPriceVal = 0;
     if (typeof lastFutureCalc !== 'undefined' && lastFutureCalc && lastFutureCalc.futPrice > 0) {
       futPriceVal = lastFutureCalc.futPrice;
     } else {
-      const futPriceText = document.getElementById('futureStockPrice')?.textContent || '0';
-      if (!el) return '-';
-      return el.value || el.textContent || '-';
-    };
+      // Fallback: Grab from DOM based on mode
+      const isDual = typeof dualCaseEnabled !== 'undefined' ? dualCaseEnabled : false;
+      let rawText = '';
+      if (isDual) {
+        // In Dual Mode, use Base Case as the primary saved value
+        const baseEl = document.getElementById('futureStockPriceBase');
+        if (baseEl) rawText = baseEl.textContent;
+      }
 
-    // ... [Original Data Collection Block] ...
+      // If Single mode or Base retrieval failed (or empty), try standard single ID
+      if (!rawText || rawText === '–') {
+        const singleEl = document.getElementById('futureStockPrice');
+        if (singleEl) rawText = singleEl.textContent;
+      }
+
+      futPriceVal = parseFloat((rawText || '').replace(/[^0-9.-]/g, '')) || 0;
+    }
+
     // Re-implementing explicitly to ensure no silent variable access errors
     const inputs = {
       stock: ticker,
@@ -1087,8 +1099,6 @@ function saveCalculationToHub() {
 
     // Check if future calculation ran
     if (inputs.future.price === '-' || inputs.future.price === '$0.00') {
-      // Just warn, don't stop? Or maybe they want to save snapshot only.
-      // Let's allow it but log it.
       console.log('Saving without future projections.');
     }
 
@@ -1103,12 +1113,29 @@ function saveCalculationToHub() {
 
     const results = {
       futurePrice: getVal(fPrice),
-      upside: document.getElementById('dualCaseResults') ? '-' : (document.querySelector('#singleCaseResults tr:nth-child(1) td')?.textContent || '-'), // Approximation
-      cagr: '-', // Hard to grab from UI if not stored. 
-      // Note: The original code accessed `upside` variable which might be out of scope if not global. 
-      // `upside` was defined in `calculateFuture` scope, NOT here. 
-      // THIS IS LIKELY THE ERROR: `upside` is not defined in this function.
+      upside: '-',
+      cagr: '-',
     };
+
+    // Explicitly Calculate Upside & CAGR (Fix for Missing Data)
+    console.log('Hub Save Debug - Cur:', curPriceVal, 'Fut:', futPriceVal); // Debug Log
+
+    // Ensure we have valid numbers
+    if (curPriceVal > 0 && futPriceVal > 0) {
+      const up = ((futPriceVal - curPriceVal) / curPriceVal) * 100;
+      const c = (Math.pow(futPriceVal / curPriceVal, 1 / 5) - 1) * 100;
+
+      const upStr = (up > 0 ? '+' : '') + up.toFixed(1) + '%';
+      const cagrStr = c.toFixed(1) + '%';
+
+      results.upside = upStr;
+      results.cagr = cagrStr;
+
+      // Also update futurePrice in results to match the one we used for calc (if it was from base case)
+      if (results.futurePrice === 0 && futPriceVal > 0) {
+        results.futurePrice = '$' + futPriceVal.toFixed(2);
+      }
+    }
 
     // Fix: Re-calculate or grab from UI
     // Let's grab from UI text content if possible, or sets to '-'
