@@ -1193,7 +1193,7 @@ function migrateLegacyData(savedItems) {
     if (item.results && item.results.futurePrice && item.results.futurePrice !== '-') {
       if (!item.results.buyToBeatSP || item.results.buyToBeatSP === '-') {
         // Parse price (remove $ and commas)
-        const priceVal = parseFloat(item.results.futurePrice.replace(/[$,]/g, '')) || 0;
+        const priceVal = parseFloat(String(item.results.futurePrice).replace(/[$,]/g, '')) || 0;
         if (priceVal > 0) {
           const buyToBeatSP = priceVal / 1.5;
           const buyFor2x = priceVal / 2.0;
@@ -1356,7 +1356,7 @@ function renderList(savedItems) {
 
     const futPStr = item.results?.futurePrice;
     if ((!beatSnp || beatSnp === '-') && futPStr && futPStr !== '-') {
-      const val = parseFloat(futPStr.replace(/[$,]/g, ''));
+      const val = parseFloat(String(futPStr).replace(/[$,]/g, ''));
       if (val > 0) {
         beatSnp = '$' + (val / 1.5).toFixed(2);
         doubleRet = '$' + (val / 2.0).toFixed(2);
