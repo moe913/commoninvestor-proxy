@@ -511,7 +511,7 @@ async function loadSp500Data() {
         const existing = new Set(allStocks.map((s) => s.symbol));
         Object.entries(data).forEach(([symbol, v]) => {
           const name = v?.name ?
-            v.name.replace(/,?\s*(Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG).*$/i, '').trim()
+            v.name.replace(/,?\s*\b(?:Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG)\b\.?.*$/i, '').trim()
             : symbol;
           if (!existing.has(symbol)) {
             allStocks.push({ symbol, name });
@@ -1025,7 +1025,7 @@ function saveCalculationToHub() {
     // Helper to clean company names
     const cleanName = (name) => {
       if (!name) return '';
-      return name.replace(/,?\s*(Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG).*$/i, '').trim();
+      return name.replace(/,?\s*\b(?:Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG)\b\.?.*$/i, '').trim();
     };
 
     // Helper to extract value from Input or Text Element safely
@@ -1351,7 +1351,7 @@ function renderList(savedItems) {
   savedItems.forEach((item, index) => {
     // Determine display name and clean it
     let displayName = item.companyName || item.ticker || 'Unknown';
-    displayName = displayName.replace(/,?\s*(Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG).*$/i, '').trim();
+    displayName = displayName.replace(/,?\s*\b(?:Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG)\b\.?.*$/i, '').trim();
 
     // Legacy Data Fix / Formatting
     // Safely handle futurePrice as string for replace
