@@ -3510,7 +3510,7 @@ function switchTab(tabName) {
 
 // --- Community Top 10 Logic ---
 
-function getCommunityTop10() {
+function getSimulatedTop10() {
   // 1. Start with Real Data (if any)
   let list = [...realCalculatedStocks];
 
@@ -3560,7 +3560,22 @@ function getCommunityTop10() {
   return list.slice(0, 10);
 }
 
-const COMMUNITY_CACHE_KEY = 'communityPrices_v1';
+async function getCommunityTop10() {
+  try {
+    const res = await fetch('/api/trending');
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) {
+        return data.slice(0, 10);
+      }
+    }
+  } catch (e) {
+    console.warn('Failed to fetch real trending data, using simulation fallback.', e);
+  }
+  return getSimulatedTop10();
+}
+
+const COMMUNITY_CACHE_KEY = 'communityPrices_v2';
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
 
 async function renderCommunityTop10() {
@@ -3590,7 +3605,7 @@ async function renderCommunityTop10() {
       return;
     }
 
-    const dynamicList = getCommunityTop10();
+    const dynamicList = getSimulatedTop10(); // Fallback for initial render to show something fast
     dynamicList.forEach((symbol, index) => {
       // 1. Try passed priceMap (fresh)
       // 2. Try window data (static fallback)
@@ -3666,7 +3681,7 @@ async function renderCommunityTop10() {
 
   // Fetch Fresh Data
   console.log('Fetching fresh community prices...');
-  const top10 = getCommunityTop10();
+  const top10 = await getCommunityTop10();
   const prices = {};
 
   // Throttle: Process one by one or small batches to strictly avoid 429
