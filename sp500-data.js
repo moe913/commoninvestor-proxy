@@ -1,4 +1,19 @@
 window.__sp500Data = {
+  "PATH": {
+    "name": "UiPath Inc.",
+    "revenue": 1400000000,
+    "shares": 570000000,
+    "pe": 40.5,
+    "profitMargin": -10.5,
+    "price": 12.85,
+    "history": [
+      { "year": "2021", "revenue": 0.6 },
+      { "year": "2022", "revenue": 0.89 },
+      { "year": "2023", "revenue": 1.06 },
+      { "year": "2024", "revenue": 1.31 },
+      { "year": "TTM", "revenue": 1.40 }
+    ]
+  },
   "HOOD": {
     "name": "Robinhood Markets, Inc.",
     "revenue": 4204000000,
