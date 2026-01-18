@@ -1,4 +1,4 @@
-console.log('Common Investor Initialized v69');
+console.log('Common Investor Initialized v70');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1376,12 +1376,49 @@ function renderSavedItems() {
     // Attach to button
     const syncBtn = document.getElementById('forceSyncBtn');
     if (syncBtn) {
-      // Remove old listeners by cloning (hacky but effective for simple scripts)
+      // Remove old listeners by cloning
       const newBtn = syncBtn.cloneNode(true);
       syncBtn.parentNode.replaceChild(newBtn, syncBtn);
       newBtn.addEventListener('click', performSync);
+
+      // EXPORT BUTTON (v70) - Emergency Backup
+      // Inject "Export" button next to "Sync Now" if not exists
+      let exportBtn = document.getElementById('exportDataBtn');
+      if (!exportBtn) {
+        exportBtn = document.createElement('span');
+        exportBtn.id = 'exportDataBtn';
+        exportBtn.textContent = '📥 Backup';
+        exportBtn.className = 'chip';
+        exportBtn.style.cursor = 'pointer';
+        exportBtn.style.marginLeft = '8px';
+        exportBtn.style.backgroundColor = '#333';
+        exportBtn.onclick = exportLocalData;
+        newBtn.parentNode.appendChild(exportBtn);
+      }
     }
   }
+}
+
+// v70: Emergency Data Export
+function exportLocalData() {
+  const storageKey = getHubStorageKey();
+  const raw = localStorage.getItem(storageKey);
+  if (!raw) {
+    alert('No data to export.');
+    return;
+  }
+
+  const blob = new Blob([raw], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  // Filename: common-investor-backup-[DATE].json
+  const dateStr = new Date().toISOString().slice(0, 10);
+  a.download = `common-investor-backup-${dateStr}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 
 // Global Merge Sync Function
