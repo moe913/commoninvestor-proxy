@@ -1,4 +1,4 @@
-console.log('Common Investor Initialized v63');
+console.log('Common Investor Initialized v64');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1301,59 +1301,79 @@ function renderSavedItems() {
 
   // Migrate any old data structures
   if (migrateLegacyData(localData.items)) {
-    localData.lastModified = Date.now();
+    // FIX: Do NOT update timestamp just for migration.
+    // This was causing old mobile data to look "newer" than desktop data.
     localStorage.setItem(storageKey, JSON.stringify(localData));
   }
 
   // 2. Render Local IMMEDIATELY (Source of Truth)
   renderList(localData.items);
 
-  // 3. Cloud Background Sync (Smart Sync: Last Write Wins)
+  // 3. Cloud Background Sync (Merge Sync: Union of All Devices)
   const username = localStorage.getItem('username');
   if (username) {
-    // ALWAYS check cloud for updates (not just if local is empty)
+    // ALWAYS check cloud for updates
     fetch(`/api/user-data?username=${username}&t=${Date.now()}`)
       .then(res => res.json())
       .then(cloudWrapper => {
         let cloudItems = [];
-        let cloudTS = 0;
 
         if (Array.isArray(cloudWrapper)) {
-          // Legacy format (just an array)
           cloudItems = cloudWrapper;
-          // Assign a heuristic TS if missing (e.g. now, or 0 if empty)
-          cloudTS = cloudItems.length > 0 ? Date.now() : 0;
         } else if (cloudWrapper && Array.isArray(cloudWrapper.items)) {
-          // New format
           cloudItems = cloudWrapper.items;
-          cloudTS = cloudWrapper.lastModified || 0;
         }
 
-        const localTS = localData.lastModified || 0;
+        const localItems = localData.items || [];
 
-        console.log(`Sync Check - Local: ${localTS}, Cloud: ${cloudTS}`);
+        // MERGE STRATEGY: Combine & Deduplicate by 'timestamp' (Creation Time)
+        // We want the UNION of Desktop and Mobile items.
 
-        // CASE A: Cloud is NEWER -> Sync Down (Overwrite Local)
-        // We use a small buffer (e.g. 1000ms) to avoid race conditions if clocks are slightly off, 
-        // but generally strict > is fine for "last write wins".
-        if (cloudTS > localTS && cloudItems.length > 0) {
-          console.log('Cloud is newer. Syncing down...', cloudItems);
-          localData = { lastModified: cloudTS, items: cloudItems };
+        // 1. Create a map by timestamp (unique ID)
+        const itemMap = new Map();
+
+        // Helper to add items to map (Newer version of same item wins? No, items are immutable snapshots usually. 
+        // If user edits, it usually creates a new save or we trust key. 
+        // Let's assume timestamp is the unique ID for the *calculation instance*.)
+
+        // Add Cloud items first
+        cloudItems.forEach(item => {
+          if (item && item.timestamp) itemMap.set(item.timestamp, item);
+        });
+
+        // Add Local items (Local overwrites Cloud if collision - usually correct for same ID)
+        localItems.forEach(item => {
+          if (item && item.timestamp) itemMap.set(item.timestamp, item);
+        });
+
+        const mergedItems = Array.from(itemMap.values());
+
+        // 2. Sort by Timestamp Descending (Newest First)
+        mergedItems.sort((a, b) => b.timestamp - a.timestamp);
+
+        // 3. Detect Changes
+        const localSig = JSON.stringify(localItems.map(i => i.timestamp));
+        const cloudSig = JSON.stringify(cloudItems.map(i => i.timestamp));
+        const mergedSig = JSON.stringify(mergedItems.map(i => i.timestamp));
+
+        // Case A: New items found (Merge Result != Local) -> Update Local
+        if (mergedSig !== localSig) {
+          console.log('Syncing: Merging new items found.', { local: localItems.length, cloud: cloudItems.length, merged: mergedItems.length });
+          localData = { lastModified: Date.now(), items: mergedItems };
           localStorage.setItem(storageKey, JSON.stringify(localData));
-
-          // Re-render immediately to show new data
           renderList(localData.items);
-          toast('Synced from Cloud', 2000);
+          toast('Synced All Devices', 2000); // Friendly toast
         }
-        // CASE B: Local is NEWER -> Push Up (Backup)
-        else if (localTS > cloudTS && localData.items.length > 0) {
-          console.log('Local is newer. Pushing to Cloud...');
-          pushToCloud(username, localData).catch(err => console.warn('Backup failed:', err));
-        }
-        // CASE C: Startup with empty local but data on cloud (New device scenario)
-        // (Handled by Case A implicitly if cloudTS > 0, but if localData was just created it has TS=0)
 
-        // CASE D: Both Equal -> Do nothing.
+        // Case B: Cloud is missing items (Merge Result != Cloud) -> Push Back
+        // This ensures the other device eventually gets the full list too.
+        if (mergedSig !== cloudSig) {
+          console.log('Syncing: Pushing merged list to cloud...');
+          localData.lastModified = Date.now(); // Update TS for good measure
+          pushToCloud(username, { lastModified: Date.now(), items: mergedItems })
+            .catch(err => console.warn('Cloud push failed:', err));
+        }
+
       })
       .catch(err => console.warn('Cloud check failed:', err));
   }
