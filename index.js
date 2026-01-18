@@ -1,4 +1,4 @@
-console.log('Common Investor Initialized v64');
+console.log('Common Investor Initialized v64.2');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1371,8 +1371,25 @@ function renderSavedItems() {
 
           // MERGE STRATEGY
           const itemMap = new Map();
-          cloudItems.forEach(item => { if (item && item.timestamp) itemMap.set(item.timestamp, item); });
-          localItems.forEach(item => { if (item && item.timestamp) itemMap.set(item.timestamp, item); });
+
+          // Helper: Ensure item has a unique timestamp (Backfill Legacy Data)
+          const processItem = (item, index) => {
+            if (!item) return;
+            if (!item.timestamp) {
+              // Legacy Item: Create conceptual timestamp from date string or random fallback
+              // "Jan 15, 2024" -> parse, or just use current time - (large number) + index?
+              // Better: Parsing the date allows sorting relative to new items.
+              const d = new Date(item.date);
+              // Fallback to epoch if invalid, plus index to avoid collisions
+              const baseTime = !isNaN(d.getTime()) ? d.getTime() : 0;
+              item.timestamp = baseTime + index;
+            }
+            // Use timestamp as unique ID
+            itemMap.set(item.timestamp, item);
+          };
+
+          cloudItems.forEach((item, i) => processItem(item, i));
+          localItems.forEach((item, i) => processItem(item, i + 1000)); // Offset index to avoid collision with cloud list indices
 
           const mergedItems = Array.from(itemMap.values());
           mergedItems.sort((a, b) => b.timestamp - a.timestamp);
