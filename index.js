@@ -1,4 +1,4 @@
-console.log('Common Investor v60 Loaded');
+console.log('Common Investor v61 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1418,7 +1418,7 @@ function renderList(savedItems) {
     // 1. Fix Corrupted Net Income (Legacy Data Repair)
     let displayNetInc = item.currentMetrics?.netIncome || '-';
     // Check if it's a "messy" number (long string of digits) or missing
-    if (displayNetInc !== '-' && !displayNetInc.match(/[BMT]/) && String(displayNetInc).length > 8) {
+    if (displayNetInc !== '-' && !String(displayNetInc).match(/[BMT]/) && String(displayNetInc).length > 8) {
       const mktCapRaw = parseFloat(String(item.currentMetrics?.marketValue || '').replace(/[^0-9.-]/g, ''));
       const peRaw = parseFloat(item.currentMetrics?.pe || 0);
       // Try to preserve unit from Market Cap
