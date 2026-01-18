@@ -51,12 +51,41 @@ module.exports = async (req, res) => {
             if (!rawContent) return res.status(200).json({ lastModified: 0, items: [] });
 
             const allData = JSON.parse(rawContent);
-            let userData = allData[username] || { lastModified: 0, items: [] };
 
-            // Migration: If legacy array, wrap it
-            if (Array.isArray(userData)) {
-                userData = { lastModified: 0, items: userData };
-            }
+            // FIX: Case-Insensitive Merger (Restore "Moe" data to "moe")
+            // Find ALL keys that match the requested username (case-insensitive)
+            const matchingKeys = Object.keys(allData).filter(k => k.toLowerCase() === username.toLowerCase());
+
+            let mergedItems = [];
+            let maxLastModified = 0;
+
+            matchingKeys.forEach(key => {
+                let data = allData[key];
+                // Handle legacy array format
+                if (Array.isArray(data)) {
+                    data = { lastModified: 0, items: data };
+                }
+                if (data.items && Array.isArray(data.items)) {
+                    mergedItems = mergedItems.concat(data.items);
+                }
+                if (data.lastModified > maxLastModified) {
+                    maxLastModified = data.lastModified;
+                }
+            });
+
+            // Deduplicate by timestamp (critical for merge)
+            const uniqueMap = new Map();
+            mergedItems.forEach(item => {
+                if (item.timestamp) uniqueMap.set(item.timestamp, item);
+                else uniqueMap.set(JSON.stringify(item), item); // Fallback for really old legacy
+            });
+
+            const finalItems = Array.from(uniqueMap.values()).sort((a, b) => b.timestamp - a.timestamp); // Newest first
+
+            const userData = {
+                lastModified: maxLastModified,
+                items: finalItems
+            };
 
             return res.status(200).json(userData);
         } catch (e) {
