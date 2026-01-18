@@ -1531,3 +1531,6 @@ input:-webkit-autofill:active {
   font-size: 1.1em;
   vertical-align: middle;
 }
+/* Cloud Sync Animation */
+@keyframes spin { 100% { transform: rotate(360deg); } }
+.spin-anim { display: inline-block; animation: spin 1s linear infinite; }
