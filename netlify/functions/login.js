@@ -56,13 +56,14 @@ exports.handler = async (event) => {
         console.log('Login attempt for:', username);
         console.log('Available users:', users.map(u => u.username)); // Log usernames only for security
 
-        const user = users.find(u => u.username === username && u.password === password);
+        // Case-insensitive lookup for username, but password must match exactly
+        const user = users.find(u => u.username.toLowerCase() === username.toLowerCase() && u.password === password);
 
         if (user) {
             console.log('Login successful for:', username);
             return {
                 statusCode: 200,
-                body: JSON.stringify({ success: true, username: user.username })
+                body: JSON.stringify({ success: true, username: user.username.toLowerCase() }) // Force lowercase return
             };
         } else {
             console.log('Login failed. Invalid credentials.');

@@ -28,8 +28,9 @@ module.exports = async (req, res) => {
     const { method } = req;
 
     if (method === 'GET') {
-        const username = req.query.username;
+        let username = req.query.username;
         if (!username) return res.status(400).send('Missing username');
+        username = username.toLowerCase();
 
         try {
             let fileData = await fetchFileFromGitHub();
@@ -80,6 +81,8 @@ module.exports = async (req, res) => {
             const { username, data, calculations } = body || {};
 
             if (!username) return res.status(400).send('Missing username');
+            // Enforce lowercase for consistent storage buckets
+            const normalizedUser = username.toLowerCase();
 
             let payloadToSave = data;
             if (!payloadToSave && Array.isArray(calculations)) {
@@ -106,8 +109,9 @@ module.exports = async (req, res) => {
                 }
             }
 
-            // 2. Update user data
-            allData[username] = payloadToSave;
+            // 2. Update with new data
+            // Ensure we use the normalized (lowercase) username as the key
+            allData[normalizedUser] = payloadToSave;
 
             // 3. Commit back
             const newContent = Buffer.from(JSON.stringify(allData, null, 2)).toString('base64');

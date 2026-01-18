@@ -1,4 +1,4 @@
-console.log('Common Investor Initialized v65.1');
+console.log('Common Investor Initialized v66');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1342,8 +1342,15 @@ function renderSavedItems() {
   }
 
   // 3. Cloud Background Sync (Merge Sync: Union of All Devices)
-  const username = localStorage.getItem('username');
+  let username = localStorage.getItem('username');
   if (username) {
+    // FIX: Enforce Lowercase to prevent "Moe" vs "moe" split buckets
+    if (username !== username.toLowerCase()) {
+      console.log('Migrating username to lowercase:', username);
+      username = username.toLowerCase();
+      localStorage.setItem('username', username);
+    }
+
     // Show controls
     updateCloudStatus('idle');
 
