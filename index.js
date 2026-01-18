@@ -1,4 +1,4 @@
-console.log('Common Investor v61 Loaded');
+console.log('Common Investor v62 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1375,105 +1375,106 @@ function renderList(savedItems) {
 
   savedList.innerHTML = '';
   savedItems.forEach((item, index) => {
-    // Determine display name and clean it
-    let displayName = item.companyName || item.ticker || 'Unknown';
-    displayName = displayName.replace(/,?\s*\b(?:Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG)\b\.?.*$/i, '').trim();
+    try {
+      // Determine display name and clean it
+      let displayName = item.companyName || item.ticker || 'Unknown';
+      displayName = displayName.replace(/,?\s*\b(?:Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG)\b\.?.*$/i, '').trim();
 
-    // Legacy Data Fix / Formatting
-    // Safely handle futurePrice as string for replace
-    let beatSnp = item.results?.beatSnpPrice;
-    let doubleRet = item.results?.doubleReturnPrice;
-    const futPStr = item.results?.futurePrice;
+      // Legacy Data Fix / Formatting
+      // Safely handle futurePrice as string for replace
+      let beatSnp = item.results?.beatSnpPrice;
+      let doubleRet = item.results?.doubleReturnPrice;
+      const futPStr = item.results?.futurePrice;
 
-    if ((!beatSnp || beatSnp === '-') && futPStr && futPStr !== '-') {
-      const val = parseFloat(String(futPStr).replace(/[$,]/g, ''));
-      if (val > 0) {
-        beatSnp = '$' + (val / 1.5).toFixed(2);
-        doubleRet = '$' + (val / 2.0).toFixed(2);
-      }
-    }
-
-    // Fix: Retroactive Upside/CAGR Calculation for Legacy Items
-    // If upside/CAGR is missing or '-', try to calculate it now for display
-    let displayUpside = item.results?.upside;
-    let displayCAGR = item.results?.cagr;
-
-    if ((!displayUpside || displayUpside === '-' || !displayCAGR || displayCAGR === '-') && futPStr && futPStr !== '-') {
-      const futVal = parseFloat(String(futPStr).replace(/[$,]/g, ''));
-      const curVal = parseFloat(String(item.currentMetrics?.price || '0').replace(/[$,]/g, ''));
-
-      if (futVal > 0 && curVal > 0) {
-        const up = ((futVal - curVal) / curVal) * 100;
-        const c = (Math.pow(futVal / curVal, 1 / 5) - 1) * 100;
-
-        if (!displayUpside || displayUpside === '-') {
-          displayUpside = (up > 0 ? '+' : '') + up.toFixed(1) + '%';
-        }
-        if (!displayCAGR || displayCAGR === '-') {
-          displayCAGR = c.toFixed(1) + '%';
+      if ((!beatSnp || beatSnp === '-') && futPStr && futPStr !== '-') {
+        const val = parseFloat(String(futPStr).replace(/[$,]/g, ''));
+        if (val > 0) {
+          beatSnp = '$' + (val / 1.5).toFixed(2);
+          doubleRet = '$' + (val / 2.0).toFixed(2);
         }
       }
-    }
 
-    // 1. Fix Corrupted Net Income (Legacy Data Repair)
-    let displayNetInc = item.currentMetrics?.netIncome || '-';
-    // Check if it's a "messy" number (long string of digits) or missing
-    if (displayNetInc !== '-' && !String(displayNetInc).match(/[BMT]/) && String(displayNetInc).length > 8) {
-      const mktCapRaw = parseFloat(String(item.currentMetrics?.marketValue || '').replace(/[^0-9.-]/g, ''));
-      const peRaw = parseFloat(item.currentMetrics?.pe || 0);
-      // Try to preserve unit from Market Cap
-      const mktCapUnit = (item.currentMetrics?.marketValue || '').match(/[TMB]/)?.[0] || '';
+      // Fix: Retroactive Upside/CAGR Calculation for Legacy Items
+      // If upside/CAGR is missing or '-', try to calculate it now for display
+      let displayUpside = item.results?.upside;
+      let displayCAGR = item.results?.cagr;
 
-      if (mktCapRaw > 0 && peRaw > 0) {
-        let val = mktCapRaw / peRaw;
-        let unit = mktCapUnit;
+      if ((!displayUpside || displayUpside === '-' || !displayCAGR || displayCAGR === '-') && futPStr && futPStr !== '-') {
+        const futVal = parseFloat(String(futPStr).replace(/[$,]/g, ''));
+        const curVal = parseFloat(String(item.currentMetrics?.price || '0').replace(/[$,]/g, ''));
 
-        // Adjust unit scales (T -> B -> M) if value is small (< 1)
-        if (unit === 'T' && val < 1) { val *= 1000; unit = 'B'; }
-        else if (unit === 'B' && val < 1) { val *= 1000; unit = 'M'; }
+        if (futVal > 0 && curVal > 0) {
+          const up = ((futVal - curVal) / curVal) * 100;
+          const c = (Math.pow(futVal / curVal, 1 / 5) - 1) * 100;
 
-        displayNetInc = val.toFixed(2) + unit;
+          if (!displayUpside || displayUpside === '-') {
+            displayUpside = (up > 0 ? '+' : '') + up.toFixed(1) + '%';
+          }
+          if (!displayCAGR || displayCAGR === '-') {
+            displayCAGR = c.toFixed(1) + '%';
+          }
+        }
       }
-    }
 
-    // 2. Fix Missing Future Revenue (Legacy Data Repair)
-    let displayFutRev = item.results?.futureRevenue;
-    if (!displayFutRev || displayFutRev === '-') {
-      const curRev = parseFloat(String(item.currentMetrics?.revenue || '').replace(/[^0-9.-]/g, ''));
-      const growth = parseFloat(item.inputs?.future?.revenueGrowth || 0);
-      const curRevUnit = (item.currentMetrics?.revenue || '').match(/[TMB]/)?.[0] || '';
+      // 1. Fix Corrupted Net Income (Legacy Data Repair)
+      let displayNetInc = item.currentMetrics?.netIncome || '-';
+      // Check if it's a "messy" number (long string of digits) or missing
+      if (displayNetInc !== '-' && !String(displayNetInc).match(/[BMT]/) && String(displayNetInc).length > 8) {
+        const mktCapRaw = parseFloat(String(item.currentMetrics?.marketValue || '').replace(/[^0-9.-]/g, ''));
+        const peRaw = parseFloat(item.currentMetrics?.pe || 0);
+        // Try to preserve unit from Market Cap
+        const mktCapUnit = (item.currentMetrics?.marketValue || '').match(/[TMB]/)?.[0] || '';
 
-      if (curRev > 0) {
-        // Assume 5 years compounded
-        const fut = curRev * Math.pow(1 + growth / 100, 5);
-        displayFutRev = fut.toFixed(2) + curRevUnit;
+        if (mktCapRaw > 0 && peRaw > 0) {
+          let val = mktCapRaw / peRaw;
+          let unit = mktCapUnit;
+
+          // Adjust unit scales (T -> B -> M) if value is small (< 1)
+          if (unit === 'T' && val < 1) { val *= 1000; unit = 'B'; }
+          else if (unit === 'B' && val < 1) { val *= 1000; unit = 'M'; }
+
+          displayNetInc = val.toFixed(2) + unit;
+        }
       }
-    }
 
-    // 3. Fix Missing Future Shares (Legacy Data Repair)
-    let displayFutShares = item.results?.futureShares;
-    if (!displayFutShares || displayFutShares === '-') {
-      const curShares = parseFloat(String(item.currentMetrics?.shares || '').replace(/[^0-9.-]/g, ''));
-      const change = parseFloat(item.inputs?.future?.sharesChange || 0);
-      // Typically shares are B or M, try to grab unit or default
-      const curShareUnit = (item.currentMetrics?.shares || '').match(/[TMB]/)?.[0] || '';
+      // 2. Fix Missing Future Revenue (Legacy Data Repair)
+      let displayFutRev = item.results?.futureRevenue;
+      if (!displayFutRev || displayFutRev === '-') {
+        const curRev = parseFloat(String(item.currentMetrics?.revenue || '').replace(/[^0-9.-]/g, ''));
+        const growth = parseFloat(item.inputs?.future?.revenueGrowth || 0);
+        const curRevUnit = (item.currentMetrics?.revenue || '').match(/[TMB]/)?.[0] || '';
 
-      if (curShares > 0) {
-        const fut = curShares * Math.pow(1 + change / 100, 5);
-        displayFutShares = fut.toFixed(2) + curShareUnit;
+        if (curRev > 0) {
+          // Assume 5 years compounded
+          const fut = curRev * Math.pow(1 + growth / 100, 5);
+          displayFutRev = fut.toFixed(2) + curRevUnit;
+        }
       }
-    }
 
-    const fmtPct = (v) => {
-      const n = parseFloat(v);
-      if (isNaN(n)) return '0%';
-      const sign = n > 0 ? '+' : '';
-      return `${sign}${n}%`;
-    };
+      // 3. Fix Missing Future Shares (Legacy Data Repair)
+      let displayFutShares = item.results?.futureShares;
+      if (!displayFutShares || displayFutShares === '-') {
+        const curShares = parseFloat(String(item.currentMetrics?.shares || '').replace(/[^0-9.-]/g, ''));
+        const change = parseFloat(item.inputs?.future?.sharesChange || 0);
+        // Typically shares are B or M, try to grab unit or default
+        const curShareUnit = (item.currentMetrics?.shares || '').match(/[TMB]/)?.[0] || '';
 
-    const div = document.createElement('div');
-    div.className = 'saved-item';
-    div.innerHTML = `
+        if (curShares > 0) {
+          const fut = curShares * Math.pow(1 + change / 100, 5);
+          displayFutShares = fut.toFixed(2) + curShareUnit;
+        }
+      }
+
+      const fmtPct = (v) => {
+        const n = parseFloat(v);
+        if (isNaN(n)) return '0%';
+        const sign = n > 0 ? '+' : '';
+        return `${sign}${n}%`;
+      };
+
+      const div = document.createElement('div');
+      div.className = 'saved-item';
+      div.innerHTML = `
         <div class="saved-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px 14px; cursor:pointer">
           <div style="display: flex; flex-direction:column;">
             <div class="saved-title-text" style="font-weight:700; font-size:1.05em; margin-bottom: 2px;">${displayName}</div>
@@ -1543,47 +1544,50 @@ function renderList(savedItems) {
       </div>
     `;
 
-    // Toggle details on click
-    const header = div.querySelector('.saved-header');
-    const details = div.querySelector('.saved-details');
-    const titleSpan = div.querySelector('.saved-title-text');
+      // Toggle details on click
+      const header = div.querySelector('.saved-header');
+      const details = div.querySelector('.saved-details');
+      const titleSpan = div.querySelector('.saved-title-text');
 
-    header.addEventListener('click', (e) => {
-      if (e.target.closest('.delete-btn')) return;
-      const isHidden = details.style.display === 'none';
-      details.style.display = isHidden ? 'block' : 'none';
-      div.style.background = isHidden ? 'var(--surface-2)' : '';
+      header.addEventListener('click', (e) => {
+        if (e.target.closest('.delete-btn')) return;
+        const isHidden = details.style.display === 'none';
+        details.style.display = isHidden ? 'block' : 'none';
+        div.style.background = isHidden ? 'var(--surface-2)' : '';
 
-      if (isHidden) {
-        titleSpan.textContent = displayName;
-      } else {
-        titleSpan.textContent = `${displayName} Analysis`;
-      }
-    });
-
-    // Delete logic with Local Authority
-    const delBtn = div.querySelector('.delete-btn');
-    delBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (confirm('Delete this saved calculation?')) {
-        // 1. Update Local (Immediate)
-        savedItems.splice(index, 1);
-        const storageKey = getHubStorageKey();
-        const wrapper = { lastModified: Date.now(), items: savedItems };
-        localStorage.setItem(storageKey, JSON.stringify(wrapper));
-
-        // 2. Render Loop (Update UI)
-        renderList(savedItems);
-
-        // 3. Cloud Backup
-        const username = localStorage.getItem('username');
-        if (isPremium && username) {
-          pushToCloud(username, wrapper).catch(console.error);
+        if (isHidden) {
+          titleSpan.textContent = displayName;
+        } else {
+          titleSpan.textContent = `${displayName} Analysis`;
         }
-      }
-    });
+      });
 
-    savedList.appendChild(div);
+      // Delete logic with Local Authority
+      const delBtn = div.querySelector('.delete-btn');
+      delBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (confirm('Delete this saved calculation?')) {
+          // 1. Update Local (Immediate)
+          savedItems.splice(index, 1);
+          const storageKey = getHubStorageKey();
+          const wrapper = { lastModified: Date.now(), items: savedItems };
+          localStorage.setItem(storageKey, JSON.stringify(wrapper));
+
+          // 2. Render Loop (Update UI)
+          renderList(savedItems);
+
+          // 3. Cloud Backup
+          const username = localStorage.getItem('username');
+          if (isPremium && username) {
+            pushToCloud(username, wrapper).catch(console.error);
+          }
+        }
+      });
+
+      savedList.appendChild(div);
+    } catch (err) {
+      console.error('Error rendering saved item', item, err);
+    }
   });
 }
 
