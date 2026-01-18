@@ -1,4 +1,4 @@
-console.log('Common Investor Initialized v67');
+console.log('Common Investor Initialized v68');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1293,6 +1293,20 @@ function updateCloudStatus(status, msg = '') {
     icon.classList.remove('spin-anim');
   }
 }
+
+// HYPER-SYNC: Auto-Sync on Visibility Change & Focus
+// This makes the app feel "Alive" and effectively real-time when switching devices.
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') {
+    console.log('App Foregrounded: Auto-Syncing...');
+    if (typeof window.performSync === 'function') window.performSync();
+  }
+});
+
+window.addEventListener('focus', () => {
+  console.log('Window Focused: Auto-Syncing...');
+  if (typeof window.performSync === 'function') window.performSync();
+});
 
 if (saveToHubBtn) {
   saveToHubBtn.addEventListener('click', saveCalculationToHub);
