@@ -1,4 +1,4 @@
-console.log('Common Investor v57 Loaded');
+console.log('Common Investor v58 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1099,8 +1099,8 @@ function saveCalculationToHub() {
       },
       future: {
         // Safe access for future values
-        revenueGrowth: document.getElementById('futureRevenuePercent')?.value || 0,
-        sharesChange: document.getElementById('futureSharesPercent')?.value || 0,
+        revenueGrowth: revGrowth,
+        sharesChange: sharesChange,
         pe: getVal(fPE),
         margin: parseFloat(fPM?.value) || 0,
         marketValue: getVal(fMV),
