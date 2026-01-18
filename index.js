@@ -1,4 +1,4 @@
-console.log('Common Investor v58 Loaded');
+console.log('Common Investor v59 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1050,14 +1050,26 @@ function saveCalculationToHub() {
     // Note: This logic captures the raw number in the input box.
     // The render logic treats it as a percentage for thesis display.
     let revGrowth = 0;
-    if (frMode?.value === 'absolute') revGrowth = parseFloat(frAbs?.value) || 0;
-    else if (frMode?.value === 'percentage') revGrowth = parseFloat(frPct?.value) || 0;
-    else if (frMode?.value === 'compounded') revGrowth = parseFloat(frCagr?.value) || 0;
+    if (frMode?.value === 'absolute') {
+      revGrowth = parseFloat(frAbs?.value) || 0;
+    } else if (frMode?.value === 'percentage') {
+      revGrowth = parseFloat(frPct?.value) || 0;
+      if (frDir?.value === 'decrease') revGrowth = -revGrowth;
+    } else if (frMode?.value === 'compounded') {
+      revGrowth = parseFloat(frCagr?.value) || 0;
+      if (frCagrDir?.value === 'decrease') revGrowth = -revGrowth;
+    }
 
     let sharesChange = 0;
-    if (fsMode?.value === 'absolute') sharesChange = parseFloat(fsAbs?.value) || 0;
-    else if (fsMode?.value === 'percentage') sharesChange = parseFloat(fsPct?.value) || 0;
-    else if (fsMode?.value === 'compounded') sharesChange = parseFloat(fsCagr?.value) || 0;
+    if (fsMode?.value === 'absolute') {
+      sharesChange = parseFloat(fsAbs?.value) || 0;
+    } else if (fsMode?.value === 'percentage') {
+      sharesChange = parseFloat(fsPct?.value) || 0;
+      if (fsDir?.value === 'decrease') sharesChange = -sharesChange;
+    } else if (fsMode?.value === 'compounded') {
+      sharesChange = parseFloat(fsCagr?.value) || 0;
+      if (fsCagrDir?.value === 'decrease') sharesChange = -sharesChange;
+    }
 
     // Capture Snapshot Data
     const curPriceVal = getVal(price);
@@ -1403,6 +1415,13 @@ function renderList(savedItems) {
       }
     }
 
+    const fmtPct = (v) => {
+      const n = parseFloat(v);
+      if (isNaN(n)) return '0%';
+      const sign = n > 0 ? '+' : '';
+      return `${sign}${n}%`;
+    };
+
     const div = document.createElement('div');
     div.className = 'saved-item';
     div.innerHTML = `
@@ -1433,9 +1452,9 @@ function renderList(savedItems) {
               <div style="flex: 1; min-width: 180px;">
                   <h4 style="margin:0 0 12px; font-size:0.85em; text-transform:uppercase; letter-spacing:0.5px; opacity:0.7; border-bottom: 1px solid var(--border); padding-bottom: 4px;">Thesis</h4>
                   <div style="display:grid; grid-template-columns: 1fr 1fr; gap:8px; font-size:0.9em">
-                      <div><div style="opacity:0.6; font-size:0.85em">Rev Growth</div><div>${item.inputs?.future?.revenueGrowth || 0}%</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Rev Growth</div><div>${fmtPct(item.inputs?.future?.revenueGrowth)}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">Margin</div><div>${item.inputs?.future?.margin || 0}%</div></div>
-                      <div><div style="opacity:0.6; font-size:0.85em">Shares Chg</div><div>${item.inputs?.future?.sharesChange || 0}%</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Shares Chg</div><div>${fmtPct(item.inputs?.future?.sharesChange)}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">Term P/E</div><div>${item.inputs?.future?.pe || 0}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">Fut Rev</div><div>${item.results?.futureRevenue || '-'}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">Fut Shares</div><div>${item.results?.futureShares || '-'}</div></div>
