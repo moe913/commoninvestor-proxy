@@ -1415,6 +1415,55 @@ function renderList(savedItems) {
       }
     }
 
+    // 1. Fix Corrupted Net Income (Legacy Data Repair)
+    let displayNetInc = item.currentMetrics?.netIncome || '-';
+    // Check if it's a "messy" number (long string of digits) or missing
+    if (displayNetInc !== '-' && !displayNetInc.match(/[BMT]/) && String(displayNetInc).length > 8) {
+      const mktCapRaw = parseFloat(String(item.currentMetrics?.marketValue || '').replace(/[^0-9.-]/g, ''));
+      const peRaw = parseFloat(item.currentMetrics?.pe || 0);
+      // Try to preserve unit from Market Cap
+      const mktCapUnit = (item.currentMetrics?.marketValue || '').match(/[TMB]/)?.[0] || '';
+
+      if (mktCapRaw > 0 && peRaw > 0) {
+        let val = mktCapRaw / peRaw;
+        let unit = mktCapUnit;
+
+        // Adjust unit scales (T -> B -> M) if value is small (< 1)
+        if (unit === 'T' && val < 1) { val *= 1000; unit = 'B'; }
+        else if (unit === 'B' && val < 1) { val *= 1000; unit = 'M'; }
+
+        displayNetInc = val.toFixed(2) + unit;
+      }
+    }
+
+    // 2. Fix Missing Future Revenue (Legacy Data Repair)
+    let displayFutRev = item.results?.futureRevenue;
+    if (!displayFutRev || displayFutRev === '-') {
+      const curRev = parseFloat(String(item.currentMetrics?.revenue || '').replace(/[^0-9.-]/g, ''));
+      const growth = parseFloat(item.inputs?.future?.revenueGrowth || 0);
+      const curRevUnit = (item.currentMetrics?.revenue || '').match(/[TMB]/)?.[0] || '';
+
+      if (curRev > 0) {
+        // Assume 5 years compounded
+        const fut = curRev * Math.pow(1 + growth / 100, 5);
+        displayFutRev = fut.toFixed(2) + curRevUnit;
+      }
+    }
+
+    // 3. Fix Missing Future Shares (Legacy Data Repair)
+    let displayFutShares = item.results?.futureShares;
+    if (!displayFutShares || displayFutShares === '-') {
+      const curShares = parseFloat(String(item.currentMetrics?.shares || '').replace(/[^0-9.-]/g, ''));
+      const change = parseFloat(item.inputs?.future?.sharesChange || 0);
+      // Typically shares are B or M, try to grab unit or default
+      const curShareUnit = (item.currentMetrics?.shares || '').match(/[TMB]/)?.[0] || '';
+
+      if (curShares > 0) {
+        const fut = curShares * Math.pow(1 + change / 100, 5);
+        displayFutShares = fut.toFixed(2) + curShareUnit;
+      }
+    }
+
     const fmtPct = (v) => {
       const n = parseFloat(v);
       if (isNaN(n)) return '0%';
@@ -1442,7 +1491,11 @@ function renderList(savedItems) {
                       <div><div style="opacity:0.6; font-size:0.85em">Price</div><div>${item.currentMetrics?.price || '-'}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">P/E</div><div>${item.currentMetrics?.pe || '-'}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">Revenue</div><div>${item.currentMetrics?.revenue || '-'}</div></div>
+<<<<<<< HEAD
                       <div><div style="opacity:0.6; font-size:0.85em">Net Inc</div><div>${displayNetInc || '-'}</div></div>
+=======
+                      <div><div style="opacity:0.6; font-size:0.85em">Net Inc</div><div>${displayNetInc}</div></div>
+>>>>>>> dev
                       <div><div style="opacity:0.6; font-size:0.85em">Margin</div><div>${item.currentMetrics?.profitMargin || '-'}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">Shares</div><div>${item.currentMetrics?.shares || '-'}</div></div>
                   </div>
