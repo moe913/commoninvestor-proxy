@@ -1,4 +1,4 @@
-console.log('Common Investor Initialized v66');
+console.log('Common Investor Initialized v67');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1194,13 +1194,14 @@ function saveCalculationToHub() {
     if (isPremium) {
       const u = localStorage.getItem('username');
       if (u) {
-        toast('Syncing to Cloud...', 1000);
-        pushToCloud(u, savedData)
-          .then(() => toast('Saved to Cloud!', 2000))
-          .catch(e => {
-            console.error('Cloud Push Failed', e);
-            alert('Saved locally, but Cloud Sync failed: ' + e.message);
-          });
+        // FIX: Data Overwrite Bug
+        // Instead of blind push, perform a full sync (Pull -> Merge -> Push)
+        // This ensures we don't delete items from other devices
+        if (typeof window.performSync === 'function') {
+          setTimeout(() => window.performSync(), 500); // Small delay to let local save finish
+        } else {
+          console.error('performSync not found');
+        }
       }
     }
 
@@ -1261,6 +1262,38 @@ function migrateLegacyData(savedItems) {
   return hasChanges;
 }
 
+// Global Cloud UI Helper
+function updateCloudStatus(status, msg = '') {
+  const ctr = document.getElementById('cloudSyncControls');
+  const icon = document.getElementById('cloudStatusIcon');
+  if (!ctr || !icon) return;
+
+  const username = localStorage.getItem('username');
+  if (!username) {
+    ctr.style.display = 'none';
+    return;
+  }
+
+  ctr.style.display = 'flex';
+
+  if (status === 'syncing') {
+    icon.textContent = '🔄';
+    icon.title = 'Syncing...';
+    icon.classList.add('spin-anim'); // Ensure CSS has rotation
+  } else if (status === 'success') {
+    icon.textContent = '✅';
+    icon.title = 'Synced: ' + (msg || 'Just now');
+    icon.classList.remove('spin-anim');
+  } else if (status === 'error') {
+    icon.textContent = '❌';
+    icon.title = 'Error: ' + msg;
+    icon.classList.remove('spin-anim');
+  } else {
+    icon.textContent = '☁️';
+    icon.classList.remove('spin-anim');
+  }
+}
+
 if (saveToHubBtn) {
   saveToHubBtn.addEventListener('click', saveCalculationToHub);
 }
@@ -1309,37 +1342,7 @@ function renderSavedItems() {
   // 2. Render Local IMMEDIATELY (Source of Truth)
   renderList(localData.items);
 
-  // Cloud UI Helpers
-  function updateCloudStatus(status, msg = '') {
-    const ctr = document.getElementById('cloudSyncControls');
-    const icon = document.getElementById('cloudStatusIcon');
-    if (!ctr || !icon) return;
 
-    const username = localStorage.getItem('username');
-    if (!username) {
-      ctr.style.display = 'none';
-      return;
-    }
-
-    ctr.style.display = 'flex';
-
-    if (status === 'syncing') {
-      icon.textContent = '🔄';
-      icon.title = 'Syncing...';
-      icon.classList.add('spin-anim'); // Ensure CSS has rotation
-    } else if (status === 'success') {
-      icon.textContent = '✅';
-      icon.title = 'Synced: ' + (msg || 'Just now');
-      icon.classList.remove('spin-anim');
-    } else if (status === 'error') {
-      icon.textContent = '❌';
-      icon.title = 'Error: ' + msg;
-      icon.classList.remove('spin-anim');
-    } else {
-      icon.textContent = '☁️';
-      icon.classList.remove('spin-anim');
-    }
-  }
 
   // 3. Cloud Background Sync (Merge Sync: Union of All Devices)
   let username = localStorage.getItem('username');
@@ -1354,91 +1357,7 @@ function renderSavedItems() {
     // Show controls
     updateCloudStatus('idle');
 
-    const performSync = () => {
-      const userNow = localStorage.getItem('username');
-      if (!userNow) return;
 
-      updateCloudStatus('syncing');
-      toast('Checking Cloud...', 1000);
-
-      fetch(`/api/user-data?username=${userNow}&t=${Date.now()}`)
-        .then(res => {
-          if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-          return res.json();
-        })
-        .then(cloudWrapper => {
-          let cloudItems = [];
-          if (Array.isArray(cloudWrapper)) {
-            cloudItems = cloudWrapper;
-          } else if (cloudWrapper && Array.isArray(cloudWrapper.items)) {
-            cloudItems = cloudWrapper.items;
-          }
-
-          const localItems = localData.items || [];
-
-          // MERGE STRATEGY
-          const itemMap = new Map();
-
-          // Helper: Ensure item has a unique timestamp (Backfill Legacy Data)
-          const processItem = (item, index) => {
-            if (!item) return;
-            if (!item.timestamp) {
-              // Legacy Item: Create conceptual timestamp from date string or random fallback
-              // "Jan 15, 2024" -> parse, or just use current time - (large number) + index?
-              // Better: Parsing the date allows sorting relative to new items.
-              const d = new Date(item.date);
-              // Fallback to epoch if invalid, plus index to avoid collisions
-              const baseTime = !isNaN(d.getTime()) ? d.getTime() : 0;
-              item.timestamp = baseTime + index;
-            }
-            // Use timestamp as unique ID
-            itemMap.set(item.timestamp, item);
-          };
-
-          cloudItems.forEach((item, i) => processItem(item, i));
-          localItems.forEach((item, i) => processItem(item, i + 1000)); // Offset index to avoid collision with cloud list indices
-
-          const mergedItems = Array.from(itemMap.values());
-          mergedItems.sort((a, b) => b.timestamp - a.timestamp);
-
-          const localSig = JSON.stringify(localItems.map(i => i.timestamp));
-          const cloudSig = JSON.stringify(cloudItems.map(i => i.timestamp));
-          const mergedSig = JSON.stringify(mergedItems.map(i => i.timestamp));
-
-          // Case A: New items found -> Update Local
-          if (mergedSig !== localSig) {
-            console.log('Syncing: Merging new items found.');
-            localData = { lastModified: Date.now(), items: mergedItems };
-            localStorage.setItem(storageKey, JSON.stringify(localData));
-            renderList(localData.items);
-            toast('Synced New Data!', 2000);
-          } else {
-            toast('Already up to date', 1000);
-          }
-
-          // Case B: Cloud missing items -> Push Back
-          if (mergedSig !== cloudSig) {
-            console.log('Syncing: Pushing to cloud...');
-            pushToCloud(userNow, { lastModified: Date.now(), items: mergedItems })
-              .then(() => updateCloudStatus('success'))
-              .catch(err => {
-                console.warn('Cloud pull ok, but push failed:', err);
-                // Don't show error icon if pull worked, just warn
-                toast('Sync Warning: Could not save to cloud');
-              });
-          } else {
-            updateCloudStatus('success');
-          }
-        })
-        .catch(err => {
-          console.warn('Cloud check failed:', err);
-          updateCloudStatus('error', err.message);
-          toast(`Sync Error: ${err.message}`, 4000);
-        });
-    };
-
-    // Run immediately on load
-    performSync();
 
     // Attach to button
     const syncBtn = document.getElementById('forceSyncBtn');
@@ -1450,6 +1369,98 @@ function renderSavedItems() {
     }
   }
 }
+
+// Global Merge Sync Function
+window.performSync = () => {
+  const userNow = localStorage.getItem('username');
+  if (!userNow) return;
+
+  const storageKey = getHubStorageKey();
+  let localData = { lastModified: 0, items: [] };
+  try {
+    const raw = localStorage.getItem(storageKey);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) localData = { lastModified: 0, items: parsed };
+      else localData = parsed;
+    }
+  } catch (e) { }
+
+  updateCloudStatus('syncing');
+  toast('Checking Cloud...', 1000);
+
+  fetch(`/api/user-data?username=${userNow}&t=${Date.now()}`)
+    .then(res => {
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+      return res.json();
+    })
+    .then(cloudWrapper => {
+      let cloudItems = [];
+      if (Array.isArray(cloudWrapper)) {
+        cloudItems = cloudWrapper;
+      } else if (cloudWrapper && Array.isArray(cloudWrapper.items)) {
+        cloudItems = cloudWrapper.items;
+      }
+
+      const localItems = localData.items || [];
+
+      // MERGE STRATEGY
+      const itemMap = new Map();
+
+      // Helper: Ensure item has a unique timestamp (Backfill Legacy Data)
+      const processItem = (item, index) => {
+        if (!item) return;
+        if (!item.timestamp) {
+          const d = new Date(item.date);
+          const baseTime = !isNaN(d.getTime()) ? d.getTime() : 0;
+          item.timestamp = baseTime + index;
+        }
+        itemMap.set(item.timestamp, item);
+      };
+
+      cloudItems.forEach((item, i) => processItem(item, i));
+      localItems.forEach((item, i) => processItem(item, i + 1000));
+
+      const mergedItems = Array.from(itemMap.values());
+      mergedItems.sort((a, b) => b.timestamp - a.timestamp);
+
+      const localSig = JSON.stringify(localItems.map(i => i.timestamp));
+      const cloudSig = JSON.stringify(cloudItems.map(i => i.timestamp));
+      const mergedSig = JSON.stringify(mergedItems.map(i => i.timestamp));
+
+      // Case A: New items found -> Update Local
+      if (mergedSig !== localSig) {
+        console.log('Syncing: Merging new items found.');
+        localData = { lastModified: Date.now(), items: mergedItems };
+        localStorage.setItem(storageKey, JSON.stringify(localData));
+
+        // Re-render only if we are on the page (simple check)
+        if (typeof renderSavedItems === 'function') renderSavedItems();
+
+        toast('Synced New Data!', 2000);
+      } else {
+        toast('Already up to date', 1000);
+      }
+
+      // Case B: Cloud missing items -> Push Back
+      if (mergedSig !== cloudSig) {
+        console.log('Syncing: Pushing to cloud...');
+        pushToCloud(userNow, { lastModified: Date.now(), items: mergedItems })
+          .then(() => updateCloudStatus('success'))
+          .catch(err => {
+            console.warn('Cloud pull ok, but push failed:', err);
+            toast('Sync Warning: Could not save to cloud');
+          });
+      } else {
+        updateCloudStatus('success');
+      }
+    })
+    .catch(err => {
+      console.warn('Cloud check failed:', err);
+      updateCloudStatus('error', err.message);
+      toast(`Sync Error: ${err.message}`, 4000);
+    });
+};
 
 async function pushToCloud(username, dataWrapper) {
   try {
