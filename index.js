@@ -1,4 +1,4 @@
-console.log('Common Investor Initialized v71');
+console.log('Common Investor Initialized v70');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1187,72 +1187,34 @@ function saveCalculationToHub() {
     savedData.lastModified = Date.now(); // Update TS
 
     console.log('Saving to local storage...', newItem);
-    // v71: CLOUD-ONLY ARCHITECTURE (Per User Request)
-    // 1. Do NOT save to localStorage immediately.
-    // 2. Instead, pass the new item directly to the Sync Engine.
-    // 3. Wait for the server round-trip before confirming.
+    localStorage.setItem(storageKey, JSON.stringify(savedData));
+    const savedItems = savedData.items; // For UI render
 
     // Android/Premium Sync
     if (isPremium) {
-      if (saveToHubBtn) {
-        saveToHubBtn.textContent = 'Saving to Cloud...';
-        saveToHubBtn.disabled = true;
-      }
-
       const u = localStorage.getItem('username');
       if (u) {
+        // FIX: Data Overwrite Bug
+        // Instead of blind push, perform a full sync (Pull -> Merge -> Push)
+        // This ensures we don't delete items from other devices
         if (typeof window.performSync === 'function') {
-          // Pass the NEW item to performSync so it can merge it intelligently
-          // expecting savedData to be { items: [newItem] } effectively
-          // Actually, savedData contains the *whole list* currently... wait.
-          // The `savedData` object constructed above (lines 1150-1180) typically contains
-          // the entire history if we read from local cache first...
-          // But here we constructed `savedData` as a creating a NEW entry object usually?
-          // Let's look at lines 1500+ where specific item is built. 
-          // Ah, looking at `saveCalculationToHub` logic:
-          // It creates `newItem`. Then it pushes to `savedData.items`.
-
-          // CRITICAL FIX: We need to just pass the ONE new item to performSync.
-          // `performSync` will handle: Fetch Cloud -> Add Item -> Push Cloud.
-
-          // Let's find the new item. It's the first one in `savedData.items` if we just unshifted it.
-          // Or actually, `saveCalculationToHub` usually reads old local data, unshifts, and writes back.
-          // We need to stop reading old local data for the "list".
-          // We just want the ONE new calculation.
-
-          const newItem = savedData.items[0]; // The one we just added? 
-          // (Assumption: logic above this block constructed savedData with the new item at index 0)
-
-          window.performSync(newItem)
-            .then(() => {
-              if (saveToHubBtn) {
-                saveToHubBtn.textContent = 'Saved to Cloud!';
-                saveToHubBtn.disabled = false;
-              }
-              setTimeout(() => { if (saveToHubBtn) saveToHubBtn.textContent = 'Save to Hub'; }, 2000);
-            })
-            .catch(err => {
-              console.error("Cloud Save Failed", err);
-              alert("Cloud Save Failed: " + err.message);
-              if (saveToHubBtn) {
-                saveToHubBtn.textContent = 'Save Failed';
-                saveToHubBtn.disabled = false;
-              }
-            });
-
+          setTimeout(() => window.performSync(), 500); // Small delay to let local save finish
         } else {
           console.error('performSync not found');
         }
       }
-    } else {
-      // Non-premium fallback (or if we remove local storage, maybe we shouldn't support non-premium save?)
-      // For now, keep premium check.
     }
+
+    // Update List
+    if (typeof renderSavedItems === 'function') renderSavedItems();
+
+    // Feedback
+    if (saveToHubBtn) saveToHubBtn.textContent = 'Saved!';
+    setTimeout(() => { if (saveToHubBtn) saveToHubBtn.textContent = 'Save to Hub'; }, 2000);
 
   } catch (e) {
     console.error('CRITICAL SAVE ERROR:', e);
     alert('Error Saving: ' + e.message);
-    if (saveToHubBtn) saveToHubBtn.disabled = false;
   }
 }
 
@@ -1366,27 +1328,33 @@ function renderSavedItems() {
     return;
   }
 
-  // v71: CLOUD-ONLY RENDER
-  // 1. Clear current list.
-  // 2. Show spinner.
-  // 3. Trigger performSync() (which fetches and renders).
+  // --- LOCAL AUTHORITY STRATEGY ---
+  // 1. Get Local Data
+  const storageKey = getHubStorageKey();
+  let localRaw = localStorage.getItem(storageKey);
+  let localData = { lastModified: 0, items: [] };
 
-  const savedList = document.getElementById('hubSavedList');
-  // Clear and Show Loading
-  if (savedList) {
-    savedList.innerHTML = `
-        <div style="padding: 20px; text-align: center; color: var(--muted);">
-           <span class="spin-anim" style="display:inline-block; font-size: 1.5rem;">☁️</span>
-           <div style="margin-top:10px;">Loading from Cloud...</div>
-        </div>
-      `;
+  try {
+    if (localRaw) {
+      const parsed = JSON.parse(localRaw);
+      // Handle legacy array format
+      if (Array.isArray(parsed)) localData = { lastModified: Date.now(), items: parsed };
+      else localData = parsed;
+    }
+  } catch (e) {
+    console.warn('Local storage parse error (resetting):', e);
+    localData = { lastModified: 0, items: [] };
   }
 
-  // Trigger Cloud Fetch
-  // We pass null to just fetch/render without adding new items.
-  if (typeof window.performSync === 'function') {
-    window.performSync();
+  // Migrate any old data structures
+  if (migrateLegacyData(localData.items)) {
+    // FIX: Do NOT update timestamp just for migration.
+    // This was causing old mobile data to look "newer" than desktop data.
+    localStorage.setItem(storageKey, JSON.stringify(localData));
   }
+
+  // 2. Render Local IMMEDIATELY (Source of Truth)
+  renderList(localData.items);
 
 
 
@@ -1408,107 +1376,141 @@ function renderSavedItems() {
     // Attach to button
     const syncBtn = document.getElementById('forceSyncBtn');
     if (syncBtn) {
-      // Remove old listeners by cloning (hacky but effective for simple scripts)
+      // Remove old listeners by cloning
       const newBtn = syncBtn.cloneNode(true);
       syncBtn.parentNode.replaceChild(newBtn, syncBtn);
       newBtn.addEventListener('click', performSync);
+
+      // EXPORT BUTTON (v70) - Emergency Backup
+      // Inject "Export" button next to "Sync Now" if not exists
+      let exportBtn = document.getElementById('exportDataBtn');
+      if (!exportBtn) {
+        exportBtn = document.createElement('span');
+        exportBtn.id = 'exportDataBtn';
+        exportBtn.textContent = '📥 Backup';
+        exportBtn.className = 'chip';
+        exportBtn.style.cursor = 'pointer';
+        exportBtn.style.marginLeft = '8px';
+        exportBtn.style.backgroundColor = '#333';
+        exportBtn.onclick = exportLocalData;
+        newBtn.parentNode.appendChild(exportBtn);
+      }
     }
   }
 }
 
+// v70: Emergency Data Export
+function exportLocalData() {
+  const storageKey = getHubStorageKey();
+  const raw = localStorage.getItem(storageKey);
+  if (!raw) {
+    alert('No data to export.');
+    return;
+  }
+
+  const blob = new Blob([raw], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  // Filename: common-investor-backup-[DATE].json
+  const dateStr = new Date().toISOString().slice(0, 10);
+  a.download = `common-investor-backup-${dateStr}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
 // Global Merge Sync Function
-// Global Cloud-Only Sync Function (v71)
-window.performSync = (newItem = null) => {
-  return new Promise((resolve, reject) => {
-    const userNow = localStorage.getItem('username');
-    if (!userNow) {
-      resolve([]);
-      return;
+window.performSync = () => {
+  const userNow = localStorage.getItem('username');
+  if (!userNow) return;
+
+  const storageKey = getHubStorageKey();
+  let localData = { lastModified: 0, items: [] };
+  try {
+    const raw = localStorage.getItem(storageKey);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) localData = { lastModified: 0, items: parsed };
+      else localData = parsed;
     }
+  } catch (e) { }
 
-    updateCloudStatus('syncing');
+  updateCloudStatus('syncing');
+  toast('Checking Cloud...', 1000);
 
-    // 1. PULL FROM CLOUD (The Truth)
-    fetch(`/api/user-data?username=${userNow}&t=${Date.now()}`)
-      .then(res => {
-        if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-        return res.json();
-      })
-      .then(cloudWrapper => {
-        let cloudItems = [];
-        if (Array.isArray(cloudWrapper)) {
-          cloudItems = cloudWrapper;
-        } else if (cloudWrapper && Array.isArray(cloudWrapper.items)) {
-          cloudItems = cloudWrapper.items;
+  fetch(`/api/user-data?username=${userNow}&t=${Date.now()}`)
+    .then(res => {
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+      return res.json();
+    })
+    .then(cloudWrapper => {
+      let cloudItems = [];
+      if (Array.isArray(cloudWrapper)) {
+        cloudItems = cloudWrapper;
+      } else if (cloudWrapper && Array.isArray(cloudWrapper.items)) {
+        cloudItems = cloudWrapper.items;
+      }
+
+      const localItems = localData.items || [];
+
+      // MERGE STRATEGY
+      const itemMap = new Map();
+
+      // Helper: Ensure item has a unique timestamp (Backfill Legacy Data)
+      const processItem = (item, index) => {
+        if (!item) return;
+        if (!item.timestamp) {
+          const d = new Date(item.date);
+          const baseTime = !isNaN(d.getTime()) ? d.getTime() : 0;
+          item.timestamp = baseTime + index;
         }
+        itemMap.set(item.timestamp, item);
+      };
 
-        // 2. MERGE LOGIC (Cloud + New Item)
-        let mergedItems = [...cloudItems];
+      cloudItems.forEach((item, i) => processItem(item, i));
+      localItems.forEach((item, i) => processItem(item, i + 1000));
 
-        if (newItem) {
-          // Add the new item to the list
-          // De-duplicate if somehow exists (by timestamp)
-          // But usually newItem is fresh.
-          mergedItems.unshift(newItem);
-          console.log('Merging New Item into Cloud List');
-        }
+      const mergedItems = Array.from(itemMap.values());
+      mergedItems.sort((a, b) => b.timestamp - a.timestamp);
 
-        // De-duplicate by timestamp & Sort
-        const itemMap = new Map();
-        const baseTime = Date.now();
+      const localSig = JSON.stringify(localItems.map(i => i.timestamp));
+      const cloudSig = JSON.stringify(cloudItems.map(i => i.timestamp));
+      const mergedSig = JSON.stringify(mergedItems.map(i => i.timestamp));
 
-        mergedItems.forEach((item, i) => {
-          if (!item.timestamp) item.timestamp = baseTime - i; // Legacy fix
-          itemMap.set(item.timestamp, item);
-        });
+      // Case A: New items found -> Update Local
+      if (mergedSig !== localSig) {
+        console.log('Syncing: Merging new items found.');
+        localData = { lastModified: Date.now(), items: mergedItems };
+        localStorage.setItem(storageKey, JSON.stringify(localData));
 
-        const finalItems = Array.from(itemMap.values()).sort((a, b) => b.timestamp - a.timestamp);
+        // Re-render only if we are on the page (simple check)
+        if (typeof renderSavedItems === 'function') renderSavedItems();
 
-        // 3. PUSH IF CHANGED (Or if we added a new item)
-        // If we have a newItem, we MUST push.
-        // If just reading, we generally don't push unless we were doing a local merge...
-        // But in v71 Cloud-Only, "merging local" is gone. We only merge "newItem".
+        toast('Synced New Data!', 2000);
+      } else {
+        toast('Already up to date', 1000);
+      }
 
-        if (newItem) {
-          console.log('Pushing updated list to Cloud...');
-          pushToCloud(userNow, { lastModified: Date.now(), items: finalItems })
-            .then(() => {
-              updateCloudStatus('success', 'Saved');
-              renderList(finalItems); // RENDER TRUTH
-              // Update Local Storage purely as a cache/backup (Optional, but user said "stop saving locally")
-              // We will SKIP saving to localStorage to strictly obey the user.
-              // Or maybe we update it SILENTLY just so offline works?
-              // User said "Stop saving locally". I will obey.
-              // Actually, let's keep it as a silent cache but NOT rely on it for rendering.
-              // No, "Stop saving locally" is explicit. Remove it.
-              resolve(finalItems);
-            })
-            .catch(err => {
-              updateCloudStatus('error', err.message);
-              reject(err);
-            });
-        } else {
-          // Just a read operation
-          updateCloudStatus('success', 'Loaded');
-          renderList(finalItems); // RENDER TRUTH
-          resolve(finalItems);
-        }
-
-      })
-      .catch(err => {
-        console.warn('Cloud Sync Failed:', err);
-        updateCloudStatus('error', err.message);
-
-        // Fallback: If cloud fails, should we show ANYTHING?
-        // User wants "Cloud Only". If cloud is down, list is empty?
-        // Or show error message in the list.
-        const savedList = document.getElementById('hubSavedList');
-        if (savedList) savedList.innerHTML = `<div style="text-align:center; padding:20px; color:red;">Connection Error: ${err.message}</div>`;
-
-        toast(`Sync Error: ${err.message}`, 4000);
-        reject(err);
-      });
-  });
+      // Case B: Cloud missing items -> Push Back
+      if (mergedSig !== cloudSig) {
+        console.log('Syncing: Pushing to cloud...');
+        pushToCloud(userNow, { lastModified: Date.now(), items: mergedItems })
+          .then(() => updateCloudStatus('success'))
+          .catch(err => {
+            console.warn('Cloud pull ok, but push failed:', err);
+            toast('Sync Warning: Could not save to cloud');
+          });
+      } else {
+        updateCloudStatus('success');
+      }
+    })
+    .catch(err => {
+      console.warn('Cloud check failed:', err);
+      updateCloudStatus('error', err.message);
+      toast(`Sync Error: ${err.message}`, 4000);
+    });
 };
 
 async function pushToCloud(username, dataWrapper) {
