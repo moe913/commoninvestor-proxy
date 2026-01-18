@@ -1,4 +1,4 @@
-console.log('Common Investor v59 Loaded');
+console.log('Common Investor v60 Loaded');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1442,7 +1442,7 @@ function renderList(savedItems) {
                       <div><div style="opacity:0.6; font-size:0.85em">Price</div><div>${item.currentMetrics?.price || '-'}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">P/E</div><div>${item.currentMetrics?.pe || '-'}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">Revenue</div><div>${item.currentMetrics?.revenue || '-'}</div></div>
-                      <div><div style="opacity:0.6; font-size:0.85em">Net Inc</div><div>${item.currentMetrics?.netIncome || '-'}</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Net Inc</div><div>${displayNetInc || '-'}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">Margin</div><div>${item.currentMetrics?.profitMargin || '-'}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">Shares</div><div>${item.currentMetrics?.shares || '-'}</div></div>
                   </div>
@@ -1456,8 +1456,8 @@ function renderList(savedItems) {
                       <div><div style="opacity:0.6; font-size:0.85em">Margin</div><div>${item.inputs?.future?.margin || 0}%</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">Shares Chg</div><div>${fmtPct(item.inputs?.future?.sharesChange)}</div></div>
                       <div><div style="opacity:0.6; font-size:0.85em">Term P/E</div><div>${item.inputs?.future?.pe || 0}</div></div>
-                      <div><div style="opacity:0.6; font-size:0.85em">Fut Rev</div><div>${item.results?.futureRevenue || '-'}</div></div>
-                      <div><div style="opacity:0.6; font-size:0.85em">Fut Shares</div><div>${item.results?.futureShares || '-'}</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Fut Rev</div><div>${displayFutRev || '-'}</div></div>
+                      <div><div style="opacity:0.6; font-size:0.85em">Fut Shares</div><div>${displayFutShares || '-'}</div></div>
                   </div>
               </div>
 
