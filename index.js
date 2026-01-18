@@ -1,4 +1,4 @@
-console.log('Common Investor Initialized v71.2');
+console.log('Common Investor Initialized v71.3');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1566,156 +1566,127 @@ window.performSync = () => {
           });
 
           const finalItems = Array.from(itemMap.values()).sort((a, b) => b.timestamp - a.timestamp);
-
-          // 3. PUSH IF CHANGED
-          const cloudSig = JSON.stringify(cloudItems.map(i => i.timestamp));
-          const finalSig = JSON.stringify(finalItems.map(i => i.timestamp));
-
-          // Push if we added new data OR if the lists differ (rescue success)
-          if (hasNewData || finalSig !== cloudSig) {
-            console.log('Pushing UNIFIED list to Cloud (Rescue + New)...');
-            pushToCloud(userNow, { lastModified: Date.now(), items: mergedItems })
-              .then(() => updateCloudStatus('success'))
-              .catch(err => {
-                console.warn('Cloud pull ok, but push failed:', err);
-                toast('Sync Warning: Could not save to cloud');
-              });
-          } else {
-            updateCloudStatus('success');
-          }
-        })
-        .catch(err => {
-          console.warn('Cloud check failed:', err);
-          updateCloudStatus('error', err.message);
-          toast(`Sync Error: ${err.message}`, 4000);
-        });
-    };
-
-    async function pushToCloud(username, dataWrapper) {
-      try {
-        await fetch('/api/user-data', {
-          method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, data: dataWrapper })
         });
-        console.log('Cloud Backup Success');
-      } catch (e) {
-        console.error('Cloud Backup Failed', e);
-        throw e; // Let caller verify/toast if needed
-      }
+      console.log('Cloud Backup Success');
+    } catch (e) {
+      console.error('Cloud Backup Failed', e);
+      throw e; // Let caller verify/toast if needed
+    }
+  }
+
+  function renderList(savedItems) {
+    const savedList = document.getElementById('hubSavedList');
+    if (!savedList) return;
+
+    if (savedItems.length === 0) {
+      savedList.innerHTML = '<div class="empty-state">No saved items yet.</div>';
+      return;
     }
 
-    function renderList(savedItems) {
-      const savedList = document.getElementById('hubSavedList');
-      if (!savedList) return;
+    savedList.innerHTML = '';
+    savedItems.forEach((item, index) => {
+      try {
+        // Determine display name and clean it
+        let displayName = item.companyName || item.ticker || 'Unknown';
+        displayName = displayName.replace(/,?\s*\b(?:Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG)\b\.?.*$/i, '').trim();
 
-      if (savedItems.length === 0) {
-        savedList.innerHTML = '<div class="empty-state">No saved items yet.</div>';
-        return;
-      }
+        // Legacy Data Fix / Formatting
+        // Safely handle futurePrice as string for replace
+        let beatSnp = item.results?.beatSnpPrice;
+        let doubleRet = item.results?.doubleReturnPrice;
+        const futPStr = item.results?.futurePrice;
 
-      savedList.innerHTML = '';
-      savedItems.forEach((item, index) => {
-        try {
-          // Determine display name and clean it
-          let displayName = item.companyName || item.ticker || 'Unknown';
-          displayName = displayName.replace(/,?\s*\b(?:Inc\.?|Corp\.?|LLC|Ltd\.?|Plc\.?|Company|Co\.|Holdings|Group|Incorporated|Corporation|Limited|SA|AG)\b\.?.*$/i, '').trim();
+        if ((!beatSnp || beatSnp === '-') && futPStr && futPStr !== '-') {
+          const val = parseFloat(String(futPStr).replace(/[$,]/g, ''));
+          if (val > 0) {
+            beatSnp = '$' + (val / 1.5).toFixed(2);
+            doubleRet = '$' + (val / 2.0).toFixed(2);
+          }
+        }
 
-          // Legacy Data Fix / Formatting
-          // Safely handle futurePrice as string for replace
-          let beatSnp = item.results?.beatSnpPrice;
-          let doubleRet = item.results?.doubleReturnPrice;
-          const futPStr = item.results?.futurePrice;
+        // Fix: Retroactive Upside/CAGR Calculation for Legacy Items
+        // If upside/CAGR is missing or '-', try to calculate it now for display
+        let displayUpside = item.results?.upside;
+        let displayCAGR = item.results?.cagr;
 
-          if ((!beatSnp || beatSnp === '-') && futPStr && futPStr !== '-') {
-            const val = parseFloat(String(futPStr).replace(/[$,]/g, ''));
-            if (val > 0) {
-              beatSnp = '$' + (val / 1.5).toFixed(2);
-              doubleRet = '$' + (val / 2.0).toFixed(2);
+        if ((!displayUpside || displayUpside === '-' || !displayCAGR || displayCAGR === '-') && futPStr && futPStr !== '-') {
+          const futVal = parseFloat(String(futPStr).replace(/[$,]/g, ''));
+          const curVal = parseFloat(String(item.currentMetrics?.price || '0').replace(/[$,]/g, ''));
+
+          if (futVal > 0 && curVal > 0) {
+            const up = ((futVal - curVal) / curVal) * 100;
+            const c = (Math.pow(futVal / curVal, 1 / 5) - 1) * 100;
+
+            if (!displayUpside || displayUpside === '-') {
+              displayUpside = (up > 0 ? '+' : '') + up.toFixed(1) + '%';
+            }
+            if (!displayCAGR || displayCAGR === '-') {
+              displayCAGR = c.toFixed(1) + '%';
             }
           }
+        }
 
-          // Fix: Retroactive Upside/CAGR Calculation for Legacy Items
-          // If upside/CAGR is missing or '-', try to calculate it now for display
-          let displayUpside = item.results?.upside;
-          let displayCAGR = item.results?.cagr;
+        // 1. Fix Corrupted Net Income (Legacy Data Repair)
+        let displayNetInc = item.currentMetrics?.netIncome || '-';
+        // Check if it's a "messy" number (long string of digits) or missing
+        if (displayNetInc !== '-' && !String(displayNetInc).match(/[BMT]/) && String(displayNetInc).length > 8) {
+          const mktCapRaw = parseFloat(String(item.currentMetrics?.marketValue || '').replace(/[^0-9.-]/g, ''));
+          const peRaw = parseFloat(item.currentMetrics?.pe || 0);
+          // Try to preserve unit from Market Cap
+          const mktCapUnit = (item.currentMetrics?.marketValue || '').match(/[TMB]/)?.[0] || '';
 
-          if ((!displayUpside || displayUpside === '-' || !displayCAGR || displayCAGR === '-') && futPStr && futPStr !== '-') {
-            const futVal = parseFloat(String(futPStr).replace(/[$,]/g, ''));
-            const curVal = parseFloat(String(item.currentMetrics?.price || '0').replace(/[$,]/g, ''));
+          if (mktCapRaw > 0 && peRaw > 0) {
+            let val = mktCapRaw / peRaw;
+            let unit = mktCapUnit;
 
-            if (futVal > 0 && curVal > 0) {
-              const up = ((futVal - curVal) / curVal) * 100;
-              const c = (Math.pow(futVal / curVal, 1 / 5) - 1) * 100;
+            // Adjust unit scales (T -> B -> M) if value is small (< 1)
+            if (unit === 'T' && val < 1) { val *= 1000; unit = 'B'; }
+            else if (unit === 'B' && val < 1) { val *= 1000; unit = 'M'; }
 
-              if (!displayUpside || displayUpside === '-') {
-                displayUpside = (up > 0 ? '+' : '') + up.toFixed(1) + '%';
-              }
-              if (!displayCAGR || displayCAGR === '-') {
-                displayCAGR = c.toFixed(1) + '%';
-              }
-            }
+            displayNetInc = val.toFixed(2) + unit;
           }
+        }
 
-          // 1. Fix Corrupted Net Income (Legacy Data Repair)
-          let displayNetInc = item.currentMetrics?.netIncome || '-';
-          // Check if it's a "messy" number (long string of digits) or missing
-          if (displayNetInc !== '-' && !String(displayNetInc).match(/[BMT]/) && String(displayNetInc).length > 8) {
-            const mktCapRaw = parseFloat(String(item.currentMetrics?.marketValue || '').replace(/[^0-9.-]/g, ''));
-            const peRaw = parseFloat(item.currentMetrics?.pe || 0);
-            // Try to preserve unit from Market Cap
-            const mktCapUnit = (item.currentMetrics?.marketValue || '').match(/[TMB]/)?.[0] || '';
+        // 2. Fix Missing Future Revenue (Legacy Data Repair)
+        let displayFutRev = item.results?.futureRevenue;
+        if (!displayFutRev || displayFutRev === '-') {
+          const curRev = parseFloat(String(item.currentMetrics?.revenue || '').replace(/[^0-9.-]/g, ''));
+          const growth = parseFloat(item.inputs?.future?.revenueGrowth || 0);
+          const curRevUnit = (item.currentMetrics?.revenue || '').match(/[TMB]/)?.[0] || '';
 
-            if (mktCapRaw > 0 && peRaw > 0) {
-              let val = mktCapRaw / peRaw;
-              let unit = mktCapUnit;
-
-              // Adjust unit scales (T -> B -> M) if value is small (< 1)
-              if (unit === 'T' && val < 1) { val *= 1000; unit = 'B'; }
-              else if (unit === 'B' && val < 1) { val *= 1000; unit = 'M'; }
-
-              displayNetInc = val.toFixed(2) + unit;
-            }
+          if (curRev > 0) {
+            // Assume 5 years compounded
+            const fut = curRev * Math.pow(1 + growth / 100, 5);
+            displayFutRev = fut.toFixed(2) + curRevUnit;
           }
+        }
 
-          // 2. Fix Missing Future Revenue (Legacy Data Repair)
-          let displayFutRev = item.results?.futureRevenue;
-          if (!displayFutRev || displayFutRev === '-') {
-            const curRev = parseFloat(String(item.currentMetrics?.revenue || '').replace(/[^0-9.-]/g, ''));
-            const growth = parseFloat(item.inputs?.future?.revenueGrowth || 0);
-            const curRevUnit = (item.currentMetrics?.revenue || '').match(/[TMB]/)?.[0] || '';
+        // 3. Fix Missing Future Shares (Legacy Data Repair)
+        let displayFutShares = item.results?.futureShares;
+        if (!displayFutShares || displayFutShares === '-') {
+          const curShares = parseFloat(String(item.currentMetrics?.shares || '').replace(/[^0-9.-]/g, ''));
+          const change = parseFloat(item.inputs?.future?.sharesChange || 0);
+          // Typically shares are B or M, try to grab unit or default
+          const curShareUnit = (item.currentMetrics?.shares || '').match(/[TMB]/)?.[0] || '';
 
-            if (curRev > 0) {
-              // Assume 5 years compounded
-              const fut = curRev * Math.pow(1 + growth / 100, 5);
-              displayFutRev = fut.toFixed(2) + curRevUnit;
-            }
+          if (curShares > 0) {
+            const fut = curShares * Math.pow(1 + change / 100, 5);
+            displayFutShares = fut.toFixed(2) + curShareUnit;
           }
+        }
 
-          // 3. Fix Missing Future Shares (Legacy Data Repair)
-          let displayFutShares = item.results?.futureShares;
-          if (!displayFutShares || displayFutShares === '-') {
-            const curShares = parseFloat(String(item.currentMetrics?.shares || '').replace(/[^0-9.-]/g, ''));
-            const change = parseFloat(item.inputs?.future?.sharesChange || 0);
-            // Typically shares are B or M, try to grab unit or default
-            const curShareUnit = (item.currentMetrics?.shares || '').match(/[TMB]/)?.[0] || '';
+        const fmtPct = (v) => {
+          const n = parseFloat(v);
+          if (isNaN(n)) return '0%';
+          const sign = n > 0 ? '+' : '';
+          return `${sign}${n}%`;
+        };
 
-            if (curShares > 0) {
-              const fut = curShares * Math.pow(1 + change / 100, 5);
-              displayFutShares = fut.toFixed(2) + curShareUnit;
-            }
-          }
-
-          const fmtPct = (v) => {
-            const n = parseFloat(v);
-            if (isNaN(n)) return '0%';
-            const sign = n > 0 ? '+' : '';
-            return `${sign}${n}%`;
-          };
-
-          const div = document.createElement('div');
-          div.className = 'saved-item';
-          div.innerHTML = `
+        const div = document.createElement('div');
+        div.className = 'saved-item';
+        div.innerHTML = `
         <div class="saved-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px 14px; cursor:pointer">
           <div style="display: flex; flex-direction:column;">
             <div class="saved-title-text" style="font-weight:700; font-size:1.05em; margin-bottom: 2px;">${displayName}</div>
@@ -1785,55 +1756,55 @@ window.performSync = () => {
       </div>
     `;
 
-          // Toggle details on click
-          const header = div.querySelector('.saved-header');
-          const details = div.querySelector('.saved-details');
-          const titleSpan = div.querySelector('.saved-title-text');
+        // Toggle details on click
+        const header = div.querySelector('.saved-header');
+        const details = div.querySelector('.saved-details');
+        const titleSpan = div.querySelector('.saved-title-text');
 
-          header.addEventListener('click', (e) => {
-            if (e.target.closest('.delete-btn')) return;
-            const isHidden = details.style.display === 'none';
-            details.style.display = isHidden ? 'block' : 'none';
-            div.style.background = isHidden ? 'var(--surface-2)' : '';
+        header.addEventListener('click', (e) => {
+          if (e.target.closest('.delete-btn')) return;
+          const isHidden = details.style.display === 'none';
+          details.style.display = isHidden ? 'block' : 'none';
+          div.style.background = isHidden ? 'var(--surface-2)' : '';
 
-            if (isHidden) {
-              titleSpan.textContent = displayName;
-            } else {
-              titleSpan.textContent = `${displayName} Analysis`;
+          if (isHidden) {
+            titleSpan.textContent = displayName;
+          } else {
+            titleSpan.textContent = `${displayName} Analysis`;
+          }
+        });
+
+        // Delete logic with Local Authority
+        const delBtn = div.querySelector('.delete-btn');
+        delBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (confirm('Delete this saved calculation?')) {
+            // 1. Update Local (Immediate)
+            savedItems.splice(index, 1);
+            const storageKey = getHubStorageKey();
+            const wrapper = { lastModified: Date.now(), items: savedItems };
+            localStorage.setItem(storageKey, JSON.stringify(wrapper));
+
+            // 2. Render Loop (Update UI)
+            renderList(savedItems);
+
+            // 3. Cloud Backup
+            const username = localStorage.getItem('username');
+            if (isPremium && username) {
+              pushToCloud(username, wrapper).catch(console.error);
             }
-          });
+          }
+        });
 
-          // Delete logic with Local Authority
-          const delBtn = div.querySelector('.delete-btn');
-          delBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (confirm('Delete this saved calculation?')) {
-              // 1. Update Local (Immediate)
-              savedItems.splice(index, 1);
-              const storageKey = getHubStorageKey();
-              const wrapper = { lastModified: Date.now(), items: savedItems };
-              localStorage.setItem(storageKey, JSON.stringify(wrapper));
+        savedList.appendChild(div);
+      } catch (err) {
+        console.error('Error rendering saved item', item, err);
+      }
+    });
+  }
 
-              // 2. Render Loop (Update UI)
-              renderList(savedItems);
-
-              // 3. Cloud Backup
-              const username = localStorage.getItem('username');
-              if (isPremium && username) {
-                pushToCloud(username, wrapper).catch(console.error);
-              }
-            }
-          });
-
-          savedList.appendChild(div);
-        } catch (err) {
-          console.error('Error rendering saved item', item, err);
-        }
-      });
-    }
-
-    function saveResultsAsText() {
-      const text = `Common Investor Analysis
+  function saveResultsAsText() {
+    const text = `Common Investor Analysis
 Date: ${new Date().toLocaleDateString()}
 Stock: ${stock.value || 'N/A'}
 Price: ${price.value}
@@ -1845,764 +1816,764 @@ Revenue: ${document.getElementById('futureRevenueValue').textContent}
 Shares: ${document.getElementById('futureSharesValue')?.textContent || '–'}
 Earnings: ${document.getElementById('futureEarnings').textContent}
 `;
-      const blob = new Blob([text], { type: 'text/plain' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `Analysis_${stock.value || 'Stock'}.txt`;
-      a.click();
+    const blob = new Blob([text], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Analysis_${stock.value || 'Stock'}.txt`;
+    a.click();
+  }
+
+  function saveResultsAsCSV() {
+    const getVal = (id) => {
+      const el = document.getElementById(id);
+      if (!el) return '–';
+      // If it has the abbr/full structure, prefer abbr. 
+      // Also clean up whitespace/newlines.
+      const text = el.querySelector('.val-abbr')?.textContent || el.textContent || '–';
+      return text.replace(/\s+/g, ' ').trim();
+    };
+
+    const rows = [
+      ['Metric', 'Value'],
+      ['Stock', stock.value || 'N/A'],
+      ['Date', new Date().toLocaleDateString()],
+      ['Current Price', price.value],
+      ['Future Price', document.getElementById('futureStockPrice')?.textContent?.trim() || '–'],
+      ['Future Revenue', getVal('futureRevenueValue')],
+      ['Future Shares', getVal('futureSharesValue')],
+      ['Future Earnings', getVal('futureEarnings')],
+      ['Future EPS', document.getElementById('futureEPS')?.textContent?.trim() || '–'],
+      ['Future Market Cap', getVal('futureMarketValue')]
+    ];
+
+    let csvContent = "data:text/csv;charset=utf-8,"
+      + rows.map(e => e.map(cell => `"${cell}"`).join(",")).join("\n"); // Quote cells
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `Analysis_${stock.value || 'Stock'}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  function enablePremiumMode() {
+    document.documentElement.classList.add('premium-mode');
+
+    // Explicitly set styles (Redundancy for robustness)
+    if (premiumBtn) premiumBtn.style.display = 'none';
+    const mobileBottomBar = document.getElementById('mobileBottomBar');
+    if (mobileBottomBar) mobileBottomBar.style.display = 'none';
+    if (userProfile) {
+      userProfile.style.display = 'flex';
+      const storedUser = localStorage.getItem('username');
+      if (storedUser) {
+        const nameSpan = userProfile.querySelector('.user-name');
+        if (nameSpan) nameSpan.textContent = storedUser;
+      }
     }
 
-    function saveResultsAsCSV() {
-      const getVal = (id) => {
-        const el = document.getElementById(id);
-        if (!el) return '–';
-        // If it has the abbr/full structure, prefer abbr. 
-        // Also clean up whitespace/newlines.
-        const text = el.querySelector('.val-abbr')?.textContent || el.textContent || '–';
-        return text.replace(/\s+/g, ' ').trim();
-      };
+    if (caseModeBtn) caseModeBtn.style.display = 'inline-flex';
 
-      const rows = [
-        ['Metric', 'Value'],
-        ['Stock', stock.value || 'N/A'],
-        ['Date', new Date().toLocaleDateString()],
-        ['Current Price', price.value],
-        ['Future Price', document.getElementById('futureStockPrice')?.textContent?.trim() || '–'],
-        ['Future Revenue', getVal('futureRevenueValue')],
-        ['Future Shares', getVal('futureSharesValue')],
-        ['Future Earnings', getVal('futureEarnings')],
-        ['Future EPS', document.getElementById('futureEPS')?.textContent?.trim() || '–'],
-        ['Future Market Cap', getVal('futureMarketValue')]
-      ];
+    const autoCalcBtn = document.getElementById('autoCalcBtn');
+    if (autoCalcBtn) autoCalcBtn.style.display = 'block';
 
-      let csvContent = "data:text/csv;charset=utf-8,"
-        + rows.map(e => e.map(cell => `"${cell}"`).join(",")).join("\n"); // Quote cells
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) logoutBtn.style.display = 'inline-block';
 
-      const encodedUri = encodeURI(csvContent);
-      const link = document.createElement('a');
-      link.setAttribute("href", encodedUri);
-      link.setAttribute("download", `Analysis_${stock.value || 'Stock'}.csv`);
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+    if (saveToHubBtn) {
+      saveToHubBtn.style.display = 'inline-block';
+      saveToHubBtn.textContent = 'Save to Hub';
+      saveToHubBtn.classList.remove('locked');
+    }
+    if (saveBtn2) {
+      saveBtn2.style.display = 'inline-block';
+      saveBtn2.textContent = 'Save to Hub';
+      saveBtn2.classList.remove('locked');
     }
 
-    function enablePremiumMode() {
-      document.documentElement.classList.add('premium-mode');
+    // Persist Premium State
+    localStorage.setItem('isPremium', 'true');
+    isPremium = true;
+    isAutoCalcEnabled = true;
 
-      // Explicitly set styles (Redundancy for robustness)
-      if (premiumBtn) premiumBtn.style.display = 'none';
-      const mobileBottomBar = document.getElementById('mobileBottomBar');
-      if (mobileBottomBar) mobileBottomBar.style.display = 'none';
-      if (userProfile) {
-        userProfile.style.display = 'flex';
-        const storedUser = localStorage.getItem('username');
-        if (storedUser) {
-          const nameSpan = userProfile.querySelector('.user-name');
-          if (nameSpan) nameSpan.textContent = storedUser;
-        }
-      }
+    // Hide locks
+    $$('.lock-icon').forEach(el => el.style.display = 'none');
 
-      if (caseModeBtn) caseModeBtn.style.display = 'inline-flex';
+    // Re-render components that depend on premium state
+    renderCommunityTop10();
+  }
 
-      const autoCalcBtn = document.getElementById('autoCalcBtn');
-      if (autoCalcBtn) autoCalcBtn.style.display = 'block';
+  function disablePremiumMode() {
+    document.documentElement.classList.remove('premium-mode');
 
-      const logoutBtn = document.getElementById('logoutBtn');
-      if (logoutBtn) logoutBtn.style.display = 'inline-block';
+    if (premiumBtn) premiumBtn.style.display = 'inline-block';
+    const mobileBottomBar = document.getElementById('mobileBottomBar');
+    if (mobileBottomBar) mobileBottomBar.style.display = 'flex';
+    if (userProfile) userProfile.style.display = 'none';
+    if (caseModeBtn) caseModeBtn.style.display = 'none';
 
-      if (saveToHubBtn) {
-        saveToHubBtn.style.display = 'inline-block';
-        saveToHubBtn.textContent = 'Save to Hub';
-        saveToHubBtn.classList.remove('locked');
-      }
-      if (saveBtn2) {
-        saveBtn2.style.display = 'inline-block';
-        saveBtn2.textContent = 'Save to Hub';
-        saveBtn2.classList.remove('locked');
-      }
+    const autoCalcBtn = document.getElementById('autoCalcBtn');
+    if (autoCalcBtn) autoCalcBtn.style.display = 'none';
 
-      // Persist Premium State
-      localStorage.setItem('isPremium', 'true');
-      isPremium = true;
-      isAutoCalcEnabled = true;
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) logoutBtn.style.display = 'none';
 
-      // Hide locks
-      $$('.lock-icon').forEach(el => el.style.display = 'none');
-
-      // Re-render components that depend on premium state
-      renderCommunityTop10();
+    if (saveToHubBtn) {
+      saveToHubBtn.style.display = 'inline-block';
+      saveToHubBtn.innerHTML = 'Save to Hub <span class="lock-icon">🔒</span>';
+      saveToHubBtn.classList.add('locked');
+    }
+    if (saveBtn2) {
+      saveBtn2.style.display = 'inline-block';
+      saveBtn2.innerHTML = 'Save to Hub <span class="lock-icon">🔒</span>';
+      saveBtn2.classList.add('locked');
     }
 
-    function disablePremiumMode() {
-      document.documentElement.classList.remove('premium-mode');
+    // Show locks
+    $$('.lock-icon').forEach(el => el.style.display = 'inline-block');
 
-      if (premiumBtn) premiumBtn.style.display = 'inline-block';
-      const mobileBottomBar = document.getElementById('mobileBottomBar');
-      if (mobileBottomBar) mobileBottomBar.style.display = 'flex';
-      if (userProfile) userProfile.style.display = 'none';
-      if (caseModeBtn) caseModeBtn.style.display = 'none';
+    localStorage.setItem('isPremium', 'false');
+    isPremium = false;
+    isAutoCalcEnabled = false;
 
-      const autoCalcBtn = document.getElementById('autoCalcBtn');
-      if (autoCalcBtn) autoCalcBtn.style.display = 'none';
+    renderCommunityTop10();
 
-      const logoutBtn = document.getElementById('logoutBtn');
-      if (logoutBtn) logoutBtn.style.display = 'none';
+    switchTab('projections');
 
-      if (saveToHubBtn) {
-        saveToHubBtn.style.display = 'inline-block';
-        saveToHubBtn.innerHTML = 'Save to Hub <span class="lock-icon">🔒</span>';
-        saveToHubBtn.classList.add('locked');
-      }
-      if (saveBtn2) {
-        saveBtn2.style.display = 'inline-block';
-        saveBtn2.innerHTML = 'Save to Hub <span class="lock-icon">🔒</span>';
-        saveBtn2.classList.add('locked');
-      }
+    // Hide charts
+    const histContainer = document.getElementById('historyChartContainer');
+    if (histContainer) histContainer.style.display = 'none';
+    const growthContainer = document.getElementById('chartContainer');
+    if (growthContainer) growthContainer.style.display = 'none';
 
-      // Show locks
-      $$('.lock-icon').forEach(el => el.style.display = 'inline-block');
+    localStorage.removeItem('isPremium');
+    isPremium = false;
+    isAutoCalcEnabled = false;
 
-      localStorage.setItem('isPremium', 'false');
-      isPremium = false;
-      isAutoCalcEnabled = false;
+    // Re-render components
+    renderCommunityTop10();
 
-      renderCommunityTop10();
+    // Revert to Dark Mode (default)
+    applyTheme('dark');
+  }
 
-      switchTab('projections');
+  // Auto-fill logic
 
-      // Hide charts
-      const histContainer = document.getElementById('historyChartContainer');
-      if (histContainer) histContainer.style.display = 'none';
-      const growthContainer = document.getElementById('chartContainer');
-      if (growthContainer) growthContainer.style.display = 'none';
+  let acIndex = -1; // currently highlighted suggestion index
+  // Debounce helper
+  function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+      const context = this;
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+  }
 
-      localStorage.removeItem('isPremium');
-      isPremium = false;
-      isAutoCalcEnabled = false;
+  // Static Search Cache (not really needed but keeps signature)
+  // Using window.globalTickers derived from tools/process_tickers.js
 
-      // Re-render components
-      renderCommunityTop10();
+  // Unified Search Function (Client-Side)
+  async function searchStocks(query) {
+    if (!query) return [];
+    const raw = query.toString().trim();
+    if (!raw) return [];
+    const q = raw.toUpperCase();
+    const tokens = q.split(/\s+/).filter(Boolean);
 
-      // Revert to Dark Mode (default)
-      applyTheme('dark');
-    }
+    /* 
+       globalTickers format: [{ s: 'AAPL', n: 'Apple Inc', e: 'US' }, ...] 
+       We prioritize:
+       1. Exact Symbol match
+       2. Symbol starts with
+       3. Name starts with
+       4. Name contains
+    */
 
-    // Auto-fill logic
+    // Ensure data is loaded (fix race condition)
+    await ensureStocksLoaded();
+    // BUG FIX: Use allStocks (which contains fallback if global fails) instead of window.globalTickers
+    const source = allStocks && allStocks.length > 0 ? allStocks : (window.globalTickers || []);
+    console.log(`Searching for "${q}" in ${source.length} tickers`);
 
-    let acIndex = -1; // currently highlighted suggestion index
-    // Debounce helper
-    function debounce(func, wait) {
-      let timeout;
-      return function (...args) {
-        const context = this;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(context, args), wait);
-      };
-    }
+    const matches = [];
 
-    // Static Search Cache (not really needed but keeps signature)
-    // Using window.globalTickers derived from tools/process_tickers.js
+    // Heuristic scoring:
+    // 100: Exact Symbol
+    // 90: Symbol starts with
+    // 80: Name starts with
+    // 70: Word match
+    // 50: Contains
 
-    // Unified Search Function (Client-Side)
-    async function searchStocks(query) {
-      if (!query) return [];
-      const raw = query.toString().trim();
-      if (!raw) return [];
-      const q = raw.toUpperCase();
-      const tokens = q.split(/\s+/).filter(Boolean);
+    for (const item of source) {
+      const sym = (item.s || item.symbol || '').toUpperCase();
+      const name = (item.n || item.name || '').toUpperCase();
+      let score = 0;
 
-      /* 
-         globalTickers format: [{ s: 'AAPL', n: 'Apple Inc', e: 'US' }, ...] 
-         We prioritize:
-         1. Exact Symbol match
-         2. Symbol starts with
-         3. Name starts with
-         4. Name contains
-      */
-
-      // Ensure data is loaded (fix race condition)
-      await ensureStocksLoaded();
-      // BUG FIX: Use allStocks (which contains fallback if global fails) instead of window.globalTickers
-      const source = allStocks && allStocks.length > 0 ? allStocks : (window.globalTickers || []);
-      console.log(`Searching for "${q}" in ${source.length} tickers`);
-
-      const matches = [];
-
-      // Heuristic scoring:
-      // 100: Exact Symbol
-      // 90: Symbol starts with
-      // 80: Name starts with
-      // 70: Word match
-      // 50: Contains
-
-      for (const item of source) {
-        const sym = (item.s || item.symbol || '').toUpperCase();
-        const name = (item.n || item.name || '').toUpperCase();
-        let score = 0;
-
-        if (sym === q) score = 100;
-        else if (sym.startsWith(q)) score = 90;
-        else if (name.startsWith(q)) score = 80;
-        else {
-          // Token matching
-          let allTokens = true;
-          for (const t of tokens) {
-            if (!sym.includes(t) && !name.includes(t)) {
-              allTokens = false;
-              break;
-            }
+      if (sym === q) score = 100;
+      else if (sym.startsWith(q)) score = 90;
+      else if (name.startsWith(q)) score = 80;
+      else {
+        // Token matching
+        let allTokens = true;
+        for (const t of tokens) {
+          if (!sym.includes(t) && !name.includes(t)) {
+            allTokens = false;
+            break;
           }
-          if (allTokens) score = 60;
         }
-
-        if (score > 0) {
-          matches.push({ symbol: sym, name: name, exchange: item.e || item.exchange || '', score });
-        }
+        if (allTokens) score = 60;
       }
 
-      // Sort by score (desc), then US priority, then alpha
-      matches.sort((a, b) => {
-        // 1. Score
-        if (b.score !== a.score) return b.score - a.score;
-
-        // 2. US Priority (US first)
-        const aUS = a.exchange === 'US';
-        const bUS = b.exchange === 'US';
-        if (aUS && !bUS) return -1;
-        if (!aUS && bUS) return 1;
-
-        // 3. Alphabetical
-        return a.symbol.localeCompare(b.symbol);
-      });
-
-      // Return top 20
-      return matches.slice(0, 20);
-    }
-
-    // Renamed original synchronous suggestions to suggestionsLocal
-    // (Deprecated/Unused now, simplified to single searchStocks)
-    function suggestionsLocal(q) {
-      return [];
-    }
-
-    function editDistance(a, b) {
-      const dp = Array.from({ length: a.length + 1 }, () => Array(b.length + 1).fill(0));
-      for (let i = 0; i <= a.length; i++) dp[i][0] = i; for (let j = 0; j <= b.length; j++) dp[0][j] = j;
-      for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) {
-        const cost = a[i - 1] === b[j - 1] ? 0 : 1;
-        dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + cost);
+      if (score > 0) {
+        matches.push({ symbol: sym, name: name, exchange: item.e || item.exchange || '', score });
       }
-      return dp[a.length][b.length];
     }
 
-    async function renderAC(inputEl = stock, listEl = stockList, onSelect = null) {
-      const val = inputEl.value;
-      // Just show local matches immediately? No, wait for hybrid logic but maybe show loading
-      // Actually, for best UX: Show local instantly, then update.
-      // Converting renderAC to be pure async/render logic is cleaner.
+    // Sort by score (desc), then US priority, then alpha
+    matches.sort((a, b) => {
+      // 1. Score
+      if (b.score !== a.score) return b.score - a.score;
 
-      // Note: This is now async.
-      const list = await searchStocks(val);
+      // 2. US Priority (US first)
+      const aUS = a.exchange === 'US';
+      const bUS = b.exchange === 'US';
+      if (aUS && !bUS) return -1;
+      if (!aUS && bUS) return 1;
 
-      acIndex = -1;
-      inputEl.setAttribute('aria-expanded', String(list.length > 0 || val.trim().length > 0));
-      listEl.innerHTML = '';
-      listEl.classList.toggle('show', list.length > 0 || val.trim().length > 0);
+      // 3. Alphabetical
+      return a.symbol.localeCompare(b.symbol);
+    });
 
-      // Always offer to search for the exact term if user typed something
-      if (val.trim().length > 0) {
-        const term = val.trim().toUpperCase();
-        // Check if exact match already exists at top
-        const exactMatch = list.length > 0 && list[0].symbol === term;
+    // Return top 20
+    return matches.slice(0, 20);
+  }
 
-        if (!exactMatch) {
-          const div = document.createElement('div');
-          div.className = 'ac-item';
-          div.innerHTML = `<strong>Search for "${term}"</strong>`;
-          div.setAttribute('role', 'option');
-          div.dataset.symbol = term;
-          div.addEventListener('mousedown', () => {
-            inputEl.value = term;
-            listEl.classList.remove('show');
-            if (onSelect) {
-              onSelect(term);
-            } else {
-              // Default behavior (Main Calculator)
-              const si = document.getElementById('stockInsights'); if (si) si.value = term;
-              updateActiveCompany();
-              tryAutoFill(term);
-            }
-          });
-          // Prepend to list
-          listEl.prepend(div);
-        }
-      }
+  // Renamed original synchronous suggestions to suggestionsLocal
+  // (Deprecated/Unused now, simplified to single searchStocks)
+  function suggestionsLocal(q) {
+    return [];
+  }
 
-      list.forEach((item, i) => {
+  function editDistance(a, b) {
+    const dp = Array.from({ length: a.length + 1 }, () => Array(b.length + 1).fill(0));
+    for (let i = 0; i <= a.length; i++) dp[i][0] = i; for (let j = 0; j <= b.length; j++) dp[0][j] = j;
+    for (let i = 1; i <= a.length; i++) for (let j = 1; j <= b.length; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + cost);
+    }
+    return dp[a.length][b.length];
+  }
+
+  async function renderAC(inputEl = stock, listEl = stockList, onSelect = null) {
+    const val = inputEl.value;
+    // Just show local matches immediately? No, wait for hybrid logic but maybe show loading
+    // Actually, for best UX: Show local instantly, then update.
+    // Converting renderAC to be pure async/render logic is cleaner.
+
+    // Note: This is now async.
+    const list = await searchStocks(val);
+
+    acIndex = -1;
+    inputEl.setAttribute('aria-expanded', String(list.length > 0 || val.trim().length > 0));
+    listEl.innerHTML = '';
+    listEl.classList.toggle('show', list.length > 0 || val.trim().length > 0);
+
+    // Always offer to search for the exact term if user typed something
+    if (val.trim().length > 0) {
+      const term = val.trim().toUpperCase();
+      // Check if exact match already exists at top
+      const exactMatch = list.length > 0 && list[0].symbol === term;
+
+      if (!exactMatch) {
         const div = document.createElement('div');
         div.className = 'ac-item';
-        // Add exchange info if available
-        const exch = item.exchange ? `<span class="ac-exch">${item.exchange}</span>` : '';
-
-        // Aesthetic Improvement:
-        // If symbol is numeric (e.g. 600519.SS), it looks "sloppy" to a US user.
-        // Swap them: Show Name (Bold) first, then Symbol (muted).
-        const isNumeric = /^\d/.test(item.symbol); // Starts with digit
-
-        if (isNumeric) {
-          div.innerHTML = `<strong>${item.name}</strong><span class="ac-name">${item.symbol}</span>${exch}`;
-        } else {
-          div.innerHTML = `<strong>${item.symbol}</strong><span class="ac-name">${item.name}</span>${exch}`;
-        }
-
-        div.setAttribute('role', 'option'); div.id = 'opt-' + i; div.dataset.symbol = item.symbol;
+        div.innerHTML = `<strong>Search for "${term}"</strong>`;
+        div.setAttribute('role', 'option');
+        div.dataset.symbol = term;
         div.addEventListener('mousedown', () => {
-          inputEl.value = item.symbol || item.name;
+          inputEl.value = term;
           listEl.classList.remove('show');
           if (onSelect) {
-            onSelect(item.symbol);
+            onSelect(term);
           } else {
             // Default behavior (Main Calculator)
-            const si = document.getElementById('stockInsights'); if (si) si.value = inputEl.value;
+            const si = document.getElementById('stockInsights'); if (si) si.value = term;
             updateActiveCompany();
-            if (item.symbol) tryAutoFill(item.symbol);
+            tryAutoFill(term);
           }
         });
-        listEl.appendChild(div);
-      });
-
-      // Re-index all children for keyboard nav
-      Array.from(listEl.children).forEach((child, idx) => {
-        child.addEventListener('mouseover', () => setACIndex(idx));
-      });
+        // Prepend to list
+        listEl.prepend(div);
+      }
     }
 
-    // Debounced input handler
-    const handleInput = debounce(async (e) => {
-      // Try to ensure the stock list is loaded; if it fails we keep using the fallback list.
-      if (!allStocks.length) await ensureStocksLoaded();
-      await renderAC(stock, stockList);
-      // updateActiveCompany(); // Maybe don't update active company on every keystroke if it's heavy
-    }, 300);
+    list.forEach((item, i) => {
+      const div = document.createElement('div');
+      div.className = 'ac-item';
+      // Add exchange info if available
+      const exch = item.exchange ? `<span class="ac-exch">${item.exchange}</span>` : '';
 
-    stock.addEventListener('input', (e) => {
-      // Sync to Insights Input if it exists
-      const stockInsights = document.getElementById('stockInsights');
-      if (stockInsights) stockInsights.value = e.target.value;
+      // Aesthetic Improvement:
+      // If symbol is numeric (e.g. 600519.SS), it looks "sloppy" to a US user.
+      // Swap them: Show Name (Bold) first, then Symbol (muted).
+      const isNumeric = /^\d/.test(item.symbol); // Starts with digit
 
-      handleInput(e);
-    });
-    stock.addEventListener('blur', () => setTimeout(() => stockList.classList.remove('show'), 150));
-
-    // keyboard navigation: ArrowUp / ArrowDown / Enter
-    stock.addEventListener('keydown', (e) => {
-      const items = Array.from(stockList.querySelectorAll('.ac-item'));
-
-      // Allow Enter to proceed even if no items (for custom stocks)
-      if (!items.length && e.key !== 'Enter') return;
-
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        if (items.length) setACIndex(Math.min(items.length - 1, acIndex + 1));
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        if (items.length) setACIndex(Math.max(0, acIndex - 1));
-      } else if (e.key === 'Enter') {
-        // 1. If an item is explicitly selected via keys
-        if (acIndex > -1 && items[acIndex]) {
-          const sel = items[acIndex];
-          stock.value = sel.dataset.symbol || sel.textContent;
-          const si = document.getElementById('stockInsights'); if (si) si.value = stock.value;
-          updateActiveCompany();
-          if (sel.dataset.symbol) tryAutoFill(sel.dataset.symbol);
-        }
-        // 2. If no item selected but list has items, default to first (existing behavior)
-        else if (items.length > 0) {
-          const first = items[0];
-          stock.value = first.dataset.symbol || first.textContent;
-          const si = document.getElementById('stockInsights'); if (si) si.value = stock.value;
-          updateActiveCompany();
-          if (first.dataset.symbol) tryAutoFill(first.dataset.symbol);
-        }
-        // 3. If list is empty (custom stock like SOFI), use typed value
-        else {
-          const val = stock.value.trim();
-          if (val) {
-            updateActiveCompany();
-            tryAutoFill(val);
-          }
-        }
-
-        stockList.classList.remove('show');
-        // allow form submission if any, so don't preventDefault unless you need to
-        // e.preventDefault(); // Optional: prevent form submit if inside form
+      if (isNumeric) {
+        div.innerHTML = `<strong>${item.name}</strong><span class="ac-name">${item.symbol}</span>${exch}`;
+      } else {
+        div.innerHTML = `<strong>${item.symbol}</strong><span class="ac-name">${item.name}</span>${exch}`;
       }
+
+      div.setAttribute('role', 'option'); div.id = 'opt-' + i; div.dataset.symbol = item.symbol;
+      div.addEventListener('mousedown', () => {
+        inputEl.value = item.symbol || item.name;
+        listEl.classList.remove('show');
+        if (onSelect) {
+          onSelect(item.symbol);
+        } else {
+          // Default behavior (Main Calculator)
+          const si = document.getElementById('stockInsights'); if (si) si.value = inputEl.value;
+          updateActiveCompany();
+          if (item.symbol) tryAutoFill(item.symbol);
+        }
+      });
+      listEl.appendChild(div);
     });
 
-    function setACIndex(idx) {
-      const items = Array.from(stockList.querySelectorAll('.ac-item'));
-      items.forEach((it, i) => it.classList.toggle('selected', i === idx));
-      acIndex = idx;
-    }
+    // Re-index all children for keyboard nav
+    Array.from(listEl.children).forEach((child, idx) => {
+      child.addEventListener('mouseover', () => setACIndex(idx));
+    });
+  }
 
-    // ===== Mode toggles =====
-    function toggleRevMode() {
-      const m = frMode.value;
-      if (frLabel) {
-        let text = 'Projection Input';
-        if (m === 'absolute') text = 'Projection Input: Absolute Value';
-        else if (m === 'percentage') text = 'Projection Input: Percent Change';
-        else if (m === 'compounded') text = 'Projection Input: Revenue CAGR';
-        frLabel.textContent = text;
+  // Debounced input handler
+  const handleInput = debounce(async (e) => {
+    // Try to ensure the stock list is loaded; if it fails we keep using the fallback list.
+    if (!allStocks.length) await ensureStocksLoaded();
+    await renderAC(stock, stockList);
+    // updateActiveCompany(); // Maybe don't update active company on every keystroke if it's heavy
+  }, 300);
+
+  stock.addEventListener('input', (e) => {
+    // Sync to Insights Input if it exists
+    const stockInsights = document.getElementById('stockInsights');
+    if (stockInsights) stockInsights.value = e.target.value;
+
+    handleInput(e);
+  });
+  stock.addEventListener('blur', () => setTimeout(() => stockList.classList.remove('show'), 150));
+
+  // keyboard navigation: ArrowUp / ArrowDown / Enter
+  stock.addEventListener('keydown', (e) => {
+    const items = Array.from(stockList.querySelectorAll('.ac-item'));
+
+    // Allow Enter to proceed even if no items (for custom stocks)
+    if (!items.length && e.key !== 'Enter') return;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (items.length) setACIndex(Math.min(items.length - 1, acIndex + 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (items.length) setACIndex(Math.max(0, acIndex - 1));
+    } else if (e.key === 'Enter') {
+      // 1. If an item is explicitly selected via keys
+      if (acIndex > -1 && items[acIndex]) {
+        const sel = items[acIndex];
+        stock.value = sel.dataset.symbol || sel.textContent;
+        const si = document.getElementById('stockInsights'); if (si) si.value = stock.value;
+        updateActiveCompany();
+        if (sel.dataset.symbol) tryAutoFill(sel.dataset.symbol);
       }
-      if (frLabelDual) {
-        let text = 'Projection Input (Base/Bull)';
-        if (m === 'absolute') text = 'Projection Input (Base/Bull): Absolute';
-        else if (m === 'percentage') text = 'Projection Input (Base/Bull): Percent Change';
-        else if (m === 'compounded') text = 'Projection Input (Base/Bull): Revenue CAGR';
-        frLabelDual.textContent = text;
+      // 2. If no item selected but list has items, default to first (existing behavior)
+      else if (items.length > 0) {
+        const first = items[0];
+        stock.value = first.dataset.symbol || first.textContent;
+        const si = document.getElementById('stockInsights'); if (si) si.value = stock.value;
+        updateActiveCompany();
+        if (first.dataset.symbol) tryAutoFill(first.dataset.symbol);
       }
-      // show via empty string so CSS controls the display type (flex/grid)
-      frAbsC.style.display = (!dualCaseEnabled && m === 'absolute') ? '' : 'none';
-      frPctC.style.display = (!dualCaseEnabled && m === 'percentage') ? '' : 'none';
-      frCagrC.style.display = (!dualCaseEnabled && m === 'compounded') ? '' : 'none';
-      if (frAbsCDual) frAbsCDual.style.display = (dualCaseEnabled && m === 'absolute') ? '' : 'none';
-      if (frPctCDual) frPctCDual.style.display = (dualCaseEnabled && m === 'percentage') ? '' : 'none';
-      if (frCagrCDual) frCagrCDual.style.display = (dualCaseEnabled && m === 'compounded') ? '' : 'none';
-    }
-    function toggleSharesMode() {
-      const m = fsMode.value;
-      if (fsLabel) {
-        const text = (m === 'absolute')
-          ? 'Projection Input: Absolute Value'
-          : m === 'percentage'
-            ? 'Projection Input: Percent Change'
-            : 'Projection Input: Shares CAGR';
-        fsLabel.textContent = text;
-      }
-      fsAbsC.style.display = (!dualCaseEnabled && m === 'absolute') ? '' : 'none';
-      fsPctC.style.display = (!dualCaseEnabled && m === 'percentage') ? '' : 'none';
-      fsCagrC.style.display = (!dualCaseEnabled && m === 'compounded') ? '' : 'none';
-      if (fsLabelDual) {
-        const text = (m === 'absolute')
-          ? 'Shares Input (Base/Bull): Absolute'
-          : m === 'percentage'
-            ? 'Shares Input (Base/Bull): Percent Change'
-            : 'Shares Input (Base/Bull): Shares CAGR';
-        fsLabelDual.textContent = text;
-      }
-      if (fsAbsCDual) fsAbsCDual.style.display = (dualCaseEnabled && m === 'absolute') ? '' : 'none';
-      if (fsPctCDual) fsPctCDual.style.display = (dualCaseEnabled && m === 'percentage') ? '' : 'none';
-      if (fsCagrCDual) fsCagrCDual.style.display = (dualCaseEnabled && m === 'compounded') ? '' : 'none';
-    }
-    frMode.addEventListener('change', toggleRevMode); toggleRevMode();
-    fsMode.addEventListener('change', toggleSharesMode); toggleSharesMode();
-
-    // ===== Dual-case helpers =====
-    function gatePremiumDual() {
-      if (isPremium) return true;
-      if (loginModal?.showModal) {
-        loginModal.showModal();
-        loginModal.style.display = 'flex';
-      }
-      toast('Base/Bull mode is a Premium feature.');
-      return false;
-    }
-
-    function copySinglesToDual() {
-      // Copy Single -> Base
-      if (frAbsBase) frAbsBase.value = frAbs?.value || '';
-      if (frSufBase) frSufBase.value = frSuf?.value || '';
-      if (frPctBase) frPctBase.value = frPct?.value || '';
-      if (frDirBase) frDirBase.value = frDir?.value || 'increase';
-      if (frCagrBase) frCagrBase.value = frCagr?.value || '';
-      if (frCagrDirBase) frCagrDirBase.value = frCagrDir?.value || 'increase';
-
-      if (fsAbsBase) fsAbsBase.value = fsAbs?.value || '';
-      if (fsSufBase) fsSufBase.value = fsSuf?.value || '';
-      if (fsPctBase) fsPctBase.value = fsPct?.value || '';
-      if (fsDirBase) fsDirBase.value = fsDir?.value || 'increase';
-      if (fsCagrBase) fsCagrBase.value = fsCagr?.value || '';
-      if (fsCagrDirBase) fsCagrDirBase.value = fsCagrDir?.value || 'increase';
-
-      if (fPEBase) fPEBase.value = fPE?.value || '';
-      if (fPMBase) fPMBase.value = fPM?.value || '';
-
-      // Clear Bull fields (or set defaults)
-      if (frAbsBull) frAbsBull.value = '';
-      if (frSufBull) frSufBull.value = '';
-      if (frPctBull) frPctBull.value = '';
-      if (frDirBull) frDirBull.value = 'increase';
-      if (frCagrBull) frCagrBull.value = '';
-      if (frCagrDirBull) frCagrDirBull.value = 'increase';
-
-      if (fsAbsBull) fsAbsBull.value = '';
-      if (fsSufBull) fsSufBull.value = '';
-      if (fsPctBull) fsPctBull.value = '';
-      if (fsDirBull) fsDirBull.value = 'increase';
-      if (fsCagrBull) fsCagrBull.value = '';
-      if (fsCagrDirBull) fsCagrDirBull.value = 'increase';
-
-      if (fPEBull) fPEBull.value = '';
-      if (fPMBull) fPMBull.value = '';
-    }
-
-    function setDualCase(enabled) {
-      dualCaseEnabled = Boolean(enabled);
-      document.body.dataset.dualCase = dualCaseEnabled ? 'true' : 'false';
-      const singles = $$('.single-case-block');
-      const duals = $$('.dual-case-block');
-      singles.forEach(el => { el.style.display = dualCaseEnabled ? 'none' : ''; });
-      duals.forEach(el => { el.style.display = dualCaseEnabled ? '' : 'none'; });
-
-      const revSingle = $('#futureRevenueControls');
-      const revDual = $('#futureRevenueControlsDual');
-      const shSingle = $('#futureSharesControls');
-      const shDual = $('#futureSharesControlsDual');
-      if (revSingle) revSingle.style.display = dualCaseEnabled ? 'none' : '';
-      if (revDual) revDual.style.display = dualCaseEnabled ? 'block' : 'none';
-      if (shSingle) shSingle.style.display = dualCaseEnabled ? 'none' : '';
-      if (shDual) shDual.style.display = dualCaseEnabled ? 'block' : 'none';
-
-      if (singleCaseResults) singleCaseResults.style.display = dualCaseEnabled ? 'none' : '';
-      if (dualCaseResults) dualCaseResults.style.display = dualCaseEnabled ? 'table' : 'none';
-
-      if (caseModeBtn) caseModeBtn.textContent = dualCaseEnabled ? 'Base + Bull: On' : '🐂 / 🛡 Base + Bull';
-      if (dualCaseEnabled) copySinglesToDual();
-      toggleRevMode();
-      toggleSharesMode();
-      calculateFuture();
-
-      // Update Smart Dropdowns based on new mode
-      if (typeof updateAllSmartDropdowns === 'function') {
-        updateAllSmartDropdowns();
-      }
-    }
-
-    // ===== Calculations =====
-    function calculateCurrent() {
-      try {
-        const rev = parseValueCurrent(revenue.value, revSuf.value);
-        const sh = parseValueCurrent(shares.value, shSuf.value);
-        const m = parseMargin(pm.value);
-        const p = parseFloat(price.value) || 0;
-
-        const earn = rev * m;
-        const _eps = sh ? earn / sh : 0;
-
-        const formattedEarn = isFinite(earn) ? fmtAbbrFullHtml(earn) : '–';
-        if (earnings) earnings.innerHTML = formattedEarn;
-
-        if (eps) eps.textContent = isFinite(_eps) ? _eps.toFixed(2) : '–';
-
-        const market = (sh > 0 && p > 0) ? sh * p : 0;
-        const formattedMarket = market > 0 ? fmtAbbrFullHtml(market) : '–';
-        if (mv) mv.innerHTML = formattedMarket;
-
-
-        // Only auto-run future calc after the user has explicitly calculated once
-        if (typeof isAutoCalcEnabled !== 'undefined' && isAutoCalcEnabled) {
-          calculateFuture();
+      // 3. If list is empty (custom stock like SOFI), use typed value
+      else {
+        const val = stock.value.trim();
+        if (val) {
+          updateActiveCompany();
+          tryAutoFill(val);
         }
-      } catch (err) {
-        console.error('calculateCurrent error:', err);
-        alert('Error in calculateCurrent: ' + err.message);
       }
+
+      stockList.classList.remove('show');
+      // allow form submission if any, so don't preventDefault unless you need to
+      // e.preventDefault(); // Optional: prevent form submit if inside form
+    }
+  });
+
+  function setACIndex(idx) {
+    const items = Array.from(stockList.querySelectorAll('.ac-item'));
+    items.forEach((it, i) => it.classList.toggle('selected', i === idx));
+    acIndex = idx;
+  }
+
+  // ===== Mode toggles =====
+  function toggleRevMode() {
+    const m = frMode.value;
+    if (frLabel) {
+      let text = 'Projection Input';
+      if (m === 'absolute') text = 'Projection Input: Absolute Value';
+      else if (m === 'percentage') text = 'Projection Input: Percent Change';
+      else if (m === 'compounded') text = 'Projection Input: Revenue CAGR';
+      frLabel.textContent = text;
+    }
+    if (frLabelDual) {
+      let text = 'Projection Input (Base/Bull)';
+      if (m === 'absolute') text = 'Projection Input (Base/Bull): Absolute';
+      else if (m === 'percentage') text = 'Projection Input (Base/Bull): Percent Change';
+      else if (m === 'compounded') text = 'Projection Input (Base/Bull): Revenue CAGR';
+      frLabelDual.textContent = text;
+    }
+    // show via empty string so CSS controls the display type (flex/grid)
+    frAbsC.style.display = (!dualCaseEnabled && m === 'absolute') ? '' : 'none';
+    frPctC.style.display = (!dualCaseEnabled && m === 'percentage') ? '' : 'none';
+    frCagrC.style.display = (!dualCaseEnabled && m === 'compounded') ? '' : 'none';
+    if (frAbsCDual) frAbsCDual.style.display = (dualCaseEnabled && m === 'absolute') ? '' : 'none';
+    if (frPctCDual) frPctCDual.style.display = (dualCaseEnabled && m === 'percentage') ? '' : 'none';
+    if (frCagrCDual) frCagrCDual.style.display = (dualCaseEnabled && m === 'compounded') ? '' : 'none';
+  }
+  function toggleSharesMode() {
+    const m = fsMode.value;
+    if (fsLabel) {
+      const text = (m === 'absolute')
+        ? 'Projection Input: Absolute Value'
+        : m === 'percentage'
+          ? 'Projection Input: Percent Change'
+          : 'Projection Input: Shares CAGR';
+      fsLabel.textContent = text;
+    }
+    fsAbsC.style.display = (!dualCaseEnabled && m === 'absolute') ? '' : 'none';
+    fsPctC.style.display = (!dualCaseEnabled && m === 'percentage') ? '' : 'none';
+    fsCagrC.style.display = (!dualCaseEnabled && m === 'compounded') ? '' : 'none';
+    if (fsLabelDual) {
+      const text = (m === 'absolute')
+        ? 'Shares Input (Base/Bull): Absolute'
+        : m === 'percentage'
+          ? 'Shares Input (Base/Bull): Percent Change'
+          : 'Shares Input (Base/Bull): Shares CAGR';
+      fsLabelDual.textContent = text;
+    }
+    if (fsAbsCDual) fsAbsCDual.style.display = (dualCaseEnabled && m === 'absolute') ? '' : 'none';
+    if (fsPctCDual) fsPctCDual.style.display = (dualCaseEnabled && m === 'percentage') ? '' : 'none';
+    if (fsCagrCDual) fsCagrCDual.style.display = (dualCaseEnabled && m === 'compounded') ? '' : 'none';
+  }
+  frMode.addEventListener('change', toggleRevMode); toggleRevMode();
+  fsMode.addEventListener('change', toggleSharesMode); toggleSharesMode();
+
+  // ===== Dual-case helpers =====
+  function gatePremiumDual() {
+    if (isPremium) return true;
+    if (loginModal?.showModal) {
+      loginModal.showModal();
+      loginModal.style.display = 'flex';
+    }
+    toast('Base/Bull mode is a Premium feature.');
+    return false;
+  }
+
+  function copySinglesToDual() {
+    // Copy Single -> Base
+    if (frAbsBase) frAbsBase.value = frAbs?.value || '';
+    if (frSufBase) frSufBase.value = frSuf?.value || '';
+    if (frPctBase) frPctBase.value = frPct?.value || '';
+    if (frDirBase) frDirBase.value = frDir?.value || 'increase';
+    if (frCagrBase) frCagrBase.value = frCagr?.value || '';
+    if (frCagrDirBase) frCagrDirBase.value = frCagrDir?.value || 'increase';
+
+    if (fsAbsBase) fsAbsBase.value = fsAbs?.value || '';
+    if (fsSufBase) fsSufBase.value = fsSuf?.value || '';
+    if (fsPctBase) fsPctBase.value = fsPct?.value || '';
+    if (fsDirBase) fsDirBase.value = fsDir?.value || 'increase';
+    if (fsCagrBase) fsCagrBase.value = fsCagr?.value || '';
+    if (fsCagrDirBase) fsCagrDirBase.value = fsCagrDir?.value || 'increase';
+
+    if (fPEBase) fPEBase.value = fPE?.value || '';
+    if (fPMBase) fPMBase.value = fPM?.value || '';
+
+    // Clear Bull fields (or set defaults)
+    if (frAbsBull) frAbsBull.value = '';
+    if (frSufBull) frSufBull.value = '';
+    if (frPctBull) frPctBull.value = '';
+    if (frDirBull) frDirBull.value = 'increase';
+    if (frCagrBull) frCagrBull.value = '';
+    if (frCagrDirBull) frCagrDirBull.value = 'increase';
+
+    if (fsAbsBull) fsAbsBull.value = '';
+    if (fsSufBull) fsSufBull.value = '';
+    if (fsPctBull) fsPctBull.value = '';
+    if (fsDirBull) fsDirBull.value = 'increase';
+    if (fsCagrBull) fsCagrBull.value = '';
+    if (fsCagrDirBull) fsCagrDirBull.value = 'increase';
+
+    if (fPEBull) fPEBull.value = '';
+    if (fPMBull) fPMBull.value = '';
+  }
+
+  function setDualCase(enabled) {
+    dualCaseEnabled = Boolean(enabled);
+    document.body.dataset.dualCase = dualCaseEnabled ? 'true' : 'false';
+    const singles = $$('.single-case-block');
+    const duals = $$('.dual-case-block');
+    singles.forEach(el => { el.style.display = dualCaseEnabled ? 'none' : ''; });
+    duals.forEach(el => { el.style.display = dualCaseEnabled ? '' : 'none'; });
+
+    const revSingle = $('#futureRevenueControls');
+    const revDual = $('#futureRevenueControlsDual');
+    const shSingle = $('#futureSharesControls');
+    const shDual = $('#futureSharesControlsDual');
+    if (revSingle) revSingle.style.display = dualCaseEnabled ? 'none' : '';
+    if (revDual) revDual.style.display = dualCaseEnabled ? 'block' : 'none';
+    if (shSingle) shSingle.style.display = dualCaseEnabled ? 'none' : '';
+    if (shDual) shDual.style.display = dualCaseEnabled ? 'block' : 'none';
+
+    if (singleCaseResults) singleCaseResults.style.display = dualCaseEnabled ? 'none' : '';
+    if (dualCaseResults) dualCaseResults.style.display = dualCaseEnabled ? 'table' : 'none';
+
+    if (caseModeBtn) caseModeBtn.textContent = dualCaseEnabled ? 'Base + Bull: On' : '🐂 / 🛡 Base + Bull';
+    if (dualCaseEnabled) copySinglesToDual();
+    toggleRevMode();
+    toggleSharesMode();
+    calculateFuture();
+
+    // Update Smart Dropdowns based on new mode
+    if (typeof updateAllSmartDropdowns === 'function') {
+      updateAllSmartDropdowns();
+    }
+  }
+
+  // ===== Calculations =====
+  function calculateCurrent() {
+    try {
+      const rev = parseValueCurrent(revenue.value, revSuf.value);
+      const sh = parseValueCurrent(shares.value, shSuf.value);
+      const m = parseMargin(pm.value);
+      const p = parseFloat(price.value) || 0;
+
+      const earn = rev * m;
+      const _eps = sh ? earn / sh : 0;
+
+      const formattedEarn = isFinite(earn) ? fmtAbbrFullHtml(earn) : '–';
+      if (earnings) earnings.innerHTML = formattedEarn;
+
+      if (eps) eps.textContent = isFinite(_eps) ? _eps.toFixed(2) : '–';
+
+      const market = (sh > 0 && p > 0) ? sh * p : 0;
+      const formattedMarket = market > 0 ? fmtAbbrFullHtml(market) : '–';
+      if (mv) mv.innerHTML = formattedMarket;
+
+
+      // Only auto-run future calc after the user has explicitly calculated once
+      if (typeof isAutoCalcEnabled !== 'undefined' && isAutoCalcEnabled) {
+        calculateFuture();
+      }
+    } catch (err) {
+      console.error('calculateCurrent error:', err);
+      alert('Error in calculateCurrent: ' + err.message);
+    }
+  }
+
+  function calculateFuture(isManual = false) {
+    // Premium Guard: Only allow if Premium OR Manual (which has its own check)
+    if (!isManual) {
+      if (!isPremium || !isAutoCalcEnabled) return;
     }
 
-    function calculateFuture(isManual = false) {
-      // Premium Guard: Only allow if Premium OR Manual (which has its own check)
-      if (!isManual) {
-        if (!isPremium || !isAutoCalcEnabled) return;
+    // Mandatory Name Check
+    if (!stock.value.trim()) {
+      // Handled by validateInputs wrapper on button click
+      return;
+    }
+
+    const pickEl = (singleEl, baseEl, bullEl, caseKey) => {
+      if (!dualCaseEnabled || caseKey === 'single') return singleEl;
+      return caseKey === 'base' ? baseEl : bullEl;
+    };
+
+    // Re-calculate these values first
+    const curRev = parseValueCurrent(revenue.value, revSuf.value);
+    const curSh = parseValueCurrent(shares.value, shSuf.value);
+    const curPrice = parseFloat(price.value) || 0;
+    const marginCurrent = parseMargin(pm.value);
+    const peCurrent = parseFloat(pe.value);
+    const mode = frMode.value;
+    const sm = fsMode.value;
+
+    const caseKeys = dualCaseEnabled ? ['base', 'bull'] : ['single'];
+    const caseOutputs = {
+      single: { price: fPrice, rev: fRev, shares: fShOut, earn: fEarn, eps: fEPS, mv: fMV },
+      base: { price: fPriceBase, rev: fRevBase, shares: fShOutBase, earn: fEarnBase, eps: fEPSBase, mv: fMVBase },
+      bull: { price: fPriceBull, rev: fRevBull, shares: fShOutBull, earn: fEarnBull, eps: fEPSBull, mv: fMVBull }
+    };
+
+    const results = {};
+
+    for (const key of caseKeys) {
+      // Check if Future Revenue input has value
+      let hasInput = false;
+      if (mode === 'absolute') {
+        const el = pickEl(frAbs, frAbsBase, frAbsBull, key);
+        if (el && el.value.trim() !== '') hasInput = true;
+      } else if (mode === 'percentage') {
+        const el = pickEl(frPct, frPctBase, frPctBull, key);
+        if (el && el.value.trim() !== '') hasInput = true;
+      } else if (mode === 'compounded') {
+        const el = pickEl(frCagr, frCagrBase, frCagrBull, key);
+        if (el && el.value.trim() !== '') hasInput = true;
       }
 
-      // Mandatory Name Check
-      if (!stock.value.trim()) {
-        // Handled by validateInputs wrapper on button click
-        return;
+      if (!hasInput) {
+        // Clear results for this case
+        results[key] = {
+          price: '–', rev: '–', shares: '–', earn: '–', eps: '–', mv: '–'
+        };
+        continue;
       }
 
-      const pickEl = (singleEl, baseEl, bullEl, caseKey) => {
-        if (!dualCaseEnabled || caseKey === 'single') return singleEl;
-        return caseKey === 'base' ? baseEl : bullEl;
-      };
-
-      // Re-calculate these values first
-      const curRev = parseValueCurrent(revenue.value, revSuf.value);
-      const curSh = parseValueCurrent(shares.value, shSuf.value);
-      const curPrice = parseFloat(price.value) || 0;
-      const marginCurrent = parseMargin(pm.value);
-      const peCurrent = parseFloat(pe.value);
-      const mode = frMode.value;
-      const sm = fsMode.value;
-
-      const caseKeys = dualCaseEnabled ? ['base', 'bull'] : ['single'];
-      const caseOutputs = {
-        single: { price: fPrice, rev: fRev, shares: fShOut, earn: fEarn, eps: fEPS, mv: fMV },
-        base: { price: fPriceBase, rev: fRevBase, shares: fShOutBase, earn: fEarnBase, eps: fEPSBase, mv: fMVBase },
-        bull: { price: fPriceBull, rev: fRevBull, shares: fShOutBull, earn: fEarnBull, eps: fEPSBull, mv: fMVBull }
-      };
-
-      const results = {};
-
-      for (const key of caseKeys) {
-        // Check if Future Revenue input has value
-        let hasInput = false;
-        if (mode === 'absolute') {
-          const el = pickEl(frAbs, frAbsBase, frAbsBull, key);
-          if (el && el.value.trim() !== '') hasInput = true;
-        } else if (mode === 'percentage') {
-          const el = pickEl(frPct, frPctBase, frPctBull, key);
-          if (el && el.value.trim() !== '') hasInput = true;
-        } else if (mode === 'compounded') {
-          const el = pickEl(frCagr, frCagrBase, frCagrBull, key);
-          if (el && el.value.trim() !== '') hasInput = true;
+      // Revenue
+      let futRev = 0;
+      if (mode === 'absolute') {
+        const el = pickEl(frAbs, frAbsBase, frAbsBull, key);
+        const sufEl = pickEl(frSuf, frSufBase, frSufBull, key);
+        futRev = parseValueCurrent(el?.value, sufEl?.value);
+      } else if (mode === 'percentage') {
+        const pctEl = pickEl(frPct, frPctBase, frPctBull, key);
+        const dirEl = pickEl(frDir, frDirBase, frDirBull, key);
+        const pct = parseFloat(pctEl?.value);
+        if (!isNaN(pct) && curRev > 0) {
+          futRev = (dirEl?.value === 'increase') ? curRev * (1 + pct / 100) : curRev * (1 - pct / 100);
         }
-
-        if (!hasInput) {
-          // Clear results for this case
-          results[key] = {
-            price: '–', rev: '–', shares: '–', earn: '–', eps: '–', mv: '–'
-          };
-          continue;
+      } else if (mode === 'compounded') {
+        const cagrEl = pickEl(frCagr, frCagrBase, frCagrBull, key);
+        const dirEl = pickEl(frCagrDir, frCagrDirBase, frCagrDirBull, key);
+        const r = parseFloat(cagrEl?.value);
+        if (!isNaN(r) && curRev > 0) {
+          futRev = (dirEl?.value === 'increase') ? curRev * Math.pow(1 + r / 100, 5) : curRev * Math.pow(1 - r / 100, 5);
         }
+      }
+      if (curRev > 0 && futRev <= 0) futRev = curRev;
 
-        // Revenue
-        let futRev = 0;
-        if (mode === 'absolute') {
-          const el = pickEl(frAbs, frAbsBase, frAbsBull, key);
-          const sufEl = pickEl(frSuf, frSufBase, frSufBull, key);
-          futRev = parseValueCurrent(el?.value, sufEl?.value);
-        } else if (mode === 'percentage') {
-          const pctEl = pickEl(frPct, frPctBase, frPctBull, key);
-          const dirEl = pickEl(frDir, frDirBase, frDirBull, key);
-          const pct = parseFloat(pctEl?.value);
-          if (!isNaN(pct) && curRev > 0) {
-            futRev = (dirEl?.value === 'increase') ? curRev * (1 + pct / 100) : curRev * (1 - pct / 100);
-          }
-        } else if (mode === 'compounded') {
-          const cagrEl = pickEl(frCagr, frCagrBase, frCagrBull, key);
-          const dirEl = pickEl(frCagrDir, frCagrDirBase, frCagrDirBull, key);
-          const r = parseFloat(cagrEl?.value);
-          if (!isNaN(r) && curRev > 0) {
-            futRev = (dirEl?.value === 'increase') ? curRev * Math.pow(1 + r / 100, 5) : curRev * Math.pow(1 - r / 100, 5);
-          }
+      // Shares
+      let futSh = 0;
+      if (sm === 'absolute') {
+        const el = pickEl(fsAbs, fsAbsBase, fsAbsBull, key);
+        const sufEl = pickEl(fsSuf, fsSufBase, fsSufBull, key);
+        futSh = parseValueCurrent(el?.value, sufEl?.value);
+      } else if (sm === 'percentage') {
+        const pctEl = pickEl(fsPct, fsPctBase, fsPctBull, key);
+        const dirEl = pickEl(fsDir, fsDirBase, fsDirBull, key);
+        const pct = parseFloat(pctEl?.value);
+        if (!isNaN(pct) && curSh > 0) {
+          futSh = (dirEl?.value === 'increase') ? curSh * (1 + pct / 100) : curSh * (1 - pct / 100);
         }
-        if (curRev > 0 && futRev <= 0) futRev = curRev;
-
-        // Shares
-        let futSh = 0;
-        if (sm === 'absolute') {
-          const el = pickEl(fsAbs, fsAbsBase, fsAbsBull, key);
-          const sufEl = pickEl(fsSuf, fsSufBase, fsSufBull, key);
-          futSh = parseValueCurrent(el?.value, sufEl?.value);
-        } else if (sm === 'percentage') {
-          const pctEl = pickEl(fsPct, fsPctBase, fsPctBull, key);
-          const dirEl = pickEl(fsDir, fsDirBase, fsDirBull, key);
-          const pct = parseFloat(pctEl?.value);
-          if (!isNaN(pct) && curSh > 0) {
-            futSh = (dirEl?.value === 'increase') ? curSh * (1 + pct / 100) : curSh * (1 - pct / 100);
-          }
-        } else if (sm === 'compounded') {
-          const cagrEl = pickEl(fsCagr, fsCagrBase, fsCagrBull, key);
-          const dirEl = pickEl(fsCagrDir, fsCagrDirBase, fsCagrDirBull, key);
-          const r = parseFloat(cagrEl?.value);
-          if (!isNaN(r) && curSh > 0) {
-            const years = 5;
-            const factor = Math.pow(1 + (dirEl?.value === 'increase' ? 1 : -1) * r / 100, years);
-            futSh = curSh * factor;
-          }
+      } else if (sm === 'compounded') {
+        const cagrEl = pickEl(fsCagr, fsCagrBase, fsCagrBull, key);
+        const dirEl = pickEl(fsCagrDir, fsCagrDirBase, fsCagrDirBull, key);
+        const r = parseFloat(cagrEl?.value);
+        if (!isNaN(r) && curSh > 0) {
+          const years = 5;
+          const factor = Math.pow(1 + (dirEl?.value === 'increase' ? 1 : -1) * r / 100, years);
+          futSh = curSh * factor;
         }
-        if (!isFinite(futSh)) futSh = 0;
-        if (curSh > 0 && futSh <= 0) futSh = curSh;
+      }
+      if (!isFinite(futSh)) futSh = 0;
+      if (curSh > 0 && futSh <= 0) futSh = curSh;
 
-        // P/E & margin
-        const peInput = pickEl(fPE, fPEBase, fPEBull, key);
-        let peF = parseFloat(peInput?.value);
-        if (!(isFinite(peF) && peF > 0)) {
-          peF = (isFinite(peCurrent) && peCurrent > 0) ? peCurrent : NaN;
-        }
-
-        const pmInput = pickEl(fPM, fPMBase, fPMBull, key);
-        const pmF = parseFloat(pmInput?.value);
-        const margin = (isFinite(pmF) && pmF > 0) ? pmF / 100 : marginCurrent;
-
-        let futEarn = 0, futEPS = 0, futPrice = 0;
-        if (futRev > 0 && margin > 0) futEarn = futRev * margin;
-        if (futSh > 0) futEPS = futEarn / futSh;
-        if (!isNaN(peF) && futEPS) futPrice = futEPS * peF;
-
-        const futMV = (futSh > 0 && futPrice > 0) ? futSh * futPrice : 0;
-
-        results[key] = { futRev, futSh, futEarn, futEPS, futPrice, futMV, marginUsed: margin, peUsed: peF, curPrice };
-
-        // Update per-case UI
-        const out = caseOutputs[key];
-        if (out?.price) out.price.textContent = futPrice > 0 ? '$' + futPrice.toFixed(2) : '–';
-        if (out?.price) out.price?.classList?.toggle('success', futPrice > 0);
-        if (out?.rev) out.rev.innerHTML = futRev > 0 ? fmtAbbrFullHtml(futRev) : '–';
-        if (out?.shares) out.shares.innerHTML = futSh > 0 ? fmtAbbrFullHtml(futSh) : '–';
-        if (out?.earn) out.earn.innerHTML = futEarn > 0 ? fmtAbbrFullHtml(futEarn) : '–';
-        if (out?.eps) out.eps.textContent = futEPS > 0 ? futEPS.toFixed(2) : '–';
-        if (out?.mv) out.mv.innerHTML = futMV > 0 ? fmtAbbrFullHtml(futMV) : '–';
+      // P/E & margin
+      const peInput = pickEl(fPE, fPEBase, fPEBull, key);
+      let peF = parseFloat(peInput?.value);
+      if (!(isFinite(peF) && peF > 0)) {
+        peF = (isFinite(peCurrent) && peCurrent > 0) ? peCurrent : NaN;
       }
 
-      const primaryKey = dualCaseEnabled ? 'base' : 'single';
-      const primary = results[primaryKey] || {};
+      const pmInput = pickEl(fPM, fPMBase, fPMBull, key);
+      const pmF = parseFloat(pmInput?.value);
+      const margin = (isFinite(pmF) && pmF > 0) ? pmF / 100 : marginCurrent;
 
-      // Update summary card and single outputs with primary case
-      if (caseOutputs.single?.price) caseOutputs.single.price.textContent = primary.futPrice > 0 ? '$' + primary.futPrice.toFixed(2) : '–';
-      if (caseOutputs.single?.rev) caseOutputs.single.rev.innerHTML = primary.futRev > 0 ? fmtAbbrFullHtml(primary.futRev) : '–';
-      if (caseOutputs.single?.shares) caseOutputs.single.shares.innerHTML = primary.futSh > 0 ? fmtAbbrFullHtml(primary.futSh) : '–';
-      if (caseOutputs.single?.earn) caseOutputs.single.earn.innerHTML = primary.futEarn > 0 ? fmtAbbrFullHtml(primary.futEarn) : '–';
-      if (caseOutputs.single?.eps) caseOutputs.single.eps.textContent = primary.futEPS > 0 ? primary.futEPS.toFixed(2) : '–';
-      if (caseOutputs.single?.mv) caseOutputs.single.mv.innerHTML = primary.futMV > 0 ? fmtAbbrFullHtml(primary.futMV) : '–';
+      let futEarn = 0, futEPS = 0, futPrice = 0;
+      if (futRev > 0 && margin > 0) futEarn = futRev * margin;
+      if (futSh > 0) futEPS = futEarn / futSh;
+      if (!isNaN(peF) && futEPS) futPrice = futEPS * peF;
 
+      const futMV = (futSh > 0 && futPrice > 0) ? futSh * futPrice : 0;
 
-      // Collect warnings for missing inputs so we can show helpful flags instead of throwing
-      const warnings = [];
-      if (!(primary.futPrice > 0)) {
-        warnings.push('Add revenue, profit margin, P/E, and share count to compute a future stock price.');
-      }
-      if (!(curPrice > 0)) {
-        warnings.push('Enter today’s share price to compare against the S&P 500.');
-      }
+      results[key] = { futRev, futSh, futEarn, futEPS, futPrice, futMV, marginUsed: margin, peUsed: peF, curPrice };
 
-      // S&P compare + 2x (S&P = +50% over 5y) + buy targets (based on primary/base)
-      spComp.textContent = ''; spTarget.innerHTML = ''; if (flags) flags.innerHTML = '';
-      if (curPrice > 0 && primary.futPrice > 0) {
-        const SP_FACTOR = 1.5;
-        const TWO_X = 2;
+      // Update per-case UI
+      const out = caseOutputs[key];
+      if (out?.price) out.price.textContent = futPrice > 0 ? '$' + futPrice.toFixed(2) : '–';
+      if (out?.price) out.price?.classList?.toggle('success', futPrice > 0);
+      if (out?.rev) out.rev.innerHTML = futRev > 0 ? fmtAbbrFullHtml(futRev) : '–';
+      if (out?.shares) out.shares.innerHTML = futSh > 0 ? fmtAbbrFullHtml(futSh) : '–';
+      if (out?.earn) out.earn.innerHTML = futEarn > 0 ? fmtAbbrFullHtml(futEarn) : '–';
+      if (out?.eps) out.eps.textContent = futEPS > 0 ? futEPS.toFixed(2) : '–';
+      if (out?.mv) out.mv.innerHTML = futMV > 0 ? fmtAbbrFullHtml(futMV) : '–';
+    }
 
-        const beatsSP = (primary.futPrice >= curPrice * SP_FACTOR);
-        const hits2x = (primary.futPrice >= curPrice * TWO_X);
+    const primaryKey = dualCaseEnabled ? 'base' : 'single';
+    const primary = results[primaryKey] || {};
 
-        const buyToBeatSP = primary.futPrice / SP_FACTOR;
-        const buyFor2x = primary.futPrice / TWO_X;
-
-        spTarget.innerHTML =
-          `Price target to beat S&P 500: <strong>$${buyToBeatSP.toFixed(2)}</strong><br>` +
-          `Price target for 2× return: <strong>$${buyFor2x.toFixed(2)}</strong>`;
-
-        const overallMultiple = primary.futPrice / curPrice;
-        const overallPctGain = (overallMultiple - 1) * 100;
-        const vsSpxMultiple = overallMultiple / SP_FACTOR;
-
-        spComp.textContent = beatsSP ? 'Beating S&P 500' : 'Not beating S&P 500';
+    // Update summary card and single outputs with primary case
+    if (caseOutputs.single?.price) caseOutputs.single.price.textContent = primary.futPrice > 0 ? '$' + primary.futPrice.toFixed(2) : '–';
+    if (caseOutputs.single?.rev) caseOutputs.single.rev.innerHTML = primary.futRev > 0 ? fmtAbbrFullHtml(primary.futRev) : '–';
+    if (caseOutputs.single?.shares) caseOutputs.single.shares.innerHTML = primary.futSh > 0 ? fmtAbbrFullHtml(primary.futSh) : '–';
+    if (caseOutputs.single?.earn) caseOutputs.single.earn.innerHTML = primary.futEarn > 0 ? fmtAbbrFullHtml(primary.futEarn) : '–';
+    if (caseOutputs.single?.eps) caseOutputs.single.eps.textContent = primary.futEPS > 0 ? primary.futEPS.toFixed(2) : '–';
+    if (caseOutputs.single?.mv) caseOutputs.single.mv.innerHTML = primary.futMV > 0 ? fmtAbbrFullHtml(primary.futMV) : '–';
 
 
+    // Collect warnings for missing inputs so we can show helpful flags instead of throwing
+    const warnings = [];
+    if (!(primary.futPrice > 0)) {
+      warnings.push('Add revenue, profit margin, P/E, and share count to compute a future stock price.');
+    }
+    if (!(curPrice > 0)) {
+      warnings.push('Enter today’s share price to compare against the S&P 500.');
+    }
 
-        // Outcome Flags
-        const outcomeFlags = $('#outcomeFlags');
-        if (outcomeFlags) {
-          if (dualCaseEnabled) {
-            // Dual Case: Show two columns
-            const baseHTML = getOutcomeHTML(results.base, curPrice, 'Base Case');
-            const bullHTML = getOutcomeHTML(results.bull, curPrice, 'Bull Case');
+    // S&P compare + 2x (S&P = +50% over 5y) + buy targets (based on primary/base)
+    spComp.textContent = ''; spTarget.innerHTML = ''; if (flags) flags.innerHTML = '';
+    if (curPrice > 0 && primary.futPrice > 0) {
+      const SP_FACTOR = 1.5;
+      const TWO_X = 2;
 
-            outcomeFlags.innerHTML = `
+      const beatsSP = (primary.futPrice >= curPrice * SP_FACTOR);
+      const hits2x = (primary.futPrice >= curPrice * TWO_X);
+
+      const buyToBeatSP = primary.futPrice / SP_FACTOR;
+      const buyFor2x = primary.futPrice / TWO_X;
+
+      spTarget.innerHTML =
+        `Price target to beat S&P 500: <strong>$${buyToBeatSP.toFixed(2)}</strong><br>` +
+        `Price target for 2× return: <strong>$${buyFor2x.toFixed(2)}</strong>`;
+
+      const overallMultiple = primary.futPrice / curPrice;
+      const overallPctGain = (overallMultiple - 1) * 100;
+      const vsSpxMultiple = overallMultiple / SP_FACTOR;
+
+      spComp.textContent = beatsSP ? 'Beating S&P 500' : 'Not beating S&P 500';
+
+
+
+      // Outcome Flags
+      const outcomeFlags = $('#outcomeFlags');
+      if (outcomeFlags) {
+        if (dualCaseEnabled) {
+          // Dual Case: Show two columns
+          const baseHTML = getOutcomeHTML(results.base, curPrice, 'Base Case');
+          const bullHTML = getOutcomeHTML(results.bull, curPrice, 'Bull Case');
+
+          outcomeFlags.innerHTML = `
           <div class="dual-outcome-grid">
             <div class="dual-outcome-col">
               <h4>Base Case</h4>
@@ -2614,270 +2585,270 @@ Earnings: ${document.getElementById('futureEarnings').textContent}
             </div>
           </div>
         `;
-          } else {
-            // Single Case: Show standard flags
-            outcomeFlags.innerHTML = getOutcomeHTML(results.single, curPrice);
-          }
+        } else {
+          // Single Case: Show standard flags
+          outcomeFlags.innerHTML = getOutcomeHTML(results.single, curPrice);
         }
-      } else {
-        if (flags) {
-          const extra = [];
-          if (warnings.length) {
-            warnings.forEach(msg => {
-              extra.push(`<div class="flag warn">${msg}</div>`);
-            });
-          }
-          flags.innerHTML = extra.join('');
-        }
+      }
+    } else {
+      if (flags) {
+        const extra = [];
         if (warnings.length) {
-          spComp.textContent = 'Add missing inputs to complete the projection';
-          spTarget.innerHTML = '';
+          warnings.forEach(msg => {
+            extra.push(`<div class="flag warn">${msg}</div>`);
+          });
         }
-        if (!(curPrice > 0)) {
-          spComp.textContent = 'Price needed for S&P comparison';
-          spTarget.innerHTML = '';
-        }
+        flags.innerHTML = extra.join('');
       }
-
-      // Render Chart if Premium (using primary case)
-      if (isPremium && primary.futPrice > 0 && curPrice > 0) {
-        renderGrowthChart(curPrice, primary.futPrice);
+      if (warnings.length) {
+        spComp.textContent = 'Add missing inputs to complete the projection';
+        spTarget.innerHTML = '';
       }
-
-      // Post-Calculation Premium Push (Free Users Only)
-      if (!isPremium && isManual) {
-        setTimeout(() => {
-          const upsellModal = document.getElementById('postCalcUpsellModal');
-          if (upsellModal) upsellModal.showModal();
-        }, 2000); // 2s delay
-      }
-
-      lastFutureCalc = primary;
-      return primary;
-    }
-
-    function getOutcomeHTML(res, curPrice, label) {
-      if (!res || !(res.futPrice > 0) || !(curPrice > 0)) return '';
-
-      const SP_FACTOR = 1.5;
-      const TWO_X = 2;
-
-      const beatsSP = (res.futPrice >= curPrice * SP_FACTOR);
-      const hits2x = (res.futPrice >= curPrice * TWO_X);
-
-      const buyToBeatSP = res.futPrice / SP_FACTOR;
-      const buyFor2x = res.futPrice / TWO_X;
-
-      const overallMultiple = res.futPrice / curPrice;
-      const overallPctGain = (overallMultiple - 1) * 100;
-      const vsSpxMultiple = overallMultiple / SP_FACTOR;
-
-      if (beatsSP && hits2x) {
-        return `<div class="flag good">🚀 Crushing the S&P’s 5-year pace — your <strong>return</strong> is about <strong>${overallMultiple.toFixed(2)}×</strong> from today (≈ <strong>${overallPctGain.toFixed(1)}%</strong>), and roughly <strong>${vsSpxMultiple.toFixed(2)}×</strong> the S&P’s <strong>return</strong>.</div>`;
-      } else if (beatsSP && !hits2x) {
-        return `<div class="flag good">✅ You’re ahead of the S&P 500’s 5-year pace — your <strong>return</strong> is ~<strong>${overallMultiple.toFixed(2)}×</strong> from today (≈ <strong>${overallPctGain.toFixed(1)}%</strong>), ~<strong>${vsSpxMultiple.toFixed(2)}×</strong> the S&P’s <strong>return</strong>.</div>` +
-          `<div class="flag warn">⚠️ Not at 2× yet — buy at or below <strong>$${buyFor2x.toFixed(2)}</strong> to lock a 2× <strong>return</strong>.</div>`;
-      } else {
-        return `<div class="flag bad">🛑 Not beating the S&P 500 and not reaching a 2× <strong>return</strong>.</div>` +
-          `<div class="flag bad">Targets: ≤ <strong>$${buyToBeatSP.toFixed(2)}</strong> to beat S&P; ≤ <strong>$${buyFor2x.toFixed(2)}</strong> for a 2× <strong>return</strong>.</div>`;
+      if (!(curPrice > 0)) {
+        spComp.textContent = 'Price needed for S&P comparison';
+        spTarget.innerHTML = '';
       }
     }
 
-    let growthChartInstance = null;
+    // Render Chart if Premium (using primary case)
+    if (isPremium && primary.futPrice > 0 && curPrice > 0) {
+      renderGrowthChart(curPrice, primary.futPrice);
+    }
 
-    function renderGrowthChart(currentPrice, futurePrice) {
-      if (typeof Chart === 'undefined') {
-        console.warn('Chart.js not loaded; skipping growth chart render.');
-        return;
-      }
-      const ctx = document.getElementById('growthChart');
-      const container = document.getElementById('chartContainer');
+    // Post-Calculation Premium Push (Free Users Only)
+    if (!isPremium && isManual) {
+      setTimeout(() => {
+        const upsellModal = document.getElementById('postCalcUpsellModal');
+        if (upsellModal) upsellModal.showModal();
+      }, 2000); // 2s delay
+    }
 
-      if (!ctx || !container) return;
+    lastFutureCalc = primary;
+    return primary;
+  }
 
-      container.style.display = 'block';
+  function getOutcomeHTML(res, curPrice, label) {
+    if (!res || !(res.futPrice > 0) || !(curPrice > 0)) return '';
 
-      // Calculate CAGR for the stock
-      const years = 5;
-      const stockCAGR = (Math.pow(futurePrice / currentPrice, 1 / years) - 1);
+    const SP_FACTOR = 1.5;
+    const TWO_X = 2;
 
-      // S&P 500 Assumption: 10% annual growth
-      const spCAGR = 0.10;
+    const beatsSP = (res.futPrice >= curPrice * SP_FACTOR);
+    const hits2x = (res.futPrice >= curPrice * TWO_X);
 
-      // Generate data points
-      const labels = ['Year 0', 'Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'];
-      const stockData = [];
-      const spData = [];
+    const buyToBeatSP = res.futPrice / SP_FACTOR;
+    const buyFor2x = res.futPrice / TWO_X;
 
-      for (let i = 0; i <= years; i++) {
-        stockData.push(currentPrice * Math.pow(1 + stockCAGR, i));
-        spData.push(currentPrice * Math.pow(1 + spCAGR, i));
-      }
+    const overallMultiple = res.futPrice / curPrice;
+    const overallPctGain = (overallMultiple - 1) * 100;
+    const vsSpxMultiple = overallMultiple / SP_FACTOR;
 
-      const companyLabel = (stock?.value || 'Your Stock').trim() || 'Your Stock';
-      const spBeats = spData[spData.length - 1] > stockData[stockData.length - 1];
-      const spLineColor = spBeats ? '#ef4444' /* red if S&P return is higher */ : '#22c55e'; /* green if lower */
+    if (beatsSP && hits2x) {
+      return `<div class="flag good">🚀 Crushing the S&P’s 5-year pace — your <strong>return</strong> is about <strong>${overallMultiple.toFixed(2)}×</strong> from today (≈ <strong>${overallPctGain.toFixed(1)}%</strong>), and roughly <strong>${vsSpxMultiple.toFixed(2)}×</strong> the S&P’s <strong>return</strong>.</div>`;
+    } else if (beatsSP && !hits2x) {
+      return `<div class="flag good">✅ You’re ahead of the S&P 500’s 5-year pace — your <strong>return</strong> is ~<strong>${overallMultiple.toFixed(2)}×</strong> from today (≈ <strong>${overallPctGain.toFixed(1)}%</strong>), ~<strong>${vsSpxMultiple.toFixed(2)}×</strong> the S&P’s <strong>return</strong>.</div>` +
+        `<div class="flag warn">⚠️ Not at 2× yet — buy at or below <strong>$${buyFor2x.toFixed(2)}</strong> to lock a 2× <strong>return</strong>.</div>`;
+    } else {
+      return `<div class="flag bad">🛑 Not beating the S&P 500 and not reaching a 2× <strong>return</strong>.</div>` +
+        `<div class="flag bad">Targets: ≤ <strong>$${buyToBeatSP.toFixed(2)}</strong> to beat S&P; ≤ <strong>$${buyFor2x.toFixed(2)}</strong> for a 2× <strong>return</strong>.</div>`;
+    }
+  }
 
-      if (growthChartInstance) {
-        growthChartInstance.destroy();
-      }
+  let growthChartInstance = null;
 
-      Chart.defaults.color = '#9ca3af';
-      Chart.defaults.font.family = 'system-ui';
+  function renderGrowthChart(currentPrice, futurePrice) {
+    if (typeof Chart === 'undefined') {
+      console.warn('Chart.js not loaded; skipping growth chart render.');
+      return;
+    }
+    const ctx = document.getElementById('growthChart');
+    const container = document.getElementById('chartContainer');
 
-      growthChartInstance = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: labels,
-          datasets: [
-            {
-              label: companyLabel,
-              data: stockData,
-              borderColor: '#FFD700', // Gold
-              backgroundColor: 'rgba(255, 215, 0, 0.1)',
-              borderWidth: 3,
-              tension: 0.4,
-              pointBackgroundColor: '#FFD700',
-              fill: true
-            },
-            {
-              label: 'S&P 500 (10% Benchmark)',
-              data: spData,
-              borderColor: spLineColor,
-              borderWidth: 2,
-              borderDash: [5, 5],
-              tension: 0.4,
-              pointRadius: 0,
-              pointHoverRadius: 4
-            }
-          ]
+    if (!ctx || !container) return;
+
+    container.style.display = 'block';
+
+    // Calculate CAGR for the stock
+    const years = 5;
+    const stockCAGR = (Math.pow(futurePrice / currentPrice, 1 / years) - 1);
+
+    // S&P 500 Assumption: 10% annual growth
+    const spCAGR = 0.10;
+
+    // Generate data points
+    const labels = ['Year 0', 'Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'];
+    const stockData = [];
+    const spData = [];
+
+    for (let i = 0; i <= years; i++) {
+      stockData.push(currentPrice * Math.pow(1 + stockCAGR, i));
+      spData.push(currentPrice * Math.pow(1 + spCAGR, i));
+    }
+
+    const companyLabel = (stock?.value || 'Your Stock').trim() || 'Your Stock';
+    const spBeats = spData[spData.length - 1] > stockData[stockData.length - 1];
+    const spLineColor = spBeats ? '#ef4444' /* red if S&P return is higher */ : '#22c55e'; /* green if lower */
+
+    if (growthChartInstance) {
+      growthChartInstance.destroy();
+    }
+
+    Chart.defaults.color = '#9ca3af';
+    Chart.defaults.font.family = 'system-ui';
+
+    growthChartInstance = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: companyLabel,
+            data: stockData,
+            borderColor: '#FFD700', // Gold
+            backgroundColor: 'rgba(255, 215, 0, 0.1)',
+            borderWidth: 3,
+            tension: 0.4,
+            pointBackgroundColor: '#FFD700',
+            fill: true
+          },
+          {
+            label: 'S&P 500 (10% Benchmark)',
+            data: spData,
+            borderColor: spLineColor,
+            borderWidth: 2,
+            borderDash: [5, 5],
+            tension: 0.4,
+            pointRadius: 0,
+            pointHoverRadius: 4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+          mode: 'index',
+          intersect: false,
         },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          interaction: {
-            mode: 'index',
-            intersect: false,
-          },
-          plugins: {
-            legend: {
-              labels: {
-                color: '#e5e7eb',
-                font: { size: 14, weight: 'bold' }
-              }
-            },
-            tooltip: {
-              backgroundColor: 'rgba(17, 24, 39, 0.9)',
-              titleColor: '#FFD700',
-              bodyColor: '#fff',
-              padding: 12,
-              callbacks: {
-                label: function (context) {
-                  let label = context.dataset.label || '';
-                  if (label) {
-                    label += ': ';
-                  }
-                  if (context.parsed.y !== null) {
-                    label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
-                  }
-                  return label;
-                }
-              }
+        plugins: {
+          legend: {
+            labels: {
+              color: '#e5e7eb',
+              font: { size: 14, weight: 'bold' }
             }
           },
-          scales: {
-            y: {
-              grid: {
-                color: 'rgba(75, 85, 99, 0.2)'
-              },
-              ticks: {
-                callback: function (value) {
-                  return '$' + value;
+          tooltip: {
+            backgroundColor: 'rgba(17, 24, 39, 0.9)',
+            titleColor: '#FFD700',
+            bodyColor: '#fff',
+            padding: 12,
+            callbacks: {
+              label: function (context) {
+                let label = context.dataset.label || '';
+                if (label) {
+                  label += ': ';
                 }
-              }
-            },
-            x: {
-              grid: {
-                display: false
+                if (context.parsed.y !== null) {
+                  label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed.y);
+                }
+                return label;
               }
             }
           }
+        },
+        scales: {
+          y: {
+            grid: {
+              color: 'rgba(75, 85, 99, 0.2)'
+            },
+            ticks: {
+              callback: function (value) {
+                return '$' + value;
+              }
+            }
+          },
+          x: {
+            grid: {
+              display: false
+            }
+          }
         }
-      });
+      }
+    });
+  }
+
+  // ===== Validation (Unified) =====
+  function validateInputs(next) {
+    const clean = (s) => (s || '').toString().trim().replace(/[$,%\s,]/g, '');
+    const hasUnit = (value) => /[MBT]$/i.test(value);
+    const hasDropdown = (sel) => !!sel && sel.value !== '';
+
+    const nameMissing = !stock.value.trim();
+    const revTyped = clean(revenue.value);
+    const shTyped = clean(shares.value);
+
+    const revMissing = Boolean(revTyped && !hasUnit(revTyped) && !hasDropdown(revSuf));
+    const shMissing = Boolean(shTyped && !hasUnit(shTyped) && !hasDropdown(shSuf));
+
+    let frMissing = false;
+    let fsMissing = false;
+    let frBaseMissing = false;
+    let frBullMissing = false;
+    let fsBaseMissing = false;
+    let fsBullMissing = false;
+
+    // Future Revenue
+    if (frMode.value === 'absolute') {
+      if (dualCaseEnabled) {
+        const frBaseTyped = clean(frAbsBase?.value);
+        const frBullTyped = clean(frAbsBull?.value);
+        frBaseMissing = Boolean(frBaseTyped && !hasUnit(frBaseTyped) && !hasDropdown(frSufBase));
+        frBullMissing = Boolean(frBullTyped && !hasUnit(frBullTyped) && !hasDropdown(frSufBull));
+      } else {
+        const frTyped = clean(frAbs?.value);
+        frMissing = Boolean(frTyped && !hasUnit(frTyped) && !hasDropdown(frSuf));
+      }
     }
 
-    // ===== Validation (Unified) =====
-    function validateInputs(next) {
-      const clean = (s) => (s || '').toString().trim().replace(/[$,%\s,]/g, '');
-      const hasUnit = (value) => /[MBT]$/i.test(value);
-      const hasDropdown = (sel) => !!sel && sel.value !== '';
-
-      const nameMissing = !stock.value.trim();
-      const revTyped = clean(revenue.value);
-      const shTyped = clean(shares.value);
-
-      const revMissing = Boolean(revTyped && !hasUnit(revTyped) && !hasDropdown(revSuf));
-      const shMissing = Boolean(shTyped && !hasUnit(shTyped) && !hasDropdown(shSuf));
-
-      let frMissing = false;
-      let fsMissing = false;
-      let frBaseMissing = false;
-      let frBullMissing = false;
-      let fsBaseMissing = false;
-      let fsBullMissing = false;
-
-      // Future Revenue
-      if (frMode.value === 'absolute') {
-        if (dualCaseEnabled) {
-          const frBaseTyped = clean(frAbsBase?.value);
-          const frBullTyped = clean(frAbsBull?.value);
-          frBaseMissing = Boolean(frBaseTyped && !hasUnit(frBaseTyped) && !hasDropdown(frSufBase));
-          frBullMissing = Boolean(frBullTyped && !hasUnit(frBullTyped) && !hasDropdown(frSufBull));
-        } else {
-          const frTyped = clean(frAbs?.value);
-          frMissing = Boolean(frTyped && !hasUnit(frTyped) && !hasDropdown(frSuf));
-        }
+    // Future Shares
+    if (fsMode.value === 'absolute') {
+      if (dualCaseEnabled) {
+        const fsBaseTyped = clean(fsAbsBase?.value);
+        const fsBullTyped = clean(fsAbsBull?.value);
+        fsBaseMissing = Boolean(fsBaseTyped && !hasUnit(fsBaseTyped) && !hasDropdown(fsSufBase));
+        fsBullMissing = Boolean(fsBullTyped && !hasUnit(fsBullTyped) && !hasDropdown(fsSufBull));
+      } else {
+        const fsTyped = clean(fsAbs?.value);
+        fsMissing = Boolean(fsTyped && !hasUnit(fsTyped) && !hasDropdown(fsSuf));
       }
+    }
 
-      // Future Shares
-      if (fsMode.value === 'absolute') {
-        if (dualCaseEnabled) {
-          const fsBaseTyped = clean(fsAbsBase?.value);
-          const fsBullTyped = clean(fsAbsBull?.value);
-          fsBaseMissing = Boolean(fsBaseTyped && !hasUnit(fsBaseTyped) && !hasDropdown(fsSufBase));
-          fsBullMissing = Boolean(fsBullTyped && !hasUnit(fsBullTyped) && !hasDropdown(fsSufBull));
-        } else {
-          const fsTyped = clean(fsAbs?.value);
-          fsMissing = Boolean(fsTyped && !hasUnit(fsTyped) && !hasDropdown(fsSuf));
-        }
-      }
+    if (!nameMissing && !revMissing && !shMissing && !frMissing && !fsMissing && !frBaseMissing && !frBullMissing && !fsBaseMissing && !fsBullMissing) return next();
 
-      if (!nameMissing && !revMissing && !shMissing && !frMissing && !fsMissing && !frBaseMissing && !frBullMissing && !fsBaseMissing && !fsBullMissing) return next();
+    const dialog = document.getElementById('validationDialog');
+    const body = document.getElementById('validationDialogBody');
+    if (!dialog || !body) return; // Should not happen
 
-      const dialog = document.getElementById('validationDialog');
-      const body = document.getElementById('validationDialogBody');
-      if (!dialog || !body) return; // Should not happen
+    dialog.dataset.pendingCallback = next;
+    body.innerHTML = '';
+    toast('Please provide missing information', 3000);
 
-      dialog.dataset.pendingCallback = next;
-      body.innerHTML = '';
-      toast('Please provide missing information', 3000);
-
-      // 1. Company Name Input
-      if (nameMissing) {
-        const wrapper = document.createElement('div');
-        wrapper.style.margin = '12px 0 24px 0';
-        wrapper.innerHTML = `
+    // 1. Company Name Input
+    if (nameMissing) {
+      const wrapper = document.createElement('div');
+      wrapper.style.margin = '12px 0 24px 0';
+      wrapper.innerHTML = `
       <label style="display:block; margin-bottom:8px; font-weight:600">Company Name / Ticker</label>
       <input type="text" id="validationStockInput" class="input" placeholder="e.g. Apple or AAPL" style="width:100%" autocomplete="off">
     `;
-        body.appendChild(wrapper);
-      }
+      body.appendChild(wrapper);
+    }
 
-      // 2. Unit Selection Inputs
-      const createRow = (label, field, value) => {
-        const wrapper = document.createElement('div');
-        wrapper.style.margin = '12px 0';
-        wrapper.innerHTML = `
+    // 2. Unit Selection Inputs
+    const createRow = (label, field, value) => {
+      const wrapper = document.createElement('div');
+      wrapper.style.margin = '12px 0';
+      wrapper.innerHTML = `
       <label style="display:block; margin-bottom:8px; font-weight:500">${label}</label>
       <select data-field="${field}" class="suffix" required style="width:100%; padding:8px">
         <option value="" selected disabled>Select unit (required)</option>
@@ -2888,859 +2859,859 @@ Earnings: ${document.getElementById('futureEarnings').textContent}
       </select>
       <p class="help" style="margin-top:4px">Current value: ${value || '—'}</p>
     `;
-        body.appendChild(wrapper);
-      };
+      body.appendChild(wrapper);
+    };
 
-      if (revMissing) createRow('Revenue (TTM)', 'revenue', revTyped);
-      if (shMissing) createRow('Outstanding Shares', 'shares', shTyped);
+    if (revMissing) createRow('Revenue (TTM)', 'revenue', revTyped);
+    if (shMissing) createRow('Outstanding Shares', 'shares', shTyped);
 
-      if (frMissing) createRow('Future Revenue', 'futureRevenue', clean(frAbs?.value));
-      if (frBaseMissing) createRow('Future Revenue (Base)', 'futureRevenueBase', clean(frAbsBase?.value));
-      if (frBullMissing) createRow('Future Revenue (Bull)', 'futureRevenueBull', clean(frAbsBull?.value));
+    if (frMissing) createRow('Future Revenue', 'futureRevenue', clean(frAbs?.value));
+    if (frBaseMissing) createRow('Future Revenue (Base)', 'futureRevenueBase', clean(frAbsBase?.value));
+    if (frBullMissing) createRow('Future Revenue (Bull)', 'futureRevenueBull', clean(frAbsBull?.value));
 
-      if (fsMissing) createRow('Future Shares', 'futureShares', clean(fsAbs?.value));
-      if (fsBaseMissing) createRow('Future Shares (Base)', 'futureSharesBase', clean(fsAbsBase?.value));
-      if (fsBullMissing) createRow('Future Shares (Bull)', 'futureSharesBull', clean(fsAbsBull?.value));
+    if (fsMissing) createRow('Future Shares', 'futureShares', clean(fsAbs?.value));
+    if (fsBaseMissing) createRow('Future Shares (Base)', 'futureSharesBase', clean(fsAbsBase?.value));
+    if (fsBullMissing) createRow('Future Shares (Bull)', 'futureSharesBull', clean(fsAbsBull?.value));
 
-      dialog.showModal();
+    dialog.showModal();
 
-      // Focus name input if present
-      if (nameMissing) {
-        setTimeout(() => {
-          const input = document.getElementById('validationStockInput');
-          if (input) input.focus();
-        }, 100);
-      }
+    // Focus name input if present
+    if (nameMissing) {
+      setTimeout(() => {
+        const input = document.getElementById('validationStockInput');
+        if (input) input.focus();
+      }, 100);
+    }
 
-      const confirmBtn = document.getElementById('validationConfirmBtn');
-      const cancelBtn = document.getElementById('validationCancelBtn');
+    const confirmBtn = document.getElementById('validationConfirmBtn');
+    const cancelBtn = document.getElementById('validationCancelBtn');
 
-      if (cancelBtn) {
-        cancelBtn.onclick = () => {
-          dialog.close();
-        };
-      }
-
-      confirmBtn.onclick = async () => {
-        // Validate Name
-        if (nameMissing) {
-          const input = document.getElementById('validationStockInput');
-          const val = input.value.trim();
-          if (!val) {
-            toast('Please enter a company name', 2000);
-            input.focus();
-            return;
-          }
-          stock.value = val;
-
-          // Trigger autofill if available
-          if (typeof tryAutoFill === 'function') {
-            try {
-              await tryAutoFill(val);
-            } catch (e) {
-              console.error('AutoFill failed in validation:', e);
-            }
-          }
-          if (typeof updateActiveCompany === 'function') {
-            updateActiveCompany();
-          }
-        }
-
-        // Validate Units
-        const selects = body.querySelectorAll('select');
-        const allSelected = Array.from(selects).every(sel => sel.value !== '');
-        if (!allSelected) {
-          toast('Please select units for all values', 2000);
-          return;
-        }
-
-        selects.forEach(sel => {
-          const f = sel.dataset.field;
-          const normalized = sel.value === 'none' ? '' : sel.value;
-
-          if (f === 'revenue' && revSuf) revSuf.value = normalized;
-          else if (f === 'shares' && shSuf) shSuf.value = normalized;
-
-          else if (f === 'futureRevenue' && frSuf) frSuf.value = normalized;
-          else if (f === 'futureRevenueBase' && frSufBase) frSufBase.value = normalized;
-          else if (f === 'futureRevenueBull' && frSufBull) frSufBull.value = normalized;
-
-          else if (f === 'futureShares' && fsSuf) fsSuf.value = normalized;
-          else if (f === 'futureSharesBase' && fsSufBase) fsSufBase.value = normalized;
-          else if (f === 'futureSharesBull' && fsSufBull) fsSufBull.value = normalized;
-        });
-
+    if (cancelBtn) {
+      cancelBtn.onclick = () => {
         dialog.close();
-        // Longer delay to ensure DOM/State is propagated before calculation runs
-        setTimeout(() => {
-          console.log('Triggering pending calculation...');
-          next();
-        }, 300);
       };
     }
 
-    // ===== Shareable link (no calc storage) =====
-    function getState() {
-      return {
-        stock: stock.value,
-        date: dateEl.value,
-        revenue: revenue.value,
-        revSuf: revSuf?.value || '',
-        shares: shares.value,
-        shSuf: shSuf?.value || '',
-        pe: pe.value,
-        pm: pm.value,
-        price: price.value,
-        frMode: frMode.value,
-        frAbs: frAbs?.value || '',
-        frSuf: frSuf?.value || '',
-        frPct: frPct?.value || '',
-        frDir: frDir?.value || '',
-        frCagr: frCagr?.value || '',
-        frCagrDir: frCagrDir?.value || '',
-        fsMode: fsMode.value,
-        fsAbs: fsAbs?.value || '',
-        fsSuf: fsSuf?.value || '',
-        fsPct: fsPct?.value || '',
-        fsDir: fsDir?.value || '',
-        fsCagr: fsCagr?.value || '',
-        fsCagrDir: fsCagrDir?.value || '',
-        fPE: fPE.value,
-        fPM: fPM.value
-      }
-    }
-    function applyState(s) {
-      if (!s) return;
-      stock.value = s.stock || '';
-      dateEl.value = s.date || dateEl.value;
-
-      revenue.value = s.revenue || '';
-      if (revSuf) revSuf.value = s.revSuf || '';
-
-      shares.value = s.shares || '';
-      if (shSuf) shSuf.value = s.shSuf || '';
-
-      pe.value = s.pe ? parseFloat(s.pe).toFixed(2) : '';
-      pm.value = s.pm ? parseFloat(s.pm).toFixed(2) : '';
-      price.value = s.price ? parseFloat(s.price).toFixed(2) : '';
-
-      frMode.value = s.frMode || 'absolute';
-      if (frAbs) frAbs.value = s.frAbs || '';
-      if (frSuf) frSuf.value = s.frSuf || '';
-      if (frPct) frPct.value = s.frPct || '';
-      if (frDir) frDir.value = s.frDir || 'increase';
-      if (frCagr) frCagr.value = s.frCagr || '';
-      if (frCagrDir) frCagrDir.value = s.frCagrDir || 'increase';
-
-      fsMode.value = s.fsMode || 'absolute';
-      if (fsAbs) fsAbs.value = s.fsAbs || '';
-      if (fsSuf) fsSuf.value = s.fsSuf || '';
-      if (fsPct) fsPct.value = s.fsPct || '';
-      if (fsDir) fsDir.value = s.fsDir || 'increase';
-      if (fsCagr) fsCagr.value = s.fsCagr || '';
-      if (fsCagrDir) fsCagrDir.value = s.fsCagrDir || 'increase';
-
-      fPE.value = s.fPE || '';
-      fPM.value = s.fPM || '';
-      toggleRevMode(); toggleSharesMode();
-      updateActiveCompany();
-    }
-    function encodeState() { return btoa(unescape(encodeURIComponent(JSON.stringify(getState())))) }
-    function decodeState(s) { try { return JSON.parse(decodeURIComponent(escape(atob(s)))) } catch { return null } }
-    const SHARE_FIELDS = [
-      { field: 'stock', key: 'c' },
-      { field: 'date', key: 'd' },
-      { field: 'revenue', key: 'rv' },
-      { field: 'revSuf', key: 'rvs' },
-      { field: 'shares', key: 'sh' },
-      { field: 'shSuf', key: 'shs' },
-      { field: 'pe', key: 'pe' },
-      { field: 'pm', key: 'pm' },
-      { field: 'price', key: 'pp' },
-      { field: 'frMode', key: 'frm', defaultValue: 'absolute' },
-      { field: 'frAbs', key: 'fra' },
-      { field: 'frSuf', key: 'fras' },
-      { field: 'frPct', key: 'frp' },
-      { field: 'frDir', key: 'frd', defaultValue: 'increase' },
-      { field: 'frCagr', key: 'frc' },
-      { field: 'frCagrDir', key: 'frcd', defaultValue: 'increase' },
-      { field: 'fsMode', key: 'fsm', defaultValue: 'absolute' },
-      { field: 'fsAbs', key: 'fsa' },
-      { field: 'fsSuf', key: 'fsas' },
-      { field: 'fsPct', key: 'fsp' },
-      { field: 'fsDir', key: 'fsd', defaultValue: 'increase' },
-      { field: 'fsCagr', key: 'fsc' },
-      { field: 'fsCagrDir', key: 'fscd', defaultValue: 'increase' },
-      { field: 'fPE', key: 'fpe' },
-      { field: 'fPM', key: 'fpm' }
-    ];
-    function stateToSearchParams(state) {
-      const params = new URLSearchParams();
-      SHARE_FIELDS.forEach(({ field, key, defaultValue }) => {
-        const raw = state[field];
-        if (raw === undefined || raw === null) return;
-        if (typeof raw === 'string') {
-          if (raw.trim() === '') return;
-          if (defaultValue !== undefined && raw === defaultValue) return;
-          params.set(key, raw);
+    confirmBtn.onclick = async () => {
+      // Validate Name
+      if (nameMissing) {
+        const input = document.getElementById('validationStockInput');
+        const val = input.value.trim();
+        if (!val) {
+          toast('Please enter a company name', 2000);
+          input.focus();
           return;
         }
-        if (defaultValue !== undefined && raw === defaultValue) return;
-        params.set(key, raw);
-      });
-      return params;
-    }
-    function stateFromSearchParams(search) {
-      const params = search instanceof URLSearchParams ? search : new URLSearchParams(search);
-      const state = {}; let has = false;
-      SHARE_FIELDS.forEach(({ field, key }) => {
-        if (params.has(key)) {
-          state[field] = params.get(key);
-          has = true;
+        stock.value = val;
+
+        // Trigger autofill if available
+        if (typeof tryAutoFill === 'function') {
+          try {
+            await tryAutoFill(val);
+          } catch (e) {
+            console.error('AutoFill failed in validation:', e);
+          }
         }
-      });
-      return has ? state : null;
-    }
-    const SHARE_BASE = 'https://commoninvestor.net/';
-    function copyToClipboard(text) {
-      if (navigator.clipboard?.writeText) {
-        return navigator.clipboard.writeText(text);
+        if (typeof updateActiveCompany === 'function') {
+          updateActiveCompany();
+        }
       }
-      return new Promise((resolve, reject) => {
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        textarea.setAttribute('readonly', '');
-        textarea.style.position = 'fixed';
-        textarea.style.opacity = '0';
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-          const ok = document.execCommand('copy');
-          document.body.removeChild(textarea);
-          if (ok) resolve(); else reject(new Error('execCommand failed'));
-        } catch (err) {
-          document.body.removeChild(textarea);
-          reject(err);
-        }
-      });
-    }
-    function requireCompany(next) {
-      if (!stock || !stock.value || !stock.value.trim()) {
-        alert('Please enter a company name or ticker before calculating.');
-        try { stock?.focus(); } catch { }
+
+      // Validate Units
+      const selects = body.querySelectorAll('select');
+      const allSelected = Array.from(selects).every(sel => sel.value !== '');
+      if (!allSelected) {
+        toast('Please select units for all values', 2000);
         return;
       }
-      next();
+
+      selects.forEach(sel => {
+        const f = sel.dataset.field;
+        const normalized = sel.value === 'none' ? '' : sel.value;
+
+        if (f === 'revenue' && revSuf) revSuf.value = normalized;
+        else if (f === 'shares' && shSuf) shSuf.value = normalized;
+
+        else if (f === 'futureRevenue' && frSuf) frSuf.value = normalized;
+        else if (f === 'futureRevenueBase' && frSufBase) frSufBase.value = normalized;
+        else if (f === 'futureRevenueBull' && frSufBull) frSufBull.value = normalized;
+
+        else if (f === 'futureShares' && fsSuf) fsSuf.value = normalized;
+        else if (f === 'futureSharesBase' && fsSufBase) fsSufBase.value = normalized;
+        else if (f === 'futureSharesBull' && fsSufBull) fsSufBull.value = normalized;
+      });
+
+      dialog.close();
+      // Longer delay to ensure DOM/State is propagated before calculation runs
+      setTimeout(() => {
+        console.log('Triggering pending calculation...');
+        next();
+      }, 300);
+    };
+  }
+
+  // ===== Shareable link (no calc storage) =====
+  function getState() {
+    return {
+      stock: stock.value,
+      date: dateEl.value,
+      revenue: revenue.value,
+      revSuf: revSuf?.value || '',
+      shares: shares.value,
+      shSuf: shSuf?.value || '',
+      pe: pe.value,
+      pm: pm.value,
+      price: price.value,
+      frMode: frMode.value,
+      frAbs: frAbs?.value || '',
+      frSuf: frSuf?.value || '',
+      frPct: frPct?.value || '',
+      frDir: frDir?.value || '',
+      frCagr: frCagr?.value || '',
+      frCagrDir: frCagrDir?.value || '',
+      fsMode: fsMode.value,
+      fsAbs: fsAbs?.value || '',
+      fsSuf: fsSuf?.value || '',
+      fsPct: fsPct?.value || '',
+      fsDir: fsDir?.value || '',
+      fsCagr: fsCagr?.value || '',
+      fsCagrDir: fsCagrDir?.value || '',
+      fPE: fPE.value,
+      fPM: fPM.value
     }
-    function buildShareURL(params) {
-      const file = document.body?.classList?.contains('mobile') ? 'index-mobile.html' : 'index.html';
-      const url = new URL(file, SHARE_BASE);
-      const query = params.toString();
-      url.search = query ? query : '';
-      return url.toString();
+  }
+  function applyState(s) {
+    if (!s) return;
+    stock.value = s.stock || '';
+    dateEl.value = s.date || dateEl.value;
+
+    revenue.value = s.revenue || '';
+    if (revSuf) revSuf.value = s.revSuf || '';
+
+    shares.value = s.shares || '';
+    if (shSuf) shSuf.value = s.shSuf || '';
+
+    pe.value = s.pe ? parseFloat(s.pe).toFixed(2) : '';
+    pm.value = s.pm ? parseFloat(s.pm).toFixed(2) : '';
+    price.value = s.price ? parseFloat(s.price).toFixed(2) : '';
+
+    frMode.value = s.frMode || 'absolute';
+    if (frAbs) frAbs.value = s.frAbs || '';
+    if (frSuf) frSuf.value = s.frSuf || '';
+    if (frPct) frPct.value = s.frPct || '';
+    if (frDir) frDir.value = s.frDir || 'increase';
+    if (frCagr) frCagr.value = s.frCagr || '';
+    if (frCagrDir) frCagrDir.value = s.frCagrDir || 'increase';
+
+    fsMode.value = s.fsMode || 'absolute';
+    if (fsAbs) fsAbs.value = s.fsAbs || '';
+    if (fsSuf) fsSuf.value = s.fsSuf || '';
+    if (fsPct) fsPct.value = s.fsPct || '';
+    if (fsDir) fsDir.value = s.fsDir || 'increase';
+    if (fsCagr) fsCagr.value = s.fsCagr || '';
+    if (fsCagrDir) fsCagrDir.value = s.fsCagrDir || 'increase';
+
+    fPE.value = s.fPE || '';
+    fPM.value = s.fPM || '';
+    toggleRevMode(); toggleSharesMode();
+    updateActiveCompany();
+  }
+  function encodeState() { return btoa(unescape(encodeURIComponent(JSON.stringify(getState())))) }
+  function decodeState(s) { try { return JSON.parse(decodeURIComponent(escape(atob(s)))) } catch { return null } }
+  const SHARE_FIELDS = [
+    { field: 'stock', key: 'c' },
+    { field: 'date', key: 'd' },
+    { field: 'revenue', key: 'rv' },
+    { field: 'revSuf', key: 'rvs' },
+    { field: 'shares', key: 'sh' },
+    { field: 'shSuf', key: 'shs' },
+    { field: 'pe', key: 'pe' },
+    { field: 'pm', key: 'pm' },
+    { field: 'price', key: 'pp' },
+    { field: 'frMode', key: 'frm', defaultValue: 'absolute' },
+    { field: 'frAbs', key: 'fra' },
+    { field: 'frSuf', key: 'fras' },
+    { field: 'frPct', key: 'frp' },
+    { field: 'frDir', key: 'frd', defaultValue: 'increase' },
+    { field: 'frCagr', key: 'frc' },
+    { field: 'frCagrDir', key: 'frcd', defaultValue: 'increase' },
+    { field: 'fsMode', key: 'fsm', defaultValue: 'absolute' },
+    { field: 'fsAbs', key: 'fsa' },
+    { field: 'fsSuf', key: 'fsas' },
+    { field: 'fsPct', key: 'fsp' },
+    { field: 'fsDir', key: 'fsd', defaultValue: 'increase' },
+    { field: 'fsCagr', key: 'fsc' },
+    { field: 'fsCagrDir', key: 'fscd', defaultValue: 'increase' },
+    { field: 'fPE', key: 'fpe' },
+    { field: 'fPM', key: 'fpm' }
+  ];
+  function stateToSearchParams(state) {
+    const params = new URLSearchParams();
+    SHARE_FIELDS.forEach(({ field, key, defaultValue }) => {
+      const raw = state[field];
+      if (raw === undefined || raw === null) return;
+      if (typeof raw === 'string') {
+        if (raw.trim() === '') return;
+        if (defaultValue !== undefined && raw === defaultValue) return;
+        params.set(key, raw);
+        return;
+      }
+      if (defaultValue !== undefined && raw === defaultValue) return;
+      params.set(key, raw);
+    });
+    return params;
+  }
+  function stateFromSearchParams(search) {
+    const params = search instanceof URLSearchParams ? search : new URLSearchParams(search);
+    const state = {}; let has = false;
+    SHARE_FIELDS.forEach(({ field, key }) => {
+      if (params.has(key)) {
+        state[field] = params.get(key);
+        has = true;
+      }
+    });
+    return has ? state : null;
+  }
+  const SHARE_BASE = 'https://commoninvestor.net/';
+  function copyToClipboard(text) {
+    if (navigator.clipboard?.writeText) {
+      return navigator.clipboard.writeText(text);
     }
-    function shareLink() {
-      const params = stateToSearchParams(getState());
-      const shareURL = buildShareURL(params);
-      const copyDirect = () => copyToClipboard(shareURL)
-        .then(() => toast('Link copied ✅'))
-        .catch(() => {
-          try {
-            const manual = prompt('Copy this link', shareURL);
-            if (manual !== null) toast('Link ready to copy');
-          } catch { }
-        });
+    return new Promise((resolve, reject) => {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.setAttribute('readonly', '');
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
       try {
-        if (navigator.share && (typeof navigator.canShare !== 'function' || navigator.canShare({ url: shareURL }))) {
-          navigator.share({
-            title: 'Common Investor snapshot',
-            text: 'View this Common Investor scenario.',
-            url: shareURL
-          })
-            .then(() => copyDirect())
-            .catch(copyDirect);
-        } else {
-          copyDirect();
-        }
-      } catch {
+        const ok = document.execCommand('copy');
+        document.body.removeChild(textarea);
+        if (ok) resolve(); else reject(new Error('execCommand failed'));
+      } catch (err) {
+        document.body.removeChild(textarea);
+        reject(err);
+      }
+    });
+  }
+  function requireCompany(next) {
+    if (!stock || !stock.value || !stock.value.trim()) {
+      alert('Please enter a company name or ticker before calculating.');
+      try { stock?.focus(); } catch { }
+      return;
+    }
+    next();
+  }
+  function buildShareURL(params) {
+    const file = document.body?.classList?.contains('mobile') ? 'index-mobile.html' : 'index.html';
+    const url = new URL(file, SHARE_BASE);
+    const query = params.toString();
+    url.search = query ? query : '';
+    return url.toString();
+  }
+  function shareLink() {
+    const params = stateToSearchParams(getState());
+    const shareURL = buildShareURL(params);
+    const copyDirect = () => copyToClipboard(shareURL)
+      .then(() => toast('Link copied ✅'))
+      .catch(() => {
+        try {
+          const manual = prompt('Copy this link', shareURL);
+          if (manual !== null) toast('Link ready to copy');
+        } catch { }
+      });
+    try {
+      if (navigator.share && (typeof navigator.canShare !== 'function' || navigator.canShare({ url: shareURL }))) {
+        navigator.share({
+          title: 'Common Investor snapshot',
+          text: 'View this Common Investor scenario.',
+          url: shareURL
+        })
+          .then(() => copyDirect())
+          .catch(copyDirect);
+      } else {
         copyDirect();
       }
+    } catch {
+      copyDirect();
     }
-    function applySharedState(s) {
-      if (!s) return false;
-      applyState(s);
-      calculateCurrent();
-      calculateFuture();
+  }
+  function applySharedState(s) {
+    if (!s) return false;
+    applyState(s);
+    calculateCurrent();
+    calculateFuture();
 
-      toast('Loaded from link');
-      return true;
+    toast('Loaded from link');
+    return true;
+  }
+  function maybeLoadFromQuery() {
+    const state = stateFromSearchParams(window.location.search);
+    if (!state) return false;
+    return applySharedState(state);
+  }
+  function maybeLoadFromHash() {
+    if (location.hash.length > 1) {
+      const s = decodeState(location.hash.slice(1));
+      if (applySharedState(s)) return true;
     }
-    function maybeLoadFromQuery() {
-      const state = stateFromSearchParams(window.location.search);
-      if (!state) return false;
-      return applySharedState(state);
-    }
-    function maybeLoadFromHash() {
-      if (location.hash.length > 1) {
-        const s = decodeState(location.hash.slice(1));
-        if (applySharedState(s)) return true;
+    return false;
+  }
+
+  // Smart Dropdowns
+  let updateAllSmartDropdowns = () => { }; // Exposed for mode switching
+
+  function initSmartDropdowns() {
+    const unitIds = [
+      'futureRevenueSuffix', 'futureRevenueSuffixBase', 'futureRevenueSuffixBull',
+      'futureSharesSuffix', 'futureSharesSuffixBase', 'futureSharesSuffixBull'
+    ];
+    const dirIds = [
+      'futureRevenueDirection', 'futureRevenueDirectionBase', 'futureRevenueDirectionBull',
+      'futureRevenueCompoundedDirection', 'futureRevenueCompoundedDirectionBase', 'futureRevenueCompoundedDirectionBull',
+      'futureSharesDirection', 'futureSharesDirectionBase', 'futureSharesDirectionBull',
+      'futureSharesCompoundedDirection', 'futureSharesCompoundedDirectionBase', 'futureSharesCompoundedDirectionBull'
+    ];
+
+    const unitMap = {
+      'Millions': 'M',
+      'Billions': 'B',
+      'Trillions': 'T',
+      '(None)': ''
+    };
+
+    const dirMap = {
+      'increase': '🟢 ↑',
+      'decrease': '🔴 ↓'
+    };
+
+    // Helper to reset options to full text
+    const resetOptions = (select) => {
+      Array.from(select.options).forEach(opt => {
+        if (opt.dataset.originalText) {
+          opt.textContent = opt.dataset.originalText;
+        }
+      });
+      select.style.color = ''; // Reset color
+    };
+
+    // Helper to apply smart text/color
+    const applySmart = (select, type) => {
+      // ONLY apply smart features if Dual Case is enabled
+      if (!dualCaseEnabled) {
+        resetOptions(select);
+        return;
       }
-      return false;
-    }
 
-    // Smart Dropdowns
-    let updateAllSmartDropdowns = () => { }; // Exposed for mode switching
+      const opt = select.options[select.selectedIndex];
+      if (!opt) return;
 
-    function initSmartDropdowns() {
-      const unitIds = [
-        'futureRevenueSuffix', 'futureRevenueSuffixBase', 'futureRevenueSuffixBull',
-        'futureSharesSuffix', 'futureSharesSuffixBase', 'futureSharesSuffixBull'
-      ];
-      const dirIds = [
-        'futureRevenueDirection', 'futureRevenueDirectionBase', 'futureRevenueDirectionBull',
-        'futureRevenueCompoundedDirection', 'futureRevenueCompoundedDirectionBase', 'futureRevenueCompoundedDirectionBull',
-        'futureSharesDirection', 'futureSharesDirectionBase', 'futureSharesDirectionBull',
-        'futureSharesCompoundedDirection', 'futureSharesCompoundedDirectionBase', 'futureSharesCompoundedDirectionBull'
-      ];
+      // Save original text if not saved
+      if (!opt.dataset.originalText) {
+        opt.dataset.originalText = opt.textContent;
+      }
 
-      const unitMap = {
-        'Millions': 'M',
-        'Billions': 'B',
-        'Trillions': 'T',
-        '(None)': ''
-      };
+      if (type === 'unit') {
+        const short = unitMap[opt.dataset.originalText] !== undefined ? unitMap[opt.dataset.originalText] : opt.textContent;
+        opt.textContent = short;
+      } else if (type === 'dir') {
+        const val = opt.value; // 'increase' or 'decrease'
+        const short = dirMap[val] || opt.textContent;
+        opt.textContent = short;
 
-      const dirMap = {
-        'increase': '🟢 ↑',
-        'decrease': '🔴 ↓'
-      };
+        // Apply color to the select element
+        if (val === 'increase') select.style.color = '#4ade80'; // Green
+        else if (val === 'decrease') select.style.color = '#f87171'; // Red
+      }
+    };
 
-      // Helper to reset options to full text
-      const resetOptions = (select) => {
-        Array.from(select.options).forEach(opt => {
-          if (opt.dataset.originalText) {
-            opt.textContent = opt.dataset.originalText;
-          }
-        });
-        select.style.color = ''; // Reset color
-      };
+    // Initialize Units
+    unitIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
 
-      // Helper to apply smart text/color
-      const applySmart = (select, type) => {
-        // ONLY apply smart features if Dual Case is enabled
-        if (!dualCaseEnabled) {
-          resetOptions(select);
-          return;
-        }
+      // Save all original texts first
+      Array.from(el.options).forEach(opt => opt.dataset.originalText = opt.textContent);
 
-        const opt = select.options[select.selectedIndex];
-        if (!opt) return;
+      el.addEventListener('focus', () => resetOptions(el));
+      el.addEventListener('mousedown', () => resetOptions(el)); // For immediate click
+      el.addEventListener('blur', () => applySmart(el, 'unit'));
+      el.addEventListener('change', () => {
+        resetOptions(el); // Reset others
+        el.blur(); // Force blur to apply smart text immediately
+      });
+    });
 
-        // Save original text if not saved
-        if (!opt.dataset.originalText) {
-          opt.dataset.originalText = opt.textContent;
-        }
+    // Initialize Directions
+    dirIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
 
-        if (type === 'unit') {
-          const short = unitMap[opt.dataset.originalText] !== undefined ? unitMap[opt.dataset.originalText] : opt.textContent;
-          opt.textContent = short;
-        } else if (type === 'dir') {
-          const val = opt.value; // 'increase' or 'decrease'
-          const short = dirMap[val] || opt.textContent;
-          opt.textContent = short;
+      // Save all original texts first
+      Array.from(el.options).forEach(opt => opt.dataset.originalText = opt.textContent);
 
-          // Apply color to the select element
-          if (val === 'increase') select.style.color = '#4ade80'; // Green
-          else if (val === 'decrease') select.style.color = '#f87171'; // Red
-        }
-      };
+      el.addEventListener('focus', () => resetOptions(el));
+      el.addEventListener('mousedown', () => resetOptions(el));
+      el.addEventListener('blur', () => applySmart(el, 'dir'));
+      el.addEventListener('change', () => {
+        resetOptions(el);
+        el.blur();
+      });
+    });
 
-      // Initialize Units
+    // Define global updater
+    updateAllSmartDropdowns = () => {
       unitIds.forEach(id => {
         const el = document.getElementById(id);
-        if (!el) return;
-
-        // Save all original texts first
-        Array.from(el.options).forEach(opt => opt.dataset.originalText = opt.textContent);
-
-        el.addEventListener('focus', () => resetOptions(el));
-        el.addEventListener('mousedown', () => resetOptions(el)); // For immediate click
-        el.addEventListener('blur', () => applySmart(el, 'unit'));
-        el.addEventListener('change', () => {
-          resetOptions(el); // Reset others
-          el.blur(); // Force blur to apply smart text immediately
-        });
+        if (el) applySmart(el, 'unit');
       });
-
-      // Initialize Directions
       dirIds.forEach(id => {
         const el = document.getElementById(id);
-        if (!el) return;
-
-        // Save all original texts first
-        Array.from(el.options).forEach(opt => opt.dataset.originalText = opt.textContent);
-
-        el.addEventListener('focus', () => resetOptions(el));
-        el.addEventListener('mousedown', () => resetOptions(el));
-        el.addEventListener('blur', () => applySmart(el, 'dir'));
-        el.addEventListener('change', () => {
-          resetOptions(el);
-          el.blur();
-        });
+        if (el) applySmart(el, 'dir');
       });
-
-      // Define global updater
-      updateAllSmartDropdowns = () => {
-        unitIds.forEach(id => {
-          const el = document.getElementById(id);
-          if (el) applySmart(el, 'unit');
-        });
-        dirIds.forEach(id => {
-          const el = document.getElementById(id);
-          if (el) applySmart(el, 'dir');
-        });
-      };
-    }
-
-    // Theme preference
-    const THEME_KEY = 'sp-forecaster-theme';
-    function applyTheme(mode) {
-      if (mode === 'system') { document.documentElement.style.colorScheme = ''; delete document.documentElement.dataset.theme; }
-      else if (mode === 'light') { document.documentElement.style.colorScheme = 'light'; document.documentElement.dataset.theme = 'light'; }
-      else if (mode === 'dark') { document.documentElement.style.colorScheme = 'dark'; document.documentElement.dataset.theme = 'dark'; }
-
-      // Only save preference if premium
-      if (isPremium) {
-        localStorage.setItem(THEME_KEY, mode);
-      }
-      themeSelect.value = mode;
-    }
-    function initTheme() {
-      // Default to dark for everyone
-      let saved = 'dark';
-
-      // If premium, try to load saved preference
-      if (isPremium) {
-        saved = localStorage.getItem(THEME_KEY) || 'dark';
-      }
-
-      applyTheme(saved);
-    }
-
-    const resetApp = () => {
-      const clean = window.location.href.split('#')[0].split('?')[0];
-      try {
-        if (history.replaceState) {
-          history.replaceState(null, '', clean);
-          location.reload();
-          return;
-        }
-      } catch { }
-      window.location.href = clean;
     };
+  }
 
-    // Auto-Calc State
-    // Moved to top
+  // Theme preference
+  const THEME_KEY = 'sp-forecaster-theme';
+  function applyTheme(mode) {
+    if (mode === 'system') { document.documentElement.style.colorScheme = ''; delete document.documentElement.dataset.theme; }
+    else if (mode === 'light') { document.documentElement.style.colorScheme = 'light'; document.documentElement.dataset.theme = 'light'; }
+    else if (mode === 'dark') { document.documentElement.style.colorScheme = 'dark'; document.documentElement.dataset.theme = 'dark'; }
 
-    // ---------------------------------------------------------
-    // 2. Event Listeners
-    // ---------------------------------------------------------
-    document.addEventListener('DOMContentLoaded', () => {
-      // Restore Premium State
-      if (localStorage.getItem('isPremium') === 'true') {
-        isPremium = true;
-        enablePremiumMode();
+    // Only save preference if premium
+    if (isPremium) {
+      localStorage.setItem(THEME_KEY, mode);
+    }
+    themeSelect.value = mode;
+  }
+  function initTheme() {
+    // Default to dark for everyone
+    let saved = 'dark';
+
+    // If premium, try to load saved preference
+    if (isPremium) {
+      saved = localStorage.getItem(THEME_KEY) || 'dark';
+    }
+
+    applyTheme(saved);
+  }
+
+  const resetApp = () => {
+    const clean = window.location.href.split('#')[0].split('?')[0];
+    try {
+      if (history.replaceState) {
+        history.replaceState(null, '', clean);
+        location.reload();
+        return;
       }
+    } catch { }
+    window.location.href = clean;
+  };
 
-      try { initTheme(); } catch (e) { console.error(e); }
-      try { initTheme(); } catch (e) { console.error(e); }
-      try { initSmartDropdowns(); } catch (e) { console.error(e); }
+  // Auto-Calc State
+  // Moved to top
 
-      // Enforce Auto-Calc Visibility & Toggle
-      const autoCalcBtn = document.getElementById('autoCalcBtn');
-      if (autoCalcBtn) {
-        // Visibility Check
-        if (isPremium) autoCalcBtn.style.display = 'block';
-        else autoCalcBtn.style.display = 'none';
+  // ---------------------------------------------------------
+  // 2. Event Listeners
+  // ---------------------------------------------------------
+  document.addEventListener('DOMContentLoaded', () => {
+    // Restore Premium State
+    if (localStorage.getItem('isPremium') === 'true') {
+      isPremium = true;
+      enablePremiumMode();
+    }
 
-        // Toggle Listener
-        autoCalcBtn.addEventListener('click', () => {
-          isAutoCalcEnabled = !isAutoCalcEnabled;
-          if (isAutoCalcEnabled) {
-            autoCalcBtn.textContent = '⚡️ Auto-Calc: ON';
-            autoCalcBtn.classList.remove('ghost');
-            calculateFuture(); // Trigger immediate calc
-          } else {
-            autoCalcBtn.textContent = 'zzz Auto-Calc: OFF';
-            autoCalcBtn.classList.add('ghost');
-          }
-        });
-      }
+    try { initTheme(); } catch (e) { console.error(e); }
+    try { initTheme(); } catch (e) { console.error(e); }
+    try { initSmartDropdowns(); } catch (e) { console.error(e); }
 
-      // Calculate button always works
-      const calcBtn = document.getElementById('calcFutureBtn');
-      if (calcBtn) calcBtn.addEventListener('click', calculateFuture);
+    // Enforce Auto-Calc Visibility & Toggle
+    const autoCalcBtn = document.getElementById('autoCalcBtn');
+    if (autoCalcBtn) {
+      // Visibility Check
+      if (isPremium) autoCalcBtn.style.display = 'block';
+      else autoCalcBtn.style.display = 'none';
 
-      // Inputs: only auto-calc if enabled
-      const inputs = document.querySelectorAll('input, select');
-      inputs.forEach(el => {
-        if (el.id === 'themeSelect' || el.id.includes('dock') || el.closest('.premium-sidebar')) return;
-        el.addEventListener('input', () => {
-          if (isAutoCalcEnabled) calculateFuture();
-        });
+      // Toggle Listener
+      autoCalcBtn.addEventListener('click', () => {
+        isAutoCalcEnabled = !isAutoCalcEnabled;
+        if (isAutoCalcEnabled) {
+          autoCalcBtn.textContent = '⚡️ Auto-Calc: ON';
+          autoCalcBtn.classList.remove('ghost');
+          calculateFuture(); // Trigger immediate calc
+        } else {
+          autoCalcBtn.textContent = 'zzz Auto-Calc: OFF';
+          autoCalcBtn.classList.add('ghost');
+        }
+      });
+    }
+
+    // Calculate button always works
+    const calcBtn = document.getElementById('calcFutureBtn');
+    if (calcBtn) calcBtn.addEventListener('click', calculateFuture);
+
+    // Inputs: only auto-calc if enabled
+    const inputs = document.querySelectorAll('input, select');
+    inputs.forEach(el => {
+      if (el.id === 'themeSelect' || el.id.includes('dock') || el.closest('.premium-sidebar')) return;
+      el.addEventListener('input', () => {
+        if (isAutoCalcEnabled) calculateFuture();
       });
     });
+  });
 
-    // Wire up
-    if (clearBtn) clearBtn.addEventListener('click', resetApp);
-    if (clearBtn2) clearBtn2.addEventListener('click', resetApp);
-    // calcCurrentBtn removed
-    // if (saveBtn) saveBtn.addEventListener('click', saveTxt); // Handled by dialog logic
-    if (saveBtn2) {
-      saveBtn2.addEventListener('click', saveCalculationToHub);
-    }
-    if (shareBtn) shareBtn.addEventListener('click', shareLink);
-    if (themeSelect) themeSelect.addEventListener('change', (e) => applyTheme(e.target.value));
+  // Wire up
+  if (clearBtn) clearBtn.addEventListener('click', resetApp);
+  if (clearBtn2) clearBtn2.addEventListener('click', resetApp);
+  // calcCurrentBtn removed
+  // if (saveBtn) saveBtn.addEventListener('click', saveTxt); // Handled by dialog logic
+  if (saveBtn2) {
+    saveBtn2.addEventListener('click', saveCalculationToHub);
+  }
+  if (shareBtn) shareBtn.addEventListener('click', shareLink);
+  if (themeSelect) themeSelect.addEventListener('change', (e) => applyTheme(e.target.value));
 
 
 
-    // Dual-case toggle (Premium)
-    if (caseModeBtn) {
-      caseModeBtn.addEventListener('click', () => {
-        if (!gatePremiumDual()) return;
-        setDualCase(!dualCaseEnabled);
-      });
-    }
-
-    if (calcFutureBtn) {
-      const shouldAutoScrollFuture = false;
-      const ensureFutureCardBottomVisible = () => {
-        if (!futureCard) return;
-        requestAnimationFrame(() => {
-          const rect = futureCard.getBoundingClientRect();
-          const viewBottom = window.scrollY + window.innerHeight - 12; // small margin
-          const cardBottom = window.scrollY + rect.bottom;
-          if (cardBottom > viewBottom) {
-            const target = cardBottom - window.innerHeight + 12;
-            const prefersReduce = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
-            window.scrollTo({ top: Math.max(0, target), behavior: prefersReduce ? 'auto' : 'smooth' });
-          }
-        });
-      };
-      const scrollToFutureResults = () => {
-        if (!shouldAutoScrollFuture) return;
-        const targetEl = futureCard;
-        if (!targetEl) return;
-        const prefersReduce = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
-        const behavior = prefersReduce ? 'auto' : 'smooth';
-        const stickyOffset = () => {
-          let offset = 0;
-          if (document.body?.classList?.contains('mobile')) {
-            offset += mobileHeader?.offsetHeight || 0;
-            offset += mobileBanner?.offsetHeight || 0;
-            const safe = parseFloat(getComputedStyle(document.body).getPropertyValue('--mobile-viewport-offset') || '0');
-            if (!Number.isNaN(safe)) offset += safe;
-            offset += 72;
-          }
-          return offset;
-        };
-        requestAnimationFrame(() => {
-          const rect = targetEl.getBoundingClientRect();
-          const target = Math.max(0, rect.top + window.scrollY - stickyOffset());
-          window.scrollTo({ top: target, behavior });
-        });
-      };
-      calcFutureBtn.addEventListener('click', () => {
-
-        validateInputs(() => {
-          console.log('Validation passed, executing callback...');
-          if (typeof gtag === 'function') {
-            gtag('event', 'calculate_projection', { 'event_category': 'engagement', 'event_label': stock.value || 'Unknown' });
-          }
-          futureAutoEnabled = true;
-          revealSummary();
-          calculateCurrent();
-          calculateFuture(true); // Manual trigger
-          scrollToFutureResults();
-          ensureFutureCardBottomVisible();
-          toast('Calculated ✅');
-
-          // Premium Upsell for Free Users
-          if (!isPremium && loginModal) {
-            setTimeout(() => {
-              document.getElementById('authChoice').style.display = 'block';
-              document.getElementById('loginFormView').style.display = 'none';
-              loginModal.showModal();
-            }, 1000); // Small delay so they see the result first
-          }
-        });
-      });
-    }
-
-    const deb = (fn, ms = 200) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms) } };
-    [revenue, shares, pe, pm, price, revSuf, shSuf].forEach(el => el.addEventListener('input', deb(calculateCurrent)));
-
-    // Future Calculator Auto-Calc
-    const futureInputs = [
-      frMode, frAbs, frSuf, frPct, frDir, frCagr, frCagrDir,
-      frAbsBase, frAbsBull, frSufBase, frSufBull,
-      frPctBase, frPctBull, frDirBase, frDirBull,
-      frCagrBase, frCagrBull, frCagrDirBase, frCagrDirBull,
-      fsMode, fsAbs, fsSuf, fsPct, fsDir, fsCagr, fsCagrDir,
-      fsAbsBase, fsAbsBull, fsSufBase, fsSufBull,
-      fsPctBase, fsPctBull, fsDirBase, fsDirBull,
-      fsCagrBase, fsCagrBull, fsCagrDirBase, fsCagrDirBull,
-      fPE, fPM, fPEBase, fPEBull, fPMBase, fPMBull
-    ];
-    futureInputs.forEach(el => {
-      if (el) {
-        el.addEventListener('input', () => { if (isAutoCalcEnabled) calculateFuture(); });
-        el.addEventListener('change', () => { if (isAutoCalcEnabled) calculateFuture(); });
-      }
+  // Dual-case toggle (Premium)
+  if (caseModeBtn) {
+    caseModeBtn.addEventListener('click', () => {
+      if (!gatePremiumDual()) return;
+      setDualCase(!dualCaseEnabled);
     });
+  }
 
-    // Global function for the button to call directly
-    window.runFutureCalculation = function () {
-      try {
+  if (calcFutureBtn) {
+    const shouldAutoScrollFuture = false;
+    const ensureFutureCardBottomVisible = () => {
+      if (!futureCard) return;
+      requestAnimationFrame(() => {
+        const rect = futureCard.getBoundingClientRect();
+        const viewBottom = window.scrollY + window.innerHeight - 12; // small margin
+        const cardBottom = window.scrollY + rect.bottom;
+        if (cardBottom > viewBottom) {
+          const target = cardBottom - window.innerHeight + 12;
+          const prefersReduce = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+          window.scrollTo({ top: Math.max(0, target), behavior: prefersReduce ? 'auto' : 'smooth' });
+        }
+      });
+    };
+    const scrollToFutureResults = () => {
+      if (!shouldAutoScrollFuture) return;
+      const targetEl = futureCard;
+      if (!targetEl) return;
+      const prefersReduce = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+      const behavior = prefersReduce ? 'auto' : 'smooth';
+      const stickyOffset = () => {
+        let offset = 0;
+        if (document.body?.classList?.contains('mobile')) {
+          offset += mobileHeader?.offsetHeight || 0;
+          offset += mobileBanner?.offsetHeight || 0;
+          const safe = parseFloat(getComputedStyle(document.body).getPropertyValue('--mobile-viewport-offset') || '0');
+          if (!Number.isNaN(safe)) offset += safe;
+          offset += 72;
+        }
+        return offset;
+      };
+      requestAnimationFrame(() => {
+        const rect = targetEl.getBoundingClientRect();
+        const target = Math.max(0, rect.top + window.scrollY - stickyOffset());
+        window.scrollTo({ top: target, behavior });
+      });
+    };
+    calcFutureBtn.addEventListener('click', () => {
+
+      validateInputs(() => {
+        console.log('Validation passed, executing callback...');
+        if (typeof gtag === 'function') {
+          gtag('event', 'calculate_projection', { 'event_category': 'engagement', 'event_label': stock.value || 'Unknown' });
+        }
         futureAutoEnabled = true;
-
+        revealSummary();
         calculateCurrent();
-        calculateFuture();
-        toast('Calculated Future Projections ✅');
-      } catch (e) {
-        console.error(e);
-        alert('Error running calculation: ' + e.message);
+        calculateFuture(true); // Manual trigger
+        scrollToFutureResults();
+        ensureFutureCardBottomVisible();
+        toast('Calculated ✅');
+
+        // Premium Upsell for Free Users
+        if (!isPremium && loginModal) {
+          setTimeout(() => {
+            document.getElementById('authChoice').style.display = 'block';
+            document.getElementById('loginFormView').style.display = 'none';
+            loginModal.showModal();
+          }, 1000); // Small delay so they see the result first
+        }
+      });
+    });
+  }
+
+  const deb = (fn, ms = 200) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms) } };
+  [revenue, shares, pe, pm, price, revSuf, shSuf].forEach(el => el.addEventListener('input', deb(calculateCurrent)));
+
+  // Future Calculator Auto-Calc
+  const futureInputs = [
+    frMode, frAbs, frSuf, frPct, frDir, frCagr, frCagrDir,
+    frAbsBase, frAbsBull, frSufBase, frSufBull,
+    frPctBase, frPctBull, frDirBase, frDirBull,
+    frCagrBase, frCagrBull, frCagrDirBase, frCagrDirBull,
+    fsMode, fsAbs, fsSuf, fsPct, fsDir, fsCagr, fsCagrDir,
+    fsAbsBase, fsAbsBull, fsSufBase, fsSufBull,
+    fsPctBase, fsPctBull, fsDirBase, fsDirBull,
+    fsCagrBase, fsCagrBull, fsCagrDirBase, fsCagrDirBull,
+    fPE, fPM, fPEBase, fPEBull, fPMBase, fPMBull
+  ];
+  futureInputs.forEach(el => {
+    if (el) {
+      el.addEventListener('input', () => { if (isAutoCalcEnabled) calculateFuture(); });
+      el.addEventListener('change', () => { if (isAutoCalcEnabled) calculateFuture(); });
+    }
+  });
+
+  // Global function for the button to call directly
+  window.runFutureCalculation = function () {
+    try {
+      futureAutoEnabled = true;
+
+      calculateCurrent();
+      calculateFuture();
+      toast('Calculated Future Projections ✅');
+    } catch (e) {
+      console.error(e);
+      alert('Error running calculation: ' + e.message);
+    }
+  };
+
+  // Removed calcCurrentBtn listener as the button is gone
+
+  let activeMobileStep = mobilePanels.length
+    ? (mobilePanels.find(panel => panel.classList.contains('is-active'))?.dataset.step || 'current')
+    : 'current';
+
+  if (mobilePanels.length) {
+    const updateMobileActions = () => {
+      if (mobileCalcBtn) {
+        const isCurrent = activeMobileStep === 'current';
+        mobileCalcBtn.textContent = isCurrent ? 'Calculate current' : 'Calculate future';
+        mobileCalcBtn.setAttribute('aria-label', isCurrent ? 'Calculate current metrics' : 'Calculate future projections');
       }
     };
 
-    // Removed calcCurrentBtn listener as the button is gone
-
-    let activeMobileStep = mobilePanels.length
-      ? (mobilePanels.find(panel => panel.classList.contains('is-active'))?.dataset.step || 'current')
-      : 'current';
-
-    if (mobilePanels.length) {
-      const updateMobileActions = () => {
-        if (mobileCalcBtn) {
-          const isCurrent = activeMobileStep === 'current';
-          mobileCalcBtn.textContent = isCurrent ? 'Calculate current' : 'Calculate future';
-          mobileCalcBtn.setAttribute('aria-label', isCurrent ? 'Calculate current metrics' : 'Calculate future projections');
-        }
-      };
-
-      const setMobileStep = (step, { scroll = false } = {}) => {
-        if (!step || activeMobileStep === step) {
-          updateMobileActions();
-          return;
-        }
-        activeMobileStep = step;
-        document.body.dataset.activeStep = step;
-
-        mobileTabs.forEach(btn => {
-          const isActive = btn.dataset.step === step;
-          btn.classList.toggle('is-active', isActive);
-          btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-          btn.setAttribute('tabindex', isActive ? '0' : '-1');
-        });
-
-        mobilePanels.forEach(panel => {
-          const isActive = panel.dataset.step === step;
-          panel.classList.toggle('is-active', isActive);
-          panel.hidden = !isActive;
-          panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
-        });
-
+    const setMobileStep = (step, { scroll = false } = {}) => {
+      if (!step || activeMobileStep === step) {
         updateMobileActions();
+        return;
+      }
+      activeMobileStep = step;
+      document.body.dataset.activeStep = step;
 
-        if (scroll) {
-          const activePanel = mobilePanels.find(panel => panel.dataset.step === step);
-          if (activePanel) {
-            const tabHeight = mobileTabs.length ? (mobileTabs[0].offsetHeight || 0) : 0;
-            const offset = tabHeight + 36;
-            const target = activePanel.getBoundingClientRect().top + window.scrollY - offset;
-            const nextTop = target > 0 ? target : 0;
-            if (Math.abs(window.scrollY - nextTop) > 8) {
-              window.scrollTo({ top: nextTop, behavior: 'auto' });
-            }
+      mobileTabs.forEach(btn => {
+        const isActive = btn.dataset.step === step;
+        btn.classList.toggle('is-active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        btn.setAttribute('tabindex', isActive ? '0' : '-1');
+      });
+
+      mobilePanels.forEach(panel => {
+        const isActive = panel.dataset.step === step;
+        panel.classList.toggle('is-active', isActive);
+        panel.hidden = !isActive;
+        panel.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+      });
+
+      updateMobileActions();
+
+      if (scroll) {
+        const activePanel = mobilePanels.find(panel => panel.dataset.step === step);
+        if (activePanel) {
+          const tabHeight = mobileTabs.length ? (mobileTabs[0].offsetHeight || 0) : 0;
+          const offset = tabHeight + 36;
+          const target = activePanel.getBoundingClientRect().top + window.scrollY - offset;
+          const nextTop = target > 0 ? target : 0;
+          if (Math.abs(window.scrollY - nextTop) > 8) {
+            window.scrollTo({ top: nextTop, behavior: 'auto' });
           }
         }
-      };
+      }
+    };
 
-      setMobileStep(activeMobileStep, { scroll: false });
+    setMobileStep(activeMobileStep, { scroll: false });
 
-      mobileTabs.forEach((btn, idx) => {
-        btn.addEventListener('click', () => {
-          const shouldScroll = window.scrollY > 140;
-          setMobileStep(btn.dataset.step, { scroll: shouldScroll });
-        });
-        btn.addEventListener('keydown', (evt) => {
-          if (evt.key === 'ArrowRight' || evt.key === 'ArrowLeft') {
-            evt.preventDefault();
-            const dir = evt.key === 'ArrowRight' ? 1 : -1;
-            const nextIndex = (idx + dir + mobileTabs.length) % mobileTabs.length;
-            mobileTabs[nextIndex].focus();
-            setMobileStep(mobileTabs[nextIndex].dataset.step, { scroll: false });
-          }
-        });
+    mobileTabs.forEach((btn, idx) => {
+      btn.addEventListener('click', () => {
+        const shouldScroll = window.scrollY > 140;
+        setMobileStep(btn.dataset.step, { scroll: shouldScroll });
       });
-
-      if (mobileCalcBtn) {
-        mobileCalcBtn.addEventListener('click', () => {
-
-          if (activeMobileStep === 'current') calcCurrentBtn?.click();
-          else calculateFuture(true);
-        });
-      }
-      if (mobileSaveBtn) {
-        mobileSaveBtn.addEventListener('click', () => {
-          saveBtn?.click();
-        });
-      }
-      if (mobileResetBtn) {
-        mobileResetBtn.addEventListener('click', () => {
-          clearBtn?.click();
-        });
-      }
-    }
-
-    // Maintain pinned tab bar + avoid iOS visual viewport offsets hiding it
-    if (document.body?.classList?.contains('mobile')) {
-      const viewportMeta = document.querySelector('meta[name="viewport"]');
-      const originalViewportContent = viewportMeta?.getAttribute('content') || 'width=device-width, initial-scale=1';
-      let viewportRestoreTimer = null;
-
-      const lockViewportScale = () => {
-        if (!viewportMeta) return;
-        viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
-      };
-
-      const restoreViewportScale = () => {
-        if (!viewportMeta) return;
-        viewportMeta.setAttribute('content', originalViewportContent);
-      };
-
-      const updateViewportOffset = () => {
-        const vv = window.visualViewport;
-        if (!vv) {
-          document.body.style.setProperty('--mobile-viewport-offset', '0px');
-          return;
-        }
-        const offset = Math.max(0, vv.offsetTop || 0);
-        document.body.style.setProperty('--mobile-viewport-offset', `${offset}px`);
-      };
-
-      updateViewportOffset();
-
-      if (window.visualViewport) {
-        window.visualViewport.addEventListener('resize', updateViewportOffset, { passive: true });
-        window.visualViewport.addEventListener('scroll', updateViewportOffset, { passive: true });
-      }
-
-      window.addEventListener('orientationchange', () => {
-        // allow the viewport to settle before recomputing
-        setTimeout(() => {
-          updateViewportOffset();
-          restoreViewportScale();
-        }, 120);
-      });
-
-      document.addEventListener('focusin', (event) => {
-        if (event.target instanceof HTMLElement && event.target.matches('input, select, textarea')) {
-          clearTimeout(viewportRestoreTimer);
-          lockViewportScale();
-          setTimeout(updateViewportOffset, 60);
+      btn.addEventListener('keydown', (evt) => {
+        if (evt.key === 'ArrowRight' || evt.key === 'ArrowLeft') {
+          evt.preventDefault();
+          const dir = evt.key === 'ArrowRight' ? 1 : -1;
+          const nextIndex = (idx + dir + mobileTabs.length) % mobileTabs.length;
+          mobileTabs[nextIndex].focus();
+          setMobileStep(mobileTabs[nextIndex].dataset.step, { scroll: false });
         }
       });
-      document.addEventListener('focusout', (event) => {
-        if (event.target instanceof HTMLElement && event.target.matches('input, select, textarea')) {
-          clearTimeout(viewportRestoreTimer);
-          viewportRestoreTimer = setTimeout(() => {
-            restoreViewportScale();
-            updateViewportOffset();
-          }, 150);
-        }
-      });
-    }
-
-    function saveTxt() {
-      const s = getState();
-      let content =
-        `Stock Price Forecaster Calculation\n===============================\n` +
-        `Date: ${s.date}\nCompany: ${s.stock || ''}\n\n` +
-        `Current Metrics:\n- Revenue (TTM): ${s.revenue}${s.revSuf ? ` (${s.revSuf})` : ''}\n` +
-        `- Outstanding Shares: ${s.shares}${s.shSuf ? ` (${s.shSuf})` : ''}\n- P/E Ratio: ${s.pe}\n- Profit Margin: ${s.pm}\n- Price per Share: ${s.price}\n- Earnings: ${earnings.textContent}\n- EPS: ${eps.textContent}\n- Market Value: $${mv.textContent}\n\n` +
-        `Future Projections (5 Years):\n- Future Revenue Mode: ${s.frMode}\n` +
-        (s.frMode === 'absolute'
-          ? `  - Future Revenue: ${s.frAbs}${s.frSuf ? ` (${s.frSuf})` : ''}\n`
-          : s.frMode === 'percentage'
-            ? `  - Future Revenue %: ${s.frPct} (${s.frDir})\n`
-            : `  - CAGR %: ${s.frCagr} (${s.frCagrDir})\n`) +
-        `- Future Shares Mode: ${s.fsMode}\n` +
-        (s.fsMode === 'absolute'
-          ? `  - Future Shares: ${s.fsAbs}${s.fsSuf ? ` (${s.fsSuf})` : ''}\n`
-          : s.fsMode === 'percentage'
-            ? `  - Future Shares %: ${s.fsPct} (${s.fsDir})\n`
-            : `  - Shares CAGR %: ${s.fsCagr} (${s.fsCagrDir})\n`) +
-        `- Projected Future P/E: ${s.fPE}\n- Projected Future Profit Margin: ${s.fPM}\n\n` +
-        `Computed Outputs:\n- Future Revenue: ${fRev.textContent}\n- Future Shares: ${fShOut ? fShOut.textContent : '–'}\n- Future Earnings: ${fEarn.textContent}\n- Future EPS: ${fEPS.textContent}\n- Future Stock Price: ${fPrice.textContent}\n- Future Market Value: $${fMV.textContent}\n\n`;
-
-      const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-      const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'calculation.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    }
-
-    function init() {
-      // Preload extended dataset if available
-      loadSp500Data();
-      const loaded = maybeLoadFromQuery() || maybeLoadFromHash();
-      if (!loaded) calculateCurrent();
-      initTheme();
-      updateActiveCompany();
-
-      // Re-enable transitions after initial layout
-
-    }
-
-    // Tab Elements (Moved to top)
-    // const tabProjections ... defined at top
-    // const tabInsights ... defined at top
-    // const tabHub ... defined at top
-    // const projectionsTab ... defined at top
-    // const insightsTab ... defined at top
-    // const hubTab ... defined at top
-
-    // Sidebar elements removed (handled earlier)
-    // const premiumSidebar = null;
-    // const sidebarToggle = null;
-    // const closeSidebar = null;
-
-    // Tab Event Listeners
-    if (tabProjections) tabProjections.addEventListener('click', () => switchTab('projections'));
-    if (tabInsights) tabInsights.addEventListener('click', () => {
-      if (typeof gtag === 'function') {
-        gtag('event', 'view_insights', { 'event_category': 'navigation', 'event_label': stock.value || 'Unknown' });
-      }
-      switchTab('insights');
     });
-    if (tabHub) tabHub.addEventListener('click', () => switchTab('hub'));
 
-    // Helper for Locked View
-    function renderLockedView(container) {
-      if (!container) return;
+    if (mobileCalcBtn) {
+      mobileCalcBtn.addEventListener('click', () => {
 
-      // Check if lock already exists
-      if (container.querySelector('.locked-overlay')) return;
-
-      // Hide existing content
-      Array.from(container.children).forEach(child => {
-        if (!child.classList.contains('locked-overlay')) {
-          child.style.display = 'none';
-          child.classList.add('was-hidden-by-lock');
-        }
+        if (activeMobileStep === 'current') calcCurrentBtn?.click();
+        else calculateFuture(true);
       });
+    }
+    if (mobileSaveBtn) {
+      mobileSaveBtn.addEventListener('click', () => {
+        saveBtn?.click();
+      });
+    }
+    if (mobileResetBtn) {
+      mobileResetBtn.addEventListener('click', () => {
+        clearBtn?.click();
+      });
+    }
+  }
 
-      const lockDiv = document.createElement('div');
-      lockDiv.className = 'locked-overlay';
-      lockDiv.innerHTML = `
+  // Maintain pinned tab bar + avoid iOS visual viewport offsets hiding it
+  if (document.body?.classList?.contains('mobile')) {
+    const viewportMeta = document.querySelector('meta[name="viewport"]');
+    const originalViewportContent = viewportMeta?.getAttribute('content') || 'width=device-width, initial-scale=1';
+    let viewportRestoreTimer = null;
+
+    const lockViewportScale = () => {
+      if (!viewportMeta) return;
+      viewportMeta.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no');
+    };
+
+    const restoreViewportScale = () => {
+      if (!viewportMeta) return;
+      viewportMeta.setAttribute('content', originalViewportContent);
+    };
+
+    const updateViewportOffset = () => {
+      const vv = window.visualViewport;
+      if (!vv) {
+        document.body.style.setProperty('--mobile-viewport-offset', '0px');
+        return;
+      }
+      const offset = Math.max(0, vv.offsetTop || 0);
+      document.body.style.setProperty('--mobile-viewport-offset', `${offset}px`);
+    };
+
+    updateViewportOffset();
+
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', updateViewportOffset, { passive: true });
+      window.visualViewport.addEventListener('scroll', updateViewportOffset, { passive: true });
+    }
+
+    window.addEventListener('orientationchange', () => {
+      // allow the viewport to settle before recomputing
+      setTimeout(() => {
+        updateViewportOffset();
+        restoreViewportScale();
+      }, 120);
+    });
+
+    document.addEventListener('focusin', (event) => {
+      if (event.target instanceof HTMLElement && event.target.matches('input, select, textarea')) {
+        clearTimeout(viewportRestoreTimer);
+        lockViewportScale();
+        setTimeout(updateViewportOffset, 60);
+      }
+    });
+    document.addEventListener('focusout', (event) => {
+      if (event.target instanceof HTMLElement && event.target.matches('input, select, textarea')) {
+        clearTimeout(viewportRestoreTimer);
+        viewportRestoreTimer = setTimeout(() => {
+          restoreViewportScale();
+          updateViewportOffset();
+        }, 150);
+      }
+    });
+  }
+
+  function saveTxt() {
+    const s = getState();
+    let content =
+      `Stock Price Forecaster Calculation\n===============================\n` +
+      `Date: ${s.date}\nCompany: ${s.stock || ''}\n\n` +
+      `Current Metrics:\n- Revenue (TTM): ${s.revenue}${s.revSuf ? ` (${s.revSuf})` : ''}\n` +
+      `- Outstanding Shares: ${s.shares}${s.shSuf ? ` (${s.shSuf})` : ''}\n- P/E Ratio: ${s.pe}\n- Profit Margin: ${s.pm}\n- Price per Share: ${s.price}\n- Earnings: ${earnings.textContent}\n- EPS: ${eps.textContent}\n- Market Value: $${mv.textContent}\n\n` +
+      `Future Projections (5 Years):\n- Future Revenue Mode: ${s.frMode}\n` +
+      (s.frMode === 'absolute'
+        ? `  - Future Revenue: ${s.frAbs}${s.frSuf ? ` (${s.frSuf})` : ''}\n`
+        : s.frMode === 'percentage'
+          ? `  - Future Revenue %: ${s.frPct} (${s.frDir})\n`
+          : `  - CAGR %: ${s.frCagr} (${s.frCagrDir})\n`) +
+      `- Future Shares Mode: ${s.fsMode}\n` +
+      (s.fsMode === 'absolute'
+        ? `  - Future Shares: ${s.fsAbs}${s.fsSuf ? ` (${s.fsSuf})` : ''}\n`
+        : s.fsMode === 'percentage'
+          ? `  - Future Shares %: ${s.fsPct} (${s.fsDir})\n`
+          : `  - Shares CAGR %: ${s.fsCagr} (${s.fsCagrDir})\n`) +
+      `- Projected Future P/E: ${s.fPE}\n- Projected Future Profit Margin: ${s.fPM}\n\n` +
+      `Computed Outputs:\n- Future Revenue: ${fRev.textContent}\n- Future Shares: ${fShOut ? fShOut.textContent : '–'}\n- Future Earnings: ${fEarn.textContent}\n- Future EPS: ${fEPS.textContent}\n- Future Stock Price: ${fPrice.textContent}\n- Future Market Value: $${fMV.textContent}\n\n`;
+
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'calculation.txt'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  }
+
+  function init() {
+    // Preload extended dataset if available
+    loadSp500Data();
+    const loaded = maybeLoadFromQuery() || maybeLoadFromHash();
+    if (!loaded) calculateCurrent();
+    initTheme();
+    updateActiveCompany();
+
+    // Re-enable transitions after initial layout
+
+  }
+
+  // Tab Elements (Moved to top)
+  // const tabProjections ... defined at top
+  // const tabInsights ... defined at top
+  // const tabHub ... defined at top
+  // const projectionsTab ... defined at top
+  // const insightsTab ... defined at top
+  // const hubTab ... defined at top
+
+  // Sidebar elements removed (handled earlier)
+  // const premiumSidebar = null;
+  // const sidebarToggle = null;
+  // const closeSidebar = null;
+
+  // Tab Event Listeners
+  if (tabProjections) tabProjections.addEventListener('click', () => switchTab('projections'));
+  if (tabInsights) tabInsights.addEventListener('click', () => {
+    if (typeof gtag === 'function') {
+      gtag('event', 'view_insights', { 'event_category': 'navigation', 'event_label': stock.value || 'Unknown' });
+    }
+    switchTab('insights');
+  });
+  if (tabHub) tabHub.addEventListener('click', () => switchTab('hub'));
+
+  // Helper for Locked View
+  function renderLockedView(container) {
+    if (!container) return;
+
+    // Check if lock already exists
+    if (container.querySelector('.locked-overlay')) return;
+
+    // Hide existing content
+    Array.from(container.children).forEach(child => {
+      if (!child.classList.contains('locked-overlay')) {
+        child.style.display = 'none';
+        child.classList.add('was-hidden-by-lock');
+      }
+    });
+
+    const lockDiv = document.createElement('div');
+    lockDiv.className = 'locked-overlay';
+    lockDiv.innerHTML = `
     <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 400px; text-align: center; padding: 20px;">
       <div style="font-size: 3rem; margin-bottom: 16px;">🔒</div>
       <h2 style="margin-bottom: 8px;">Premium Feature</h2>
@@ -3752,172 +3723,172 @@ Earnings: ${document.getElementById('futureEarnings').textContent}
       </button>
     </div>
   `;
-      container.appendChild(lockDiv);
-    }
+    container.appendChild(lockDiv);
+  }
 
-    function unlockView(container) {
-      if (!container) return;
+  function unlockView(container) {
+    if (!container) return;
 
-      const lock = container.querySelector('.locked-overlay');
-      if (lock) lock.remove();
+    const lock = container.querySelector('.locked-overlay');
+    if (lock) lock.remove();
 
-      // Restore content
-      Array.from(container.children).forEach(child => {
-        if (child.classList.contains('was-hidden-by-lock')) {
-          child.style.display = '';
-          child.classList.remove('was-hidden-by-lock');
-        }
-      });
-    }
+    // Restore content
+    Array.from(container.children).forEach(child => {
+      if (child.classList.contains('was-hidden-by-lock')) {
+        child.style.display = '';
+        child.classList.remove('was-hidden-by-lock');
+      }
+    });
+  }
 
-    function switchTab(tabName) {
-      // Reset all
-      [tabProjections, tabInsights, tabHub].forEach(el => el && el.classList.remove('active'));
-      [projectionsTab, insightsTab, hubTab].forEach(el => el && el.classList.remove('active'));
-      // Clear inline display style that might persist
-      if (hubTab) hubTab.style.display = '';
+  function switchTab(tabName) {
+    // Reset all
+    [tabProjections, tabInsights, tabHub].forEach(el => el && el.classList.remove('active'));
+    [projectionsTab, insightsTab, hubTab].forEach(el => el && el.classList.remove('active'));
+    // Clear inline display style that might persist
+    if (hubTab) hubTab.style.display = '';
 
-      if (tabName === 'projections') {
-        if (tabProjections) tabProjections.classList.add('active');
-        if (projectionsTab) projectionsTab.classList.add('active');
-      } else if (tabName === 'insights') {
-        if (tabInsights) tabInsights.classList.add('active');
-        if (insightsTab) insightsTab.classList.add('active');
+    if (tabName === 'projections') {
+      if (tabProjections) tabProjections.classList.add('active');
+      if (projectionsTab) projectionsTab.classList.add('active');
+    } else if (tabName === 'insights') {
+      if (tabInsights) tabInsights.classList.add('active');
+      if (insightsTab) insightsTab.classList.add('active');
 
-        // Check Premium
-        if (!isPremium) {
-          renderLockedView(insightsTab);
-          return;
-        }
+      // Check Premium
+      if (!isPremium) {
+        renderLockedView(insightsTab);
+        return;
+      }
 
-        // Render charts if stock selected
-        const symbol = stock.value.toUpperCase();
+      // Render charts if stock selected
+      const symbol = stock.value.toUpperCase();
 
-        // Use currentStockData if it matches the input, otherwise fall back to mock or re-fetch logic
-        // Use currentStockData if it matches the input, otherwise pass symbol to trigger fetch
-        if (currentStockData && (currentStockData.symbol === symbol || currentStockData.name === symbol)) {
-          renderInsightsCharts(currentStockData);
-        } else if (symbol && mockStocks[symbol]) {
-          // Fallback to mock data if available (legacy)
-          renderInsightsCharts(mockStocks[symbol]);
-        } else {
-          // Pass symbol to trigger dynamic fetch
-          renderInsightsCharts(symbol || 'META');
-        }
-      } else if (tabName === 'hub') {
-        if (tabHub) tabHub.classList.add('active');
-        if (hubTab) hubTab.classList.add('active');
-
-        // Check Premium
-        if (!isPremium) {
-          renderLockedView(insightsTab);
-          return;
-        }
-        unlockView(insightsTab);
-
-        // Render charts if stock selected
-        const symbol = stock.value.toUpperCase();
+      // Use currentStockData if it matches the input, otherwise fall back to mock or re-fetch logic
+      // Use currentStockData if it matches the input, otherwise pass symbol to trigger fetch
+      if (currentStockData && (currentStockData.symbol === symbol || currentStockData.name === symbol)) {
+        renderInsightsCharts(currentStockData);
+      } else if (symbol && mockStocks[symbol]) {
+        // Fallback to mock data if available (legacy)
+        renderInsightsCharts(mockStocks[symbol]);
+      } else {
+        // Pass symbol to trigger dynamic fetch
         renderInsightsCharts(symbol || 'META');
-      } else if (tabName === 'hub') {
-        if (tabHub) tabHub.classList.add('active');
-        if (hubTab) hubTab.classList.add('active');
+      }
+    } else if (tabName === 'hub') {
+      if (tabHub) tabHub.classList.add('active');
+      if (hubTab) hubTab.classList.add('active');
 
-        // Check Premium
-        if (!isPremium) {
-          renderLockedView(hubTab);
-          return;
-        }
-        unlockView(hubTab);
+      // Check Premium
+      if (!isPremium) {
+        renderLockedView(insightsTab);
+        return;
+      }
+      unlockView(insightsTab);
 
-        // Render/Update Hub content
-        renderSavedItems();
-        renderCommunityTop10();
+      // Render charts if stock selected
+      const symbol = stock.value.toUpperCase();
+      renderInsightsCharts(symbol || 'META');
+    } else if (tabName === 'hub') {
+      if (tabHub) tabHub.classList.add('active');
+      if (hubTab) hubTab.classList.add('active');
+
+      // Check Premium
+      if (!isPremium) {
+        renderLockedView(hubTab);
+        return;
+      }
+      unlockView(hubTab);
+
+      // Render/Update Hub content
+      renderSavedItems();
+      renderCommunityTop10();
+    }
+  }
+
+  // --- Community Top 10 Logic ---
+
+  function getSimulatedTop10() {
+    // 1. Start with Real Data (if any)
+    let list = [...realCalculatedStocks];
+
+    // 2. Fill remaining slots with Trending Data (Weighted)
+    if (list.length < 10) {
+      // Anchors: Stocks that are almost always in the top 10 (Simulating 30-day dominance)
+      const ANCHORS = ['NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN'];
+
+      // Rotators: The rest of the pool (Simulating hourly activity)
+      const ROTATORS = TRENDING_POOL.filter(t => !ANCHORS.includes(t));
+
+      // Seeded Shuffle based on Hour
+      const hourBucket = Math.floor(Date.now() / (1000 * 60 * 60));
+      const seededRandom = (seed) => {
+        let x = Math.sin(seed++) * 10000;
+        return x - Math.floor(x);
+      };
+
+      // Always include most Anchors (e.g., 4 or 5) to maintain "30-day" feel
+      // We shuffle anchors too so their order changes
+      let shuffledAnchors = [...ANCHORS];
+      for (let i = shuffledAnchors.length - 1; i > 0; i--) {
+        const j = Math.floor(seededRandom(hourBucket + i) * (i + 1));
+        [shuffledAnchors[i], shuffledAnchors[j]] = [shuffledAnchors[j], shuffledAnchors[i]];
+      }
+
+      // Add Anchors first
+      for (const ticker of shuffledAnchors) {
+        if (list.length >= 10) break;
+        if (!list.includes(ticker)) list.push(ticker);
+      }
+
+      // Shuffle Rotators
+      let shuffledRotators = [...ROTATORS];
+      for (let i = shuffledRotators.length - 1; i > 0; i--) {
+        const j = Math.floor(seededRandom(hourBucket + i + 100) * (i + 1)); // Offset seed
+        [shuffledRotators[i], shuffledRotators[j]] = [shuffledRotators[j], shuffledRotators[i]];
+      }
+
+      // Fill the rest
+      for (const ticker of shuffledRotators) {
+        if (list.length >= 10) break;
+        if (!list.includes(ticker)) list.push(ticker);
       }
     }
 
-    // --- Community Top 10 Logic ---
+    return list.slice(0, 10);
+  }
 
-    function getSimulatedTop10() {
-      // 1. Start with Real Data (if any)
-      let list = [...realCalculatedStocks];
-
-      // 2. Fill remaining slots with Trending Data (Weighted)
-      if (list.length < 10) {
-        // Anchors: Stocks that are almost always in the top 10 (Simulating 30-day dominance)
-        const ANCHORS = ['NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN'];
-
-        // Rotators: The rest of the pool (Simulating hourly activity)
-        const ROTATORS = TRENDING_POOL.filter(t => !ANCHORS.includes(t));
-
-        // Seeded Shuffle based on Hour
-        const hourBucket = Math.floor(Date.now() / (1000 * 60 * 60));
-        const seededRandom = (seed) => {
-          let x = Math.sin(seed++) * 10000;
-          return x - Math.floor(x);
-        };
-
-        // Always include most Anchors (e.g., 4 or 5) to maintain "30-day" feel
-        // We shuffle anchors too so their order changes
-        let shuffledAnchors = [...ANCHORS];
-        for (let i = shuffledAnchors.length - 1; i > 0; i--) {
-          const j = Math.floor(seededRandom(hourBucket + i) * (i + 1));
-          [shuffledAnchors[i], shuffledAnchors[j]] = [shuffledAnchors[j], shuffledAnchors[i]];
-        }
-
-        // Add Anchors first
-        for (const ticker of shuffledAnchors) {
-          if (list.length >= 10) break;
-          if (!list.includes(ticker)) list.push(ticker);
-        }
-
-        // Shuffle Rotators
-        let shuffledRotators = [...ROTATORS];
-        for (let i = shuffledRotators.length - 1; i > 0; i--) {
-          const j = Math.floor(seededRandom(hourBucket + i + 100) * (i + 1)); // Offset seed
-          [shuffledRotators[i], shuffledRotators[j]] = [shuffledRotators[j], shuffledRotators[i]];
-        }
-
-        // Fill the rest
-        for (const ticker of shuffledRotators) {
-          if (list.length >= 10) break;
-          if (!list.includes(ticker)) list.push(ticker);
+  async function getCommunityTop10() {
+    try {
+      const res = await fetch('/api/trending');
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data) && data.length > 0) {
+          return data.slice(0, 10);
         }
       }
-
-      return list.slice(0, 10);
+    } catch (e) {
+      console.warn('Failed to fetch real trending data, using simulation fallback.', e);
     }
+    return getSimulatedTop10();
+  }
 
-    async function getCommunityTop10() {
-      try {
-        const res = await fetch('/api/trending');
-        if (res.ok) {
-          const data = await res.json();
-          if (Array.isArray(data) && data.length > 0) {
-            return data.slice(0, 10);
-          }
-        }
-      } catch (e) {
-        console.warn('Failed to fetch real trending data, using simulation fallback.', e);
-      }
-      return getSimulatedTop10();
-    }
+  const COMMUNITY_CACHE_KEY = 'communityPrices_v2';
+  const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
 
-    const COMMUNITY_CACHE_KEY = 'communityPrices_v2';
-    const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours
+  async function renderCommunityTop10() {
+    const listEl = document.getElementById('communityList');
+    const listElInsights = document.getElementById('communityListInsights');
+    const listElProjections = document.getElementById('communityListProjections');
 
-    async function renderCommunityTop10() {
-      const listEl = document.getElementById('communityList');
-      const listElInsights = document.getElementById('communityListInsights');
-      const listElProjections = document.getElementById('communityListProjections');
+    // Helper to render list into an element
+    const renderList = (container, priceMap = {}) => {
+      if (!container) return;
+      container.innerHTML = '';
 
-      // Helper to render list into an element
-      const renderList = (container, priceMap = {}) => {
-        if (!container) return;
-        container.innerHTML = '';
-
-        // Premium Check
-        if (!isPremium) {
-          container.innerHTML = `
+      // Premium Check
+      if (!isPremium) {
+        container.innerHTML = `
         <div style="text-align:center; padding: 24px 12px;">
           <div style="font-size: 2rem; margin-bottom: 12px;">🔒</div>
           <h4 style="margin: 0 0 8px 0; color: var(--text);">Premium Feature</h4>
@@ -3929,627 +3900,627 @@ Earnings: ${document.getElementById('futureEarnings').textContent}
           </button>
         </div>
       `;
-          return;
-        }
-
-        const dynamicList = getSimulatedTop10(); // Fallback for initial render to show something fast
-        dynamicList.forEach((symbol, index) => {
-          // 1. Try passed priceMap (fresh)
-          // 2. Try window data (static fallback)
-          let price = priceMap[symbol];
-          if (price === undefined) {
-            const data = window.__sp500Data ? window.__sp500Data[symbol] : null;
-            if (data) price = data.price;
-          }
-
-          const div = document.createElement('div');
-          div.className = 'saved-item'; // Reuse saved-item style for consistency
-
-          const leftDiv = document.createElement('div');
-          leftDiv.style.display = 'flex';
-          leftDiv.style.gap = '12px';
-          leftDiv.style.alignItems = 'center';
-
-          const rankSpan = document.createElement('span');
-          rankSpan.textContent = `#${index + 1}`;
-          rankSpan.style.color = 'var(--muted)';
-          rankSpan.style.fontSize = '0.9rem';
-          rankSpan.style.width = '24px';
-
-          const nameSpan = document.createElement('span');
-          nameSpan.textContent = symbol;
-          nameSpan.style.fontWeight = '600';
-
-          leftDiv.appendChild(rankSpan);
-          leftDiv.appendChild(nameSpan);
-
-          const rightDiv = document.createElement('div');
-          if (price !== undefined) {
-            const priceSpan = document.createElement('span');
-            priceSpan.textContent = `$${Number(price).toFixed(2)}`;
-            priceSpan.style.color = 'var(--muted)';
-            priceSpan.style.fontSize = '0.9rem';
-            rightDiv.appendChild(priceSpan);
-          }
-
-          div.appendChild(leftDiv);
-          div.appendChild(rightDiv);
-
-          container.appendChild(div);
-        });
-      };
-
-      // Initial Render (Fast, using static/old data)
-      renderList(listEl);
-      renderList(listElInsights);
-      renderList(listElProjections);
-
-      // --- Async Update Logic ---
-      if (!isPremium) return;
-
-      const now = Date.now();
-      let cachedParams = {};
-      try {
-        const raw = localStorage.getItem(COMMUNITY_CACHE_KEY);
-        if (raw) cachedParams = JSON.parse(raw);
-      } catch (e) {
-        console.warn('Cache parse error', e);
-      }
-
-      // Check validity
-      if (cachedParams.timestamp && (now - cachedParams.timestamp < CACHE_DURATION)) {
-        console.log('Using cached community prices (valid for 24h)');
-        // Re-render with cached prices to be sure
-        renderList(listEl, cachedParams.prices);
-        renderList(listElInsights, cachedParams.prices);
-        renderList(listElProjections, cachedParams.prices);
         return;
       }
 
-      // Fetch Fresh Data
-      console.log('Fetching fresh community prices...');
-      const top10 = await getCommunityTop10();
-      const prices = {};
+      const dynamicList = getSimulatedTop10(); // Fallback for initial render to show something fast
+      dynamicList.forEach((symbol, index) => {
+        // 1. Try passed priceMap (fresh)
+        // 2. Try window data (static fallback)
+        let price = priceMap[symbol];
+        if (price === undefined) {
+          const data = window.__sp500Data ? window.__sp500Data[symbol] : null;
+          if (data) price = data.price;
+        }
 
-      // Throttle: Process one by one or small batches to strictly avoid 429
-      // (Even with proxy, 10 rapid fire might be too much if many users do it)
-      for (const sym of top10) {
-        if (window.__sp500Data && window.__sp500Data[sym]) {
-          prices[sym] = window.__sp500Data[sym].price; // Default to static first
+        const div = document.createElement('div');
+        div.className = 'saved-item'; // Reuse saved-item style for consistency
+
+        const leftDiv = document.createElement('div');
+        leftDiv.style.display = 'flex';
+        leftDiv.style.gap = '12px';
+        leftDiv.style.alignItems = 'center';
+
+        const rankSpan = document.createElement('span');
+        rankSpan.textContent = `#${index + 1}`;
+        rankSpan.style.color = 'var(--muted)';
+        rankSpan.style.fontSize = '0.9rem';
+        rankSpan.style.width = '24px';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.textContent = symbol;
+        nameSpan.style.fontWeight = '600';
+
+        leftDiv.appendChild(rankSpan);
+        leftDiv.appendChild(nameSpan);
+
+        const rightDiv = document.createElement('div');
+        if (price !== undefined) {
+          const priceSpan = document.createElement('span');
+          priceSpan.textContent = `$${Number(price).toFixed(2)}`;
+          priceSpan.style.color = 'var(--muted)';
+          priceSpan.style.fontSize = '0.9rem';
+          rightDiv.appendChild(priceSpan);
         }
-        try {
-          const data = await getQuote(sym);
-          if (data && data.price) {
-            prices[sym] = data.price;
-          }
-          // Small delay to be nice to API
-          await new Promise(r => setTimeout(r, 200));
-        } catch (e) {
-          console.warn(`Failed to update ${sym}`, e);
-        }
+
+        div.appendChild(leftDiv);
+        div.appendChild(rightDiv);
+
+        container.appendChild(div);
+      });
+    };
+
+    // Initial Render (Fast, using static/old data)
+    renderList(listEl);
+    renderList(listElInsights);
+    renderList(listElProjections);
+
+    // --- Async Update Logic ---
+    if (!isPremium) return;
+
+    const now = Date.now();
+    let cachedParams = {};
+    try {
+      const raw = localStorage.getItem(COMMUNITY_CACHE_KEY);
+      if (raw) cachedParams = JSON.parse(raw);
+    } catch (e) {
+      console.warn('Cache parse error', e);
+    }
+
+    // Check validity
+    if (cachedParams.timestamp && (now - cachedParams.timestamp < CACHE_DURATION)) {
+      console.log('Using cached community prices (valid for 24h)');
+      // Re-render with cached prices to be sure
+      renderList(listEl, cachedParams.prices);
+      renderList(listElInsights, cachedParams.prices);
+      renderList(listElProjections, cachedParams.prices);
+      return;
+    }
+
+    // Fetch Fresh Data
+    console.log('Fetching fresh community prices...');
+    const top10 = await getCommunityTop10();
+    const prices = {};
+
+    // Throttle: Process one by one or small batches to strictly avoid 429
+    // (Even with proxy, 10 rapid fire might be too much if many users do it)
+    for (const sym of top10) {
+      if (window.__sp500Data && window.__sp500Data[sym]) {
+        prices[sym] = window.__sp500Data[sym].price; // Default to static first
       }
-
-      // Save to Cache
-      localStorage.setItem(COMMUNITY_CACHE_KEY, JSON.stringify({
-        timestamp: now,
-        prices: prices
-      }));
-
-      // Final Re-render with fresh data
-      renderList(listEl, prices);
-      renderList(listElInsights, prices);
-      renderList(listElProjections, prices);
+      try {
+        const data = await getQuote(sym);
+        if (data && data.price) {
+          prices[sym] = data.price;
+        }
+        // Small delay to be nice to API
+        await new Promise(r => setTimeout(r, 200));
+      } catch (e) {
+        console.warn(`Failed to update ${sym}`, e);
+      }
     }
 
-    // Event Delegation for Community List
-    const communityList = document.getElementById('communityList');
-    if (communityList) {
-      communityList.addEventListener('click', (e) => {
-        const item = e.target.closest('.saved-item');
-        if (!item) return;
+    // Save to Cache
+    localStorage.setItem(COMMUNITY_CACHE_KEY, JSON.stringify({
+      timestamp: now,
+      prices: prices
+    }));
 
-        // Extract symbol
-        const symbolSpan = item.querySelector('span:nth-child(2)'); // inside leftDiv
-        // Actually structure is: item > leftDiv > [rank, symbol]
-        // So we need to find the symbol span. 
-        // Let's be safer: find the span that has font-weight 600
-        const symbol = item.innerText.split('\n')[0].split('#')[1]?.trim()?.split(' ')[1] || item.querySelector('span:nth-child(2)')?.textContent;
-        // Wait, the structure is:
-        // div.saved-item
-        //   div (flex)
-        //     span (rank)
-        //     span (symbol)
+    // Final Re-render with fresh data
+    renderList(listEl, prices);
+    renderList(listElInsights, prices);
+    renderList(listElProjections, prices);
+  }
 
-        const leftDiv = item.firstElementChild;
-        if (!leftDiv) return;
-        const symSpan = leftDiv.children[1];
-        if (!symSpan) return;
+  // Event Delegation for Community List
+  const communityList = document.getElementById('communityList');
+  if (communityList) {
+    communityList.addEventListener('click', (e) => {
+      const item = e.target.closest('.saved-item');
+      if (!item) return;
 
-        switchTab('projections');
-        tryAutoFill(symSpan.textContent).catch(err => console.error('tryAutoFill failed:', err));
+      // Extract symbol
+      const symbolSpan = item.querySelector('span:nth-child(2)'); // inside leftDiv
+      // Actually structure is: item > leftDiv > [rank, symbol]
+      // So we need to find the symbol span. 
+      // Let's be safer: find the span that has font-weight 600
+      const symbol = item.innerText.split('\n')[0].split('#')[1]?.trim()?.split(' ')[1] || item.querySelector('span:nth-child(2)')?.textContent;
+      // Wait, the structure is:
+      // div.saved-item
+      //   div (flex)
+      //     span (rank)
+      //     span (symbol)
+
+      const leftDiv = item.firstElementChild;
+      if (!leftDiv) return;
+      const symSpan = leftDiv.children[1];
+      if (!symSpan) return;
+
+      switchTab('projections');
+      tryAutoFill(symSpan.textContent).catch(err => console.error('tryAutoFill failed:', err));
+    });
+  }
+
+  // Event Delegation for Projections Community List
+  const communityListProjections = document.getElementById('communityListProjections');
+  if (communityListProjections) {
+    communityListProjections.addEventListener('click', (e) => {
+      const item = e.target.closest('.saved-item');
+      if (!item) return;
+
+      const leftDiv = item.firstElementChild;
+      if (!leftDiv) return;
+      const symSpan = leftDiv.children[1];
+      if (!symSpan) return;
+
+      tryAutoFill(symSpan.textContent);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Event Delegation for Insights Community List
+  const communityListInsights = document.getElementById('communityListInsights');
+  if (communityListInsights) {
+    communityListInsights.addEventListener('click', (e) => {
+      const item = e.target.closest('.saved-item');
+      if (!item) return;
+
+      const symbolSpan = item.querySelector('span:nth-child(2)');
+      if (!symbolSpan) return;
+
+      const symbol = symbolSpan.textContent;
+      if (!symbol) return;
+
+      // Load charts for Insights
+      stock.value = symbol;
+      renderInsightsCharts(symbol);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Initialize Hub on load
+  document.addEventListener('DOMContentLoaded', () => {
+    renderCommunityTop10();
+    renderSavedItems();
+  });
+
+  const stockInsights = document.getElementById('stockInsights');
+  const stockListInsights = document.getElementById('stockListInsights');
+
+  // Sync Inputs (One-way: Main -> Insights)
+  // Logic moved to main stock event listener around line 1828 to avoid duplicates
+  if (stock && stockInsights) {
+    // Duplicate listener removed
+  }
+
+  // Initialize Autocomplete for Insights
+  if (stockInsights && stockListInsights) {
+    stockInsights.addEventListener('input', async (e) => {
+      if (!allStocks.length) await ensureStocksLoaded();
+      // Pass a custom onSelect that calls tryAutoFill
+      renderAC(stockInsights, stockListInsights, (symbol) => {
+        stockInsights.value = symbol;
+        tryAutoFill(symbol);
       });
-    }
-
-    // Event Delegation for Projections Community List
-    const communityListProjections = document.getElementById('communityListProjections');
-    if (communityListProjections) {
-      communityListProjections.addEventListener('click', (e) => {
-        const item = e.target.closest('.saved-item');
-        if (!item) return;
-
-        const leftDiv = item.firstElementChild;
-        if (!leftDiv) return;
-        const symSpan = leftDiv.children[1];
-        if (!symSpan) return;
-
-        tryAutoFill(symSpan.textContent);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
-
-    // Event Delegation for Insights Community List
-    const communityListInsights = document.getElementById('communityListInsights');
-    if (communityListInsights) {
-      communityListInsights.addEventListener('click', (e) => {
-        const item = e.target.closest('.saved-item');
-        if (!item) return;
-
-        const symbolSpan = item.querySelector('span:nth-child(2)');
-        if (!symbolSpan) return;
-
-        const symbol = symbolSpan.textContent;
-        if (!symbol) return;
-
-        // Load charts for Insights
-        stock.value = symbol;
-        renderInsightsCharts(symbol);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
-
-    // Initialize Hub on load
-    document.addEventListener('DOMContentLoaded', () => {
-      renderCommunityTop10();
-      renderSavedItems();
     });
 
-    const stockInsights = document.getElementById('stockInsights');
-    const stockListInsights = document.getElementById('stockListInsights');
+    stockInsights.addEventListener('blur', () => setTimeout(() => stockListInsights.classList.remove('show'), 150));
 
-    // Sync Inputs (One-way: Main -> Insights)
-    // Logic moved to main stock event listener around line 1828 to avoid duplicates
-    if (stock && stockInsights) {
-      // Duplicate listener removed
-    }
+    stockInsights.addEventListener('keydown', (e) => {
+      const items = Array.from(stockListInsights.querySelectorAll('.ac-item'));
 
-    // Initialize Autocomplete for Insights
-    if (stockInsights && stockListInsights) {
-      stockInsights.addEventListener('input', async (e) => {
-        if (!allStocks.length) await ensureStocksLoaded();
-        // Pass a custom onSelect that calls tryAutoFill
-        renderAC(stockInsights, stockListInsights, (symbol) => {
-          stockInsights.value = symbol;
-          tryAutoFill(symbol);
-        });
-      });
+      // Allow Enter to proceed even if no items (for custom stocks)
+      if (!items.length && e.key !== 'Enter') return;
 
-      stockInsights.addEventListener('blur', () => setTimeout(() => stockListInsights.classList.remove('show'), 150));
-
-      stockInsights.addEventListener('keydown', (e) => {
-        const items = Array.from(stockListInsights.querySelectorAll('.ac-item'));
-
-        // Allow Enter to proceed even if no items (for custom stocks)
-        if (!items.length && e.key !== 'Enter') return;
-
-        if (e.key === 'ArrowDown') {
-          e.preventDefault();
-          if (items.length) {
-            // We need a separate index for insights or reuse a local one?
-            // renderAC uses global acIndex. Let's rely on the fact that only one list is open at a time.
-            // But renderAC resets acIndex = -1.
-            // We need to implement setACIndex equivalent for insights list.
-            // Actually, let's just reuse the logic but target stockListInsights.
-            let nextIndex = acIndex + 1;
-            if (nextIndex >= items.length) nextIndex = items.length - 1;
-            highlightItem(items, nextIndex);
-          }
-        } else if (e.key === 'ArrowUp') {
-          e.preventDefault();
-          if (items.length) {
-            let nextIndex = acIndex - 1;
-            if (nextIndex < 0) nextIndex = 0;
-            highlightItem(items, nextIndex);
-          }
-        } else if (e.key === 'Enter') {
-          e.preventDefault();
-          if (acIndex >= 0 && items[acIndex]) {
-            // Simulate click on active item
-            const evt = new Event('mousedown');
-            items[acIndex].dispatchEvent(evt);
-          } else {
-            // No item selected, search for typed value
-            stockListInsights.classList.remove('show');
-            tryAutoFill(stockInsights.value.trim().toUpperCase());
-          }
-        } else if (e.key === 'Escape') {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (items.length) {
+          // We need a separate index for insights or reuse a local one?
+          // renderAC uses global acIndex. Let's rely on the fact that only one list is open at a time.
+          // But renderAC resets acIndex = -1.
+          // We need to implement setACIndex equivalent for insights list.
+          // Actually, let's just reuse the logic but target stockListInsights.
+          let nextIndex = acIndex + 1;
+          if (nextIndex >= items.length) nextIndex = items.length - 1;
+          highlightItem(items, nextIndex);
+        }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (items.length) {
+          let nextIndex = acIndex - 1;
+          if (nextIndex < 0) nextIndex = 0;
+          highlightItem(items, nextIndex);
+        }
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (acIndex >= 0 && items[acIndex]) {
+          // Simulate click on active item
+          const evt = new Event('mousedown');
+          items[acIndex].dispatchEvent(evt);
+        } else {
+          // No item selected, search for typed value
           stockListInsights.classList.remove('show');
+          tryAutoFill(stockInsights.value.trim().toUpperCase());
         }
-      });
+      } else if (e.key === 'Escape') {
+        stockListInsights.classList.remove('show');
+      }
+    });
 
-      // Helper to highlight item in insights list (reusing global acIndex is risky if we don't reset it)
-      // But renderAC resets it.
-      function highlightItem(items, index) {
-        items.forEach(i => i.classList.remove('active'));
-        acIndex = index;
-        if (items[acIndex]) {
-          items[acIndex].classList.add('active');
-          items[acIndex].scrollIntoView({ block: 'nearest' });
+    // Helper to highlight item in insights list (reusing global acIndex is risky if we don't reset it)
+    // But renderAC resets it.
+    function highlightItem(items, index) {
+      items.forEach(i => i.classList.remove('active'));
+      acIndex = index;
+      if (items[acIndex]) {
+        items[acIndex].classList.add('active');
+        items[acIndex].scrollIntoView({ block: 'nearest' });
+      }
+    }
+  }
+
+
+
+  // Chart Instances
+  let insightsCharts = {};
+
+  async function renderInsightsCharts(stockDataOrSymbol) {
+    let stockData = stockDataOrSymbol;
+
+    // Handle String Input (Symbol) - Dynamic Fetch
+    if (typeof stockData === 'string') {
+      const symbol = stockData.toUpperCase();
+
+      // Check local data first
+      // Check local data first
+      if (mockStocks[symbol]) {
+        stockData = mockStocks[symbol];
+      } else if (window.__sp500Data && window.__sp500Data[symbol]) {
+        // Validate local data completeness
+        const local = window.__sp500Data[symbol];
+        const hasHistory = local.history && local.history.length > 0;
+        // Check for revenue and earnings in the last history entry to ensure it's not partial
+        const last = hasHistory ? local.history[local.history.length - 1] : null;
+        const isComplete = last && (last.earnings !== undefined || last.fcf !== undefined) && last.revenue !== undefined;
+
+        if (isComplete) {
+          stockData = local;
+        } else {
+          console.warn(`[${symbol}] Local data found but incomplete. Fetching fresh...`);
+          // Fall through to fetch
+        }
+      }
+
+      if (!stockData) {
+        // Fetch from API
+        try {
+          // Show loading state on all charts
+          Object.values(insightsCharts).forEach(chart => {
+            const ctx = chart.ctx;
+            chart.data.datasets.forEach(bs => bs.data = []);
+            chart.update();
+            // We could overlay a spinner here if desired
+          });
+          toast(`Fetching fresh data for ${symbol}...`, 2000);
+
+          const modules = 'summaryProfile,financialData,earnings,defaultKeyStatistics,incomeStatementHistory,balanceSheetHistory,cashflowStatementHistory';
+          const url = `/api/quote?symbol=${encodeURIComponent(symbol)}&modules=${modules}`;
+          const res = await fetch(url);
+          if (!res.ok) throw new Error('Fetch failed');
+
+          const freshData = await res.json();
+
+          // Merge into local cache so we don't re-fetch
+          if (window.__sp500Data) {
+            window.__sp500Data[symbol] = freshData;
+          } else {
+            mockStocks[symbol] = freshData; // Fallback cache
+          }
+          stockData = freshData;
+
+        } catch (err) {
+          console.error('Dynamic fetch failed:', err);
+          toast(`Could not load data for ${symbol}.`, 3000);
+          return;
         }
       }
     }
 
+    // Data Synthesis: Fill gaps if history is incomplete
+    if (stockData.history && stockData.history.length > 0) {
+      // Check if we need to synthesize
+      const needsSynth = !stockData.history[0].earnings;
 
+      if (needsSynth) {
+        console.log(`[${stockData.symbol}] Synthesizing missing history metrics...`);
+        const currentMargin = stockData.profitMargin || 0;
+        const currentShares = (stockData.shares || 0) / 1e9; // Billions
+        const currentPE = stockData.pe || 0;
 
-    // Chart Instances
-    let insightsCharts = {};
-
-    async function renderInsightsCharts(stockDataOrSymbol) {
-      let stockData = stockDataOrSymbol;
-
-      // Handle String Input (Symbol) - Dynamic Fetch
-      if (typeof stockData === 'string') {
-        const symbol = stockData.toUpperCase();
-
-        // Check local data first
-        // Check local data first
-        if (mockStocks[symbol]) {
-          stockData = mockStocks[symbol];
-        } else if (window.__sp500Data && window.__sp500Data[symbol]) {
-          // Validate local data completeness
-          const local = window.__sp500Data[symbol];
-          const hasHistory = local.history && local.history.length > 0;
-          // Check for revenue and earnings in the last history entry to ensure it's not partial
-          const last = hasHistory ? local.history[local.history.length - 1] : null;
-          const isComplete = last && (last.earnings !== undefined || last.fcf !== undefined) && last.revenue !== undefined;
-
-          if (isComplete) {
-            stockData = local;
-          } else {
-            console.warn(`[${symbol}] Local data found but incomplete. Fetching fresh...`);
-            // Fall through to fetch
+        stockData.history.forEach((h, i) => {
+          // 1. Synthesize Earnings from Revenue * Current Margin (Fallback)
+          if (h.revenue && !h.earnings) {
+            h.earnings = parseFloat((h.revenue * (currentMargin / 100)).toFixed(2));
+            h.margin = currentMargin; // Assume constant margin if missing
           }
-        }
 
-        if (!stockData) {
-          // Fetch from API
-          try {
-            // Show loading state on all charts
-            Object.values(insightsCharts).forEach(chart => {
-              const ctx = chart.ctx;
-              chart.data.datasets.forEach(bs => bs.data = []);
-              chart.update();
-              // We could overlay a spinner here if desired
-            });
-            toast(`Fetching fresh data for ${symbol}...`, 2000);
+          // 2. Synthesize Shares (Use current if missing)
+          if (!h.shares && currentShares > 0) {
+            h.shares = parseFloat(currentShares.toFixed(2));
+          }
 
-            const modules = 'summaryProfile,financialData,earnings,defaultKeyStatistics,incomeStatementHistory,balanceSheetHistory,cashflowStatementHistory';
-            const url = `/api/quote?symbol=${encodeURIComponent(symbol)}&modules=${modules}`;
-            const res = await fetch(url);
-            if (!res.ok) throw new Error('Fetch failed');
+          // 3. Synthesize EPS
+          if (!h.eps && h.earnings && h.shares) {
+            h.eps = parseFloat((h.earnings / h.shares).toFixed(2));
+          }
 
-            const freshData = await res.json();
+          // 4. Synthesize PE (Use current as placeholder)
+          if (!h.pe) h.pe = currentPE;
 
-            // Merge into local cache so we don't re-fetch
-            if (window.__sp500Data) {
-              window.__sp500Data[symbol] = freshData;
-            } else {
-              mockStocks[symbol] = freshData; // Fallback cache
-            }
-            stockData = freshData;
+          // 5. Synthesize ROE (Earnings / Equity? - Skip if no equity)
+          // 6. Synthesize FCF (Earnings * 0.8 as rough proxy? No, leave 0 to avoid being too wrong)
+        });
 
-          } catch (err) {
-            console.error('Dynamic fetch failed:', err);
-            toast(`Could not load data for ${symbol}.`, 3000);
-            return;
+        // 7. Calculate Growth Rates
+        for (let i = 1; i < stockData.history.length; i++) {
+          const cur = stockData.history[i];
+          const prev = stockData.history[i - 1];
+
+          if (!cur.revGrowth && prev.revenue > 0) {
+            cur.revGrowth = parseFloat(((cur.revenue - prev.revenue) / prev.revenue * 100).toFixed(1));
+          }
+          if (!cur.earnGrowth && prev.earnings && Math.abs(prev.earnings) > 0) {
+            cur.earnGrowth = parseFloat(((cur.earnings - prev.earnings) / Math.abs(prev.earnings) * 100).toFixed(1));
           }
         }
       }
+    }
 
-      // Data Synthesis: Fill gaps if history is incomplete
-      if (stockData.history && stockData.history.length > 0) {
-        // Check if we need to synthesize
-        const needsSynth = !stockData.history[0].earnings;
+    const h = [...stockData.history].reverse();
+    const labels = h.map(d => d.year);
 
-        if (needsSynth) {
-          console.log(`[${stockData.symbol}] Synthesizing missing history metrics...`);
-          const currentMargin = stockData.profitMargin || 0;
-          const currentShares = (stockData.shares || 0) / 1e9; // Billions
-          const currentPE = stockData.pe || 0;
+    // Helper to create/update chart
+    const updateChart = (id, label, dataKey, color, formatType = 'currency', forceUnit = null) => {
+      const ctx = document.getElementById(id);
+      if (!ctx) return;
 
-          stockData.history.forEach((h, i) => {
-            // 1. Synthesize Earnings from Revenue * Current Margin (Fallback)
-            if (h.revenue && !h.earnings) {
-              h.earnings = parseFloat((h.revenue * (currentMargin / 100)).toFixed(2));
-              h.margin = currentMargin; // Assume constant margin if missing
-            }
+      let data = h.map(d => d[dataKey] || 0);
+      let finalLabel = label;
+      let unitSuffix = '';
+      let fullUnitName = '';
 
-            // 2. Synthesize Shares (Use current if missing)
-            if (!h.shares && currentShares > 0) {
-              h.shares = parseFloat(currentShares.toFixed(2));
-            }
+      // Dynamic Unit Logic (Billions vs Millions)
+      if (formatType === 'currency' && !forceUnit) {
+        const maxVal = Math.max(...data.map(Math.abs));
 
-            // 3. Synthesize EPS
-            if (!h.eps && h.earnings && h.shares) {
-              h.eps = parseFloat((h.earnings / h.shares).toFixed(2));
-            }
-
-            // 4. Synthesize PE (Use current as placeholder)
-            if (!h.pe) h.pe = currentPE;
-
-            // 5. Synthesize ROE (Earnings / Equity? - Skip if no equity)
-            // 6. Synthesize FCF (Earnings * 0.8 as rough proxy? No, leave 0 to avoid being too wrong)
-          });
-
-          // 7. Calculate Growth Rates
-          for (let i = 1; i < stockData.history.length; i++) {
-            const cur = stockData.history[i];
-            const prev = stockData.history[i - 1];
-
-            if (!cur.revGrowth && prev.revenue > 0) {
-              cur.revGrowth = parseFloat(((cur.revenue - prev.revenue) / prev.revenue * 100).toFixed(1));
-            }
-            if (!cur.earnGrowth && prev.earnings && Math.abs(prev.earnings) > 0) {
-              cur.earnGrowth = parseFloat(((cur.earnings - prev.earnings) / Math.abs(prev.earnings) * 100).toFixed(1));
-            }
-          }
-        }
-      }
-
-      const h = [...stockData.history].reverse();
-      const labels = h.map(d => d.year);
-
-      // Helper to create/update chart
-      const updateChart = (id, label, dataKey, color, formatType = 'currency', forceUnit = null) => {
-        const ctx = document.getElementById(id);
-        if (!ctx) return;
-
-        let data = h.map(d => d[dataKey] || 0);
-        let finalLabel = label;
-        let unitSuffix = '';
-        let fullUnitName = '';
-
-        // Dynamic Unit Logic (Billions vs Millions)
-        if (formatType === 'currency' && !forceUnit) {
-          const maxVal = Math.max(...data.map(Math.abs));
-
-          if (maxVal > 0 && maxVal < 1.0) {
-            data = data.map(v => v * 1000);
-            unitSuffix = 'M';
-            fullUnitName = 'Millions';
-            finalLabel = label.replace('($)', '($M)');
-          } else {
-            unitSuffix = 'B';
-            fullUnitName = 'Billions';
-            finalLabel = label.replace('($)', '($B)');
-          }
-        } else if (formatType === 'currency' && forceUnit) {
-          // For EPS, it's just $
-          unitSuffix = '';
-        } else if (formatType === 'number' && label.includes('(B)')) {
-          // For Shares
+        if (maxVal > 0 && maxVal < 1.0) {
+          data = data.map(v => v * 1000);
+          unitSuffix = 'M';
+          fullUnitName = 'Millions';
+          finalLabel = label.replace('($)', '($M)');
+        } else {
           unitSuffix = 'B';
           fullUnitName = 'Billions';
+          finalLabel = label.replace('($)', '($B)');
         }
+      } else if (formatType === 'currency' && forceUnit) {
+        // For EPS, it's just $
+        unitSuffix = '';
+      } else if (formatType === 'number' && label.includes('(B)')) {
+        // For Shares
+        unitSuffix = 'B';
+        fullUnitName = 'Billions';
+      }
 
-        // Update HTML Header if possible
-        // The canvas is inside .chart-wrapper, which is sibling to <h3>Title</h3>
-        try {
-          const wrapper = ctx.parentElement;
-          if (wrapper && wrapper.previousElementSibling && wrapper.previousElementSibling.tagName === 'H3') {
-            const h3 = wrapper.previousElementSibling;
-            // Reset to base title first (remove existing parens if any to avoid duplication)
-            // Actually, simpler to just set it based on the ID map or just append if not present
-            // But we don't have the base title map here easily unless we parse it.
-            // Let's rely on the fact that we know the base titles from the calls below.
-            // We can pass the base title to updateChart?
-            // Or just replace text content if we know what it is.
+      // Update HTML Header if possible
+      // The canvas is inside .chart-wrapper, which is sibling to <h3>Title</h3>
+      try {
+        const wrapper = ctx.parentElement;
+        if (wrapper && wrapper.previousElementSibling && wrapper.previousElementSibling.tagName === 'H3') {
+          const h3 = wrapper.previousElementSibling;
+          // Reset to base title first (remove existing parens if any to avoid duplication)
+          // Actually, simpler to just set it based on the ID map or just append if not present
+          // But we don't have the base title map here easily unless we parse it.
+          // Let's rely on the fact that we know the base titles from the calls below.
+          // We can pass the base title to updateChart?
+          // Or just replace text content if we know what it is.
 
-            // Better approach: We passed 'label' which is like "Revenue ($)".
-            // Let's use that to derive the header.
-            // Or just map IDs to Base Titles.
-            const baseTitles = {
-              'chartRevenue': 'Revenue',
-              'chartEarnings': 'Earnings (Net Income)',
-              'chartFCF': 'Free Cash Flow',
-              'chartShares': 'Shares Outstanding'
-            };
+          // Better approach: We passed 'label' which is like "Revenue ($)".
+          // Let's use that to derive the header.
+          // Or just map IDs to Base Titles.
+          const baseTitles = {
+            'chartRevenue': 'Revenue',
+            'chartEarnings': 'Earnings (Net Income)',
+            'chartFCF': 'Free Cash Flow',
+            'chartShares': 'Shares Outstanding'
+          };
 
-            if (baseTitles[id]) {
-              if (fullUnitName) {
-                h3.textContent = `${baseTitles[id]} (${fullUnitName})`;
-              } else {
-                h3.textContent = baseTitles[id];
-              }
+          if (baseTitles[id]) {
+            if (fullUnitName) {
+              h3.textContent = `${baseTitles[id]} (${fullUnitName})`;
+            } else {
+              h3.textContent = baseTitles[id];
             }
           }
-        } catch (e) { console.warn('Could not update header', e); }
-
-        if (insightsCharts[id]) {
-          insightsCharts[id].destroy();
         }
+      } catch (e) { console.warn('Could not update header', e); }
 
-        const isAllZero = data.every(v => v === 0);
+      if (insightsCharts[id]) {
+        insightsCharts[id].destroy();
+      }
 
-        try {
-          insightsCharts[id] = new Chart(ctx, {
-            type: 'bar',
-            data: {
-              labels: labels,
-              datasets: [{
-                label: finalLabel,
-                data: data,
-                backgroundColor: isAllZero ? 'transparent' : color,
-                borderRadius: 6,
-                borderSkipped: false,
-                clip: false, // Allow drawing outside chart area
-                // User Request: "Make bar get bigger on hover"
-                // We simulate this by adding a border that matches the background color
-                hoverBackgroundColor: color,
-                hoverBorderColor: color,
-                hoverBorderWidth: 4
-              }]
+      const isAllZero = data.every(v => v === 0);
+
+      try {
+        insightsCharts[id] = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: finalLabel,
+              data: data,
+              backgroundColor: isAllZero ? 'transparent' : color,
+              borderRadius: 6,
+              borderSkipped: false,
+              clip: false, // Allow drawing outside chart area
+              // User Request: "Make bar get bigger on hover"
+              // We simulate this by adding a border that matches the background color
+              hoverBackgroundColor: color,
+              hoverBorderColor: color,
+              hoverBorderWidth: 4
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            layout: {
+              padding: {
+                top: 30, // More space for labels
+                bottom: 10
+              }
             },
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              layout: {
-                padding: {
-                  top: 30, // More space for labels
-                  bottom: 10
-                }
-              },
-              // Hover configuration to ensure fast interaction
-              hover: {
-                mode: 'index',
-                intersect: true
-              },
-              plugins: {
-                legend: { display: false },
-                tooltip: { enabled: false }, // User Request: "I don't want that pop-up"
-                // We kept the callbacks before, but now we disable the whole thing.
+            // Hover configuration to ensure fast interaction
+            hover: {
+              mode: 'index',
+              intersect: true
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: { enabled: false }, // User Request: "I don't want that pop-up"
+              // We kept the callbacks before, but now we disable the whole thing.
 
-              },
-              scales: {
-                y: {
-                  beginAtZero: true,
-                  grid: {
-                    display: false, // Remove grid lines for a cleaner look
-                    drawBorder: false
-                  },
-                  border: { display: false },
-                  ticks: { display: false } // Hide Y-axis labels completely since we have bar labels
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                grid: {
+                  display: false, // Remove grid lines for a cleaner look
+                  drawBorder: false
                 },
-                x: {
-                  grid: { display: false },
-                  ticks: {
-                    color: '#9ca3af',
-                    font: {
-                      size: 11,
-                      family: '"Inter", sans-serif'
-                    }
+                border: { display: false },
+                ticks: { display: false } // Hide Y-axis labels completely since we have bar labels
+              },
+              x: {
+                grid: { display: false },
+                ticks: {
+                  color: '#9ca3af',
+                  font: {
+                    size: 11,
+                    family: '"Inter", sans-serif'
                   }
                 }
               }
-            },
-            plugins: [{
-              id: 'inlineBarLabels',
-              afterDraw: (chart) => {
-                if (isAllZero) return;
-                const { ctx } = chart;
-                const activeEls = chart.getActiveElements(); // Get hovered elements
+            }
+          },
+          plugins: [{
+            id: 'inlineBarLabels',
+            afterDraw: (chart) => {
+              if (isAllZero) return;
+              const { ctx } = chart;
+              const activeEls = chart.getActiveElements(); // Get hovered elements
 
+              ctx.save();
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'bottom';
+
+              chart.data.datasets.forEach((dataset, i) => {
+                if (chart.isDatasetVisible && !chart.isDatasetVisible(i)) return;
+                const meta = chart.getDatasetMeta(i);
+                if (!meta || !meta.data) return;
+
+                meta.data.forEach((bar, idx) => {
+                  const val = dataset.data[idx];
+                  if (val == null || !isFinite(val)) return;
+
+                  // Check if this specific bar is active/hovered
+                  const isActive = activeEls.some(el => el.datasetIndex === i && el.index === idx);
+
+                  // Dynamic Styling based on hover state
+                  if (isActive) {
+                    ctx.fillStyle = '#ffffff'; // pure white
+                    ctx.font = 'bold 13px "Inter", sans-serif'; // Bigger font
+                  } else {
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+                    ctx.font = '600 10px "Inter", sans-serif'; // Default size
+                  }
+
+                  // --- FORMATTING LOGIC ---
+                  let formatted = val;
+                  if (typeof val === 'number') {
+                    // Enforce 2 decimals max
+                    formatted = parseFloat(val.toFixed(2));
+                  }
+
+                  let text = formatted;
+                  if (formatType === 'percent') text = formatted + '%';
+                  else if (formatType === 'currency') text = '$' + formatted + unitSuffix;
+                  else text = formatted + (unitSuffix ? unitSuffix : '');
+                  // ------------------------------------------------------
+
+                  let x = bar.x;
+                  let yVal = bar.y;
+
+                  // Fallbacks for coordinates
+                  if ((x === undefined || isNaN(x)) && bar.tooltipPosition) {
+                    const pos = bar.tooltipPosition();
+                    x = pos.x;
+                    yVal = pos.y;
+                  }
+
+                  if (x === undefined || isNaN(x) || yVal === undefined || isNaN(yVal)) return;
+
+                  // Draw slightly above bar
+                  let y = yVal - 5;
+                  if (y < 12) y = 12; // Prevent clipping top
+
+                  ctx.fillText(text, x, y);
+                });
+              });
+              ctx.restore();
+            }
+          }, {
+            id: 'emptyState',
+            afterDraw(chart) {
+              if (isAllZero) {
+                const { ctx, chartArea: { left, top, width, height } } = chart;
                 ctx.save();
                 ctx.textAlign = 'center';
-                ctx.textBaseline = 'bottom';
-
-                chart.data.datasets.forEach((dataset, i) => {
-                  if (chart.isDatasetVisible && !chart.isDatasetVisible(i)) return;
-                  const meta = chart.getDatasetMeta(i);
-                  if (!meta || !meta.data) return;
-
-                  meta.data.forEach((bar, idx) => {
-                    const val = dataset.data[idx];
-                    if (val == null || !isFinite(val)) return;
-
-                    // Check if this specific bar is active/hovered
-                    const isActive = activeEls.some(el => el.datasetIndex === i && el.index === idx);
-
-                    // Dynamic Styling based on hover state
-                    if (isActive) {
-                      ctx.fillStyle = '#ffffff'; // pure white
-                      ctx.font = 'bold 13px "Inter", sans-serif'; // Bigger font
-                    } else {
-                      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
-                      ctx.font = '600 10px "Inter", sans-serif'; // Default size
-                    }
-
-                    // --- FORMATTING LOGIC ---
-                    let formatted = val;
-                    if (typeof val === 'number') {
-                      // Enforce 2 decimals max
-                      formatted = parseFloat(val.toFixed(2));
-                    }
-
-                    let text = formatted;
-                    if (formatType === 'percent') text = formatted + '%';
-                    else if (formatType === 'currency') text = '$' + formatted + unitSuffix;
-                    else text = formatted + (unitSuffix ? unitSuffix : '');
-                    // ------------------------------------------------------
-
-                    let x = bar.x;
-                    let yVal = bar.y;
-
-                    // Fallbacks for coordinates
-                    if ((x === undefined || isNaN(x)) && bar.tooltipPosition) {
-                      const pos = bar.tooltipPosition();
-                      x = pos.x;
-                      yVal = pos.y;
-                    }
-
-                    if (x === undefined || isNaN(x) || yVal === undefined || isNaN(yVal)) return;
-
-                    // Draw slightly above bar
-                    let y = yVal - 5;
-                    if (y < 12) y = 12; // Prevent clipping top
-
-                    ctx.fillText(text, x, y);
-                  });
-                });
+                ctx.textBaseline = 'middle';
+                ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
+                ctx.font = 'italic 13px "Inter", sans-serif';
+                ctx.fillText('Data Unavailable', left + width / 2, top + height / 2);
                 ctx.restore();
               }
-            }, {
-              id: 'emptyState',
-              afterDraw(chart) {
-                if (isAllZero) {
-                  const { ctx, chartArea: { left, top, width, height } } = chart;
-                  ctx.save();
-                  ctx.textAlign = 'center';
-                  ctx.textBaseline = 'middle';
-                  ctx.fillStyle = 'rgba(128, 128, 128, 0.4)';
-                  ctx.font = 'italic 13px "Inter", sans-serif';
-                  ctx.fillText('Data Unavailable', left + width / 2, top + height / 2);
-                  ctx.restore();
-                }
-              }
-            }]
-          });
-        } catch (err) {
-          console.error(`Error rendering chart ${id}:`, err);
-          // Display fallback error in the container if possible, or just toast
-          toast(`Error rendering chart ${label}`);
-        }
-      };
+            }
+          }]
+        });
+      } catch (err) {
+        console.error(`Error rendering chart ${id}:`, err);
+        // Display fallback error in the container if possible, or just toast
+        toast(`Error rendering chart ${label}`);
+      }
+    };
 
-      // 1. Revenue
-      updateChart('chartRevenue', 'Revenue ($)', 'revenue', '#2563eb', 'currency');
-      // 2. Revenue Growth
-      updateChart('chartRevenueGrowth', 'Growth (%)', 'revGrowth', '#3b82f6', 'percent');
-      // 3. Earnings
-      updateChart('chartEarnings', 'Earnings ($)', 'earnings', '#10b981', 'currency');
-      // 4. Earnings Growth
-      updateChart('chartEarningsGrowth', 'Growth (%)', 'earnGrowth', '#34d399', 'percent');
-      // 5. EPS
-      updateChart('chartEPS', 'EPS ($)', 'eps', '#f59e0b', 'currency', true); // Force unit (don't auto-scale EPS to millions/billions logic same way)
-      // 6. FCF
-      updateChart('chartFCF', 'FCF ($)', 'fcf', '#8b5cf6', 'currency');
-      // 7. Margin
-      updateChart('chartMargin', 'Margin (%)', 'margin', '#ec4899', 'percent');
-      // 8. Shares
-      updateChart('chartShares', 'Shares (B)', 'shares', '#6366f1', 'number');
-      // 9. PE
-      updateChart('chartPE', 'P/E', 'pe', '#f43f5e', 'number');
-      // 10. ROE
-      updateChart('chartROE', 'ROE (%)', 'roe', '#14b8a6', 'percent');
-    }
+    // 1. Revenue
+    updateChart('chartRevenue', 'Revenue ($)', 'revenue', '#2563eb', 'currency');
+    // 2. Revenue Growth
+    updateChart('chartRevenueGrowth', 'Growth (%)', 'revGrowth', '#3b82f6', 'percent');
+    // 3. Earnings
+    updateChart('chartEarnings', 'Earnings ($)', 'earnings', '#10b981', 'currency');
+    // 4. Earnings Growth
+    updateChart('chartEarningsGrowth', 'Growth (%)', 'earnGrowth', '#34d399', 'percent');
+    // 5. EPS
+    updateChart('chartEPS', 'EPS ($)', 'eps', '#f59e0b', 'currency', true); // Force unit (don't auto-scale EPS to millions/billions logic same way)
+    // 6. FCF
+    updateChart('chartFCF', 'FCF ($)', 'fcf', '#8b5cf6', 'currency');
+    // 7. Margin
+    updateChart('chartMargin', 'Margin (%)', 'margin', '#ec4899', 'percent');
+    // 8. Shares
+    updateChart('chartShares', 'Shares (B)', 'shares', '#6366f1', 'number');
+    // 9. PE
+    updateChart('chartPE', 'P/E', 'pe', '#f43f5e', 'number');
+    // 10. ROE
+    updateChart('chartROE', 'ROE (%)', 'roe', '#14b8a6', 'percent');
+  }
 
-    init();
+  init();
