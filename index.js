@@ -1,4 +1,4 @@
-console.log('Common Investor v62 Loaded');
+console.log('Common Investor Initialized v63');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
@@ -1308,45 +1308,54 @@ function renderSavedItems() {
   // 2. Render Local IMMEDIATELY (Source of Truth)
   renderList(localData.items);
 
-  // 3. Cloud Background Sync (Backup/Restore)
+  // 3. Cloud Background Sync (Smart Sync: Last Write Wins)
   const username = localStorage.getItem('username');
   if (username) {
-    if (localData.items.length > 0) {
-      // SCENARIO A: We have work. Cloud is just a backup.
-      // Force Push (Fire & Forget)
-      console.log('Local has data. Enforcing backup to Cloud.');
-      pushToCloud(username, localData).catch(err => console.warn('Backup failed (offline?):', err));
-    } else {
-      // SCENARIO B: Local is empty. Maybe new device?
-      // Check Cloud for Restore.
-      console.log('Local is empty. Checking Cloud for restore...');
-      if (!savedList.hasChildNodes() || savedList.querySelector('.empty-state')) {
-        savedList.innerHTML = '<div class="empty-state">Checking cloud backup...</div>';
-      }
+    // ALWAYS check cloud for updates (not just if local is empty)
+    fetch(`/api/user-data?username=${username}&t=${Date.now()}`)
+      .then(res => res.json())
+      .then(cloudWrapper => {
+        let cloudItems = [];
+        let cloudTS = 0;
 
-      fetch(`/api/user-data?username=${username}&t=${Date.now()}`)
-        .then(res => res.json())
-        .then(cloudWrapper => {
-          let cloudItems = [];
-          if (Array.isArray(cloudWrapper)) cloudItems = cloudWrapper;
-          else if (cloudWrapper && Array.isArray(cloudWrapper.items)) cloudItems = cloudWrapper.items;
+        if (Array.isArray(cloudWrapper)) {
+          // Legacy format (just an array)
+          cloudItems = cloudWrapper;
+          // Assign a heuristic TS if missing (e.g. now, or 0 if empty)
+          cloudTS = cloudItems.length > 0 ? Date.now() : 0;
+        } else if (cloudWrapper && Array.isArray(cloudWrapper.items)) {
+          // New format
+          cloudItems = cloudWrapper.items;
+          cloudTS = cloudWrapper.lastModified || 0;
+        }
 
-          if (cloudItems.length > 0) {
-            console.log('Restoring from Cloud...', cloudItems);
-            localData = { lastModified: Date.now(), items: cloudItems };
-            localStorage.setItem(storageKey, JSON.stringify(localData));
-            renderList(localData.items);
-            toast('Restored from Cloud', 2000);
-          } else {
-            // Cloud also empty
-            renderList([]);
-          }
-        })
-        .catch(err => {
-          console.warn('Cloud check failed:', err);
-          renderList([]); // Just show empty
-        });
-    }
+        const localTS = localData.lastModified || 0;
+
+        console.log(`Sync Check - Local: ${localTS}, Cloud: ${cloudTS}`);
+
+        // CASE A: Cloud is NEWER -> Sync Down (Overwrite Local)
+        // We use a small buffer (e.g. 1000ms) to avoid race conditions if clocks are slightly off, 
+        // but generally strict > is fine for "last write wins".
+        if (cloudTS > localTS && cloudItems.length > 0) {
+          console.log('Cloud is newer. Syncing down...', cloudItems);
+          localData = { lastModified: cloudTS, items: cloudItems };
+          localStorage.setItem(storageKey, JSON.stringify(localData));
+
+          // Re-render immediately to show new data
+          renderList(localData.items);
+          toast('Synced from Cloud', 2000);
+        }
+        // CASE B: Local is NEWER -> Push Up (Backup)
+        else if (localTS > cloudTS && localData.items.length > 0) {
+          console.log('Local is newer. Pushing to Cloud...');
+          pushToCloud(username, localData).catch(err => console.warn('Backup failed:', err));
+        }
+        // CASE C: Startup with empty local but data on cloud (New device scenario)
+        // (Handled by Case A implicitly if cloudTS > 0, but if localData was just created it has TS=0)
+
+        // CASE D: Both Equal -> Do nothing.
+      })
+      .catch(err => console.warn('Cloud check failed:', err));
   }
 }
 
