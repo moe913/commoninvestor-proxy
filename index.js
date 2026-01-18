@@ -1035,6 +1035,17 @@ function saveCalculationToHub() {
       return parseFloat((raw || '').replace(/[^0-9.-]/g, '')) || 0;
     };
 
+    // Helper to extract Display Text (preserving units/formatting)
+    const getTextVal = (el) => {
+      if (!el) return '-';
+      // If it uses our fmtAbbrFullHtml structure, grab the abbreviation
+      const abbr = el.querySelector('.val-abbr');
+      if (abbr) return abbr.textContent.trim();
+
+      const val = (el.tagName === 'INPUT' || el.tagName === 'SELECT') ? el.value : el.textContent;
+      return (val || '').trim();
+    };
+
     // Capture inputs
     // Note: This logic captures the raw number in the input box.
     // The render logic treats it as a percentage for thesis display.
@@ -1079,10 +1090,10 @@ function saveCalculationToHub() {
       stock: ticker,
       date: date,
       current: {
-        marketValue: getVal(document.getElementById('marketValue')),
+        marketValue: getTextVal(document.getElementById('marketValue')),
         revenue: getVal(revenue),
         shares: getVal(shares),
-        earnings: getVal(document.getElementById('earningsValue')),
+        earnings: getTextVal(document.getElementById('earningsValue')), // Use text to keep "B"/"M"
         eps: getVal(document.getElementById('epsValue')),
         pe: getVal(pe)
       },
@@ -1105,14 +1116,17 @@ function saveCalculationToHub() {
     const currentMetrics = {
       price: getVal(price),
       pe: getVal(pe),
-      revenue: getVal(revenue),
-      netIncome: getVal(document.getElementById('earningsValue')),
+      revenue: getVal(revenue), // Revenue input is usually raw number, handled by UI
+      netIncome: getTextVal(document.getElementById('earningsValue')), // Fix: Use text for display
       profitMargin: getVal(document.getElementById('profitMargin')),
-      shares: getVal(shares)
+      shares: getVal(shares),
+      marketValue: getTextVal(document.getElementById('marketValue')) // Ensure this is also formatted
     };
 
     const results = {
       futurePrice: getVal(fPrice),
+      futureRevenue: getTextVal(document.getElementById('futureRevenueValue')), // Fix: Capture Future Revenue
+      futureShares: getTextVal(document.getElementById('futureSharesValue')),   // Fix: Capture Future Shares
       upside: '-',
       cagr: '-',
     };
