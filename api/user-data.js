@@ -39,16 +39,12 @@ module.exports = async (req, res) => {
                 rawContent = Buffer.from(fileData.content, 'base64').toString('utf-8');
                 res.setHeader('X-Data-Source', 'cloud');
             } else {
-                console.warn('Falling back to local file. Cloud fetch failed or empty.');
-                // Fallback to local file if GitHub API fails/token missing
-                const fs = require('fs');
-                const path = require('path');
-                const localPath = path.join(process.cwd(), FILE_PATH);
-                if (fs.existsSync(localPath)) {
-                    console.log('Using local fallback for calculations.json');
-                    rawContent = fs.readFileSync(localPath, 'utf8');
-                    res.setHeader('X-Data-Source', 'local');
-                }
+                // FORCE ERROR: Do not fallback to local file on production as it's ephemeral.
+                // If the file doesn't exist on GitHub (404), that's fine -> returns new empty user data.
+                // But if GITHUB_TOKEN is broken, we should know.
+                // Actually, if fileData is null (404), we treat as empty DB.
+                // If auth failed, fetchFileFromGitHub should have thrown already.
+                res.setHeader('X-Data-Source', 'empty-cloud');
             }
 
             if (!rawContent) return res.status(200).json({ lastModified: 0, items: [] });

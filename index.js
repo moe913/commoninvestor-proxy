@@ -1,4 +1,4 @@
-console.log('Common Investor Initialized v64.2');
+console.log('Common Investor Initialized v65');
 // ===== Utilities =====
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
