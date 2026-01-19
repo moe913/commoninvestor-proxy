@@ -1319,26 +1319,33 @@ function checkForRescueOpportunity(cloudItems) {
 
     let foundHidden = [];
 
-    // Scan ALL local storage keys for potential data
-    for (let i = 0; i < localStorage.length; i++) {
-      const key = localStorage.key(i);
-      if (key && key.startsWith('hub_saved_calculations')) {
-        try {
-          const raw = localStorage.getItem(key);
-          const parsed = JSON.parse(raw);
-          const items = Array.isArray(parsed) ? parsed : (parsed.items || []);
-          if (items.length > 0) {
-            // Check if these items are missing from cloud
-            const cloudTimestamps = new Set(cloudItems.map(c => c.timestamp));
-            items.forEach(localItem => {
-              if (!cloudTimestamps.has(localItem.timestamp)) {
-                foundHidden.push(localItem);
-              }
-            });
-          }
-        } catch (e) { }
-      }
-    }
+    // Scan Local Storage for correct keys (Current User + Guest)
+    const currentKey = getHubStorageKey();
+    const candidateKeys = new Set([currentKey, 'savedHubItems']);
+
+    // Also verify legacy 'hub_saved_calculations' just in case
+    candidateKeys.add('hub_saved_calculations');
+
+    candidateKeys.forEach(key => {
+      try {
+        const raw = localStorage.getItem(key);
+        if (!raw) return;
+
+        const parsed = JSON.parse(raw);
+        const items = Array.isArray(parsed) ? parsed : (parsed.items || []);
+
+        if (items.length > 0) {
+          // Check if these items are missing from cloud
+          const cloudTimestamps = new Set(cloudItems.map(c => c.timestamp));
+          items.forEach(localItem => {
+            // Robust check: timestamp match
+            if (localItem.timestamp && !cloudTimestamps.has(localItem.timestamp)) {
+              foundHidden.push(localItem);
+            }
+          });
+        }
+      } catch (e) { }
+    });
 
     if (foundHidden.length > 0) {
       console.log(`Rescue Scanner: Found ${foundHidden.length} hidden items!`);
