@@ -4528,7 +4528,7 @@ async function renderInsightsCharts(stockDataOrSymbol) {
   updateChart('chartROE', 'ROE (%)', 'roe', '#14b8a6', 'percent');
 }
 
-}
+
 
 try {
   init();
