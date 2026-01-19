@@ -3766,6 +3766,7 @@ Earnings: ${document.getElementById('futureEarnings').textContent}
   }
 
   function switchTab(tabName) {
+    window.switchTab = switchTab; // Ensure global availability
     console.log('[DEBUG] switchTab called with:', tabName);
     // Reset all
     [tabProjections, tabInsights, tabHub].forEach(el => el && el.classList.remove('active'));
@@ -4536,4 +4537,9 @@ Earnings: ${document.getElementById('futureEarnings').textContent}
 
 }
 
-init();
+try {
+  init();
+} catch (e) {
+  console.error('Critical Init Error:', e);
+  alert('Application Error: ' + e.message + '\\nCheck console for details.');
+}
