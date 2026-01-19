@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sync Diagnostic</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background: #111;
+            color: #eee;
+        }
+
+        .card {
+            background: #222;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #aaa;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #0070f3;
+            color: white;
+            border: none;
+            borderRadius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        pre {
+            background: #000;
+            padding: 10px;
+            overflow-x: auto;
+            color: #0f0;
+            border: 1px solid #333;
+        }
+
+        .status {
+            font-weight: bold;
+        }
+
+        .success {
+            color: #4caf50;
+        }
+
+        .error {
+            color: #f44336;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>☁️ Sync Diagnostic Tool</h2>
+
+    <div class="card">
+        <h3>1. Authentication State</h3>
+        <p>Premium: <span id="isPremium">...</span></p>
+        <p>Username: <span id="username">...</span></p>
+        <div style="font-size:12px; color:#888; margin-bottom:10px">Note: Username logic enforces lowercase
+            automatically.</div>
+        <button onclick="checkLocalState()">Refresh Local State</button>
+    </div>
+
+    <div class="card">
+        <h3>2. API Connectivity Test</h3>
+        <p>This attempts to fetch your data directly from the server.</p>
+        <button onclick="testApiFetch()">Test Fetch (GET)</button>
+        <div id="fetchResult" style="margin-top:10px"></div>
+    </div>
+
+    <div class="card">
+        <h3>3. Write Test (Safe)</h3>
+        <p>This attempts to save a timestamp to the server to verify write permissions.</p>
+        <button onclick="testApiWrite()">Test Write (POST)</button>
+        <div id="writeResult" style="margin-top:10px"></div>
+    </div>
+
+    <script>
+        function log(id, msg, isError = false) {
+            const el = document.getElementById(id);
+            el.innerHTML = `<div class="${isError ? 'error' : 'success'}">${new Date().toLocaleTimeString()}: ${msg}</div>` + el.innerHTML;
+        }
+
+        function checkLocalState() {
+            const isPrem = localStorage.getItem('isPremium');
+            const user = localStorage.getItem('username');
+            document.getElementById('isPremium').textContent = isPrem || 'null';
+            document.getElementById('username').textContent = user || 'null';
+
+            if (!user) {
+                alert('No username found in Local Storage. Please log in on the main app first.');
+            }
+        }
+
+        async function testApiFetch() {
+            const user = localStorage.getItem('username');
+            if (!user) return alert('No username');
+
+            const div = document.getElementById('fetchResult');
+            div.innerHTML = 'Fetching...';
+
+            try {
+                const start = Date.now();
+                const res = await fetch(`/api/user-data?username=${user}&t=${Date.now()}`);
+                const end = Date.now();
+
+                if (res.ok) {
+                    const data = await res.json();
+                    const len = data.items ? data.items.length : (Array.isArray(data) ? data.length : 0);
+                    div.innerHTML = `<pre class="success">Success (${end - start}ms)\nItems Retrieved: ${len}\nLast Modified: ${new Date(data.lastModified).toLocaleString()}</pre>`;
+                } else {
+                    const text = await res.text();
+                    div.innerHTML = `<pre class="error">Failed (${res.status})\n${text}</pre>`;
+                }
+            } catch (e) {
+                div.innerHTML = `<pre class="error">Network Error:\n${e.message}</pre>`;
+            }
+        }
+
+        async function testApiWrite() {
+            const user = localStorage.getItem('username');
+            if (!user) return alert('No username');
+
+            const div = document.getElementById('writeResult');
+            div.innerHTML = 'Writing...';
+
+            try {
+                const fetchRes = await fetch(`/api/user-data?username=${user}`);
+                if (!fetchRes.ok) throw new Error('Fetch failed before write test');
+                const currentData = await fetchRes.json();
+
+                // Just update timestamp
+                currentData.lastModified = Date.now();
+
+                const res = await fetch('/api/user-data', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: user, data: currentData })
+                });
+
+                if (res.ok) {
+                    div.innerHTML = `<pre class="success">Write Success!</pre>`;
+                } else {
+                    const text = await res.text();
+                    div.innerHTML = `<pre class="error">Write Failed (${res.status})\n${text}</pre>`;
+                }
+            } catch (e) {
+                div.innerHTML = `<pre class="error">Write Error:\n${e.message}</pre>`;
+            }
+        }
+
+        // Init
+        checkLocalState();
+    </script>
+</body>
+
+</html>
