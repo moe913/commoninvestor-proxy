@@ -1495,86 +1495,95 @@ window.performSync = () => {
 
   // Global Cloud-Only Sync Function (v71.2)
   // itemsToMerge: Can be a single item (object) or an array of items (rescue mission)
-  window.performSync = (itemsToMerge = null) => {
-    return new Promise((resolve, reject) => {
-      const userNow = localStorage.getItem('username');
-      if (!userNow) {
-        resolve([]);
-        return;
+  // Global Cloud-Only Sync Function (v71.2)
+  // itemsToMerge: Can be a single item (object) or an array of items (rescue mission)
+  window.performSync = async (itemsToMerge = null) => {
+    const userNow = localStorage.getItem('username');
+    if (!userNow) return [];
+
+    updateCloudStatus('syncing');
+
+    try {
+      // 1. PULL FROM CLOUD (The Truth)
+      const res = await fetch(`/api/user-data?username=${userNow}&t=${Date.now()}`);
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+
+      const cloudWrapper = await res.json();
+      let cloudItems = [];
+      if (Array.isArray(cloudWrapper)) {
+        cloudItems = cloudWrapper;
+      } else if (cloudWrapper && Array.isArray(cloudWrapper.items)) {
+        cloudItems = cloudWrapper.items;
       }
 
-      updateCloudStatus('syncing');
+      // 2. MERGE LOGIC (Cloud + New Items + Rescue)
+      let mergedItems = [...cloudItems];
+      let incomingItems = [];
+      if (itemsToMerge) {
+        if (Array.isArray(itemsToMerge)) incomingItems = itemsToMerge;
+        else incomingItems = [itemsToMerge];
+      }
 
-      // 1. PULL FROM CLOUD (The Truth)
-      fetch(`/api/user-data?username=${userNow}&t=${Date.now()}`)
-        .then(res => {
-          if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-          return res.json();
-        })
-        .then(cloudWrapper => {
-          let cloudItems = [];
-          if (Array.isArray(cloudWrapper)) {
-            cloudItems = cloudWrapper;
-          } else if (cloudWrapper && Array.isArray(cloudWrapper.items)) {
-            cloudItems = cloudWrapper.items;
-          }
+      if (incomingItems.length > 0) {
+        console.log(`Merging ${incomingItems.length} new/rescue items into Cloud List`);
+        mergedItems = incomingItems.concat(mergedItems); // Prepend new items
+      }
 
-          // 2. MERGE LOGIC (Cloud + New Items + Rescue)
-          let mergedItems = [...cloudItems];
-          let hasNewData = false;
+      // B) RESCUE MISSION (Silent Auto-Rescue Logic)
+      try {
+        const storageKey = getHubStorageKey();
+        const localRaw = localStorage.getItem(storageKey);
+        if (localRaw) {
+          const parsed = JSON.parse(localRaw);
+          const localItems = Array.isArray(parsed) ? parsed : (parsed.items || []);
+          // Note: We normally rely on explicit rescue now, but keeping this safe
+        }
+      } catch (e) { }
 
-          // Normalize itemsToMerge to array
-          let incomingItems = [];
-          if (itemsToMerge) {
-            if (Array.isArray(itemsToMerge)) incomingItems = itemsToMerge;
-            else incomingItems = [itemsToMerge];
-          }
+      // De-duplicate by timestamp & Sort
+      const itemMap = new Map();
+      const baseTime = Date.now();
 
-          if (incomingItems.length > 0) {
-            console.log(`Merging ${incomingItems.length} new/rescue items into Cloud List`);
-            mergedItems = itemsToMerge.concat(mergedItems); // Prepend new items
-            hasNewData = true;
-          }
+      mergedItems.forEach((item, i) => {
+        if (!item) return;
+        if (!item.timestamp) item.timestamp = baseTime - i;
+        itemMap.set(item.timestamp, item);
+      });
 
-          // B) RESCUE MISSION (Silent Auto-Rescue Logic)
-          // Still keep this for auto-fix attempts
-          try {
-            const storageKey = getHubStorageKey();
-            const localRaw = localStorage.getItem(storageKey);
-            if (localRaw) {
-              const parsed = JSON.parse(localRaw);
-              const localItems = Array.isArray(parsed) ? parsed : (parsed.items || []);
-              // Check if local items are NOT in cloud (simple count check or timestamp check)
-              // We just dump them in and let the map de-dupe
-              if (localItems.length > 0) {
-                // Only log if explicit
-                // mergedItems = mergedItems.concat(localItems); // Rely on manual button for big rescues now?
-                // No, let's keep it but maybe it wasn't working due to key mismatch.
-                // We will implement explicit button scan next.
-              }
-            }
-          } catch (e) { }
+      const finalItems = Array.from(itemMap.values()).sort((a, b) => b.timestamp - a.timestamp);
 
-          // De-duplicate by timestamp & Sort
-          const itemMap = new Map();
-          const baseTime = Date.now();
+      // 3. PUSH TO CLOUD
+      const dataWrapper = { lastModified: Date.now(), items: finalItems };
 
-          mergedItems.forEach((item, i) => {
-            if (!item) return;
-            if (!item.timestamp) item.timestamp = baseTime - i;
-            itemMap.set(item.timestamp, item);
-          });
+      const saveRes = await fetch('/api/user-data', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: userNow, data: dataWrapper })
+      });
 
-          const finalItems = Array.from(itemMap.values()).sort((a, b) => b.timestamp - a.timestamp);
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ username, data: dataWrapper })
-        });
+      if (!saveRes.ok) throw new Error('Save to cloud failed');
+
       console.log('Cloud Backup Success');
+      updateCloudStatus('success');
+
+      // Update Local Storage to match Cloud Truth
+      const storageKey = getHubStorageKey();
+      localStorage.setItem(storageKey, JSON.stringify(dataWrapper));
+
+      // Re-render UI
+      // If we are on Hub tab, we should refresh the list
+      if (document.getElementById('hubSavedList')) {
+        renderSavedItems();
+      }
+
+      return finalItems;
+
     } catch (e) {
       console.error('Cloud Backup Failed', e);
-      throw e; // Let caller verify/toast if needed
+      updateCloudStatus('error', e.message);
+      throw e;
     }
-  }
+  };
 
   function renderList(savedItems) {
     const savedList = document.getElementById('hubSavedList');
@@ -1941,7 +1950,7 @@ Earnings: ${document.getElementById('futureEarnings').textContent}
 
     renderCommunityTop10();
 
-    switchTab('projections');
+    // switchTab('projections'); // removed to prevent ReferenceError (local scope)
 
     // Hide charts
     const histContainer = document.getElementById('historyChartContainer');
@@ -3781,20 +3790,6 @@ Earnings: ${document.getElementById('futureEarnings').textContent}
 
       // Check Premium
       if (!isPremium) {
-        renderLockedView(insightsTab);
-        return;
-      }
-      unlockView(insightsTab);
-
-      // Render charts if stock selected
-      const symbol = stock.value.toUpperCase();
-      renderInsightsCharts(symbol || 'META');
-    } else if (tabName === 'hub') {
-      if (tabHub) tabHub.classList.add('active');
-      if (hubTab) hubTab.classList.add('active');
-
-      // Check Premium
-      if (!isPremium) {
         renderLockedView(hubTab);
         return;
       }
@@ -4523,4 +4518,6 @@ Earnings: ${document.getElementById('futureEarnings').textContent}
     updateChart('chartROE', 'ROE (%)', 'roe', '#14b8a6', 'percent');
   }
 
-  init();
+}
+
+init();

@@ -1,0 +1,172 @@
+{
+  "moe": [
+    {
+      "ticker": "MU",
+      "date": "Dec 19",
+      "timestamp": 1766192672884,
+      "inputs": {
+        "stock": "MU",
+        "date": "Dec 19",
+        "current": {
+          "marketValue": 300.493004896,
+          "revenue": 42.31,
+          "shares": 1.13,
+          "earnings": 11.9111910265,
+          "eps": 10.54,
+          "pe": 25.3
+        },
+        "future": {
+          "revenueGrowth": 0,
+          "sharesChange": 0,
+          "pe": 0,
+          "marketValue": 340.703407033905,
+          "price": 333.56
+        }
+      },
+      "currentMetrics": {
+        "price": "$265.92",
+        "pe": "25.30",
+        "revenue": "$42.31B",
+        "netIncome": "$11.91",
+        "profitMargin": "28.15%",
+        "shares": "1.13B"
+      },
+      "results": {
+        "futurePrice": "$333.56",
+        "upside": "25.4%",
+        "cagr": "4.6%",
+        "futureRevenue": "68.14B",
+        "futureShares": "1.02B",
+        "buyToBeatSP": "$222.37",
+        "buyFor2x": "$166.78"
+      },
+      "companyName": "Micron Technology"
+    },
+    {
+      "ticker": "NOW",
+      "date": "Dec 15",
+      "timestamp": 1765833538808,
+      "inputs": {
+        "stock": "NOW",
+        "date": "Dec 15",
+        "current": {
+          "marketValue": 160.69160692,
+          "revenue": 12.67,
+          "shares": 0.21,
+          "earnings": 1.731730722,
+          "eps": 8.24,
+          "pe": 92.19
+        },
+        "future": {
+          "revenueGrowth": 20,
+          "sharesChange": 10,
+          "pe": 30,
+          "marketValue": 283.742837431296,
+          "price": 1228.33
+        }
+      },
+      "currentMetrics": {
+        "price": "$765.20",
+        "pe": "92.19",
+        "revenue": "$12.67B",
+        "netIncome": "$1.73",
+        "profitMargin": "13.66%",
+        "shares": "0.21B"
+      },
+      "results": {
+        "futurePrice": "$1228.33",
+        "upside": "60.5%",
+        "cagr": "9.9%",
+        "futureRevenue": "31.53B",
+        "futureShares": "231.00M",
+        "buyToBeatSP": "$818.89",
+        "buyFor2x": "$614.16"
+      },
+      "companyName": "ServiceNow"
+    },
+    {
+      "ticker": "AVGO",
+      "date": "Dec 14",
+      "timestamp": 1765759546849,
+      "inputs": {
+        "stock": "AVGO",
+        "date": "Dec 14",
+        "current": {
+          "marketValue": 1.7016988696,
+          "revenue": 63.89,
+          "shares": 4.72,
+          "earnings": 23.132312818,
+          "eps": 4.9,
+          "pe": 75.14
+        },
+        "future": {
+          "revenueGrowth": 200,
+          "sharesChange": 3,
+          "pe": 30,
+          "marketValue": 1.8018,
+          "price": 393.15
+        }
+      },
+      "currentMetrics": {
+        "price": "$359.93",
+        "pe": "75.14",
+        "revenue": "$63.89B",
+        "netIncome": "23.13B",
+        "profitMargin": "36.20%",
+        "shares": "4.72B"
+      },
+      "results": {
+        "futurePrice": "$393.15",
+        "upside": "9.2%",
+        "cagr": "1.8%",
+        "futureRevenue": "200.00B",
+        "futureShares": "4.58B",
+        "buyToBeatSP": "$262.10",
+        "buyFor2x": "$196.57"
+      },
+      "companyName": "Broadcom"
+    },
+    {
+      "ticker": "WDAY",
+      "date": "Dec 5",
+      "timestamp": 1764980279433,
+      "inputs": {
+        "stock": "WDAY",
+        "date": "Dec 5",
+        "current": {
+          "marketValue": 46.19461916,
+          "revenue": 9.23,
+          "shares": 0.21,
+          "earnings": 642.41642408,
+          "eps": 3.06,
+          "pe": 93.2
+        },
+        "future": {
+          "revenueGrowth": 15,
+          "sharesChange": 2,
+          "pe": 30,
+          "marketValue": 112.501125,
+          "price": 525.21
+        }
+      },
+      "currentMetrics": {
+        "price": "$219.96",
+        "pe": "93.20",
+        "revenue": "$9.23B",
+        "netIncome": "642.41M",
+        "profitMargin": "6.96%",
+        "shares": "0.21B"
+      },
+      "results": {
+        "futurePrice": "$525.21",
+        "upside": "138.8%",
+        "cagr": "19.0%",
+        "futureRevenue": "15.00B",
+        "futureShares": "214.20M",
+        "buyToBeatSP": "$350.14",
+        "buyFor2x": "$262.61"
+      },
+      "companyName": "Workday"
+    }
+  ]
+}
