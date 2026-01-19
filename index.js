@@ -3669,6 +3669,21 @@ Earnings: ${document.getElementById('futureEarnings').textContent}
   }
 
   function init() {
+    console.log('[DEBUG] init() started');
+
+    // Re-fetch elements to ensure they exist (fix for potential timing issues)
+    const tabProjections = document.getElementById('tabProjections');
+    const tabInsights = document.getElementById('tabInsights');
+    const tabHub = document.getElementById('tabHub');
+    const projectionsTab = document.getElementById('projectionsTab');
+    const insightsTab = document.getElementById('insightsTab');
+    const hubTab = document.getElementById('hubContent');
+
+    console.log('[DEBUG] Tab Elements:', {
+      tabProjections: !!tabProjections,
+      tabInsights: !!tabInsights,
+      tabHub: !!tabHub
+    });
     // Preload extended dataset if available
     loadSp500Data();
     const loaded = maybeLoadFromQuery() || maybeLoadFromHash();
@@ -3751,6 +3766,7 @@ Earnings: ${document.getElementById('futureEarnings').textContent}
   }
 
   function switchTab(tabName) {
+    console.log('[DEBUG] switchTab called with:', tabName);
     // Reset all
     [tabProjections, tabInsights, tabHub].forEach(el => el && el.classList.remove('active'));
     [projectionsTab, insightsTab, hubTab].forEach(el => el && el.classList.remove('active'));
