@@ -999,7 +999,7 @@ function getHubStorageKey() {
   return 'savedHubItems'; // Fallback for legacy/guest
 }
 
-function saveCalculationToHub() {
+async function saveCalculationToHub() {
   if (!isPremium) {
     const modal = document.getElementById('premiumLockModal');
     if (modal) modal.showModal();
@@ -1197,8 +1197,10 @@ function saveCalculationToHub() {
         // FIX: Data Overwrite Bug
         // Instead of blind push, perform a full sync (Pull -> Merge -> Push)
         // This ensures we don't delete items from other devices
+        // C) Trigger Sync (Blocking for visibility)
         if (typeof window.performSync === 'function') {
-          setTimeout(() => window.performSync(), 500); // Small delay to let local save finish
+          if (saveToHubBtn) saveToHubBtn.textContent = 'Syncing...';
+          await window.performSync();
         } else {
           console.error('performSync not found');
         }
@@ -1306,6 +1308,13 @@ document.addEventListener('visibilitychange', () => {
           // Check for potential hidden data
           // If Local Storage has items NOT in finalItems, show Rescue Button
           checkForRescueOpportunity(finalItems);
+        })
+        .catch(err => {
+          console.error('Auto-Sync failed:', err);
+          // Even if sync fails, scan local storage.
+          // We pass empty array as "cloud view" which might flag all items as unsynced, 
+          // allowing user to manually Retry Push via Rescue button.
+          checkForRescueOpportunity([]);
         });
     }
   }
@@ -1361,13 +1370,18 @@ function checkForRescueOpportunity(cloudItems) {
 
       btn.onclick = () => {
         btn.innerHTML = 'Recovering... 🔄';
-        window.performSync(foundHidden).then(() => {
-          btn.style.background = '#155724';
-          btn.style.color = '#d4edda';
-          btn.style.borderColor = '#c3e6cb';
-          btn.innerHTML = '✅ Recovery Complete! Data Merged.';
-          setTimeout(() => btn.remove(), 3000);
-        });
+        window.performSync(foundHidden)
+          .then(() => {
+            btn.style.background = '#155724';
+            btn.style.color = '#d4edda';
+            btn.style.borderColor = '#c3e6cb';
+            btn.innerHTML = '✅ Recovery Complete! Data Merged.';
+            setTimeout(() => btn.remove(), 3000);
+          })
+          .catch(e => {
+            alert('Recovery Failed: ' + e.message + '\nPlease check your connection or login again.');
+            btn.innerHTML = '⚠️ Retry Recovery';
+          });
       };
 
       // Insert at top of list
