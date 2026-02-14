@@ -1,7 +1,49 @@
 {
   "moe": {
-    "lastModified": 1771055094747,
+    "lastModified": 1771055101549,
     "items": [
+      {
+        "ticker": "FANG",
+        "companyName": "Diamondback Energy",
+        "date": "Feb 14, 2026",
+        "timestamp": 1771055101422,
+        "inputs": {
+          "stock": "FANG",
+          "date": "Feb 14, 2026",
+          "current": {
+            "marketValue": "47.36B",
+            "revenue": 14.63,
+            "shares": 0.28,
+            "earnings": "4.20B",
+            "eps": 14.99,
+            "pe": 11.88
+          },
+          "future": {
+            "revenueGrowth": 0,
+            "sharesChange": 0,
+            "pe": 0,
+            "margin": 0,
+            "marketValue": 0,
+            "price": 0
+          }
+        },
+        "currentMetrics": {
+          "price": 169.14,
+          "pe": 11.88,
+          "revenue": 14.63,
+          "netIncome": "4.20B",
+          "profitMargin": 28.69,
+          "shares": 0.28,
+          "marketValue": "47.36B"
+        },
+        "results": {
+          "futurePrice": 0,
+          "futureRevenue": "–",
+          "futureShares": "–",
+          "upside": "-",
+          "cagr": "-"
+        }
+      },
       {
         "ticker": "T",
         "companyName": "AT&T",
