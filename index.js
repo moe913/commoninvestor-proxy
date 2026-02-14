@@ -1600,6 +1600,31 @@ window.performSync = async (itemsToMerge = null) => {
   }
 };
 
+// Explicit Push Function (Force Overwrite Cloud with Local State)
+// Used for Deletions: We set `username`'s data to EXACTLY what is in `dataWrapper`,
+// bypassing any "Merge" logic that might resurrect deleted items.
+window.pushToCloud = async (username, dataWrapper) => {
+  try {
+    console.log('Pushing explicit state to cloud...', dataWrapper);
+    updateCloudStatus('syncing');
+
+    const res = await fetch('/api/user-data', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, data: dataWrapper })
+    });
+
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+
+    console.log('Force Push Success');
+    updateCloudStatus('success', 'Saved');
+  } catch (e) {
+    console.error('Push Failed', e);
+    updateCloudStatus('error', e.message);
+    throw e;
+  }
+};
+
 function renderList(savedItems) {
   const savedList = document.getElementById('hubSavedList');
   if (!savedList) return;
