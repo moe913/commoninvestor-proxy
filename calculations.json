@@ -1,7 +1,49 @@
 {
   "moe": {
-    "lastModified": 1771054546489,
+    "lastModified": 1771054554306,
     "items": [
+      {
+        "ticker": "TRGP",
+        "companyName": "Targa Resources",
+        "date": "Feb 14, 2026",
+        "timestamp": 1771054554178,
+        "inputs": {
+          "stock": "TRGP",
+          "date": "Feb 14, 2026",
+          "current": {
+            "marketValue": "47.02B",
+            "revenue": 17.38,
+            "shares": 0.21,
+            "earnings": "1.73B",
+            "eps": 8.23,
+            "pe": 30.21
+          },
+          "future": {
+            "revenueGrowth": 0,
+            "sharesChange": 0,
+            "pe": 0,
+            "margin": 0,
+            "marketValue": 0,
+            "price": 0
+          }
+        },
+        "currentMetrics": {
+          "price": 223.89,
+          "pe": 30.21,
+          "revenue": 17.38,
+          "netIncome": "1.73B",
+          "profitMargin": 9.95,
+          "shares": 0.21,
+          "marketValue": "47.02B"
+        },
+        "results": {
+          "futurePrice": 0,
+          "futureRevenue": "–",
+          "futureShares": "–",
+          "upside": "-",
+          "cagr": "-"
+        }
+      },
       {
         "ticker": "ATO",
         "companyName": "Atmos Energy",
