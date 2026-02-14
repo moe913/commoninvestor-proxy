@@ -1,4 +1,4 @@
-const { GITHUB_TOKEN } = process.env;
+const token = process.env.GITHUB_TOKEN || process.env.GitHub_token;
 const REPO = 'moe913/commoninvestor-proxy';
 const BRANCH = 'dev';
 const FILE_PATH = 'calculations.json';
@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
         return res.status(200).end();
     }
 
-    if (!GITHUB_TOKEN) {
+    if (!token) {
         console.error('Missing GITHUB_TOKEN environment variable');
         return res.status(500).json({ error: 'Server Error: Missing GITHUB_TOKEN' });
     }
@@ -82,7 +82,7 @@ module.exports = async (req, res) => {
 async function fetchFileFromGitHub() {
     const url = `https://api.github.com/repos/${REPO}/contents/${FILE_PATH}?ref=${BRANCH}`;
     const res = await fetch(url, {
-        headers: { 'Authorization': `Bearer ${GITHUB_TOKEN}` }
+        headers: { 'Authorization': `Bearer ${token}` }
     });
     if (res.status === 404) return null;
     if (!res.ok) {
