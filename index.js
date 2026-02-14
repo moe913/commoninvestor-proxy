@@ -1200,7 +1200,8 @@ async function saveCalculationToHub() {
         // C) Trigger Sync (Blocking for visibility)
         if (typeof window.performSync === 'function') {
           if (saveToHubBtn) saveToHubBtn.textContent = 'Syncing...';
-          await window.performSync();
+          // CRITICAL FIX: Pass the new item to merge, otherwise performSync might overwrite local with stale cloud data
+          await window.performSync([newItem]);
         } else {
           console.error('performSync not found');
         }
