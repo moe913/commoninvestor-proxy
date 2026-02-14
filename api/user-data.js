@@ -135,24 +135,62 @@ module.exports = async (req, res) => {
                 return res.status(400).send('Invalid input structure');
             }
 
-            const fileData = await fetchFileFromGitHub();
-            let allData = {};
-            let currentSha = null;
+            // Retry loop for 409 Conflict handling
+            let attempts = 0;
+            const maxAttempts = 3;
+            let saved = false;
+            let lastError = null;
 
-            if (fileData) {
-                currentSha = fileData.sha;
+            while (attempts < maxAttempts && !saved) {
+                attempts++;
                 try {
-                    allData = JSON.parse(Buffer.from(fileData.content, 'base64').toString('utf-8'));
-                } catch (parseErr) {
-                    console.warn('Corrupt JSON in calculations.json, resetting.', parseErr);
-                    allData = {};
+                    // 1. Fetch latest file state (Crucial for getting current SHA)
+                    // Add timestamp to prevent Vercel/Fetch caching
+                    const fileData = await fetchFileFromGitHub();
+                    let allData = {};
+                    let currentSha = null;
+
+                    if (fileData) {
+                        currentSha = fileData.sha;
+                        try {
+                            const contentStr = Buffer.from(fileData.content, 'base64').toString('utf-8');
+                            allData = JSON.parse(contentStr);
+                        } catch (parseErr) {
+                            console.warn('Corrupt JSON in calculations.json, resetting.', parseErr);
+                            allData = {};
+                        }
+                    }
+
+                    // 2. Merge User Data
+                    // We must retain existing data for other users, and update THIS user's data
+                    allData[normalizedUser] = payloadToSave;
+
+                    // 3. Prepare Content
+                    const newContent = Buffer.from(JSON.stringify(allData, null, 2)).toString('base64');
+
+                    // 4. Attempt Update
+                    await updateFileInGitHub(newContent, currentSha, `Update calculations for ${username}`);
+
+                    saved = true; // Success!
+
+                } catch (err) {
+                    lastError = err;
+                    // Check if it's a 409 Conflict error
+                    const isConflict = err.message.includes('409') || err.message.includes('does not match');
+
+                    if (isConflict) {
+                        console.warn(`Attempt ${attempts} failed with 409 Conflict. Retrying...`);
+                        await new Promise(r => setTimeout(r, 500)); // Wait 500ms before retry
+                    } else {
+                        // If it's NOT a conflict (e.g. 401, 500), throw immediately
+                        throw err;
+                    }
                 }
             }
 
-            allData[normalizedUser] = payloadToSave;
-
-            const newContent = Buffer.from(JSON.stringify(allData, null, 2)).toString('base64');
-            await updateFileInGitHub(newContent, currentSha, `Update calculations for ${username}`);
+            if (!saved) {
+                throw lastError || new Error('Failed to save after multiple attempts');
+            }
 
             return res.status(200).json({ success: true, savedTimestamp: payloadToSave.lastModified });
 
@@ -166,7 +204,8 @@ module.exports = async (req, res) => {
 };
 
 async function fetchFileFromGitHub() {
-    const url = `https://api.github.com/repos/${REPO}/contents/${FILE_PATH}?ref=${BRANCH}`;
+    // Add cache-busting timestamp
+    const url = `https://api.github.com/repos/${REPO}/contents/${FILE_PATH}?ref=${BRANCH}&t=${Date.now()}`;
     const res = await fetch(url, {
         headers: {
             'Authorization': `Bearer ${token}`,
