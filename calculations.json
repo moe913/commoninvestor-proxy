@@ -1,7 +1,49 @@
 {
   "moe": {
-    "lastModified": 1771054355411,
+    "lastModified": 1771054371868,
     "items": [
+      {
+        "ticker": "ATO",
+        "companyName": "Atmos Energy",
+        "date": "Feb 14, 2026",
+        "timestamp": 1771054371582,
+        "inputs": {
+          "stock": "ATO",
+          "date": "Feb 14, 2026",
+          "current": {
+            "marketValue": "30.47B",
+            "revenue": 4.87,
+            "shares": 0.17,
+            "earnings": "1.25B",
+            "eps": 7.35,
+            "pe": 23.37
+          },
+          "future": {
+            "revenueGrowth": 0,
+            "sharesChange": 0,
+            "pe": 0,
+            "margin": 0,
+            "marketValue": 0,
+            "price": 0
+          }
+        },
+        "currentMetrics": {
+          "price": 179.25,
+          "pe": 23.37,
+          "revenue": 4.87,
+          "netIncome": "1.25B",
+          "profitMargin": 25.67,
+          "shares": 0.17,
+          "marketValue": "30.47B"
+        },
+        "results": {
+          "futurePrice": 0,
+          "futureRevenue": "–",
+          "futureShares": "–",
+          "upside": "-",
+          "cagr": "-"
+        }
+      },
       {
         "ticker": "Unknown",
         "companyName": "Unknown",
