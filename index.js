@@ -3733,6 +3733,15 @@ function init() {
 
   // Re-enable transitions after initial layout
 
+  // Auto-Sync for Premium Users (Fix for Incognito/Cross-Device)
+  if (isPremium && localStorage.getItem('username')) {
+    setTimeout(() => {
+      if (typeof window.performSync === 'function') {
+        console.log('Valid session found, syncing data on load...');
+        window.performSync([]);
+      }
+    }, 1000); // 1s delay to allow UI to settle
+  }
 }
 
 // Tab Elements (Moved to top)
