@@ -1,7 +1,49 @@
 {
   "moe": {
-    "lastModified": 1771054871886,
+    "lastModified": 1771054895912,
     "items": [
+      {
+        "ticker": "T",
+        "companyName": "AT&T",
+        "date": "Feb 14, 2026",
+        "timestamp": 1771054895802,
+        "inputs": {
+          "stock": "T",
+          "date": "Feb 14, 2026",
+          "current": {
+            "marketValue": "200.83B",
+            "revenue": 125.65,
+            "shares": 7,
+            "earnings": "21.95B",
+            "eps": 3.14,
+            "pe": 9.44
+          },
+          "future": {
+            "revenueGrowth": 0,
+            "sharesChange": 0,
+            "pe": 0,
+            "margin": 0,
+            "marketValue": 0,
+            "price": 0
+          }
+        },
+        "currentMetrics": {
+          "price": 28.69,
+          "pe": 9.44,
+          "revenue": 125.65,
+          "netIncome": "21.95B",
+          "profitMargin": 17.47,
+          "shares": 7,
+          "marketValue": "200.83B"
+        },
+        "results": {
+          "futurePrice": 0,
+          "futureRevenue": "–",
+          "futureShares": "–",
+          "upside": "-",
+          "cagr": "-"
+        }
+      },
       {
         "ticker": "T",
         "companyName": "AT&T",
