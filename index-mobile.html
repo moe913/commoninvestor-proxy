@@ -3,6 +3,17 @@
 
 <head>
   <meta charset="UTF-8" />
+
+  <!-- Google AdSense (Loaded conditionally for non-premium users) -->
+  <script>
+    if (!localStorage.getItem('isPremium')) {
+      const script = document.createElement('script');
+      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2707552000845994";
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      document.head.appendChild(script);
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Common Investor — Mobile Forecaster</title>
   <meta name="description" content="Mobile-first stock forecaster. Current metrics, 5-year projections, and sharing." />
