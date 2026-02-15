@@ -1,3 +1,51 @@
+/* Ad Placeholder Styles */
+.ad-slot {
+  width: 100%;
+  background-color: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  margin: 16px 0;
+  border-radius: 12px;
+  min-height: 80px;
+  overflow: hidden;
+  position: relative;
+  text-transform: none;
+  letter-spacing: normal;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ad-slot.banner {
+  margin: 0 0 16px 0;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--border);
+}
+
+.premium-mode .ad-slot {
+  display: none !important;
+}
+
+/* Ad Mockups removed for Google AdSense integration */
+
+/* Responsive adjustments for ads */
+@media (max-width: 600px) {
+  .ad-slot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+    padding: 16px;
+  }
+
+  .ad-slot .ad-cta {
+    width: 100%;
+  }
+}
+
 :root {
   --bg: #f7f8fb;
   --panel: #ffffff;
@@ -1531,6 +1579,15 @@ input:-webkit-autofill:active {
   font-size: 1.1em;
   vertical-align: middle;
 }
+
 /* Cloud Sync Animation */
-@keyframes spin { 100% { transform: rotate(360deg); } }
-.spin-anim { display: inline-block; animation: spin 1s linear infinite; }
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-anim {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
