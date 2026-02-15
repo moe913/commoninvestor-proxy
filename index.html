@@ -13,6 +13,18 @@
     gtag('js', new Date());
 
     gtag('config', 'G-N42EHDHX1E');
+    gtag('config', 'G-N42EHDHX1E');
+  </script>
+
+  <!-- Google AdSense (Loaded conditionally for non-premium users) -->
+  <script>
+    if (!localStorage.getItem('isPremium')) {
+      const script = document.createElement('script');
+      script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6835291153880781";
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      document.head.appendChild(script);
+    }
   </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -40,6 +52,16 @@
 </head>
 
 <body>
+  <!-- Ad Slot: Top Banner (AdSense) -->
+  <div class="ad-slot banner" id="ad-banner" style="padding:0; border:none; background:transparent">
+    <!-- CommonInvestor_TopBanner -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6835291153880781" data-ad-slot="1234567890"
+      data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
   <header>
     <div class="wrap">
       <div class="title">📈 Common Investor — <span class="sub" style="color:var(--muted)">Current metrics & 5-year
@@ -173,6 +195,16 @@
             </div>
           </div>
         </section>
+
+        <!-- Ad Slot: Inline (AdSense) -->
+        <div class="ad-slot" id="ad-inline" style="padding:0; border:none; background:transparent">
+          <!-- CommonInvestor_Inline -->
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6835291153880781"
+            data-ad-slot="2345678901" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </div>
 
         <section class="card" aria-labelledby="proj-h">
           <div class="card-h">
@@ -636,6 +668,16 @@
         </div>
       </section>
 
+      <!-- Ad Slot: Insights (AdSense) -->
+      <div class="ad-slot" id="ad-insights" style="margin-bottom: 24px; padding:0; border:none; background:transparent">
+        <!-- CommonInvestor_Insights -->
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6835291153880781"
+          data-ad-slot="3456789012" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+
       <div class="chart-grid">
         <!-- 1. Revenue -->
         <div class="chart-card">
@@ -762,6 +804,15 @@
         </div>
 
       </div>
+    </div>
+    <!-- Ad Slot: Footer (AdSense) -->
+    <div class="ad-slot" id="ad-footer" style="padding:0; border:none; background:transparent">
+      <!-- CommonInvestor_Footer -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6835291153880781" data-ad-slot="4567890123"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
   </main>
 
