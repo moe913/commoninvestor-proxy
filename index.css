@@ -25,7 +25,9 @@
   border-bottom: 1px solid var(--border);
 }
 
-.premium-mode .ad-slot {
+.premium-mode .ad-slot,
+.premium-mode .adsbygoogle,
+.premium-mode .google-auto-placed {
   display: none !important;
 }
 
