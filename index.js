@@ -657,11 +657,44 @@ window.handleLogout = function () {
   window.location.reload();
 };
 
-// Remove old listener logic if present (cleanup)
-if (logoutBtn) {
-  // We are using onclick in HTML now, so no need for addEventListener here
-  // But just in case, let's keep the element reference valid
+// ===== Premium UI Helpers =====
+function enablePremiumMode() {
+  document.body.classList.add('premium-mode');
+
+  // Update UI Elements
+  if (premiumBtn) premiumBtn.style.display = 'none';
+  if (userProfile) {
+    userProfile.style.display = 'flex';
+    userProfile.innerHTML = `<span class="premium-chip">👑 PREMIUM MEMBER</span>`;
+  }
+  if (logoutBtn) logoutBtn.style.display = 'inline-block';
+
+  // Hide Ad Slots explicitly (though CSS also handles this)
+  $$('.ad-slot').forEach(el => el.style.display = 'none');
+
+  // Enable Auto-Calc if desired
+  isAutoCalcEnabled = true;
+  if (autoCalcBtn) {
+    autoCalcBtn.style.display = 'inline-block';
+    autoCalcBtn.textContent = '⚡️ Auto-Calc: ON';
+  }
 }
+
+function disablePremiumMode() {
+  document.body.classList.remove('premium-mode');
+
+  if (premiumBtn) premiumBtn.style.display = 'inline-block';
+  if (userProfile) userProfile.style.display = 'none';
+  if (logoutBtn) logoutBtn.style.display = 'none';
+
+  // Show Ad Slots
+  $$('.ad-slot').forEach(el => el.style.display = 'flex');
+
+  isAutoCalcEnabled = false;
+  if (autoCalcBtn) autoCalcBtn.style.display = 'none';
+}
+
+// Remove old listener ...
 
 
 
