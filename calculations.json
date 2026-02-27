@@ -1,7 +1,49 @@
 {
   "moe": {
-    "lastModified": 1772218234785,
+    "lastModified": 1772218302263,
     "items": [
+      {
+        "ticker": "HOOD",
+        "companyName": "Robinhood Markets",
+        "date": "Feb 27, 2026",
+        "timestamp": 1772218301895,
+        "inputs": {
+          "stock": "HOOD",
+          "date": "Feb 27, 2026",
+          "current": {
+            "marketValue": "59.34B",
+            "revenue": 4.47,
+            "shares": 0.79,
+            "earnings": "-",
+            "eps": 0,
+            "pe": 36.64
+          },
+          "future": {
+            "revenueGrowth": 20,
+            "sharesChange": 1,
+            "pe": 30,
+            "margin": 30,
+            "marketValue": 100.111001051136,
+            "price": 120.57
+          }
+        },
+        "currentMetrics": {
+          "price": 75.11,
+          "pe": 36.64,
+          "revenue": 4.47,
+          "netIncome": "-",
+          "profitMargin": 42.1,
+          "shares": 0.79,
+          "marketValue": "59.34B"
+        },
+        "results": {
+          "futurePrice": 120.57,
+          "futureRevenue": "11.12B",
+          "futureShares": "830.30M",
+          "upside": "+60.5%",
+          "cagr": "9.9%"
+        }
+      },
       {
         "ticker": "SOFI",
         "companyName": "SoFi Technologies",
