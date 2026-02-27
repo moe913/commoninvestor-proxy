@@ -1,6 +1,6 @@
 {
   "moe": {
-    "lastModified": 1772218225071,
+    "lastModified": 1772218234099,
     "items": [
       {
         "ticker": "SOFI",
@@ -41,49 +41,9 @@
           "futureRevenue": "8.91B",
           "futureShares": "1.35B",
           "upside": "+470.2%",
-          "cagr": "41.6%"
-        }
-      },
-      {
-        "ticker": "SOFI",
-        "companyName": "SoFi Technologies",
-        "date": "Feb 27, 2026",
-        "timestamp": 1772218221458,
-        "inputs": {
-          "stock": "SOFI",
-          "date": "Feb 27, 2026",
-          "current": {
-            "marketValue": "22.30B",
-            "revenue": 3.58,
-            "shares": 1.28,
-            "earnings": "-",
-            "eps": 0,
-            "pe": 44.66
-          },
-          "future": {
-            "revenueGrowth": 20,
-            "sharesChange": 1,
-            "pe": 30,
-            "margin": 50,
-            "marketValue": 133.62133622784,
-            "price": 99.33
-          }
-        },
-        "currentMetrics": {
-          "price": 17.42,
-          "pe": 44.66,
-          "revenue": 3.58,
-          "netIncome": "-",
-          "profitMargin": 13.43,
-          "shares": 1.28,
-          "marketValue": "22.30B"
-        },
-        "results": {
-          "futurePrice": 99.33,
-          "futureRevenue": "8.91B",
-          "futureShares": "1.35B",
-          "upside": "+470.2%",
-          "cagr": "41.6%"
+          "cagr": "41.6%",
+          "buyToBeatSP": "$66.22",
+          "buyFor2x": "$49.66"
         }
       },
       {
