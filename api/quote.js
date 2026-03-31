@@ -181,8 +181,8 @@ module.exports = async (req, res) => {
         const ttmNetIncome = finData.netIncomeToCommon || ttmEarnings;
 
         if (ttmRevenue > 0 || ttmNetIncome > 0) {
-            let ttmRevGrowth = 0;
-            let ttmEarnGrowth = 0;
+            let ttmRevGrowth = finData.revenueGrowth ? finData.revenueGrowth * 100 : 0;
+            let ttmEarnGrowth = finData.earningsGrowth ? finData.earningsGrowth * 100 : 0;
 
             const calcAvgGrowth = (data, revKey, earnKey) => {
                 if (!data || data.length < 5) return { r: 0, e: 0 };
@@ -192,8 +192,10 @@ module.exports = async (req, res) => {
                     return new Date(da) - new Date(db);
                 });
 
-                let rGrowthSum = 0;
-                let eGrowthSum = 0;
+                let curRevSum = 0;
+                let prevRevSum = 0;
+                let curEarnSum = 0;
+                let prevEarnSum = 0;
                 let count = 0;
 
                 for (let i = sorted.length - 1; i >= 4 && count < 4; i--) {
@@ -204,35 +206,35 @@ module.exports = async (req, res) => {
                     const curEarn = cur[earnKey] || cur.earnings || cur.netIncome || 0;
                     const prevEarn = prev[earnKey] || prev.earnings || prev.netIncome || 0;
 
-                    if (prevRev > 0) {
-                        rGrowthSum += ((curRev - prevRev) / prevRev);
-                    }
-                    if (Math.abs(prevEarn) > 0) {
-                        eGrowthSum += ((curEarn - prevEarn) / Math.abs(prevEarn));
-                    }
+                    curRevSum += curRev;
+                    prevRevSum += prevRev;
+                    curEarnSum += curEarn;
+                    prevEarnSum += prevEarn;
                     count++;
                 }
 
                 return {
-                    r: count > 0 ? (rGrowthSum / count) * 100 : 0,
-                    e: count > 0 ? (eGrowthSum / count) * 100 : 0
+                    r: count > 0 && prevRevSum > 0 ? ((curRevSum - prevRevSum) / prevRevSum) * 100 : 0,
+                    e: count > 0 && Math.abs(prevEarnSum) > 0 ? ((curEarnSum - prevEarnSum) / Math.abs(prevEarnSum)) * 100 : 0
                 };
             };
 
-            let growth = calcAvgGrowth(quarterlyIncome, 'totalRevenue', 'netIncome');
-            if (growth.r === 0 && growth.e === 0 && quarterlyEarningsChart.length > 0) {
-                growth = calcAvgGrowth(quarterlyEarningsChart, 'revenue', 'earnings');
-            }
+            if (ttmRevGrowth === 0 || ttmEarnGrowth === 0) {
+                let growth = calcAvgGrowth(quarterlyIncome, 'totalRevenue', 'netIncome');
+                if (growth.r === 0 && growth.e === 0 && quarterlyEarningsChart.length > 0) {
+                    growth = calcAvgGrowth(quarterlyEarningsChart, 'revenue', 'earnings');
+                }
 
-            ttmRevGrowth = growth.r;
-            ttmEarnGrowth = growth.e;
+                if (ttmRevGrowth === 0) ttmRevGrowth = growth.r;
+                if (ttmEarnGrowth === 0) ttmEarnGrowth = growth.e;
 
-            const lastYear = history[history.length - 1];
-            if (ttmRevGrowth === 0 && lastYear && lastYear.revenue > 0) {
-                ttmRevGrowth = ((ttmRevenue / 1e9 - lastYear.revenue) / lastYear.revenue) * 100;
-            }
-            if (ttmEarnGrowth === 0 && lastYear && Math.abs(lastYear.earnings) > 0) {
-                ttmEarnGrowth = ((ttmNetIncome / 1e9 - lastYear.earnings) / Math.abs(lastYear.earnings)) * 100;
+                const lastYear = history[history.length - 1];
+                if (ttmRevGrowth === 0 && lastYear && lastYear.revenue > 0) {
+                    ttmRevGrowth = ((ttmRevenue / 1e9 - lastYear.revenue) / lastYear.revenue) * 100;
+                }
+                if (ttmEarnGrowth === 0 && lastYear && Math.abs(lastYear.earnings) > 0) {
+                    ttmEarnGrowth = ((ttmNetIncome / 1e9 - lastYear.earnings) / Math.abs(lastYear.earnings)) * 100;
+                }
             }
 
             history.push({
