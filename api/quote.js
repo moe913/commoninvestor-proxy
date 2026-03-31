@@ -181,8 +181,8 @@ module.exports = async (req, res) => {
         const ttmNetIncome = finData.netIncomeToCommon || ttmEarnings;
 
         if (ttmRevenue > 0 || ttmNetIncome > 0) {
-            let ttmRevGrowth = finData.revenueGrowth ? finData.revenueGrowth * 100 : 0;
-            let ttmEarnGrowth = finData.earningsGrowth ? finData.earningsGrowth * 100 : 0;
+            let ttmRevGrowth = 0;
+            let ttmEarnGrowth = 0;
 
             const calcAvgGrowth = (data, revKey, earnKey) => {
                 if (!data || data.length < 5) return { r: 0, e: 0 };
@@ -219,22 +219,59 @@ module.exports = async (req, res) => {
                 };
             };
 
+            let growth = calcAvgGrowth(quarterlyIncome, 'totalRevenue', 'netIncome');
+            if (growth.r === 0 && growth.e === 0 && quarterlyEarningsChart.length > 0) {
+                growth = calcAvgGrowth(quarterlyEarningsChart, 'revenue', 'earnings');
+            }
+
+            ttmRevGrowth = growth.r;
+            ttmEarnGrowth = growth.e;
+
             if (ttmRevGrowth === 0 || ttmEarnGrowth === 0) {
-                let growth = calcAvgGrowth(quarterlyIncome, 'totalRevenue', 'netIncome');
-                if (growth.r === 0 && growth.e === 0 && quarterlyEarningsChart.length > 0) {
-                    growth = calcAvgGrowth(quarterlyEarningsChart, 'revenue', 'earnings');
-                }
-
-                if (ttmRevGrowth === 0) ttmRevGrowth = growth.r;
-                if (ttmEarnGrowth === 0) ttmEarnGrowth = growth.e;
-
                 const lastYear = history[history.length - 1];
-                if (ttmRevGrowth === 0 && lastYear && lastYear.revenue > 0) {
-                    ttmRevGrowth = ((ttmRevenue / 1e9 - lastYear.revenue) / lastYear.revenue) * 100;
+                const prevYear = history.length > 1 ? history[history.length - 2] : null;
+
+                let calcRev = 0;
+                let calcEarn = 0;
+
+                if (lastYear && prevYear && lastYear.revenue > 0 && prevYear.revenue > 0) {
+                    const ttmRev = ttmRevenue / 1e9;
+                    const diff = Math.abs(ttmRev - lastYear.revenue) / lastYear.revenue;
+
+                    if (diff < 0.02) {
+                        // TTM precisely maps over the last completed fiscal year (e.g. Robinhood FY is Dec, TTM is Dec)
+                        calcRev = ((lastYear.revenue - prevYear.revenue) / prevYear.revenue) * 100;
+                        if (Math.abs(prevYear.earnings) > 0) {
+                            calcEarn = ((lastYear.earnings - prevYear.earnings) / Math.abs(prevYear.earnings)) * 100;
+                        }
+                    } else {
+                        // TTM has progressed into the new fiscal year.
+                        // Interpolate the "previous TTM" by assuming proportional growth from prevYear to lastYear.
+                        const revLastYoY = (lastYear.revenue - prevYear.revenue);
+                        let t = revLastYoY !== 0 ? (ttmRev - lastYear.revenue) / revLastYoY : 0.5;
+                        t = Math.max(0, Math.min(1, t)); // Bound offset ratio
+
+                        const prevTtmRev = prevYear.revenue + t * revLastYoY;
+                        if (prevTtmRev > 0) {
+                            calcRev = ((ttmRev - prevTtmRev) / prevTtmRev) * 100;
+                        }
+
+                        const earnLastYoY = (lastYear.earnings - prevYear.earnings);
+                        const prevTtmEarn = prevYear.earnings + t * earnLastYoY;
+                        if (Math.abs(prevTtmEarn) > 0) {
+                            calcEarn = ((ttmNetIncome / 1e9 - prevTtmEarn) / Math.abs(prevTtmEarn)) * 100;
+                        }
+                    }
+                } else if (lastYear && lastYear.revenue > 0) {
+                    // Fallback to naive `(TTM - FY) / FY` if only 1 year of history exists
+                    calcRev = ((ttmRevenue / 1e9 - lastYear.revenue) / lastYear.revenue) * 100;
+                    if (Math.abs(lastYear.earnings) > 0) {
+                        calcEarn = ((ttmNetIncome / 1e9 - lastYear.earnings) / Math.abs(lastYear.earnings)) * 100;
+                    }
                 }
-                if (ttmEarnGrowth === 0 && lastYear && Math.abs(lastYear.earnings) > 0) {
-                    ttmEarnGrowth = ((ttmNetIncome / 1e9 - lastYear.earnings) / Math.abs(lastYear.earnings)) * 100;
-                }
+
+                if (ttmRevGrowth === 0) ttmRevGrowth = calcRev;
+                if (ttmEarnGrowth === 0) ttmEarnGrowth = calcEarn;
             }
 
             history.push({

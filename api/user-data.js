@@ -12,7 +12,6 @@ module.exports = async (req, res) => {
     res.setHeader('Access-Control-Expose-Headers', 'X-Data-Source');
 
     console.log('DEBUG: Token check - GITHUB_TOKEN:', !!GITHUB_TOKEN, 'GitHub_token:', !!GitHub_token, 'Final token:', !!token);
-
     // Debug access check
     if (req.query && req.query.debug === 'true') {
         let repoCheck = 'skipped';

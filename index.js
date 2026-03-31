@@ -726,7 +726,7 @@ async function tryAutoFill(symbol) {
   } catch (err) {
     console.warn('Proxy error:', err);
     if (window.location.protocol === 'file:') {
-      toast('Cannot fetch data locally. Please deploy to Netlify.', 4000);
+      toast('Cannot fetch data locally. Please deploy to Production.', 4000);
     }
   }
 
@@ -1554,7 +1554,23 @@ window.performSync = async (itemsToMerge = null) => {
   try {
     // 1. PULL FROM CLOUD (The Truth)
     const res = await fetch(`/api/user-data?username=${userNow}&t=${Date.now()}`);
-    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    if (!res.ok) {
+      const errText = await res.text();
+      let errMsg = `${res.status} ${res.statusText}`;
+      try {
+        const errJson = JSON.parse(errText);
+        if (errJson.error === 'MISSING_TOKEN') {
+          errMsg = `Permission Error: ${errJson.message}`;
+        } else if (errJson.details) {
+          errMsg = `Server Error: ${errJson.details}`;
+        } else {
+          errMsg = `Server Error (${res.status}): ${errText}`;
+        }
+      } catch (e) {
+        errMsg = `Server Error (${res.status}): ${errText}`;
+      }
+      throw new Error(errMsg);
+    }
 
     const cloudWrapper = await res.json();
     let cloudItems = [];
@@ -1609,7 +1625,21 @@ window.performSync = async (itemsToMerge = null) => {
       body: JSON.stringify({ username: userNow, data: dataWrapper })
     });
 
-    if (!saveRes.ok) throw new Error('Save to cloud failed');
+    if (!saveRes.ok) {
+      const errText = await saveRes.text();
+      let errMsg = 'Save to cloud failed';
+      try {
+        const errJson = JSON.parse(errText);
+        if (errJson.error === 'MISSING_TOKEN') {
+          errMsg = `Permission Error: ${errJson.message}`;
+        } else {
+          errMsg = `Save Failed (${saveRes.status}): ${errJson.message || errText}`;
+        }
+      } catch (e) {
+        errMsg = `Save Failed (${saveRes.status}): ${errText}`;
+      }
+      throw new Error(errMsg);
+    }
 
     console.log('Cloud Backup Success');
     updateCloudStatus('success');

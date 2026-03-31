@@ -76,8 +76,8 @@ I implemented a complete authentication system for Patreon subscribers.
 -   **Logout Fix**: I added a forced page reload upon logout to ensure all premium states are completely cleared and the user is returned to the free version cleanly.
 
 > [!IMPORTANT]
-> **Setup Required in Netlify**
-> You must add the following Environment Variables in your Netlify Dashboard (Site Settings > Environment variables):
+> **Setup Required**
+> You must add the following Environment Variables in your Dashboard (Site Settings > Environment variables):
 > 1.  `ADMIN_PASSWORD`: A secure password for you to access the Admin Panel.
 > 2.  `GITHUB_TOKEN`: A Personal Access Token (Classic) with `repo` scope, so the system can update the user list.
 
@@ -88,13 +88,13 @@ I restored the `isPremium` check in the `tryAutoFill` function.
 
 > [!IMPORTANT]
 > **This feature requires a backend server.**
-> Because you are opening the file locally (e.g., `file:///.../index.html`), the application **cannot** contact the Netlify server to fetch new data.
+> Because you are opening the file locally (e.g., `file:///.../index.html`), the application **cannot** contact the server to fetch new data.
 >
-> I have added a safety check: If you try to search for "SOFI" locally, you will now see a message: **"Cannot fetch data locally. Please deploy to Netlify."**
+> I have added a safety check: If you try to search for "SOFI" locally, you will now see a message: **"Cannot fetch data locally. Please deploy to Production."**
 
 ### How to Test Fully (Without Credits)
 
-Since you have reached your Netlify credit limit, you should run the application **locally**. This uses your own computer to fetch data and costs **$0**.
+Since you have reached your credit limit, you should run the application **locally**. This uses your own computer to fetch data and costs **$0**.
 
 1.  **Open Terminal** in the project folder.
 2.  Run the following command:
@@ -105,7 +105,7 @@ Since you have reached your Netlify credit limit, you should run the application
 4.  Open that link in your browser.
 5.  **Enable Premium** (Start Trial).
 6.  Search for any stock (e.g., "SOFI", "WDAY", "AAPL").
-    - **Result**: It will work perfectly, fetching real data using your local internet connection, bypassing Netlify's cloud limits.
+    - **Result**: It will work perfectly, fetching real data using your local internet connection.
 
 ### 9. Premium Restrictions & Upsell
 - **Visible but Locked Tabs**: The "Insights" and "My Hub" tabs are now visible to all users. However, clicking them while on the free plan displays a "Locked" overlay with a call-to-action to upgrade.
