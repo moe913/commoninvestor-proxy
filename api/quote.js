@@ -274,7 +274,7 @@ module.exports = async (req, res) => {
                 if (ttmEarnGrowth === 0) ttmEarnGrowth = calcEarn;
             }
 
-            history.push({
+            const ttmEntry = {
                 year: 'TTM',
                 revenue: ttmRevenue / 1e9,
                 earnings: ttmNetIncome / 1e9,
@@ -286,8 +286,19 @@ module.exports = async (req, res) => {
                 eps: 0,
                 fcf: 0,
                 roe: 0,
-                shares: sharesB
-            });
+                shares: sharesB,
+                pe: 0
+            };
+
+            // Deduplicate the last fiscal year if it perfectly overlaps with TTM
+            if (history.length > 0) {
+                const lastYear = history[history.length - 1];
+                if (Math.abs(parseFloat(lastYear.revenue) - ttmEntry.revenue) / ttmEntry.revenue < 0.01) {
+                    history.pop(); // Remove the perfectly duplicated last fiscal year
+                }
+            }
+
+            history.push(ttmEntry);
         }
 
         const balanceSheetMap = new Map();
