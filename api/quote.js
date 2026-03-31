@@ -184,94 +184,30 @@ module.exports = async (req, res) => {
             let ttmRevGrowth = 0;
             let ttmEarnGrowth = 0;
 
-            const calcAvgGrowth = (data, revKey, earnKey) => {
-                if (!data || data.length < 5) return { r: 0, e: 0 };
-                const sorted = [...data].sort((a, b) => {
-                    const da = a.endDate || a.date;
-                    const db = b.endDate || b.date;
-                    return new Date(da) - new Date(db);
-                });
+            // TTM growth = (TTM - most recent completed FY) / most recent completed FY
+            // This is the standard, correct definition used by financial data providers.
+            // We compare TTM (last 12 rolling months) against the last full fiscal year in history.
+            const lastYear = history.length > 0 ? history[history.length - 1] : null;
+            const prevYear = history.length > 1 ? history[history.length - 2] : null;
 
-                let curRevSum = 0;
-                let prevRevSum = 0;
-                let curEarnSum = 0;
-                let prevEarnSum = 0;
-                let count = 0;
+            if (lastYear && lastYear.revenue > 0) {
+                const ttmRev = ttmRevenue / 1e9;
+                const ttmEarn = ttmNetIncome / 1e9;
 
-                for (let i = sorted.length - 1; i >= 4 && count < 4; i--) {
-                    const cur = sorted[i];
-                    const prev = sorted[i - 4];
-                    const curRev = cur[revKey] || cur.revenue || 0;
-                    const prevRev = prev[revKey] || prev.revenue || 0;
-                    const curEarn = cur[earnKey] || cur.earnings || cur.netIncome || 0;
-                    const prevEarn = prev[earnKey] || prev.earnings || prev.netIncome || 0;
-
-                    curRevSum += curRev;
-                    prevRevSum += prevRev;
-                    curEarnSum += curEarn;
-                    prevEarnSum += prevEarn;
-                    count++;
-                }
-
-                return {
-                    r: count > 0 && prevRevSum > 0 ? ((curRevSum - prevRevSum) / prevRevSum) * 100 : 0,
-                    e: count > 0 && Math.abs(prevEarnSum) > 0 ? ((curEarnSum - prevEarnSum) / Math.abs(prevEarnSum)) * 100 : 0
-                };
-            };
-
-            let growth = calcAvgGrowth(quarterlyIncome, 'totalRevenue', 'netIncome');
-            if (growth.r === 0 && growth.e === 0 && quarterlyEarningsChart.length > 0) {
-                growth = calcAvgGrowth(quarterlyEarningsChart, 'revenue', 'earnings');
-            }
-
-            ttmRevGrowth = growth.r;
-            ttmEarnGrowth = growth.e;
-
-            if (ttmRevGrowth === 0 || ttmEarnGrowth === 0) {
-                const lastYear = history[history.length - 1];
-                const prevYear = history.length > 1 ? history[history.length - 2] : null;
-
-                let calcRev = 0;
-                let calcEarn = 0;
-
-                if (lastYear && prevYear && lastYear.revenue > 0 && prevYear.revenue > 0) {
-                    const ttmRev = ttmRevenue / 1e9;
-                    const diff = Math.abs(ttmRev - lastYear.revenue) / lastYear.revenue;
-
-                    if (diff < 0.02) {
-                        // TTM precisely maps over the last completed fiscal year (e.g. Robinhood FY is Dec, TTM is Dec)
-                        calcRev = ((lastYear.revenue - prevYear.revenue) / prevYear.revenue) * 100;
-                        if (Math.abs(prevYear.earnings) > 0) {
-                            calcEarn = ((lastYear.earnings - prevYear.earnings) / Math.abs(prevYear.earnings)) * 100;
-                        }
-                    } else {
-                        // TTM has progressed into the new fiscal year.
-                        // Interpolate the "previous TTM" by assuming proportional growth from prevYear to lastYear.
-                        const revLastYoY = (lastYear.revenue - prevYear.revenue);
-                        let t = revLastYoY !== 0 ? (ttmRev - lastYear.revenue) / revLastYoY : 0.5;
-                        t = Math.max(0, Math.min(1, t)); // Bound offset ratio
-
-                        const prevTtmRev = prevYear.revenue + t * revLastYoY;
-                        if (prevTtmRev > 0) {
-                            calcRev = ((ttmRev - prevTtmRev) / prevTtmRev) * 100;
-                        }
-
-                        const earnLastYoY = (lastYear.earnings - prevYear.earnings);
-                        const prevTtmEarn = prevYear.earnings + t * earnLastYoY;
-                        if (Math.abs(prevTtmEarn) > 0) {
-                            calcEarn = ((ttmNetIncome / 1e9 - prevTtmEarn) / Math.abs(prevTtmEarn)) * 100;
-                        }
+                // If TTM ≈ last FY (within 1%), TTM is the same period → compare FY vs prior FY
+                const diff = Math.abs(ttmRev - lastYear.revenue) / lastYear.revenue;
+                if (diff < 0.01 && prevYear && prevYear.revenue > 0) {
+                    ttmRevGrowth = ((lastYear.revenue - prevYear.revenue) / prevYear.revenue) * 100;
+                    if (Math.abs(prevYear.earnings) > 0) {
+                        ttmEarnGrowth = ((lastYear.earnings - prevYear.earnings) / Math.abs(prevYear.earnings)) * 100;
                     }
-                } else if (lastYear && lastYear.revenue > 0) {
-                    // Fallback to naive `(TTM - FY) / FY` if only 1 year of history exists
-                    calcRev = ((ttmRevenue / 1e9 - lastYear.revenue) / lastYear.revenue) * 100;
+                } else {
+                    // Standard: TTM vs last completed FY
+                    ttmRevGrowth = ((ttmRev - lastYear.revenue) / lastYear.revenue) * 100;
                     if (Math.abs(lastYear.earnings) > 0) {
-                        calcEarn = ((ttmNetIncome / 1e9 - lastYear.earnings) / Math.abs(lastYear.earnings)) * 100;
+                        ttmEarnGrowth = ((ttmEarn - lastYear.earnings) / Math.abs(lastYear.earnings)) * 100;
                     }
                 }
-
-                if (ttmRevGrowth === 0) ttmRevGrowth = calcRev;
-                if (ttmEarnGrowth === 0) ttmEarnGrowth = calcEarn;
             }
 
             const ttmEntry = {
